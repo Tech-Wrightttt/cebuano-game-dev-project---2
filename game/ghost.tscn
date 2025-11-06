@@ -14,7 +14,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.37709844, -0.08005732)
 shape = SubResource("CapsuleShape3D_b6vni")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-path_desired_distance = 2.5
+path_desired_distance = 2.0
+target_desired_distance = 2.0
 path_max_distance = 5.01
 avoidance_enabled = true
 radius = 0.4
@@ -23,27 +24,27 @@ debug_enabled = true
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(15, 0, 0, 0, -6.556708e-07, -15, 0, 15, -6.556708e-07, 0, 0.57261574, 0)
 visible = false
-collision_mask = 3
+collision_mask = 131
 
 [node name="RayCast3D2" type="RayCast3D" parent="."]
 transform = Transform3D(14.095389, -5.1303015, 2.2425259e-07, 0, -6.556708e-07, -15, 5.1303015, 14.095389, -6.16129e-07, 0, 0.5732396, 0)
 visible = false
-collision_mask = 3
+collision_mask = 131
 
 [node name="RayCast3D3" type="RayCast3D" parent="."]
 transform = Transform3D(11.490666, -9.641813, 4.2145706e-07, 0, -6.556708e-07, -15, 9.641813, 11.490666, -5.02273e-07, 0, 0.5732396, 0)
 visible = false
-collision_mask = 3
+collision_mask = 131
 
 [node name="RayCast3D4" type="RayCast3D" parent="."]
 transform = Transform3D(14.095389, 5.1303015, -2.2425259e-07, 0, -6.556708e-07, -15, -5.1303015, 14.095389, -6.16129e-07, 0, 0.5732396, 0)
 visible = false
-collision_mask = 3
+collision_mask = 131
 
 [node name="RayCast3D5" type="RayCast3D" parent="."]
 transform = Transform3D(11.490666, 9.641813, -4.2145706e-07, 0, -6.556708e-07, -15, -9.641813, 11.490666, -5.02273e-07, 0, 0.5732396, 0)
 visible = false
-collision_mask = 3
+collision_mask = 131
 
 [node name="ghost_model_animation" parent="." instance=ExtResource("2_io021")]
 transform = Transform3D(-1.5, 0, -1.3113416e-07, 0, 1.5, 0, 1.3113416e-07, 0, -1.5, 0.026069656, -1.062, 0)

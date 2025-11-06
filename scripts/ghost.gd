@@ -13,7 +13,7 @@ var is_moving = false
 
 func _ready() -> void:
 	agent.velocity_computed.connect(_on_velocity_computed)
-	print("is there animation player? ", animation_player)
+	#print("is there animation player? ", animation_player)
 	animation_player.play("ghost_idle")
 	pick_destination()
 
