@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnd4f5cscd18j"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_s54or"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ps8j2"]
+emission_enabled = true
+emission = Color(0.9999984, 0.99523443, 0.6165508, 1)
+
+[node name="ceiling lights" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.032, 0, 0, 0, 1, 0, 0.004881859, 0)
+mesh = SubResource("CylinderMesh_s54or")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.625, 0, 0, 0, 0.048, 0, 0, 0, 0.625, 0, -0.014384747, 0)
+material_override = SubResource("StandardMaterial3D_ps8j2")
+mesh = SubResource("CylinderMesh_s54or")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -0.0176332, -0.17012382, -0.014208794)
+light_color = Color(1, 1, 0.67058825, 1)
+light_energy = 7.571
+spot_range = 211.657
+spot_angle = 65.19

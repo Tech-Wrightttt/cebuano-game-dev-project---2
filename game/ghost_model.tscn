@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://shx0qymv2ucj"]
+
+[ext_resource type="PackedScene" uid="uid://b0hn735giq81y" path="res://assets/glb_models/cloth_ghost.glb" id="1_80p8w"]
+
+[node name="ghost_model" instance=ExtResource("1_80p8w")]
+
+[node name="Sketchfab_model" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 2.220446e-16, 1, 0, -1, 2.220446e-16, 0, -1.1810949, 0)

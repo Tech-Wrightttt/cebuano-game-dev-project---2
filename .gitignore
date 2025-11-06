@@ -1,0 +1,28 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Exported builds
+export_presets.cfg      # Machine-specific export paths
+build/                  # Optional: your custom build folder
+
+# Godot import and cache files
+.import/
+.export/
+*.import
+*.translation
+
+# Temporary or local files
+*.tmp
+*.bak
+*.log
+
+# OS junk files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# VS Code / JetBrains / Editor configs
+.vscode/
+.idea/
+*.iml

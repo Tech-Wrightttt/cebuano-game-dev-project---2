@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbo4k372s7a4s"]
+
+[ext_resource type="PackedScene" uid="uid://bah8ny7jtyb0s" path="res://assets/glb_models/furniture/antique_table.glb" id="1_f3cla"]
+[ext_resource type="Texture2D" uid="uid://caucqnqqenx7d" path="res://textures/house/wood3.jpg" id="2_h25oj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qmtjx"]
+albedo_texture = ExtResource("2_h25oj")
+uv1_scale = Vector3(2.105, 0.78, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bvyf1"]
+albedo_texture = ExtResource("2_h25oj")
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_f3cla")]
+
+[node name="Object_2" parent="Sketchfab_model/Antiquetable_Unwrapped_obj_cleaner_gles" index="0"]
+material_override = SubResource("StandardMaterial3D_qmtjx")
+
+[node name="Object_3" parent="Sketchfab_model/Antiquetable_Unwrapped_obj_cleaner_gles" index="1"]
+material_override = SubResource("StandardMaterial3D_bvyf1")

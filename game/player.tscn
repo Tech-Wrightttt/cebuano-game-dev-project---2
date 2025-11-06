@@ -1,0 +1,540 @@
+[gd_scene load_steps=24 format=3 uid="uid://o7gchgjqr1i6"]
+
+[ext_resource type="PackedScene" uid="uid://bklxl232veydp" path="res://assets/player/first_person_arm.tscn" id="1_dadds"]
+[ext_resource type="Shader" uid="uid://bt1lbo5yomj25" path="res://game/shaders/retro_camera.gdshader" id="2_w5y0b"]
+[ext_resource type="Shader" uid="uid://di14027j7obwb" path="res://game/shaders/VHS.gdshader" id="3_du4nq"]
+[ext_resource type="Script" uid="uid://bwvlckt1br7ru" path="res://game/player_interact.gd" id="4_p0vpi"]
+[ext_resource type="Shader" uid="uid://ddx2gqb8873he" path="res://game/playershaders/thirdeyeshader.gdshader" id="5_d631c"]
+[ext_resource type="AudioStream" uid="uid://d8o0j7aod6kg" path="res://soundfx/wood.mp3" id="6_wkljg"]
+[ext_resource type="AudioStream" uid="uid://on07xa2628g8" path="res://soundfx/grass.mp3" id="7_iyaem"]
+[ext_resource type="AudioStream" uid="uid://cj3hykjw12mvo" path="res://soundfx/outside_bg.ogg" id="8_iyaem"]
+[ext_resource type="AudioStream" uid="uid://c4etsp1qrbjun" path="res://soundfx/stone.mp3" id="9_ry671"]
+[ext_resource type="Script" uid="uid://ch7do2p0uoidx" path="res://game/floor_type_ray.gd" id="10_4uvqg"]
+[ext_resource type="AudioStream" uid="uid://vwjiofxfws3q" path="res://soundfx/rock.mp3" id="10_7fxs2"]
+[ext_resource type="AudioStream" uid="uid://d3mp4s4edsost" path="res://soundfx/take_item.mp3" id="11_xkjxy"]
+[ext_resource type="AudioStream" uid="uid://dywgkgdh44a6k" path="res://soundfx/use_item.mp3" id="12_2k1gg"]
+[ext_resource type="PackedScene" uid="uid://b4vqsmmw8umat" path="res://game/player_ui.tscn" id="14_ppdnp"]
+
+[sub_resource type="GDScript" id="GDScript_sh265"]
+script/source = "extends CharacterBody3D
+
+# Simplified Godot 4.5 first-person controller with stair snapping
+# - plays \"Combat_idle_start\" once, then blends into \"Combat_idle\"
+# - basic movement, gravity, mouse look, and head-bob
+# - uses \"punch\" input action for punching
+# - smooth stair traversal (up and down)
+#test
+
+# Movement
+const SPEED: float = 4.5
+const SPRINT_SPEED: float = 8.0
+const ACCEL: float = 20.0
+const FRICTION: float = 30.0
+const AIR_FRICTION: float = 2.0
+const JUMP_VELOCITY: float = 5.0
+
+
+# Look
+const MOUSE_SENS: float = 0.0005
+const MAX_PITCH: float = deg_to_rad(89.0)
+
+# Head bob
+const BOB_FREQ: float = 2.0
+const BOB_AMP: float = 0.08
+const BOB_LERP: float = 2.0
+
+# Stairs
+const MAX_STEP_HEIGHT: float = 0.5
+@onready var overlay = %ThirdEyeShader
+var overlay_visible := false
+var is_sprinting: bool = false
+@onready var head: Node3D = $Head
+@onready var camera: Camera3D = $Head/Camera3D
+@onready var anim: AnimationPlayer = $PSX_First_Person_Arms/AnimationPlayer
+
+# Raycasts for stair detection
+@onready var stairs_below_raycast: RayCast3D = $StairsBelowRayCast3D
+@onready var stairs_ahead_raycast: RayCast3D = $StairsAheadRayCast3D
+@onready var head_bob: AnimationPlayer = $HeadBob
+@onready var flashlight: SpotLight3D = $Head/Camera3D/Spotlight/Flashlight
+
+@onready var rock_step: AudioStreamPlayer3D = $Sounds/Rock_Step
+@onready var stone_step: AudioStreamPlayer3D = $Sounds/Stone_Step
+@onready var grass_step: AudioStreamPlayer3D = $Sounds/Grass_Step
+@onready var wood_step: AudioStreamPlayer3D = $Sounds/Wood_Step
+@onready var floor_type_ray: RayCast3D = $FootStepAudio
+@onready var outside_bg: AudioStreamPlayer3D = $Sounds/Outside_BG
+var current_surface: String = \"\"
+var outside_bg_playing: bool = false
+
+var is_walking: bool = false
+var bob_time: float = 0.0
+var cam_rest_y: float = 0.0
+var idle_ready: bool = false
+var is_attacking: bool = false
+
+# Stair tracking
+var _snapped_to_stairs_last_frame: bool = false
+var _last_frame_was_on_floor: int = -999999
+
+
+func _ready() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	rotation.y = deg_to_rad(90)
+	# Setup raycasts if they don't exist
+	_setup_stair_raycasts()
+	
+	# Wait a frame so camera exists and transforms are valid
+	await get_tree().process_frame
+	
+	if camera:
+		cam_rest_y = camera.position.y
+	
+	# Play startup idle, then connect to animation_finished
+	if anim:
+		if not anim.animation_finished.is_connected(_on_animation_finished):
+			anim.animation_finished.connect(_on_animation_finished)
+		anim.play(\"Combat_idle_start\")
+
+
+func _setup_stair_raycasts() -> void:
+	# Create raycasts if they don't exist
+	if not stairs_below_raycast:
+		stairs_below_raycast = RayCast3D.new()
+		stairs_below_raycast.name = \"StairsBelowRayCast3D\"
+		stairs_below_raycast.target_position = Vector3(0, -MAX_STEP_HEIGHT, 0)
+		stairs_below_raycast.enabled = true
+		stairs_below_raycast.collide_with_areas = false
+		add_child(stairs_below_raycast)
+	
+	if not stairs_ahead_raycast:
+		stairs_ahead_raycast = RayCast3D.new()
+		stairs_ahead_raycast.name = \"StairsAheadRayCast3D\"
+		stairs_ahead_raycast.target_position = Vector3(0, -MAX_STEP_HEIGHT, 0)
+		stairs_ahead_raycast.enabled = true
+		stairs_ahead_raycast.collide_with_areas = false
+		add_child(stairs_ahead_raycast)
+
+
+func _on_animation_finished(anim_name: String) -> void:
+	if anim_name == \"Combat_idle_start\":
+		if anim:
+			anim.play(\"Combat_idle\")
+		idle_ready = true
+	elif anim_name == \"Combat_punch_left\":
+		is_attacking = false
+		if anim:
+			anim.play(\"Combat_idle\")
+
+
+func _input(event: InputEvent) -> void:
+	# Mouse look
+	if event is InputEventMouseMotion:
+		rotate_y(-event.relative.x * MOUSE_SENS)
+		
+		if head:
+			var new_pitch: float = head.rotation.x - event.relative.y * MOUSE_SENS
+			head.rotation.x = clamp(new_pitch, -MAX_PITCH, MAX_PITCH)
+	
+	if event.is_action_pressed(\"punch\"):
+		_try_punch()
+	
+	if event.is_action_pressed(\"move_third_eye\"):
+		overlay_visible = !overlay_visible
+		if overlay: 
+			overlay.visible = overlay_visible
+
+
+func _try_punch() -> void:
+	if not is_attacking and idle_ready and anim:
+		is_attacking = true
+		anim.play(\"Combat_punch_left\")
+
+
+func _physics_process(delta: float) -> void:
+	# Track floor state for stairs
+	if is_on_floor():
+		_last_frame_was_on_floor = Engine.get_physics_frames()
+		if Input.is_action_pressed(\"sprint\"):
+			is_sprinting = true
+		else:
+			is_sprinting = false
+	
+	# Apply gravity
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+		
+	# Sprint Code
+	var current_speed = SPRINT_SPEED if is_sprinting else SPEED
+	
+	# Get movement input
+	var input_dir: Vector2 = Input.get_vector(\"move_left\", \"move_right\", \"move_forward\", \"move_backward\")
+	
+	# Convert to 3D direction relative to character's rotation
+	var direction: Vector3 = Vector3.ZERO
+	if input_dir.length() > 0.0:
+		var local_direction: Vector3 = Vector3(input_dir.x, 0.0, input_dir.y)
+		direction = (transform.basis * local_direction).normalized()
+	
+	# Select appropriate friction
+	var current_friction: float = FRICTION if is_on_floor() else AIR_FRICTION
+	
+	# Apply acceleration or friction
+	if direction.length() > 0.0:
+		velocity.x = move_toward(velocity.x, direction.x * current_speed, ACCEL * delta)
+		velocity.z = move_toward(velocity.z, direction.z * current_speed, ACCEL * delta)
+	else:
+		velocity.x = move_toward(velocity.x, 0.0, current_friction * delta)
+		velocity.z = move_toward(velocity.z, 0.0, current_friction * delta)
+	
+	# Check for stair step up before moving
+	if not _snap_up_stairs_check(delta, direction):
+		# Normal movement if not stepping up stairs
+		move_and_slide()
+		# Check for stair snap down after moving
+		_snap_down_to_stairs_check()
+	
+	# Apply head bob (disable during attack)
+	if not is_attacking:
+		_apply_head_bob(delta, direction)
+
+func _snap_down_to_stairs_check() -> void:
+	if not stairs_below_raycast:
+		return
+	
+	var did_snap: bool = false
+	stairs_below_raycast.force_raycast_update()
+	
+	var floor_below: bool = stairs_below_raycast.is_colliding() and not _is_surface_too_steep(stairs_below_raycast.get_collision_normal())
+	var was_on_floor_last_frame: bool = Engine.get_physics_frames() == _last_frame_was_on_floor
+	
+	if not is_on_floor() and velocity.y <= 0 and (was_on_floor_last_frame or _snapped_to_stairs_last_frame) and floor_below:
+		# Use PhysicsTestMotionParameters3D instead of creating KinematicCollision3D
+		var params := PhysicsTestMotionParameters3D.new()
+		params.from = global_transform
+		params.motion = Vector3(0, -MAX_STEP_HEIGHT, 0)
+		
+		var result := PhysicsTestMotionResult3D.new()
+		if PhysicsServer3D.body_test_motion(get_rid(), params, result):
+			var translate_y: float = result.get_travel().y
+			position.y += translate_y
+			apply_floor_snap()
+			did_snap = true
+	
+	_snapped_to_stairs_last_frame = did_snap
+
+
+func _snap_up_stairs_check(delta: float, direction: Vector3) -> bool:
+	if not stairs_ahead_raycast:
+		return false
+	
+	if not is_on_floor() and not _snapped_to_stairs_last_frame:
+		return false
+	
+	if direction.length() == 0.0:
+		return false
+	
+	var expected_move_motion: Vector3 = velocity * Vector3(1, 0, 1) * delta
+	var step_pos_with_clearance: Transform3D = global_transform.translated(expected_move_motion + Vector3(0, MAX_STEP_HEIGHT * 2, 0))
+	
+	# Use PhysicsTestMotionParameters3D for better performance
+	var params := PhysicsTestMotionParameters3D.new()
+	params.from = step_pos_with_clearance
+	params.motion = Vector3(0, -MAX_STEP_HEIGHT * 2, 0)
+	
+	var result := PhysicsTestMotionResult3D.new()
+	if PhysicsServer3D.body_test_motion(get_rid(), params, result):
+		var collider: Object = result.get_collider()
+		if collider and (collider is StaticBody3D or collider is CSGShape3D):
+			var step_height: float = ((step_pos_with_clearance.origin + result.get_travel()) - global_position).y
+			
+			if step_height > MAX_STEP_HEIGHT or step_height <= 0.01:
+				return false
+			if (result.get_collision_point(0) - global_position).y > MAX_STEP_HEIGHT:
+				return false
+			
+			# Check ahead
+			stairs_ahead_raycast.global_position = result.get_collision_point(0) + Vector3(0, MAX_STEP_HEIGHT, 0) + expected_move_motion.normalized() * 0.1
+			stairs_ahead_raycast.force_raycast_update()
+			
+			if stairs_ahead_raycast.is_colliding() and not _is_surface_too_steep(stairs_ahead_raycast.get_collision_normal()):
+				global_position = step_pos_with_clearance.origin + result.get_travel()
+				apply_floor_snap()
+				_snapped_to_stairs_last_frame = true
+				return true
+	
+	return false
+
+
+func _is_surface_too_steep(normal: Vector3) -> bool:
+	return normal.angle_to(Vector3.UP) > floor_max_angle
+
+
+func _apply_head_bob(delta: float, dir: Vector3) -> void:
+	if not camera:
+		return
+	
+	if cam_rest_y == 0.0:
+		cam_rest_y = camera.position.y
+	
+	# Apply bobbing when moving on ground
+	if is_on_floor() and dir.length() > 0.0:
+		bob_time += delta * BOB_FREQ
+		
+		var target_y: float = cam_rest_y + sin(bob_time * TAU) * BOB_AMP
+		camera.position.y = lerp(camera.position.y, target_y, BOB_LERP * delta)
+	
+		if not is_walking:
+			is_walking = true
+			head_bob.stop()
+			head_bob.play(\"headbob\")
+	else:
+		bob_time = 0.0
+		camera.position.y = lerp(camera.position.y, cam_rest_y, BOB_LERP * delta)
+		if is_walking:
+			is_walking = false
+			head_bob.pause()
+
+func third_eye():
+	pass
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed(\"ui_cancel\"):
+		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		else:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+"
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_sh265"]
+radius = 0.3
+height = 3.25
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_iyaem"]
+points = PackedVector3Array(0.34477568, 1.3923018, 0.08683916, -0.325728, -1.4440001, -0.11937879, -0.325728, -1.4440001, 0.13842647, -0.325728, 1.4440001, 0.13842647, -0.11937879, 1.4440001, -0.325728, 0.2931884, -1.3923018, -0.2225534, 0.08683916, -1.3923018, 0.34477568, -0.067791484, 1.3923018, 0.34477568, 0.24160108, 1.3923018, -0.27414072, -0.11937879, -1.4440001, -0.325728, 0.2931884, -1.4440001, 0.19001377, 0.24160108, 1.4956986, 0.24160108, -0.325728, 1.3409265, -0.17096609, -0.2225534, -1.3923018, 0.2931884, 0.13842647, -1.4440001, -0.325728, 0.08352814, -1.5797893, 0.13290623, 0.34477568, -1.3923018, -0.067791484, 0.34477568, 1.3923018, -0.067791484, -0.11366492, 1.57731, -0.11366492, -0.2225534, 1.3923018, 0.2931884, -0.17096609, -1.3409265, -0.325728, 0.13842647, 1.4440001, -0.325728, 0.08683916, 1.3923018, 0.34477568, -0.11366492, -1.57731, -0.11366492, 0.083528265, 1.5797919, 0.13290644, 0.19001377, -1.4440001, 0.2931884, 0.2931884, 1.4956986, -0.17096609, -0.067791484, -1.3923018, 0.34477568, 0.2931884, -1.4956986, -0.17096609, 0.34477568, -1.3923018, 0.08683916, -0.17096609, 1.3409265, -0.325728, -0.325728, -1.3409265, -0.17096609)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_du4nq"]
+shader = ExtResource("2_w5y0b")
+shader_parameter/aberration_strength = 3.0
+shader_parameter/blur_strength = 2.0
+shader_parameter/noise_strength = 0.048
+shader_parameter/vignette_strength = 0.78
+shader_parameter/scanline_strength = 0.016
+shader_parameter/distortion_strength = 0.1
+shader_parameter/ghost_strength = 0.12
+shader_parameter/flicker_strength = 0.005
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p0vpi"]
+shader = ExtResource("3_du4nq")
+shader_parameter/wiggle = 0.03
+shader_parameter/wiggle_speed = 25.0
+shader_parameter/smear = 0.4610000218975
+shader_parameter/blur_samples = 15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4fto2"]
+shader = ExtResource("5_d631c")
+shader_parameter/brightness = 1.5
+shader_parameter/contrast = 1.2
+shader_parameter/vignette_strength = 0.8
+shader_parameter/noise_strength = 0.15
+shader_parameter/grain_size = 3.0
+
+[sub_resource type="Animation" id="Animation_4fto2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -0.1, -0.2)]
+}
+
+[sub_resource type="Animation" id="Animation_d631c"]
+resource_name = "headbob"
+loop_mode = 1
+step = 0.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/Camera3D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.23333333, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -0.1, -0.2), Vector3(0.05, -0.05, -0.2), Vector3(0, -0.1, -0.2), Vector3(-0.05, -0.05, -0.2)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FootStepAudio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.25, 0.76),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"play_step_sounds"
+}, {
+"args": [],
+"method": &"play_step_sounds"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wkljg"]
+_data = {
+&"RESET": SubResource("Animation_4fto2"),
+&"headbob": SubResource("Animation_d631c")
+}
+
+[node name="Player" type="CharacterBody3D" groups=["player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.625, 0)
+collision_layer = 3
+collision_mask = 3
+script = SubResource("GDScript_sh265")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("CapsuleMesh_sh265")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_iyaem")
+
+[node name="PSX_First_Person_Arms" parent="." instance=ExtResource("1_dadds")]
+transform = Transform3D(-1.5, 0, -2.2649371e-07, 0, 1.5, 0, 2.2649371e-07, 0, -1.5, 0, -1.6, 0.1)
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, -0.2)
+
+[node name="Spotlight" type="Node3D" parent="Head/Camera3D"]
+
+[node name="Flashlight" type="SpotLight3D" parent="Head/Camera3D/Spotlight"]
+light_color = Color(0.92941177, 0.8235294, 0.79607844, 1)
+light_energy = 8.0
+light_volumetric_fog_energy = 0.0
+spot_range = 35.0
+spot_attenuation = 1.15
+spot_angle_attenuation = 1.1095695
+
+[node name="Filters" type="CanvasLayer" parent="Head/Camera3D"]
+visible = false
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="Head/Camera3D/Filters"]
+copy_mode = 2
+
+[node name="Post_Processing" type="ColorRect" parent="Head/Camera3D/Filters"]
+material = SubResource("ShaderMaterial_du4nq")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Interaction_Label" type="Label" parent="Head/Camera3D/Filters"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.817
+anchor_right = 0.5
+anchor_bottom = 0.817
+offset_left = -107.0
+offset_top = -15.840088
+offset_right = 103.0
+offset_bottom = 18.159912
+theme_override_font_sizes/font_size = 24
+text = "*"
+metadata/_edit_use_anchors_ = true
+
+[node name="BackBufferCopy_VHS" type="BackBufferCopy" parent="Head/Camera3D/Filters"]
+visible = false
+copy_mode = 2
+
+[node name="VHS" type="ColorRect" parent="Head/Camera3D/Filters"]
+visible = false
+material = SubResource("ShaderMaterial_p0vpi")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ThirdEye" type="CanvasLayer" parent="Head/Camera3D"]
+visible = false
+
+[node name="ThirdEyeShader" type="ColorRect" parent="Head/Camera3D/ThirdEye"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_4fto2")
+offset_left = 1.0
+offset_right = 3350.0
+offset_bottom = 2134.0
+
+[node name="ObjectInteractor" type="RayCast3D" parent="Head"]
+transform = Transform3D(1.5, 0, 0, 0, -6.556708e-08, -1.5, 0, 1.5, -6.556708e-08, 0, -0.099999905, 0)
+target_position = Vector3(0, -2.5, 0)
+collision_mask = 15
+script = ExtResource("4_p0vpi")
+
+[node name="StairsAheadRayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.075, -1)
+target_position = Vector3(0, -0.55, 0)
+
+[node name="StairsBelowRayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.6, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ThirdEyeShader" type="ColorRect" parent="CanvasLayer"]
+visible = false
+material = SubResource("ShaderMaterial_4fto2")
+offset_left = 1.0
+offset_right = 3350.0
+offset_bottom = 2134.0
+
+[node name="HeadBob" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_wkljg")
+}
+
+[node name="Sounds" type="Node3D" parent="."]
+visible = false
+
+[node name="Wood_Step" type="AudioStreamPlayer3D" parent="Sounds"]
+stream = ExtResource("6_wkljg")
+
+[node name="Grass_Step" type="AudioStreamPlayer3D" parent="Sounds"]
+stream = ExtResource("7_iyaem")
+
+[node name="Outside_BG" type="AudioStreamPlayer3D" parent="Sounds"]
+stream = ExtResource("8_iyaem")
+autoplay = true
+parameters/looping = true
+
+[node name="Stone_Step" type="AudioStreamPlayer3D" parent="Sounds"]
+stream = ExtResource("9_ry671")
+
+[node name="Rock_Step" type="AudioStreamPlayer3D" parent="Sounds"]
+stream = ExtResource("10_7fxs2")
+
+[node name="Take_Item" type="AudioStreamPlayer3D" parent="Sounds"]
+stream = ExtResource("11_xkjxy")
+
+[node name="Use_Item" type="AudioStreamPlayer3D" parent="Sounds"]
+stream = ExtResource("12_2k1gg")
+
+[node name="FootStepAudio" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0608809, 0)
+visible = false
+collision_mask = 2
+script = ExtResource("10_4uvqg")
+
+[node name="player_ui" parent="." instance=ExtResource("14_ppdnp")]

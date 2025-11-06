@@ -1,0 +1,153 @@
+[gd_scene load_steps=20 format=3 uid="uid://bslbw4xpcdhu2"]
+
+[ext_resource type="Script" uid="uid://cawviu5uxw2yd" path="res://game/house_materials/door.gd" id="1_1dsjm"]
+[ext_resource type="Texture2D" uid="uid://chyhgoygk7icq" path="res://textures/house/door.jpg" id="2_eo2qc"]
+[ext_resource type="Texture2D" uid="uid://btbg0xemoogoy" path="res://textures/house/carpet.jpg" id="3_eo2qc"]
+[ext_resource type="Texture2D" uid="uid://dmleswvu8yv8t" path="res://textures/house/metal.jpg" id="4_m6ogy"]
+[ext_resource type="AudioStream" uid="uid://d00usu40ivlmm" path="res://soundfx/door_open.mp3" id="5_pm5js"]
+[ext_resource type="AudioStream" uid="uid://oljl46xd0iwj" path="res://soundfx/door_close.mp3" id="6_xuuev"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hbgq7"]
+albedo_texture = ExtResource("2_eo2qc")
+uv1_scale = Vector3(1.5, 1.9, 2)
+uv1_offset = Vector3(0.02, 0, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2v1i3"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_pm5js"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m6ogy"]
+albedo_texture = ExtResource("3_eo2qc")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1dsjm"]
+top_radius = 0.6
+bottom_radius = 0.6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pm5js"]
+albedo_texture = ExtResource("3_eo2qc")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2yvfs"]
+top_radius = 0.75
+bottom_radius = 0.75
+height = 0.75
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xuuev"]
+albedo_texture = ExtResource("4_m6ogy")
+
+[sub_resource type="Animation" id="Animation_eo2qc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hinge:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_m6ogy"]
+resource_name = "close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hinge:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5707964, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hbgq7"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hinge:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5707964, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pm5js"]
+_data = {
+&"RESET": SubResource("Animation_eo2qc"),
+&"close": SubResource("Animation_m6ogy"),
+&"open": SubResource("Animation_hbgq7")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pm5js"]
+size = Vector3(2, 4.5, 4.5)
+
+[node name="Door" type="Node3D"]
+script = ExtResource("1_1dsjm")
+
+[node name="hinge" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9894078, 0, 0)
+
+[node name="mesh" type="MeshInstance3D" parent="hinge"]
+transform = Transform3D(2.4, 0, 0, 0, 4.7, 0, 0, 0, 0.2, -1, 0, 0)
+material_override = SubResource("StandardMaterial3D_hbgq7")
+mesh = SubResource("BoxMesh_2v1i3")
+skeleton = NodePath("../..")
+
+[node name="door" type="StaticBody3D" parent="hinge/mesh" groups=["interactable"]]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hinge/mesh/door"]
+shape = SubResource("ConcavePolygonShape3D_pm5js")
+
+[node name="knob" type="Node3D" parent="hinge"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -1.0084931, -0.8371769, 0)
+
+[node name="knob arm" type="MeshInstance3D" parent="hinge/knob"]
+transform = Transform3D(0.15, 0, 0, 0, -1.1539806e-08, -0.15, 0, 0.264, -6.5567085e-09, -1.21, 0.5, 0)
+material_override = SubResource("StandardMaterial3D_m6ogy")
+mesh = SubResource("CylinderMesh_1dsjm")
+skeleton = NodePath("../../..")
+
+[node name="knob" type="MeshInstance3D" parent="hinge/knob"]
+transform = Transform3D(0.2, 0, 0, 0, -4.371139e-09, -0.2, 0, 0.1, -8.742278e-09, -1.2, 0.5, -0.25)
+material_override = SubResource("StandardMaterial3D_pm5js")
+mesh = SubResource("CylinderMesh_2yvfs")
+skeleton = NodePath("../../..")
+
+[node name="knob2" type="MeshInstance3D" parent="hinge/knob"]
+transform = Transform3D(0.2, 0, 0, 0, -4.371139e-09, -0.2, 0, 0.1, -8.742278e-09, -1.2, 0.5, 0.25)
+material_override = SubResource("StandardMaterial3D_xuuev")
+mesh = SubResource("CylinderMesh_2yvfs")
+skeleton = NodePath("../../..")
+
+[node name="Door_Animation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_pm5js")
+}
+
+[node name="Door_Open" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_pm5js")
+
+[node name="Door_Close" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("6_xuuev")
+
+[node name="ai_trigger" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_trigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.4173212)
+shape = SubResource("BoxShape3D_pm5js")
+
+[connection signal="body_entered" from="ai_trigger" to="." method="ai_open_door"]
+[connection signal="body_exited" from="ai_trigger" to="." method="ai_close_door"]

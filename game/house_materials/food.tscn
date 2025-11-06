@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://s84hnha8ilvc"]
+
+[ext_resource type="PackedScene" uid="uid://b8q80dfn2c8rl" path="res://assets/glb_models/kitchen/thuringian_sausage_with_cats.glb" id="1_8nneh"]
+
+[node name="food" instance=ExtResource("1_8nneh")]

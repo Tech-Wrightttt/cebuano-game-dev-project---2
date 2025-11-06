@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://duyckdxk3rh2r"]
+
+[ext_resource type="PackedScene" uid="uid://3675xt64svxx" path="res://assets/glb_models/kitchen/two_fridge.glb" id="1_2r87t"]
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_2r87t")]
+
+[node name="Object_2" parent="Sketchfab_model/Two Fridge_obj_cleaner_materialmerger_gles" index="0"]
+visible = false
+
+[node name="Object_3" parent="Sketchfab_model/Two Fridge_obj_cleaner_materialmerger_gles" index="1"]
+visible = false
+
+[node name="Object_4" parent="Sketchfab_model/Two Fridge_obj_cleaner_materialmerger_gles" index="2"]
+visible = false

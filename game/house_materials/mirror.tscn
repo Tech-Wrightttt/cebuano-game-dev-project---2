@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://lcrbbtwrdy8c"]
+
+[ext_resource type="PackedScene" uid="uid://8xctfhe7hrwy" path="res://assets/glb_models/furniture/fbx.glb" id="1_w5con"]
+
+[node name="mirror" instance=ExtResource("1_w5con")]

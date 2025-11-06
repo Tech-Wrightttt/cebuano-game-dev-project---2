@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://yxxdw01ymwdj"]
+
+[ext_resource type="PackedScene" uid="uid://74ebo8ieqwon" path="res://assets/glb_models/decoratives/retro_patterned_curtain.glb" id="1_wdbl1"]
+
+[node name="FAB converted" instance=ExtResource("1_wdbl1")]
+
+[node name="Cylinder001_01 - Default_0" parent="FAB converted model/904fd7170ff2425e8d61b8d891958dfa_fbx/RootNode/Group001/Cylinder001" index="0"]
+transform = Transform3D(0.99999994, 0, 2.1316282e-14, 0, 1, 0, 7.1054274e-15, 0, 0.82739455, 3.8146973e-06, 0, 32.830772)

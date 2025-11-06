@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjj83pwo8p76n"]
+
+[ext_resource type="Texture2D" uid="uid://dil7htxvcviyc" path="res://textures/house/hell floor.jpg" id="1_moy4p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n3opl"]
+albedo_color = Color(0.8, 0.8, 0.8, 0)
+albedo_texture = ExtResource("1_moy4p")
+uv1_scale = Vector3(2.48, 1.955, 1)
+uv1_offset = Vector3(-0.73, 0, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tq5f2"]
+
+[node name="rug" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.0750458, 0, 0, 0, 0.00020534584, 0, 0, 0, 3.2705126, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_n3opl")
+mesh = SubResource("BoxMesh_tq5f2")

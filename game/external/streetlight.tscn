@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://drrfdygath4dv"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_e8wmj"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_d840b"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ddhp"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 3.0
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.27999145, 0, 0, 0, 2.3721068, 0, 0, 0, 0.3231016, 0, 0.9772837, 0)
+mesh = SubResource("CylinderMesh_e8wmj")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.3258617, 0, 0, 0, 0.25591484, 0, 0, 0, 0.83055514, 0.72001576, 3.0517688, 0)
+mesh = SubResource("BoxMesh_d840b")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.5687284, 0, 0, 0, 0.25591484, 0, 0, 0, 0.64429975, 0.9963398, 3.018166, 0)
+material_override = SubResource("StandardMaterial3D_6ddhp")
+mesh = SubResource("BoxMesh_d840b")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1.7362094e-08, 1, 0, -1, -1.7362094e-08, 1.0556381, 2.934403, 0.087171555)
+light_color = Color(0.999999, 0.9977427, 0.8040513, 1)
+light_energy = 9.69
+spot_range = 12.0
+spot_angle = 43.911953

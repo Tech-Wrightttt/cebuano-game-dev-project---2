@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://ca81k1448tbkx"]
+
+[ext_resource type="PackedScene" uid="uid://cenrdi122dbv0" path="res://assets/glb_models/clothes_line/clothes_line.glb" id="1_cc32u"]
+
+[node name="hinayhay" instance=ExtResource("1_cc32u")]

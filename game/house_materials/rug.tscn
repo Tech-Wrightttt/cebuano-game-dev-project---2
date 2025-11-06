@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbalkhtrad1j2"]
+
+[ext_resource type="Texture2D" uid="uid://btbg0xemoogoy" path="res://textures/house/carpet.jpg" id="1_nsiqe"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ta4n7"]
+albedo_texture = ExtResource("1_nsiqe")
+uv1_scale = Vector3(2.955, 2.955, 2.955)
+uv1_offset = Vector3(-0.945, 0, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_781oh"]
+material = SubResource("StandardMaterial3D_ta4n7")
+
+[node name="rug" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.4228677, 0, 0, 0, -0.028054904, 0, 0, 0, 0.5400064, 0, 0, 0)
+mesh = SubResource("BoxMesh_781oh")
