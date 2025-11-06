@@ -17,6 +17,12 @@ build/                  # Optional: your custom build folder
 *.bak
 *.log
 
+# 3D model files and folders
+*.glb
+*.gltf
+glb_models/
+**/glb_models/
+
 # OS junk files
 .DS_Store
 Thumbs.db
