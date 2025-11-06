@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbnooi1a0en0h"]
+
+[ext_resource type="PackedScene" uid="uid://dbmp5ccq4138x" path="res://assets/glb_models/decoratives/interior_wooden_pillar_vl3ubjqdw_low.glb" id="1_rbu3r"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_docn2"]
+size = Vector3(0.31, 2.2818725, 0.32)
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_rbu3r")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/Interior_Wooden_Pillar_vl3ubjqdw_Low_fbx/RootNode/vl3ubjqdw_LOD0_TIER3_000/vl3ubjqdw_LOD0_TIER3_000_MatID_1_0" index="0"]
+transform = Transform3D(100, 0, 0, 0, 100, 2.220446e-14, 0, -2.220446e-14, 100, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/Interior_Wooden_Pillar_vl3ubjqdw_Low_fbx/RootNode/vl3ubjqdw_LOD0_TIER3_000/vl3ubjqdw_LOD0_TIER3_000_MatID_1_0/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1315149, 0)
+shape = SubResource("BoxShape3D_docn2")
