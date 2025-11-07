@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://bslbw4xpcdhu2"]
 
 [ext_resource type="Script" uid="uid://cawviu5uxw2yd" path="res://game/house_materials/door.gd" id="1_1dsjm"]
-[ext_resource type="Texture2D" uid="uid://chyhgoygk7icq" path="res://textures/house/door.jpg" id="2_eo2qc"]
+[ext_resource type="Texture2D" uid="uid://ccb08fwmdx17o" path="res://textures/house/door.jpg" id="2_eo2qc"]
 [ext_resource type="Texture2D" uid="uid://btbg0xemoogoy" path="res://textures/house/carpet.jpg" id="3_eo2qc"]
 [ext_resource type="Texture2D" uid="uid://dmleswvu8yv8t" path="res://textures/house/metal.jpg" id="4_m6ogy"]
 [ext_resource type="AudioStream" uid="uid://d00usu40ivlmm" path="res://soundfx/door_open.mp3" id="5_pm5js"]
@@ -51,7 +51,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_m6ogy"]
-resource_name = "close"
+resource_name = "open_1"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -60,13 +60,13 @@ tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"transitions": PackedFloat32Array(0.8, 0.8),
 "update": 0,
-"values": [Vector3(0, 1.5707964, 0), Vector3(0, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, -1.5707964, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_hbgq7"]
-resource_name = "open"
+resource_name = "open_2"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -75,7 +75,7 @@ tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"transitions": PackedFloat32Array(0.8, 0.8),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 1.5707964, 0)]
 }
@@ -83,8 +83,8 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pm5js"]
 _data = {
 &"RESET": SubResource("Animation_eo2qc"),
-&"close": SubResource("Animation_m6ogy"),
-&"open": SubResource("Animation_hbgq7")
+&"open_1": SubResource("Animation_m6ogy"),
+&"open_2": SubResource("Animation_hbgq7")
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pm5js"]
