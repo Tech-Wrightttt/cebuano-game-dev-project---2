@@ -2,25 +2,21 @@ extends CharacterBody3D
 @onready var agent = $NavigationAgent3D
 @export var patrol_destinations: Array[Node3D]
 @onready var player = get_tree().get_first_node_in_group("player")
-var speed = 2.0
+var speed = 3.0
 @onready var rng = RandomNumberGenerator.new()
-@onready var animation_player = $ghost_model_animation/AnimationPlayer
 var destination
 var chasing = false
 var destination_value
 var chase_timer = 0.0
-var is_moving = false
 
 func _ready() -> void:
 	agent.velocity_computed.connect(_on_velocity_computed)
-	#print("is there animation player? ", animation_player)
-	animation_player.play("ghost_idle")
 	pick_destination()
 
 func _process(delta: float) -> void:
 	if chasing:
-		if speed != 4.0:
-			speed = 4.0
+		if speed != 5.0:
+			speed = 5.0
 		if chase_timer < 15:
 			chase_timer += 1 * delta
 		else:
@@ -28,19 +24,11 @@ func _process(delta: float) -> void:
 			chasing = false
 			pick_destination()
 	elif !chasing:
-		if speed != 2.0:
-			speed = 2.0
+		if speed != 3.0:
+			speed = 3.0
 	
 	if destination != null:
 		update_target_location()
-	
-	# Handle animations based on movement
-	if is_moving:
-		if animation_player.current_animation != "ghost_walk":
-			animation_player.play("ghost_walk")
-	else:
-		if animation_player.current_animation != "ghost_idle":
-			animation_player.play("ghost_idle")
 
 func _physics_process(_delta: float) -> void:
 	chase_player($RayCast3D)
@@ -55,18 +43,14 @@ func _physics_process(_delta: float) -> void:
 		
 		# Calculate direction including vertical component
 		var direction = (next_location - current_location).normalized()
-		
-		# Boost speed when climbing stairs
-		var speed_multiplier = 1.3 if direction.y > 0.05 else 1.0
-		
-		var new_velocity = direction * speed * speed_multiplier
+		var new_velocity = direction * speed
 		
 		# Use the NavigationAgent's velocity computation
 		agent.set_velocity(new_velocity)
-		
-		is_moving = true
-	else:
-		is_moving = false
+	
+	# Check if patrol destination reached
+	if !chasing and agent.is_navigation_finished():
+		pick_destination(destination_value)
 
 func _on_velocity_computed(safe_velocity: Vector3) -> void:
 	# Use the computed velocity from NavigationAgent
