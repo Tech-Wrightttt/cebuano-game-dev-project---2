@@ -2053,21 +2053,21 @@ volume_db = 3.0
 [node name="Lana_Prayer" type="AudioStreamPlayer3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana"]
 stream = ExtResource("106_yfc1v")
 
-[node name="clean_statues" type="Node3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS"]
+[node name="Task_Clean statues" type="Node3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS"]
 
-[node name="statue_robe_figure" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/clean_statues" instance=ExtResource("126_x62yr")]
+[node name="statue_robe_figure" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean statues" instance=ExtResource("126_x62yr")]
 transform = Transform3D(-0.4698647, 0, -0.37313157, 0, 0.6, 0, 0.37313157, 0, -0.4698647, -24.044731, 10.756228, 6.9409266)
 
-[node name="statue_robe_figure2" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/clean_statues" instance=ExtResource("126_x62yr")]
+[node name="statue_robe_figure2" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean statues" instance=ExtResource("126_x62yr")]
 transform = Transform3D(-0.4698647, 0, -0.37313157, 0, 0.6, 0, 0.37313157, 0, -0.4698647, -3.593, 4.71, -9.089001)
 
-[node name="statue_roman_figure" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/clean_statues" instance=ExtResource("128_1numt")]
+[node name="statue_roman_figure" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean statues" instance=ExtResource("128_1numt")]
 transform = Transform3D(-3, 0, -2.6226832e-07, 0, 3, 0, 2.6226832e-07, 0, -3, -20.754597, 4.5865054, -3.85606)
 
-[node name="statue_roman_figure2" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/clean_statues" instance=ExtResource("128_1numt")]
+[node name="statue_roman_figure2" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean statues" instance=ExtResource("128_1numt")]
 transform = Transform3D(2.97753, 0, -0.3664912, 0, 3, 0, 0.3664912, 0, 2.97753, -10.955319, 10.99957, -7.3784714)
 
-[node name="statue_bird" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/clean_statues" instance=ExtResource("125_p4sj0")]
+[node name="statue_bird" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean statues" instance=ExtResource("125_p4sj0")]
 transform = Transform3D(0.6117894, 0, -0.7910207, 0, 1, 0, 0.7910207, 0, 0.6117894, -12.349412, 10.403585, -15.417316)
 
 [node name="2ND FLOOR ITEMS" type="Node3D" parent="NavigationRegion3D/ITEMS"]
