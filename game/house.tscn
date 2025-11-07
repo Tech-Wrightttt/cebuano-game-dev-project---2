@@ -660,6 +660,7 @@ height = 0.16516113
 
 [node name="doors" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.025465965, 0, 0.0026812553)
+visible = false
 
 [node name="Basement_Door1" parent="doors" instance=ExtResource("41_ja541")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -20, -3.6, -9.9)
@@ -704,6 +705,7 @@ transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -4, 
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -33.5, 10.55, -14)
 
 [node name="Windows" type="Node3D" parent="."]
+visible = false
 
 [node name="singleWindow" parent="Windows" instance=ExtResource("2_agx8e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.9, 9.6, -11)
@@ -900,6 +902,7 @@ mesh = ExtResource("15_re2uc")
 shape = SubResource("ConcavePolygonShape3D_yfc1v")
 
 [node name="2nd Floor" type="Node3D" parent="NavigationRegion3D/Model"]
+visible = false
 
 [node name="2ndFloor_Walls" type="MeshInstance3D" parent="NavigationRegion3D/Model/2nd Floor"]
 material_override = ExtResource("1_f6s7v")
@@ -986,6 +989,7 @@ transform = Transform3D(1, 0, 0, 0, 0.7660444, -0.6427875, 0, 0.6427875, 0.76604
 shape = SubResource("BoxShape3D_puo31")
 
 [node name="ITEMS" type="Node3D" parent="NavigationRegion3D"]
+visible = false
 
 [node name="1ST FLOOR ITEMS" type="Node3D" parent="NavigationRegion3D/ITEMS"]
 
@@ -2152,6 +2156,7 @@ transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.1855694e-
 
 [node name="wardrobe6" parent="NavigationRegion3D/ITEMS/2ND FLOOR ITEMS" instance=ExtResource("127_uwpgj")]
 transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.1855694e-08, 15.90956, -0.61054325, 12.98694)
+visible = false
 
 [node name="wardrobe3" parent="NavigationRegion3D/ITEMS/2ND FLOOR ITEMS" instance=ExtResource("127_uwpgj")]
 transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, -20.769665, 7.3683195, 1.9906898)
