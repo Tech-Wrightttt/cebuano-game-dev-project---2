@@ -1,14 +1,14 @@
 [gd_scene load_steps=20 format=3 uid="uid://bslbw4xpcdhu2"]
 
 [ext_resource type="Script" uid="uid://cawviu5uxw2yd" path="res://game/house_materials/door.gd" id="1_1dsjm"]
-[ext_resource type="Texture2D" uid="uid://ccb08fwmdx17o" path="res://textures/house/door.jpg" id="2_eo2qc"]
+[ext_resource type="Texture2D" uid="uid://dlp6qwwcyq24w" path="res://textures/house/door.jpg" id="2_eo2qc"]
 [ext_resource type="Texture2D" uid="uid://btbg0xemoogoy" path="res://textures/house/carpet.jpg" id="3_eo2qc"]
 [ext_resource type="Texture2D" uid="uid://dmleswvu8yv8t" path="res://textures/house/metal.jpg" id="4_m6ogy"]
 [ext_resource type="AudioStream" uid="uid://d00usu40ivlmm" path="res://soundfx/door_open.mp3" id="5_pm5js"]
 [ext_resource type="AudioStream" uid="uid://oljl46xd0iwj" path="res://soundfx/door_close.mp3" id="6_xuuev"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hbgq7"]
-albedo_color = Color(0.4, 0.2882, 0.228, 1)
+albedo_color = Color(0.88761246, 0.7477054, 0.61765987, 1)
 albedo_texture = ExtResource("2_eo2qc")
 roughness_texture_channel = 4
 uv1_scale = Vector3(2.97, 1.96, 2)

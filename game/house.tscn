@@ -825,6 +825,7 @@ transform = Transform3D(0.4385808, 0, 0, 0, 0.504742, 0, 0, 0, 0.37100643, -22.6
 [node name="Model" type="Node3D" parent="NavigationRegion3D"]
 
 [node name="Basement" type="Node3D" parent="NavigationRegion3D/Model"]
+visible = false
 
 [node name="Basement_Walls" type="MeshInstance3D" parent="NavigationRegion3D/Model/Basement" groups=["wood"]]
 material_override = SubResource("StandardMaterial3D_86tvv")
@@ -864,6 +865,7 @@ transform = Transform3D(-0.099955775, 0, 0.0029736012, 0, 0.099999994, 0, -0.002
 [node name="1st Floor" type="Node3D" parent="NavigationRegion3D/Model"]
 
 [node name="1stFloor_Walls" type="MeshInstance3D" parent="NavigationRegion3D/Model/1st Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.018185616, 0.032057762, 0.027645111)
 layers = 3
 material_override = ExtResource("1_f6s7v")
 mesh = ExtResource("5_f1bo4")
@@ -931,6 +933,7 @@ mesh = ExtResource("15_re2uc")
 shape = SubResource("ConcavePolygonShape3D_yfc1v")
 
 [node name="2nd Floor" type="Node3D" parent="NavigationRegion3D/Model"]
+visible = false
 
 [node name="2ndFloor_Walls" type="MeshInstance3D" parent="NavigationRegion3D/Model/2nd Floor"]
 material_override = ExtResource("1_f6s7v")
@@ -974,7 +977,6 @@ mesh = ExtResource("26_qalft")
 shape = SubResource("ConcavePolygonShape3D_qalft")
 
 [node name="Roof" type="Node3D" parent="NavigationRegion3D/Model"]
-visible = false
 
 [node name="Roofing" type="MeshInstance3D" parent="NavigationRegion3D/Model/Roof"]
 material_override = SubResource("StandardMaterial3D_pjqii")
@@ -1825,6 +1827,7 @@ shape = SubResource("BoxShape3D_y3wns")
 transform = Transform3D(-0.013641747, 0.014614698, 0.00055965944, 8.4543067e-10, -0.0007653242, 0.01998535, 0.01462541, 0.013631756, 0.0005220175, -0.19367015, 0.87323016, 0.100334525)
 
 [node name="CHORES ITEMS" type="Node3D" parent="NavigationRegion3D/ITEMS"]
+visible = false
 
 [node name="mama mary" parent="NavigationRegion3D/ITEMS/CHORES ITEMS" instance=ExtResource("63_m7rpm")]
 transform = Transform3D(0.00574288, 0, 0.004002415, 0, 0.0069999998, 0, -0.004002415, 0, 0.00574288, -14.907305, 3.5502794, -20.496895)

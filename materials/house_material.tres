@@ -1,8 +1,8 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://31nbyn23hg2q"]
 
-[ext_resource type="Texture2D" uid="uid://dvq5d178bfm3p" path="res://textures/house/wall wood.jpg" id="1_kfeee"]
+[ext_resource type="Texture2D" uid="uid://dfd1w2nw43uyh" path="res://textures/house/wall wood2.jpg" id="1_kfeee"]
 
 [resource]
 albedo_texture = ExtResource("1_kfeee")
-uv1_scale = Vector3(-4.22, 17.885, 5.37)
-uv1_offset = Vector3(-0.39, 0, 0)
+uv1_scale = Vector3(-3.83, 16.485, 5.37)
+uv1_offset = Vector3(0.41, 0, 0)
