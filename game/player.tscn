@@ -427,12 +427,13 @@ spot_attenuation = 1.15
 spot_angle_attenuation = 1.1095695
 
 [node name="Filters" type="CanvasLayer" parent="Head/Camera3D"]
-visible = false
 
 [node name="BackBufferCopy" type="BackBufferCopy" parent="Head/Camera3D/Filters"]
+visible = false
 copy_mode = 2
 
 [node name="Post_Processing" type="ColorRect" parent="Head/Camera3D/Filters"]
+visible = false
 material = SubResource("ShaderMaterial_du4nq")
 anchors_preset = 15
 anchor_right = 1.0

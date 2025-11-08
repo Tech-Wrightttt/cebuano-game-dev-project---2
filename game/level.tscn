@@ -1,12 +1,13 @@
 [gd_scene load_steps=23 format=3 uid="uid://bob5k3jp6dsgc"]
 
 [ext_resource type="Texture2D" uid="uid://bvdwayp7w2erl" path="res://textures/environment/grass.jpg" id="1_8bv7i"]
-[ext_resource type="PackedScene" uid="uid://bd8sk3hxv1lu0" path="res://assets/glb_models/fence/japanese_park_stone_floor_uljcfd0_mid.glb" id="1_50vgw"]
+[ext_resource type="PackedScene" uid="uid://dgyniwd6oms06" path="res://assets/glb_models/fence/japanese_park_stone_floor_uljcfd0_mid.glb" id="1_50vgw"]
 [ext_resource type="PackedScene" uid="uid://o7gchgjqr1i6" path="res://game/player.tscn" id="1_u52ul"]
-[ext_resource type="PackedScene" uid="uid://bhdnah86wfvhg" path="res://assets/glb_models/fence/fence_and_column.glb" id="2_0w1ik"]
+[ext_resource type="PackedScene" uid="uid://ceov4vk1bmonl" path="res://assets/glb_models/fence/fence_and_column.glb" id="2_0w1ik"]
 [ext_resource type="PackedScene" uid="uid://27jbkannujlc" path="res://game/house.tscn" id="2_xssv6"]
 [ext_resource type="PackedScene" uid="uid://cdluy2xnot0vs" path="res://assets/glb_models/fence/dirty_leaking_concrete_wall.glb" id="3_0w1ik"]
 [ext_resource type="PackedScene" uid="uid://bnd4f5cscd18j" path="res://game/house_materials/ceiling_lights.tscn" id="20_vuud0"]
+[ext_resource type="PackedScene" uid="uid://do47bp6x7rn0v" path="res://assets/glb_models/clothes_line/clothes_line.glb" id="23_lqnbj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4xowi"]
 sky_top_color = Color(0.12270618, 0.04560589, 0.0034415955, 1)
