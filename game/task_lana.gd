@@ -6,7 +6,7 @@ extends Node3D
 # Lana bottle nodes
 @onready var lana_map := {
 	1: {
-		"bottle": $"lanabottles/lana bottle1",
+		"bottle": $lanabottles/"lana bottle1",
 		"bottle_collision": $lanabottles/"lana bottle1"/lanastatic1/lanacollision1,
 		"drop": $lanadropsarray/lanadropscontainer1/lanadrops1,
 		"drop_collision": $lanadropsarray/lanadropscontainer1/lanadrops1/StaticBody3D/CollisionShape3D,
@@ -41,29 +41,29 @@ extends Node3D
 		"shadow": $lanadropsarray/lanadropscontainer5/lanadropsshadow5
 	},
 	6: {
-		"bottle":  $"../../2ND FLOOR ITEMS/shelf3(maopen)/RootNode/DRAWER3/Door/lana bottle6",
-		"bottle_collision":  $"../../2ND FLOOR ITEMS/shelf3(maopen)/RootNode/DRAWER3/Door/lana bottle6/lanastatic6/lanacollision6",
+		"bottle": $lanabottles/"lana bottle6",
+		"bottle_collision": $lanabottles/"lana bottle6"/lanastatic6/lanacollision6,
 		"drop": $lanadropsarray/lanadropscontainer6/lanadrops6,
 		"drop_collision": $lanadropsarray/lanadropscontainer6/lanadrops6/StaticBody3D/CollisionShape3D,
 		"shadow": $lanadropsarray/lanadropscontainer6/lanadropsshadow6
 	},
 	7: {
-		"bottle": $"../../2ND FLOOR ITEMS/shelf2(maopen)/RootNode/DRAWER1/Door/lana bottle7",
-		"bottle_collision": $"../../2ND FLOOR ITEMS/shelf2(maopen)/RootNode/DRAWER1/Door/lana bottle7/lanastatic7/lanacollision7",
+		"bottle": $lanabottles/"lana bottle7",
+		"bottle_collision": $lanabottles/"lana bottle7"/lanastatic7/lanacollision7,
 		"drop": $lanadropsarray/lanadropscontainer7/lanadrops7,
 		"drop_collision": $lanadropsarray/lanadropscontainer7/lanadrops7/StaticBody3D/CollisionShape3D,
 		"shadow": $lanadropsarray/lanadropscontainer7/lanadropsshadow7
 	},
 	8: {
-		"bottle":$"../../2ND FLOOR ITEMS/shelf4(maopen)/RootNode/DRAWER1/Door/lana bottle8",
-		"bottle_collision": $"../../2ND FLOOR ITEMS/shelf4(maopen)/RootNode/DRAWER1/Door/lana bottle8/lanastatic8/lanacollision8",
+		"bottle": $lanabottles/"lana bottle8",
+		"bottle_collision": $lanabottles/"lana bottle8"/lanastatic8/lanacollision8,
 		"drop": $lanadropsarray/lanadropscontainer8/lanadrops8,
 		"drop_collision": $lanadropsarray/lanadropscontainer8/lanadrops8/StaticBody3D/CollisionShape3D,
 		"shadow": $lanadropsarray/lanadropscontainer8/lanadropsshadow8
 	},
 	9: {
-		"bottle": $"../../2ND FLOOR ITEMS/shelf4(maopen)/RootNode/DRAWER6/Door/lana bottle9",
-		"bottle_collision": $"../../2ND FLOOR ITEMS/shelf4(maopen)/RootNode/DRAWER6/Door/lana bottle9/lanastatic9/lanacollision9",
+		"bottle": $lanabottles/"lana bottle9",
+		"bottle_collision": $lanabottles/"lana bottle9"/lanastatic9/lanacollision9,
 		"drop": $lanadropsarray/lanadropscontainer9/lanadrops9,
 		"drop_collision": $lanadropsarray/lanadropscontainer9/lanadrops9/StaticBody3D/CollisionShape3D,
 		"shadow": $lanadropsarray/lanadropscontainer9/lanadropsshadow9
@@ -84,6 +84,7 @@ func update_lana_tasking() -> void:
 		var data = lana_map[id]
 		var is_active = (id == chosen_bottle)
 
+		# Only the chosen bottle is visible
 		data["bottle"].visible = is_active
 		data["bottle_collision"].set_deferred("disabled", not is_active)
 
@@ -97,7 +98,10 @@ func update_lana_tasking() -> void:
 	all_ids.shuffle()
 	chosen_drops = all_ids.slice(0, 5)
 
-func take(_collider_body: PhysicsBody3D) -> void:
+func take() -> void:
+	if chosen_bottle == -1:
+		return
+
 	var bottle_data = lana_map[chosen_bottle]
 	bottle_data["bottle"].visible = false
 	bottle_data["bottle_collision"].set_deferred("disabled", true)
@@ -107,6 +111,8 @@ func take(_collider_body: PhysicsBody3D) -> void:
 		var drop_data = lana_map[id]
 		drop_data["shadow"].visible = true
 		drop_data["drop_collision"].set_deferred("disabled", false)
+
+	chosen_bottle = -1
 	
 func start_deploy_sound() -> void:
 	if not lana_prayer.is_playing():
@@ -116,6 +122,9 @@ func stop_deploy_sound() -> void:
 	lana_prayer.stop()
 	
 func deploy(collider_body: PhysicsBody3D) -> void:
+	if not collider_body:
+		return
+
 	for id in lana_map.keys():
 		var data = lana_map[id]
 		# Get the StaticBody3D from the CollisionShape3D
