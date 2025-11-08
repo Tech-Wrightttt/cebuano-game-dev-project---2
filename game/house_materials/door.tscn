@@ -8,9 +8,11 @@
 [ext_resource type="AudioStream" uid="uid://oljl46xd0iwj" path="res://soundfx/door_close.mp3" id="6_xuuev"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hbgq7"]
+albedo_color = Color(0.4, 0.2882, 0.228, 1)
 albedo_texture = ExtResource("2_eo2qc")
-uv1_scale = Vector3(1.5, 1.9, 2)
-uv1_offset = Vector3(0.02, 0, 0)
+roughness_texture_channel = 4
+uv1_scale = Vector3(2.97, 1.96, 2)
+uv1_offset = Vector3(0.02, 0.005, 0)
 
 [sub_resource type="BoxMesh" id="BoxMesh_2v1i3"]
 

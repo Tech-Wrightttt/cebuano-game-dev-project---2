@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyrhnan3i2i61"]
+
+[ext_resource type="PackedScene" uid="uid://d0ciiu18e254c" path="res://assets/glb_models/decoratives/creevy_crucifixion_plaque_ro013_037.glb" id="1_xsafe"]
+[ext_resource type="Texture2D" uid="uid://h5wcmbcofvnq" path="res://assets/glb_models/nature/old_gravestone_wjuvde2qx_mid_1.png" id="2_b7iuu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ewhdl"]
+albedo_color = Color(0.9356899, 0.93925697, 0.78517574, 1)
+albedo_texture = ExtResource("2_b7iuu")
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_xsafe")]
+
+[node name="Object_2" parent="Sketchfab_model/0_SFusion_obj_cleaner_materialmerger_gles" index="0"]
+transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_ewhdl")
+
+[node name="Object_3" parent="Sketchfab_model/0_SFusion_obj_cleaner_materialmerger_gles" index="1"]
+transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_ewhdl")
+
+[node name="Object_4" parent="Sketchfab_model/0_SFusion_obj_cleaner_materialmerger_gles" index="2"]
+transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_ewhdl")
+
+[node name="Object_5" parent="Sketchfab_model/0_SFusion_obj_cleaner_materialmerger_gles" index="3"]
+transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_ewhdl")
+
+[node name="Object_6" parent="Sketchfab_model/0_SFusion_obj_cleaner_materialmerger_gles" index="4"]
+transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_ewhdl")
