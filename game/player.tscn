@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://o7gchgjqr1i6"]
+[gd_scene load_steps=26 format=3 uid="uid://o7gchgjqr1i6"]
 
 [ext_resource type="PackedScene" uid="uid://bklxl232veydp" path="res://assets/player/first_person_arm.tscn" id="1_dadds"]
 [ext_resource type="Shader" uid="uid://bt1lbo5yomj25" path="res://game/shaders/retro_camera.gdshader" id="2_w5y0b"]
@@ -47,6 +47,14 @@ const BOB_LERP: float = 2.0
 const MAX_STEP_HEIGHT: float = 0.5
 @onready var overlay = %ThirdEyeShader
 var overlay_visible := false
+@onready var progress_bar = $CanvasLayer2/ProgressBar
+
+var third_eye_active := false
+var third_eye_depletion_rate := 20.0  # How much per second to drain
+var third_eye_refill_rate := 10.0     # How much per second to refill
+
+
+
 var is_sprinting: bool = false
 @onready var head: Node3D = $Head
 @onready var camera: Camera3D = $Head/Camera3D
@@ -96,6 +104,12 @@ func _ready() -> void:
 		if not anim.animation_finished.is_connected(_on_animation_finished):
 			anim.animation_finished.connect(_on_animation_finished)
 		anim.play(\"Combat_idle_start\")
+	
+	if overlay:
+		overlay.visible=false
+		overlay_visible=false
+
+
 
 
 func _setup_stair_raycasts() -> void:
@@ -115,6 +129,14 @@ func _setup_stair_raycasts() -> void:
 		stairs_ahead_raycast.enabled = true
 		stairs_ahead_raycast.collide_with_areas = false
 		add_child(stairs_ahead_raycast)
+		
+func _process(delta: float) -> void:
+	if third_eye_active:
+		if progress_bar.value > progress_bar.min_value:
+			progress_bar.value = max(progress_bar.value - third_eye_depletion_rate * delta, progress_bar.min_value)
+	else:
+		if progress_bar.value < progress_bar.max_value:
+			progress_bar.value = min(progress_bar.value + third_eye_refill_rate * delta, progress_bar.max_value)
 
 
 func _on_animation_finished(anim_name: String) -> void:
@@ -144,6 +166,7 @@ func _input(event: InputEvent) -> void:
 		overlay_visible = !overlay_visible
 		if overlay: 
 			overlay.visible = overlay_visible
+			third_eye_active = overlay_visible
 
 
 func _try_punch() -> void:
@@ -399,6 +422,21 @@ _data = {
 &"headbob": SubResource("Animation_d631c")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ppdnp"]
+bg_color = Color(0.86513877, 0, 0.26900893, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vc3l"]
+bg_color = Color(0.67659426, 0.60666937, 0, 1)
+
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.625, 0)
 collision_layer = 3
@@ -474,7 +512,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ThirdEye" type="CanvasLayer" parent="Head/Camera3D"]
-visible = false
+unique_name_in_owner = true
 
 [node name="ThirdEyeShader" type="ColorRect" parent="Head/Camera3D/ThirdEye"]
 unique_name_in_owner = true
@@ -544,3 +582,16 @@ collision_mask = 2
 script = ExtResource("10_4uvqg")
 
 [node name="player_ui" parent="." instance=ExtResource("14_ppdnp")]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer2"]
+offset_left = 7.0
+offset_top = 10.0
+offset_right = 407.0
+offset_bottom = 77.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ppdnp")
+theme_override_styles/fill = SubResource("StyleBoxFlat_7vc3l")
+value = 100.0
+
+[node name="Timer" type="Timer" parent="."]
