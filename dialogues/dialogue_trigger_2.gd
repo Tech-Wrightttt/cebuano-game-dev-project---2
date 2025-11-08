@@ -1,9 +1,9 @@
 extends Node3D
 
-@onready var first_dialogue = get_tree().current_scene.get_node("first_dialogue/canvas")
-@onready var speaker_name: RichTextLabel = get_tree().current_scene.get_node("first_dialogue/canvas/speaker_name")
-@onready var dialogue: RichTextLabel = get_tree().current_scene.get_node("first_dialogue/canvas/dialogue")
-@onready var text_animation: AnimationPlayer = get_tree().current_scene.get_node("first_dialogue/canvas/text_animation")
+@onready var second_dialogue = get_tree().current_scene.get_node("second_dialogue/canvas")
+@onready var speaker_name: RichTextLabel = get_tree().current_scene.get_node("second_dialogue/canvas/speaker_name")
+@onready var dialogue: RichTextLabel = get_tree().current_scene.get_node("second_dialogue/canvas/dialogue")
+@onready var text_animation: AnimationPlayer = get_tree().current_scene.get_node("second_dialogue/canvas/text_animation")
 @onready var player: CharacterBody3D = get_tree().current_scene.get_node("Player")
 
 @export var dialogues: Array[String]
@@ -15,10 +15,10 @@ var started = false
 
 func _ready() -> void:
 	# Make sure dialogue is hidden at start
-	first_dialogue.visible = false
+	second_dialogue.visible = false
 	
 	# Connect continue button
-	var continue_button = first_dialogue.get_node("continue")
+	var continue_button = second_dialogue.get_node("continue")
 	continue_button.pressed.connect(continue_dialogue)
 
 func start_dialogue(body):
@@ -29,7 +29,7 @@ func start_dialogue(body):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		player.SPEED = 0.0
 		player.MOUSE_SENS = 0.0
-		first_dialogue.visible = true
+		second_dialogue.visible = true
 		
 		continue_dialogue()
 
@@ -38,7 +38,7 @@ func end_dialogue():
 	player.SPEED = 4.5
 	player.MOUSE_SENS = 0.0005
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	first_dialogue.visible = false
+	second_dialogue.visible = false
 	
 	# Reset ALL dialogue state variables
 	started = false
@@ -64,6 +64,6 @@ func continue_dialogue():
 		# Play text animation
 		text_animation.play("RESET")
 		text_animation.play("typewriter")
-		first_dialogue.get_node("continue").disabled = false
+		second_dialogue.get_node("continue").disabled = false
 	else:
 		end_dialogue()

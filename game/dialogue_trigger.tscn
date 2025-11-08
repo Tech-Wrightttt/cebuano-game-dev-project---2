@@ -4,10 +4,8 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sse1x"]
 
-[node name="dialogue_trigger" type="Node3D"]
+[node name="dialogue_trigger1" type="Node3D"]
 script = ExtResource("1_im5lx")
-dialogues = Array[String](["Wow, ang laki pala ng bahay mo, Lola. Para siyang… buhay", "Haha, ganyan talaga ’yan, apo. Matanda na kasi ang bahay. Kumain ka muna dito — nakahain na ang hapunan diyan sa mesa.", "Salamat po, Lola.", "Apo, dito ka muna ha? May pupuntahan lang ako sandali.", "Pupunta ka saan, Lola? Ang gabi na po.", "May aayusin lang ako sa sementeryo—mga kandila at bulaklak lang. Alam mo naman, malapit na ang Undas.", "Apo, ito ang listahan ng mga gawaing bahay ko ngayong gabi. Pwede bang ikaw muna ang gumawa? Medyo mahina na rin kasi ako. Pakialagaan muna ang bahay, ha? At pag alas-diyes na, huwag ka nang lalabas—masyado nang madilim sa labas.", "Opo, Lola. Pero bakit pa po kailangan takpan ’yung salamin? Itong nakalagay sa listahan…", "Lumang kaugalian lang, apo. Sabi ng matatanda, para hindi pumasok ang lamig sa bahay.", "Pagkatapos mo sa gawaing-bahay way kang magpuyat at matulog ka kaagad kung ayaw mong makasalubong sila.", "....S-Sila?"])
-speaker_names = Array[String](["Paulette (You)", "Lola Olet", "Paulette (You)", "Lola Olet", "Paulette (You)", "Lola Olet", "Lola Olet", "Paulette (You)", "Lola Olet", "Lola Olet", "Paulette (You)"])
 
 [node name="InteractionArea" type="Area3D" parent="."]
 transform = Transform3D(3.31, 0, 0, 0, 3.31, 0, 0, 0, 3.31, 0, 0, 0)

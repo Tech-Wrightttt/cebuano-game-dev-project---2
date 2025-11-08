@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8bckhbbwohyn"]
+
+[ext_resource type="Script" uid="uid://caprp0ocefnm5" path="res://dialogues/dialogue_trigger_2.gd" id="1_xo3tx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sse1x"]
+
+[node name="dialogue_trigger2" type="Node3D"]
+script = ExtResource("1_xo3tx")
+
+[node name="InteractionArea2" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea2"]
+transform = Transform3D(2.03565, 0, 0, 0, 2.03565, 0, 0, 0, 2.03565, 0, 0, 0)
+shape = SubResource("BoxShape3D_sse1x")
+debug_color = Color(0, 0, 0, 1)
+
+[connection signal="body_entered" from="InteractionArea2" to="." method="start_dialogue"]

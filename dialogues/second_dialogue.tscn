@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmgn2dijv665c"]
+[gd_scene load_steps=4 format=3 uid="uid://cgi16aybh2b24"]
 
 [sub_resource type="Animation" id="Animation_3032u"]
 length = 0.001
@@ -37,7 +37,7 @@ _data = {
 &"typewriter": SubResource("Animation_ji76r")
 }
 
-[node name="first_dialogue" type="Control"]
+[node name="second_dialogue" type="Control"]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -78,8 +78,7 @@ offset_top = 3532.7603
 offset_right = 1834.0
 offset_bottom = 3719.7603
 theme_override_font_sizes/normal_font_size = 32
-text = "Wow, ang laki pala ng bahay mo, Lola. Para siyang… buhay.
-"
+text = "Apo, ito na ulit. Gabi na naman—’wag mong kalimutang tapusin ’yan."
 visible_characters = 0
 visible_ratio = 0.0
 
