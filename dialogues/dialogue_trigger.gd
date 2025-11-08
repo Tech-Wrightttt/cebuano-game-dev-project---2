@@ -54,12 +54,12 @@ func continue_dialogue():
 		dialogue.text = dialogues[current_dialogue]
 		speaker_name.text = speaker_names[current_dialogue]
 		
-		# Handle speaker animation
-		if speaker:
-			if "You" not in speaker_name.text:
-				speaker.get_node("AnimationPlayer").play("talk")
-			else:
-				speaker.get_node("AnimationPlayer").play("RESET")
+		## Handle speaker animation
+		#if speaker:
+			#if "You" not in speaker_name.text:
+				#speaker.get_node("AnimationPlayer").play("talk")
+			#else:
+				#speaker.get_node("AnimationPlayer").play("RESET")
 		
 		# Play text animation
 		text_animation.play("RESET")

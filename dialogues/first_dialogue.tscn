@@ -1,4 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmgn2dijv665c"]
+[gd_scene load_steps=6 format=3 uid="uid://cmgn2dijv665c"]
+
+[ext_resource type="FontFile" uid="uid://b02kdb4ogrrq5" path="res://fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="1_4oeku"]
+[ext_resource type="FontFile" uid="uid://c126udgjjdqhf" path="res://fonts/cmu-typewriter/Typewriter/cmunit.ttf" id="2_dl3gb"]
 
 [sub_resource type="Animation" id="Animation_3032u"]
 length = 0.001
@@ -52,19 +55,21 @@ grow_vertical = 2
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 720.0
+offset_top = 663.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(0, 0, 0, 0.05490196)
 
 [node name="speaker_name" type="RichTextLabel" parent="canvas"]
 anchors_preset = -1
 anchor_top = -2.4970002
 anchor_bottom = -2.4970002
-offset_left = 97.0
-offset_top = 3455.7603
-offset_right = 580.0
-offset_bottom = 3521.7603
+offset_left = 100.0
+offset_top = 3408.7603
+offset_right = 583.0
+offset_bottom = 3474.7603
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_4oeku")
 theme_override_font_sizes/normal_font_size = 46
 text = " Paulette (You)"
 scroll_active = false
@@ -73,11 +78,14 @@ scroll_active = false
 anchors_preset = -1
 anchor_top = -2.4970002
 anchor_bottom = -2.4970002
-offset_left = 107.0
-offset_top = 3532.7603
-offset_right = 1834.0
-offset_bottom = 3719.7603
-theme_override_font_sizes/normal_font_size = 32
+offset_left = 125.0
+offset_top = 3497.7603
+offset_right = 1826.0
+offset_bottom = 3710.7603
+theme_override_colors/default_color = Color(1, 1, 0.3764706, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_dl3gb")
+theme_override_font_sizes/normal_font_size = 43
 text = "Wow, ang laki pala ng bahay mo, Lola. Para siyang… buhay.
 "
 visible_characters = 0
@@ -91,6 +99,8 @@ offset_left = 1589.0
 offset_top = 3620.56
 offset_right = 1880.0
 offset_bottom = 3696.37
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_4oeku")
 theme_override_font_sizes/font_size = 32
 text = "Continue"
 

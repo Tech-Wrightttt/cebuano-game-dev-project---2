@@ -1,4 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cgi16aybh2b24"]
+[gd_scene load_steps=7 format=3 uid="uid://cgi16aybh2b24"]
+
+[ext_resource type="FontFile" path="res://fonts/architect-s-daughter/ArchitectsDaughter32.tres" id="1_knsne"]
+[ext_resource type="FontFile" uid="uid://b02kdb4ogrrq5" path="res://fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="1_tooi6"]
+[ext_resource type="FontFile" uid="uid://c126udgjjdqhf" path="res://fonts/cmu-typewriter/Typewriter/cmunit.ttf" id="2_knsne"]
 
 [sub_resource type="Animation" id="Animation_3032u"]
 length = 0.001
@@ -55,7 +59,7 @@ anchor_bottom = 1.0
 offset_top = 720.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(0, 0, 0, 0.078431375)
 
 [node name="speaker_name" type="RichTextLabel" parent="canvas"]
 anchors_preset = -1
@@ -65,6 +69,8 @@ offset_left = 97.0
 offset_top = 3455.7603
 offset_right = 580.0
 offset_bottom = 3521.7603
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_knsne")
 theme_override_font_sizes/normal_font_size = 46
 text = " Paulette (You)"
 scroll_active = false
@@ -73,11 +79,14 @@ scroll_active = false
 anchors_preset = -1
 anchor_top = -2.4970002
 anchor_bottom = -2.4970002
-offset_left = 107.0
-offset_top = 3532.7603
-offset_right = 1834.0
-offset_bottom = 3719.7603
-theme_override_font_sizes/normal_font_size = 32
+offset_left = 113.0
+offset_top = 3543.7603
+offset_right = 1840.0
+offset_bottom = 3730.7603
+theme_override_colors/default_color = Color(1, 1, 0.45490196, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_knsne")
+theme_override_font_sizes/normal_font_size = 43
 text = "Apo, ito na ulit. Gabi na naman—’wag mong kalimutang tapusin ’yan."
 visible_characters = 0
 visible_ratio = 0.0
@@ -90,6 +99,8 @@ offset_left = 1589.0
 offset_top = 3620.56
 offset_right = 1880.0
 offset_bottom = 3696.37
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_tooi6")
 theme_override_font_sizes/font_size = 32
 text = "Continue"
 

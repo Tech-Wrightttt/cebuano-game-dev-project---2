@@ -1,64 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbdwy6av6syaq"]
+[gd_scene load_steps=2 format=3 uid="uid://cbdwy6av6syaq"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_hjv22"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_1565f"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ogdhh"]
-albedo_color = Color(1, 0.09019608, 0.15294118, 1)
-
-[sub_resource type="Animation" id="Animation_eerm7"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D/MeshInstance3D2:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-10.3474, 3.6632771, -20.173374)]
-}
-
-[sub_resource type="Animation" id="Animation_wbvmg"]
-resource_name = "talk"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D/MeshInstance3D2:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.75),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0.234, 0.414, 0.071), Vector3(0.234, 0.274, 0.071)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_yyg0e"]
-_data = {
-&"RESET": SubResource("Animation_eerm7"),
-&"talk": SubResource("Animation_wbvmg")
-}
+[ext_resource type="PackedScene" uid="uid://bphkobjnkkonl" path="res://game/grandma_kinawat.tscn" id="1_eerm7"]
 
 [node name="grandma dummy" type="Node3D"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.034777313, 0, 0.999395, 0, 1.095, 0, -0.999395, 0, -0.034777313, 0, 0, 0)
-mesh = SubResource("CapsuleMesh_hjv22")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D"]
-transform = Transform3D(0.14209113, 0, 0.6085712, 0, 0.48401815, 0, -1.0615323, 0, 0.081460156, -10.3474, 3.6632771, -20.173374)
-mesh = SubResource("BoxMesh_1565f")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_ogdhh")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_yyg0e")
-}
-
-[node name="head" type="Node3D" parent="."]
+[node name="grandma kinawat" parent="." instance=ExtResource("1_eerm7")]
+transform = Transform3D(-0.009999134, 0, 0.00013159284, 0, 0.01, 0, -0.00013159284, 0, -0.009999134, 0, 0, 0)
