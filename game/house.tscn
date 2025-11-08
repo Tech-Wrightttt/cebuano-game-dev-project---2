@@ -6,7 +6,7 @@
 [ext_resource type="ArrayMesh" uid="uid://cduhe8fc6hyq8" path="res://assets/house/house_basement_wall.obj" id="2_sgyp1"]
 [ext_resource type="ArrayMesh" uid="uid://dkeuruqi54p6n" path="res://assets/house/house_basement_floor.obj" id="3_djvyg"]
 [ext_resource type="Texture2D" uid="uid://cm6acpp76ieuo" path="res://textures/house/basement floor..jpg" id="3_eeqtj"]
-[ext_resource type="PackedScene" uid="uid://qxbgqb8okv6m" path="res://assets/glb_models/nature/plantsa/old_iron.glb" id="3_jer8c"]
+[ext_resource type="PackedScene" uid="uid://co45n63o5btcn" path="res://assets/glb_models/nature/plantsa/old_iron.glb" id="3_jer8c"]
 [ext_resource type="PackedScene" uid="uid://batubq50dnos0" path="res://game/house_materials/windows_double.tscn" id="3_r85fh"]
 [ext_resource type="PackedScene" uid="uid://b2teowpxr3dyw" path="res://game/house_materials/windows_quad.tscn" id="4_r85fh"]
 [ext_resource type="ArrayMesh" uid="uid://c4hr82a5el8n4" path="res://assets/house/house_basement_ceiling.obj" id="4_v87ac"]
@@ -14,38 +14,38 @@
 [ext_resource type="PackedScene" uid="uid://cm5n27ewcws0o" path="res://game/house_materials/locker.tscn" id="6_3a0ml"]
 [ext_resource type="Texture2D" uid="uid://gkcld4u7jl4t" path="res://textures/house/wall basement.jpg" id="6_78vr8"]
 [ext_resource type="ArrayMesh" uid="uid://blafgyi6jmkkf" path="res://assets/house/house_1stFloor_floor.obj" id="6_h3s8l"]
-[ext_resource type="Texture2D" uid="uid://d4bjnsa83nfv4" path="res://assets/glb_models/decoratives/vase/vase_0.png" id="6_wgg7t"]
-[ext_resource type="Texture2D" uid="uid://bkv2lobewubny" path="res://assets/glb_models/decoratives/vase/vase_1.png" id="7_lulxl"]
+[ext_resource type="Texture2D" uid="uid://dn1l7w7r2veuw" path="res://assets/glb_models/decoratives/vase/vase_0.png" id="6_wgg7t"]
+[ext_resource type="Texture2D" uid="uid://dlxamo7llvtwm" path="res://assets/glb_models/decoratives/vase/vase_1.png" id="7_lulxl"]
 [ext_resource type="ArrayMesh" uid="uid://ddjhe1q3f64cs" path="res://assets/house/house_1stFloor_stairs.obj" id="7_sy0w3"]
-[ext_resource type="PackedScene" uid="uid://4umv3d3x0sjs" path="res://assets/glb_models/appliance/piano/piano.glb" id="8_8j78o"]
+[ext_resource type="PackedScene" uid="uid://dnyd5vt8llw0i" path="res://assets/glb_models/appliance/piano/piano.glb" id="8_8j78o"]
 [ext_resource type="Texture2D" uid="uid://cmuedyjmpqp2r" path="res://textures/house/door_wood.png" id="8_lfduw"]
 [ext_resource type="Texture2D" uid="uid://o7bpavlsry4o" path="res://textures/house/wood.jpg" id="8_lxqrr"]
-[ext_resource type="PackedScene" uid="uid://dy1i4fd2178le" path="res://assets/glb_models/decoratives/radio/old_radio.glb" id="9_0m7rp"]
+[ext_resource type="PackedScene" uid="uid://br2g8x35w3oou" path="res://assets/glb_models/decoratives/radio/old_radio.glb" id="9_0m7rp"]
 [ext_resource type="ArrayMesh" uid="uid://dths5gx7lhgpk" path="res://assets/house/house_1stFloor_railings.obj" id="9_w7ycr"]
-[ext_resource type="PackedScene" uid="uid://bvkggs5cs1k4" path="res://assets/glb_models/appliance/tv/soviet_tv_kvn_49.glb" id="10_cxeem"]
+[ext_resource type="PackedScene" uid="uid://b26vxbohi5o6i" path="res://assets/glb_models/appliance/tv/soviet_tv_kvn_49.glb" id="10_cxeem"]
 [ext_resource type="ArrayMesh" uid="uid://bif478twhqmg8" path="res://assets/house/house_2ndFloor_wall.obj" id="10_grb73"]
 [ext_resource type="Texture2D" uid="uid://cuvnmwed5ihoq" path="res://textures/house/floorwood.jpg" id="10_uwpgj"]
-[ext_resource type="PackedScene" uid="uid://d1oryaej72ttb" path="res://assets/glb_models/furniture/vintage_sofa_23mb.glb" id="11_aqw7q"]
+[ext_resource type="PackedScene" uid="uid://cxt7ow8wabipp" path="res://assets/glb_models/furniture/vintage_sofa_23mb.glb" id="11_aqw7q"]
 [ext_resource type="ArrayMesh" uid="uid://ba6mporhfimix" path="res://assets/house/house_2ndFloor_floor.obj" id="11_d2t1g"]
-[ext_resource type="PackedScene" uid="uid://byhgr136syke0" path="res://assets/glb_models/appliance/electricfan/old_table_fan.glb" id="12_44fp5"]
+[ext_resource type="PackedScene" uid="uid://kbgdlredynwg" path="res://assets/glb_models/appliance/electricfan/old_table_fan.glb" id="12_44fp5"]
 [ext_resource type="ArrayMesh" uid="uid://dg0u63u4cjo8o" path="res://assets/house/house_2ndFloor_railings.obj" id="12_p0swl"]
-[ext_resource type="PackedScene" uid="uid://cedod4lkg87w" path="res://assets/glb_models/furniture/bookshelf/wooden_bookcases_with_books.glb" id="13_4j85k"]
+[ext_resource type="PackedScene" uid="uid://c7gjl20e132o5" path="res://assets/glb_models/furniture/bookshelf/wooden_bookcases_with_books.glb" id="13_4j85k"]
 [ext_resource type="Texture2D" uid="uid://bu4l6x0nw24dp" path="res://textures/Roofs/Roofs_10-256x256.png" id="13_86tvv"]
 [ext_resource type="ArrayMesh" uid="uid://bab7m82mvhw0n" path="res://assets/house/house_1stFloorCR_wall.obj" id="14_3qwsg"]
 [ext_resource type="ArrayMesh" uid="uid://okyrs7cqyw8h" path="res://assets/house/house_roof.obj" id="14_glmle"]
 [ext_resource type="PackedScene" uid="uid://tljk6ijf53rp" path="res://assets/glb_models/dining table/game_ready_rustic_table_with_chairs.glb" id="15_7l508"]
 [ext_resource type="ArrayMesh" uid="uid://c7qn8hxxcsb1j" path="res://assets/house/house_1stFloorCR_floor.obj" id="15_re2uc"]
-[ext_resource type="PackedScene" uid="uid://c1uf7a76hm3xd" path="res://assets/glb_models/decoratives/wallclock/vintage_wall_clock.glb" id="16_b5cxr"]
-[ext_resource type="PackedScene" uid="uid://707iy55ib8cp" path="res://assets/glb_models/nature/plant/potted_plant_1.glb" id="17_wgg7t"]
+[ext_resource type="PackedScene" uid="uid://cbyc4x7rvaq5y" path="res://assets/glb_models/decoratives/wallclock/vintage_wall_clock.glb" id="16_b5cxr"]
+[ext_resource type="PackedScene" uid="uid://cov1tn1i13v63" path="res://assets/glb_models/nature/plant/potted_plant_1.glb" id="17_wgg7t"]
 [ext_resource type="PackedScene" uid="uid://cbalkhtrad1j2" path="res://game/house_materials/rug.tscn" id="18_lulxl"]
 [ext_resource type="PackedScene" uid="uid://br6sb3nrrxmx8" path="res://assets/glb_models/fireplace/fireplace_low_poly.glb" id="19_8j78o"]
-[ext_resource type="PackedScene" uid="uid://2pdl235dguyg" path="res://assets/glb_models/decoratives/rug/ancient_bird_carpet.glb" id="20_lulxl"]
-[ext_resource type="PackedScene" uid="uid://cr88koxvlwa1b" path="res://assets/glb_models/nature/plant/snake_plant_2_low_poly.glb" id="21_nvdi6"]
+[ext_resource type="PackedScene" uid="uid://cugxbv5l6dwat" path="res://assets/glb_models/decoratives/rug/ancient_bird_carpet.glb" id="20_lulxl"]
+[ext_resource type="PackedScene" uid="uid://cxtxls3yuaq3y" path="res://assets/glb_models/nature/plant/snake_plant_2_low_poly.glb" id="21_nvdi6"]
 [ext_resource type="ArrayMesh" uid="uid://5855l05mtqhm" path="res://assets/house/house_staircases_stairs.obj" id="21_yewax"]
 [ext_resource type="ArrayMesh" uid="uid://dbgupvuyr0b7r" path="res://assets/house/house_staircases_railings.obj" id="22_1tgmf"]
-[ext_resource type="PackedScene" uid="uid://8208t2mwoa42" path="res://assets/glb_models/decoratives/windowpane/old_wooden_window_from_medieval_ages_mid_poly.glb" id="22_7l508"]
+[ext_resource type="PackedScene" uid="uid://cnetfb0lh64wi" path="res://assets/glb_models/decoratives/windowpane/old_wooden_window_from_medieval_ages_mid_poly.glb" id="22_7l508"]
 [ext_resource type="Texture2D" uid="uid://b4s4kr1q5t1st" path="res://textures/Tile/Tile_25-256x256.png" id="22_puo31"]
-[ext_resource type="PackedScene" uid="uid://igw8bwtbb6ra" path="res://assets/glb_models/decoratives/painting/victorian_framed_painting_pbr_game_ready.glb" id="24_1ixvk"]
+[ext_resource type="PackedScene" uid="uid://dn0fx1do0kb6g" path="res://assets/glb_models/decoratives/painting/victorian_framed_painting_pbr_game_ready.glb" id="24_1ixvk"]
 [ext_resource type="Texture2D" uid="uid://cpi1hkcgflfls" path="res://textures/house/tiles cr.jpg" id="24_ar67c"]
 [ext_resource type="PackedScene" uid="uid://8xctfhe7hrwy" path="res://assets/glb_models/furniture/fbx.glb" id="25_cuchb"]
 [ext_resource type="PackedScene" uid="uid://cfqqhmbwhwrn1" path="res://assets/glb_models/furniture/wooden_stool_ucspai0fa_mid.glb" id="26_edapr"]
@@ -103,11 +103,11 @@
 [ext_resource type="PackedScene" uid="uid://b8l08qx83oehm" path="res://game/house_materials/big_cabinet.tscn" id="67_e4khn"]
 [ext_resource type="PackedScene" uid="uid://c2e70ja2gny6r" path="res://game/house_materials/cabinet.tscn" id="76_1n58x"]
 [ext_resource type="PackedScene" uid="uid://ckcrkebv8berk" path="res://game/house_materials/fridge.tscn" id="76_eeqtj"]
-[ext_resource type="PackedScene" uid="uid://brnieuqyai24p" path="res://assets/glb_models/appliance/electricfan/old_candle.glb" id="80_e4khn"]
+[ext_resource type="PackedScene" uid="uid://sprxob0h16l0" path="res://assets/glb_models/appliance/electricfan/old_candle.glb" id="80_e4khn"]
 [ext_resource type="PackedScene" uid="uid://y7pspaq0n4jf" path="res://assets/glb_models/furniture/bed_with_a_bed_cover.glb" id="83_w7ycr"]
 [ext_resource type="PackedScene" uid="uid://bxoa1koi7m64f" path="res://assets/glb_models/decoratives/wall_decoration_of_grapes_made_of_cork_stoppers.glb" id="85_0e3s6"]
 [ext_resource type="PackedScene" uid="uid://cdd2cjwl7r3mb" path="res://assets/glb_models/decoratives/radio_retrofuturism_lowpoly.glb" id="85_66ev2"]
-[ext_resource type="PackedScene" uid="uid://c0nmgfbu3rh5g" path="res://assets/glb_models/appliance/electricfan/table_fan.glb" id="85_d2t1g"]
+[ext_resource type="PackedScene" uid="uid://ddwamkqkvcmhd" path="res://assets/glb_models/appliance/electricfan/table_fan.glb" id="85_d2t1g"]
 [ext_resource type="PackedScene" uid="uid://bkrafnx215crh" path="res://game/destination.tscn" id="86_d2t1g"]
 [ext_resource type="PackedScene" uid="uid://dbom0jasgiob6" path="res://game/ghost.tscn" id="87_p0swl"]
 [ext_resource type="PackedScene" uid="uid://rdtges48iqdm" path="res://game/house_materials/set_table.tscn" id="88_e4khn"]
@@ -138,7 +138,7 @@
 [ext_resource type="PackedScene" uid="uid://dnnu02t7jckmg" path="res://assets/glb_models/decoratives/phone.glb" id="103_glj3f"]
 [ext_resource type="PackedScene" uid="uid://1qrow8q6otnv" path="res://game/house_materials/shelf2.tscn" id="104_4uiwc"]
 [ext_resource type="PackedScene" uid="uid://d12xntgt0i8k4" path="res://assets/glb_models/chores/lanadropsshadow.tscn" id="104_56x1q"]
-[ext_resource type="PackedScene" uid="uid://d8xnjliuqhj" path="res://assets/glb_models/lights/kerosene_lamp.glb" id="104_uavia"]
+[ext_resource type="PackedScene" uid="uid://b17blnyyxc2xu" path="res://assets/glb_models/lights/kerosene_lamp.glb" id="104_uavia"]
 [ext_resource type="AudioStream" uid="uid://y1xple8gixkr" path="res://soundfx/lana_bubbling.mp3" id="105_4ts8e"]
 [ext_resource type="PackedScene" uid="uid://cehtw2ydchxer" path="res://assets/glb_models/decoratives/random_vase.glb" id="105_ref68"]
 [ext_resource type="PackedScene" uid="uid://cbo4k372s7a4s" path="res://game/house_materials/vintage table.tscn" id="105_rwu8e"]
@@ -148,7 +148,7 @@
 [ext_resource type="PackedScene" uid="uid://dhmaxae3blvh7" path="res://assets/glb_models/furniture/wicker_basket_02.glb" id="110_nafd2"]
 [ext_resource type="PackedScene" uid="uid://brbisn406jwl3" path="res://assets/glb_models/decoratives/wooden_hourglass.glb" id="110_y3wns"]
 [ext_resource type="PackedScene" uid="uid://do0rvl1sxdfrh" path="res://assets/glb_models/basement/book_stand_low_poly.glb" id="111_gvvqw"]
-[ext_resource type="PackedScene" uid="uid://dyrhnan3i2i61" path="res://game/inri.tscn" id="111_puo31"]
+[ext_resource type="PackedScene" path="res://game/inri.tscn" id="111_puo31"]
 [ext_resource type="PackedScene" uid="uid://c5dguj0duawtb" path="res://game/house_materials/locker_wow.tscn" id="112_de7xd"]
 [ext_resource type="PackedScene" uid="uid://vu20j1rcpe78" path="res://assets/glb_models/bathroom/oily_paper_roll_vjxoffps_mid.glb" id="113_gvvqw"]
 [ext_resource type="PackedScene" uid="uid://cddt0m7lgb0xy" path="res://game/house_materials/cabinet sa altar.tscn" id="114_puo31"]
@@ -159,7 +159,7 @@
 [ext_resource type="PackedScene" uid="uid://b5madj0d0u0kn" path="res://assets/glb_models/basement/simple_shield.glb" id="123_f5qeo"]
 [ext_resource type="PackedScene" uid="uid://b2yx3uf3pxlaq" path="res://game/house_materials/workbench_(maopen).tscn" id="123_f48tp"]
 [ext_resource type="PackedScene" uid="uid://da3v5u6cqyvl8" path="res://assets/glb_models/basement/water_heater_used.glb" id="123_re2uc"]
-[ext_resource type="Script" uid="uid://y52gc1lmr4hp" path="res://game/task_candle.gd" id="123_x62yr"]
+[ext_resource type="Script" path="res://game/task_candle.gd" id="123_x62yr"]
 [ext_resource type="PackedScene" uid="uid://doiurcqv5iay1" path="res://assets/glb_models/basement/drinking_water_fountain.glb" id="124_f5qeo"]
 [ext_resource type="PackedScene" uid="uid://ba1xcjufcwwwr" path="res://assets/glb_models/basement/medieval_torch.glb" id="125_yewax"]
 [ext_resource type="PackedScene" uid="uid://b681o5valg1vs" path="res://assets/glb_models/furniture/wardrobe.tscn" id="127_uwpgj"]
@@ -177,11 +177,11 @@
 [ext_resource type="PackedScene" uid="uid://ctuebrv77d1lo" path="res://assets/glb_models/basement/slot_machine.glb" id="152_fe1vq"]
 [ext_resource type="PackedScene" uid="uid://bp5c5j8xkbwkc" path="res://assets/glb_models/basement/rusty_saw_blade_wcvodba_mid.glb" id="152_uwpgj"]
 [ext_resource type="PackedScene" uid="uid://p8yn0m61bg7l" path="res://assets/glb_models/basement/engel_statue_scan_retopology.glb" id="155_y0f4w"]
-[ext_resource type="PackedScene" uid="uid://co6n2sddnm38i" path="res://assets/glb_models/basement/red_statue_photoscan.glb" id="156_7uwel"]
 [ext_resource type="PackedScene" uid="uid://cjbykygq588ib" path="res://assets/glb_models/basement/stone_structure_scnv2_low.glb" id="157_7bjlp"]
 [ext_resource type="PackedScene" uid="uid://c4v4vcqvox65o" path="res://assets/glb_models/basement/wooden_interior_wall_wbhobeedw_low.glb" id="158_agx8e"]
 [ext_resource type="PackedScene" uid="uid://bbnm1ixycgivj" path="res://assets/glb_models/basement/medieval_gothic_chair.glb" id="159_r85fh"]
 [ext_resource type="PackedScene" uid="uid://b8vyvlmlygg47" path="res://assets/glb_models/basement/book_ouija.glb" id="160_7uwel"]
+[ext_resource type="PackedScene" uid="uid://bbs5qv5rmoo71" path="res://game/creepy statue.tscn" id="160_puo31"]
 [ext_resource type="PackedScene" uid="uid://bmsc065woacna" path="res://assets/glb_models/basement/tree_lamp.glb" id="160_qalft"]
 [ext_resource type="PackedScene" uid="uid://c85w4s762poge" path="res://assets/glb_models/basement/cow_head_statue.glb" id="162_puo31"]
 [ext_resource type="PackedScene" uid="uid://csf1p5e7vtr01" path="res://game/house_materials/candel_na_siga.tscn" id="162_y0f4w"]
@@ -523,9 +523,6 @@ func _process(delta: float) -> void:
 [sub_resource type="BoxShape3D" id="BoxShape3D_1numt"]
 size = Vector3(1.935791, 0.79211426, 5.280243)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_41711"]
-size = Vector3(2.5286865, 6.349121, 2.6855469)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_w7ycr"]
 size = Vector3(210.35085, 31.299255, 121.98889)
 
@@ -675,6 +672,9 @@ radius = 0.30517578
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kx6i0"]
 radius = 0.05126953
 height = 0.16516113
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_41711"]
+size = Vector3(2.5286865, 6.349121, 2.6855469)
 
 [node name="House" type="Node3D" groups=["wood"]]
 
@@ -2045,387 +2045,7 @@ collision_layer = 5
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4678955, -0.30799294, -0.26817322)
 shape = SubResource("BoxShape3D_1numt")
 
-[node name="Candle" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -6.475213, 3.6119075, -0.5576472)
-script = null
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable/Candle" groups=["deployable"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable/Candle/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056533813, 2.6745605, -0.039066315)
-shape = SubResource("BoxShape3D_41711")
-
-[node name="Candle2" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -6.475213, 3.6119075, -2.1175444)
-script = null
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable/Candle2" groups=["deployable"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable/Candle2/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056533813, 2.6745605, -0.039066315)
-shape = SubResource("BoxShape3D_41711")
-
-[node name="Candle3" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -6.475213, 3.6119075, 1.7044393)
-script = null
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable/Candle3" groups=["deployable"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable/Candle3/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056533813, 2.6745605, -0.039066315)
-shape = SubResource("BoxShape3D_41711")
-
-[node name="Candle4" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -6.475213, 3.6119075, -1.602923)
-script = null
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable/Candle4" groups=["deployable"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable/Candle4/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056533813, 2.6745605, -0.039066315)
-shape = SubResource("BoxShape3D_41711")
-
-[node name="Candle5" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -6.475213, 3.6119075, 1.1214436)
-script = null
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable/Candle5" groups=["deployable"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable/Candle5/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056533813, 2.6745605, -0.039066315)
-shape = SubResource("BoxShape3D_41711")
-
-[node name="Candle6" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -6.475213, 3.6119075, 0.5854937)
-script = null
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable/Candle6" groups=["deployable"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable/Candle6/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056533813, 2.6745605, -0.039066315)
-shape = SubResource("BoxShape3D_41711")
-
-[node name="Candle7" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -6.475213, 3.6119075, -1.1173574)
-script = null
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable/Candle7" groups=["deployable"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable/Candle7/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056533813, 2.6745605, -0.039066315)
-shape = SubResource("BoxShape3D_41711")
-
-[node name="Candle8" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -6.475213, 3.6119075, 0.02499026)
-script = null
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable/Candle8" groups=["deployable"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable/Candle8/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056533813, 2.6745605, -0.039066315)
-shape = SubResource("BoxShape3D_41711")
-
 [node name="candleAroundTheHouse" type="Node3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle"]
-
-[node name="Candle" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -14.155658, 3.5791962, -20.935963)
-script = null
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle" groups=["equipable"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056533813, 2.6745605, -0.039066315)
-shape = SubResource("BoxShape3D_41711")
-
-[node name="Candle2" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -26.685547, 3.1349654, -4.6069603)
-script = null
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle2" groups=["equipable"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle2/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056533813, 2.6745605, -0.039066315)
-shape = SubResource("BoxShape3D_41711")
-
-[node name="Candle3" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -25.473888, 2.2281497, -32.418087)
-script = null
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle3" groups=["equipable"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle3/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056533813, 2.6745605, -0.039066315)
-shape = SubResource("BoxShape3D_41711")
-
-[node name="Candle4" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -30.466705, 3.1646543, -18.599844)
-script = null
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle4" groups=["equipable"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle4/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056533813, 2.6745605, -0.039066315)
-shape = SubResource("BoxShape3D_41711")
-
-[node name="Candle5" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -29.606827, 10.457549, -18.810781)
-script = null
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle5" groups=["equipable"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle5/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056533813, 2.6745605, -0.039066315)
-shape = SubResource("BoxShape3D_41711")
-
-[node name="Candle6" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -34.045628, 11.056875, -4.6073747)
-script = null
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle6" groups=["equipable"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle6/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056533813, 2.6745605, -0.039066315)
-shape = SubResource("BoxShape3D_41711")
-
-[node name="Candle7" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -11.906799, 11.379071, -6.5383143)
-script = null
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle7" groups=["equipable"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle7/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056533813, 2.6745605, -0.039066315)
-shape = SubResource("BoxShape3D_41711")
-
-[node name="Candle8" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -11.906799, 11.379071, -6.5383143)
-script = null
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle8" groups=["equipable"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle8/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056533813, 2.6745605, -0.039066315)
-shape = SubResource("BoxShape3D_41711")
-
-[node name="Candle9" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -4.7577415, 8.228072, -24.94917)
-script = null
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle9" groups=["equipable"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle9/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056533813, 2.6745605, -0.039066315)
-shape = SubResource("BoxShape3D_41711")
-
-[node name="Candle10" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -2.5393693, 10.555543, -8.13571)
-script = null
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle10" groups=["equipable"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle10/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056533813, 2.6745605, -0.039066315)
-shape = SubResource("BoxShape3D_41711")
-
-[node name="Candle11" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -6.9092293, -5.0192127, 12.923649)
-script = null
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle11" groups=["equipable"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle11/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056533813, 2.6745605, -0.039066315)
-shape = SubResource("BoxShape3D_41711")
-
-[node name="Candle12" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -15.836813, -4.9177213, -16.205137)
-script = null
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle12" groups=["equipable"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle12/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056533813, 2.6745605, -0.039066315)
-shape = SubResource("BoxShape3D_41711")
 
 [node name="Task_Clean statues" type="Node3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS"]
 
@@ -2605,7 +2225,6 @@ transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 0.
 shape = SubResource("CylinderShape3D_ref68")
 
 [node name="BASEMENT ITEMS" type="Node3D" parent="NavigationRegion3D/ITEMS"]
-visible = false
 
 [node name="old box" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS" instance=ExtResource("89_ixt2i")]
 transform = Transform3D(-0.0042785495, 0, 0.014376855, 0, 0.014999999, 0, -0.014376855, 0, -0.0042785495, -13.003421, -5.9511523, -21.048567)
@@ -2851,53 +2470,53 @@ transform = Transform3D(-0.11483141, 0, -0.05692539, 0, 0.12816685, 0, 0.0569253
 [node name="enjel2" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS" instance=ExtResource("155_y0f4w")]
 transform = Transform3D(0.10732746, 0, -0.07005403, 0, 0.12816682, 0, 0.07005403, 0, 0.10732746, -21.543911, -5.952967, -3.5928283)
 
-[node name="statue" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS" instance=ExtResource("156_7uwel")]
-transform = Transform3D(-4.4704504, 0, -4.5336256, 0, 6.367, 0, 4.5336256, 0, -4.4704504, -26.545242, -5.952967, 7.8376565)
+[node name="creepy statue" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS" instance=ExtResource("160_puo31")]
+transform = Transform3D(0.4635255, 0, -1.426585, 0, 1.5, 0, 1.426585, 0, 0.4635255, -27.236916, -5.9628787, 5.209491)
 
-[node name="stone" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS/statue" instance=ExtResource("157_7bjlp")]
-transform = Transform3D(0.5199999, 0, 5.9604645e-08, 0, 0.5200001, 0, -5.9604645e-08, 0, 0.5199999, -0.07644749, 0, -0.03507352)
+[node name="stone" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue" instance=ExtResource("157_7bjlp")]
+transform = Transform3D(1.0158337, 0, -1.959574, 0, 2.2072272, 0, 1.959574, 0, 1.0158337, 1.7916782, 0.0066075325, -0.25371933)
 
-[node name="wood trim" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS/statue" instance=ExtResource("158_agx8e")]
-transform = Transform3D(-0.69368356, 0, 0.25911134, 0, 0.41375408, 0, -0.6802073, 0, -0.26424494, 0.83450365, -0.0047909617, 0.47757983)
+[node name="wood trim" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue/stone" instance=ExtResource("158_agx8e")]
+transform = Transform3D(-1.3340068, 0, 0.49829116, 0, 0.7956807, 0, -1.3080912, 0, -0.5081634, 1.7518301, -0.009213448, 0.98587227)
 
-[node name="cowhead" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS/statue/wood trim" instance=ExtResource("162_puo31")]
+[node name="cowhead" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue/stone/wood trim" instance=ExtResource("162_puo31")]
 transform = Transform3D(-0.013169478, 1.6079866e-09, 1.1145598e-16, 0, -4.6545956e-10, 0.017, 2.0954758e-09, 0.010648472, 7.4309375e-10, 1.4866605, 1.2709036, -0.06407809)
 
-[node name="cowhead2" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS/statue/wood trim" instance=ExtResource("162_puo31")]
+[node name="cowhead2" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue/stone/wood trim" instance=ExtResource("162_puo31")]
 transform = Transform3D(-0.013169478, 1.6079866e-09, 1.1145598e-16, 0, -4.6545956e-10, 0.017, 2.0954758e-09, 0.010648472, 7.4309375e-10, 0.65234137, 1.2701566, -0.10093117)
 
-[node name="wall" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS/statue" instance=ExtResource("163_ar67c")]
-transform = Transform3D(-0.037156582, 0, -0.028715238, 0, 0.045512933, 0, 0.037360746, 0, -0.028558314, 1.4448385, 0.2642401, -1.6211047)
+[node name="wall" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue/stone" instance=ExtResource("163_ar67c")]
+transform = Transform3D(-0.07145499, 0, -0.05522161, 0, 0.08752485, 0, 0.071847595, 0, -0.054919846, 2.9255514, 0.5081538, -3.0500598)
 
-[node name="wall2" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS/statue" instance=ExtResource("163_ar67c")]
-transform = Transform3D(0.037048813, 0, 0.028797366, 0, 0.045512937, 0, -0.03746759, 0, 0.02847549, -1.2307048, 0.2642401, 1.1340442)
+[node name="wall2" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue/stone" instance=ExtResource("163_ar67c")]
+transform = Transform3D(0.071247734, 0, 0.055379547, 0, 0.08752486, 0, -0.07205305, 0, 0.05476057, -2.2197256, 0.5081538, 2.2483034)
 
-[node name="chair" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS/statue" instance=ExtResource("159_r85fh")]
-transform = Transform3D(0.25109887, 0, 0.26053908, 0, 0.30614793, 0, -0.2538307, 0, 0.257735, -1.1312866, 0.024847746, -0.013487816)
+[node name="chair" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue/stone" instance=ExtResource("159_r85fh")]
+transform = Transform3D(0.4828826, 0, 0.5010367, 0, 0.5887459, 0, -0.48813596, 0, 0.49564442, -2.0285363, 0.04778409, 0.04151106)
 
-[node name="chair3" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS/statue/chair" instance=ExtResource("159_r85fh")]
+[node name="chair3" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue/stone/chair" instance=ExtResource("159_r85fh")]
 transform = Transform3D(1, 0, -9.313226e-10, 0, 1, 0, -9.313226e-10, 0, 1, -1.7951872, 0, -0.021734238)
 
-[node name="chair2" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS/statue/chair" instance=ExtResource("159_r85fh")]
+[node name="chair2" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue/stone/chair" instance=ExtResource("159_r85fh")]
 transform = Transform3D(1, 0, -9.313226e-10, 0, 1, 0, -9.313226e-10, 0, 1, -0.94084346, 0, -0.011390686)
 
-[node name="chair2" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS/statue" instance=ExtResource("159_r85fh")]
-transform = Transform3D(-0.25246847, 0, -0.25914085, 0, 0.30614793, 0, 0.25246847, 0, -0.25914085, -0.59940314, 0.024847746, 1.4722939)
+[node name="chair2" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue/stone" instance=ExtResource("159_r85fh")]
+transform = Transform3D(-0.48551643, 0, -0.4983478, 0, 0.5887459, 0, 0.48551628, 0, -0.49834794, -1.0056834, 0.04778409, 2.8987842)
 
-[node name="chair3" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS/statue/chair2" instance=ExtResource("159_r85fh")]
+[node name="chair3" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue/stone/chair2" instance=ExtResource("159_r85fh")]
 transform = Transform3D(1, 0, -9.313226e-10, 0, 1, 0, -9.313226e-10, 0, 1, -1.7951872, 0, -0.021734238)
 
-[node name="chair2" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS/statue/chair2" instance=ExtResource("159_r85fh")]
+[node name="chair2" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue/stone/chair2" instance=ExtResource("159_r85fh")]
 transform = Transform3D(1, 0, -9.313226e-10, 0, 1, 0, -9.313226e-10, 0, 1, -0.94084346, 0, -0.011390686)
 
-[node name="Sketchfab_Scene" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS/statue/chair2/chair2" instance=ExtResource("160_7uwel")]
+[node name="Sketchfab_Scene" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue/stone/chair2/chair2" instance=ExtResource("160_7uwel")]
 transform = Transform3D(0.16908449, 0, -0.06172893, 0, 0.18000007, 0, 0.061728932, 0, 0.16908444, -0.00032000244, 0.69587255, 0.044433594)
 
-[node name="tree lamp" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS/statue" instance=ExtResource("160_qalft")]
-transform = Transform3D(-0.060101982, 0, 0.06010617, 0, 0.085, 0, -0.06010617, 0, -0.060101982, -0.489913, 0.100845695, -0.49683738)
+[node name="tree lamp" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue/stone" instance=ExtResource("160_qalft")]
+transform = Transform3D(-0.11558074, 0, 0.115588814, 0, 0.1634615, 0, -0.115588814, 0, -0.11558074, -0.7951255, 0.19393396, -0.8880069)
 
-[node name="tree lamp2" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS/statue" instance=ExtResource("160_qalft")]
-transform = Transform3D(-0.060101982, 0, 0.06010617, 0, 0.085, 0, -0.06010617, 0, -0.060101982, 0.32368374, 0.100845695, 0.32825685)
+[node name="tree lamp2" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue/stone" instance=ExtResource("160_qalft")]
+transform = Transform3D(-0.11558074, 0, 0.115588814, 0, 0.1634615, 0, -0.115588814, 0, -0.11558074, 0.76948357, 0.19393396, 0.69871235)
 
 [node name="weirdo na bookstanf" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS" instance=ExtResource("111_gvvqw")]
 transform = Transform3D(-1.2, 0, -1.8119498e-07, 0, 1.2, 0, 1.8119498e-07, 0, -1.2, -25.96046, -5.952967, 3.3606553)
@@ -3035,6 +2654,126 @@ transform = Transform3D(-0.20632815, 0, -3.9396007, 0, 3.945, 0, 3.9396007, 0, -
 
 [node name="ceiling light2" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS" instance=ExtResource("50_r85fh")]
 transform = Transform3D(-0.20632815, 0, -3.9396007, 0, 3.945, 0, 3.9396007, 0, -0.20632815, -10.481986, -0.19134218, 1.9543223)
+
+[node name="NavigationRegion3D_ITEMS_CHORES ITEMS_Task_Candle_altarTable_Candle#StaticBody3D" type="StaticBody3D" parent="." groups=["deployable"]]
+
+[node name="NavigationRegion3D_ITEMS_CHORES ITEMS_Task_Candle_altarTable_Candle_StaticBody3D#CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056533813, 2.6745605, -0.039066315)
+shape = SubResource("BoxShape3D_41711")
+
+[node name="NavigationRegion3D_ITEMS_CHORES ITEMS_Task_Candle_altarTable_Candle2#StaticBody3D" type="StaticBody3D" parent="." groups=["deployable"]]
+
+[node name="NavigationRegion3D_ITEMS_CHORES ITEMS_Task_Candle_altarTable_Candle2_StaticBody3D#CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056533813, 2.6745605, -0.039066315)
+shape = SubResource("BoxShape3D_41711")
+
+[node name="NavigationRegion3D_ITEMS_CHORES ITEMS_Task_Candle_altarTable_Candle3#StaticBody3D" type="StaticBody3D" parent="." groups=["deployable"]]
+
+[node name="NavigationRegion3D_ITEMS_CHORES ITEMS_Task_Candle_altarTable_Candle3_StaticBody3D#CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056533813, 2.6745605, -0.039066315)
+shape = SubResource("BoxShape3D_41711")
+
+[node name="NavigationRegion3D_ITEMS_CHORES ITEMS_Task_Candle_altarTable_Candle4#StaticBody3D" type="StaticBody3D" parent="." groups=["deployable"]]
+
+[node name="NavigationRegion3D_ITEMS_CHORES ITEMS_Task_Candle_altarTable_Candle4_StaticBody3D#CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056533813, 2.6745605, -0.039066315)
+shape = SubResource("BoxShape3D_41711")
+
+[node name="NavigationRegion3D_ITEMS_CHORES ITEMS_Task_Candle_altarTable_Candle5#StaticBody3D" type="StaticBody3D" parent="." groups=["deployable"]]
+
+[node name="NavigationRegion3D_ITEMS_CHORES ITEMS_Task_Candle_altarTable_Candle5_StaticBody3D#CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056533813, 2.6745605, -0.039066315)
+shape = SubResource("BoxShape3D_41711")
+
+[node name="NavigationRegion3D_ITEMS_CHORES ITEMS_Task_Candle_altarTable_Candle6#StaticBody3D" type="StaticBody3D" parent="." groups=["deployable"]]
+
+[node name="NavigationRegion3D_ITEMS_CHORES ITEMS_Task_Candle_altarTable_Candle6_StaticBody3D#CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056533813, 2.6745605, -0.039066315)
+shape = SubResource("BoxShape3D_41711")
+
+[node name="NavigationRegion3D_ITEMS_CHORES ITEMS_Task_Candle_altarTable_Candle7#StaticBody3D" type="StaticBody3D" parent="." groups=["deployable"]]
+
+[node name="NavigationRegion3D_ITEMS_CHORES ITEMS_Task_Candle_altarTable_Candle7_StaticBody3D#CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056533813, 2.6745605, -0.039066315)
+shape = SubResource("BoxShape3D_41711")
+
+[node name="NavigationRegion3D_ITEMS_CHORES ITEMS_Task_Candle_altarTable_Candle8#StaticBody3D" type="StaticBody3D" parent="." groups=["deployable"]]
+
+[node name="NavigationRegion3D_ITEMS_CHORES ITEMS_Task_Candle_altarTable_Candle8_StaticBody3D#CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056533813, 2.6745605, -0.039066315)
+shape = SubResource("BoxShape3D_41711")
+
+[node name="NavigationRegion3D_ITEMS_CHORES ITEMS_Task_Candle_candleAroundTheHouse_Candle#StaticBody3D" type="StaticBody3D" parent="." groups=["equipable"]]
+
+[node name="NavigationRegion3D_ITEMS_CHORES ITEMS_Task_Candle_candleAroundTheHouse_Candle_StaticBody3D#CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056533813, 2.6745605, -0.039066315)
+shape = SubResource("BoxShape3D_41711")
+
+[node name="NavigationRegion3D_ITEMS_CHORES ITEMS_Task_Candle_candleAroundTheHouse_Candle2#StaticBody3D" type="StaticBody3D" parent="." groups=["equipable"]]
+
+[node name="NavigationRegion3D_ITEMS_CHORES ITEMS_Task_Candle_candleAroundTheHouse_Candle2_StaticBody3D#CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056533813, 2.6745605, -0.039066315)
+shape = SubResource("BoxShape3D_41711")
+
+[node name="NavigationRegion3D_ITEMS_CHORES ITEMS_Task_Candle_candleAroundTheHouse_Candle3#StaticBody3D" type="StaticBody3D" parent="." groups=["equipable"]]
+
+[node name="NavigationRegion3D_ITEMS_CHORES ITEMS_Task_Candle_candleAroundTheHouse_Candle3_StaticBody3D#CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056533813, 2.6745605, -0.039066315)
+shape = SubResource("BoxShape3D_41711")
+
+[node name="NavigationRegion3D_ITEMS_CHORES ITEMS_Task_Candle_candleAroundTheHouse_Candle4#StaticBody3D" type="StaticBody3D" parent="." groups=["equipable"]]
+
+[node name="NavigationRegion3D_ITEMS_CHORES ITEMS_Task_Candle_candleAroundTheHouse_Candle4_StaticBody3D#CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056533813, 2.6745605, -0.039066315)
+shape = SubResource("BoxShape3D_41711")
+
+[node name="NavigationRegion3D_ITEMS_CHORES ITEMS_Task_Candle_candleAroundTheHouse_Candle5#StaticBody3D" type="StaticBody3D" parent="." groups=["equipable"]]
+
+[node name="NavigationRegion3D_ITEMS_CHORES ITEMS_Task_Candle_candleAroundTheHouse_Candle5_StaticBody3D#CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056533813, 2.6745605, -0.039066315)
+shape = SubResource("BoxShape3D_41711")
+
+[node name="NavigationRegion3D_ITEMS_CHORES ITEMS_Task_Candle_candleAroundTheHouse_Candle6#StaticBody3D" type="StaticBody3D" parent="." groups=["equipable"]]
+
+[node name="NavigationRegion3D_ITEMS_CHORES ITEMS_Task_Candle_candleAroundTheHouse_Candle6_StaticBody3D#CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056533813, 2.6745605, -0.039066315)
+shape = SubResource("BoxShape3D_41711")
+
+[node name="NavigationRegion3D_ITEMS_CHORES ITEMS_Task_Candle_candleAroundTheHouse_Candle7#StaticBody3D" type="StaticBody3D" parent="." groups=["equipable"]]
+
+[node name="NavigationRegion3D_ITEMS_CHORES ITEMS_Task_Candle_candleAroundTheHouse_Candle7_StaticBody3D#CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056533813, 2.6745605, -0.039066315)
+shape = SubResource("BoxShape3D_41711")
+
+[node name="NavigationRegion3D_ITEMS_CHORES ITEMS_Task_Candle_candleAroundTheHouse_Candle8#StaticBody3D" type="StaticBody3D" parent="." groups=["equipable"]]
+
+[node name="NavigationRegion3D_ITEMS_CHORES ITEMS_Task_Candle_candleAroundTheHouse_Candle8_StaticBody3D#CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056533813, 2.6745605, -0.039066315)
+shape = SubResource("BoxShape3D_41711")
+
+[node name="NavigationRegion3D_ITEMS_CHORES ITEMS_Task_Candle_candleAroundTheHouse_Candle9#StaticBody3D" type="StaticBody3D" parent="." groups=["equipable"]]
+
+[node name="NavigationRegion3D_ITEMS_CHORES ITEMS_Task_Candle_candleAroundTheHouse_Candle9_StaticBody3D#CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056533813, 2.6745605, -0.039066315)
+shape = SubResource("BoxShape3D_41711")
+
+[node name="NavigationRegion3D_ITEMS_CHORES ITEMS_Task_Candle_candleAroundTheHouse_Candle10#StaticBody3D" type="StaticBody3D" parent="." groups=["equipable"]]
+
+[node name="NavigationRegion3D_ITEMS_CHORES ITEMS_Task_Candle_candleAroundTheHouse_Candle10_StaticBody3D#CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056533813, 2.6745605, -0.039066315)
+shape = SubResource("BoxShape3D_41711")
+
+[node name="NavigationRegion3D_ITEMS_CHORES ITEMS_Task_Candle_candleAroundTheHouse_Candle11#StaticBody3D" type="StaticBody3D" parent="." groups=["equipable"]]
+
+[node name="NavigationRegion3D_ITEMS_CHORES ITEMS_Task_Candle_candleAroundTheHouse_Candle11_StaticBody3D#CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056533813, 2.6745605, -0.039066315)
+shape = SubResource("BoxShape3D_41711")
+
+[node name="NavigationRegion3D_ITEMS_CHORES ITEMS_Task_Candle_candleAroundTheHouse_Candle12#StaticBody3D" type="StaticBody3D" parent="." groups=["equipable"]]
+
+[node name="NavigationRegion3D_ITEMS_CHORES ITEMS_Task_Candle_candleAroundTheHouse_Candle12_StaticBody3D#CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0056533813, 2.6745605, -0.039066315)
+shape = SubResource("BoxShape3D_41711")
 
 [editable path="NavigationRegion3D/ITEMS/2ND FLOOR ITEMS/shelf2(maopen)"]
 [editable path="NavigationRegion3D/ITEMS/2ND FLOOR ITEMS/shelf3(maopen)"]

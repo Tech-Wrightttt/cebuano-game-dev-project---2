@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbs5qv5rmoo71"]
+
+[ext_resource type="PackedScene" uid="uid://s7dncpia6xh0" path="res://assets/glb_models/il_commendatore.glb" id="1_fr333"]
+
+[node name="creepy statue" instance=ExtResource("1_fr333")]
+
+[node name="meshNode" parent="Sketchfab_model/commedia_fbx/RootNode" index="0"]
+transform = Transform3D(1.9470718e-08, 0.1, 4.371139e-09, 0, -4.371139e-09, 0.1, 0.1, -1.9470718e-08, -8.510921e-16, 0, 0, 0)
