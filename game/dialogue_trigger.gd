@@ -22,7 +22,8 @@ func _ready() -> void:
 	continue_button.pressed.connect(continue_dialogue)
 
 func start_dialogue(body):
-	if body == player and !started:
+	# Add player.dialogue_active check to prevent overlapping dialogues
+	if body == player and !started and !player.dialogue_active:
 		started = true
 		player.dialogue_active = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -38,7 +39,14 @@ func end_dialogue():
 	player.MOUSE_SENS = 0.0005
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	first_dialogue.visible = false
+	
+	# Reset ALL dialogue state variables
 	started = false
+	current_dialogue = -1  # Reset so next trigger starts from beginning
+	
+	# Stop any ongoing animation
+	if text_animation.is_playing():
+		text_animation.stop()
 
 func continue_dialogue():
 	current_dialogue += 1
