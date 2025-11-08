@@ -37,20 +37,27 @@ func _physics_process(_delta: float) -> void:
 	chase_player($RayCast3D4)
 	chase_player($RayCast3D5)
 	
-	if destination != null and not agent.is_navigation_finished():
+	if destination != null:
 		var current_location = global_position
-		var next_location = agent.get_next_path_position()
+		var distance_to_dest = current_location.distance_to(destination.global_position)
 		
-		# Calculate direction including vertical component
-		var direction = (next_location - current_location).normalized()
-		var new_velocity = direction * speed
-		
-		# Use the NavigationAgent's velocity computation
-		agent.set_velocity(new_velocity)
-	
-	# Check if patrol destination reached
-	if !chasing and agent.is_navigation_finished():
-		pick_destination(destination_value)
+		# Continue moving until within 1.5m of destination
+		if distance_to_dest > 1.5:
+			var next_location = agent.get_next_path_position()
+			
+			# Calculate direction including vertical component
+			var direction = (next_location - current_location).normalized()
+			
+			# Speed boost for stairs
+			var speed_multiplier = 1.3 if direction.y > 0.02 else 1.0
+			var new_velocity = direction * speed * speed_multiplier
+			
+			# Use the NavigationAgent's velocity computation
+			agent.set_velocity(new_velocity)
+		else:
+			# Stop when close enough
+			if !chasing:
+				pick_destination(destination_value)
 
 func _on_velocity_computed(safe_velocity: Vector3) -> void:
 	# Use the computed velocity from NavigationAgent
