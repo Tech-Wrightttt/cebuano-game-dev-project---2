@@ -1,7 +1,8 @@
-[gd_scene load_steps=30 format=3 uid="uid://bob5k3jp6dsgc"]
+[gd_scene load_steps=31 format=3 uid="uid://bob5k3jp6dsgc"]
 
 [ext_resource type="Texture2D" uid="uid://bvdwayp7w2erl" path="res://textures/environment/grass.jpg" id="1_8bv7i"]
 [ext_resource type="PackedScene" uid="uid://bd8sk3hxv1lu0" path="res://assets/glb_models/fence/japanese_park_stone_floor_uljcfd0_mid.glb" id="1_50vgw"]
+[ext_resource type="Script" uid="uid://c0bd0cp5x50et" path="res://game/level.gd" id="1_mgnlv"]
 [ext_resource type="PackedScene" uid="uid://o7gchgjqr1i6" path="res://game/player.tscn" id="1_u52ul"]
 [ext_resource type="PackedScene" uid="uid://bhdnah86wfvhg" path="res://assets/glb_models/fence/fence_and_column.glb" id="2_0w1ik"]
 [ext_resource type="PackedScene" uid="uid://cmgn2dijv665c" path="res://dialogues/first_dialogue.tscn" id="2_1565f"]
@@ -80,6 +81,7 @@ data = PackedVector3Array(250, 0, 250, -250, 0, 250, 250, 0, -250, -250, 0, 250,
 [sub_resource type="FogMaterial" id="FogMaterial_x5me8"]
 
 [node name="level" type="Node3D"]
+script = ExtResource("1_mgnlv")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_noarx")
