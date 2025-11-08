@@ -5,6 +5,7 @@
 [sub_resource type="BoxMesh" id="BoxMesh_svn8e"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ousu6"]
+size = Vector3(0.92137146, 0.89938736, 0.835022)
 
 [node name="destination" type="Node3D"]
 transform = Transform3D(-0.2840715, 0, 0, 0, 0.20743556, 0, 0, 0, 0.28774792, 0, 0, 0)

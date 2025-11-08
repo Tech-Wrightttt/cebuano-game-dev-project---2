@@ -48,4 +48,4 @@ collision_mask = 131
 [node name="ghost_model_animation" parent="." instance=ExtResource("2_io021")]
 transform = Transform3D(-1.5, 0, -1.3113416e-07, 0, 1.5, 0, 1.3113416e-07, 0, -1.5, 0.026069656, -1.062, 0)
 
-[connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_velocity_computed"]
+[connection signal="velocity_computed" from="NavigationAgent3D" to="." method="compute_velocity"]
