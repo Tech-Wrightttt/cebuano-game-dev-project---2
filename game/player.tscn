@@ -26,7 +26,7 @@ script/source = "extends CharacterBody3D
 #test
 
 # Movement
-var SPEED: float = 4.5
+const SPEED: float = 4.5
 const SPRINT_SPEED: float = 8.0
 const ACCEL: float = 20.0
 const FRICTION: float = 30.0
@@ -35,7 +35,7 @@ const JUMP_VELOCITY: float = 5.0
 
 
 # Look
-var MOUSE_SENS: float = 0.0005
+const MOUSE_SENS: float = 0.0005
 const MAX_PITCH: float = deg_to_rad(89.0)
 
 # Head bob
@@ -72,7 +72,6 @@ var bob_time: float = 0.0
 var cam_rest_y: float = 0.0
 var idle_ready: bool = false
 var is_attacking: bool = false
-var dialogue_active: bool = false
 
 # Stair tracking
 var _snapped_to_stairs_last_frame: bool = false
@@ -147,10 +146,6 @@ func _input(event: InputEvent) -> void:
 
 
 func _try_punch() -> void:
-	# Don't punch if dialogue is active
-	if dialogue_active:
-		return
-		
 	if not is_attacking and idle_ready and anim:
 		is_attacking = true
 		anim.play(\"Combat_punch_left\")
@@ -402,7 +397,7 @@ _data = {
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.625, 0)
 collision_layer = 3
-collision_mask = 7
+collision_mask = 3
 script = SubResource("GDScript_sh265")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
