@@ -14,9 +14,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.37709844, -0.08005732)
 shape = SubResource("CapsuleShape3D_b6vni")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-path_desired_distance = 2.0
-target_desired_distance = 2.0
-path_max_distance = 5.01
+path_desired_distance = 1.5
+path_max_distance = 3.01
 avoidance_enabled = true
 radius = 0.4
 debug_enabled = true
@@ -49,4 +48,4 @@ collision_mask = 131
 [node name="ghost_model_animation" parent="." instance=ExtResource("2_io021")]
 transform = Transform3D(-1.5, 0, -1.3113416e-07, 0, 1.5, 0, 1.3113416e-07, 0, -1.5, 0.026069656, -1.062, 0)
 
-[connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_velocity_computed"]
+[connection signal="velocity_computed" from="NavigationAgent3D" to="." method="compute_velocity"]
