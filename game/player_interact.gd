@@ -2,7 +2,7 @@ extends RayCast3D
 
 @onready var crosshair = get_parent().get_parent().get_node("player_ui/CanvasLayer/crosshair")
 @onready var interaction_label: Label = $"../Filters/Interaction_Label"
-@onready var take_item: AudioStreamPlayer3D = $"../../../Sounds/Take_Item"
+@onready var take_item: AudioStreamPlayer3D = $"../../Sounds/Take_Item"
 # Map groups to the method to call and the key to display
 var group_interactions := {
 	"interactable": {"method": "interact", "key": "E", "type": "press"},
@@ -21,7 +21,6 @@ var is_holding_interact: bool = false  # Track when player is holding an interac
 
 func _physics_process(delta: float) -> void:
 	var collider = get_collider()
-
 	# --- RESET LOGIC (WHEN LOOKING AT NOTHING) ---
 	if not collider or (collider is CollisionShape3D and collider.disabled):
 		if interaction_label:
@@ -56,20 +55,17 @@ func _physics_process(delta: float) -> void:
 		if collider.is_in_group(group_name):
 			if !crosshair.visible:
 				crosshair.visible = true
-			
 			# Get all interaction data from the map
 			var data = group_interactions[group_name]
 			var method_name = data["method"]
 			var key_text = data["key"]
 			var interaction_type = data["type"] # Get the "type" ("press" or "hold")
-
 			# Walk up the tree to find the method
 			var node = collider
 			while node and not node.has_method(method_name):
 				node = node.get_parent()
 
 			if node and node.has_method(method_name):
-				
 				# Check if player looked at a NEW object
 				if last_collider != collider:
 					if last_node_with_method and last_node_with_method.has_method("stop_deploy_sound"):
@@ -82,13 +78,10 @@ func _physics_process(delta: float) -> void:
 				last_node_with_method = node
 
 				var input_action = "interact" if key_text == "E" else "item_interact"
-
 				# --- START: LOGIC BASED ON INTERACTION TYPE ---
-				
 				if interaction_type == "hold":
 					# Determine hold duration based on group
 					var hold_duration = WINDOW_HOLD_DURATION if group_name == "window" else USE_HOLD_DURATION
-					
 					# --- HOLD LOGIC (for "hold_deploy" and "window") ---
 					if Input.is_action_just_pressed(input_action):
 						if node.has_method("start_deploy_sound") and group_name == "hold_deploy":
@@ -98,13 +91,11 @@ func _physics_process(delta: float) -> void:
 						# Key is being held
 						is_holding_interact = true  # FIX: Set to true when holding
 						hold_time += delta
-						
 						# Update label to show progress
 						var percent = int(clamp(hold_time / hold_duration, 0.0, 1.0) * 100)
 						if interaction_label:
 							interaction_label.text = "[Hold %s] %s... %d%%" % [key_text, method_name.capitalize(), percent]
 							interaction_label.show()
-
 						if hold_time >= hold_duration:
 							# --- ACTION TRIGGERED ---
 							if group_name == "hold_deploy":
@@ -148,7 +139,7 @@ func _physics_process(delta: float) -> void:
 						elif method_name == "take":
 							take_item.volume_db = -33
 							take_item.play()
-							node.call(method_name)
+							node.call("take", collider)
 						else: # This will catch "interact"
 							node.call(method_name)
 						
