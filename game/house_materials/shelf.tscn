@@ -1,16 +1,16 @@
 [gd_scene load_steps=37 format=4 uid="uid://c43vavoy84a4n"]
 
-[ext_resource type="Texture2D" uid="uid://lhdlpb2dsh1y" path="res://assets/glb_models/furniture/game_ready_free_bedroom_shelf_0.png" id="1_yvyij"]
-[ext_resource type="Texture2D" uid="uid://e1cy0hv1uf8y" path="res://assets/glb_models/furniture/game_ready_free_bedroom_shelf_1.png" id="2_yaice"]
-[ext_resource type="Texture2D" uid="uid://dbgv1f01s221n" path="res://assets/glb_models/furniture/game_ready_free_bedroom_shelf_2.png" id="3_pkllq"]
+[ext_resource type="Texture2D" uid="uid://cmfcaopwsqc46" path="res://assets/glb_models/furniture/game_ready_free_bedroom_shelf_0.png" id="1_yvyij"]
+[ext_resource type="Texture2D" uid="uid://c3x1yhnmhmdy3" path="res://assets/glb_models/furniture/game_ready_free_bedroom_shelf_1.png" id="2_yaice"]
+[ext_resource type="Texture2D" uid="uid://bbfyntajayg28" path="res://assets/glb_models/furniture/game_ready_free_bedroom_shelf_2.png" id="3_pkllq"]
 [ext_resource type="Script" uid="uid://df2adwbd5w5c4" path="res://game/house_materials/drawer_1.gd" id="4_4lvyu"]
 [ext_resource type="Script" uid="uid://broro0dvwbx6j" path="res://game/house_materials/drawer_2.gd" id="5_6mb0y"]
 [ext_resource type="Script" uid="uid://b0y8lx1t2qey7" path="res://game/house_materials/drawer_3.gd" id="6_3o8wv"]
 [ext_resource type="Script" uid="uid://byhly5y2o4j5f" path="res://game/house_materials/drawer_4.gd" id="7_xlnke"]
 [ext_resource type="Script" uid="uid://1k3xb2ihqh1d" path="res://game/house_materials/drawer_5.gd" id="8_d1fx7"]
 [ext_resource type="Script" uid="uid://crpbnstw0x5e1" path="res://game/house_materials/drawer_6.gd" id="9_sto7o"]
-[ext_resource type="AudioStream" uid="uid://fr54bymvcqui" path="res://soundfx/drawer_open.mp3" id="10_tin72"]
-[ext_resource type="AudioStream" uid="uid://buc7p7higq36r" path="res://soundfx/drawer_close.mp3" id="11_cs2wl"]
+[ext_resource type="AudioStream" uid="uid://ba0vtq0cfo1ig" path="res://soundfx/drawer_open.mp3" id="10_tin72"]
+[ext_resource type="AudioStream" uid="uid://b41qjn3ejr7r" path="res://soundfx/drawer_close.mp3" id="11_cs2wl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5stsa"]
 resource_name = "Bedroom_Shelf"
@@ -172,7 +172,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("RootNode/DRAWER1/Object_8:position")
+tracks/0/path = NodePath("RootNode/DRAWER1/Door:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -184,7 +184,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("RootNode/DRAWER2/Object_11:position")
+tracks/1/path = NodePath("RootNode/DRAWER2/Door:position")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -196,7 +196,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("RootNode/DRAWER3/Object_11:position")
+tracks/2/path = NodePath("RootNode/DRAWER3/Door:position")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -208,7 +208,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("RootNode/DRAWER4/Object_17:position")
+tracks/3/path = NodePath("RootNode/DRAWER4/Door:position")
 tracks/3/interp = 2
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -220,7 +220,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("RootNode/DRAWER5/Object_17:position")
+tracks/4/path = NodePath("RootNode/DRAWER5/Door:position")
 tracks/4/interp = 2
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -232,7 +232,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("RootNode/DRAWER6/Object_17:position")
+tracks/5/path = NodePath("RootNode/DRAWER6/Door:position")
 tracks/5/interp = 2
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -241,6 +241,78 @@ tracks/5/keys = {
 "update": 0,
 "values": [Vector3(-28.249733, -2.625082, -27.84211)]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("RootNode/DRAWER6/Door/AnimatableBody3D:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -20.874607, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("RootNode/DRAWER1/Door/AnimatableBody3D:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("RootNode/DRAWER2/Door/AnimatableBody3D:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("RootNode/DRAWER3/Door/AnimatableBody3D:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("RootNode/DRAWER4/Door/AnimatableBody3D:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -20.874607, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("RootNode/DRAWER5/Door/AnimatableBody3D:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -20.874607, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_8exv8"]
 resource_name = "close_shelf_1"
@@ -248,7 +320,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("RootNode/DRAWER1/Object_8:position")
+tracks/0/path = NodePath("RootNode/DRAWER1/Door:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -256,6 +328,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(-28.25, 30.000002, -27.842), Vector3(-28.25, -2.625, -27.842)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RootNode/DRAWER1/Door/AnimatableBody3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_e3ukp"]
@@ -264,71 +348,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("RootNode/DRAWER2/Object_11:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-28.25, 30, -27.842), Vector3(-28.25, -2.625, -27.842)]
-}
-
-[sub_resource type="Animation" id="Animation_eak4o"]
-resource_name = "close_shelf_3"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("RootNode/DRAWER3/Object_11:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-28.25, 30, -27.842), Vector3(-28.25, -2.625, -27.842)]
-}
-
-[sub_resource type="Animation" id="Animation_0emut"]
-resource_name = "close_shelf_4"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("RootNode/DRAWER4/Object_17:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-28.25, 30, -27.842), Vector3(-28.25, -2.625, -27.842)]
-}
-
-[sub_resource type="Animation" id="Animation_u3rvb"]
-resource_name = "close_shelf_5"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("RootNode/DRAWER5/Object_17:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-28.25, 30, -27.842), Vector3(-28.249733, -2.625082, -27.84211)]
-}
-
-[sub_resource type="Animation" id="Animation_eopsx"]
-resource_name = "close_shelf_6"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("RootNode/DRAWER6/Object_17:position")
+tracks/0/path = NodePath("RootNode/DRAWER2/Door:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -337,6 +357,130 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(-28.25, 30.000002, -27.842), Vector3(-28.25, -2.625, -27.842)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RootNode/DRAWER2/Door/AnimatableBody3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_eak4o"]
+resource_name = "close_shelf_3"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RootNode/DRAWER3/Door:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-28.25, 30.000002, -27.842), Vector3(-28.25, -2.625, -27.842)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RootNode/DRAWER3/Door/AnimatableBody3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0emut"]
+resource_name = "close_shelf_4"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RootNode/DRAWER4/Door:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-28.25, 30.000002, -27.842), Vector3(-28.25, -2.625, -27.842)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RootNode/DRAWER4/Door/AnimatableBody3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -20.874607, 0), Vector3(0, -20.874607, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_u3rvb"]
+resource_name = "close_shelf_5"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RootNode/DRAWER5/Door:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-28.25, 30.000002, -27.842), Vector3(-28.249733, -2.625082, -27.84211)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RootNode/DRAWER5/Door/AnimatableBody3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -20.874607, 0), Vector3(0, -20.874607, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_eopsx"]
+resource_name = "close_shelf_6"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RootNode/DRAWER6/Door:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-28.25, 30.000002, -27.842), Vector3(-28.25, -2.625, -27.842)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RootNode/DRAWER6/Door/AnimatableBody3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -20.874607, 0), Vector3(0, -20.874607, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_s3kcy"]
 resource_name = "open_shelf_1"
@@ -344,14 +488,26 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("RootNode/DRAWER1/Object_8:position")
+tracks/0/path = NodePath("RootNode/DRAWER1/Door:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(-28.249733, -2.625082, -27.84211), Vector3(-28.25, 30, -27.842)]
+"values": [Vector3(-28.249733, -2.625082, -27.84211), Vector3(-28.25, 30.000002, -27.842)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RootNode/DRAWER1/Door/AnimatableBody3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_jiy05"]
@@ -360,14 +516,26 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("RootNode/DRAWER2/Object_11:position")
+tracks/0/path = NodePath("RootNode/DRAWER2/Door:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(-28.249733, -2.625082, -27.84211), Vector3(-28.25, 30, -27.842)]
+"values": [Vector3(-28.249733, -2.625082, -27.84211), Vector3(-28.25, 30.000002, -27.842)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RootNode/DRAWER2/Door/AnimatableBody3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_m4ori"]
@@ -376,14 +544,26 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("RootNode/DRAWER3/Object_11:position")
+tracks/0/path = NodePath("RootNode/DRAWER3/Door:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(-28.249733, -2.625082, -27.84211), Vector3(-28.25, 30, -27.842)]
+"values": [Vector3(-28.249733, -2.625082, -27.84211), Vector3(-28.25, 30.000002, -27.842)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RootNode/DRAWER3/Door/AnimatableBody3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_p33aw"]
@@ -392,14 +572,26 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("RootNode/DRAWER4/Object_17:position")
+tracks/0/path = NodePath("RootNode/DRAWER4/Door:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(-28.249733, -2.625082, -27.84211), Vector3(-28.25, 30, -27.842)]
+"values": [Vector3(-28.249733, -2.625082, -27.84211), Vector3(-28.25, 30.000002, -27.842)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RootNode/DRAWER4/Door/AnimatableBody3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -20.874607, 0), Vector3(0, -20.874607, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_jtp2d"]
@@ -408,14 +600,26 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("RootNode/DRAWER5/Object_17:position")
+tracks/0/path = NodePath("RootNode/DRAWER5/Door:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(-28.249733, -2.625082, -27.84211), Vector3(-28.25, 30, -27.842)]
+"values": [Vector3(-28.249733, -2.625082, -27.84211), Vector3(-28.25, 30.000002, -27.842)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RootNode/DRAWER5/Door/AnimatableBody3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -20.874607, 0), Vector3(0, -20.874607, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_3jn8n"]
@@ -424,14 +628,26 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("RootNode/DRAWER6/Object_17:position")
+tracks/0/path = NodePath("RootNode/DRAWER6/Door:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.49),
+"times": PackedFloat32Array(0, 0.49, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-28.249733, -2.625082, -27.84211), Vector3(-28.25, 30, -27.842), Vector3(-28.25, 30.000002, -27.842)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RootNode/DRAWER6/Door/AnimatableBody3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(-28.249733, -2.625082, -27.84211), Vector3(-28.25, 30, -27.842)]
+"values": [Vector3(0, -20.874607, 0), Vector3(0, -20.874607, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eb0hb"]
@@ -466,27 +682,27 @@ transform = Transform3D(6.123234e-17, 0, -1, 0, 1, 0, 1, 0, 6.123234e-17, 12.218
 mesh = SubResource("ArrayMesh_42dov")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RootNode/Base/Object_5"]
+[node name="AnimatableBody3D" type="StaticBody3D" parent="RootNode/Base/Object_5"]
 transform = Transform3D(1, 0, 6.617445e-24, 0, 1, 0, -6.617445e-24, 0, 1, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RootNode/Base/Object_5/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RootNode/Base/Object_5/AnimatableBody3D"]
 shape = SubResource("ConcavePolygonShape3D_4lvyu")
 
 [node name="DRAWER1" type="Node3D" parent="RootNode"]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 40.468475, 65.33381, -2.1250725)
 script = ExtResource("4_4lvyu")
 
-[node name="Object_8" type="Node3D" parent="RootNode/DRAWER1"]
+[node name="Door" type="Node3D" parent="RootNode/DRAWER1"]
 transform = Transform3D(6.123234e-17, 0, -1, 0, 1, 0, 1, 0, 6.123234e-17, -28.249733, -2.625082, -27.84211)
 
-[node name="Box_01_Bedroom_Shelf_0" type="MeshInstance3D" parent="RootNode/DRAWER1/Object_8"]
+[node name="Box_01_Bedroom_Shelf_0" type="MeshInstance3D" parent="RootNode/DRAWER1/Door"]
 mesh = SubResource("ArrayMesh_un7hm")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RootNode/DRAWER1/Object_8" groups=["interactable"]]
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="RootNode/DRAWER1/Door" groups=["interactable"]]
 collision_layer = 5
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RootNode/DRAWER1/Object_8/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RootNode/DRAWER1/Door/AnimatableBody3D"]
 transform = Transform3D(1, 0, 6.617445e-24, 0, 1, 0, -6.617445e-24, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_6mb0y")
 
@@ -494,17 +710,17 @@ shape = SubResource("ConcavePolygonShape3D_6mb0y")
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 40.468475, 44.000473, -2.1250744)
 script = ExtResource("5_6mb0y")
 
-[node name="Object_11" type="Node3D" parent="RootNode/DRAWER2"]
+[node name="Door" type="Node3D" parent="RootNode/DRAWER2"]
 transform = Transform3D(6.123234e-17, 0, -1, 0, 1, 0, 1, 0, 6.123234e-17, -28.249733, -2.625082, -27.84211)
 
-[node name="Box_02_Bedroom_Shelf_0" type="MeshInstance3D" parent="RootNode/DRAWER2/Object_11"]
+[node name="Box_02_Bedroom_Shelf_0" type="MeshInstance3D" parent="RootNode/DRAWER2/Door"]
 mesh = SubResource("ArrayMesh_v1fcj")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RootNode/DRAWER2/Object_11" groups=["interactable"]]
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="RootNode/DRAWER2/Door" groups=["interactable"]]
 collision_layer = 5
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RootNode/DRAWER2/Object_11/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RootNode/DRAWER2/Door/AnimatableBody3D"]
 transform = Transform3D(1, 0, 6.617445e-24, 0, 1, 0, -6.617445e-24, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_6mb0y")
 
@@ -512,17 +728,17 @@ shape = SubResource("ConcavePolygonShape3D_6mb0y")
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 40.468475, 22.629951, -2.1250744)
 script = ExtResource("6_3o8wv")
 
-[node name="Object_11" type="Node3D" parent="RootNode/DRAWER3"]
+[node name="Door" type="Node3D" parent="RootNode/DRAWER3"]
 transform = Transform3D(6.123234e-17, 0, -1, 0, 1, 0, 1, 0, 6.123234e-17, -28.249733, -2.625082, -27.84211)
 
-[node name="Box_02_Bedroom_Shelf_0" type="MeshInstance3D" parent="RootNode/DRAWER3/Object_11"]
+[node name="Box_02_Bedroom_Shelf_0" type="MeshInstance3D" parent="RootNode/DRAWER3/Door"]
 mesh = SubResource("ArrayMesh_v1fcj")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RootNode/DRAWER3/Object_11" groups=["interactable"]]
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="RootNode/DRAWER3/Door" groups=["interactable"]]
 collision_layer = 5
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RootNode/DRAWER3/Object_11/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RootNode/DRAWER3/Door/AnimatableBody3D"]
 transform = Transform3D(1, 0, 6.617445e-24, 0, 1, 0, -6.617445e-24, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_6mb0y")
 
@@ -530,19 +746,19 @@ shape = SubResource("ConcavePolygonShape3D_6mb0y")
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -40.4685, 65.33383, -23.336987)
 script = ExtResource("7_xlnke")
 
-[node name="Object_17" type="Node3D" parent="RootNode/DRAWER4"]
+[node name="Door" type="Node3D" parent="RootNode/DRAWER4"]
 transform = Transform3D(6.123234e-17, 0, -1, 0, 1, 0, 1, 0, 6.123234e-17, -28.249733, -2.625082, -27.84211)
 
-[node name="Box_04_Bedroom_Shelf_0" type="MeshInstance3D" parent="RootNode/DRAWER4/Object_17"]
+[node name="Box_04_Bedroom_Shelf_0" type="MeshInstance3D" parent="RootNode/DRAWER4/Door"]
 transform = Transform3D(1, 0, 6.617445e-24, 0, 1, 0, -6.617445e-24, 0, 1, 0, -20.915794, 0)
 mesh = SubResource("ArrayMesh_k686b")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RootNode/DRAWER4/Object_17" groups=["interactable"]]
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="RootNode/DRAWER4/Door" groups=["interactable"]]
 transform = Transform3D(1, 0, 6.617445e-24, 0, 1, 0, -6.617445e-24, 0, 1, 0, -20.874607, 0)
 collision_layer = 5
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RootNode/DRAWER4/Object_17/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RootNode/DRAWER4/Door/AnimatableBody3D"]
 transform = Transform3D(1, 0, 6.617445e-24, 0, 1, 0, -6.617445e-24, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_6mb0y")
 
@@ -550,19 +766,19 @@ shape = SubResource("ConcavePolygonShape3D_6mb0y")
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -40.468494, 44.0063, -23.336987)
 script = ExtResource("8_d1fx7")
 
-[node name="Object_17" type="Node3D" parent="RootNode/DRAWER5"]
+[node name="Door" type="Node3D" parent="RootNode/DRAWER5"]
 transform = Transform3D(6.123234e-17, 0, -1, 0, 1, 0, 1, 0, 6.123234e-17, -28.249733, -2.625082, -27.84211)
 
-[node name="Box_04_Bedroom_Shelf_0" type="MeshInstance3D" parent="RootNode/DRAWER5/Object_17"]
+[node name="Box_04_Bedroom_Shelf_0" type="MeshInstance3D" parent="RootNode/DRAWER5/Door"]
 transform = Transform3D(1, 0, 6.617445e-24, 0, 1, 0, -6.617445e-24, 0, 1, 0, -20.915794, 0)
 mesh = SubResource("ArrayMesh_k686b")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RootNode/DRAWER5/Object_17" groups=["interactable"]]
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="RootNode/DRAWER5/Door" groups=["interactable"]]
 transform = Transform3D(1, 0, 6.617445e-24, 0, 1, 0, -6.617445e-24, 0, 1, 0, -20.874607, 0)
 collision_layer = 5
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RootNode/DRAWER5/Object_17/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RootNode/DRAWER5/Door/AnimatableBody3D"]
 transform = Transform3D(1, 0, 6.617445e-24, 0, 1, 0, -6.617445e-24, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_6mb0y")
 
@@ -570,19 +786,19 @@ shape = SubResource("ConcavePolygonShape3D_6mb0y")
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -40.468494, 22.736198, -23.336987)
 script = ExtResource("9_sto7o")
 
-[node name="Object_17" type="Node3D" parent="RootNode/DRAWER6"]
+[node name="Door" type="Node3D" parent="RootNode/DRAWER6"]
 transform = Transform3D(6.123234e-17, 0, -1, 0, 1, 0, 1, 0, 6.123234e-17, -28.249733, -2.625082, -27.84211)
 
-[node name="Box_04_Bedroom_Shelf_0" type="MeshInstance3D" parent="RootNode/DRAWER6/Object_17"]
+[node name="Box_04_Bedroom_Shelf_0" type="MeshInstance3D" parent="RootNode/DRAWER6/Door"]
 transform = Transform3D(1, 0, 6.617445e-24, 0, 1, 0, -6.617445e-24, 0, 1, 0, -20.915794, 0)
 mesh = SubResource("ArrayMesh_k686b")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RootNode/DRAWER6/Object_17" groups=["interactable"]]
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="RootNode/DRAWER6/Door" groups=["interactable"]]
 transform = Transform3D(1, 0, 6.617445e-24, 0, 1, 0, -6.617445e-24, 0, 1, 0, -20.874607, 0)
 collision_layer = 5
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RootNode/DRAWER6/Object_17/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RootNode/DRAWER6/Door/AnimatableBody3D"]
 transform = Transform3D(1, 0, 6.617445e-24, 0, 1, 0, -6.617445e-24, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_6mb0y")
 
