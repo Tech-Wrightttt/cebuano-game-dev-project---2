@@ -4,10 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://oysop7pwekld" path="res://game/ghost_model_animation.tscn" id="2_io021"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b6vni"]
-radius = 0.40820313
+radius = 0.3803711
 height = 3.0
 
 [node name="ghost" type="CharacterBody3D"]
+motion_mode = 1
 script = ExtResource("1_blxur")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -15,6 +16,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44936407, -0.08005732)
 shape = SubResource("CapsuleShape3D_b6vni")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 1.5
+path_max_distance = 3.01
 avoidance_enabled = true
 radius = 0.4
 debug_enabled = true
