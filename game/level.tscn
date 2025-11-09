@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bob5k3jp6dsgc"]
+[gd_scene load_steps=30 format=3 uid="uid://bob5k3jp6dsgc"]
 
 [ext_resource type="Texture2D" uid="uid://bvdwayp7w2erl" path="res://textures/environment/grass.jpg" id="1_8bv7i"]
 [ext_resource type="PackedScene" uid="uid://bd8sk3hxv1lu0" path="res://assets/glb_models/fence/japanese_park_stone_floor_uljcfd0_mid.glb" id="1_50vgw"]
@@ -7,12 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://bhdnah86wfvhg" path="res://assets/glb_models/fence/fence_and_column.glb" id="2_0w1ik"]
 [ext_resource type="PackedScene" uid="uid://cmgn2dijv665c" path="res://dialogues/first_dialogue.tscn" id="2_1565f"]
 [ext_resource type="PackedScene" uid="uid://cqfnc4pttj25v" path="res://dialogues/dialogue_trigger.tscn" id="2_hjv22"]
-[ext_resource type="PackedScene" uid="uid://cbdwy6av6syaq" path="res://game/grandma_dummy.tscn" id="2_ogdhh"]
 [ext_resource type="PackedScene" uid="uid://c6nnpmjnwv4g2" path="res://game/house.tscn" id="2_xssv6"]
 [ext_resource type="PackedScene" uid="uid://cdluy2xnot0vs" path="res://assets/glb_models/fence/dirty_leaking_concrete_wall.glb" id="3_0w1ik"]
 [ext_resource type="PackedScene" uid="uid://cgi16aybh2b24" path="res://dialogues/second_dialogue.tscn" id="6_a2xg8"]
+[ext_resource type="PackedScene" uid="uid://dm1427jn7b51r" path="res://game/lola_sit.tscn" id="6_mgnlv"]
 [ext_resource type="PackedScene" uid="uid://b8bckhbbwohyn" path="res://dialogues/dialogue_trigger_2.tscn" id="7_a4abk"]
-[ext_resource type="PackedScene" uid="uid://bphkobjnkkonl" path="res://game/grandma_kinawat.tscn" id="13_5c5qw"]
+[ext_resource type="PackedScene" uid="uid://b22u3s0h205xm" path="res://game/lola_idle.tscn" id="14_mgnlv"]
 [ext_resource type="PackedScene" uid="uid://bnd4f5cscd18j" path="res://game/house_materials/ceiling_lights.tscn" id="20_vuud0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4xowi"]
@@ -38,9 +38,6 @@ volumetric_fog_emission_energy = 0.1
 volumetric_fog_length = 128.0
 adjustment_enabled = true
 adjustment_brightness = 1.2
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_5c5qw"]
-size = Vector3(17.288757, 1.7089233, 16.062988)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_lqnbj"]
 viewport_path = NodePath("Mirror/SubViewport")
@@ -100,41 +97,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9987135, 0.028873205, -0.0
 
 [node name="second_dialogue" parent="." instance=ExtResource("6_a2xg8")]
 
-[node name="grandma 1" parent="." instance=ExtResource("2_ogdhh")]
-transform = Transform3D(-1.6647356, 0, -0.029668387, 0, 1.665, 0, 0.029668387, 0, -1.6647356, -10.701373, 2.1776888, -20.320211)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="grandma 1"]
-transform = Transform3D(0.06210178, 0, 0, 0, 1, 0, 0, 0, 0.03579563, 0.32705963, 0, 0.22254348)
-collision_layer = 3
-collision_mask = 3
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="grandma 1/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 2.0489097e-08, 0, 1, -5.328514, 0.72602963, -9.384979)
-shape = SubResource("BoxShape3D_5c5qw")
-
-[node name="grandma 2" parent="." instance=ExtResource("2_ogdhh")]
-transform = Transform3D(0.14302984, 0, -1.6588451, 0, 1.6650002, 0, 1.6588451, 0, 0.14302984, -40.369225, 8.289209, -10.561743)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="grandma 2"]
-transform = Transform3D(0.06210178, 0, 0, 0, 1, 0, 0, 0, 0.03579563, 0.32705963, 0, 0.22254348)
-collision_layer = 3
-collision_mask = 3
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="grandma 2/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 2.0489097e-08, 0, 1, -5.328514, 0.72602963, -9.384979)
-shape = SubResource("BoxShape3D_5c5qw")
+[node name="grandma 1" parent="." instance=ExtResource("6_mgnlv")]
+transform = Transform3D(0.013, 0, 0, 0, 0.013, 0, 0, 0, 0.013, -10.07173, 2.6070387, -22.748985)
 
 [node name="dialogue_trigger1" parent="." node_paths=PackedStringArray("speaker") instance=ExtResource("2_hjv22")]
-transform = Transform3D(1.462, 0, 0, 0, 1.94, 0, 0, 0, 2.239, -10.303716, 3.3226109, -20.262177)
+transform = Transform3D(-1.616, 0, 0, 0, -1.616, 0, 0, 0, -1.616, -10.17772, 3.7458882, -20.856934)
 dialogues = Array[String](["Wow, ang laki pala ng bahay mo, Lola. Para siyang… buhay", "Haha, ganyan talaga ’yan, apo. Matanda na kasi ang bahay. Kumain ka muna dito — nakahain na ang hapunan diyan sa mesa.", "Salamat po, Lola.", "Apo, dito ka muna ha? May pupuntahan lang ako sandali.", "Pupunta ka saan, Lola? Ang gabi na po.", "May aayusin lang ako sa sementeryo—mga kandila at bulaklak lang. Alam mo naman, malapit na ang Undas.", "Apo, ito ang listahan ng mga gawaing bahay ko ngayong gabi. Pwede bang ikaw muna ang gumawa? Medyo mahina na rin kasi ako. Pakialagaan muna ang bahay, ha? At pag alas-diyes na, huwag ka nang lalabas—masyado nang madilim sa labas.", "Opo, Lola. Pero bakit pa po kailangan takpan ’yung salamin? Itong nakalagay sa listahan…", "Lumang kaugalian lang, apo. Sabi ng matatanda, para hindi pumasok ang lamig sa bahay.", "Pagkatapos mo sa gawaing-bahay way kang magpuyat at matulog ka kaagad kung ayaw mong makasalubong sila.", "....S-Sila?"])
 speaker_names = Array[String](["Paulette (You)", "Lola Olet", "Paulette (You)", "Lola Olet", "Paulette (You)", "Lola Olet", "Lola Olet", "Paulette (You)", "Lola Olet", "Lola Olet", "Paulette (You)"])
 speaker = NodePath("../grandma 1")
 
-[node name="dialogue_trigger2" parent="." node_paths=PackedStringArray("speaker") instance=ExtResource("7_a4abk")]
-transform = Transform3D(1.462, 0, 0, 0, 1.94, 0, 0, 0, 2.239, -39.23945, 9.98098, -10.939199)
+[node name="grandma 2" parent="." instance=ExtResource("14_mgnlv")]
+transform = Transform3D(-0.00052480004, 0, 0.014990817, 0, 0.015, 0, -0.014990817, 0, -0.00052480004, -40.4017, 8.274374, -10.4224825)
+
+[node name="dialogue_trigger2" parent="grandma 2" node_paths=PackedStringArray("speaker") instance=ExtResource("7_a4abk")]
+transform = Transform3D(-3.4100332, 0, -149.17526, 0, 129.33333, 0, 97.40698, 0, -5.2223425, 52.649414, 113.77362, 79.37402)
 dialogues = Array[String](["Apo, ito na ulit. Gabi na naman—’wag mong kalimutang tapusin ’yan.", "Lola… tuwing gabi na lang po ba ’to? Parang dumadami ang ginagawa.", "Basta sundin mo lang ang nakasulat, ha? Huwag kang matakot kung may maramdaman ka.", "Lola may mga ….."])
 speaker_names = Array[String](["Lola Olet", "Paulette (You)", "Lola Olet", "Paulette (You)"])
-speaker = NodePath("../grandma 2")
+speaker = NodePath("..")
 
 [node name="Mirror" type="CSGBox3D" parent="."]
 transform = Transform3D(-0.15646364, -5.1214147, -0.029621154, -1.9687864, 0.40739352, -2.7663039e-10, 0.0048050024, 0.15727872, -0.9645451, -28.387808, 3.9978812, -15.844056)
@@ -439,6 +418,3 @@ material = SubResource("FogMaterial_x5me8")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.398788, 4.9874353, -78.611496)
 size = Vector3(196.18103, 10, 50)
 material = SubResource("FogMaterial_x5me8")
-
-[node name="grandma kinawat" parent="." instance=ExtResource("13_5c5qw")]
-transform = Transform3D(-0.006969806, 0, 0.018746248, 0, 0.02, 0, -0.018746248, 0, -0.006969806, 9.69497, 0.26768005, 4.6051464)
