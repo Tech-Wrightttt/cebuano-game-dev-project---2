@@ -2,7 +2,7 @@ extends RayCast3D
 
 @onready var crosshair = get_parent().get_parent().get_node("player_ui/CanvasLayer/crosshair")
 @onready var interaction_label: Label = $"../Filters/Interaction_Label"
-@onready var take_item: AudioStreamPlayer3D = $"../../Sounds/Take_Item"
+@onready var item_interact: AudioStreamPlayer3D = $"../../Sounds/Take_Item"
 # Map groups to the method to call and the key to display
 var group_interactions := {
 	"interactable": {"method": "interact", "key": "E", "type": "press"},
@@ -132,15 +132,13 @@ func _physics_process(delta: float) -> void:
 					
 					if Input.is_action_just_pressed(input_action):
 						if method_name == "use":
-							# (Add use_item sound here if you have one)
 							node.call("use", collider)
 						elif method_name == "take":
-							take_item.volume_db = -33
-							take_item.play()
+							item_interact.volume_db = -33
+							item_interact.play()
 							node.call("take", collider)
 						else: # This will catch "interact"
 							node.call(method_name)
-						
 						if interaction_label:
 							interaction_label.hide()
 
