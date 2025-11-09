@@ -68,6 +68,19 @@ func _physics_process(_delta: float) -> void:
 		if not is_on_floor() and velocity.y <= 0:
 			if global_transform.origin.y < destination.global_transform.origin.y + 0.3:
 				velocity.y = 1.0
+				
+			## 🧭 NEW: check if ghost reached destination
+		#if agent.is_navigation_finished():
+			#print("Reached destination: ", destination.name)
+			#if destination.name == "destination12":
+				#print("Since it reached Destination12, next will be Destination1.")
+				#for node in patrol_destinations:
+					#if node.name == "destination1":
+						#destination = node
+						#break
+			#else:
+				#pick_destination() # continue patrol normally
+				
 		move_and_slide()
 
 func chase_player(cast: RayCast3D):
@@ -82,16 +95,17 @@ func pick_destination(dont_choose = null):
 		var num = rng.randi_range(0, patrol_destinations.size() - 1)
 		destination_value = num
 		destination = patrol_destinations[num]
+		
+		# Make sure it doesn't choose the same as dont_choose
 		if destination != null and dont_choose != null and destination == patrol_destinations[dont_choose]:
 			if dont_choose <= 0:
-				destination = patrol_destinations[dont_choose +1]
-			if dont_choose > 0 and dont_choose <= patrol_destinations.size() - 1:
+				destination = patrol_destinations[dont_choose + 1]
+			elif dont_choose > 0 and dont_choose <= patrol_destinations.size() - 1:
 				destination = patrol_destinations[dont_choose - 1]
-		
+				
 		print("=== PICKED DESTINATION ===")
 		print("Destination name: ", destination.name if destination else "null")
-		#print("Destination position: ", destination.global_transform.origin if destination else "null")
-		#print("Ghost current position: ", global_transform.origin)
+
 				#
 func update_target_location():
 	$NavigationAgent3D.target_position = destination.global_transform.origin
