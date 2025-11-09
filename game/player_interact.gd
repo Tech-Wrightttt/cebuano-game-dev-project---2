@@ -9,12 +9,10 @@ var group_interactions := {
 	"equipable": {"method": "take", "key": "F", "type": "press"},
 	"deployable": {"method": "use", "key": "F", "type": "press"}, 
 	"hold_deploy": {"method": "deploy", "key": "F", "type": "hold"},
-	"window": {"method": "interact", "key": "E", "type": "hold"}  # Added window interaction
 }
 
 var hold_time: float = 0.0
 const USE_HOLD_DURATION: float = 7.0  # The time to hold for deployables, in seconds
-const WINDOW_HOLD_DURATION: float = 1.0  # The time to hold for windows, in seconds
 var last_collider: Node = null # To track if we look away
 var last_node_with_method: Node = null
 var is_holding_interact: bool = false  # Track when player is holding an interaction
@@ -81,7 +79,7 @@ func _physics_process(delta: float) -> void:
 				# --- START: LOGIC BASED ON INTERACTION TYPE ---
 				if interaction_type == "hold":
 					# Determine hold duration based on group
-					var hold_duration = WINDOW_HOLD_DURATION if group_name == "window" else USE_HOLD_DURATION
+					var hold_duration = USE_HOLD_DURATION
 					# --- HOLD LOGIC (for "hold_deploy" and "window") ---
 					if Input.is_action_just_pressed(input_action):
 						if node.has_method("start_deploy_sound") and group_name == "hold_deploy":

@@ -1,8 +1,8 @@
 [gd_scene load_steps=17 format=3 uid="uid://b7iavuxmklmfq"]
 
-[ext_resource type="Script" path="res://game/house_materials/windows_mechanics.gd" id="1_j8rmx"]
+[ext_resource type="Script" uid="uid://djwitbbpwox3h" path="res://game/house_materials/windows_mechanics.gd" id="1_j8rmx"]
 [ext_resource type="Texture2D" uid="uid://bc4yir6bxjaaj" path="res://textures/Wood/Wood_02-256x256.png" id="2_codfp"]
-[ext_resource type="ArrayMesh" uid="uid://brjohdb26irvd" path="res://assets/house/house_windows_wood.obj" id="3_dg4tl"]
+[ext_resource type="ArrayMesh" uid="uid://chq88gub11n6x" path="res://assets/house/house_windows_wood.obj" id="3_dg4tl"]
 [ext_resource type="Texture2D" uid="uid://brlvjpoeg0vlu" path="res://textures/house/wood2.jpg" id="4_frerr"]
 [ext_resource type="ArrayMesh" uid="uid://w21tlkpx2u1l" path="res://assets/house/house_windows_panel.obj" id="5_byfi6"]
 
@@ -123,7 +123,7 @@ material_override = SubResource("StandardMaterial3D_voxt6")
 mesh = ExtResource("3_dg4tl")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="window_moving1/MeshInstance3D" groups=["window"]]
+[node name="StaticBody3D" type="StaticBody3D" parent="window_moving1/MeshInstance3D" groups=["hold_deploy"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="window_moving1/MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_j8rmx")
@@ -133,7 +133,7 @@ material_override = SubResource("StandardMaterial3D_vl8na")
 mesh = ExtResource("5_byfi6")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="window_moving1/MeshInstance3D2" groups=["window"]]
+[node name="StaticBody3D" type="StaticBody3D" parent="window_moving1/MeshInstance3D2" groups=["hold_deploy"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="window_moving1/MeshInstance3D2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_codfp")
@@ -146,7 +146,7 @@ material_override = SubResource("StandardMaterial3D_voxt6")
 mesh = ExtResource("3_dg4tl")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="window_static1/MeshInstance3D" groups=["window"]]
+[node name="StaticBody3D" type="StaticBody3D" parent="window_static1/MeshInstance3D" groups=["hold_deploy"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="window_static1/MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_dg4tl")
@@ -156,7 +156,7 @@ material_override = SubResource("StandardMaterial3D_vl8na")
 mesh = ExtResource("5_byfi6")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="window_static1/MeshInstance3D2" groups=["window"]]
+[node name="StaticBody3D" type="StaticBody3D" parent="window_static1/MeshInstance3D2" groups=["hold_deploy"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="window_static1/MeshInstance3D2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_frerr")
@@ -169,7 +169,7 @@ material_override = SubResource("StandardMaterial3D_voxt6")
 mesh = ExtResource("3_dg4tl")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="window_static2/MeshInstance3D" groups=["window"]]
+[node name="StaticBody3D" type="StaticBody3D" parent="window_static2/MeshInstance3D" groups=["hold_deploy"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="window_static2/MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_byfi6")
@@ -179,7 +179,7 @@ material_override = SubResource("StandardMaterial3D_vl8na")
 mesh = ExtResource("5_byfi6")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="window_static2/MeshInstance3D2" groups=["window"]]
+[node name="StaticBody3D" type="StaticBody3D" parent="window_static2/MeshInstance3D2" groups=["hold_deploy"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="window_static2/MeshInstance3D2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_02iyh")
