@@ -20,7 +20,7 @@ radius = 0.4
 debug_enabled = true
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(22.563, 0, 0, 0, -7.86805e-07, -29.127, 0, 18, -1.2731816e-06, 0, 0.9082812, 0)
+transform = Transform3D(18.803, 0, 0, 0, -6.556708e-07, -24.273, 0, 15, -1.0610065e-06, 0, 0.9082812, 0)
 collision_mask = 131
 
 [node name="RayCast3D2" type="RayCast3D" parent="."]
