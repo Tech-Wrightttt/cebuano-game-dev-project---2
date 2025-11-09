@@ -88,8 +88,8 @@ func pick_destination(dont_choose = null):
 			if dont_choose > 0 and dont_choose <= patrol_destinations.size() - 1:
 				destination = patrol_destinations[dont_choose - 1]
 		
-		#print("=== PICKED DESTINATION ===")
-		#print("Destination name: ", destination.name if destination else "null")
+		print("=== PICKED DESTINATION ===")
+		print("Destination name: ", destination.name if destination else "null")
 		#print("Destination position: ", destination.global_transform.origin if destination else "null")
 		#print("Ghost current position: ", global_transform.origin)
 				#
