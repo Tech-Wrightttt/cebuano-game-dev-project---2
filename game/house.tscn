@@ -22,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://o7bpavlsry4o" path="res://textures/house/wood.jpg" id="8_lxqrr"]
 [ext_resource type="PackedScene" uid="uid://br2g8x35w3oou" path="res://assets/glb_models/decoratives/radio/old_radio.glb" id="9_0m7rp"]
 [ext_resource type="ArrayMesh" uid="uid://dths5gx7lhgpk" path="res://assets/house/house_1stFloor_railings.obj" id="9_w7ycr"]
-[ext_resource type="PackedScene" uid="uid://b26vxbohi5o6i" path="res://assets/glb_models/appliance/tv/soviet_tv_kvn_49.glb" id="10_cxeem"]
+[ext_resource type="PackedScene" uid="uid://b7lupx4828roy" path="res://assets/glb_models/appliance/tv/soviet_tv_kvn_49.glb" id="10_cxeem"]
 [ext_resource type="ArrayMesh" uid="uid://bif478twhqmg8" path="res://assets/house/house_2ndFloor_wall.obj" id="10_grb73"]
 [ext_resource type="Texture2D" uid="uid://cuvnmwed5ihoq" path="res://textures/house/floorwood.jpg" id="10_uwpgj"]
 [ext_resource type="PackedScene" uid="uid://cxt7ow8wabipp" path="res://assets/glb_models/furniture/vintage_sofa_23mb.glb" id="11_aqw7q"]
@@ -67,14 +67,14 @@
 [ext_resource type="PackedScene" uid="uid://de8tqyvfab5ol" path="res://assets/glb_models/bathroom/plastic_drum_vgyiciqaw_mid.glb" id="40_s3h6a"]
 [ext_resource type="PackedScene" uid="uid://cld532be80840" path="res://assets/glb_models/furniture/europe_style_sofa.glb" id="41_34jwt"]
 [ext_resource type="PackedScene" uid="uid://bslbw4xpcdhu2" path="res://game/house_materials/door.tscn" id="41_ja541"]
-[ext_resource type="PackedScene" uid="uid://dbmp5ccq4138x" path="res://assets/glb_models/decoratives/interior_wooden_pillar_vl3ubjqdw_low.glb" id="42_awiiq"]
+[ext_resource type="PackedScene" uid="uid://sgykimvat3i8" path="res://assets/glb_models/decoratives/interior_wooden_pillar_vl3ubjqdw_low.glb" id="42_awiiq"]
 [ext_resource type="PackedScene" uid="uid://cm831ocekw7aq" path="res://assets/glb_models/decoratives/book_stack.glb" id="42_sgyp1"]
 [ext_resource type="PackedScene" uid="uid://1lv4inu20wj5" path="res://assets/glb_models/decoratives/antique_old_book.glb" id="43_djvyg"]
 [ext_resource type="PackedScene" uid="uid://85xbtaxmqi37" path="res://game/house_materials/chest.tscn" id="43_ixt2i"]
 [ext_resource type="PackedScene" uid="uid://c1rv2is3joy2l" path="res://assets/glb_models/furniture/street_wooden_bench.glb" id="43_xhh4o"]
 [ext_resource type="PackedScene" uid="uid://rs6oxaiy64wk" path="res://assets/glb_models/appliance/blue_kitchen_marble_counter_sink.glb" id="44_3q4qf"]
 [ext_resource type="PackedScene" uid="uid://u6mbar6vkj2m" path="res://assets/glb_models/furniture/bedside_wood_table_vintage_furniture.glb" id="44_v87ac"]
-[ext_resource type="PackedScene" uid="uid://cog43r2x28roq" path="res://assets/glb_models/kitchen/geepas_stove.glb" id="45_lmswc"]
+[ext_resource type="PackedScene" uid="uid://ctgrvak8d7yqn" path="res://assets/glb_models/kitchen/geepas_stove.glb" id="45_lmswc"]
 [ext_resource type="PackedScene" uid="uid://cvtgxs45tyajk" path="res://assets/glb_models/decoratives/landscape_picture_frames.glb" id="45_vcrf0"]
 [ext_resource type="PackedScene" uid="uid://cro8oaakwfmya" path="res://assets/glb_models/kitchen/rusty_gas_tank_tl1rbitfa_mid.glb" id="46_ao8ql"]
 [ext_resource type="PackedScene" uid="uid://bbnooi1a0en0h" path="res://game/house_materials/pillar.tscn" id="46_puo31"]
@@ -86,7 +86,7 @@
 [ext_resource type="PackedScene" uid="uid://dn5dpttuukdxw" path="res://assets/glb_models/basement/old_ceiling_fan.glb" id="49_agx8e"]
 [ext_resource type="PackedScene" uid="uid://cyynvml86dq5v" path="res://assets/glb_models/kitchen/breakfast_food_dish.glb" id="50_jxex3"]
 [ext_resource type="PackedScene" uid="uid://baew8nvy1eo1d" path="res://assets/glb_models/basement/fluorescent_ceiling_lamp_vidrear_low.glb" id="50_r85fh"]
-[ext_resource type="PackedScene" uid="uid://bqgek7ryw0jg8" path="res://assets/glb_models/decoratives/kimono_stand.glb" id="51_epdl8"]
+[ext_resource type="PackedScene" uid="uid://cyc733rxj0gb2" path="res://assets/glb_models/decoratives/kimono_stand.glb" id="51_epdl8"]
 [ext_resource type="PackedScene" uid="uid://ordm22u1fku0" path="res://assets/glb_models/kitchen/spanish_omelette.glb" id="51_m7rpm"]
 [ext_resource type="PackedScene" uid="uid://8cbpbv583ts7" path="res://game/house_materials/sink.tscn" id="52_eeqtj"]
 [ext_resource type="PackedScene" uid="uid://cn1pvbeffejg1" path="res://assets/glb_models/kitchen/smoked_salmon_plate.glb" id="52_ie1il"]
@@ -113,12 +113,12 @@
 [ext_resource type="PackedScene" uid="uid://rdtges48iqdm" path="res://game/house_materials/set_table.tscn" id="88_e4khn"]
 [ext_resource type="PackedScene" uid="uid://dg2611khxkejs" path="res://assets/glb_models/decoratives/hand_soap_bottle.glb" id="88_tlv0p"]
 [ext_resource type="PackedScene" uid="uid://cfrd24ofl6gpf" path="res://assets/glb_models/basement/old_cushion_vishcehdb_mid.glb" id="89_1n58x"]
-[ext_resource type="PackedScene" uid="uid://b8n6j0p2htieu" path="res://assets/glb_models/decoratives/traditional_bamboo_basket.glb" id="89_aayyx"]
+[ext_resource type="PackedScene" uid="uid://bkag11jsqldrf" path="res://assets/glb_models/decoratives/traditional_bamboo_basket.glb" id="89_aayyx"]
 [ext_resource type="PackedScene" uid="uid://b3vcol2cdytiq" path="res://assets/glb_models/decoratives/old_box.glb" id="89_ixt2i"]
 [ext_resource type="PackedScene" uid="uid://bpl84w7xf2okj" path="res://assets/glb_models/basement/old_wooden_table.glb" id="92_3a0ml"]
 [ext_resource type="PackedScene" uid="uid://b03lhnpgm5fbu" path="res://assets/glb_models/basement/old_map_3d_model.glb" id="93_uohaw"]
 [ext_resource type="PackedScene" uid="uid://s24efhjpil40" path="res://assets/glb_models/basement/old_broken_mirror.glb" id="94_6u8h5"]
-[ext_resource type="PackedScene" uid="uid://clmgnx6rdg1a5" path="res://assets/glb_models/decoratives/1970s_vintage_television.glb" id="94_8tqyt"]
+[ext_resource type="PackedScene" uid="uid://dptqsmcctr77w" path="res://assets/glb_models/decoratives/1970s_vintage_television.glb" id="94_8tqyt"]
 [ext_resource type="PackedScene" uid="uid://dmih803dghqqj" path="res://assets/glb_models/decoratives/vase_lowpoly.glb" id="94_aayyx"]
 [ext_resource type="PackedScene" uid="uid://lmwqmi5m463k" path="res://assets/glb_models/basement/old_cabinet.glb" id="95_vcrf0"]
 [ext_resource type="PackedScene" uid="uid://bwfj20w1dd7hb" path="res://assets/glb_models/basement/old_wooden_bench_ueigebjfa_mid.glb" id="96_gvvqw"]
@@ -148,7 +148,7 @@
 [ext_resource type="PackedScene" uid="uid://dhmaxae3blvh7" path="res://assets/glb_models/furniture/wicker_basket_02.glb" id="110_nafd2"]
 [ext_resource type="PackedScene" uid="uid://brbisn406jwl3" path="res://assets/glb_models/decoratives/wooden_hourglass.glb" id="110_y3wns"]
 [ext_resource type="PackedScene" uid="uid://do0rvl1sxdfrh" path="res://assets/glb_models/basement/book_stand_low_poly.glb" id="111_gvvqw"]
-[ext_resource type="PackedScene" path="res://game/inri.tscn" id="111_puo31"]
+[ext_resource type="PackedScene" uid="uid://dyrhnan3i2i61" path="res://game/inri.tscn" id="111_puo31"]
 [ext_resource type="PackedScene" uid="uid://c5dguj0duawtb" path="res://game/house_materials/locker_wow.tscn" id="112_de7xd"]
 [ext_resource type="PackedScene" uid="uid://vu20j1rcpe78" path="res://assets/glb_models/bathroom/oily_paper_roll_vjxoffps_mid.glb" id="113_gvvqw"]
 [ext_resource type="PackedScene" uid="uid://cddt0m7lgb0xy" path="res://game/house_materials/cabinet sa altar.tscn" id="114_puo31"]
@@ -159,8 +159,9 @@
 [ext_resource type="PackedScene" uid="uid://b5madj0d0u0kn" path="res://assets/glb_models/basement/simple_shield.glb" id="123_f5qeo"]
 [ext_resource type="PackedScene" uid="uid://b2yx3uf3pxlaq" path="res://game/house_materials/workbench_(maopen).tscn" id="123_f48tp"]
 [ext_resource type="PackedScene" uid="uid://da3v5u6cqyvl8" path="res://assets/glb_models/basement/water_heater_used.glb" id="123_re2uc"]
-[ext_resource type="Script" path="res://game/task_candle.gd" id="123_x62yr"]
+[ext_resource type="Script" uid="uid://y52gc1lmr4hp" path="res://game/task_candle.gd" id="123_x62yr"]
 [ext_resource type="PackedScene" uid="uid://doiurcqv5iay1" path="res://assets/glb_models/basement/drinking_water_fountain.glb" id="124_f5qeo"]
+[ext_resource type="PackedScene" uid="uid://da7np75ks3tc4" path="res://assets/glb_models/chores/candle.tscn" id="124_gslyl"]
 [ext_resource type="PackedScene" uid="uid://ba1xcjufcwwwr" path="res://assets/glb_models/basement/medieval_torch.glb" id="125_yewax"]
 [ext_resource type="PackedScene" uid="uid://b681o5valg1vs" path="res://assets/glb_models/furniture/wardrobe.tscn" id="127_uwpgj"]
 [ext_resource type="PackedScene" uid="uid://df20nbkqt4c7d" path="res://assets/glb_models/basement/worn_bandages.glb" id="138_yewax"]
@@ -187,6 +188,7 @@
 [ext_resource type="PackedScene" uid="uid://csf1p5e7vtr01" path="res://game/house_materials/candel_na_siga.tscn" id="162_y0f4w"]
 [ext_resource type="PackedScene" uid="uid://bkst2lswsd30s" path="res://assets/glb_models/basement/wall_part_base_20k_orientated.glb" id="163_ar67c"]
 [ext_resource type="PackedScene" uid="uid://blj6l2phlisc2" path="res://assets/glb_models/stone_altar.glb" id="168_ar67c"]
+[ext_resource type="PackedScene" path="res://game/house_materials/ceiling_lights_red.tscn" id="171_p4sj0"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_w7ycr"]
 vertices = PackedVector3Array(-36.19718, 8.507431, -34, -36.19718, 9.707432, -27, -28.197184, 9.707432, -27, -28.197184, 8.507431, -34, -19.997183, 9.707432, -27, -19.997183, 8.507431, -34, -21.397184, 2.507431, -23.599998, -21.397184, 2.507431, -24.599998, -22.997183, 2.507431, -25.4, -23.197184, 2.507431, -25.4, -26.397184, 2.507431, -24.599998, -25.197184, 2.507431, -23.2, -21.997183, 2.507431, -27.4, -22.797184, 2.507431, -28.2, -23.597183, 2.507431, -27.2, -27.197184, 2.507431, -22.4, -29.797184, 2.507431, -22.4, -28.997183, 2.507431, -19.599998, -25.397184, 2.507431, -19.4, -22.597183, 2.507431, -32.6, -23.797184, 2.507431, -32.6, -25.997183, 2.507431, -30.2, -25.997183, 2.507431, -28.2, -31.997183, 2.507431, -30.8, -32.597183, 2.507431, -31.6, -33.19718, 2.507431, -30.8, -32.397186, 2.507431, -27.4, -26.797184, 2.507431, -31, -30.263851, 3.1074314, -27.666666, -29.197184, 2.507431, -27.8, -29.389172, 2.507431, -29.01121, -12.397182, 15.407433, 9.200001, -3.797184, 15.107431, 9.200001, -3.797184, 15.107431, 1.4000015, -9.817184, 16.907433, 6.8600006, -38.19718, 15.107431, 0, -38.19718, 15.107431, 9.200001, -29.597183, 15.407433, 9.200001, -31.942638, 16.907433, 6.6909103, -32.724457, 16.907433, 5.8545456, -26.997183, 15.107431, -27, -38.19718, 15.107431, -27, -38.19718, 15.107431, -18, -32.597183, 16.907433, -22.5, -31.817087, 16.607431, -24.212103, -3.5971832, 15.107431, -6.199999, 7.0028152, 15.107431, -6.6000004, 7.0028152, 15.107431, -16.8, -4.3971825, 15.107431, -27, -15.597183, 15.107431, -27, -9.31147, 20.507433, -16.104761, -0.0125694275, 17.207432, -23.076923, 0.5840721, 17.207432, -10.997343, -1.7919502, 17.807432, -11.014921, 7.0028152, 15.107431, -27, -20.997183, 15.407433, 9.200001, -14.907185, 18.707432, 3.8100014, -17.517181, 17.507433, 6.1200027, -16.212864, 16.607431, 6.990059, -29.091301, 18.107431, 4.87059, -38.19718, 15.107431, -9, -29.486073, 17.207432, -23, -30.730516, 17.507433, -21, -17.411995, 20.507433, -15.818869, -20.980804, 20.507433, 1.0105133, -24.59166, 19.607431, -13.391232, -16.195591, 19.007433, -13.409704, -20.987629, 20.507433, -13.404861, -24.588402, 19.607431, -18.188034, -18.599813, 19.907433, -14.611864, -21.016026, 20.507433, -15.805239, -21.997183, 8.507431, -23.2, -21.997183, 2.507431, -14.199999, -21.597183, 2.507431, -14, -21.397184, 8.507431, -24.8, -21.997183, 8.207432, -22.075, -21.997183, 7.007431, -20.95, -21.997183, 5.807431, -18.699999, -21.997183, 2.8074312, -15.324999, -21.577183, 2.8074312, -15.08, -21.437183, 8.507431, -22.64, -26.797184, 8.507431, -14.6, -25.997183, 8.507431, -14.4, -25.997183, 8.507431, -23.8, -26.797184, 8.507431, -24.8, -23.397184, 8.507431, -24.599998, -8.197182, 8.507431, -23.599998, -8.997185, 8.507431, -24.8, -12.797184, 8.507431, -24.8, -12.797184, 8.507431, -21.2, -8.397182, 8.507431, -18.8, -10.897182, 8.807432, -24.8, -5.597183, 8.507431, -19.4, -5.597183, 8.507431, -23.599998, -16.397182, 9.707432, -23.8, -16.397182, 9.707432, -22.599998, -14.797184, 9.707432, -22.8, -14.797184, 9.707432, -24, -33.597183, 8.507431, -14, -33.397186, 8.507431, -14, -32.997185, 8.507431, -15.199999, -34.797184, 8.507431, -15.4, -32.19718, 8.507431, -17, -32.19718, 8.507431, -19.4, -34.797184, 8.507431, -23.599998, -31.397184, 8.507431, -15.4, -30.997183, 8.507431, -18, -29.397184, 8.507431, -20.4, -29.397184, 8.507431, -22.4, -0.99718475, 2.507431, -21.2, -1.5971832, 2.507431, -22.599998, -4.1971817, 2.507431, -23.599998, -10.197182, 2.507431, -23.599998, -11.197182, 2.507431, -21.4, -8.597183, 2.507431, -19.8, -5.9971848, 2.507431, -19.8, -5.797184, 2.507431, -18, -7.3971825, 2.507431, -17.4, -7.3971825, 2.507431, -16.8, -5.597183, 2.507431, -15.799999, 0.8028183, 2.507431, -15.799999, 1.0028152, 2.507431, -21.2, -0.58514404, 3.1074314, -18.18484, -1.8131561, 2.507431, -18.19363, -0.58917236, 2.507431, -19.41121, 2.0028152, 2.507431, -22.599998, -8.797184, 2.507431, -18.6, -12.597183, 2.507431, -21.4, -13.597183, 2.507431, -18.8, -11.797184, 2.507431, -16.199999, -0.99718475, 8.507431, -20, -2.797184, 8.507431, -20.599998, -2.797184, 8.507431, -17, 2.4028168, 8.507431, -21.4, 0.40281677, 8.507431, -21.4, -0.797184, 8.507431, -15.799999, 2.4028168, 8.507431, -15.799999, 0.5988388, 9.107431, -18.20242, 0.5828171, 8.507431, -19.42, -0.58917236, 8.507431, -18.211208, -17.597183, 8.507431, -15.199999, -17.197182, 8.507431, -14, -16.997185, 8.507431, -14, -14.997185, 8.507431, -16.6, -16.797184, 8.507431, -17.8, -18.797184, 8.507431, -17.6, -18.797184, 8.507431, -15.4, -17.197182, 8.507431, -20.599998, -9.797184, 8.507431, -16.4, -11.385143, 9.107431, -19.38484, -11.393105, 8.507431, -18.18968, -37.19718, 9.707432, -10, -37.19718, 9.707432, -21, -47.197186, 8.507431, -21, -47.197186, 8.507431, -10, -47.197186, 8.507431, 1.2000008, -37.19718, 9.707432, 1.2000008, -6.797184, -5.592569, -9.4, -5.9971848, -5.592569, -8.199999, -5.797184, -5.592569, -8.199999, -5.3971825, -5.592569, -18.199999, -5.5721817, -4.992569, -17.099998, -5.747181, -5.592569, -16, -6.097183, -5.592569, -13.799999, -6.2721825, -4.992569, -12.699999, -6.4471855, -5.592569, -11.599998, -5.619404, -5.2925687, -12.6444435, -5.4860725, -5.592569, -15.977776, -5.4416275, -4.992569, -17.088888, -15.797184, -4.992569, -20.8, -16.997185, -5.2925687, -20.8, -16.797184, -5.592569, -19.2, -14.997185, -5.592569, -19.2, -16.397182, -5.592569, -20.8, -9.597183, -5.592569, -18.8, -12.397182, -5.592569, -17.8, -14.997185, -5.592569, -14.799999, -13.597183, -5.592569, -9.4, -7.497181, -4.992569, -18.5, -11.463848, -5.2925687, -18.133333, -13.047184, -5.2925687, -17.05, -12.612961, -4.692569, -12.217836, -11.384949, -5.592569, -12.209047, -12.59301, -5.592569, -13.381784, -7.800972, -4.992569, -13.386627, -7.8090286, -5.592569, -14.599363, -8.997036, -4.992569, -14.608152, -8.993103, -5.592569, -15.7896805, -7.8050957, -4.992569, -15.780891, -6.585144, -5.592569, -16.98484, -7.813156, -5.592569, -16.993631, -8.988979, -5.592569, -13.395416, -13.781021, -5.592569, -13.390575, -14.797184, -5.592569, -19, -13.597183, -5.592569, -16.8, -12.997181, -5.2925687, -17.3, -14.397182, -5.2925687, -18.266666, -17.597183, -5.592569, -11.4, -19.997183, -5.592569, -10, -19.997183, -5.592569, -9.799999, -17.397182, -5.2925687, -14.4, -34.19718, 2.507431, -12.799999, -35.597183, 2.507431, -12.6, -35.597183, 2.507431, -12.4, -33.997185, 2.507431, -11.799999, -25.197184, 2.507431, -14, -29.197184, 2.507431, -17.4, -30.997183, 2.507431, -15.6, -30.197184, 2.507431, -8.4, -26.597183, 2.507431, -8.199999, -30.797184, 2.507431, -16.8, -33.597183, 2.507431, -8.4, -31.397184, 2.507431, -7.6000004, -32.19718, 2.507431, -15.6, -16.597183, 2.507431, -9, -16.197182, 2.507431, -8, -15.997185, 2.507431, -8, -14.797184, 2.507431, -10, -16.597183, 2.507431, -17, -18.597183, 2.507431, -12.799999, -11.997185, 2.507431, -13, -9.997185, 2.507431, -11.4, -9.797184, 2.507431, -12.199999, -19.997183, 2.507431, -12, -19.997183, 2.507431, -10, -16.197182, 2.507431, -19, -18.797184, 2.507431, -16.8, -36.997185, 2.507431, -12.199999, -37.397182, 2.507431, -13.4, -44.797184, 2.507431, -11.199999, -42.197186, 2.507431, -11.199999, -37.397182, 2.507431, -18.6, -44.797184, 2.507431, -18.6, -40.19301, 3.4074316, -13.381784, -40.21306, 2.507431, -14.5857315, -43.197186, 2.507431, -10, -42.997185, 2.507431, -10, -37.397182, 2.507431, -11.199999, -25.197184, -5.592569, -8.199999, -24.997183, -5.592569, -8.199999, -24.197184, -5.592569, -9.4, -26.197184, -5.592569, -12.4, -21.397184, -5.592569, -10.799999, -21.397184, -5.592569, -17.4, -21.397184, -5.592569, -18.6, -23.197184, -5.592569, -17.4, -23.197184, -5.592569, -16.6, -21.397184, -5.592569, -13, -23.597183, -5.592569, -14.6, -26.597183, -5.592569, -14.199999, -24.617184, -4.692569, -13.42, -24.601164, -5.592569, -12.202419, -23.389172, -5.592569, -13.411209, -25.197184, -5.592569, -17.4, -24.797184, -5.592569, -16, -28.197184, -5.592569, -14.6, -29.597183, -5.592569, -17.8, -30.797184, -5.592569, -17, -30.797184, -5.592569, -12.4, -18.797184, -5.592569, -18.6, -18.797184, -5.592569, -17.8, -18.197184, -5.592569, -18.4, -2.5971832, 2.507431, -10.799999, -0.5971832, 2.507431, -8.4, -0.39718246, 2.507431, -8.4, 1.4028168, 2.507431, -11.199999, -5.9971848, 2.507431, -12.4, -4.1971817, 8.807432, -11.199999, -4.1971817, 8.807432, -11, -2.9971848, 8.507431, -10.6, -2.9971848, 8.507431, -11.6, 2.4028168, 8.507431, -12.6, -0.99718475, 8.507431, -14.199999, -0.5971832, 8.507431, -11.6, -2.797184, 8.507431, -9.4, -0.797184, 8.507431, -9.4, -2.797184, 8.507431, -13.4, -23.197184, 8.507431, -8, -22.997183, 8.507431, -8, -22.597183, 8.507431, -9.199999, -23.997183, 8.507431, -9.4, -25.197184, 8.507431, -11.799999, -27.597183, 8.507431, -12.799999, -32.597183, 8.507431, -12.799999, -34.797184, 8.507431, -9.4, -29.401163, 9.107431, -11.00242, -28.213154, 8.507431, -10.993631, -30.589172, 8.507431, -11.0112095, -34.797184, 8.507431, -12.799999, -34.797184, 8.807432, -11.666666, -20.397184, 8.507431, -9.4, -20.397184, 8.507431, -11.799999, -22.797184, 2.507431, -13.4, -21.197184, 2.507431, -9.799999, -21.397184, 2.507431, -12.4, -24.397184, 2.507431, -5.199999, -22.797184, 2.507431, -5.199999, -22.597183, 2.507431, -7.799999, -25.197184, 2.507431, -7.3999996, -16.197182, 8.507431, -12.799999, -18.197184, 8.507431, -12, -17.997183, 8.507431, -9.4, -17.197182, 8.507431, -8, -16.997185, 8.507431, -8, -16.197182, 8.507431, -9.4, -5.3971825, 8.507431, -9.4, -5.3971825, 8.507431, -12.799999, -4.797184, 8.807432, -10.299999, -4.797184, 8.807432, -12, -5.405094, 8.807432, -10.980892, -4.797184, 8.807432, -10.200001, -44.397182, 2.507431, -8.6, -42.197186, 2.507431, -7.199999, -40.19718, 2.507431, -3.3999996, -44.397182, 2.507431, -1.5999985, -42.197186, 2.507431, -1.2000008, -39.997185, 2.507431, -1.2000008, -37.19718, 2.507431, -1.5999985, -37.19718, 2.507431, -2.5999985, -39.19718, 2.8074312, -3.1333332, -39.597183, 2.507431, -6, -42.197186, 1.6074314, 1.2000008, -39.997185, 1.6074314, 1.2000008, -28.197184, 2.507431, -2.2000008, -28.197184, 2.507431, -2.3999977, -30.197184, 2.507431, -2.3999977, -30.997183, 2.507431, -1.3999977, -30.797184, 2.507431, 1.7999992, -32.19718, 2.507431, 1.4000015, -32.997185, 2.507431, 2.2000008, -32.597183, 2.507431, -6, -32.397186, 2.507431, -3.7999992, -34.797184, 2.507431, -7.6000004, -34.797184, 2.507431, -3.6000004, -33.597183, 2.507431, -3.1999989, -33.397186, 2.507431, -0.20000076, -28.997183, 2.507431, 4.4000015, -28.597183, 2.507431, 2.2000008, -34.797184, 2.507431, 4.799999, -34.797184, 2.507431, 1.6000023, 0.20281601, 2.507431, -6, -0.5971832, 2.507431, -4.3999996, 2.4028168, 2.507431, -6, -2.797184, 2.507431, -3, -2.797184, 2.507431, -0.79999924, -0.99718475, 2.507431, -0.5999985, 2.202816, 2.507431, -1.5999985, -25.997183, -5.2925687, -6.799999, -24.197184, -5.2925687, -6.799999, -24.197184, -5.2925687, -4.3999996, -27.997183, -5.2925687, -4.3999996, -28.797184, -5.2925687, 0, -23.197184, -5.2925687, 0, -25.781116, -4.692569, -1.398468, -25.785145, -5.2925687, -2.5848389, -22.797184, -5.2925687, -5.6000004, -21.397184, -5.2925687, -5.3999996, -21.397184, -5.2925687, -6.799999, -29.197184, -5.2925687, -5.6000004, -30.797184, -5.2925687, -6.799999, -30.797184, -5.2925687, -5.3999996, -6.3971825, -5.592569, -7, -5.3971825, -5.592569, -3.6000004, -14.797184, -5.592569, -0.3999977, -14.797184, -4.992569, 1.6000023, -13.397182, -5.592569, 2.2000008, -11.197182, -5.592569, 1, -7.597183, -5.592569, 2.2000008, -7.9971848, -5.592569, -2.2000008, -9.197182, -5.592569, -4.3999996, -14.397182, -5.592569, -4.6000004, -16.997185, -5.592569, -3.3999996, -16.197182, -5.592569, -1.2000008, -9.997185, -5.592569, 2.4000015, -8.397182, -5.2925687, -6.799999, -23.597183, 8.507431, -7, -21.397184, 8.507431, -6.799999, -25.597183, 8.507431, 1.2000008, -22.597183, 8.507431, 2.6000023, -22.597183, 8.507431, -1.5999985, -25.197184, 8.507431, 5.4000015, -21.397184, 8.507431, 5.4000015, -27.197184, 8.507431, -5.199999, -28.797184, 8.507431, -5, -28.397184, 8.507431, 0.79999924, -26.797184, 8.507431, -6.799999, -21.397184, 8.507431, -3.3999996, -16.597183, 8.507431, -7, -17.597183, 8.507431, -6, -17.397182, 8.507431, -2.3999977, -17.397182, 8.507431, 1.6000023, -14.797184, 8.507431, 1.4000015, -11.997185, 8.507431, 0.79999924, -11.797184, 8.507431, -5, -13.397182, 8.507431, -5.199999, -13.797134, 9.107431, -1.41605, -13.801163, 8.507431, -2.602417, -14.985142, 8.507431, -1.3848381, -13.793106, 8.507431, -0.18967819, -18.797184, 8.507431, -5.199999, -13.797184, 8.507431, -6.799999, -18.797184, 8.507431, 3.4000015, -18.797184, 8.507431, 5.4000015, -14.997185, 8.507431, 5.4000015, -16.597183, 2.507431, -6.799999, -14.797184, 2.507431, -6.6000004, -18.197184, 2.507431, -0.3999977, -17.997183, 2.507431, -0.3999977, -17.197182, 2.507431, -1.5999985, -18.797184, 2.507431, -6.6000004, -14.797184, 2.507431, -1.3999977, -30.597183, 8.507431, -5.199999, -30.997183, 8.507431, -6.799999, -33.19718, 8.507431, -6.799999, -32.19718, 8.507431, -3.7999992, -31.397184, 8.507431, 1.7999992, -34.797184, 8.507431, -2.5999985, -34.797184, 8.507431, 6.6000023, -30.997183, 8.507431, 6.6000023, -34.797184, 8.807432, -0.29999924, -7.9971848, 8.507431, -6.799999, -9.397182, 8.507431, -6.799999, -10.197182, 8.507431, -5, -7.1971817, 8.507431, -4, -9.197182, 8.507431, 1.6000023, -6.9971848, 8.507431, 2, -5.3971825, 8.507431, 1.2000008, -9.197182, 8.507431, 6.6000023, -7.1971817, 8.507431, 6.6000023, -5.3971825, 8.507431, -3.3999996, -5.3971825, 8.807432, 0.049999237, -2.797184, 9.407433, 0.20000076, -2.797184, 9.407433, 7.200001, 3.0028152, 8.207432, 7.200001, 3.0028152, 8.207432, 0.20000076, 3.0028152, 8.207432, -6.799999, -2.797184, 9.407433, -6.799999, -14.597183, 2.507431, -1.2000008, -8.197182, 2.507431, -1.2000008, -7.1971817, 2.507431, -6.6000004, -30.197184, 3.7074318, -4.799999, -26.797184, 3.7074318, -4.799999, -27.197184, 3.7074318, -6, -30.197184, 3.7074318, -5.6000004, -25.397184, 2.507431, -3, -24.997183, 2.507431, -2, -24.597183, 2.507431, 1.4000015, -25.397184, 2.507431, 2.2000008, -22.597183, 2.507431, 5, 5.0028152, 1.9074316, 1.6000023, 5.0028152, 1.9074316, -1.5999985, 3.0028152, 2.507431, -0.79999924, 3.0028152, 2.507431, 1, 0.60281754, 2.507431, 6.4000015, 2.4028168, 2.507431, 6.4000015, 2.202816, 2.507431, 1.7999992, -14.397182, 2.507431, 6.6000023, -6.9971848, 2.507431, 6.6000023, -12.585144, 3.1074314, 1.0151596, -12.593105, 2.507431, 2.2103195, -17.197182, 1.9074316, 0.79999924, -18.797184, -3.1925688, 6.200001, -18.797184, -5.592569, 13.200001, -17.597183, -5.592569, 9.400002, -17.547184, -5.592569, 8.325001, -17.49718, -4.692569, 7.25, -17.447182, -3.1925688, 6.174999, -17.597183, 2.507431, 0.20000076, -18.697184, -2.2925687, 5.1000023, -18.797184, -5.592569, 8.533333, -17.197182, -5.592569, 13.600002, -15.797184, -5.592569, 12.799999, -15.797184, -5.2925687, 10.200001, -18.797184, -5.592569, 1, -18.797184, -5.592569, 2.7999992, -16.997185, -5.592569, 2.7999992, -16.997185, -5.592569, 1, -28.997183, -5.2925687, 3.7999992, -29.197184, -5.2925687, 2.2000008, -30.397184, -5.2925687, 2.4000015, -30.397184, -5.2925687, 6, -28.997183, -5.2925687, 6, -27.397184, -5.2925687, 4.4000015, -7.3971825, -5.592569, 5, -6.1971817, -5.592569, 3.6000023, -10.597183, -5.592569, 4.200001, -7.597183, -5.592569, 8.799999, -6.1971817, -5.592569, 7.6000023, -13.597183, -5.592569, 4.4000015, -14.397182, -5.2925687, 8.799999, -12.130516, -5.2925687, 8.799999, -10.997181, -4.692569, 8.799999, -6.597183, -4.992569, 6.7333336, -12.597183, -5.2925687, 4.333336, -7.3971825, -4.692569, 13.600002, -6.597183, -4.692569, 9.799999, -12.597183, -5.2925687, 13.799999, -11.557182, -5.2925687, 13.759998, -8.437183, -5.592569, 13.640003, -7.097183, -5.592569, 9.299999, -7.7971344, -5.592569, 10.58395, -12.597183, 0.4074316, 9.200001, -19.997183, 0.4074316, 9.200001, -19.197184, 0.4074316, 10, -19.197184, 0.4074316, 15.200001, -12.197182, 0.4074316, 15.200001, -4.9971848, 0.4074316, 15.200001, -4.9971848, 0.4074316, 9.200001)
@@ -433,7 +435,7 @@ height = 0.64282227
 radius = 0.23535156
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wrkuh"]
-size = Vector3(50.519592, 34.81891, 21.83899)
+size = Vector3(50.519592, 30.653473, 21.83899)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_400gw"]
 size = Vector3(1.0238972, 0.93914795, 0.035690308)
@@ -526,6 +528,9 @@ func _process(delta: float) -> void:
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1numt"]
 size = Vector3(1.935791, 0.79211426, 5.280243)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m1vgo"]
+size = Vector3(3.244629, 5.8740234, 2.9853516)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w7ycr"]
 size = Vector3(210.35085, 31.299255, 121.98889)
@@ -855,6 +860,7 @@ transform = Transform3D(0.5811646, 0, 0, 0, 0.44509375, 0, 0, 0, 0.68289566, -24
 
 [node name="destination12" parent="NavigationRegion3D" instance=ExtResource("86_d2t1g")]
 transform = Transform3D(0.5811646, 0, 0, 0, 0.44509375, 0, 0, 0, 0.68289566, -25.977829, -5.295, -1.4819555)
+visible = false
 
 [node name="destination2" parent="NavigationRegion3D" instance=ExtResource("86_d2t1g")]
 transform = Transform3D(0.5811646, 0, 0, 0, 0.44509375, 0, 0, 0, 0.68289566, -0.7020798, 2.54, -18.21993)
@@ -1471,7 +1477,7 @@ transform = Transform3D(-3.059797e-09, 0, -0.07, 0, 0.07, 0, 0.07, 0, -3.059797e
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/1ST FLOOR ITEMS/bathroom/sink2(maopen)"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/1ST FLOOR ITEMS/bathroom/sink2(maopen)/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.095703125, 16.68637, 1.7896729)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.095703125, 14.603653, 1.7896729)
 shape = SubResource("BoxShape3D_wrkuh")
 
 [node name="sink3" parent="NavigationRegion3D/ITEMS/1ST FLOOR ITEMS/bathroom" instance=ExtResource("53_1n58x")]
@@ -2095,9 +2101,209 @@ collision_layer = 5
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4678955, -0.30799294, -0.26817322)
 shape = SubResource("BoxShape3D_1numt")
 
+[node name="Candle" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable" instance=ExtResource("124_gslyl")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -6.538048, 3.6082327, -2.3415275)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable/Candle" groups=["deployable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable/Candle/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 2.437008, -0.03759764)
+shape = SubResource("BoxShape3D_m1vgo")
+
+[node name="Candle2" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable" instance=ExtResource("124_gslyl")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -6.538048, 3.6082327, 0.74165404)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable/Candle2" groups=["deployable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable/Candle2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 2.437008, -0.03759764)
+shape = SubResource("BoxShape3D_m1vgo")
+
+[node name="Candle3" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable" instance=ExtResource("124_gslyl")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -6.538048, 3.6082327, 0.13181913)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable/Candle3" groups=["deployable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable/Candle3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 2.437008, -0.03759764)
+shape = SubResource("BoxShape3D_m1vgo")
+
+[node name="Candle4" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable" instance=ExtResource("124_gslyl")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -6.538048, 3.6082327, -0.5608456)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable/Candle4" groups=["deployable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable/Candle4/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 2.437008, -0.03759764)
+shape = SubResource("BoxShape3D_m1vgo")
+
+[node name="Candle5" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable" instance=ExtResource("124_gslyl")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -6.538048, 3.6082327, -1.1684806)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable/Candle5" groups=["deployable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable/Candle5/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 2.437008, -0.03759764)
+shape = SubResource("BoxShape3D_m1vgo")
+
+[node name="Candle6" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable" instance=ExtResource("124_gslyl")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -6.538048, 3.6082327, 1.3233434)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable/Candle6" groups=["deployable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable/Candle6/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 2.437008, -0.03759764)
+shape = SubResource("BoxShape3D_m1vgo")
+
+[node name="Candle7" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable" instance=ExtResource("124_gslyl")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -6.538048, 3.6082327, -1.7654359)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable/Candle7" groups=["deployable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable/Candle7/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 2.437008, -0.03759764)
+shape = SubResource("BoxShape3D_m1vgo")
+
+[node name="Candle8" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable" instance=ExtResource("124_gslyl")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -6.538048, 3.6082327, 1.8939941)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable/Candle8" groups=["deployable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable/Candle8/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 2.437008, -0.03759764)
+shape = SubResource("BoxShape3D_m1vgo")
+
 [node name="candleAroundTheHouse" type="Node3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle"]
 
-[node name="Task_Clean statues" type="Node3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS"]
+[node name="Candle" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -3.501958, 4.170301, -9.179966)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 2.437008, -0.03759764)
+shape = SubResource("BoxShape3D_m1vgo")
+
+[node name="Candle2" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -26.705013, 3.131509, -6.007533)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle2" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 2.437008, -0.03759764)
+shape = SubResource("BoxShape3D_m1vgo")
+
+[node name="Candle3" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -30.696388, 3.17609, -18.43706)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle3" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 2.437008, -0.03759764)
+shape = SubResource("BoxShape3D_m1vgo")
+
+[node name="Candle4" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -29.79184, 10.443393, -18.833187)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle4" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle4/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 2.437008, -0.03759764)
+shape = SubResource("BoxShape3D_m1vgo")
+
+[node name="Candle5" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -28.743671, 11.369901, -6.5035143)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle5" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle5/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 2.437008, -0.03759764)
+shape = SubResource("BoxShape3D_m1vgo")
+
+[node name="Candle6" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -4.7716618, 8.195918, -24.549925)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle6" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle6/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 2.437008, -0.03759764)
+shape = SubResource("BoxShape3D_m1vgo")
+
+[node name="Candle7" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -2.6479123, 10.549771, -8.098337)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle7" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle7/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 2.437008, -0.03759764)
+shape = SubResource("BoxShape3D_m1vgo")
+
+[node name="Candle8" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -17.102203, 10.225568, 6.5437107)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle8" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle8/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 2.437008, -0.03759764)
+shape = SubResource("BoxShape3D_m1vgo")
+
+[node name="Candle9" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -21.393135, 4.1103196, -31.254509)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle9" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle9/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 2.437008, -0.03759764)
+shape = SubResource("BoxShape3D_m1vgo")
+
+[node name="Candle10" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -25.056812, -4.2180595, -18.812319)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle10" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle10/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 2.437008, -0.03759764)
+shape = SubResource("BoxShape3D_m1vgo")
+
+[node name="Candle11" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -8.518473, -5.9481525, -8.709)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle11" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle11/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 2.437008, -0.03759764)
+shape = SubResource("BoxShape3D_m1vgo")
+
+[node name="Candle12" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -6.775465, -5.03978, 13.573015)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle12" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle12/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 2.437008, -0.03759764)
+shape = SubResource("BoxShape3D_m1vgo")
+
+[node name="Task_Clean_Statue" type="Node3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS"]
 
 [node name="2ND FLOOR ITEMS" type="Node3D" parent="NavigationRegion3D/ITEMS"]
 visible = false
@@ -2291,7 +2497,7 @@ transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -26.126568, -5.98954
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS/old table"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS/old table/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.67370605, 75.76944, -2.117981)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.67370605, 24.144562, -2.117981)
 shape = SubResource("BoxShape3D_4uiwc")
 
 [node name="map" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS/old table" instance=ExtResource("93_uohaw")]
@@ -2706,6 +2912,9 @@ transform = Transform3D(0.060000002, 0, 0, 0, 0.06, 0, 0, 0, 0.060000002, -5.383
 
 [node name="CANDEL NA SIGA8" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS/weirdo na bookstanf" instance=ExtResource("162_y0f4w")]
 transform = Transform3D(0.074999996, 0, 0, 0, 0.07499998, 0, 0, 0, 0.074999996, -5.560663, 0, -1.798487)
+
+[node name="ceiling lights red" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS/weirdo na bookstanf" instance=ExtResource("171_p4sj0")]
+transform = Transform3D(1, 0, 0, 0, 0.99999976, 0, 0, 0, 1, -5.3954124, 7.9173193, 1.3357103)
 
 [node name="locker3(maopen)" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS" instance=ExtResource("112_de7xd")]
 transform = Transform3D(-9.616505e-10, 0, -0.022, 0, 0.022, 0, 0.022, 0, -9.616505e-10, -19.120392, -5.946971, -12.632575)
