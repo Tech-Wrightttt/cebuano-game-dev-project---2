@@ -4,14 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://oysop7pwekld" path="res://game/ghost_model_animation.tscn" id="2_io021"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b6vni"]
-radius = 0.40820313
 height = 3.0
 
 [node name="ghost" type="CharacterBody3D"]
 script = ExtResource("1_blxur")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44936407, -0.08005732)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.37709844, -0.08005732)
 shape = SubResource("CapsuleShape3D_b6vni")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
@@ -22,23 +21,28 @@ radius = 0.4
 debug_enabled = true
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(20.134624, 0, 0, 0, -7.0213946e-07, -25.992308, 0, 16.063078, -1.1361599e-06, 0, 0.57261574, 0)
+transform = Transform3D(15, 0, 0, 0, -6.556708e-07, -15, 0, 15, -6.556708e-07, 0, 0.57261574, 0)
+visible = false
 collision_mask = 131
 
 [node name="RayCast3D2" type="RayCast3D" parent="."]
-transform = Transform3D(13.594616, -6.339274, 2.7709848e-07, 0, -6.556708e-07, -15, 6.339274, 13.594616, -5.942395e-07, 0, 0.5732396, 0)
+transform = Transform3D(14.095389, -5.1303015, 2.2425259e-07, 0, -6.556708e-07, -15, 5.1303015, 14.095389, -6.16129e-07, 0, 0.5732396, 0)
+visible = false
 collision_mask = 131
 
 [node name="RayCast3D3" type="RayCast3D" parent="."]
-transform = Transform3D(9.641814, -11.490665, 5.02273e-07, 0, -6.5567076e-07, -15, 11.490665, 9.641814, -4.2145712e-07, 0, 0.5732396, 0)
+transform = Transform3D(11.490666, -9.641813, 4.2145706e-07, 0, -6.556708e-07, -15, 9.641813, 11.490666, -5.02273e-07, 0, 0.5732396, 0)
+visible = false
 collision_mask = 131
 
 [node name="RayCast3D4" type="RayCast3D" parent="."]
-transform = Transform3D(13.594616, 6.339274, -2.7709848e-07, 0, -6.556708e-07, -15, -6.339274, 13.594616, -5.942395e-07, 0, 0.5732396, 0)
+transform = Transform3D(14.095389, 5.1303015, -2.2425259e-07, 0, -6.556708e-07, -15, -5.1303015, 14.095389, -6.16129e-07, 0, 0.5732396, 0)
+visible = false
 collision_mask = 131
 
 [node name="RayCast3D5" type="RayCast3D" parent="."]
-transform = Transform3D(9.641814, 11.490665, -5.02273e-07, 0, -6.5567076e-07, -15, -11.490665, 9.641814, -4.2145712e-07, 0, 0.5732396, 0)
+transform = Transform3D(11.490666, 9.641813, -4.2145706e-07, 0, -6.556708e-07, -15, -9.641813, 11.490666, -5.02273e-07, 0, 0.5732396, 0)
+visible = false
 collision_mask = 131
 
 [node name="ghost_model_animation" parent="." instance=ExtResource("2_io021")]
