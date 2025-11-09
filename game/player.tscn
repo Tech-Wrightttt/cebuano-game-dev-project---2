@@ -35,6 +35,10 @@ script/source = "extends CharacterBody3D
 # Movement
 var SPEED: float = 4.5
 const SPRINT_SPEED: float = 8.0
+var sprint_stamina_max: float = 100.0
+var sprint_stamina: float = sprint_stamina_max
+var sprint_depletion_rate: float = 40.0  # stamina drained per second while sprinting
+var sprint_recovery_rate: float = 20.0   # stamina recovered per second when not sprinting
 const ACCEL: float = 20.0
 const FRICTION: float = 30.0
 const AIR_FRICTION: float = 2.0
@@ -53,7 +57,8 @@ const BOB_LERP: float = 2.0
 const MAX_STEP_HEIGHT: float = 0.5
 @onready var overlay = %ThirdEyeShader
 var overlay_visible := false
-@onready var progress_bar = $CanvasLayer2/ProgressBar
+@onready var progress_bar = $CanvasLayer2/SanityBar
+@onready var sprint_bar = $CanvasLayer2/SprintBar
 @onready var open_eyes = $\"PlayerScreenUI/Open eyes\"
 @onready var close_eyes = $\"PlayerScreenUI/Close eyes\"
 
@@ -122,6 +127,11 @@ func _ready() -> void:
 		overlay_visible = false
 		open_eyes.visible=false
 		close_eyes.visible=true
+		
+	if sprint_bar:
+		sprint_bar.min_value = 0
+		sprint_bar.max_value = sprint_stamina_max
+		sprint_bar.value = sprint_stamina_max
 
 func _setup_stair_raycasts() -> void:
 	# Create raycasts if they don't exist
@@ -148,6 +158,15 @@ func _process(delta: float) -> void:
 	else:
 		if progress_bar.value < progress_bar.max_value:
 			progress_bar.value = min(progress_bar.value + third_eye_refill_rate * delta, progress_bar.max_value)
+	# Sprint stamina update
+	if is_sprinting and sprint_stamina > 0:
+		sprint_stamina = max(sprint_stamina - sprint_depletion_rate * delta, 0)
+	elif sprint_stamina < sprint_stamina_max:
+		sprint_stamina = min(sprint_stamina + sprint_recovery_rate * delta, sprint_stamina_max)
+	
+	# Update sprint bar value
+	if sprint_bar:
+		sprint_bar.value = sprint_stamina
 
 func _on_animation_finished(anim_name: String) -> void:
 	if anim_name == \"Combat_idle_start\":
@@ -195,7 +214,7 @@ func _try_punch() -> void:
 func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		_last_frame_was_on_floor = Engine.get_physics_frames()
-		if Input.is_action_pressed(\"sprint\"):
+		if Input.is_action_pressed(\"sprint\") and sprint_stamina > 0:
 			is_sprinting = true
 		else:
 			is_sprinting = false
@@ -628,7 +647,7 @@ script = ExtResource("10_4uvqg")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer2"]
+[node name="SanityBar" type="ProgressBar" parent="CanvasLayer2"]
 offset_left = 29.0
 offset_top = 900.0
 offset_right = 406.0
@@ -637,7 +656,7 @@ theme_override_styles/background = SubResource("StyleBoxFlat_ppdnp")
 theme_override_styles/fill = SubResource("StyleBoxFlat_7vc3l")
 value = 100.0
 
-[node name="ProgressBar2" type="ProgressBar" parent="CanvasLayer2"]
+[node name="SprintBar" type="ProgressBar" parent="CanvasLayer2"]
 offset_left = 28.0
 offset_top = 949.0
 offset_right = 405.0
