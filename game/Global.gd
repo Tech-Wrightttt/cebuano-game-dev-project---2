@@ -1,6 +1,6 @@
 extends Node
 
-var current_night: int = 1
+var current_night: int = 5
 const NIGHT_DURATION_REAL := 9 * 60.0 # 9 minutes in seconds
 var time_left: float = NIGHT_DURATION_REAL
 
@@ -42,3 +42,6 @@ func get_game_time() -> Dictionary:
 		"time_left": time_left,
 		"night_over": time_left <= 0
 	}
+	
+func get_night() -> int:
+	return current_night

@@ -66,6 +66,13 @@ extends Node3D
 		"drop": $lanadropsarray/lanadropscontainer9/lanadrops9,
 		"drop_collision": $lanadropsarray/lanadropscontainer9/lanadrops9/StaticBody3D/CollisionShape3D,
 		"shadow": $lanadropsarray/lanadropscontainer9/lanadropsshadow9
+	},
+	10: {
+		"bottle": $"lanabottles/lana bottle10",
+		"bottle_collision": $lanabottles/"lana bottle10"/lanastatic10/lanacollision10,
+		"drop": null,
+		"drop_collision": null,
+		"shadow": null
 	}
 }
 
@@ -74,25 +81,34 @@ var chosen_drops = []
 
 func _ready() -> void:
 	randomize()
-	chosen_bottle = randi() % lana_map.size() + 1
+	var current_night = Global.get_night()
+	if current_night == 5:
+		chosen_bottle = 10
+	else:
+		chosen_bottle = randi() % 9 + 1
+	
 	update_lana_tasking()
-
 # Update visibility and collisions
 func update_lana_tasking() -> void:
 	for id in lana_map.keys():
 		var data = lana_map[id]
 		var is_active = (id == chosen_bottle)
-
 		data["bottle"].visible = is_active
 		data["bottle_collision"].set_deferred("disabled", not is_active)
-
 		# Drops and shadows hidden/disabled initially
-		data["drop"].visible = false
-		data["drop_collision"].set_deferred("disabled", true)
-		data["shadow"].visible = false
-
+		# --- ADDED NULL CHECKS ---
+		if data["drop"]:
+			data["drop"].visible = false
+		if data["drop_collision"]:
+			data["drop_collision"].set_deferred("disabled", true)
+		if data["shadow"]:
+			data["shadow"].visible = false
+		# --- END OF NULL CHECKS ---
 	# Randomize 5 chosen drops
 	var all_ids = lana_map.keys()
+	# --- NEW: Remove ID 10 from possible drop locations ---
+	# This ensures we don't try to use its null drop/shadow nodes
+	all_ids.erase(10)
 	all_ids.shuffle()
 	chosen_drops = all_ids.slice(0, 5)
 
@@ -117,13 +133,16 @@ func stop_deploy_sound() -> void:
 func deploy(collider_body: PhysicsBody3D) -> void:
 	for id in lana_map.keys():
 		var data = lana_map[id]
-		# Get the StaticBody3D from the CollisionShape3D
-		var body_in_map = data["drop_collision"].get_parent()
+		# --- ADDED NULL CHECK ---
+		# Make sure this ID has a drop_collision before checking it
+		if data["drop_collision"]:
+			# Get the StaticBody3D from the CollisionShape3D
+			var body_in_map = data["drop_collision"].get_parent()
 
-		if collider_body == body_in_map:
-			var shadow_visual_node = data["shadow"]
-			if shadow_visual_node.visible:
-				shadow_visual_node.visible = false # Hide the SHADOW
-				data["drop"].visible = true       # Show the DROP
-				data["drop_collision"].set_deferred("disabled", true)
-			return
+			if collider_body == body_in_map:
+				var shadow_visual_node = data["shadow"]
+				if shadow_visual_node.visible:
+					shadow_visual_node.visible = false # Hide the SHADOW
+					data["drop"].visible = true       # Show the DROP
+					data["drop_collision"].set_deferred("disabled", true)
+				return
