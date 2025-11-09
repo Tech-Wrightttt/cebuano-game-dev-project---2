@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://csf1p5e7vtr01"]
+[gd_scene load_steps=17 format=4 uid="uid://csf1p5e7vtr01"]
 
 [ext_resource type="Texture2D" uid="uid://frhfec557ic2" path="res://assets/glb_models/chores/just_a_candle_0.png" id="1_gux6o"]
 [ext_resource type="Texture2D" uid="uid://d0uuaucyu3kb1" path="res://assets/glb_models/chores/just_a_candle_1.png" id="2_1yrot"]
@@ -189,6 +189,10 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_t1g4j")
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_gux6o"]
+height = 6.0
+radius = 2.0
+
 [node name="CANDEL NA SIGA" type="Node3D"]
 
 [node name="Sketchfab_model" type="Node3D" parent="."]
@@ -239,3 +243,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04233405, 4.6962204, -0.22
 [node name="Object_12" type="MeshInstance3D" parent="Sketchfab_model/root/GLTF_SceneRootNode/BezierCurve_001_5"]
 mesh = SubResource("ArrayMesh_tjea1")
 skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0393527, 0)
+shape = SubResource("CylinderShape3D_gux6o")
