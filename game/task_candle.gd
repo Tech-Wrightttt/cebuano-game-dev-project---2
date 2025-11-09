@@ -10,7 +10,7 @@ func _ready():
 	randomize()
 	collect_Candles = candle_Scattered.get_children()
 	collect_Candles.shuffle()
-	chosen_candles = collect_Candles.slice(0, 1)
+	chosen_candles = collect_Candles.slice(0, 8)
 	update_candle_tasking()
 
 func update_candle_tasking():

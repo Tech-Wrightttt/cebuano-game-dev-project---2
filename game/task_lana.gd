@@ -1,6 +1,5 @@
 extends Node3D
 
-@onready var object_interactor: RayCast3D = $Head/Camera3D/ObjectInteractor
 @onready var lana_prayer: AudioStreamPlayer3D = $Lana_Prayer
 
 # Lana bottle nodes
