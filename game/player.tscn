@@ -721,7 +721,7 @@ offset_left = 357.0
 offset_top = 8.0
 offset_right = 802.0
 offset_bottom = 212.0
-text = "00 "
+text = "00 AM"
 label_settings = SubResource("LabelSettings_8t331")
 
 [node name="Open eyes" type="TextureRect" parent="PlayerScreenUI"]

@@ -4,25 +4,24 @@ extends Panel
 @onready var ampm_label: Label = $Label2
 
 func _ready() -> void:
-	# Show initial time immediately (should be 6:00 PM at night start)
-	Global.update_time(0) # No delta needed, just refresh time_left state
-	update_display()
+	update_time()
+	# Update every second
 	set_process(true)
 
 func _process(_delta: float) -> void:
-	Global.update_time(_delta)
-	update_display()
+	update_time()
 
-func update_display():
-	var game_time = Global.get_game_time()
-
-	hour_label.text = "%02d:%02d" % [game_time.display_hour, game_time.minute]
-	ampm_label.text = game_time.ampm
-
-	if game_time.night_over:
-		hour_label.add_theme_color_override("font_color", Color(1, 0, 0)) # Red
-		ampm_label.add_theme_color_override("font_color", Color(1, 0, 0))
-	else:
-		hour_label.add_theme_color_override("font_color", Color(1, 1, 1)) # White
-		ampm_label.add_theme_color_override("font_color", Color(1, 1, 1))
-	
+func update_time():
+	var now = Time.get_time_dict_from_system()
+	var hour = int(now["hour"])
+	var minute = int(now["minute"])
+	var ampm = "AM"
+	if hour >= 12:
+		ampm = "PM"
+	var display_hour = hour % 12
+	if display_hour == 0:
+		display_hour = 12
+	# Format minutes with a leading zero
+	var time_text = "%02d:%02d" % [display_hour, minute]
+	hour_label.text = time_text
+	ampm_label.text = ampm
