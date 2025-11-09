@@ -1,9 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://c6y0fvju3dbqx"]
+[gd_scene load_steps=17 format=3 uid="uid://c6y0fvju3dbqx"]
 
 [ext_resource type="Shader" uid="uid://bt1lbo5yomj25" path="res://game/shaders/retro_camera.gdshader" id="1_fi7oc"]
-[ext_resource type="PackedScene" uid="uid://27jbkannujlc" path="res://game/house.tscn" id="1_yrkti"]
+[ext_resource type="Script" uid="uid://b2ub3m0tg3hsg" path="res://game/cutscenes/open_eyes.gd" id="1_p6q1s"]
+[ext_resource type="PackedScene" uid="uid://c6nnpmjnwv4g2" path="res://game/house.tscn" id="1_yrkti"]
+[ext_resource type="FontFile" uid="uid://c126udgjjdqhf" path="res://fonts/cmu-typewriter/Typewriter/cmunit.ttf" id="2_8w61q"]
+[ext_resource type="Script" uid="uid://bluvc5ewweubr" path="res://game/cutscenes/canvas_layer.gd" id="2_p6q1s"]
 [ext_resource type="PackedScene" uid="uid://bnd4f5cscd18j" path="res://game/house_materials/ceiling_lights.tscn" id="3_mr1j4"]
-[ext_resource type="PackedScene" uid="uid://dbom0jasgiob6" path="res://game/ghost.tscn" id="4_mr1j4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8w61q"]
 shader = ExtResource("1_fi7oc")
@@ -15,6 +17,43 @@ shader_parameter/scanline_strength = 0.016
 shader_parameter/distortion_strength = 0.1
 shader_parameter/ghost_strength = 0.12
 shader_parameter/flicker_strength = 0.005
+
+[sub_resource type="Animation" id="Animation_p6q1s"]
+resource_name = "text"
+length = 4.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/RichTextLabel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.7333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_bn1ud"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/RichTextLabel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qjrdi"]
+_data = {
+&"RESET": SubResource("Animation_bn1ud"),
+&"text": SubResource("Animation_p6q1s")
+}
 
 [sub_resource type="Animation" id="Animation_p05yo"]
 length = 10.0
@@ -45,7 +84,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_lqnbj"]
 resource_name = "open eyes"
-length = 11.0
+length = 15.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -102,12 +141,14 @@ adjustment_enabled = true
 adjustment_brightness = 1.2
 
 [node name="Cutscene" type="Node3D"]
+script = ExtResource("1_p6q1s")
 
 [node name="open eyes" type="Camera3D" parent="."]
 transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, -26.595726, 9.772967, -23.375956)
 current = true
 
 [node name="Filters" type="CanvasLayer" parent="open eyes"]
+visible = false
 
 [node name="Retro_Camera" type="ColorRect" parent="open eyes/Filters"]
 material = SubResource("ShaderMaterial_8w61q")
@@ -117,7 +158,41 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Open Eyes Animation" type="AnimationPlayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="open eyes"]
+script = ExtResource("2_p6q1s")
+
+[node name="ColorRect" type="ColorRect" parent="open eyes/CanvasLayer"]
+anchors_preset = -1
+anchor_right = 0.998
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 894.0
+offset_right = 0.8399658
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.13725491)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="open eyes/CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 415.0
+offset_top = 44.0
+offset_right = 1645.0
+offset_bottom = 148.0
+theme_override_colors/default_color = Color(1, 1, 0.4862745, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_8w61q")
+theme_override_font_sizes/normal_font_size = 43
+text = "hmmm old superstitions...typical probinsya stuff."
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="open eyes/CanvasLayer/ColorRect/RichTextLabel"]
+root_node = NodePath("../../..")
+libraries = {
+&"": SubResource("AnimationLibrary_qjrdi")
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_05dia")
 }
@@ -126,9 +201,7 @@ libraries = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.823221, 0, 0)
 
 [node name="ceiling lights7" parent="House" instance=ExtResource("3_mr1j4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.344749, 16.441933, -16.099638)
-
-[node name="ghost" parent="House" instance=ExtResource("4_mr1j4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.635996, 16.305607, -17.814905)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_bn1ud")
