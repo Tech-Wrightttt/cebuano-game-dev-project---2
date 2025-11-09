@@ -127,6 +127,10 @@ proceed_to_next_night={
 3d_physics/layer_3="interactable object"
 3d_physics/layer_4="task object"
 
+[navigation]
+
+3d/default_cell_size=0.2
+
 [rendering]
 
 occlusion_culling/bvh_build_quality=0
