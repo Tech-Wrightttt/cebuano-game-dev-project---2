@@ -1,4 +1,4 @@
-[gd_scene load_steps=343 format=4 uid="uid://c6nnpmjnwv4g2"]
+[gd_scene load_steps=348 format=4 uid="uid://c6nnpmjnwv4g2"]
 
 [ext_resource type="Script" uid="uid://cmcetdgh8ky7t" path="res://scripts/house.gd" id="1_8tqyt"]
 [ext_resource type="Material" uid="uid://31nbyn23hg2q" path="res://materials/house_material.tres" id="1_f6s7v"]
@@ -169,8 +169,11 @@
 [ext_resource type="PackedScene" path="res://assets/glb_models/chores/uncleaned_mary_statue.tscn" id="129_s8tip"]
 [ext_resource type="PackedScene" path="res://assets/glb_models/chores/uncleaned_statue_figure.tscn" id="130_klyxg"]
 [ext_resource type="AudioStream" uid="uid://bdu2g3rov5k8u" path="res://soundfx/window_double_close.mp3" id="131_m1vgo"]
-[ext_resource type="AudioStream" uid="uid://twfn3hu6qwiy" path="res://soundfx/cleaning_statue.mp3" id="131_u8565"]
+[ext_resource type="AudioStream" uid="uid://dof62tk8ke4cn" path="res://soundfx/cleaning_statue.mp3" id="131_u8565"]
+[ext_resource type="Script" uid="uid://c0xt6niuwwpiv" path="res://game/task_cover_mirror.gd" id="132_dyeyr"]
 [ext_resource type="AudioStream" uid="uid://cawls3lbt556x" path="res://soundfx/window_single_close.mp3" id="132_m2psj"]
+[ext_resource type="PackedScene" uid="uid://cw5paga50nyio" path="res://assets/glb_models/chores/towel.glb" id="134_s8tip"]
+[ext_resource type="AudioStream" uid="uid://3i6cdx842td1" path="res://soundfx/towel_placing.mp3" id="135_s8tip"]
 [ext_resource type="PackedScene" uid="uid://df20nbkqt4c7d" path="res://assets/glb_models/basement/worn_bandages.glb" id="138_yewax"]
 [ext_resource type="PackedScene" uid="uid://isdmfbvdrku7" path="res://assets/glb_models/basement/blood_bag_v2.glb" id="139_1tgmf"]
 [ext_resource type="PackedScene" uid="uid://dnd0sn2ioqiu4" path="res://assets/glb_models/basement/freerawscanthe_statue_of_peace.glb" id="139_uwpgj"]
@@ -603,6 +606,12 @@ size = Vector3(1.5825996, 1, 0.8245888)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sfno0"]
 size = Vector3(0.72824097, 1, 0.96484375)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mtuen"]
+size = Vector3(0.7178955, 1.6135254, 2.5847778)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xfkla"]
+size = Vector3(48.602722, 35.40222, 17.499023)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w7ycr"]
 size = Vector3(210.35085, 31.299255, 121.98889)
@@ -1521,9 +1530,6 @@ shape = SubResource("BoxShape3D_wrkuh")
 
 [node name="sink3" parent="NavigationRegion3D/ITEMS/1ST FLOOR ITEMS/bathroom" instance=ExtResource("53_1n58x")]
 transform = Transform3D(-1.52, 0, 2.2951362e-07, 0, 1.52, 0, -2.2951362e-07, 0, -1.52, -29.739182, 9.249576, -17.790707)
-
-[node name="broken mirror" parent="NavigationRegion3D/ITEMS/1ST FLOOR ITEMS/bathroom/sink3" instance=ExtResource("94_6u8h5")]
-transform = Transform3D(0.6400002, 0, -6.3948846e-14, 0, 0.9150003, 0, 5.684342e-14, 0, 0.6830001, -0.9308872, 1.9181037, -0.008339882)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/1ST FLOOR ITEMS/bathroom/sink3"]
 
@@ -2661,8 +2667,208 @@ stream = ExtResource("131_m1vgo")
 [node name="Window_Single_Close" type="AudioStreamPlayer3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Close_Windows"]
 stream = ExtResource("132_m2psj")
 
+[node name="Task_Cover_Mirror" type="Node3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS"]
+script = ExtResource("132_dyeyr")
+
+[node name="Mirrors" type="Node3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror"]
+
+[node name="broken mirror" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors" instance=ExtResource("94_6u8h5")]
+transform = Transform3D(-0.9728003, 0, 1.5675792e-07, 0, 1.3908005, 0, -1.4688885e-07, 0, -1.0381601, -28.32423, 12.165093, -17.77803)
+
+[node name="covertowel" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors/broken mirror" instance=ExtResource("134_s8tip")]
+transform = Transform3D(8.5980806e-17, 3.059796e-09, 0.039, 0.045, -3.0597973e-09, 5.7340974e-24, 1.9670126e-09, 0.07, -1.7047448e-09, -0.2683792, 0.044299126, 0.0005378723)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors/broken mirror" groups=["brown cabinet 2"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors/broken mirror/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14105606, -0.005493164, 0.00771904)
+shape = SubResource("BoxShape3D_mtuen")
+
+[node name="broken mirror2" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors" instance=ExtResource("94_6u8h5")]
+transform = Transform3D(-0.9728003, 0, 1.5675792e-07, 0, 1.3908005, 0, -1.4688885e-07, 0, -1.0381601, -20.270042, 6.0775046, -30.188168)
+
+[node name="covertowel" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors/broken mirror2" instance=ExtResource("134_s8tip")]
+transform = Transform3D(8.5980806e-17, 3.059796e-09, 0.039, 0.045, -3.0597973e-09, 5.7340974e-24, 1.9670126e-09, 0.07, -1.7047448e-09, -0.2683792, 0.044299126, 0.0005378723)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors/broken mirror2" groups=["deployable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors/broken mirror2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14105606, -0.005493164, 0.00771904)
+shape = SubResource("BoxShape3D_mtuen")
+
+[node name="broken mirror3" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors" instance=ExtResource("94_6u8h5")]
+transform = Transform3D(0.9728003, 0, 0, 0, 1.3908005, 0, 0, 0, 1.0381601, -19.77874, 11.47752, -16.70442)
+
+[node name="covertowel" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors/broken mirror3" instance=ExtResource("134_s8tip")]
+transform = Transform3D(8.5980806e-17, 3.059796e-09, 0.039, 0.045, -3.0597973e-09, 5.7340974e-24, 1.9670126e-09, 0.07, -1.7047448e-09, -0.2683792, 0.044299126, 0.0005378723)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors/broken mirror3" groups=["deployable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors/broken mirror3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14105606, -0.005493164, 0.00771904)
+shape = SubResource("BoxShape3D_mtuen")
+
+[node name="broken mirror4" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors" instance=ExtResource("94_6u8h5")]
+transform = Transform3D(0.9728003, 0, 0, 0, 1.3908005, 0, 0, 0, 1.0381601, -19.737255, 11.47752, 4.393944)
+
+[node name="covertowel" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors/broken mirror4" instance=ExtResource("134_s8tip")]
+transform = Transform3D(8.5980806e-17, 3.059796e-09, 0.039, 0.045, -3.0597973e-09, 5.7340974e-24, 1.9670126e-09, 0.07, -1.7047448e-09, -0.2683792, 0.044299126, 0.0005378723)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors/broken mirror4" groups=["deployable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors/broken mirror4/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14105606, -0.005493164, 0.00771904)
+shape = SubResource("BoxShape3D_mtuen")
+
+[node name="broken mirror5" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors" instance=ExtResource("94_6u8h5")]
+transform = Transform3D(-0.9728003, 0, -9.075884e-08, 0, 1.3908005, 0, 8.50449e-08, 0, -1.0381601, -20.297695, 11.47752, 5.1763544)
+
+[node name="covertowel" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors/broken mirror5" instance=ExtResource("134_s8tip")]
+transform = Transform3D(8.5980806e-17, 3.059796e-09, 0.039, 0.045, -3.0597973e-09, 5.7340974e-24, 1.9670126e-09, 0.07, -1.7047448e-09, -0.2683792, 0.044299126, 0.0005378723)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors/broken mirror5" groups=["deployable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors/broken mirror5/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14105606, -0.005493164, 0.00771904)
+shape = SubResource("BoxShape3D_mtuen")
+
+[node name="broken mirror6" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors" instance=ExtResource("94_6u8h5")]
+transform = Transform3D(-0.9728003, 0, -9.075884e-08, 0, 1.3908005, 0, 8.50449e-08, 0, -1.0381601, -20.297695, 5.721937, -4.904005)
+
+[node name="covertowel" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors/broken mirror6" instance=ExtResource("134_s8tip")]
+transform = Transform3D(8.5980806e-17, 3.059796e-09, 0.039, 0.045, -3.0597973e-09, 5.7340974e-24, 1.9670126e-09, 0.07, -1.7047448e-09, -0.2683792, 0.044299126, 0.0005378723)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors/broken mirror6" groups=["deployable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors/broken mirror6/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14105606, -0.005493164, 0.00771904)
+shape = SubResource("BoxShape3D_mtuen")
+
+[node name="broken mirror7" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors" instance=ExtResource("94_6u8h5")]
+transform = Transform3D(0.9728003, 0, 0, 0, 1.3908005, 0, 0, 0, 1.0381601, -19.7487, 5.0617776, -4.369649)
+
+[node name="covertowel" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors/broken mirror7" instance=ExtResource("134_s8tip")]
+transform = Transform3D(8.5980806e-17, 3.059796e-09, 0.039, 0.045, -3.0597973e-09, 5.7340974e-24, 1.9670126e-09, 0.07, -1.7047448e-09, -0.2683792, 0.044299126, 0.0005378723)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors/broken mirror7" groups=["deployable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors/broken mirror7/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14105606, -0.005493164, 0.00771904)
+shape = SubResource("BoxShape3D_mtuen")
+
+[node name="TowelsAroundTheHouse" type="Node3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror"]
+
+[node name="towel" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse" instance=ExtResource("134_s8tip")]
+transform = Transform3D(-8.7422775e-10, -0.02, -8.7422775e-10, 0, -8.7422775e-10, 0.02, -0.02, 8.7422775e-10, 3.821371e-17, -11.619416, 9.592898, 4.0964046)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse/towel" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse/towel/StaticBody3D"]
+transform = Transform3D(1, -3.5527137e-15, -1.1667879e-19, 3.5527137e-15, 1, 3.5527137e-15, -1.3065483e-19, -3.5527137e-15, 1, -1.5487442, 0.47131348, 8.249542)
+shape = SubResource("BoxShape3D_xfkla")
+
+[node name="towel2" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse" instance=ExtResource("134_s8tip")]
+transform = Transform3D(-8.7422775e-10, -0.02, -8.7422775e-10, 0, -8.7422775e-10, 0.02, -0.02, 8.7422775e-10, 3.821371e-17, -20.75499, 8.169197, 2.5215714)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse/towel2" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse/towel2/StaticBody3D"]
+transform = Transform3D(1, -3.5527137e-15, -1.1667879e-19, 3.5527137e-15, 1, 3.5527137e-15, -1.3065483e-19, -3.5527137e-15, 1, -1.5487442, 0.47131348, 8.249542)
+shape = SubResource("BoxShape3D_xfkla")
+
+[node name="towel3" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse" instance=ExtResource("134_s8tip")]
+transform = Transform3D(-0.02, 1.7484555e-09, 7.642742e-17, 0, -8.7422775e-10, 0.02, 1.7484555e-09, 0.02, 8.7422775e-10, -5.3259916, 2.8953996, -8.846685)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse/towel3" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse/towel3/StaticBody3D"]
+transform = Transform3D(1, -3.5527137e-15, -1.1667879e-19, 3.5527137e-15, 1, 3.5527137e-15, -1.3065483e-19, -3.5527137e-15, 1, -1.5487442, 0.47131348, 8.249542)
+shape = SubResource("BoxShape3D_xfkla")
+
+[node name="towel4" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse" instance=ExtResource("134_s8tip")]
+transform = Transform3D(-8.7422775e-10, -0.02, -8.7422775e-10, 0, -8.7422775e-10, 0.02, -0.02, 8.7422775e-10, 3.821371e-17, -27.415634, 9.600822, 5.7061367)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse/towel4" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse/towel4/StaticBody3D"]
+transform = Transform3D(1, -3.5527137e-15, -1.1667879e-19, 3.5527137e-15, 1, 3.5527137e-15, -1.3065483e-19, -3.5527137e-15, 1, -1.5487442, 0.47131348, 8.249542)
+shape = SubResource("BoxShape3D_xfkla")
+
+[node name="towel5" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse" instance=ExtResource("134_s8tip")]
+transform = Transform3D(-8.7422775e-10, -0.02, -8.7422775e-10, 0, -8.7422775e-10, 0.02, -0.02, 8.7422775e-10, 3.821371e-17, -19.160118, 8.158751, 1.5854897)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse/towel5" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse/towel5/StaticBody3D"]
+transform = Transform3D(1, -3.5527137e-15, -1.1667879e-19, 3.5527137e-15, 1, 3.5527137e-15, -1.3065483e-19, -3.5527137e-15, 1, -1.5487442, 0.47131348, 8.249542)
+shape = SubResource("BoxShape3D_xfkla")
+
+[node name="towel6" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse" instance=ExtResource("134_s8tip")]
+transform = Transform3D(-8.7422775e-10, -0.02, -8.7422775e-10, 0, -8.7422775e-10, 0.02, -0.02, 8.7422775e-10, 3.821371e-17, -21.047821, 3.29947, -4.882683)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse/towel6" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse/towel6/StaticBody3D"]
+transform = Transform3D(1, -3.5527137e-15, -1.1667879e-19, 3.5527137e-15, 1, 3.5527137e-15, -1.3065483e-19, -3.5527137e-15, 1, -1.5487442, 0.47131348, 8.249542)
+shape = SubResource("BoxShape3D_xfkla")
+
+[node name="towel7" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse" instance=ExtResource("134_s8tip")]
+transform = Transform3D(-8.7422775e-10, -0.02, -8.7422775e-10, 0, -8.7422775e-10, 0.02, -0.02, 8.7422775e-10, 3.821371e-17, -6.7426224, 3.146715, -8.939409)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse/towel7" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse/towel7/StaticBody3D"]
+transform = Transform3D(1, -3.5527137e-15, -1.1667879e-19, 3.5527137e-15, 1, 3.5527137e-15, -1.3065483e-19, -3.5527137e-15, 1, -1.5487442, 0.47131348, 8.249542)
+shape = SubResource("BoxShape3D_xfkla")
+
+[node name="towel8" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse" instance=ExtResource("134_s8tip")]
+transform = Transform3D(-8.7422775e-10, -0.02, -8.7422775e-10, 0, -8.7422775e-10, 0.02, -0.02, 8.7422775e-10, 3.821371e-17, -19.160118, 8.158751, -2.456314)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse/towel8" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse/towel8/StaticBody3D"]
+transform = Transform3D(1, -3.5527137e-15, -1.1667879e-19, 3.5527137e-15, 1, 3.5527137e-15, -1.3065483e-19, -3.5527137e-15, 1, -1.5487442, 0.47131348, 8.249542)
+shape = SubResource("BoxShape3D_xfkla")
+
+[node name="towel9" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse" instance=ExtResource("134_s8tip")]
+transform = Transform3D(0.02, 0, 0, 0, -8.7422775e-10, 0.02, 0, -0.02, -8.7422775e-10, -7.1533127, 8.158751, -25.138567)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse/towel9" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse/towel9/StaticBody3D"]
+transform = Transform3D(1, -3.5527137e-15, -1.1667879e-19, 3.5527137e-15, 1, 3.5527137e-15, -1.3065483e-19, -3.5527137e-15, 1, -1.5487442, 0.47131348, 8.249542)
+shape = SubResource("BoxShape3D_xfkla")
+
+[node name="towel10" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse" instance=ExtResource("134_s8tip")]
+transform = Transform3D(0.02, 0, 0, 0, -8.7422775e-10, 0.02, 0, -0.02, -8.7422775e-10, -6.02287, 8.158751, -25.138567)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse/towel10" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse/towel10/StaticBody3D"]
+transform = Transform3D(1, -3.5527137e-15, -1.1667879e-19, 3.5527137e-15, 1, 3.5527137e-15, -1.3065483e-19, -3.5527137e-15, 1, -1.5487442, 0.47131348, 8.249542)
+shape = SubResource("BoxShape3D_xfkla")
+
+[node name="Towel_Covering" type="AudioStreamPlayer3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror"]
+stream = ExtResource("135_s8tip")
+
 [node name="2ND FLOOR ITEMS" type="Node3D" parent="NavigationRegion3D/ITEMS"]
-visible = false
 
 [node name="bedroom" type="Node3D" parent="NavigationRegion3D/ITEMS/2ND FLOOR ITEMS"]
 
