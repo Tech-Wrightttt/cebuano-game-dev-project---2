@@ -56,11 +56,33 @@ func _ready():
 
 
 func update_statue_tasking():
+	# Debug: Print which keys were randomly chosen
+	print("Chosen statue keys: ", chosen_statue_keys)
+	
 	for key in statue_map.keys():
 		var data = statue_map[key]
+		
+		# --- Debugger Check ---
+		if is_instance_valid(data["uncleaned_node"]):
+			# This node is valid, print its name and key
+			print("Key [", key, "]: ", data["uncleaned_node"].name, " is valid.")
+		else:
+			# This node is NOT valid (e.g., null or freed), print an error
+			print("ERROR: Key [", key, "]: uncleaned_node is NOT valid!")
+			continue # Skip this loop iteration to avoid a crash
+		# --- End Debugger Check ---
+
 		var is_active_task = (key in chosen_statue_keys)
+		
+		# Debug: Print what the function is deciding to do
+		if is_active_task:
+			print("  -> Key [", key, "] is an active task. Setting uncleaned to VISIBLE.")
+		else:
+			print("  -> Key [", key, "] is not active. Setting uncleaned to HIDDEN.")
+		
 		data["cleaned_node"].visible = not is_active_task
 		data["uncleaned_node"].visible = is_active_task
+		
 		data["cleaned_collision"].set_deferred("disabled", true)
 		data["uncleaned_collision"].set_deferred("disabled", not is_active_task)
 

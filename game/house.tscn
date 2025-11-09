@@ -1,4 +1,4 @@
-[gd_scene load_steps=322 format=4 uid="uid://c6nnpmjnwv4g2"]
+[gd_scene load_steps=329 format=4 uid="uid://c6nnpmjnwv4g2"]
 
 [ext_resource type="Script" uid="uid://cmcetdgh8ky7t" path="res://scripts/house.gd" id="1_8tqyt"]
 [ext_resource type="Material" uid="uid://31nbyn23hg2q" path="res://materials/house_material.tres" id="1_f6s7v"]
@@ -162,8 +162,14 @@
 [ext_resource type="Script" uid="uid://y52gc1lmr4hp" path="res://game/task_candle.gd" id="123_x62yr"]
 [ext_resource type="PackedScene" uid="uid://doiurcqv5iay1" path="res://assets/glb_models/basement/drinking_water_fountain.glb" id="124_f5qeo"]
 [ext_resource type="PackedScene" uid="uid://da7np75ks3tc4" path="res://assets/glb_models/chores/candle.tscn" id="124_gslyl"]
+[ext_resource type="Script" uid="uid://bpg8fjigy7ibk" path="res://game/task_clean_statues.gd" id="125_m2psj"]
 [ext_resource type="PackedScene" uid="uid://ba1xcjufcwwwr" path="res://assets/glb_models/basement/medieval_torch.glb" id="125_yewax"]
 [ext_resource type="PackedScene" uid="uid://b681o5valg1vs" path="res://assets/glb_models/furniture/wardrobe.tscn" id="127_uwpgj"]
+[ext_resource type="PackedScene" uid="uid://dcrr2bsxdk5on" path="res://assets/glb_models/statues/statue_robe_figure.tscn" id="127_xxycr"]
+[ext_resource type="PackedScene" uid="uid://dftdtexwbe5c7" path="res://assets/glb_models/chores/uncleaned_statue_ni_ante.tscn" id="128_dyeyr"]
+[ext_resource type="PackedScene" uid="uid://cxpp27b0tpejf" path="res://assets/glb_models/chores/uncleaned_mary_statue.tscn" id="129_s8tip"]
+[ext_resource type="PackedScene" uid="uid://dmlmymtqnjhon" path="res://assets/glb_models/chores/uncleaned_statue_figure.tscn" id="130_klyxg"]
+[ext_resource type="AudioStream" uid="uid://dof62tk8ke4cn" path="res://soundfx/cleaning_statue.mp3" id="131_u8565"]
 [ext_resource type="PackedScene" uid="uid://df20nbkqt4c7d" path="res://assets/glb_models/basement/worn_bandages.glb" id="138_yewax"]
 [ext_resource type="PackedScene" uid="uid://isdmfbvdrku7" path="res://assets/glb_models/basement/blood_bag_v2.glb" id="139_1tgmf"]
 [ext_resource type="PackedScene" uid="uid://dnd0sn2ioqiu4" path="res://assets/glb_models/basement/freerawscanthe_statue_of_peace.glb" id="139_uwpgj"]
@@ -512,25 +518,20 @@ size = Vector3(0.15205216, 0.2653656, 0.17308044)
 [sub_resource type="BoxShape3D" id="BoxShape3D_1tgmf"]
 size = Vector3(0.692749, 0.03265381, 0.34710693)
 
-[sub_resource type="GDScript" id="GDScript_x62yr"]
-script/source = "extends Node3D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-"
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_1numt"]
 size = Vector3(1.935791, 0.79211426, 5.280243)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m1vgo"]
 size = Vector3(3.244629, 5.8740234, 2.9853516)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2hkfm"]
+size = Vector3(0.578981, 1.4398155, 0.48710513)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pybr7"]
+size = Vector3(45.953857, 135.48059, 32.736824)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1o4y0"]
+size = Vector3(0.55133057, 1.8489075, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w7ycr"]
 size = Vector3(210.35085, 31.299255, 121.98889)
@@ -571,9 +572,6 @@ size = Vector3(255.36241, 130.30975, 148.93918)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7uwel"]
 size = Vector3(247.2002, 194.16962, 164.20375)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_2hkfm"]
-size = Vector3(0.578981, 0.6079025, 1.0806556)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y0f4w"]
 size = Vector3(1.3595581, 2.0227065, 0.5652771)
@@ -2063,7 +2061,6 @@ stream = ExtResource("106_yfc1v")
 script = ExtResource("123_x62yr")
 
 [node name="altarTable" type="Node3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle"]
-script = SubResource("GDScript_x62yr")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable" groups=["interactable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4235272, 3.582731, 0)
@@ -2276,6 +2273,140 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 2.437008, -0.037
 shape = SubResource("BoxShape3D_m1vgo")
 
 [node name="Task_Clean_Statue" type="Node3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS"]
+script = ExtResource("125_m2psj")
+
+[node name="cleanedStatue" type="Node3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue"]
+
+[node name="StatueAnte" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/cleanedStatue" instance=ExtResource("139_uwpgj")]
+transform = Transform3D(5.467866e-07, 0, -2.80825, 0, 2.80825, 0, 2.80825, 0, 5.467866e-07, -14.901456, -4.119707, 14.8287735)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/cleanedStatue/StatueAnte"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/cleanedStatue/StatueAnte/StaticBody3D"]
+transform = Transform3D(0.9999997, 0, 1.1175857e-08, 0, 1, 0, -1.1175857e-08, 0, 0.9999997, 0.120303154, -0.032269716, 0.31191015)
+shape = SubResource("BoxShape3D_2hkfm")
+
+[node name="StatueMary" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/cleanedStatue" instance=ExtResource("63_m7rpm")]
+transform = Transform3D(0.035, 0, 0, 0, 0.035, 0, 0, 0, 0.035, -26.175037, 1.8661737, -24.630926)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/cleanedStatue/StatueMary"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/cleanedStatue/StatueMary/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6014404, 67.240295, 6.579895)
+shape = SubResource("BoxShape3D_pybr7")
+
+[node name="StatueMary2" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/cleanedStatue" instance=ExtResource("63_m7rpm")]
+transform = Transform3D(-1.5298985e-09, 0, 0.035, 0, 0.035, 0, -0.035, 0, -1.5298985e-09, -35.1206, 1.8661737, -7.606971)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/cleanedStatue/StatueMary2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/cleanedStatue/StatueMary2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6014404, 67.240295, 6.579895)
+shape = SubResource("BoxShape3D_pybr7")
+
+[node name="StatueMary3" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/cleanedStatue" instance=ExtResource("63_m7rpm")]
+transform = Transform3D(-1.5298985e-09, 0, -0.035, 0, 0.035, 0, 0.035, 0, -1.5298985e-09, -20.926857, 8.097737, -4.4547772)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/cleanedStatue/StatueMary3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/cleanedStatue/StatueMary3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6014404, 67.240295, 6.579895)
+shape = SubResource("BoxShape3D_pybr7")
+
+[node name="StatueSaint" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/cleanedStatue" instance=ExtResource("127_xxycr")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -10.604294, 3.8849463, -6.940434)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/cleanedStatue/StatueSaint"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/cleanedStatue/StatueSaint/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03781128, 0.024887085, 0)
+shape = SubResource("BoxShape3D_1o4y0")
+
+[node name="StatueSaint2" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/cleanedStatue" instance=ExtResource("127_xxycr")]
+transform = Transform3D(-2, 0, -1.7484555e-07, 0, 2, 0, 1.7484555e-07, 0, -2, -10.604294, 3.8849463, 7.2073092)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/cleanedStatue/StatueSaint2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/cleanedStatue/StatueSaint2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03781128, 0.024887085, 0)
+shape = SubResource("BoxShape3D_1o4y0")
+
+[node name="StatueSaint3" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/cleanedStatue" instance=ExtResource("127_xxycr")]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, -13.582731, 10.093519, -6.656365)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/cleanedStatue/StatueSaint3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/cleanedStatue/StatueSaint3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03781128, 0.024887085, 0)
+shape = SubResource("BoxShape3D_1o4y0")
+
+[node name="uncleanedStatue" type="Node3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue"]
+
+[node name="UncleanedStatueAnte" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue" instance=ExtResource("128_dyeyr")]
+transform = Transform3D(5.467866e-07, 0, -2.80825, 0, 2.80825, 0, 2.80825, 0, 5.467866e-07, -14.901456, -4.119707, 14.8287735)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueAnte" groups=["hold_deploy"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueAnte/StaticBody3D"]
+transform = Transform3D(0.9999997, 0, 1.1175857e-08, 0, 1, 0, -1.1175857e-08, 0, 0.9999997, 0.120303154, -0.032269716, 0.31191015)
+shape = SubResource("BoxShape3D_2hkfm")
+
+[node name="UncleanedStatueMary" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue" instance=ExtResource("129_s8tip")]
+transform = Transform3D(0.035, 0, 0, 0, 0.035, 0, 0, 0, 0.035, -26.175037, 1.8661737, -24.630926)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueMary" groups=["hold_deploy"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueMary/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6014404, 67.240295, 6.579895)
+shape = SubResource("BoxShape3D_pybr7")
+
+[node name="UncleanedStatueMary2" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue" instance=ExtResource("129_s8tip")]
+transform = Transform3D(-1.5298985e-09, 0, 0.035, 0, 0.035, 0, -0.035, 0, -1.5298985e-09, -35.1206, 1.8661737, -7.606971)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueMary2" groups=["hold_deploy"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueMary2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6014404, 67.240295, 6.579895)
+shape = SubResource("BoxShape3D_pybr7")
+
+[node name="UncleanedStatueMary3" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue" instance=ExtResource("129_s8tip")]
+transform = Transform3D(-1.5298985e-09, 0, -0.035, 0, 0.035, 0, 0.035, 0, -1.5298985e-09, -20.926857, 8.097737, -4.4547772)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueMary3" groups=["hold_deploy"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueMary3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6014404, 67.240295, 6.579895)
+shape = SubResource("BoxShape3D_pybr7")
+
+[node name="UncleanedStatueSaint" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue" instance=ExtResource("130_klyxg")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -10.604294, 3.8849463, -6.940434)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueSaint" groups=["hold_deploy"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueSaint/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03781128, 0.024887085, 0)
+shape = SubResource("BoxShape3D_1o4y0")
+
+[node name="UncleanedStatueSaint2" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue" instance=ExtResource("130_klyxg")]
+transform = Transform3D(-2, 0, -1.7484555e-07, 0, 2, 0, 1.7484555e-07, 0, -2, -10.604294, 3.8849463, 7.2073092)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueSaint2" groups=["hold_deploy"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueSaint2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03781128, 0.024887085, 0)
+shape = SubResource("BoxShape3D_1o4y0")
+
+[node name="UncleanedStatueSaint3" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue" instance=ExtResource("130_klyxg")]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, -13.582731, 10.093519, -6.656365)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueSaint3" groups=["hold_deploy"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueSaint3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03781128, 0.024887085, 0)
+shape = SubResource("BoxShape3D_1o4y0")
+
+[node name="Cleaning_Statue" type="AudioStreamPlayer3D" parent="NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue"]
+stream = ExtResource("131_u8565")
 
 [node name="2ND FLOOR ITEMS" type="Node3D" parent="NavigationRegion3D/ITEMS"]
 visible = false
@@ -2498,15 +2629,6 @@ transform = Transform3D(1.6158767, 0, 1.178534, 0, 2, 0, -1.178534, 0, 1.6158767
 
 [node name="broken mirror" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS" instance=ExtResource("94_6u8h5")]
 transform = Transform3D(-4.371139e-08, 0, -1.38, 0, 1, 0, 1, 0, -6.032172e-08, -26.107483, -2.375066, -21.67367)
-
-[node name="si ante" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS" instance=ExtResource("139_uwpgj")]
-transform = Transform3D(5.467866e-07, 0, -2.80825, 0, 2.80825, 0, 2.80825, 0, 5.467866e-07, -14.901456, -4.119707, 14.8287735)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS/si ante"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS/si ante/StaticBody3D"]
-transform = Transform3D(0.9999997, 0, 1.1175857e-08, 0, 1, 0, -1.1175857e-08, 0, 0.9999997, 0.120303154, -0.4482262, 0.015135288)
-shape = SubResource("BoxShape3D_2hkfm")
 
 [node name="old cabinet" parent="NavigationRegion3D/ITEMS/BASEMENT ITEMS" instance=ExtResource("95_vcrf0")]
 transform = Transform3D(-2.39, 0, -3.6088e-07, 0, 2.39, 0, 3.6088e-07, 0, -2.39, -9.9534025, -3.5966868, 15.1252575)
