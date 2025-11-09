@@ -1,0 +1,565 @@
+[gd_scene load_steps=37 format=3 uid="uid://cd4o1mbqy8tg4"]
+
+[ext_resource type="Script" uid="uid://c0bd0cp5x50et" path="res://game/level.gd" id="1_ay3dt"]
+[ext_resource type="PackedScene" uid="uid://c6nnpmjnwv4g2" path="res://game/house.tscn" id="3_didrf"]
+[ext_resource type="PackedScene" uid="uid://bd8sk3hxv1lu0" path="res://assets/glb_models/fence/japanese_park_stone_floor_uljcfd0_mid.glb" id="9_k2o5e"]
+[ext_resource type="Script" uid="uid://cbep2kr7a0bxs" path="res://scripts/main_menu.gd" id="10_5i8qu"]
+[ext_resource type="PackedScene" uid="uid://bhdnah86wfvhg" path="res://assets/glb_models/fence/fence_and_column.glb" id="10_nowvf"]
+[ext_resource type="PackedScene" uid="uid://cdluy2xnot0vs" path="res://assets/glb_models/fence/dirty_leaking_concrete_wall.glb" id="11_g7oie"]
+[ext_resource type="FontFile" uid="uid://puuimmfp3vdq" path="res://assets/Fonts/CRAZK___.TTF" id="11_i6au4"]
+[ext_resource type="Texture2D" uid="uid://drbqxo1kuq0ml" path="res://assets/images/Flare_small.PNG" id="11_rv8kf"]
+[ext_resource type="FontFile" uid="uid://dd6gyxnwoo3dv" path="res://assets/Fonts/Rawrote Demo.ttf" id="12_ay3dt"]
+[ext_resource type="Texture2D" uid="uid://bvdwayp7w2erl" path="res://textures/environment/grass.jpg" id="12_qkuur"]
+[ext_resource type="PackedScene" uid="uid://bnd4f5cscd18j" path="res://game/house_materials/ceiling_lights.tscn" id="13_0fe1t"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4xowi"]
+sky_top_color = Color(0.12270618, 0.04560589, 0.0034415955, 1)
+sky_horizon_color = Color(0.22708711, 0.10912841, 0.020405067, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Sky" id="Sky_a202f"]
+sky_material = SubResource("ProceduralSkyMaterial_4xowi")
+
+[sub_resource type="Environment" id="Environment_noarx"]
+background_mode = 2
+sky = SubResource("Sky_a202f")
+ambient_light_sky_contribution = 0.0
+ambient_light_energy = 0.1
+tonemap_mode = 3
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.04
+volumetric_fog_albedo = Color(0.6117647, 0.6117647, 0.6117647, 1)
+volumetric_fog_emission = Color(0.23921569, 0.07450981, 0.05882353, 1)
+volumetric_fog_emission_energy = 0.1
+volumetric_fog_length = 128.0
+adjustment_enabled = true
+adjustment_brightness = 1.2
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_lqnbj"]
+viewport_path = NodePath("Mirror/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p05yo"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_lqnbj")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lqnbj"]
+size = Vector3(2.6206055, 0.62545776, 13.898895)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s5juq"]
+size = Vector3(9.272949, 3.7183838, 0.8779297)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vuud0"]
+size = Vector3(42.092346, 5.179199, 0.38916016)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uk5k8"]
+albedo_texture = ExtResource("12_qkuur")
+uv1_scale = Vector3(50, 50, 50)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_a0tk4"]
+material = SubResource("StandardMaterial3D_uk5k8")
+size = Vector2(500, 500)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_8bv7i"]
+data = PackedVector3Array(250, 0, 250, -250, 0, 250, 250, 0, -250, -250, 0, 250, -250, 0, -250, 250, 0, -250)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_uk5k8"]
+data = PackedVector3Array(250, 0, 250, -250, 0, 250, 250, 0, -250, -250, 0, 250, -250, 0, -250, 250, 0, -250)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_8vjk3"]
+data = PackedVector3Array(250, 0, 250, -250, 0, 250, 250, 0, -250, -250, 0, 250, -250, 0, -250, 250, 0, -250)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_nspj4"]
+data = PackedVector3Array(250, 0, 250, -250, 0, 250, 250, 0, -250, -250, 0, 250, -250, 0, -250, 250, 0, -250)
+
+[sub_resource type="FogMaterial" id="FogMaterial_x5me8"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_5i8qu"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 0.01
+dof_blur_far_transition = -1.0
+dof_blur_near_distance = 0.02
+dof_blur_near_transition = -1.0
+dof_blur_amount = 0.09
+
+[sub_resource type="FontVariation" id="FontVariation_16tb2"]
+base_font = ExtResource("11_i6au4")
+spacing_glyph = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_didrf"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rv8kf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5i8qu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i6au4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ay3dt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_16tb2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_didrf"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_16tb2"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1020, 520, 1)
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 0.19999775
+linear_accel_max = 1.1999978
+scale_min = 0.29999998
+scale_max = 0.79999995
+color = Color(0.96668476, 0.96580654, 1.540184e-06, 1)
+turbulence_enabled = true
+
+[node name="level" type="Node3D"]
+script = ExtResource("1_ay3dt")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_noarx")
+
+[node name="Sunlight (for testing purposes)" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+visible = false
+shadow_enabled = true
+
+[node name="House" parent="." instance=ExtResource("3_didrf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9987135, 0.028873205, -0.026374817)
+
+[node name="Mirror" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.15646364, -5.1214147, -0.029621154, -1.9687864, 0.40739352, -2.7663039e-10, 0.0048050024, 0.15727872, -0.9645451, -28.387808, 3.9978812, -15.844056)
+size = Vector3(1.6543198, 0.021484375, 2.1997604)
+material = SubResource("StandardMaterial3D_p05yo")
+
+[node name="SubViewport" type="SubViewport" parent="Mirror"]
+size = Vector2i(1920, 1080)
+
+[node name="Camera3D" type="Camera3D" parent="Mirror/SubViewport"]
+transform = Transform3D(0.03069551, 0.07922222, -0.9963843, 8.940474e-08, 0.996854, 0.079259574, 0.99952877, -0.002433002, 0.030598935, -28.387806, 4.293085, -15.844056)
+
+[node name="fences" type="Node3D" parent="."]
+
+[node name="fence" type="Node3D" parent="fences"]
+
+[node name="pavement" parent="fences/fence" groups=["pavement"] instance=ExtResource("9_k2o5e")]
+transform = Transform3D(-0.040726833, 0, -1.6394942, 0, 1.64, 0, 1.6394942, 0, -0.040726833, 0, -0.02369392, 0)
+
+[node name="pavement2" parent="fences/fence" groups=["pavement"] instance=ExtResource("9_k2o5e")]
+transform = Transform3D(-7.168667e-08, 0, 1.6399999, 0, 1.6399999, 0, -1.6399999, 0, -7.168667e-08, 7.2867384, -0.023692966, 0)
+
+[node name="pavement3" parent="fences/fence" groups=["pavement"] instance=ExtResource("9_k2o5e")]
+transform = Transform3D(-7.168667e-08, 0, 1.6399999, 0, 1.6399999, 0, -1.6399999, 0, -7.168667e-08, 15.248702, -0.04074776, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="fences/fence/pavement3" groups=["pavement"]]
+collision_layer = 3
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fences/fence/pavement3/StaticBody3D"]
+transform = Transform3D(0.9999998, 0, -1.2967405e-12, 0, 0.9999998, 0, 1.2967405e-12, 0, 0.9999998, -0.014892516, -0.18727106, -4.6585464)
+shape = SubResource("BoxShape3D_lqnbj")
+
+[node name="fence" parent="fences/fence" instance=ExtResource("10_nowvf")]
+transform = Transform3D(1.33, 0, 0, 0, 1.33, 0, 0, 0, 1.33, 0, 0, 13.941501)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="fences/fence/fence" groups=["pavement"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fences/fence/fence/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08747256, 1.9381715, -0.061035156)
+shape = SubResource("BoxShape3D_s5juq")
+
+[node name="fence15" parent="fences/fence" instance=ExtResource("10_nowvf")]
+transform = Transform3D(1.33, 0, 0, 0, 1.33, 0, 0, 0, 1.33, 9.0833435, 0, 13.941501)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="fences/fence/fence15"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fences/fence/fence15/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08747256, 1.9381715, -0.061035156)
+shape = SubResource("BoxShape3D_s5juq")
+
+[node name="fence14" parent="fences/fence" instance=ExtResource("10_nowvf")]
+transform = Transform3D(1.33, 0, 0, 0, 1.33, 0, 0, 0, 1.33, 10.056695, 0, -7.4721932)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="fences/fence/fence14"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fences/fence/fence14/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.087472916, 1.9381715, -0.061035156)
+shape = SubResource("BoxShape3D_s5juq")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="fences/fence/fence14/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.970576, 1.9381715, -0.061035156)
+shape = SubResource("BoxShape3D_s5juq")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="fences/fence/fence14/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.970576, 1.9381715, -0.061035156)
+shape = SubResource("BoxShape3D_s5juq")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="fences/fence/fence14/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.770395, 1.9381715, -0.061035156)
+shape = SubResource("BoxShape3D_s5juq")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="fences/fence/fence14/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.057387, 1.9381715, 9.516758)
+shape = SubResource("BoxShape3D_s5juq")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="fences/fence/fence14/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.799219, 1.9381715, 9.516758)
+shape = SubResource("BoxShape3D_s5juq")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="fences/fence/fence14/StaticBody3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 18.109285, 1.9381715, 4.8349547)
+shape = SubResource("BoxShape3D_s5juq")
+
+[node name="fence10" parent="fences/fence" instance=ExtResource("10_nowvf")]
+transform = Transform3D(-5.813615e-08, 0, 1.33, 0, 1.33, 0, -1.33, 0, -5.813615e-08, 5.6334333, 0, -20.891766)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="fences/fence/fence10"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fences/fence/fence10/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08747256, 1.9381715, -0.061035156)
+shape = SubResource("BoxShape3D_s5juq")
+
+[node name="fence13" parent="fences/fence" instance=ExtResource("10_nowvf")]
+transform = Transform3D(-5.813615e-08, 0, 1.33, 0, 1.33, 0, -1.33, 0, -5.813615e-08, 5.6334333, 0, -11.917451)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="fences/fence/fence13"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fences/fence/fence13/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08747256, 1.9381715, -0.061035156)
+shape = SubResource("BoxShape3D_s5juq")
+
+[node name="fence16" parent="fences/fence" instance=ExtResource("10_nowvf")]
+transform = Transform3D(-5.813615e-08, 0, 1.33, 0, 1.33, 0, -1.33, 0, -5.813615e-08, 13.208844, 0, 9.6087055)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="fences/fence/fence16"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fences/fence/fence16/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08747256, 1.9381715, -0.061035156)
+shape = SubResource("BoxShape3D_s5juq")
+
+[node name="fence11" parent="fences/fence" instance=ExtResource("10_nowvf")]
+transform = Transform3D(-5.813615e-08, 0, 1.33, 0, 1.33, 0, -1.33, 0, -5.813615e-08, 5.6334333, 0, -29.877388)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="fences/fence/fence11"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fences/fence/fence11/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08747256, 1.9381715, -0.061035156)
+shape = SubResource("BoxShape3D_s5juq")
+
+[node name="fence12" parent="fences/fence" instance=ExtResource("10_nowvf")]
+transform = Transform3D(-5.813615e-08, 0, 1.33, 0, 1.33, 0, -1.33, 0, -5.813615e-08, 5.6334333, 0, -38.8916)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="fences/fence/fence12"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fences/fence/fence12/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08747256, 1.9381715, -0.061035156)
+shape = SubResource("BoxShape3D_s5juq")
+
+[node name="fence2" parent="fences/fence" instance=ExtResource("10_nowvf")]
+transform = Transform3D(1.33, 0, 0, 0, 1.33, 0, 0, 0, 1.33, -8.981953, 0, 13.941501)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="fences/fence/fence2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fences/fence/fence2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08747256, 1.9381715, -0.061035156)
+shape = SubResource("BoxShape3D_s5juq")
+
+[node name="fence3" parent="fences/fence" instance=ExtResource("10_nowvf")]
+transform = Transform3D(1.33, 0, 0, 0, 1.33, 0, 0, 0, 1.33, -18.085274, 0, 13.941501)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="fences/fence/fence3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fences/fence/fence3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08747256, 1.9381715, -0.061035156)
+shape = SubResource("BoxShape3D_s5juq")
+
+[node name="fence4" parent="fences/fence" instance=ExtResource("10_nowvf")]
+transform = Transform3D(-5.813615e-08, 0, 1.33, 0, 1.33, 0, -1.33, 0, -5.813615e-08, -65.29019, 0, 9.82617)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="fences/fence/fence4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fences/fence/fence4/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08747256, 1.9381715, -0.061035156)
+shape = SubResource("BoxShape3D_s5juq")
+
+[node name="fence5" parent="fences/fence" instance=ExtResource("10_nowvf")]
+transform = Transform3D(-5.813615e-08, 0, 1.33, 0, 1.33, 0, -1.33, 0, -5.813615e-08, -65.29019, 0, 0.726161)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="fences/fence/fence5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fences/fence/fence5/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08747256, 1.9381715, -0.061035156)
+shape = SubResource("BoxShape3D_s5juq")
+
+[node name="fence6" parent="fences/fence" instance=ExtResource("10_nowvf")]
+transform = Transform3D(-5.813615e-08, 0, 1.33, 0, 1.33, 0, -1.33, 0, -5.813615e-08, -65.29019, 0, -8.367937)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="fences/fence/fence6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fences/fence/fence6/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08747256, 1.9381715, -0.061035156)
+shape = SubResource("BoxShape3D_s5juq")
+
+[node name="fence7" parent="fences/fence" instance=ExtResource("10_nowvf")]
+transform = Transform3D(-5.813615e-08, 0, 1.33, 0, 1.33, 0, -1.33, 0, -5.813615e-08, -65.29019, 0, -17.477352)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="fences/fence/fence7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fences/fence/fence7/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08747256, 1.9381715, -0.061035156)
+shape = SubResource("BoxShape3D_s5juq")
+
+[node name="fence8" parent="fences/fence" instance=ExtResource("10_nowvf")]
+transform = Transform3D(-5.813615e-08, 0, 1.33, 0, 1.33, 0, -1.33, 0, -5.813615e-08, -65.29019, 0, -26.574223)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="fences/fence/fence8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fences/fence/fence8/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08747256, 1.9381715, -0.061035156)
+shape = SubResource("BoxShape3D_s5juq")
+
+[node name="fence9" parent="fences/fence" instance=ExtResource("10_nowvf")]
+transform = Transform3D(-5.813615e-08, 0, 1.33, 0, 1.33, 0, -1.33, 0, -5.813615e-08, -65.29019, 0, -35.67348)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="fences/fence/fence9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fences/fence/fence9/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08747256, 1.9381715, -0.061035156)
+shape = SubResource("BoxShape3D_s5juq")
+
+[node name="stone" parent="fences/fence" instance=ExtResource("11_g7oie")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.860806, 0, 15.3314295)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="fences/fence/stone"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fences/fence/stone/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.73831177, 2.6835938, -1.0622559)
+shape = SubResource("BoxShape3D_vuud0")
+
+[node name="stone2" parent="fences/fence" instance=ExtResource("11_g7oie")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.825836, 0, -39.622585)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="fences/fence/stone2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fences/fence/stone2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.73831177, 2.6835938, -1.0622559)
+shape = SubResource("BoxShape3D_vuud0")
+
+[node name="stone3" parent="fences/fence" instance=ExtResource("11_g7oie")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.277287, 0, -39.622585)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="fences/fence/stone3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fences/fence/stone3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.73831177, 2.6835938, -1.0622559)
+shape = SubResource("BoxShape3D_vuud0")
+
+[node name="Grounds" type="Node3D" parent="." groups=["grass"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+
+[node name="Ground1" type="MeshInstance3D" parent="Grounds" groups=["grass"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -279.8, 0, -242.2)
+mesh = SubResource("PlaneMesh_a0tk4")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Grounds/Ground1" groups=["grass"]]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Grounds/Ground1/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_8bv7i")
+
+[node name="Ground2" type="MeshInstance3D" parent="Grounds" groups=["grass"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 220.2, 0, -250)
+mesh = SubResource("PlaneMesh_a0tk4")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Grounds/Ground2" groups=["grass"]]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Grounds/Ground2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_uk5k8")
+
+[node name="Ground3" type="MeshInstance3D" parent="Grounds" groups=["grass"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 224.2, 0, 250)
+mesh = SubResource("PlaneMesh_a0tk4")
+skeleton = NodePath("../Ground2")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Grounds/Ground3" groups=["grass"]]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Grounds/Ground3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_8vjk3")
+
+[node name="Ground4" type="MeshInstance3D" parent="Grounds" groups=["grass"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -275.8, 0, 257.8)
+mesh = SubResource("PlaneMesh_a0tk4")
+skeleton = NodePath("../Ground2")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Grounds/Ground4" groups=["grass"]]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Grounds/Ground4/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_nspj4")
+
+[node name="ceiling lights" type="Node3D" parent="."]
+
+[node name="ceiling lights" parent="ceiling lights" instance=ExtResource("13_0fe1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.585708, 7.381402, 0)
+
+[node name="ceiling lights3" parent="ceiling lights" instance=ExtResource("13_0fe1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.3921795, 14.565711, -0.33484745)
+
+[node name="ceiling lights6" parent="ceiling lights" instance=ExtResource("13_0fe1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.374651, 7.122199, -15.8736)
+
+[node name="ceiling lights7" parent="ceiling lights" instance=ExtResource("13_0fe1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.836365, 12.76771, -18.25336)
+
+[node name="fogs" type="Node3D" parent="."]
+
+[node name="FogVolume" type="FogVolume" parent="fogs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.398788, 4.9874353, 70.130295)
+size = Vector3(196.18103, 10, 50)
+material = SubResource("FogMaterial_x5me8")
+
+[node name="FogVolume2" type="FogVolume" parent="fogs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.398788, 4.9874353, -78.611496)
+size = Vector3(196.18103, 10, 50)
+material = SubResource("FogMaterial_x5me8")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.66901386, 0.053860806, 1.1282387, 0, 1.0500145, -0.08228026, -1.0301912, 0.03497761, 0.73268676, 6.6247735, 1.6746564, 12.5036125)
+attributes = SubResource("CameraAttributesPractical_5i8qu")
+fov = 91.01981
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Camera3D"]
+transform = Transform3D(0.9986295, 0, -0.05233596, 0, 1, 0, 0.05233596, 0, 0.9986295, 0, 0, 0)
+light_color = Color(0.790113, 0, 0.14544263, 1)
+light_energy = 1.654
+light_indirect_energy = 7.753
+light_volumetric_fog_energy = 3.199
+light_specular = 0.995
+shadow_bias = 9.927
+shadow_normal_bias = 1.29
+shadow_transmittance_bias = 12.256
+shadow_blur = 3.062
+spot_range = 97.12
+spot_angle_attenuation = 1.4142132
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.93700004
+anchor_top = 0.648
+anchor_right = 0.93700004
+anchor_bottom = 0.648
+offset_left = -454.04004
+offset_top = -123.84003
+offset_right = -0.040039063
+offset_bottom = 123.15997
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 41
+alignment = 1
+script = ExtResource("10_5i8qu")
+
+[node name="Start Game" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.42745098, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_16tb2")
+theme_override_font_sizes/font_size = 67
+theme_override_styles/normal = SubResource("StyleBoxFlat_didrf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_rv8kf")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5i8qu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i6au4")
+text = "Start Game"
+
+[node name="Settings" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9870971, 0.9690301, 0.9675793, 1)
+theme_override_colors/font_hover_color = Color(0.42745098, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_16tb2")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_didrf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ay3dt")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_16tb2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_didrf")
+text = "Settings"
+alignment = 2
+
+[node name="Controls" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9870971, 0.9690301, 0.9675793, 1)
+theme_override_colors/font_hover_color = Color(0.42745098, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_16tb2")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_didrf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ay3dt")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_16tb2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_didrf")
+text = "Controls"
+alignment = 2
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9870971, 0.9690301, 0.9675793, 1)
+theme_override_colors/font_hover_color = Color(0.42745098, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_16tb2")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_didrf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ay3dt")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_16tb2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_didrf")
+text = "Quit"
+alignment = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+clip_contents = true
+anchors_preset = -1
+anchor_left = 0.095000006
+anchor_top = 0.20600002
+anchor_right = 0.095000006
+anchor_bottom = 0.20600002
+offset_left = 0.59999084
+offset_top = -125.48001
+offset_right = 119.59999
+offset_bottom = 125.51999
+
+[node name="Label" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.42745098, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_ay3dt")
+theme_override_font_sizes/font_size = 250
+text = "8"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="."]
+clip_contents = true
+anchors_preset = -1
+anchor_left = 0.16000001
+anchor_top = 0.19000001
+anchor_right = 0.16000001
+anchor_bottom = 0.19000001
+offset_left = -0.2000122
+offset_top = -79.20001
+offset_right = 707.8
+offset_bottom = 78.79999
+
+[node name="Label" type="Label" parent="VBoxContainer3"]
+layout_mode = 2
+theme_override_constants/line_spacing = 3
+theme_override_fonts/font = ExtResource("11_i6au4")
+theme_override_font_sizes/font_size = 150
+text = "log ni Jai"
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(957, 535)
+amount = 20
+texture = ExtResource("11_rv8kf")
+lifetime = 25.700000000000003
+process_material = SubResource("ParticleProcessMaterial_16tb2")
+
+[connection signal="pressed" from="VBoxContainer/Start Game" to="VBoxContainer" method="_on_start_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="VBoxContainer" method="_on_quit_pressed"]
