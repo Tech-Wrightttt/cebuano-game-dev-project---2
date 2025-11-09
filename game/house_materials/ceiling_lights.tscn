@@ -18,7 +18,7 @@ material_override = SubResource("StandardMaterial3D_ps8j2")
 mesh = SubResource("CylinderMesh_s54or")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -0.0176332, -0.17012382, -0.014208794)
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -0.0176332, 1.7123686, -0.014208794)
 light_energy = 7.571
-spot_range = 8.138
-spot_angle = 41.07
+spot_range = 14.685447
+spot_angle = 57.49584
