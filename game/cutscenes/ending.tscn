@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8o35t5xvoo2u"]
+
+[ext_resource type="PackedScene" uid="uid://c6nnpmjnwv4g2" path="res://game/house.tscn" id="1_27guy"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_owgvd"]
+sky_top_color = Color(0.12270618, 0.04560589, 0.0034415955, 1)
+sky_horizon_color = Color(0.22708711, 0.10912841, 0.020405067, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Sky" id="Sky_a202f"]
+sky_material = SubResource("ProceduralSkyMaterial_owgvd")
+
+[sub_resource type="Environment" id="Environment_s8sf5"]
+background_mode = 2
+sky = SubResource("Sky_a202f")
+ambient_light_sky_contribution = 0.0
+ambient_light_energy = 0.1
+tonemap_mode = 3
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.04
+volumetric_fog_albedo = Color(0.6117647, 0.6117647, 0.6117647, 1)
+volumetric_fog_emission = Color(0.23921569, 0.07450981, 0.05882353, 1)
+volumetric_fog_emission_energy = 0.1
+volumetric_fog_length = 128.0
+adjustment_enabled = true
+adjustment_brightness = 1.2
+
+[node name="Node3D" type="Node3D"]
+
+[node name="House" parent="." instance=ExtResource("1_27guy")]
+
+[node name="Camera3D" type="Camera3D" parent="House"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -26.231855, -2.671071, -6.828234)
+
+[node name="Spotlight" type="Node3D" parent="House/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.9146447)
+
+[node name="Flashlight" type="SpotLight3D" parent="House/Camera3D/Spotlight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.77986765)
+light_color = Color(0.92941177, 0.8235294, 0.79607844, 1)
+light_energy = 8.0
+light_volumetric_fog_energy = 0.0
+spot_range = 35.0
+spot_attenuation = 1.15
+spot_angle_attenuation = 1.1095695
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_s8sf5")
+
+[node name="Sunlight (for testing purposes)" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
