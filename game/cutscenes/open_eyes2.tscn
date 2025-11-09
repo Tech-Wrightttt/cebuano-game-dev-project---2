@@ -1,0 +1,211 @@
+[gd_scene load_steps=17 format=3 uid="uid://jwbt5ntefi5w"]
+
+[ext_resource type="Script" uid="uid://br52px242iwje" path="res://game/cutscenes/open_eyes2.gd" id="1_lnv6w"]
+[ext_resource type="Shader" uid="uid://bt1lbo5yomj25" path="res://game/shaders/retro_camera.gdshader" id="2_vne8n"]
+[ext_resource type="Script" uid="uid://cmlgynlmyqmva" path="res://game/cutscenes/canvas_layer2.gd" id="3_lnv6w"]
+[ext_resource type="FontFile" uid="uid://c126udgjjdqhf" path="res://fonts/cmu-typewriter/Typewriter/cmunit.ttf" id="4_jmjr0"]
+[ext_resource type="PackedScene" uid="uid://c6nnpmjnwv4g2" path="res://game/house.tscn" id="5_hqcdg"]
+[ext_resource type="PackedScene" uid="uid://bnd4f5cscd18j" path="res://game/house_materials/ceiling_lights.tscn" id="6_wh7yo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8w61q"]
+shader = ExtResource("2_vne8n")
+shader_parameter/aberration_strength = 3.0
+shader_parameter/blur_strength = 2.0
+shader_parameter/noise_strength = 0.048
+shader_parameter/vignette_strength = 0.78
+shader_parameter/scanline_strength = 0.016
+shader_parameter/distortion_strength = 0.1
+shader_parameter/ghost_strength = 0.12
+shader_parameter/flicker_strength = 0.005
+
+[sub_resource type="Animation" id="Animation_bn1ud"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/RichTextLabel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_p6q1s"]
+resource_name = "text"
+length = 4.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/RichTextLabel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qjrdi"]
+_data = {
+&"RESET": SubResource("Animation_bn1ud"),
+&"text": SubResource("Animation_p6q1s")
+}
+
+[sub_resource type="Animation" id="Animation_p05yo"]
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("open eyes2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.5707964, -1.5707964, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("open eyes2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-26.595726, 9.772967, -23.375956)]
+}
+
+[sub_resource type="Animation" id="Animation_lqnbj"]
+resource_name = "open eyes"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("open eyes2:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 2.3, 5.5666666, 7.0666666, 8.433333, 9.933333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1.5707964, -1.5707964, 0), Vector3(0.44505897, -1.680752, 0), Vector3(0.44505897, -2.3841197, 0), Vector3(0.44505897, -2.3841197, 0.3228859), Vector3(-0.06806784, -2.4452062, 0), Vector3(-0.006981317, -2.7331855, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("open eyes2:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.2666667, 3.1666667, 5.8333335, 9.066667, 9.966666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-26.595726, 9.772967, -23.375956), Vector3(-26.017, 9.804, -23.354), Vector3(-25.806, 9.843, -23.346), Vector3(-26.596, 9.843, -23.346), Vector3(-24.701, 11.293, -21.036), Vector3(-24.206, 11.548, -20.381)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_05dia"]
+_data = {
+&"RESET": SubResource("Animation_p05yo"),
+&"open eyes": SubResource("Animation_lqnbj")
+}
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_p6q1s"]
+sky_top_color = Color(0.12270618, 0.04560589, 0.0034415955, 1)
+sky_horizon_color = Color(0.22708711, 0.10912841, 0.020405067, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Sky" id="Sky_a202f"]
+sky_material = SubResource("ProceduralSkyMaterial_p6q1s")
+
+[sub_resource type="Environment" id="Environment_bn1ud"]
+background_mode = 2
+sky = SubResource("Sky_a202f")
+ambient_light_sky_contribution = 0.0
+ambient_light_energy = 0.1
+tonemap_mode = 3
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.04
+volumetric_fog_albedo = Color(0.6117647, 0.6117647, 0.6117647, 1)
+volumetric_fog_emission = Color(0.23921569, 0.07450981, 0.05882353, 1)
+volumetric_fog_emission_energy = 0.1
+volumetric_fog_length = 128.0
+adjustment_enabled = true
+adjustment_brightness = 1.2
+
+[node name="Cutscene" type="Node3D"]
+script = ExtResource("1_lnv6w")
+
+[node name="open eyes2" type="Camera3D" parent="."]
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, -26.595726, 9.772967, -23.375956)
+current = true
+
+[node name="Filters" type="CanvasLayer" parent="open eyes2"]
+visible = false
+
+[node name="Retro_Camera" type="ColorRect" parent="open eyes2/Filters"]
+material = SubResource("ShaderMaterial_8w61q")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="open eyes2"]
+script = ExtResource("3_lnv6w")
+
+[node name="ColorRect" type="ColorRect" parent="open eyes2/CanvasLayer"]
+anchors_preset = -1
+anchor_right = 0.998
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 829.0
+offset_right = 0.8399658
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.13725491)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="open eyes2/CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 59.0
+offset_right = 1835.0
+offset_bottom = 207.0
+theme_override_colors/default_color = Color(1, 1, 0.4862745, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_jmjr0")
+theme_override_font_sizes/normal_font_size = 43
+text = "Anong nangyayari, what happened last night and why’d lola just gave me chores and leave today too??"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="open eyes2/CanvasLayer/ColorRect/RichTextLabel"]
+root_node = NodePath("../../..")
+libraries = {
+&"": SubResource("AnimationLibrary_qjrdi")
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_05dia")
+}
+
+[node name="House" parent="." instance=ExtResource("5_hqcdg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.823221, 0, 0)
+
+[node name="ceiling lights7" parent="House" instance=ExtResource("6_wh7yo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.635996, 16.305607, -17.814905)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bn1ud")
+
+[node name="Sunlight (for testing purposes)" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
