@@ -1,8 +1,8 @@
 extends RayCast3D
 
 @onready var crosshair = get_parent().get_parent().get_node("player_ui/CanvasLayer/crosshair")
+@onready var interaction_label: Label = $"../Filters/Interaction_Label"
 @onready var item_interact: AudioStreamPlayer3D = $"../../Sounds/Take_Item"
-@onready var interaction_label: Label = $"../Camera3D/Filters/Interaction_Label"
 # Map groups to the method to call and the key to display
 var group_interactions := {
 	"interactable": {"method": "interact", "key": "E", "type": "press"},
