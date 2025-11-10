@@ -1,4 +1,4 @@
-[gd_scene load_steps=357 format=4 uid="uid://c6nnpmjnwv4g2"]
+[gd_scene load_steps=362 format=4 uid="uid://c6nnpmjnwv4g2"]
 
 [ext_resource type="Script" uid="uid://cmcetdgh8ky7t" path="res://scripts/house.gd" id="1_8tqyt"]
 [ext_resource type="Material" uid="uid://31nbyn23hg2q" path="res://materials/house_material.tres" id="1_f6s7v"]
@@ -149,19 +149,22 @@
 [ext_resource type="PackedScene" uid="uid://do0rvl1sxdfrh" path="res://assets/glb_models/basement/book_stand_low_poly.glb" id="111_gvvqw"]
 [ext_resource type="PackedScene" path="res://game/inri.tscn" id="111_puo31"]
 [ext_resource type="PackedScene" uid="uid://c5dguj0duawtb" path="res://game/house_materials/locker_wow.tscn" id="112_de7xd"]
-[ext_resource type="PackedScene" uid="uid://vu20j1rcpe78" path="res://assets/glb_models/bathroom/oily_paper_roll_vjxoffps_mid.glb" id="113_gvvqw"]
+[ext_resource type="PackedScene" uid="uid://doyi4gvwcma11" path="res://assets/glb_models/bathroom/oily_paper_roll_vjxoffps_mid.glb" id="113_gvvqw"]
+[ext_resource type="AudioStream" uid="uid://c7dswpe77u6kr" path="res://soundfx/prayer.mp3" id="114_kirwq"]
 [ext_resource type="PackedScene" uid="uid://cddt0m7lgb0xy" path="res://game/house_materials/cabinet sa altar.tscn" id="114_puo31"]
 [ext_resource type="PackedScene" uid="uid://bney01lwo04eo" path="res://game/house_materials/bed.tscn" id="121_4uiwc"]
 [ext_resource type="PackedScene" uid="uid://dtyh8u3jf1pui" path="res://assets/glb_models/basement/rusty_metal_barrel_vijnbjz_mid.glb" id="121_dwt10"]
 [ext_resource type="PackedScene" uid="uid://cl2a0kyom3haw" path="res://assets/glb_models/basement/metal_donkey_statue_photoscan.glb" id="122_3qwsg"]
-[ext_resource type="PackedScene" uid="uid://dc7rbykfmig2g" path="res://assets/glb_models/basement/rusty_jerrycan_vktifj1ga_low.glb" id="122_nafd2"]
-[ext_resource type="PackedScene" uid="uid://b5madj0d0u0kn" path="res://assets/glb_models/basement/simple_shield.glb" id="123_f5qeo"]
+[ext_resource type="PackedScene" uid="uid://dijwp5y5wpnxy" path="res://assets/glb_models/basement/rusty_jerrycan_vktifj1ga_low.glb" id="122_nafd2"]
+[ext_resource type="PackedScene" uid="uid://buk0rj2ijs14y" path="res://assets/glb_models/chores/uncleaned_angel.tscn" id="123_1o4y0"]
+[ext_resource type="PackedScene" uid="uid://cm6iqoner7ul8" path="res://assets/glb_models/basement/simple_shield.glb" id="123_f5qeo"]
 [ext_resource type="PackedScene" uid="uid://b2yx3uf3pxlaq" path="res://game/house_materials/workbench_(maopen).tscn" id="123_f48tp"]
 [ext_resource type="PackedScene" uid="uid://da3v5u6cqyvl8" path="res://assets/glb_models/basement/water_heater_used.glb" id="123_re2uc"]
 [ext_resource type="Script" uid="uid://y52gc1lmr4hp" path="res://game/task_candle.gd" id="123_x62yr"]
 [ext_resource type="PackedScene" uid="uid://doiurcqv5iay1" path="res://assets/glb_models/basement/drinking_water_fountain.glb" id="124_f5qeo"]
 [ext_resource type="PackedScene" uid="uid://da7np75ks3tc4" path="res://assets/glb_models/chores/candle.tscn" id="124_gslyl"]
-[ext_resource type="Script" path="res://game/task_clean_statues.gd" id="125_m2psj"]
+[ext_resource type="Script" uid="uid://bpg8fjigy7ibk" path="res://game/task_clean_statues.gd" id="125_m2psj"]
+[ext_resource type="PackedScene" uid="uid://bpmdhftowdo4r" path="res://assets/glb_models/chores/uncleaned_creepy_statue.tscn" id="125_sfno0"]
 [ext_resource type="PackedScene" uid="uid://ba1xcjufcwwwr" path="res://assets/glb_models/basement/medieval_torch.glb" id="125_yewax"]
 [ext_resource type="PackedScene" uid="uid://b681o5valg1vs" path="res://assets/glb_models/furniture/wardrobe.tscn" id="127_uwpgj"]
 [ext_resource type="PackedScene" uid="uid://dcrr2bsxdk5on" path="res://assets/glb_models/statues/statue_robe_figure.tscn" id="127_xxycr"]
@@ -176,6 +179,7 @@
 [ext_resource type="PackedScene" uid="uid://cw5paga50nyio" path="res://assets/glb_models/chores/towel.glb" id="134_s8tip"]
 [ext_resource type="PackedScene" uid="uid://dyjsy356v4elx" path="res://assets/glb_models/chores/dish_food_cover.glb" id="134_sfno0"]
 [ext_resource type="AudioStream" uid="uid://3i6cdx842td1" path="res://soundfx/towel_placing.mp3" id="135_s8tip"]
+[ext_resource type="AudioStream" uid="uid://d3mp4s4edsost" path="res://soundfx/take_item.mp3" id="138_pybr7"]
 [ext_resource type="PackedScene" uid="uid://df20nbkqt4c7d" path="res://assets/glb_models/basement/worn_bandages.glb" id="138_yewax"]
 [ext_resource type="PackedScene" uid="uid://isdmfbvdrku7" path="res://assets/glb_models/basement/blood_bag_v2.glb" id="139_1tgmf"]
 [ext_resource type="PackedScene" uid="uid://dnd0sn2ioqiu4" path="res://assets/glb_models/basement/freerawscanthe_statue_of_peace.glb" id="139_uwpgj"]
@@ -210,6 +214,7 @@ agent_height = 3.9
 agent_radius = 0.8
 agent_max_climb = 1.2
 agent_max_slope = 75.0
+edge_max_length = 12.0
 edge_max_error = 0.96
 vertices_per_polygon = 10.0
 
@@ -547,6 +552,13 @@ size = Vector3(0.6954195, 1.4609356, 1.0806556)
 [sub_resource type="BoxShape3D" id="BoxShape3D_pybr7"]
 size = Vector3(45.953857, 135.48059, 32.736824)
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ar67c"]
+radius = 6.5
+height = 36.949024
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h0fog"]
+size = Vector3(1.6383057, 2.5915527, 1.6706543)
+
 [sub_resource type="GDScript" id="GDScript_m1vgo"]
 script/source = "extends Node3D
 
@@ -762,18 +774,14 @@ height = 2.691162
 [sub_resource type="BoxShape3D" id="BoxShape3D_rwu8e"]
 size = Vector3(0.3179512, 0.5378418, 0.26171875)
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ar67c"]
-radius = 6.5
-height = 36.949024
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_obrwd"]
-size = Vector3(0.60131836, 1.7149048, 0.7939453)
+size = Vector3(0.60131836, 0.570343, 0.7939453)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x62yr"]
 size = Vector3(2.5, 5, 2.5)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_p4sj0"]
-height = 2.5024414
+height = 1.2067871
 radius = 0.6953125
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_41711"]
@@ -1999,6 +2007,16 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0004067421, 0.01644075, 0.0012948513)
 shape = SubResource("BoxShape3D_0ksgv")
 
+[node name="lana bottle10" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles" instance=ExtResource("62_jxex3")]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, -26.258049, -4.231845, 1.1461685)
+
+[node name="lanastatic10" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles/lana bottle10" groups=["equipable", "lana"]]
+collision_layer = 9
+
+[node name="lanacollision10" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles/lana bottle10/lanastatic10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0004067421, 0.01644075, 0.0012948513)
+shape = SubResource("BoxShape3D_0ksgv")
+
 [node name="lanadropsarray" type="Node3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana"]
 
 [node name="lanadropscontainer1" type="Node3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray"]
@@ -2139,6 +2157,9 @@ shape = SubResource("BoxShape3D_1tgmf")
 [node name="Lana_Bubbling" type="AudioStreamPlayer3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana"]
 stream = ExtResource("105_4ts8e")
 volume_db = 3.0
+
+[node name="Lana_Prayer" type="AudioStreamPlayer3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana"]
+stream = ExtResource("114_kirwq")
 
 [node name="Task_Candle" type="Node3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS"]
 script = ExtResource("123_x62yr")
@@ -2355,6 +2376,46 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 2.437008, -0.03759764)
 shape = SubResource("BoxShape3D_m1vgo")
 
+[node name="Candle13" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -26.691807, -4.510936, 1.9279594)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle13" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle13/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 2.437008, -0.03759764)
+shape = SubResource("BoxShape3D_m1vgo")
+
+[node name="Candle14" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -25.760693, -4.510936, 2.162539)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle14" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle14/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 2.437008, -0.03759764)
+shape = SubResource("BoxShape3D_m1vgo")
+
+[node name="Candle15" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -26.3801, -4.510936, 2.3392649)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle15" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle15/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 2.437008, -0.03759764)
+shape = SubResource("BoxShape3D_m1vgo")
+
+[node name="Candle16" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -25.251167, -4.510936, 1.9279594)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle16" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle16/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 2.437008, -0.03759764)
+shape = SubResource("BoxShape3D_m1vgo")
+
 [node name="Task_Clean_Statue" type="Node3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS"]
 script = ExtResource("125_m2psj")
 
@@ -2423,6 +2484,33 @@ transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, -13.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03781128, 0.024887085, 0)
 shape = SubResource("BoxShape3D_1o4y0")
 
+[node name="StatueAngel" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/cleanedStatue" instance=ExtResource("155_y0f4w")]
+transform = Transform3D(-0.11483141, 0, -0.05692539, 0, 0.12816685, 0, 0.05692539, 0, -0.11483141, -29.882324, -5.952967, -3.5928283)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/cleanedStatue/StatueAngel"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/cleanedStatue/StatueAngel/StaticBody3D"]
+transform = Transform3D(1, 0, 5.9604645e-08, 0, 1, 0, -5.9604645e-08, 0, 1, -0.20967102, 12.938923, 0.16741943)
+shape = SubResource("CapsuleShape3D_ar67c")
+
+[node name="StatueAngel2" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/cleanedStatue" instance=ExtResource("155_y0f4w")]
+transform = Transform3D(0.10732746, 0, -0.07005403, 0, 0.12816682, 0, 0.07005403, 0, 0.10732746, -22.301529, -5.952967, -3.5928283)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/cleanedStatue/StatueAngel2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/cleanedStatue/StatueAngel2/StaticBody3D"]
+transform = Transform3D(1, 0, 5.9604645e-08, 0, 1, 0, -5.9604645e-08, 0, 1, -0.20967102, 12.938923, 0.16741943)
+shape = SubResource("CapsuleShape3D_ar67c")
+
+[node name="StatueCreepy" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/cleanedStatue" instance=ExtResource("160_puo31")]
+transform = Transform3D(0.4635255, 0, -1.426585, 0, 1.5, 0, 1.426585, 0, 0.4635255, -27.236916, -5.9628787, 5.209491)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/cleanedStatue/StatueCreepy"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/cleanedStatue/StatueCreepy/StaticBody3D"]
+transform = Transform3D(1.000001, 0, -2.9802322e-08, 0, 1.0000602, 0, 2.9802322e-08, 0, 1.000001, 1.314183, 1.9404008, -0.37127686)
+shape = SubResource("BoxShape3D_h0fog")
+
 [node name="uncleanedStatue" type="Node3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue"]
 
 [node name="UncleanedStatueAnte" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue" instance=ExtResource("128_dyeyr")]
@@ -2487,6 +2575,36 @@ transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, -13.
 [node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueSaint3/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03781128, 0.024887085, 0)
 shape = SubResource("BoxShape3D_1o4y0")
+
+[node name="UncleanedStatueAngel" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue" instance=ExtResource("123_1o4y0")]
+transform = Transform3D(-0.11483141, 0, -0.05692539, 0, 0.12816685, 0, 0.05692539, 0, -0.11483141, -29.882324, -5.952967, -3.5928283)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueAngel" groups=["hold_deploy"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueAngel/StaticBody3D"]
+transform = Transform3D(1, 0, 5.9604645e-08, 0, 1, 0, -5.9604645e-08, 0, 1, -0.20967102, 12.938923, 0.16741943)
+shape = SubResource("CapsuleShape3D_ar67c")
+
+[node name="UncleanedStatueAngel2" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue" instance=ExtResource("123_1o4y0")]
+transform = Transform3D(0.10732746, 0, -0.07005403, 0, 0.12816682, 0, 0.07005403, 0, 0.10732746, -22.301529, -5.952967, -3.5928283)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueAngel2" groups=["hold_deploy"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueAngel2/StaticBody3D"]
+transform = Transform3D(1, 0, 5.9604645e-08, 0, 1, 0, -5.9604645e-08, 0, 1, -0.20967102, 12.938923, 0.16741943)
+shape = SubResource("CapsuleShape3D_ar67c")
+
+[node name="UncleanedStatueCreepy" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue" instance=ExtResource("125_sfno0")]
+transform = Transform3D(0.4635255, 0, -1.426585, 0, 1.5, 0, 1.426585, 0, 0.4635255, -27.236916, -5.9628787, 5.209491)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueCreepy" groups=["hold_deploy"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueCreepy/StaticBody3D"]
+transform = Transform3D(1.000001, 0, -2.9802322e-08, 0, 1.0000602, 0, 2.9802322e-08, 0, 1.000001, 1.314183, 1.9404008, -0.37127686)
+shape = SubResource("BoxShape3D_h0fog")
 
 [node name="Cleaning_Statue" type="AudioStreamPlayer3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue"]
 stream = ExtResource("131_u8565")
@@ -2876,6 +2994,26 @@ collision_layer = 9
 transform = Transform3D(1, -3.5527137e-15, -1.1667879e-19, 3.5527137e-15, 1, 3.5527137e-15, -1.3065483e-19, -3.5527137e-15, 1, -1.5487442, 0.47131348, 8.249542)
 shape = SubResource("BoxShape3D_xfkla")
 
+[node name="towel11" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse" instance=ExtResource("134_s8tip")]
+transform = Transform3D(-8.7422775e-10, -0.02, -8.7422775e-10, 0, -8.7422775e-10, 0.02, -0.02, 8.7422775e-10, 3.821371e-17, -27.499863, -4.57415, 2.030478)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse/towel11" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse/towel11/StaticBody3D"]
+transform = Transform3D(1, -3.5527137e-15, -1.1667879e-19, 3.5527137e-15, 1, 3.5527137e-15, -1.3065483e-19, -3.5527137e-15, 1, -1.5487442, 0.47131348, 8.249542)
+shape = SubResource("BoxShape3D_xfkla")
+
+[node name="towel12" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse" instance=ExtResource("134_s8tip")]
+transform = Transform3D(-8.7422775e-10, -0.02, -8.7422775e-10, 0, -8.7422775e-10, 0.02, -0.02, 8.7422775e-10, 3.821371e-17, -24.42443, -4.57415, 2.030478)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse/towel12" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse/towel12/StaticBody3D"]
+transform = Transform3D(1, -3.5527137e-15, -1.1667879e-19, 3.5527137e-15, 1, 3.5527137e-15, -1.3065483e-19, -3.5527137e-15, 1, -1.5487442, 0.47131348, 8.249542)
+shape = SubResource("BoxShape3D_xfkla")
+
 [node name="Towel_Covering" type="AudioStreamPlayer3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror"]
 stream = ExtResource("135_s8tip")
 
@@ -3115,6 +3253,29 @@ collision_layer = 9
 [node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover10/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.081421, 21.57666, 2.177002)
 shape = SubResource("BoxShape3D_7nwo6")
+
+[node name="cover11" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("134_sfno0")]
+transform = Transform3D(0.0023704406, -0.0044023865, 0, 0.0044023865, 0.0023704406, 0, 0, 0, 0.005, -21.122215, -4.3267136, 0.68778324)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover11" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover11/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.081421, 21.57666, 2.177002)
+shape = SubResource("BoxShape3D_7nwo6")
+
+[node name="cover12" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("134_sfno0")]
+transform = Transform3D(0.0023704406, -0.0044023865, 0, 0.0044023865, 0.0023704406, 0, 0, 0, 0.005, -21.122215, -4.3267136, -1.3135288)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover12" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover12/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.081421, 21.57666, 2.177002)
+shape = SubResource("BoxShape3D_7nwo6")
+
+[node name="Put_Cover" type="AudioStreamPlayer3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food"]
+stream = ExtResource("138_pybr7")
 
 [node name="2ND FLOOR ITEMS" type="Node3D" parent="doors/NavigationRegion3D/ITEMS"]
 
@@ -3563,106 +3724,85 @@ shape = SubResource("BoxShape3D_rwu8e")
 [node name="lamp" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/old stool" instance=ExtResource("104_uavia")]
 transform = Transform3D(0.41187066, 0, 0.17311758, 0, 0.44677413, 0, -0.17311758, 0, 0.41187066, 0.14985132, 0.34597307, 0.008859634)
 
-[node name="enjel" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS" instance=ExtResource("155_y0f4w")]
-transform = Transform3D(-0.11483141, 0, -0.05692539, 0, 0.12816685, 0, 0.05692539, 0, -0.11483141, -29.882324, -5.952967, -3.5928283)
+[node name="stone" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS" instance=ExtResource("157_7bjlp")]
+transform = Transform3D(-2.324634, 0, -2.3574855, 0, 3.3108408, 0, 2.3574855, 0, -2.324634, -26.044476, -5.9529676, 7.6478667)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/enjel"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/enjel/StaticBody3D"]
-transform = Transform3D(1, 0, 5.9604645e-08, 0, 1, 0, -5.9604645e-08, 0, 1, -0.20967102, 12.938923, 0.16741943)
-shape = SubResource("CapsuleShape3D_ar67c")
-
-[node name="enjel2" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS" instance=ExtResource("155_y0f4w")]
-transform = Transform3D(0.10732746, 0, -0.07005403, 0, 0.12816682, 0, 0.07005403, 0, 0.10732746, -22.301529, -5.952967, -3.5928283)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/enjel2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/enjel2/StaticBody3D"]
-transform = Transform3D(1, 0, 5.9604645e-08, 0, 1, 0, -5.9604645e-08, 0, 1, -0.20967102, 12.938923, 0.16741943)
-shape = SubResource("CapsuleShape3D_ar67c")
-
-[node name="creepy statue" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS" instance=ExtResource("160_puo31")]
-transform = Transform3D(0.4635255, 0, -1.426585, 0, 1.5, 0, 1.426585, 0, 0.4635255, -27.236916, -5.9628787, 5.209491)
-
-[node name="stone" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue" instance=ExtResource("157_7bjlp")]
-transform = Transform3D(1.0158337, 0, -1.959574, 0, 2.2072272, 0, 1.959574, 0, 1.0158337, 1.7916782, 0.0066075325, -0.25371933)
-
-[node name="wood trim" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue/stone" instance=ExtResource("158_agx8e")]
+[node name="wood trim" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/stone" instance=ExtResource("158_agx8e")]
 transform = Transform3D(-1.3340068, 0, 0.49829116, 0, 0.7956807, 0, -1.3080912, 0, -0.5081634, 1.7518301, -0.009213448, 0.98587227)
 
-[node name="cowhead" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue/stone/wood trim" instance=ExtResource("162_puo31")]
+[node name="cowhead" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/stone/wood trim" instance=ExtResource("162_puo31")]
 transform = Transform3D(-0.013169478, 1.6079866e-09, 1.1145598e-16, 0, -4.6545956e-10, 0.017, 2.0954758e-09, 0.010648472, 7.4309375e-10, 1.4866605, 1.2709036, -0.06407809)
 
-[node name="cowhead2" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue/stone/wood trim" instance=ExtResource("162_puo31")]
+[node name="cowhead2" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/stone/wood trim" instance=ExtResource("162_puo31")]
 transform = Transform3D(-0.013169478, 1.6079866e-09, 1.1145598e-16, 0, -4.6545956e-10, 0.017, 2.0954758e-09, 0.010648472, 7.4309375e-10, 0.65234137, 1.2701566, -0.10093117)
 
-[node name="wall" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue/stone" instance=ExtResource("163_ar67c")]
+[node name="wall" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/stone" instance=ExtResource("163_ar67c")]
 transform = Transform3D(-0.07145499, 0, -0.05522161, 0, 0.08752485, 0, 0.071847595, 0, -0.054919846, 2.9255514, 0.5081538, -3.0500598)
 
-[node name="wall2" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue/stone" instance=ExtResource("163_ar67c")]
+[node name="wall2" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/stone" instance=ExtResource("163_ar67c")]
 transform = Transform3D(0.071247734, 0, 0.055379547, 0, 0.08752486, 0, -0.07205305, 0, 0.05476057, -2.2197256, 0.5081538, 2.2483034)
 
-[node name="chair3" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue/stone" instance=ExtResource("159_r85fh")]
+[node name="chair4" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/stone" instance=ExtResource("159_r85fh")]
+transform = Transform3D(0.48288256, 0, 0.50103664, 0, 0.5887459, 0, -0.48813593, 0, 0.4956444, -2.906291, 0.04778409, 0.9070344)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/stone/chair4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/stone/chair4/StaticBody3D"]
+transform = Transform3D(1, 0, -4.079193e-07, 0, 1, 0, 9.313226e-10, 0, 1, -0.003051579, 0.25803995, -0.10303402)
+shape = SubResource("BoxShape3D_obrwd")
+
+[node name="chair3" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/stone" instance=ExtResource("159_r85fh")]
 transform = Transform3D(0.48288253, 0, 0.50103664, 0, 0.5887459, 0, -0.48813593, 0, 0.4956444, -2.4885607, 0.04778409, 0.4951253)
 
-[node name="chair3" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue/stone/chair3" instance=ExtResource("159_r85fh")]
-transform = Transform3D(1, 0, 5.029142e-08, 0, 1, 0, 0, 0, 1, -0.85434306, 0, -0.010343552)
+[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/stone/chair3"]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue/stone/chair3/chair3"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue/stone/chair3/chair3/StaticBody3D"]
-transform = Transform3D(1, 0, -3.3993274e-07, 0, 1, 0, 9.313226e-10, 0, 1, -0.003051579, 0.8303213, -0.103033066)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/stone/chair3/StaticBody3D"]
+transform = Transform3D(1, 0, -3.4086406e-07, 0, 1, 0, 9.313226e-10, 0, 1, -0.003051579, 0.29325724, -0.10303402)
 shape = SubResource("BoxShape3D_obrwd")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue/stone/chair3"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue/stone/chair3/StaticBody3D"]
-transform = Transform3D(1, 0, -3.3993274e-07, 0, 1, 0, 9.313226e-10, 0, 1, -0.003051579, 0.8303213, -0.103033066)
-shape = SubResource("BoxShape3D_obrwd")
-
-[node name="chair2" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue/stone" instance=ExtResource("159_r85fh")]
+[node name="chair2" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/stone" instance=ExtResource("159_r85fh")]
 transform = Transform3D(-0.48551643, 0, -0.4983478, 0, 0.5887459, 0, 0.48551628, 0, -0.49834794, -1.0056834, 0.04778409, 2.8987842)
 
-[node name="chair2" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue/stone/chair2" instance=ExtResource("159_r85fh")]
+[node name="chair2" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/stone/chair2" instance=ExtResource("159_r85fh")]
 transform = Transform3D(1, 0, -9.313226e-10, 0, 1, 0, -9.313226e-10, 0, 1, -0.94084346, 0, -0.011390686)
 
-[node name="Sketchfab_Scene" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue/stone/chair2/chair2" instance=ExtResource("160_7uwel")]
+[node name="Sketchfab_Scene" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/stone/chair2/chair2" instance=ExtResource("160_7uwel")]
 transform = Transform3D(0.16908449, 0, -0.06172893, 0, 0.18000007, 0, 0.061728932, 0, 0.16908444, -0.00032000244, 0.69587255, 0.044433594)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue/stone/chair2/chair2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/stone/chair2/chair2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue/stone/chair2/chair2/StaticBody3D"]
-transform = Transform3D(1, 0, -3.3993274e-07, 0, 1, 0, 9.313226e-10, 0, 1, -0.003051579, 0.8303213, -0.103033066)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/stone/chair2/chair2/StaticBody3D"]
+transform = Transform3D(0.99999994, 0, -3.403984e-07, 0, 1, 0, 1.3969839e-09, 0, 0.99999994, -0.003051579, 0.27427602, -0.103033066)
 shape = SubResource("BoxShape3D_obrwd")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue/stone/chair2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/stone/chair2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue/stone/chair2/StaticBody3D"]
-transform = Transform3D(1, 0, -3.3993274e-07, 0, 1, 0, 9.313226e-10, 0, 1, -0.003051579, 0.8303213, -0.103033066)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/stone/chair2/StaticBody3D"]
+transform = Transform3D(0.99999994, 0, -3.4086406e-07, 0, 1, 0, 9.313226e-10, 0, 0.99999994, -0.0030516386, 0.27323222, -0.103033066)
 shape = SubResource("BoxShape3D_obrwd")
 
-[node name="tree lamp" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue/stone" instance=ExtResource("160_qalft")]
+[node name="tree lamp" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/stone" instance=ExtResource("160_qalft")]
 transform = Transform3D(-0.11558074, 0, 0.115588814, 0, 0.1634615, 0, -0.115588814, 0, -0.11558074, -0.7951255, 0.19393396, -0.8880069)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue/stone/tree lamp"]
+[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/stone/tree lamp"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue/stone/tree lamp/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/stone/tree lamp/StaticBody3D"]
 transform = Transform3D(1, 0, 1.3969839e-09, 0, 1.0000001, 0, -1.3969839e-09, 0, 1, 0, 1.8175578, 0)
 shape = SubResource("BoxShape3D_x62yr")
 
-[node name="tree lamp2" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue/stone" instance=ExtResource("160_qalft")]
+[node name="tree lamp2" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/stone" instance=ExtResource("160_qalft")]
 transform = Transform3D(-0.11558074, 0, 0.115588814, 0, 0.1634615, 0, -0.115588814, 0, -0.11558074, 0.76948357, 0.19393396, 0.69871235)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue/stone/tree lamp2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/stone/tree lamp2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue/stone/tree lamp2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/stone/tree lamp2/StaticBody3D"]
 transform = Transform3D(1, 0, 1.3969839e-09, 0, 1.0000001, 0, -1.3969839e-09, 0, 1, 0, 1.8175578, 0)
 shape = SubResource("BoxShape3D_x62yr")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue/stone"]
+[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/stone"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/creepy statue/stone/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.040638447, 0.2512207, 0.040071964)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/stone/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.040638447, -0.39660656, 0.040071964)
 shape = SubResource("CylinderShape3D_p4sj0")
 
 [node name="stone altar table" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS" instance=ExtResource("168_ar67c")]
