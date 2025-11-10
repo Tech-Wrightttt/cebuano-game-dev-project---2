@@ -1,9 +1,9 @@
-[gd_scene load_steps=370 format=4 uid="uid://c6nnpmjnwv4g2"]
+[gd_scene load_steps=374 format=4 uid="uid://c6nnpmjnwv4g2"]
 
 [ext_resource type="Script" uid="uid://cmcetdgh8ky7t" path="res://scripts/house.gd" id="1_8tqyt"]
 [ext_resource type="Material" uid="uid://31nbyn23hg2q" path="res://materials/house_material.tres" id="1_f6s7v"]
 [ext_resource type="PackedScene" uid="uid://b7iavuxmklmfq" path="res://game/house_materials/windows_single.tscn" id="2_agx8e"]
-[ext_resource type="ArrayMesh" uid="uid://cduhe8fc6hyq8" path="res://assets/house/house_basement_wall.obj" id="2_sgyp1"]
+[ext_resource type="ArrayMesh" uid="uid://cjhr8ed83eebv" path="res://assets/house/house_basement_wall.obj" id="2_sgyp1"]
 [ext_resource type="ArrayMesh" uid="uid://dkeuruqi54p6n" path="res://assets/house/house_basement_floor.obj" id="3_djvyg"]
 [ext_resource type="Texture2D" uid="uid://cm6acpp76ieuo" path="res://textures/house/basement floor..jpg" id="3_eeqtj"]
 [ext_resource type="PackedScene" uid="uid://co45n63o5btcn" path="res://assets/glb_models/nature/plantsa/old_iron.glb" id="3_jer8c"]
@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://gkcld4u7jl4t" path="res://textures/house/wall basement.jpg" id="6_78vr8"]
 [ext_resource type="ArrayMesh" uid="uid://blafgyi6jmkkf" path="res://assets/house/house_1stFloor_floor.obj" id="6_h3s8l"]
 [ext_resource type="Texture2D" uid="uid://dn1l7w7r2veuw" path="res://assets/glb_models/decoratives/vase/vase_0.png" id="6_wgg7t"]
-[ext_resource type="Texture2D" uid="uid://dlxamo7llvtwm" path="res://assets/glb_models/decoratives/vase/vase_1.png" id="7_lulxl"]
+[ext_resource type="Texture2D" uid="uid://s0ecbrt2ver0" path="res://assets/glb_models/decoratives/vase/vase_1.png" id="7_lulxl"]
 [ext_resource type="ArrayMesh" uid="uid://ddjhe1q3f64cs" path="res://assets/house/house_1stFloor_stairs.obj" id="7_sy0w3"]
 [ext_resource type="PackedScene" uid="uid://dnyd5vt8llw0i" path="res://assets/glb_models/appliance/piano/piano.glb" id="8_8j78o"]
 [ext_resource type="Texture2D" uid="uid://cmuedyjmpqp2r" path="res://textures/house/door_wood.png" id="8_lfduw"]
@@ -84,8 +84,8 @@
 [ext_resource type="PackedScene" uid="uid://csm48uofiavgt" path="res://assets/glb_models/furniture/wooden_recliner_chair.glb" id="48_r2ti1"]
 [ext_resource type="PackedScene" uid="uid://gdjdjhsmij5r" path="res://assets/glb_models/kitchen/modern_table.glb" id="49_514u5"]
 [ext_resource type="PackedScene" uid="uid://dn5dpttuukdxw" path="res://assets/glb_models/basement/old_ceiling_fan.glb" id="49_agx8e"]
-[ext_resource type="PackedScene" uid="uid://cyynvml86dq5v" path="res://assets/glb_models/kitchen/breakfast_food_dish.glb" id="50_jxex3"]
-[ext_resource type="PackedScene" uid="uid://baew8nvy1eo1d" path="res://assets/glb_models/basement/fluorescent_ceiling_lamp_vidrear_low.glb" id="50_r85fh"]
+[ext_resource type="PackedScene" uid="uid://clhk1h45t3yuo" path="res://assets/glb_models/kitchen/breakfast_food_dish.glb" id="50_jxex3"]
+[ext_resource type="PackedScene" uid="uid://bohfmf5fo585" path="res://assets/glb_models/basement/fluorescent_ceiling_lamp_vidrear_low.glb" id="50_r85fh"]
 [ext_resource type="PackedScene" uid="uid://bqgek7ryw0jg8" path="res://assets/glb_models/decoratives/kimono_stand.glb" id="51_epdl8"]
 [ext_resource type="PackedScene" uid="uid://ordm22u1fku0" path="res://assets/glb_models/kitchen/spanish_omelette.glb" id="51_m7rpm"]
 [ext_resource type="PackedScene" uid="uid://8cbpbv583ts7" path="res://game/house_materials/sink.tscn" id="52_eeqtj"]
@@ -142,24 +142,24 @@
 [ext_resource type="AudioStream" uid="uid://y1xple8gixkr" path="res://soundfx/lana_bubbling.mp3" id="105_4ts8e"]
 [ext_resource type="PackedScene" uid="uid://cehtw2ydchxer" path="res://assets/glb_models/decoratives/random_vase.glb" id="105_ref68"]
 [ext_resource type="PackedScene" uid="uid://cbo4k372s7a4s" path="res://game/house_materials/vintage table.tscn" id="105_rwu8e"]
-[ext_resource type="PackedScene" uid="uid://bctfdnra4pfq5" path="res://assets/glb_models/decoratives/laocoon_and_his_sons_skeleton.glb" id="106_gu04c"]
-[ext_resource type="PackedScene" uid="uid://cabsogcfgo804" path="res://assets/glb_models/furniture/swing.glb" id="109_dwt10"]
-[ext_resource type="PackedScene" uid="uid://dhmaxae3blvh7" path="res://assets/glb_models/furniture/wicker_basket_02.glb" id="110_nafd2"]
-[ext_resource type="PackedScene" uid="uid://brbisn406jwl3" path="res://assets/glb_models/decoratives/wooden_hourglass.glb" id="110_y3wns"]
-[ext_resource type="PackedScene" uid="uid://do0rvl1sxdfrh" path="res://assets/glb_models/basement/book_stand_low_poly.glb" id="111_gvvqw"]
-[ext_resource type="PackedScene" path="res://game/inri.tscn" id="111_puo31"]
+[ext_resource type="PackedScene" uid="uid://dyv57b056q6ys" path="res://assets/glb_models/decoratives/laocoon_and_his_sons_skeleton.glb" id="106_gu04c"]
+[ext_resource type="PackedScene" uid="uid://c55g865b4tx1t" path="res://assets/glb_models/furniture/swing.glb" id="109_dwt10"]
+[ext_resource type="PackedScene" uid="uid://cw4d5hfhsafrr" path="res://assets/glb_models/furniture/wicker_basket_02.glb" id="110_nafd2"]
+[ext_resource type="PackedScene" uid="uid://xwdobpsx0whk" path="res://assets/glb_models/decoratives/wooden_hourglass.glb" id="110_y3wns"]
+[ext_resource type="PackedScene" uid="uid://g7lvjw1muv3t" path="res://assets/glb_models/basement/book_stand_low_poly.glb" id="111_gvvqw"]
+[ext_resource type="PackedScene" uid="uid://dyrhnan3i2i61" path="res://game/inri.tscn" id="111_puo31"]
 [ext_resource type="PackedScene" uid="uid://c5dguj0duawtb" path="res://game/house_materials/locker_wow.tscn" id="112_de7xd"]
-[ext_resource type="PackedScene" uid="uid://vu20j1rcpe78" path="res://assets/glb_models/bathroom/oily_paper_roll_vjxoffps_mid.glb" id="113_gvvqw"]
+[ext_resource type="PackedScene" uid="uid://doyi4gvwcma11" path="res://assets/glb_models/bathroom/oily_paper_roll_vjxoffps_mid.glb" id="113_gvvqw"]
 [ext_resource type="AudioStream" uid="uid://c7dswpe77u6kr" path="res://soundfx/prayer.mp3" id="114_kirwq"]
 [ext_resource type="PackedScene" uid="uid://cddt0m7lgb0xy" path="res://game/house_materials/cabinet sa altar.tscn" id="114_puo31"]
 [ext_resource type="PackedScene" uid="uid://bney01lwo04eo" path="res://game/house_materials/bed.tscn" id="121_4uiwc"]
-[ext_resource type="PackedScene" uid="uid://dtyh8u3jf1pui" path="res://assets/glb_models/basement/rusty_metal_barrel_vijnbjz_mid.glb" id="121_dwt10"]
+[ext_resource type="PackedScene" uid="uid://bqqljlixaaykq" path="res://assets/glb_models/basement/rusty_metal_barrel_vijnbjz_mid.glb" id="121_dwt10"]
 [ext_resource type="PackedScene" uid="uid://cl2a0kyom3haw" path="res://assets/glb_models/basement/metal_donkey_statue_photoscan.glb" id="122_3qwsg"]
 [ext_resource type="PackedScene" uid="uid://dijwp5y5wpnxy" path="res://assets/glb_models/basement/rusty_jerrycan_vktifj1ga_low.glb" id="122_nafd2"]
 [ext_resource type="PackedScene" uid="uid://b5qtqnm07u7an" path="res://game/uncleaned_angel.tscn" id="123_1o4y0"]
 [ext_resource type="PackedScene" uid="uid://cm6iqoner7ul8" path="res://assets/glb_models/basement/simple_shield.glb" id="123_f5qeo"]
 [ext_resource type="PackedScene" uid="uid://b2yx3uf3pxlaq" path="res://game/house_materials/workbench_(maopen).tscn" id="123_f48tp"]
-[ext_resource type="PackedScene" uid="uid://da3v5u6cqyvl8" path="res://assets/glb_models/basement/water_heater_used.glb" id="123_re2uc"]
+[ext_resource type="PackedScene" uid="uid://clr4iw1mblm7a" path="res://assets/glb_models/basement/water_heater_used.glb" id="123_re2uc"]
 [ext_resource type="Script" uid="uid://y52gc1lmr4hp" path="res://game/task_candle.gd" id="123_x62yr"]
 [ext_resource type="PackedScene" uid="uid://doiurcqv5iay1" path="res://assets/glb_models/basement/drinking_water_fountain.glb" id="124_f5qeo"]
 [ext_resource type="PackedScene" uid="uid://da7np75ks3tc4" path="res://assets/glb_models/chores/candle.tscn" id="124_gslyl"]
@@ -177,7 +177,7 @@
 [ext_resource type="Script" uid="uid://c0xt6niuwwpiv" path="res://game/task_cover_mirror.gd" id="132_dyeyr"]
 [ext_resource type="AudioStream" uid="uid://cawls3lbt556x" path="res://soundfx/window_single_close.mp3" id="132_m2psj"]
 [ext_resource type="PackedScene" uid="uid://cw5paga50nyio" path="res://assets/glb_models/chores/towel.glb" id="134_s8tip"]
-[ext_resource type="PackedScene" uid="uid://dyjsy356v4elx" path="res://assets/glb_models/chores/dish_food_cover.glb" id="134_sfno0"]
+[ext_resource type="PackedScene" uid="uid://cbe6q7x01q5x5" path="res://assets/glb_models/chores/dish_food_cover.glb" id="134_sfno0"]
 [ext_resource type="AudioStream" uid="uid://3i6cdx842td1" path="res://soundfx/towel_placing.mp3" id="135_s8tip"]
 [ext_resource type="AudioStream" uid="uid://d3mp4s4edsost" path="res://soundfx/take_item.mp3" id="138_pybr7"]
 [ext_resource type="PackedScene" uid="uid://df20nbkqt4c7d" path="res://assets/glb_models/basement/worn_bandages.glb" id="138_yewax"]
@@ -503,10 +503,10 @@ height = 0.7578125
 radius = 0.2553711
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j01r5"]
-size = Vector3(236.24869, 117.26906, 132.0918)
+size = Vector3(236.24869, 49.836678, 132.0918)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kkt7x"]
-size = Vector3(1.4435272, 1.4314575, 0.64520264)
+size = Vector3(1.4435272, 0.8246155, 0.64520264)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_udash"]
 size = Vector3(44.6261, 32.520206, 60.993164)
@@ -518,7 +518,7 @@ size = Vector3(1.2486572, 1.8229675, 0.46569824)
 size = Vector3(40, 40, 20)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xgxom"]
-size = Vector3(2, 3, 3.5)
+size = Vector3(2, 1.7352295, 3.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1835u"]
 size = Vector3(1083.8862, 552.2815, 542.9491)
@@ -559,7 +559,7 @@ size = Vector3(2.0544434, 2.451233, 1.8195801)
 size = Vector3(1.2128296, 4.5188293, 0.7844238)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_85y2c"]
-height = 36.881104
+height = 22.151001
 radius = 14.137695
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ref68"]
@@ -1687,7 +1687,7 @@ transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -28.344961, 1.461491
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/1ST FLOOR ITEMS/kitchen/table"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/1ST FLOOR ITEMS/kitchen/table/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8846436, 87.508705, 9.043243)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8846436, 53.79251, 9.043243)
 shape = SubResource("BoxShape3D_j01r5")
 
 [node name="table2" parent="doors/NavigationRegion3D/ITEMS/1ST FLOOR ITEMS/kitchen" instance=ExtResource("49_514u5")]
@@ -1696,7 +1696,7 @@ transform = Transform3D(2.8310807, 0, 0, 0, 1.6637653, 0, 0, 0, 3.252242, -27.76
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/1ST FLOOR ITEMS/kitchen/table2"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/1ST FLOOR ITEMS/kitchen/table2/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00072574615, 0.6847545, 0.68096936)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00072574615, 0.38133347, 0.68096936)
 shape = SubResource("BoxShape3D_kkt7x")
 
 [node name="KitchenTable2" parent="doors/NavigationRegion3D/ITEMS/1ST FLOOR ITEMS/kitchen" instance=ExtResource("78_u8565")]
@@ -1741,7 +1741,7 @@ transform = Transform3D(0.94489145, 0, 0.014332257, 0, 0.945, 0, -0.014332257, 0
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/1ST FLOOR ITEMS/kitchen/vibtage table"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/1ST FLOOR ITEMS/kitchen/vibtage table/StaticBody3D"]
-transform = Transform3D(0.99999994, 0, -9.313226e-10, 0, 1, 0, 9.313226e-10, 0, 0.99999994, 0.0132369995, 0, -0.87278366)
+transform = Transform3D(0.9999967, 0, -2.7008355e-08, 0, 1, 0, 2.7008355e-08, 0, 0.9999967, 0.01322937, -0.63238525, -0.87277985)
 shape = SubResource("BoxShape3D_xgxom")
 
 [node name="sofa" parent="doors/NavigationRegion3D/ITEMS/1ST FLOOR ITEMS/kitchen" instance=ExtResource("41_34jwt")]
@@ -1994,7 +1994,7 @@ transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, -14.611732, 1.998394
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/1ST FLOOR ITEMS/livingroom/vintage table"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/1ST FLOOR ITEMS/livingroom/vintage table/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17.440552, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.075504, 0)
 shape = SubResource("CylinderShape3D_85y2c")
 
 [node name="altar" type="Node3D" parent="doors/NavigationRegion3D/ITEMS/1ST FLOOR ITEMS"]
