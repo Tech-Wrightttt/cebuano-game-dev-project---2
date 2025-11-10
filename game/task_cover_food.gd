@@ -1,7 +1,6 @@
 extends Node3D
 
-# Signal to emit when all 3 food items are covered
-#signal all_food_covered
+signal task_completed
 
 # --- PARENT NODES ---
 @onready var foods_parent = $Foods
@@ -18,17 +17,16 @@ var chosen_cover_ids := []
 var covers_player_is_holding := 0 # We just need a count
 
 func _ready() -> void:
-	# 1. Populate the maps based on the scene structure
 	populate_maps()
-	
-	# 2. Check if we have enough items to start the task
-	# NOTE: You can change the '3' to a different number if you want
-	# --- FIX: Changed '3' to '4' to match your slicing ---
+	deactivate_all()
+
+func initialize_task() -> void:
+	# 1. Check if we have enough items to start the task
 	if food_map.size() < 4 or cover_map.size() < 4:
 		push_warning("Not enough foods or covers to start the task.")
 		return
 		
-	# 3. Randomize and pick the items for this task
+	# 2. Randomize and pick the items for this task
 	randomize()
 	
 	# --- Setup Food ---
@@ -36,36 +34,45 @@ func _ready() -> void:
 	all_food_ids.shuffle()
 	chosen_food_ids = all_food_ids.slice(0, 4)
 	
+	# --- Setup Covers ---
 	var all_cover_ids = cover_map.keys()
 	all_cover_ids.shuffle()
 	chosen_cover_ids = all_cover_ids.slice(0, 4)
 	
 	# --- NIGHT 5 LOGIC (FOR COVERS) ---
-	# Check if we are on Night 5
 	if Global.get_night() == 5:
-		# Check if the mandatory covers exist in the map
 		if "cover11" in cover_map and "cover12" in cover_map:
-			
-			# 1. Remove them from the full list to avoid duplicates
 			all_cover_ids.erase("cover11")
 			all_cover_ids.erase("cover12")
-			
-			# 2. Re-slice to get the correct number *minus* our mandatory ones
-			# (4 - 2) = 2
 			chosen_cover_ids = all_cover_ids.slice(0, 4 - 2)
-			
-			# 3. Add our mandatory covers
 			chosen_cover_ids.push_back("cover11")
 			chosen_cover_ids.push_back("cover12")
-			
 			print("Night 5: Mandatory covers 'cover11' and 'cover12' added to task.")
 
-	# 4. Set the initial visibility and collisions for everything
+	# 3. Set the initial visibility and collisions for everything
 	update_all_item_states()
 
+func deactivate_all() -> void:
+	# Set up covers (all hidden)
+	for id in cover_map.keys():
+		var data = cover_map[id]
+		data["node"].visible = false
+		if data["collision"]:
+			data["collision"].set_deferred("disabled", true)
 
-# --- INITIAL SETUP ---
-
+	# Set up food items (all covered)
+	for id in food_map.keys():
+		var data = food_map[id]
+		if data["cover"]:
+			data["cover"].visible = true
+		if data["collision"]:
+			data["collision"].set_deferred("disabled", true)
+			
+	# Reset task state
+	chosen_food_ids.clear()
+	chosen_cover_ids.clear()
+	covers_player_is_holding = 0
+	
 # Populates the dictionaries with references to all the nodes
 func populate_maps() -> void:
 	# Map all food items
@@ -172,6 +179,6 @@ func use(collider_body: PhysicsBody3D) -> void:
 			if chosen_food_ids.is_empty():
 				# --- FIX: Changed "3" to "4" ---
 				print("All 4 food items have been covered!")
-				#all_food_covered.emit()
+				task_completed.emit()
 				
 			return # We found our item, no need to keep looping

@@ -1,5 +1,17 @@
 extends Node
 
+@onready var task_lana: Node3D = $"/root/level/House/doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana"
+@onready var task_candle: Node3D = $"/root/level/House/doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle"
+@onready var task_clean_statue: Node3D = $"/root/level/House/doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue"
+@onready var task_close_windows: Node3D = $"/root/level/House/doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Close_Windows"
+@onready var task_cover_mirror: Node3D = $"/root/level/House/doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror"
+@onready var task_cover_food: Node3D = $"/root/level/House/doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food"
+
+var available_task_pool: Array = []
+var currently_active_tasks: Array = []
+var active_task_count: int = 0
+var completed_task_count: int = 0
+
 var current_night: int = 1
 const NIGHT_DURATION_REAL := 9 * 60.0 # 9 minutes in seconds
 var time_left: float = NIGHT_DURATION_REAL
@@ -9,14 +21,30 @@ const NIGHT_END_HOUR := 24 # 12 am
 
 func _ready() -> void:
 	time_left = NIGHT_DURATION_REAL
-
+	available_task_pool = [
+		task_candle,
+		task_close_windows,
+		task_cover_mirror,
+		task_cover_food,
+		task_clean_statue
+	]
+	available_task_pool.shuffle()
+	call_deferred("ready_task")
+	
 func progress_to_next_night():
+	# Stop at Night 5
+	if current_night >= 5:
+		# Add logic here for what happens after the final night
+		return
+
 	current_night += 1
 	time_left = NIGHT_DURATION_REAL
-	# reset other night-related logic here
-
+	
+	# Re-ready the tasks for the new night
+	# This will call our new logic
+	ready_task()
+	
 func update_time(delta: float) -> void:
-	# Decrement time left each frame (or however you track time)
 	time_left = max(time_left - delta, 0.0)
 
 func get_game_time() -> Dictionary:
@@ -45,3 +73,64 @@ func get_game_time() -> Dictionary:
 	
 func get_night() -> int:
 	return current_night
+	
+func ready_task()-> void:
+	# --- 1. RESET COUNTERS ---
+	active_task_count = 0
+	completed_task_count = 0
+
+	# --- 2. DEACTIVATE AND DISCONNECT ALL TASKS ---
+	var all_tasks = [
+		task_lana, task_candle, task_clean_statue, 
+		task_close_windows, task_cover_mirror, task_cover_food
+	]
+	
+	for task in all_tasks:
+		if is_instance_valid(task):
+			task.deactivate_all()
+			# Disconnect the signal if it was connected from a previous night
+			if task.task_completed.is_connected(_on_task_completed):
+				task.task_completed.disconnect(_on_task_completed)
+
+	# --- 3. ACTIVATE AND CONNECT LANA (ALWAYS) ---
+	if is_instance_valid(task_lana):
+		task_lana.initialize_task()
+		task_lana.task_completed.connect(_on_task_completed)
+		active_task_count += 1
+	
+	# --- 4. ACTIVATE AND CONNECT RANDOM TASKS ---
+	var tasks_needed = min(2 + (current_night - 1), available_task_pool.size())
+	currently_active_tasks = available_task_pool.slice(0, tasks_needed)
+	
+	print("--- Night %s ---" % current_night)
+	print("Activating tasks: [Lana] (Always)")
+	
+	for task_node in currently_active_tasks:
+		if is_instance_valid(task_node):
+			print(" - %s" % task_node.name)
+			task_node.initialize_task()
+			
+			# --- CONNECT THE SIGNAL ---
+			task_node.task_completed.connect(_on_task_completed)
+			active_task_count += 1
+		else:
+			push_warning("Tried to activate an invalid task instance.")
+			
+	# --- 5. (FOR DEBUGGING) CHECK IF NIGHT SHOULD END ---
+	if active_task_count == 0:
+		print("GLOBAL: No tasks active. Progressing to next night.")
+		progress_to_next_night()
+
+
+# --- This function handles all "task_completed" signals ---
+func _on_task_completed():
+	completed_task_count += 1
+	print("GLOBAL: Task completed! Progress: %d / %d" % [completed_task_count, active_task_count])
+
+	# Check if all tasks for the night are done
+	if completed_task_count >= active_task_count:
+		print("GLOBAL: All tasks for Night %d finished. Progressing to next night." % current_night)
+		
+		# We use call_deferred to prevent bugs from changing night
+		# in the middle of a physics frame
+		call_deferred("progress_to_next_night")

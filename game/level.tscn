@@ -458,3 +458,8 @@ material_override = SubResource("ShaderMaterial_0w1ik")
 extra_cull_margin = 16384.0
 mesh = SubResource("PlaneMesh_s5juq")
 skeleton = NodePath("../..")
+
+[editable path="House"]
+[editable path="House/doors/NavigationRegion3D/ITEMS/2ND FLOOR ITEMS/shelf2(maopen)"]
+[editable path="House/doors/NavigationRegion3D/ITEMS/2ND FLOOR ITEMS/shelf3(maopen)"]
+[editable path="House/doors/NavigationRegion3D/ITEMS/2ND FLOOR ITEMS/shelf4(maopen)"]

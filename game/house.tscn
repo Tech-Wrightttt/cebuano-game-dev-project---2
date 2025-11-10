@@ -1,7 +1,8 @@
-[gd_scene load_steps=374 format=4 uid="uid://c6nnpmjnwv4g2"]
+[gd_scene load_steps=375 format=4 uid="uid://c6nnpmjnwv4g2"]
 
 [ext_resource type="Script" uid="uid://cmcetdgh8ky7t" path="res://scripts/house.gd" id="1_8tqyt"]
 [ext_resource type="Material" uid="uid://31nbyn23hg2q" path="res://materials/house_material.tres" id="1_f6s7v"]
+[ext_resource type="Script" uid="uid://c1w58emrwwhgh" path="res://game/house_materials/basementdoor.gd" id="2_2xh2d"]
 [ext_resource type="PackedScene" uid="uid://b7iavuxmklmfq" path="res://game/house_materials/windows_single.tscn" id="2_agx8e"]
 [ext_resource type="ArrayMesh" uid="uid://cjhr8ed83eebv" path="res://assets/house/house_basement_wall.obj" id="2_sgyp1"]
 [ext_resource type="ArrayMesh" uid="uid://dkeuruqi54p6n" path="res://assets/house/house_basement_floor.obj" id="3_djvyg"]
@@ -156,21 +157,21 @@
 [ext_resource type="PackedScene" uid="uid://bqqljlixaaykq" path="res://assets/glb_models/basement/rusty_metal_barrel_vijnbjz_mid.glb" id="121_dwt10"]
 [ext_resource type="PackedScene" uid="uid://cl2a0kyom3haw" path="res://assets/glb_models/basement/metal_donkey_statue_photoscan.glb" id="122_3qwsg"]
 [ext_resource type="PackedScene" uid="uid://dijwp5y5wpnxy" path="res://assets/glb_models/basement/rusty_jerrycan_vktifj1ga_low.glb" id="122_nafd2"]
-[ext_resource type="PackedScene" uid="uid://b5qtqnm07u7an" path="res://game/uncleaned_angel.tscn" id="123_1o4y0"]
+[ext_resource type="PackedScene" uid="uid://buk0rj2ijs14y" path="res://game/uncleaned_angel.tscn" id="123_1o4y0"]
 [ext_resource type="PackedScene" uid="uid://cm6iqoner7ul8" path="res://assets/glb_models/basement/simple_shield.glb" id="123_f5qeo"]
 [ext_resource type="PackedScene" uid="uid://b2yx3uf3pxlaq" path="res://game/house_materials/workbench_(maopen).tscn" id="123_f48tp"]
 [ext_resource type="PackedScene" uid="uid://clr4iw1mblm7a" path="res://assets/glb_models/basement/water_heater_used.glb" id="123_re2uc"]
 [ext_resource type="Script" uid="uid://y52gc1lmr4hp" path="res://game/task_candle.gd" id="123_x62yr"]
 [ext_resource type="PackedScene" uid="uid://doiurcqv5iay1" path="res://assets/glb_models/basement/drinking_water_fountain.glb" id="124_f5qeo"]
-[ext_resource type="PackedScene" uid="uid://da7np75ks3tc4" path="res://assets/glb_models/chores/candle.tscn" id="124_gslyl"]
+[ext_resource type="PackedScene" path="res://assets/glb_models/chores/candle.tscn" id="124_gslyl"]
 [ext_resource type="Script" uid="uid://bpg8fjigy7ibk" path="res://game/task_clean_statues.gd" id="125_m2psj"]
-[ext_resource type="PackedScene" uid="uid://dop0i420a2ypn" path="res://game/uncleaned_creepy_statue.tscn" id="125_sfno0"]
+[ext_resource type="PackedScene" uid="uid://bpmdhftowdo4r" path="res://game/uncleaned_creepy_statue.tscn" id="125_sfno0"]
 [ext_resource type="PackedScene" uid="uid://ba1xcjufcwwwr" path="res://assets/glb_models/basement/medieval_torch.glb" id="125_yewax"]
 [ext_resource type="PackedScene" uid="uid://b681o5valg1vs" path="res://assets/glb_models/furniture/wardrobe.tscn" id="127_uwpgj"]
 [ext_resource type="PackedScene" uid="uid://dcrr2bsxdk5on" path="res://assets/glb_models/statues/statue_robe_figure.tscn" id="127_xxycr"]
-[ext_resource type="PackedScene" uid="uid://daxaild37icn7" path="res://game/uncleaned_statue_ni_ante.tscn" id="128_dyeyr"]
-[ext_resource type="PackedScene" uid="uid://bpbwf4afn53xl" path="res://game/uncleaned_mary_statue.tscn" id="129_s8tip"]
-[ext_resource type="PackedScene" uid="uid://cl2dmyvev1rhn" path="res://game/uncleaned_statue_figure.tscn" id="130_klyxg"]
+[ext_resource type="PackedScene" uid="uid://dftdtexwbe5c7" path="res://game/uncleaned_statue_ni_ante.tscn" id="128_dyeyr"]
+[ext_resource type="PackedScene" uid="uid://cxpp27b0tpejf" path="res://game/uncleaned_mary_statue.tscn" id="129_s8tip"]
+[ext_resource type="PackedScene" uid="uid://dmlmymtqnjhon" path="res://game/uncleaned_statue_figure.tscn" id="130_klyxg"]
 [ext_resource type="AudioStream" uid="uid://bdu2g3rov5k8u" path="res://soundfx/window_double_close.mp3" id="131_m1vgo"]
 [ext_resource type="AudioStream" uid="uid://twfn3hu6qwiy" path="res://soundfx/cleaning_statue.mp3" id="131_u8565"]
 [ext_resource type="Script" uid="uid://ddptgkamtem7g" path="res://game/task_cover_food.gd" id="132_1o4y0"]
@@ -595,8 +596,7 @@ size = Vector3(0.3519287, 0.5566406, 1)
 
 [sub_resource type="GDScript" id="GDScript_m1vgo"]
 script/source = "extends Node3D
-
-@onready var lana_prayer: AudioStreamPlayer3D = $Lana_Prayer
+signal task_completed
 
 var all_windows: Array = []
 var chosen_windows_to_close: Array = [] 
@@ -605,12 +605,31 @@ var chosen_windows_to_close: Array = []
 @onready var window_single_close: AudioStreamPlayer3D = $Window_Single_Close
 
 func _ready():
-	randomize()
 	all_windows = windows_Scattered.get_children()
+	deactivate_all()
+
+func initialize_task():
+	randomize()
 	all_windows.shuffle()
 	chosen_windows_to_close = all_windows.slice(0, 10)
 	update_window_tasking()
 
+func deactivate_all():
+	for window_node in all_windows:
+		var anim_player: AnimationPlayer = window_node.get_node_or_null(\"WindowAnimation\")
+		var collision_shape: CollisionShape3D = window_node.get_node_or_null(\"StaticBody3D/CollisionShape3D\")
+
+		if not anim_player or not collision_shape:
+			# Only warn if the node is missing on initial load
+			# push_warning(\"Window %s is missing key components\" % window_node.name)
+			continue
+		
+		# This is the \"else\" block from your original function:
+		# Play the \"close\" animation to ensure it's shut
+		anim_player.play(\"close\")
+		# Disable collision
+		collision_shape.set_deferred(\"disabled\", true)
+		
 func update_window_tasking():
 	for window_node in all_windows:
 		var is_a_chosen_window = (window_node in chosen_windows_to_close)
@@ -646,6 +665,9 @@ func use(collider_body: PhysicsBody3D):
 		if collision_shape:
 			collision_shape.set_deferred(\"disabled\", true)
 		chosen_windows_to_close.erase(window_node)
+		if chosen_windows_to_close.is_empty():
+			print(\"TASK_WINDOWS: All windows closed. Task complete.\")
+			task_completed.emit()
 "
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kirwq"]
@@ -876,6 +898,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9, -3.6, -8)
 
 [node name="Basement_Door4" parent="doors" instance=ExtResource("41_ja541")]
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -24.999878, -3.6, -8)
+script = ExtResource("2_2xh2d")
 
 [node name="Basement_Entrance" parent="doors" instance=ExtResource("41_ja541")]
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -18, 4.4, -0.4)
@@ -2080,7 +2103,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0004067421, 0.01644075, 0.0
 shape = SubResource("BoxShape3D_0ksgv")
 
 [node name="lana bottle4" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles" instance=ExtResource("62_jxex3")]
-transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, -20.712246, 2.5725746, -6.0545883)
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, -20.946362, 2.5725746, -6.0545883)
 
 [node name="lanastatic4" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles/lana bottle4" groups=["equipable", "lana"]]
 collision_layer = 9

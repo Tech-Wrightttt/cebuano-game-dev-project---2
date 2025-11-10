@@ -1,4 +1,7 @@
 extends Node3D
+
+signal task_completed
+
 @onready var cleaning: AudioStreamPlayer3D = $Cleaning_Statue
 var chosen_statue_keys: Array = []
 @onready var statue_map := {
@@ -66,38 +69,77 @@ var chosen_statue_keys: Array = []
 
 
 func _ready():
+	deactivate_all()
+
+func initialize_task():
 	randomize()
-	var all_task_keys = statue_map.keys()
-	all_task_keys.shuffle()
+	var number_of_tasks_to_find = 3
 	
-	# --- NIGHT 5 LOGIC ---
-	# We will assume the mandatory keys are 8 (Angel), 9 (Angel2), and 10 (Creepy)
+	# These are the "special" keys for Night 5
 	var mandatory_key_1 = 8
 	var mandatory_key_2 = 9
 	var mandatory_key_3 = 10
-	var number_of_tasks_to_find = 3
 	
 	if Global.get_night() == 5:
+		# --- NIGHT 5 LOGIC (This part was correct) ---
+		# Force the 3 mandatory statues
 		print("Night 5: Forcing mandatory statues (Angel, Angel2, Creepy).")
-		# 1. Remove the mandatory keys from the full list
+		
+		# Get all keys
+		var all_task_keys = statue_map.keys()
+		
+		# Remove the mandatory ones from the list
 		all_task_keys.erase(mandatory_key_1)
 		all_task_keys.erase(mandatory_key_2)
 		all_task_keys.erase(mandatory_key_3)
+		all_task_keys.shuffle()
 		
-		# 2. Slice to get the remaining number of tasks
-		# (3 total tasks - 3 mandatory tasks = 0 random tasks)
+		# This will slice(0, 0) which is an empty array, which is correct
 		chosen_statue_keys = all_task_keys.slice(0, number_of_tasks_to_find - 3)
 		
-		# 3. Add the mandatory keys back
+		# Add the mandatory keys
 		chosen_statue_keys.push_back(mandatory_key_1)
 		chosen_statue_keys.push_back(mandatory_key_2)
 		chosen_statue_keys.push_back(mandatory_key_3)
 		
 	else:
-		chosen_statue_keys = all_task_keys.slice(0, number_of_tasks_to_find)
+		# --- NIGHTS 1-4 LOGIC (This is the new part) ---
+		# Pick 3 statues, *excluding* 8, 9, and 10.
+		print("Night %s: Picking 3 random 'safe' statues." % Global.get_night())
+		
+		# 1. Get all keys
+		var safe_task_keys = statue_map.keys()
+		
+		# 2. Remove the "special" keys from the pool
+		safe_task_keys.erase(mandatory_key_1)
+		safe_task_keys.erase(mandatory_key_2)
+		safe_task_keys.erase(mandatory_key_3)
+		
+		# 3. Now, safe_task_keys only contains keys 1-7. Shuffle them.
+		safe_task_keys.shuffle()
+		
+		# 4. Pick 3 from this safe list.
+		chosen_statue_keys = safe_task_keys.slice(0, number_of_tasks_to_find)
 	
+	# Activate the chosen "dirty" statues
 	update_statue_tasking()
+	
+func deactivate_all():
+	for key in statue_map.keys():
+		var data = statue_map[key]
+		
+		if not is_instance_valid(data["cleaned_node"]) or \
+		   not is_instance_valid(data["uncleaned_node"]):
+			print("ERROR: Invalid node in statue_map for key ", key)
+			continue
 
+		# Set to default "clean" state
+		data["cleaned_node"].visible = true
+		data["uncleaned_node"].visible = false
+		
+		# Disable all collisions
+		data["cleaned_collision"].set_deferred("disabled", true)
+		data["uncleaned_collision"].set_deferred("disabled", true)
 
 func update_statue_tasking():
 	# Debug: Print which keys were randomly chosen
@@ -146,4 +188,10 @@ func deploy(collider_body: PhysicsBody3D) -> void:
 			data["uncleaned_collision"].set_deferred("disabled", true)
 			data["cleaned_node"].visible = true
 			data["cleaned_collision"].set_deferred("disabled", false) 
+			if key in chosen_statue_keys:
+				chosen_statue_keys.erase(key)
+			# If the list is now empty, the task is done
+			if chosen_statue_keys.is_empty():
+				print("TASK_STATUE: All statues cleaned. Task complete.")
+				task_completed.emit()
 			return

@@ -1,5 +1,7 @@
 extends Node3D
 
+signal task_completed
+var altar_candles_to_light: int = 0
 var collect_Candles: Array = []
 var chosen_candles: Array = []
 @onready var candle_Scattered = $candleAroundTheHouse
@@ -7,42 +9,53 @@ var chosen_candles: Array = []
 @onready var altar_Table_Interaction: CollisionShape3D = $altarTable/StaticBody3D/CollisionShape3D
 
 func _ready():
-	randomize()
 	collect_Candles = candle_Scattered.get_children()
-	
+	deactivate_all()
+
+func initialize_task():
+	randomize()
 	# --- NIGHT 5 LOGIC ---
 	if Global.get_night() == 5:
 		print("Night 5: Forcing mandatory candles (13, 14, 15, 16).")
 		var mandatory_names = ["Candle13", "Candle14", "Candle15", "Candle16"]
 		var mandatory_candles = []
 		var other_candles = []
-		
-		# 1. Separate mandatory candles from other candles
 		for candle in collect_Candles:
 			if candle.name in mandatory_names:
 				mandatory_candles.push_back(candle)
 			else:
 				other_candles.push_back(candle)
-		
-		# 2. Shuffle the *other* candles
 		other_candles.shuffle()
-		
-		# 3. We need 8 total candles.
-		#    (Calculate how many random ones we need to add to our mandatory list)
 		var random_candles_to_get = 8 - mandatory_candles.size()
-		
-		# 4. Combine the lists (mandatory first, then the random ones)
 		chosen_candles = mandatory_candles + other_candles.slice(0, random_candles_to_get)
-		
 	else:
 		# --- Original Logic (for other nights) ---
 		collect_Candles.shuffle()
 		chosen_candles = collect_Candles.slice(0, 8)
-		
-	# 5. Continue with setup
+	# 5. Activate the chosen candles
 	update_candle_tasking()
 
+func deactivate_all():
+	# Deactivate scattered candles
+	for candle in collect_Candles:
+		candle.visible = false
+		var collision_shape: CollisionShape3D = candle.get_node_or_null("StaticBody3D/CollisionShape3D")
+		if collision_shape:
+			collision_shape.set_deferred("disabled", true)
+			
+	# Deactivate altar candles
+	var altar_candle_nodes = altar_Candles.get_children()
+	for candle in altar_candle_nodes:
+		candle.visible = false
+		var collision_shape: CollisionShape3D = candle.get_node_or_null("StaticBody3D/CollisionShape3D")
+		if collision_shape:
+			collision_shape.set_deferred("disabled", true)
+			
+	# Deactivate altar table interaction
+	altar_Table_Interaction.set_deferred("disabled", true)
+	
 func update_candle_tasking():
+	# Activate only the chosen scattered candles
 	for candle in collect_Candles:
 		var is_active = (candle in chosen_candles)
 		candle.visible = is_active
@@ -50,13 +63,16 @@ func update_candle_tasking():
 		if collision_shape:
 			collision_shape.set_deferred("disabled", not is_active)
 			
+	# Altar candles and interaction remain disabled *until*
+	# the 'take' function finds that chosen_candles is empty.
+	# So, this part of the original function is fine.
 	var altar_candle_nodes = altar_Candles.get_children()
 	for candle in altar_candle_nodes:
 		candle.visible = false
 		var collision_shape: CollisionShape3D = candle.get_node_or_null("StaticBody3D/CollisionShape3D")
 		if collision_shape:
-			collision_shape.set_deferred("disabled", true) 
-	altar_Table_Interaction.set_deferred("disabled", true) 
+			collision_shape.set_deferred("disabled", true)
+	altar_Table_Interaction.set_deferred("disabled", true)
 	
 func take(collider_body: PhysicsBody3D):
 	var candle_node = collider_body.get_parent()
@@ -71,6 +87,7 @@ func take(collider_body: PhysicsBody3D):
 			
 func interact():
 	var altar_candle_nodes = altar_Candles.get_children()
+	altar_candles_to_light = altar_candle_nodes.size()
 	for candle in altar_candle_nodes:
 		candle.visible = true
 		var collision_shape: CollisionShape3D = candle.get_node_or_null("StaticBody3D/CollisionShape3D")
@@ -86,3 +103,8 @@ func use(collider_body: PhysicsBody3D):
 	anim_player.play("burnwick")
 	var collision_shape: CollisionShape3D = collider_body.get_node_or_null("CollisionShape3D")
 	collision_shape.set_deferred("disabled", true)
+	if altar_candles_to_light > 0:
+		altar_candles_to_light -= 1
+		if altar_candles_to_light == 0:
+			print("TASK_CANDLE: All altar candles lit. Task complete.")
+			task_completed.emit()

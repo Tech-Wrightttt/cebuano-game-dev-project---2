@@ -1,12 +1,10 @@
 extends Node3D
 
+signal task_completed
 # --- PARENT NODES ---
 @onready var mirrors_parent = $Mirrors
 @onready var towels_parent = $TowelsAroundTheHouse
 @onready var towel_covering: AudioStreamPlayer3D = $Towel_Covering
-
-# --- NEW SIGNAL ---
-signal all_mirrors_covered
 
 # --- MAPS TO HOLD NODE REFERENCES ---
 # We use Dictionaries (maps) to link an ID to all of its parts
@@ -19,15 +17,16 @@ var chosen_towel_ids := []
 var towels_player_is_holding := 0 # We just need a count
 
 func _ready() -> void:
-	# 1. Populate the maps based on the scene structure
 	populate_maps()
+	deactivate_all()
 	
-	# 2. Check if we have enough items to start the task
+func initialize_task() -> void:
+	# 1. Check if we have enough items to start the task
 	if mirror_map.size() < 3 or towel_map.size() < 3:
 		push_warning("Not enough mirrors or towels to start the task.")
 		return
 		
-	# 3. Randomize and pick the items for this task
+	# 2. Randomize and pick the items for this task
 	randomize()
 	
 	var all_mirror_ids = mirror_map.keys()
@@ -39,31 +38,39 @@ func _ready() -> void:
 	chosen_towel_ids = all_towel_ids.slice(0, 3)
 	
 	# --- NIGHT 5 LOGIC (FOR TOWELS) ---
-	# Check if we are on Night 5
 	if Global.get_night() == 5:
-		# Check if the mandatory towels exist in the map
 		if "towel11" in towel_map and "towel12" in towel_map:
-			
-			# 1. Remove them from the full list to avoid duplicates
 			all_towel_ids.erase("towel11")
 			all_towel_ids.erase("towel12")
-			
-			# 2. Re-slice to get the correct number *minus* our mandatory ones
-			# (3 - 2) = 1
 			chosen_towel_ids = all_towel_ids.slice(0, 3 - 2)
-			
-			# 3. Add our mandatory towels
 			chosen_towel_ids.push_back("towel11")
 			chosen_towel_ids.push_back("towel12")
-			
 			print("Night 5: Mandatory towels 'towel11' and 'towel12' added to task.")
 	
+	# 3. Activate the chosen items
 	update_all_item_states()
 
+func deactivate_all() -> void:
+	# Set up towels (all hidden)
+	for id in towel_map.keys():
+		var data = towel_map[id]
+		data["node"].visible = false
+		if data["collision"]:
+			data["collision"].set_deferred("disabled", true)
 
-# --- INITIAL SETUP ---
-
-# Populates the dictionaries with references to all the nodes
+	# Set up mirrors (all covered)
+	for id in mirror_map.keys():
+		var data = mirror_map[id]
+		if data["cover"]:
+			data["cover"].visible = true
+		if data["collision"]:
+			data["collision"].set_deferred("disabled", true)
+			
+	# Reset task state
+	chosen_mirror_ids.clear()
+	chosen_towel_ids.clear()
+	towels_player_is_holding = 0
+	
 func populate_maps() -> void:
 	# Map all mirrors
 	for mirror_node in mirrors_parent.get_children():
@@ -175,5 +182,5 @@ func use(collider_body: PhysicsBody3D) -> void:
 			if chosen_mirror_ids.is_empty():
 				print("All 3 mirrors have been covered!")
 				# --- RE-ADDED SIGNAL EMIT ---
-				all_mirrors_covered.emit()
+				task_completed.emit()
 			return

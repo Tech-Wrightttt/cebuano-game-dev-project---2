@@ -1,7 +1,7 @@
 extends Node3D
 
+signal task_completed
 @onready var lana_prayer: AudioStreamPlayer3D = $Lana_Prayer
-
 # Lana bottle nodes
 @onready var lana_map := {
 	1: {
@@ -76,19 +76,37 @@ extends Node3D
 	}
 }
 
-var current_night = Global.get_night()
+var current_night = 1
 var chosen_bottle: int = -1
 var drops_deployed_count: int = 0
 
 func _ready() -> void:
+	deactivate_all()
+
+func initialize_task() -> void:
 	randomize()
+	# Get the most current night info from Global
+	current_night = Global.get_night() 
+	
 	if current_night == 5:
 		chosen_bottle = 10
 	else:
 		chosen_bottle = randi() % 9 + 1
-	
 	update_lana_tasking()
-# Update visibility and collisions
+
+func deactivate_all() -> void:
+	for id in lana_map.keys():
+		var data = lana_map[id]
+		data["bottle"].visible = false
+		data["bottle_collision"].set_deferred("disabled", true)
+		
+		if data["drop"]:
+			data["drop"].visible = false
+		if data["drop_collision"]:
+			data["drop_collision"].set_deferred("disabled", true)
+		if data["shadow"]:
+			data["shadow"].visible = false
+			
 func update_lana_tasking() -> void:
 	for id in lana_map.keys():
 		var data = lana_map[id]
@@ -152,7 +170,7 @@ func deploy(collider_body: PhysicsBody3D) -> void:
 					# --- NEW: If this was the 2nd drop, disable all other shadows
 					if drops_deployed_count == 2:
 						_disable_all_remaining_shadows()
-						
+						task_completed.emit()
 				return
 
 # --- NEW FUNCTION ---
