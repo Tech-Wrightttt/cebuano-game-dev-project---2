@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://o7gchgjqr1i6"]
+[gd_scene load_steps=40 format=3 uid="uid://o7gchgjqr1i6"]
 
 [ext_resource type="PackedScene" uid="uid://bklxl232veydp" path="res://assets/player/first_person_arm.tscn" id="1_dadds"]
 [ext_resource type="Shader" uid="uid://bt1lbo5yomj25" path="res://game/shaders/retro_camera.gdshader" id="2_w5y0b"]
@@ -374,7 +374,14 @@ func _unhandled_input(event: InputEvent) -> void:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 "
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_opbur"]
+albedo_color = Color(0.19607843, 1, 1, 1)
+stencil_mode = 3
+stencil_flags = 2
+stencil_reference = 2
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_sh265"]
+material = SubResource("StandardMaterial3D_opbur")
 radius = 0.3
 height = 3.25
 
@@ -505,7 +512,6 @@ collision_mask = 7
 script = SubResource("GDScript_sh265")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-visible = false
 mesh = SubResource("CapsuleMesh_sh265")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
