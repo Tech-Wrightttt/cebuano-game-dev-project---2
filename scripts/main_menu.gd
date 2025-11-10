@@ -2,6 +2,10 @@ extends VBoxContainer
 
 const LEVEL = preload("uid://bob5k3jp6dsgc")
 
+# Get a reference to the other panel using a relative path
+@onready var settings_panel = $"../SettingsPanel"
+@onready var controls_panel = $"../ControlsPanel"
+
 # --- JITTER CODE START ---
 # How "wild" the jitter is (in degrees).
 const JITTER_AMOUNT = 1
@@ -62,4 +66,14 @@ func _on_start_game_pressed() -> void:
 func _on_quit_pressed() -> void:
 	get_tree().quit()
 
-# Add your Settings/Controls functions here
+# This function runs when the "Settings" button is pressed
+func _on_settings_pressed():
+	settings_panel.show()
+	hide() # This hides the VBoxContainer this script is on
+	# This hides all letter nodes in the "TitleLetters" group
+	get_tree().call_group("TitleLetters", "hide")
+	
+func _on_controls_pressed():
+	controls_panel.show()
+	hide()
+	get_tree().call_group("TitleLetters", "hide")
