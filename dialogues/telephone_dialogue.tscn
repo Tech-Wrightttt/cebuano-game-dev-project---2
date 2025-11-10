@@ -1,0 +1,225 @@
+[gd_scene load_steps=15 format=3 uid="uid://12utn35f48i6"]
+
+[ext_resource type="Script" uid="uid://dos0htw2amfyl" path="res://game/cutscenes/ending_dialogue.gd" id="1_crgll"]
+[ext_resource type="Script" uid="uid://m4ttjul5ggyf" path="res://dialogues/telephone_dialogue.gd" id="1_uc6nr"]
+[ext_resource type="FontFile" uid="uid://b02kdb4ogrrq5" path="res://fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="2_uc6nr"]
+[ext_resource type="FontFile" uid="uid://c126udgjjdqhf" path="res://fonts/cmu-typewriter/Typewriter/cmunit.ttf" id="3_43280"]
+[ext_resource type="PackedScene" uid="uid://c6nnpmjnwv4g2" path="res://game/house.tscn" id="4_rsgu8"]
+
+[sub_resource type="Animation" id="Animation_dncil"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("text:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_e0vmp"]
+resource_name = "typewriter"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("text:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6.1666665),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_alocr"]
+_data = {
+&"RESET": SubResource("Animation_dncil"),
+&"typewriter": SubResource("Animation_e0vmp")
+}
+
+[sub_resource type="Animation" id="Animation_uc6nr"]
+resource_name = "telephone"
+length = 60.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.0266666, 3.8466668, 4.7966666, 5.8566666, 6.866667, 8.466666, 12.766666, 16.857115, 21.786795, 26.478983, 30.647766, 37.224392, 41.30439, 49.066666, 50.1, 50.3, 50.466667, 50.566666, 50.65804, 50.72471, 50.791374, 50.846664, 50.896664, 50.94471, 51.024708, 51.102753, 51.16942, 51.236084, 51.302753, 51.36942, 51.42471, 51.47471, 51.511417, 51.591415, 51.66946, 51.736126, 51.80279, 51.86946, 51.936127, 51.991417, 52.041416, 52.086662, 52.16666, 52.244705, 52.31137, 52.378036, 52.444706, 52.51137, 52.56666, 52.61666, 52.646664, 52.72666, 52.804707, 52.871372, 52.938038, 53.004707, 53.071373, 53.126663, 53.176662, 53.85174),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-16.617, 4.727, -12.266), Vector3(-14.708, 4.807, -12.231), Vector3(-13.917, 4.72, -12.192), Vector3(-12.842, 4.722, -12.132), Vector3(-11.512, 4.624, -12.043), Vector3(-10.204, 4.712, -11.933), Vector3(-8.287, 4.727, -11.696), Vector3(-5.557, 4.727, -10.616), Vector3(-5.557, 4.822, -10.616), Vector3(-5.557, 4.702, -10.616), Vector3(-5.557, 4.782, -10.616), Vector3(-5.557, 4.742, -10.616), Vector3(-5.557, 4.712, -10.616), Vector3(-5.557, 4.782, -10.616), Vector3(-5.557, 4.737, -10.616), Vector3(-5.702, 4.737, -10.616), Vector3(-5.507, 4.737, -10.616), Vector3(-5.702, 4.737, -10.616), Vector3(-5.507, 4.857, -10.616), Vector3(-5.702, 4.577, -10.616), Vector3(-5.507, 4.632, -10.616), Vector3(-5.702, 5.002, -10.616), Vector3(-5.507, 4.112, -10.616), Vector3(-5.702, 4.897, -10.616), Vector3(-5.702, 4.737, -10.616), Vector3(-5.507, 4.737, -10.616), Vector3(-5.702, 4.737, -10.616), Vector3(-5.507, 4.857, -10.616), Vector3(-5.702, 4.577, -10.616), Vector3(-5.507, 4.632, -10.616), Vector3(-5.702, 5.002, -10.616), Vector3(-5.507, 4.112, -10.616), Vector3(-5.702, 4.897, -10.616), Vector3(-5.702, 4.737, -10.616), Vector3(-5.507, 4.737, -10.616), Vector3(-5.702, 4.737, -10.616), Vector3(-5.507, 4.857, -10.616), Vector3(-5.702, 4.577, -10.616), Vector3(-5.507, 4.632, -10.616), Vector3(-5.702, 5.002, -10.616), Vector3(-5.507, 4.112, -10.616), Vector3(-5.702, 4.897, -10.616), Vector3(-5.702, 4.737, -10.616), Vector3(-5.507, 4.737, -10.616), Vector3(-5.702, 4.737, -10.616), Vector3(-5.507, 4.857, -10.616), Vector3(-5.702, 4.577, -10.616), Vector3(-5.507, 4.632, -10.616), Vector3(-5.702, 5.002, -10.616), Vector3(-5.507, 4.112, -10.616), Vector3(-5.702, 4.897, -10.616), Vector3(-5.702, 4.737, -10.616), Vector3(-5.507, 4.737, -10.616), Vector3(-5.702, 4.737, -10.616), Vector3(-5.507, 4.857, -10.616), Vector3(-5.702, 4.577, -10.616), Vector3(-5.507, 4.632, -10.616), Vector3(-5.702, 5.002, -10.616), Vector3(-5.507, 4.112, -10.616), Vector3(-5.702, 4.897, -10.616), Vector3(-7.007, 2.522, -11.011)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(8.5, 12.766666, 48.99297, 51.366665, 53.85174),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -1.5306537, 0), Vector3(0, -2.4294984, 0), Vector3(0, -2.4294984, 0), Vector3(0, -2.7262044, 0), Vector3(0, -3.3492868, -1.7069321)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D:visible")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(53.6, 55.166668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_rsgu8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-22.651985, 4.7270927, -12.266112)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.7231462, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_43280"]
+_data = {
+&"RESET": SubResource("Animation_rsgu8"),
+&"telephone": SubResource("Animation_uc6nr")
+}
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ohjih"]
+sky_top_color = Color(0.12270618, 0.04560589, 0.0034415955, 1)
+sky_horizon_color = Color(0.22708711, 0.10912841, 0.020405067, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Sky" id="Sky_a202f"]
+sky_material = SubResource("ProceduralSkyMaterial_ohjih")
+
+[sub_resource type="Environment" id="Environment_dinuv"]
+background_mode = 2
+sky = SubResource("Sky_a202f")
+ambient_light_sky_contribution = 0.0
+ambient_light_energy = 0.1
+tonemap_mode = 3
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.04
+volumetric_fog_albedo = Color(0.6117647, 0.6117647, 0.6117647, 1)
+volumetric_fog_emission = Color(0.23921569, 0.07450981, 0.05882353, 1)
+volumetric_fog_emission_energy = 0.1
+volumetric_fog_length = 128.0
+adjustment_enabled = true
+adjustment_brightness = 1.2
+
+[node name="telephone_scene" type="Node3D"]
+script = ExtResource("1_uc6nr")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.1517612, 0, -0.9884172, 0, 1, 0, 0.9884172, 0, -0.1517612, -22.651985, 4.7270927, -12.266112)
+
+[node name="Spotlight" type="Node3D" parent="Camera3D"]
+transform = Transform3D(0.9999603, 0.008861089, 0.000989683, -0.00886109, 0.9753192, 0.22062168, 0.0009896941, -0.22062166, 0.975359, 0.030244827, 0, 0.1616478)
+
+[node name="Flashlight" type="SpotLight3D" parent="Camera3D/Spotlight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.77986765)
+light_color = Color(0.93, 0.65472, 0.5859, 1)
+light_energy = 16.0
+light_volumetric_fog_energy = 0.0
+spot_range = 9.136
+spot_attenuation = 1.15
+spot_angle_attenuation = 1.1095695
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("1_crgll")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_top = 0.683
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.35998535
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.12156863)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+libraries = {
+&"": SubResource("AnimationLibrary_alocr")
+}
+
+[node name="speaker" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 137.0
+offset_top = 787.0
+offset_right = 681.0
+offset_bottom = 884.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_uc6nr")
+theme_override_font_sizes/normal_font_size = 41
+
+[node name="text" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 129.0
+offset_top = 880.0
+offset_right = 1797.0
+offset_bottom = 1007.0
+theme_override_colors/default_color = Color(1, 1, 0.3529412, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_43280")
+theme_override_font_sizes/normal_font_size = 36
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="House" parent="." instance=ExtResource("4_rsgu8")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_43280")
+}
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_dinuv")
+
+[node name="Sunlight (for testing purposes)" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+visible = false
+shadow_enabled = true
