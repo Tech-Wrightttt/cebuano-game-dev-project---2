@@ -1,7 +1,7 @@
 extends Node3D
 
 # Signal to emit when all 3 food items are covered
-signal all_food_covered
+#signal all_food_covered
 
 # --- PARENT NODES ---
 @onready var foods_parent = $Foods
@@ -79,7 +79,7 @@ func populate_maps() -> void:
 		food_map[id] = {
 			"node": food_node,
 			# --- FIX: Changed "cover" to "dish_cover" to match node structure ---
-			"cover": food_node.get_node_or_null("dish_cover"),
+			"cover": food_node.get_node_or_null("cover"),
 			"body": collision_body,
 			"collision": collision_body.get_node_or_null("CollisionShape3D") if collision_body else null
 		}
@@ -172,6 +172,6 @@ func use(collider_body: PhysicsBody3D) -> void:
 			if chosen_food_ids.is_empty():
 				# --- FIX: Changed "3" to "4" ---
 				print("All 4 food items have been covered!")
-				all_food_covered.emit()
+				#all_food_covered.emit()
 				
 			return # We found our item, no need to keep looping

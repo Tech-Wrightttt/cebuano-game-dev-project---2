@@ -1,6 +1,6 @@
 extends Node
 
-var current_night: int = 5
+var current_night: int = 1
 const NIGHT_DURATION_REAL := 9 * 60.0 # 9 minutes in seconds
 var time_left: float = NIGHT_DURATION_REAL
 

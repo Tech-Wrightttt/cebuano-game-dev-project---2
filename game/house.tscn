@@ -1,4 +1,4 @@
-[gd_scene load_steps=362 format=4 uid="uid://c6nnpmjnwv4g2"]
+[gd_scene load_steps=366 format=4 uid="uid://c6nnpmjnwv4g2"]
 
 [ext_resource type="Script" uid="uid://cmcetdgh8ky7t" path="res://scripts/house.gd" id="1_8tqyt"]
 [ext_resource type="Material" uid="uid://31nbyn23hg2q" path="res://materials/house_material.tres" id="1_f6s7v"]
@@ -137,7 +137,7 @@
 [ext_resource type="PackedScene" uid="uid://bvf1mlhvc0mvt" path="res://assets/glb_models/basement/old_wooden_stool_ukopadbaw_low.glb" id="103_fcake"]
 [ext_resource type="PackedScene" uid="uid://dnnu02t7jckmg" path="res://assets/glb_models/decoratives/phone.glb" id="103_glj3f"]
 [ext_resource type="PackedScene" uid="uid://1qrow8q6otnv" path="res://game/house_materials/shelf2.tscn" id="104_4uiwc"]
-[ext_resource type="PackedScene" uid="uid://d12xntgt0i8k4" path="res://assets/glb_models/chores/lanadropsshadow.tscn" id="104_56x1q"]
+[ext_resource type="PackedScene" uid="uid://dowm5wgjfm0pb" path="res://game/lanadropsshadow.tscn" id="104_56x1q"]
 [ext_resource type="PackedScene" uid="uid://b17blnyyxc2xu" path="res://assets/glb_models/lights/kerosene_lamp.glb" id="104_uavia"]
 [ext_resource type="AudioStream" uid="uid://y1xple8gixkr" path="res://soundfx/lana_bubbling.mp3" id="105_4ts8e"]
 [ext_resource type="PackedScene" uid="uid://cehtw2ydchxer" path="res://assets/glb_models/decoratives/random_vase.glb" id="105_ref68"]
@@ -156,7 +156,7 @@
 [ext_resource type="PackedScene" uid="uid://bqqljlixaaykq" path="res://assets/glb_models/basement/rusty_metal_barrel_vijnbjz_mid.glb" id="121_dwt10"]
 [ext_resource type="PackedScene" uid="uid://cl2a0kyom3haw" path="res://assets/glb_models/basement/metal_donkey_statue_photoscan.glb" id="122_3qwsg"]
 [ext_resource type="PackedScene" uid="uid://dijwp5y5wpnxy" path="res://assets/glb_models/basement/rusty_jerrycan_vktifj1ga_low.glb" id="122_nafd2"]
-[ext_resource type="PackedScene" uid="uid://buk0rj2ijs14y" path="res://assets/glb_models/chores/uncleaned_angel.tscn" id="123_1o4y0"]
+[ext_resource type="PackedScene" uid="uid://b5qtqnm07u7an" path="res://game/uncleaned_angel.tscn" id="123_1o4y0"]
 [ext_resource type="PackedScene" uid="uid://cm6iqoner7ul8" path="res://assets/glb_models/basement/simple_shield.glb" id="123_f5qeo"]
 [ext_resource type="PackedScene" uid="uid://b2yx3uf3pxlaq" path="res://game/house_materials/workbench_(maopen).tscn" id="123_f48tp"]
 [ext_resource type="PackedScene" uid="uid://clr4iw1mblm7a" path="res://assets/glb_models/basement/water_heater_used.glb" id="123_re2uc"]
@@ -164,13 +164,13 @@
 [ext_resource type="PackedScene" uid="uid://doiurcqv5iay1" path="res://assets/glb_models/basement/drinking_water_fountain.glb" id="124_f5qeo"]
 [ext_resource type="PackedScene" uid="uid://da7np75ks3tc4" path="res://assets/glb_models/chores/candle.tscn" id="124_gslyl"]
 [ext_resource type="Script" uid="uid://bpg8fjigy7ibk" path="res://game/task_clean_statues.gd" id="125_m2psj"]
-[ext_resource type="PackedScene" uid="uid://bpmdhftowdo4r" path="res://assets/glb_models/chores/uncleaned_creepy_statue.tscn" id="125_sfno0"]
+[ext_resource type="PackedScene" uid="uid://dop0i420a2ypn" path="res://game/uncleaned_creepy_statue.tscn" id="125_sfno0"]
 [ext_resource type="PackedScene" uid="uid://ba1xcjufcwwwr" path="res://assets/glb_models/basement/medieval_torch.glb" id="125_yewax"]
 [ext_resource type="PackedScene" uid="uid://b681o5valg1vs" path="res://assets/glb_models/furniture/wardrobe.tscn" id="127_uwpgj"]
 [ext_resource type="PackedScene" uid="uid://dcrr2bsxdk5on" path="res://assets/glb_models/statues/statue_robe_figure.tscn" id="127_xxycr"]
-[ext_resource type="PackedScene" uid="uid://dftdtexwbe5c7" path="res://assets/glb_models/chores/uncleaned_statue_ni_ante.tscn" id="128_dyeyr"]
-[ext_resource type="PackedScene" uid="uid://cxpp27b0tpejf" path="res://assets/glb_models/chores/uncleaned_mary_statue.tscn" id="129_s8tip"]
-[ext_resource type="PackedScene" uid="uid://dmlmymtqnjhon" path="res://assets/glb_models/chores/uncleaned_statue_figure.tscn" id="130_klyxg"]
+[ext_resource type="PackedScene" uid="uid://daxaild37icn7" path="res://game/uncleaned_statue_ni_ante.tscn" id="128_dyeyr"]
+[ext_resource type="PackedScene" uid="uid://bpbwf4afn53xl" path="res://game/uncleaned_mary_statue.tscn" id="129_s8tip"]
+[ext_resource type="PackedScene" uid="uid://cl2dmyvev1rhn" path="res://game/uncleaned_statue_figure.tscn" id="130_klyxg"]
 [ext_resource type="AudioStream" uid="uid://bdu2g3rov5k8u" path="res://soundfx/window_double_close.mp3" id="131_m1vgo"]
 [ext_resource type="AudioStream" uid="uid://twfn3hu6qwiy" path="res://soundfx/cleaning_statue.mp3" id="131_u8565"]
 [ext_resource type="Script" uid="uid://ddptgkamtem7g" path="res://game/task_cover_food.gd" id="132_1o4y0"]
@@ -192,9 +192,13 @@
 [ext_resource type="PackedScene" uid="uid://ch0het3ov6dbs" path="res://assets/glb_models/basement/rusty_oil_filter_housing_wcljea1_low.glb" id="151_otvc5"]
 [ext_resource type="PackedScene" uid="uid://ctuebrv77d1lo" path="res://assets/glb_models/basement/slot_machine.glb" id="152_fe1vq"]
 [ext_resource type="PackedScene" uid="uid://bp5c5j8xkbwkc" path="res://assets/glb_models/basement/rusty_saw_blade_wcvodba_mid.glb" id="152_uwpgj"]
+[ext_resource type="Script" uid="uid://bm707pwsvpnjp" path="res://assets/glb_models/chores/bottle7.gd" id="154_xfkla"]
 [ext_resource type="PackedScene" uid="uid://p8yn0m61bg7l" path="res://assets/glb_models/basement/engel_statue_scan_retopology.glb" id="155_y0f4w"]
+[ext_resource type="Script" uid="uid://cn8t6vxrxnu0u" path="res://assets/glb_models/chores/bottle6.gd" id="156_2xh2d"]
 [ext_resource type="PackedScene" uid="uid://cjbykygq588ib" path="res://assets/glb_models/basement/stone_structure_scnv2_low.glb" id="157_7bjlp"]
+[ext_resource type="Script" uid="uid://dwdo1ut753c65" path="res://assets/glb_models/chores/bottle8.gd" id="157_ww5kt"]
 [ext_resource type="PackedScene" uid="uid://c4v4vcqvox65o" path="res://assets/glb_models/basement/wooden_interior_wall_wbhobeedw_low.glb" id="158_agx8e"]
+[ext_resource type="Script" uid="uid://dm4v3ftt2438v" path="res://assets/glb_models/chores/bottle9.gd" id="158_l7k06"]
 [ext_resource type="PackedScene" uid="uid://bbnm1ixycgivj" path="res://assets/glb_models/basement/medieval_gothic_chair.glb" id="159_r85fh"]
 [ext_resource type="PackedScene" uid="uid://b8vyvlmlygg47" path="res://assets/glb_models/basement/book_ouija.glb" id="160_7uwel"]
 [ext_resource type="PackedScene" uid="uid://bbs5qv5rmoo71" path="res://game/creepy statue.tscn" id="160_puo31"]
@@ -1092,6 +1096,7 @@ shape = SubResource("ConcavePolygonShape3D_qalft")
 visible = false
 
 [node name="Roofing" type="MeshInstance3D" parent="doors/NavigationRegion3D/Model/Roof"]
+visible = false
 material_override = SubResource("StandardMaterial3D_pjqii")
 mesh = ExtResource("14_glmle")
 skeleton = NodePath("../../Basement/Basement_Walls")
@@ -2037,12 +2042,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005554199, -0.0105896, 0.00
 shape = SubResource("BoxShape3D_1tgmf")
 
 [node name="lanadropscontainer2" type="Node3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.89531, 1.9156141, -1.9930377)
 
 [node name="lanadropsshadow2" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray/lanadropscontainer2" instance=ExtResource("104_56x1q")]
-transform = Transform3D(-1.0927848e-07, 0, 2.5, 0, 2.5, 0, -2.5, 0, -1.0927848e-07, -35.169384, 2.0632784, -12.479145)
+transform = Transform3D(-2.4999025, 0, -0.022078387, 0, 2.5, 0, 0.022078387, 0, -2.4999025, -13.200951, 0.12459469, -8.798511)
 
 [node name="lanadrops2" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray/lanadropscontainer2" instance=ExtResource("102_1tgmf")]
-transform = Transform3D(-1.09278474e-07, 0, 2.5, 0, 2.5, 0, -2.5, 0, -1.09278474e-07, -35.17106, 2.0664625, -12.481895)
+transform = Transform3D(-2.4999025, 0, -0.022078387, 0, 2.5, 0, 0.022078387, 0, -2.4999025, -13.20369, 0.12777996, -8.796815)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray/lanadropscontainer2/lanadrops2" groups=["hold_deploy"]]
 collision_layer = 9
@@ -2054,10 +2060,10 @@ shape = SubResource("BoxShape3D_1tgmf")
 [node name="lanadropscontainer3" type="Node3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray"]
 
 [node name="lanadropsshadow3" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray/lanadropscontainer3" instance=ExtResource("104_56x1q")]
-transform = Transform3D(-1.0927848e-07, 0, 2.5, 0, 2.5, 0, -2.5, 0, -1.0927848e-07, -35.328087, 2.0691144, -5.1725893)
+transform = Transform3D(-2.4993575, 0, -0.05667491, 0, 2.5, 0, 0.05667491, 0, -2.4993575, -17.959408, 2.0376787, -1.212647)
 
 [node name="lanadrops3" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray/lanadropscontainer3" instance=ExtResource("102_1tgmf")]
-transform = Transform3D(-1.09278474e-07, 0, 2.5, 0, 2.5, 0, -2.5, 0, -1.09278474e-07, -35.325523, 2.068925, -5.1650214)
+transform = Transform3D(-2.4993575, 0, -0.05667491, 0, 2.5, 0, 0.05667491, 0, -2.4993575, -17.9519, 2.0374892, -1.2153821)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray/lanadropscontainer3/lanadrops3" groups=["hold_deploy"]]
 collision_layer = 9
@@ -2069,10 +2075,10 @@ shape = SubResource("BoxShape3D_1tgmf")
 [node name="lanadropscontainer4" type="Node3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray"]
 
 [node name="lanadropsshadow4" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray/lanadropscontainer4" instance=ExtResource("104_56x1q")]
-transform = Transform3D(-1.0927848e-07, 0, 2.5, 0, 2.5, 0, -2.5, 0, -1.0927848e-07, -4.769432, 8.258588, -10.944794)
+transform = Transform3D(2.4999247, 0, -0.019416614, 0, 2.5, 0, 0.019416614, 0, 2.4999247, -23.036198, 2.0065594, -25.30446)
 
 [node name="lanadrops4" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray/lanadropscontainer4" instance=ExtResource("102_1tgmf")]
-transform = Transform3D(-1.09278474e-07, 0, 2.5, 0, 2.5, 0, -2.5, 0, -1.09278474e-07, -4.7719283, 8.266163, -10.945086)
+transform = Transform3D(2.4999247, 0, -0.019416614, 0, 2.5, 0, 0.019416614, 0, 2.4999247, -23.035885, 2.0141344, -25.306952)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray/lanadropscontainer4/lanadrops4" groups=["hold_deploy"]]
 collision_layer = 9
@@ -2084,10 +2090,10 @@ shape = SubResource("BoxShape3D_1tgmf")
 [node name="lanadropscontainer5" type="Node3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray"]
 
 [node name="lanadropsshadow5" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray/lanadropscontainer5" instance=ExtResource("104_56x1q")]
-transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -10.268992, 8.239294, -24.928787)
+transform = Transform3D(2.4986546, 0, 0.082015574, 0, 2.5, 0, -0.082015574, 0, 2.4986546, -5.800375, -5.973153, -6.5600786)
 
 [node name="lanadrops5" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray/lanadropscontainer5" instance=ExtResource("102_1tgmf")]
-transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -10.274318, 8.236212, -24.92768)
+transform = Transform3D(2.4986546, 0, 0.082015574, 0, 2.5, 0, -0.082015574, 0, 2.4986546, -5.8056602, -5.9762354, -6.558797)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray/lanadropscontainer5/lanadrops5" groups=["hold_deploy"]]
 collision_layer = 9
@@ -3379,6 +3385,7 @@ transform = Transform3D(2.475, 0, 0, 0, 2.475, 0, 0, 0, 2.475, -12.620948, 8.190
 
 [node name="lana bottle7" parent="doors/NavigationRegion3D/ITEMS/2ND FLOOR ITEMS/shelf2(maopen)/RootNode/DRAWER1/Door" index="0" instance=ExtResource("62_jxex3")]
 transform = Transform3D(-4.062068e-06, 0, 92.929276, 0, 92.929276, 0, -92.929276, 0, -4.062068e-06, 24.034546, 2.9900513, -1.602417)
+script = ExtResource("154_xfkla")
 
 [node name="lanastatic7" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/2ND FLOOR ITEMS/shelf2(maopen)/RootNode/DRAWER1/Door/lana bottle7" groups=["equipable", "lana"]]
 collision_layer = 9
@@ -3395,6 +3402,7 @@ transform = Transform3D(2.475, 0, 0, 0, 2.475, 0, 0, 0, 2.475, -17.398159, 8.190
 
 [node name="lana bottle6" parent="doors/NavigationRegion3D/ITEMS/2ND FLOOR ITEMS/shelf3(maopen)/RootNode/DRAWER3/Door" index="0" instance=ExtResource("62_jxex3")]
 transform = Transform3D(-4.062067e-06, 0, 92.929276, 0, 92.929276, 0, -92.929276, 0, -4.062067e-06, 24.97461, 2.0039063, -2.237854)
+script = ExtResource("156_2xh2d")
 
 [node name="lanastatic6" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/2ND FLOOR ITEMS/shelf3(maopen)/RootNode/DRAWER3/Door/lana bottle6" groups=["equipable", "lana"]]
 collision_layer = 9
@@ -3408,6 +3416,7 @@ transform = Transform3D(2.475, 0, 0, 0, 2.475, 0, 0, 0, 2.475, -23.163445, 8.190
 
 [node name="lana bottle8" parent="doors/NavigationRegion3D/ITEMS/2ND FLOOR ITEMS/shelf4(maopen)/RootNode/DRAWER1/Door" index="0" instance=ExtResource("62_jxex3")]
 transform = Transform3D(-4.062067e-06, 0, 92.929276, 0, 92.929276, 0, -92.929276, 0, -4.062067e-06, 23.603973, 0.56954956, -49.46466)
+script = ExtResource("157_ww5kt")
 
 [node name="lanastatic8" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/2ND FLOOR ITEMS/shelf4(maopen)/RootNode/DRAWER1/Door/lana bottle8" groups=["equipable", "lana"]]
 collision_layer = 9
@@ -3418,6 +3427,7 @@ shape = SubResource("BoxShape3D_0ksgv")
 
 [node name="lana bottle9" parent="doors/NavigationRegion3D/ITEMS/2ND FLOOR ITEMS/shelf4(maopen)/RootNode/DRAWER6/Door" index="0" instance=ExtResource("62_jxex3")]
 transform = Transform3D(-4.062067e-06, 0, 92.929276, 0, 92.929276, 0, -92.929276, 0, -4.062067e-06, 24.244202, -20.809174, -4.541748)
+script = ExtResource("158_l7k06")
 
 [node name="lanastatic9" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/2ND FLOOR ITEMS/shelf4(maopen)/RootNode/DRAWER6/Door/lana bottle9" groups=["equipable", "lana"]]
 collision_layer = 9

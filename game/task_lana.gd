@@ -40,8 +40,8 @@ extends Node3D
 		"shadow": $lanadropsarray/lanadropscontainer5/lanadropsshadow5
 	},
 	6: {
-		"bottle":  $"../../2ND FLOOR ITEMS/shelf3(maopen)/RootNode/DRAWER3/Door/lana bottle6",
-		"bottle_collision":  $"../../2ND FLOOR ITEMS/shelf3(maopen)/RootNode/DRAWER3/Door/lana bottle6/lanastatic6/lanacollision6",
+		"bottle": $"../../2ND FLOOR ITEMS/shelf3(maopen)/RootNode/DRAWER3/Door/lana bottle6",
+		"bottle_collision": $"../../2ND FLOOR ITEMS/shelf3(maopen)/RootNode/DRAWER3/Door/lana bottle6/lanastatic6/lanacollision6",
 		"drop": $lanadropsarray/lanadropscontainer6/lanadrops6,
 		"drop_collision": $lanadropsarray/lanadropscontainer6/lanadrops6/StaticBody3D/CollisionShape3D,
 		"shadow": $lanadropsarray/lanadropscontainer6/lanadropsshadow6
@@ -76,16 +76,17 @@ extends Node3D
 	}
 }
 
-var chosen_bottle: int = -1  
-var chosen_drops = []  
+var current_night = Global.get_night()
+var chosen_bottle: int = -1
+var drops_deployed_count: int = 0
 
 func _ready() -> void:
 	randomize()
-	var current_night = Global.get_night()
 	if current_night == 5:
 		chosen_bottle = 10
 	else:
-		chosen_bottle = randi() % 9 + 1
+		chosen_bottle = 7
+		#randi() % 9 + 1
 	
 	update_lana_tasking()
 # Update visibility and collisions
@@ -104,25 +105,21 @@ func update_lana_tasking() -> void:
 		if data["shadow"]:
 			data["shadow"].visible = false
 		# --- END OF NULL CHECKS ---
-	# Randomize 5 chosen drops
-	var all_ids = lana_map.keys()
-	# --- NEW: Remove ID 10 from possible drop locations ---
-	# This ensures we don't try to use its null drop/shadow nodes
-	all_ids.erase(10)
-	all_ids.shuffle()
-	chosen_drops = all_ids.slice(0, 5)
 
 func take(_collider_body: PhysicsBody3D) -> void:
 	var bottle_data = lana_map[chosen_bottle]
 	bottle_data["bottle"].visible = false
 	bottle_data["bottle_collision"].set_deferred("disabled", true)
 	# Enable chosen drop shadows
+	drops_deployed_count = 0
 	# Activate shadows for chosen drops
-	for id in chosen_drops:
+	for id in lana_map.keys():
 		var drop_data = lana_map[id]
-		drop_data["shadow"].visible = true
-		drop_data["drop_collision"].set_deferred("disabled", false)
-	
+		# Check if the shadow and collision nodes exist (they are null for ID 10)
+		if drop_data["shadow"] and drop_data["drop_collision"]:
+			drop_data["shadow"].visible = true
+			drop_data["drop_collision"].set_deferred("disabled", false)
+
 func start_deploy_sound() -> void:
 	if not lana_prayer.is_playing():
 		lana_prayer.play()
@@ -131,9 +128,12 @@ func stop_deploy_sound() -> void:
 	lana_prayer.stop()
 	
 func deploy(collider_body: PhysicsBody3D) -> void:
+	# --- NEW: Guard clause to stop after 2 deployments
+	if drops_deployed_count >= 2:
+		return
+
 	for id in lana_map.keys():
 		var data = lana_map[id]
-		# --- ADDED NULL CHECK ---
 		# Make sure this ID has a drop_collision before checking it
 		if data["drop_collision"]:
 			# Get the StaticBody3D from the CollisionShape3D
@@ -141,8 +141,32 @@ func deploy(collider_body: PhysicsBody3D) -> void:
 
 			if collider_body == body_in_map:
 				var shadow_visual_node = data["shadow"]
+				# Check if the shadow is still visible (prevents deploying twice)
 				if shadow_visual_node.visible:
 					shadow_visual_node.visible = false # Hide the SHADOW
-					data["drop"].visible = true       # Show the DROP
+					data["drop"].visible = true        # Show the DROP
 					data["drop_collision"].set_deferred("disabled", true)
+					
+					# --- NEW: Increment counter
+					drops_deployed_count += 1
+					
+					# --- NEW: If this was the 2nd drop, disable all other shadows
+					if drops_deployed_count == 2:
+						_disable_all_remaining_shadows()
+						
 				return
+
+# --- NEW FUNCTION ---
+# Loops through and disables all shadows that are still visible
+func _disable_all_remaining_shadows() -> void:
+	for id in lana_map.keys():
+		var data = lana_map[id]
+		# Check if shadow exists and is currently visible
+		if data["shadow"] and data["shadow"].visible:
+			data["shadow"].visible = false
+			# Also disable its collision
+			if data["drop_collision"]:
+				data["drop_collision"].set_deferred("disabled", true)
+
+func get_bottle_number() -> int:
+	return chosen_bottle
