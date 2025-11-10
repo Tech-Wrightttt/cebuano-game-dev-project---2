@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://o7gchgjqr1i6"]
+[gd_scene load_steps=39 format=3 uid="uid://o7gchgjqr1i6"]
 
 [ext_resource type="PackedScene" uid="uid://bklxl232veydp" path="res://assets/player/first_person_arm.tscn" id="1_dadds"]
 [ext_resource type="Shader" uid="uid://bt1lbo5yomj25" path="res://game/shaders/retro_camera.gdshader" id="2_w5y0b"]
@@ -20,6 +20,7 @@
 [ext_resource type="FontFile" uid="uid://dd6gyxnwoo3dv" path="res://assets/Fonts/Rawrote Demo.ttf" id="18_a3s55"]
 [ext_resource type="Texture2D" uid="uid://ddgkjxww6k3co" path="res://assets/images/istockphoto-1131985206-612x612-removebg-preview.png" id="19_sghav"]
 [ext_resource type="Texture2D" uid="uid://doceo16aqib2w" path="res://assets/images/istockphoto-1131985206-612x612__1_-removebg-preview.png" id="20_a3s55"]
+[ext_resource type="PackedScene" uid="uid://bq0vcrfbroj3a" path="res://dialogues/intro_dialogue.tscn" id="21_opbur"]
 
 [sub_resource type="GDScript" id="GDScript_sh265"]
 script/source = "extends CharacterBody3D
@@ -131,6 +132,55 @@ func _ready() -> void:
 		sprint_bar.min_value = 0
 		sprint_bar.max_value = sprint_stamina_max
 		sprint_bar.value = sprint_stamina_max
+	
+	# Start the intro dialogue
+	_start_intro_dialogue()
+
+func _start_intro_dialogue() -> void:
+	# Get the intro_dialogue child node
+	var intro_dialogue = get_node_or_null(\"intro_dialogue\")
+	if intro_dialogue:
+		# Hide crosshair when dialogue starts
+		crosshair.visible = false
+		dialogue_active = true
+		
+		# Disable player movement by setting process and physics process to false
+		set_physics_process(false)
+		set_process(false)
+		
+		# Make sure the dialogue canvas is visible
+		intro_dialogue.visible = true
+		
+		# The dialogue will automatically play its animation in its _ready() function
+		print(\"Intro dialogue started\")
+		
+		# Wait for 7 seconds then end the dialogue
+		await get_tree().create_timer(7.0).timeout
+		_end_intro_dialogue()
+	else:
+		print(\"Intro dialogue node not found\")
+
+func _end_intro_dialogue() -> void:
+	# Get the intro_dialogue child node
+	var intro_dialogue = get_node_or_null(\"intro_dialogue\")
+	if intro_dialogue:
+		# Stop the animation if it's playing
+		var animation_player = intro_dialogue.get_node_or_null(\"AnimationPlayer\")
+		if animation_player:
+			animation_player.stop()
+		
+		# Optional: Remove it completely from the scene
+		intro_dialogue.queue_free()
+	
+	# Show crosshair again and mark dialogue as inactive
+	crosshair.visible = true
+	dialogue_active = false
+	
+	# Re-enable player movement
+	set_physics_process(true)
+	set_process(true)
+	
+	print(\"Intro dialogue finished\")
 
 func _setup_stair_raycasts() -> void:
 	# Create raycasts if they don't exist
@@ -502,6 +552,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.625, 0)
 collision_layer = 3
 collision_mask = 7
 script = SubResource("GDScript_sh265")
+
+[node name="intro_dialogue" parent="." instance=ExtResource("21_opbur")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_sh265")
