@@ -1,7 +1,8 @@
-[gd_scene load_steps=45 format=3 uid="uid://cd4o1mbqy8tg4"]
+[gd_scene load_steps=46 format=3 uid="uid://cd4o1mbqy8tg4"]
 
 [ext_resource type="Script" uid="uid://c0bd0cp5x50et" path="res://game/level.gd" id="1_ay3dt"]
 [ext_resource type="PackedScene" uid="uid://c6nnpmjnwv4g2" path="res://game/house.tscn" id="3_didrf"]
+[ext_resource type="AudioStream" uid="uid://bhy5mdhxntbcs" path="res://soundfx/main_menu.mp3" id="7_ay3dt"]
 [ext_resource type="FontFile" uid="uid://d10bqkxscm252" path="res://fonts/another_danger/Another Danger - Demo.otf" id="8_7mn57"]
 [ext_resource type="PackedScene" uid="uid://bd8sk3hxv1lu0" path="res://assets/glb_models/fence/japanese_park_stone_floor_uljcfd0_mid.glb" id="9_k2o5e"]
 [ext_resource type="Script" uid="uid://cbep2kr7a0bxs" path="res://scripts/main_menu.gd" id="10_5i8qu"]
@@ -126,7 +127,7 @@ shader_parameter/blur_amount = 10.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g7oie"]
 
-[node name="level" type="Node3D"]
+[node name="main_menu" type="Node3D"]
 script = ExtResource("1_ay3dt")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -427,8 +428,13 @@ shadow_blur = 3.062
 spot_range = 97.12
 spot_angle_attenuation = 1.4142132
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Camera3D/SpotLight3D"]
+transform = Transform3D(0.58770335, -0.0031950362, -0.80907017, 0.05119962, 0.9981348, 0.03324942, 0.8074549, -0.060964875, 0.5867707, 6.2282486, -2.4264565, -12.583864)
+stream = ExtResource("7_ay3dt")
+autoplay = true
+parameters/looping = true
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-visible = false
 anchors_preset = -1
 anchor_left = 0.93700004
 anchor_top = 0.648
@@ -497,7 +503,6 @@ text = "Quit"
 alignment = 2
 
 [node name="B" type="VBoxContainer" parent="." groups=["TitleLetters"]]
-visible = false
 clip_contents = true
 anchors_preset = -1
 anchor_left = 0.098000005
@@ -519,7 +524,6 @@ theme_override_font_sizes/font_size = 170
 text = "B"
 
 [node name="A" type="VBoxContainer" parent="." groups=["TitleLetters"]]
-visible = false
 clip_contents = true
 anchors_preset = -1
 anchor_left = 0.147
@@ -541,7 +545,6 @@ theme_override_font_sizes/font_size = 170
 text = "A"
 
 [node name="L" type="VBoxContainer" parent="." groups=["TitleLetters"]]
-visible = false
 clip_contents = true
 anchors_preset = -1
 anchor_left = 0.19500001
@@ -563,7 +566,6 @@ theme_override_font_sizes/font_size = 170
 text = "L"
 
 [node name="I" type="VBoxContainer" parent="." groups=["TitleLetters"]]
-visible = false
 clip_contents = true
 anchors_preset = -1
 anchor_left = 0.25100002
@@ -585,7 +587,6 @@ theme_override_font_sizes/font_size = 170
 text = "I"
 
 [node name="K" type="VBoxContainer" parent="." groups=["TitleLetters"]]
-visible = false
 clip_contents = true
 anchors_preset = -1
 anchor_left = 0.27800003
@@ -607,7 +608,6 @@ theme_override_font_sizes/font_size = 170
 text = "K"
 
 [node name="A2" type="VBoxContainer" parent="." groups=["TitleLetters"]]
-visible = false
 clip_contents = true
 anchors_preset = -1
 anchor_left = 0.342
@@ -629,7 +629,6 @@ theme_override_font_sizes/font_size = 170
 text = "A"
 
 [node name="W" type="VBoxContainer" parent="." groups=["TitleLetters"]]
-visible = false
 clip_contents = true
 anchors_preset = -1
 anchor_left = 0.39200002
@@ -684,6 +683,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="SettingsPanel" type="VBoxContainer" parent="."]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
