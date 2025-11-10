@@ -80,20 +80,41 @@ var current_night = 1
 var chosen_bottle: int = -1
 var drops_deployed_count: int = 0
 
+# NEW VARIABLES (from baa2... branch)
+var current_lana_pos: Vector3 = Vector3.ZERO  # Ghost reads this to find lures
+var deployed_lures: Array[Vector3] = []  # Track all active lure positions
+
+# --- MERGED _ready() ---
 func _ready() -> void:
+	# From baa2... (for the AI)
+	add_to_group("lana_task")
+	print("✅ Lana Task added to group 'lana_task'")
+	
+	# From HEAD (for Global.gd)
 	deactivate_all()
 
+# --- MERGED initialize_task() ---
 func initialize_task() -> void:
+	# From HEAD
 	randomize()
-	# Get the most current night info from Global
 	current_night = Global.get_night() 
 	
 	if current_night == 5:
 		chosen_bottle = 10
+		# From baa2...
+		print("🌙 Night 5: Chose bottle #10")
 	else:
-		chosen_bottle = randi() % 9 + 1
+		chosen_bottle =  randi() % 9 + 1
+		# From baa2...
+		print("🌙 Night %d: Chose bottle #%d" % [current_night, chosen_bottle])
+	
+	# From baa2...
+	print("🍾 Lana Task initialized with bottle: %d" % chosen_bottle)
+	
+	# From HEAD
 	update_lana_tasking()
 
+# --- NEW FUNCTION (from HEAD) ---
 func deactivate_all() -> void:
 	for id in lana_map.keys():
 		var data = lana_map[id]
@@ -106,84 +127,174 @@ func deactivate_all() -> void:
 			data["drop_collision"].set_deferred("disabled", true)
 		if data["shadow"]:
 			data["shadow"].visible = false
-			
+
+# --- MERGED update_lana_tasking() ---
 func update_lana_tasking() -> void:
+	# From baa2...
+	print("⚙️ Updating lana tasking...")
+	
+	# From HEAD
 	for id in lana_map.keys():
 		var data = lana_map[id]
 		var is_active = (id == chosen_bottle)
 		data["bottle"].visible = is_active
 		data["bottle_collision"].set_deferred("disabled", not is_active)
-		# Drops and shadows hidden/disabled initially
-		# --- ADDED NULL CHECKS ---
+		
 		if data["drop"]:
 			data["drop"].visible = false
 		if data["drop_collision"]:
 			data["drop_collision"].set_deferred("disabled", true)
 		if data["shadow"]:
 			data["shadow"].visible = false
-		# --- END OF NULL CHECKS ---
+	
+	# From baa2...
+	print("✅ Lana tasking updated. Active bottle: %d" % chosen_bottle)
 
+# --- MERGED take() ---
 func take(_collider_body: PhysicsBody3D) -> void:
+	# From baa2...
+	print("👜 Player took lana bottle #%d" % chosen_bottle)
+	
+	# From HEAD
 	var bottle_data = lana_map[chosen_bottle]
 	bottle_data["bottle"].visible = false
 	bottle_data["bottle_collision"].set_deferred("disabled", true)
-	# Enable chosen drop shadows
 	drops_deployed_count = 0
-	# Activate shadows for chosen drops
+	
+	# From baa2...
+	var shadow_count = 0
+	
+	# From HEAD
 	for id in lana_map.keys():
 		var drop_data = lana_map[id]
-		# Check if the shadow and collision nodes exist (they are null for ID 10)
 		if drop_data["shadow"] and drop_data["drop_collision"]:
 			drop_data["shadow"].visible = true
 			drop_data["drop_collision"].set_deferred("disabled", false)
+			# From baa2...
+			shadow_count += 1
+	
+	# From baa2...
+	print("👥 Enabled %d drop shadows for deployment" % shadow_count)
 
+# --- MERGED start_deploy_sound() ---
 func start_deploy_sound() -> void:
 	if not lana_prayer.is_playing():
 		lana_prayer.play()
+		# From baa2...
+		print("🔊 Started lana prayer sound")
 
+# --- MERGED stop_deploy_sound() ---
 func stop_deploy_sound() -> void:
 	lana_prayer.stop()
+	# From baa2...
+	print("🔇 Stopped lana prayer sound")
+
+# --- NEW FUNCTION (from baa2...) ---
+func consume_lure_at_position(pos: Vector3) -> void:
+	print("🔍 Attempting to consume lure at position: %s" % pos)
+	var tolerance = 2.0
 	
+	for id in lana_map.keys():
+		var data = lana_map[id]
+		if data["drop"] and data["drop"].visible:
+			var distance = data["drop"].global_position.distance_to(pos)
+			if distance < tolerance:
+				print("🍽️ ✅ Lure #%d consumed! (Distance: %.2f)" % [id, distance])
+				data["drop"].visible = false
+				if data["drop_collision"]:
+					data["drop_collision"].set_deferred("disabled", true)
+				
+				# Remove from deployed lures array
+				for i in range(deployed_lures.size() - 1, -1, -1):
+					if deployed_lures[i].distance_to(pos) < tolerance:
+						deployed_lures.remove_at(i)
+						print("📉 Removed lure from array. Remaining lures: %d" % deployed_lures.size())
+				
+				# Update current_lana_pos
+				update_current_lana_pos()
+				return
+	
+	print("❌ No lure found at position %s (tolerance: %.2f)" % [pos, tolerance])
+
+# --- NEW FUNCTION (from baa2...) ---
+func update_current_lana_pos() -> void:
+	if deployed_lures.is_empty():
+		current_lana_pos = Vector3.ZERO
+		print("📍 No more lures active, current_lana_pos = Vector3.ZERO")
+	else:
+		# Point to first active lure
+		current_lana_pos = deployed_lures[0]
+		print("📍 Updated current_lana_pos to: %s" % current_lana_pos)
+
+# --- MERGED deploy() ---
 func deploy(collider_body: PhysicsBody3D) -> void:
-	# --- NEW: Guard clause to stop after 2 deployments
+	# From baa2...
+	print("🎯 Deploy called. Current count: %d/2" % drops_deployed_count)
+	
+	# From HEAD
 	if drops_deployed_count >= 2:
+		# From baa2...
+		print("⚠️ Already deployed 2 lures, ignoring deploy request")
 		return
 
 	for id in lana_map.keys():
 		var data = lana_map[id]
-		# Make sure this ID has a drop_collision before checking it
 		if data["drop_collision"]:
-			# Get the StaticBody3D from the CollisionShape3D
 			var body_in_map = data["drop_collision"].get_parent()
 
 			if collider_body == body_in_map:
 				var shadow_visual_node = data["shadow"]
-				# Check if the shadow is still visible (prevents deploying twice)
 				if shadow_visual_node.visible:
-					shadow_visual_node.visible = false # Hide the SHADOW
-					data["drop"].visible = true        # Show the DROP
+					# From baa2...
+					print("✨ Deploying lure #%d..." % id)
+					
+					# From HEAD
+					shadow_visual_node.visible = false
+					data["drop"].visible = true
 					data["drop_collision"].set_deferred("disabled", true)
 					
-					# --- NEW: Increment counter
 					drops_deployed_count += 1
 					
-					# --- NEW: If this was the 2nd drop, disable all other shadows
+					# --- NEW CODE (from baa2...) ---
+					var drop_position = data["drop"].global_position
+					deployed_lures.append(drop_position)
+					current_lana_pos = drop_position  # Update to latest lure
+					
+					print("✨ ✅ Lure #%d deployed at: %s" % [id, drop_position])
+					print("📍 current_lana_pos updated to: %s" % current_lana_pos)
+					print("📊 Total deployed lures: %d" % deployed_lures.size())
+					# --- END of baa2... block ---
+					
+					# From HEAD
 					if drops_deployed_count == 2:
+						# From baa2...
+						print("🔒 Reached max lures (2), disabling remaining shadows...")
 						_disable_all_remaining_shadows()
 						task_completed.emit()
-				return
+					return
+				else:
+					# From baa2...
+					print("⚠️ Shadow for lure #%d already hidden" % id)
+					return
 
-# --- NEW FUNCTION ---
-# Loops through and disables all shadows that are still visible
+# --- MERGED _disable_all_remaining_shadows() ---
 func _disable_all_remaining_shadows() -> void:
+	# From baa2...
+	var disabled_count = 0
+	
+	# From HEAD
 	for id in lana_map.keys():
 		var data = lana_map[id]
-		# Check if shadow exists and is currently visible
 		if data["shadow"] and data["shadow"].visible:
 			data["shadow"].visible = false
-			# Also disable its collision
 			if data["drop_collision"]:
 				data["drop_collision"].set_deferred("disabled", true)
+			# From baa2...
+			disabled_count += 1
+	
+	# From baa2...
+	print("🚫 Disabled %d remaining shadows" % disabled_count)
 
+# --- (No changes, just added for completeness) ---
 func get_bottle_number() -> int:
 	return chosen_bottle
