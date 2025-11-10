@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://ulmua2j40756"]
+
+[ext_resource type="PackedScene" uid="uid://ciem45gblnxi8" path="res://assets/glb_models/Ghost.glb" id="1_kmjgr"]
+
+[node name="ghost_final" instance=ExtResource("1_kmjgr")]
+
+[node name="Sketchfab_model" parent="." index="0"]
+transform = Transform3D(130.2, 0, 0, 0, -5.6912227e-06, 130.2, 0, -130.2, -5.6912227e-06, 0, 0, 0)
+
+[node name="Object_11" parent="Sketchfab_model/15adb26189344ca4902961d45800f990_fbx/Object_2/RootNode/Object_4/Skeleton3D" index="0"]
+transform = Transform3D(0.5, -1.11488365e-08, 0.8660255, 0.26363155, 0.95253927, -0.15220767, -0.8249233, 0.3044154, 0.47626975, 0.095641375, 0.09711876, -0.7111759)
+
+[node name="Object_13" parent="Sketchfab_model/15adb26189344ca4902961d45800f990_fbx/Object_2/RootNode/Object_4/Skeleton3D" index="1"]
+transform = Transform3D(0.46172503, 0.19370922, -0.8656136, -0.26432917, 0.96157503, 0.07418849, 0.846723, 0.19455226, 0.49518618, -0.31296396, 0.13018872, -0.571568)
+
+[node name="Object_7" parent="Sketchfab_model/15adb26189344ca4902961d45800f990_fbx/Object_2/RootNode/Object_4/Skeleton3D" index="42"]
+transform = Transform3D(0.6704579, 0.73828423, -0.073635064, -0.73782986, 0.673887, 0.038525935, 0.078064695, 0.028500257, 0.99654126, -0.9220129, 0.63915956, 0.011550833)
+
+[node name="Object_9" parent="Sketchfab_model/15adb26189344ca4902961d45800f990_fbx/Object_2/RootNode/Object_4/Skeleton3D" index="43"]
+transform = Transform3D(0.67456764, -0.73457634, 0.073184215, 0.73791105, 0.67380446, -0.0383878, -0.021113133, 0.07989861, 0.99657935, 0.88685286, 0.63183016, -0.07458796)

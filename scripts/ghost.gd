@@ -5,7 +5,7 @@ extends CharacterBody3D
 @onready var lana_task = get_tree().get_first_node_in_group("lana_task")
 var speed = 2.0
 @onready var rng = RandomNumberGenerator.new()
-@onready var animation_player = $ghost_model_animation.get_node("AnimationPlayer")
+@onready var animation_player = $ghost_final_animation/AnimationPlayer
 var destination
 var chasing = false
 var destination_value
