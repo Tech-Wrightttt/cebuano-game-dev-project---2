@@ -2,7 +2,7 @@ extends CharacterBody3D
 @onready var agent = $NavigationAgent3D
 @export var patrol_destinations: Array[Node3D]
 @onready var player = get_tree().get_first_node_in_group("player")
-@onready var lana_task = get_tree().get_first_node_in_group("lana_task")  # NEW: Get lana task manager
+@onready var lana_task = get_tree().get_first_node_in_group("lana_task")
 var speed = 2.0
 @onready var rng = RandomNumberGenerator.new()
 @onready var animation_player = $ghost_model_animation.get_node("AnimationPlayer")
@@ -10,26 +10,29 @@ var destination
 var chasing = false
 var destination_value
 var chase_timer = 0.0
-var lured = false  # NEW: Track if ghost is currently lured
-var lure_detection_radius = 15.0  # NEW: How far ghost can detect lures
-var lure_consumption_distance = 1.5  # NEW: How close to consume lure
+var lured = false
+var lure_target_position: Vector3
+var previous_lure_position: Vector3
+var has_previous_lure = false
+var lure_consumption_distance = 2.0
+var last_known_lure_pos: Vector3 = Vector3.ZERO
 
 func _ready() -> void:
 	animation_player.play("ghost_idle")
 	await get_tree().create_timer(2.0).timeout
-	print("Ghost ready! Collision layer: ", collision_layer)
-	print("Ghost collision mask: ", collision_mask)
 	
-	# NEW: Make sure lana_task has the correct group
 	if lana_task:
 		lana_task.add_to_group("lana_task")
+		print("✅ Ghost found lana_task")
+	else:
+		print("❌ lana_task not found!")
 	
 	pick_destination()
 
 func _process(delta: float) -> void:
-	# NEW: Check for nearby lures (only if not chasing player)
+	# ALWAYS check for new lures, even while patrolling (but not while chasing player)
 	if not chasing and lana_task:
-		check_for_lures()
+		check_for_new_lure()
 	
 	if chasing:
 		if speed != 4.0:
@@ -39,7 +42,8 @@ func _process(delta: float) -> void:
 		else:
 			chase_timer = 0.0
 			chasing = false
-			lured = false  # Reset lured state when chase ends
+			# Resume lure behavior after chase ends
+			resume_lure_behavior()
 	elif !chasing:
 		if speed != 2.0:
 			speed = 2.0
@@ -49,26 +53,33 @@ func _process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
-	if destination != null:
+	# Update navigation target based on state (FIXED - works even when destination is null)
+	if lured:
+		$NavigationAgent3D.target_position = lure_target_position
+	elif destination != null:
+		update_target_location()
+	
+	# Rotation code (works with both lured and destination states)
+	if destination != null or lured:
 		var look_dir = lerp_angle(deg_to_rad(global_rotation_degrees.y), atan2(-velocity.x, -velocity.z), 0.5)
 		global_rotation_degrees.y = rad_to_deg(look_dir)
-		update_target_location()
 
 func _physics_process(_delta: float) -> void:
-	# Player chase has priority over lures
+	# Player chase ALWAYS has priority over everything
 	chase_player($RayCast3D)
 	chase_player($RayCast3D2)
 	chase_player($RayCast3D3)
 	chase_player($RayCast3D4)
 	chase_player($RayCast3D5)
 	
-	# NEW: Check if reached lure
-	if lured and destination and destination.is_in_group("lana_lure"):
-		var dist_to_lure = global_position.distance_to(destination.global_position)
+	# Check if reached lure position
+	if lured:
+		var dist_to_lure = global_position.distance_to(lure_target_position)
 		if dist_to_lure < lure_consumption_distance:
 			consume_lure()
 
-	if destination != null:
+	# Move if we have a destination OR are lured
+	if destination != null or lured:
 		var current_location = global_transform.origin
 		var next_location = $NavigationAgent3D.get_next_path_position()
 
@@ -90,37 +101,105 @@ func chase_player(cast: RayCast3D):
 	if cast.is_colliding():
 		var hit = cast.get_collider()
 		if hit and hit.is_in_group("player"):
+			if not chasing:
+				# Save current lure position before chasing
+				if lured:
+					previous_lure_position = lure_target_position
+					has_previous_lure = true
+					print("🎯 Ghost spotted player! Saving lure position: ", previous_lure_position)
 			chasing = true
-			lured = false  # Cancel lure when spotting player
+			lured = false  # Pause lure behavior while chasing
 			destination = player
 
-# NEW: Check for nearby lures
-func check_for_lures() -> void:
-	if not lana_task or chasing:
+# Check if a new lure was deployed
+func check_for_new_lure() -> void:
+	var current_pos = lana_task.current_lana_pos
+	
+	# Check if position is valid (not zero) and different from what we know
+	if current_pos != Vector3.ZERO and current_pos != last_known_lure_pos:
+		print("🔔 Ghost detected NEW lure at: ", current_pos)
+		print("🚫 CANCELING PATROL - Going to lure immediately!")
+		last_known_lure_pos = current_pos
+		
+		# IMMEDIATELY switch to lured mode
+		lured = true
+		lure_target_position = current_pos
+		destination = null  # Cancel patrol destination
+		$NavigationAgent3D.target_position = lure_target_position
+		print("🏃 Ghost heading straight to lure!")
+
+# Resume lure behavior after player chase ends
+func resume_lure_behavior() -> void:
+	if has_previous_lure:
+		# Check if the lure we were chasing still exists
+		var lure_still_exists = is_lure_still_there(previous_lure_position)
+		
+		if lure_still_exists:
+			print("🔙 Ghost resuming pursuit of saved lure at: ", previous_lure_position)
+			lured = true
+			lure_target_position = previous_lure_position
+			destination = null
+			$NavigationAgent3D.target_position = lure_target_position
+			has_previous_lure = false
+			return
+		else:
+			print("❌ Saved lure no longer exists")
+			has_previous_lure = false
+	
+	# Check if there's any active lure
+	if lana_task.current_lana_pos != Vector3.ZERO:
+		print("🔄 Found another active lure, heading there!")
+		lured = true
+		lure_target_position = lana_task.current_lana_pos
+		last_known_lure_pos = lana_task.current_lana_pos
+		destination = null
+		$NavigationAgent3D.target_position = lure_target_position
 		return
 	
-	var nearest_lure = lana_task.get_nearest_lure(global_position)
-	
-	if nearest_lure:
-		var distance = global_position.distance_to(nearest_lure.global_position)
-		
-		# If lure is within detection radius and we're not already going to it
-		if distance < lure_detection_radius and destination != nearest_lure:
-			print("👃 Ghost detected lure at distance: %.2f" % distance)
-			lured = true
-			destination = nearest_lure
-			update_target_location()
+	# No lures available, go back to patrolling
+	print("📍 No lures available, resuming patrol")
+	pick_destination()
 
-# NEW: Consume the lure when reached
+# Check if lure still exists
+func is_lure_still_there(pos: Vector3) -> bool:
+	var tolerance = 1.0
+	for id in lana_task.lana_map.keys():
+		var data = lana_task.lana_map[id]
+		if data["drop"] and data["drop"].visible:
+			var distance = data["drop"].global_position.distance_to(pos)
+			if distance < tolerance:
+				return true
+	return false
+
+# Consume lure when reached
 func consume_lure() -> void:
-	if lana_task and destination:
-		lana_task.consume_lure(destination)
+	if lana_task:
+		print("😋 Ghost reached and consumed lure at: ", lure_target_position)
+		lana_task.consume_lure_at_position(lure_target_position)
+		
+		# Clear lure tracking
 		lured = false
-		# After consuming, pick a new patrol destination
-		pick_destination()
+		has_previous_lure = false
+		
+		# Reset current_lana_pos if it matches what we consumed
+		if lana_task.current_lana_pos.distance_to(lure_target_position) < 2.0:
+			lana_task.current_lana_pos = Vector3.ZERO
+			last_known_lure_pos = Vector3.ZERO
+		
+		# Check if there's another lure, otherwise patrol
+		if lana_task.current_lana_pos != Vector3.ZERO:
+			print("🔄 Another lure detected, going there next!")
+			lured = true
+			lure_target_position = lana_task.current_lana_pos
+			last_known_lure_pos = lana_task.current_lana_pos
+			$NavigationAgent3D.target_position = lure_target_position
+		else:
+			print("📍 No more lures, resuming patrol")
+			pick_destination()
 
 func pick_destination(dont_choose = null):
-	if !chasing and !lured:  # NEW: Don't pick random destination if lured
+	# Only pick patrol destinations when NOT lured and NOT chasing
+	if !chasing and !lured:
 		var num = rng.randi_range(0, patrol_destinations.size() - 1)
 		destination_value = num
 		destination = patrol_destinations[num]
@@ -130,12 +209,10 @@ func pick_destination(dont_choose = null):
 				destination = patrol_destinations[dont_choose + 1]
 			elif dont_choose > 0 and dont_choose <= patrol_destinations.size() - 1:
 				destination = patrol_destinations[dont_choose - 1]
-
-		print("=== PICKED DESTINATION ===")
-		print("Destination name: ", destination.name if destination else "null")
 				
 func update_target_location():
-	$NavigationAgent3D.target_position = destination.global_transform.origin
+	if destination:
+		$NavigationAgent3D.target_position = destination.global_transform.origin
 
 func compute_velocity(safe_velocity: Vector3) -> void:
 	velocity = velocity.move_toward(safe_velocity, speed)

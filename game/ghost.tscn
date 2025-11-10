@@ -22,6 +22,7 @@ path_desired_distance = 1.5
 path_max_distance = 3.01
 avoidance_enabled = true
 radius = 0.4
+debug_enabled = true
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(18.803, 0, 0, 0, -6.556708e-07, -24.273, 0, 15, -1.0610065e-06, 0, 0.9082812, 0)
