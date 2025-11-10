@@ -546,7 +546,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Interaction_Label" type="Label" parent="Head/Camera3D/Filters"]
-visible = false
 anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.817
@@ -558,6 +557,7 @@ offset_right = 103.0
 offset_bottom = 18.159912
 theme_override_font_sizes/font_size = 24
 text = "*"
+horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="BackBufferCopy_VHS" type="BackBufferCopy" parent="Head/Camera3D/Filters"]
