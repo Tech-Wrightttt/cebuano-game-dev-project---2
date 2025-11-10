@@ -97,19 +97,6 @@ orientation = 2
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0w1ik"]
 render_priority = 0
 shader = ExtResource("18_0w1ik")
-shader_parameter/brightness = 1.5
-shader_parameter/contrast = 1.2
-shader_parameter/vignette_strength = 0.8
-shader_parameter/noise_strength = 0.15
-shader_parameter/grain_size = 3.0
-shader_parameter/shine_color = Color(0.9793326, 0.928972, 1.540184e-06, 1)
-shader_parameter/shine_speed = 1.0
-shader_parameter/shine_width = 1.0
-shader_parameter/cycle_interval = 1.0
-shader_parameter/angle_fade = 1.0
-shader_parameter/x_direction = 0.0
-shader_parameter/y_direction = 0.0
-shader_parameter/z_direction = 1.0
 
 [node name="level" type="Node3D"]
 script = ExtResource("1_mgnlv")
@@ -467,7 +454,6 @@ extra_cull_margin = 16384.0
 mesh = SubResource("PlaneMesh_s5juq")
 
 [node name="PostProcessEffect" type="MeshInstance3D" parent="PostProcessEffect2"]
-visible = false
 material_override = SubResource("ShaderMaterial_0w1ik")
 extra_cull_margin = 16384.0
 mesh = SubResource("PlaneMesh_s5juq")
