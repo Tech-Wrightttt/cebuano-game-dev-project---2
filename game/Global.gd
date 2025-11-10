@@ -99,23 +99,23 @@ func ready_task()-> void:
 		active_task_count += 1
 	
 	# --- 4. ACTIVATE AND CONNECT RANDOM TASKS ---
-	var tasks_needed = min(2 + (current_night - 1), available_task_pool.size())
-	currently_active_tasks = available_task_pool.slice(0, tasks_needed)
-	
+	#var tasks_needed = min(2 + (current_night - 1), available_task_pool.size())
+	#currently_active_tasks = available_task_pool.slice(0, tasks_needed)
+	#
 	print("--- Night %s ---" % current_night)
 	print("Activating tasks: [Lana] (Always)")
 	
-	for task_node in currently_active_tasks:
-		if is_instance_valid(task_node):
-			print(" - %s" % task_node.name)
-			task_node.initialize_task()
-			
-			# --- CONNECT THE SIGNAL ---
-			task_node.task_completed.connect(_on_task_completed)
-			active_task_count += 1
-		else:
-			push_warning("Tried to activate an invalid task instance.")
-			
+	#for task_node in currently_active_tasks:
+		#if is_instance_valid(task_node):
+			#print(" - %s" % task_node.name)
+			#task_node.initialize_task()
+			#
+			## --- CONNECT THE SIGNAL ---
+			#task_node.task_completed.connect(_on_task_completed)
+			#active_task_count += 1
+		#else:
+			#push_warning("Tried to activate an invalid task instance.")
+			#
 	# --- 5. (FOR DEBUGGING) CHECK IF NIGHT SHOULD END ---
 	if active_task_count == 0:
 		print("GLOBAL: No tasks active. Progressing to next night.")

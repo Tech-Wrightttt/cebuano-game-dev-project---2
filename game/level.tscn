@@ -15,8 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://b22u3s0h205xm" path="res://game/lola_idle.tscn" id="14_mgnlv"]
 [ext_resource type="PackedScene" uid="uid://b7crgh8wtpl41" path="res://assets/glb_models/lola model.glb" id="15_vbfoy"]
 [ext_resource type="PackedScene" uid="uid://tr300wlqw8jv" path="res://assets/glb_models/paulette model.glb" id="16_i0emn"]
-[ext_resource type="Shader" uid="uid://cj03b73hkru46" path="res://game/post_effect_shader2.gdshader" id="17_50vgw"]
-[ext_resource type="Shader" uid="uid://b3hfpkmnguk3q" path="res://game/post_effect_shader.gdshader" id="18_0w1ik"]
+[ext_resource type="Shader" path="res://game/post_effect_shader2.gdshader" id="17_50vgw"]
+[ext_resource type="Shader" path="res://game/post_effect_shader.gdshader" id="18_0w1ik"]
 [ext_resource type="PackedScene" uid="uid://bnd4f5cscd18j" path="res://game/house_materials/ceiling_lights.tscn" id="20_vuud0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4xowi"]
@@ -113,6 +113,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.28475, 2.1155224, -2.64598
 
 [node name="House" parent="." instance=ExtResource("2_xssv6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9987135, 0.028873205, -0.026374817)
+
+[node name="ghost" parent="House/doors" index="14"]
+visible = false
 
 [node name="first_dialogue" parent="." instance=ExtResource("2_1565f")]
 
