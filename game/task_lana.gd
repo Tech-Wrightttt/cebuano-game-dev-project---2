@@ -85,7 +85,7 @@ var current_lana_pos: Vector3 = Vector3.ZERO  # Ghost reads this to find lures
 var deployed_lures: Array[Vector3] = []  # Track all active lure positions
 
 func _ready() -> void:
-	# ADD TO GROUP FIRST - This is critical!
+	# ADD TO GROUP FIRST - This is critical! -wala na add sa group kwanggol
 	add_to_group("lana_task")
 	print("✅ Lana Task added to group 'lana_task'")
 	randomize()
@@ -93,7 +93,7 @@ func _ready() -> void:
 		chosen_bottle = 10
 		print("🌙 Night 5: Chose bottle #10")
 	else:
-		chosen_bottle = 1
+		chosen_bottle =  randi() % 9 + 1
 		print("🌙 Night %d: Chose bottle #%d" % [current_night, chosen_bottle])
 	
 	print("🍾 Lana Task initialized with bottle: %d" % chosen_bottle)
