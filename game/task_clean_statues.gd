@@ -43,6 +43,24 @@ var chosen_statue_keys: Array = []
 		"cleaned_collision": $cleanedStatue/StatueSaint3/StaticBody3D/CollisionShape3D,
 		"uncleaned_node": $uncleanedStatue/UncleanedStatueSaint3,
 		"uncleaned_collision": $uncleanedStatue/UncleanedStatueSaint3/StaticBody3D/CollisionShape3D
+	},
+	8: {
+		"cleaned_node": $cleanedStatue/StatueAngel,
+		"cleaned_collision": $cleanedStatue/StatueAngel/StaticBody3D/CollisionShape3D,
+		"uncleaned_node": $uncleanedStatue/UncleanedStatueAngel,
+		"uncleaned_collision": $uncleanedStatue/UncleanedStatueAngel/StaticBody3D/CollisionShape3D
+	},
+	9: {
+		"cleaned_node": $cleanedStatue/StatueAngel2,
+		"cleaned_collision": $cleanedStatue/StatueAngel2/StaticBody3D/CollisionShape3D,
+		"uncleaned_node": $uncleanedStatue/UncleanedStatueAngel2,
+		"uncleaned_collision": $uncleanedStatue/UncleanedStatueAngel2/StaticBody3D/CollisionShape3D
+	},
+	10: {
+		"cleaned_node": $cleanedStatue/StatueCreepy,
+		"cleaned_collision": $cleanedStatue/StatueCreepy/StaticBody3D/CollisionShape3D,
+		"uncleaned_node": $uncleanedStatue/UncleanedStatueCreepy,
+		"uncleaned_collision": $uncleanedStatue/UncleanedStatueCreepy/StaticBody3D/CollisionShape3D
 	}
 }
 
@@ -51,7 +69,33 @@ func _ready():
 	randomize()
 	var all_task_keys = statue_map.keys()
 	all_task_keys.shuffle()
-	chosen_statue_keys = all_task_keys.slice(0, 3)
+	
+	# --- NIGHT 5 LOGIC ---
+	# We will assume the mandatory keys are 8 (Angel), 9 (Angel2), and 10 (Creepy)
+	var mandatory_key_1 = 8
+	var mandatory_key_2 = 9
+	var mandatory_key_3 = 10
+	var number_of_tasks_to_find = 3
+	
+	if Global.get_night() == 5:
+		print("Night 5: Forcing mandatory statues (Angel, Angel2, Creepy).")
+		# 1. Remove the mandatory keys from the full list
+		all_task_keys.erase(mandatory_key_1)
+		all_task_keys.erase(mandatory_key_2)
+		all_task_keys.erase(mandatory_key_3)
+		
+		# 2. Slice to get the remaining number of tasks
+		# (3 total tasks - 3 mandatory tasks = 0 random tasks)
+		chosen_statue_keys = all_task_keys.slice(0, number_of_tasks_to_find - 3)
+		
+		# 3. Add the mandatory keys back
+		chosen_statue_keys.push_back(mandatory_key_1)
+		chosen_statue_keys.push_back(mandatory_key_2)
+		chosen_statue_keys.push_back(mandatory_key_3)
+		
+	else:
+		chosen_statue_keys = all_task_keys.slice(0, number_of_tasks_to_find)
+	
 	update_statue_tasking()
 
 

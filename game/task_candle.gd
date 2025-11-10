@@ -9,8 +9,37 @@ var chosen_candles: Array = []
 func _ready():
 	randomize()
 	collect_Candles = candle_Scattered.get_children()
-	collect_Candles.shuffle()
-	chosen_candles = collect_Candles.slice(0, 8)
+	
+	# --- NIGHT 5 LOGIC ---
+	if Global.get_night() == 5:
+		print("Night 5: Forcing mandatory candles (13, 14, 15, 16).")
+		var mandatory_names = ["Candle13", "Candle14", "Candle15", "Candle16"]
+		var mandatory_candles = []
+		var other_candles = []
+		
+		# 1. Separate mandatory candles from other candles
+		for candle in collect_Candles:
+			if candle.name in mandatory_names:
+				mandatory_candles.push_back(candle)
+			else:
+				other_candles.push_back(candle)
+		
+		# 2. Shuffle the *other* candles
+		other_candles.shuffle()
+		
+		# 3. We need 8 total candles.
+		#    (Calculate how many random ones we need to add to our mandatory list)
+		var random_candles_to_get = 8 - mandatory_candles.size()
+		
+		# 4. Combine the lists (mandatory first, then the random ones)
+		chosen_candles = mandatory_candles + other_candles.slice(0, random_candles_to_get)
+		
+	else:
+		# --- Original Logic (for other nights) ---
+		collect_Candles.shuffle()
+		chosen_candles = collect_Candles.slice(0, 8)
+		
+	# 5. Continue with setup
 	update_candle_tasking()
 
 func update_candle_tasking():
@@ -57,4 +86,3 @@ func use(collider_body: PhysicsBody3D):
 	anim_player.play("burnwick")
 	var collision_shape: CollisionShape3D = collider_body.get_node_or_null("CollisionShape3D")
 	collision_shape.set_deferred("disabled", true)
-	
