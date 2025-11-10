@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://buk0rj2ijs14y"]
+[gd_scene load_steps=8 format=4 uid="uid://b5qtqnm07u7an"]
 
 [ext_resource type="Texture2D" uid="uid://djj6fl2dwob5f" path="res://assets/glb_models/basement/engel_statue_scan_retopology_0.jpg" id="1_tuunb"]
 [ext_resource type="Texture2D" uid="uid://ru5f7bxuqraq" path="res://assets/glb_models/basement/engel_statue_scan_retopology_1.png" id="2_th31o"]

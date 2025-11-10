@@ -56,6 +56,7 @@ deployable=""
 hold_deploy=""
 player=""
 window=""
+lana_task=""
 
 [input]
 
