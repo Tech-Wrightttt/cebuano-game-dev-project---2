@@ -333,7 +333,7 @@ size = Vector3(3.1004028, 0.805542, 10.16061)
 size = Vector3(3.315918, 1, 0.54826355)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_153lg"]
-size = Vector3(3.7109375, 1, 1.9552002)
+size = Vector3(3.7109375, 1, 1.8765259)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8tqyt"]
 albedo_color = Color(0.6784314, 0.5137255, 0.42745098, 1)
@@ -1133,7 +1133,7 @@ transform = Transform3D(1, 0, 0, 0, 0.8660254, -0.5, 0, 0.5, 0.8660254, -22.1124
 shape = SubResource("BoxShape3D_ix1fy")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="doors/NavigationRegion3D/Model/Staircases/Stairs/StaticBody3D/CollisionShape3D/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 0.7071067, -0.7071067, 0, 0.7071067, 0.7071067, -17.921349, 0.95561385, 0.51834947)
+transform = Transform3D(1, 0, 0, 0, 0.7071067, -0.7071067, 0, 0.7071067, 0.7071067, -17.921349, 0.9844829, 0.61254376)
 shape = SubResource("BoxShape3D_153lg")
 
 [node name="Railings" type="MeshInstance3D" parent="doors/NavigationRegion3D/Model/Staircases"]
