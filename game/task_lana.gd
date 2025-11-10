@@ -85,8 +85,7 @@ func _ready() -> void:
 	if current_night == 5:
 		chosen_bottle = 10
 	else:
-		chosen_bottle = 7
-		#randi() % 9 + 1
+		chosen_bottle = randi() % 9 + 1
 	
 	update_lana_tasking()
 # Update visibility and collisions
