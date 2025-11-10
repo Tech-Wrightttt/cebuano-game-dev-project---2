@@ -8,6 +8,8 @@ radius = 0.3803711
 height = 3.0
 
 [node name="ghost" type="CharacterBody3D"]
+collision_layer = 17
+collision_mask = 17
 motion_mode = 1
 script = ExtResource("1_blxur")
 
