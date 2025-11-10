@@ -1,7 +1,7 @@
 extends Panel
 
-@onready var hour_label: Label = $Label
-@onready var ampm_label: Label = $Label2
+@onready var hour_label: Label = $TimerLabelHour
+@onready var ampm_label: Label = $TimerLabelMinutes
 
 func _ready() -> void:
 	# Show initial time immediately (should be 6:00 PM at night start)

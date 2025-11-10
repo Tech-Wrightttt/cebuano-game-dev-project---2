@@ -195,3 +195,13 @@ func deploy(collider_body: PhysicsBody3D) -> void:
 				print("TASK_STATUE: All statues cleaned. Task complete.")
 				task_completed.emit()
 			return
+
+# ADD THIS ENTIRE FUNCTION
+func get_progress_string() -> String:
+	if chosen_statue_keys.is_empty():
+		return ""
+		
+	# This assumes you start with 3. Change '3' if it's different.
+	var total_statues = 3
+	var cleaned = total_statues - chosen_statue_keys.size()
+	return "%d/%d statues cleaned" % [cleaned, total_statues]

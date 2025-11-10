@@ -108,3 +108,21 @@ func use(collider_body: PhysicsBody3D):
 		if altar_candles_to_light == 0:
 			print("TASK_CANDLE: All altar candles lit. Task complete.")
 			task_completed.emit()
+
+# ADD THIS ENTIRE FUNCTION
+func get_progress_string() -> String:
+	# Check if we're lighting candles on the altar
+	if altar_candles_to_light > 0:
+		var total = altar_Candles.get_children().size()
+		var lit = total - altar_candles_to_light
+		return "%d/%d candles lighted" % [lit, total]
+	
+	# Check if we're still collecting candles
+	if not chosen_candles.is_empty():
+		# This assumes you start with 8. Change '8' if it's different.
+		var total_to_collect = 8 
+		var collected = total_to_collect - chosen_candles.size()
+		return "%d/%d candles collected" % [collected, total_to_collect]
+		
+	# If task is done, hide it
+	return ""

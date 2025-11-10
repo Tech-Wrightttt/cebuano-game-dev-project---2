@@ -182,3 +182,18 @@ func use(collider_body: PhysicsBody3D) -> void:
 				task_completed.emit()
 				
 			return # We found our item, no need to keep looping
+
+# ADD THIS ENTIRE FUNCTION
+func get_progress_string() -> String:
+	if chosen_food_ids.is_empty():
+		return ""
+		
+	# This assumes you start with 4. Change '4' if it's different.
+	var total_food = 4
+	var covered = total_food - chosen_food_ids.size()
+	
+	var food_text = "%d/%d food covered" % [covered, total_food]
+	var cover_text = "Covers: %d" % covers_player_is_holding
+	
+	# This will create two lines of text
+	return food_text + "\n" + cover_text

@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://b4vqsmmw8umat"]
 
 [ext_resource type="PackedScene" uid="uid://ceah5dbjd0bxm" path="res://game/pause_menu.tscn" id="1_3qdfi"]
-[ext_resource type="Script" uid="uid://b2mthbd5crqv5" path="res://scripts/player_ui.gd" id="1_nw27i"]
+[ext_resource type="Script" uid="uid://b2mthbd5crqv5" path="res://scripts/player_menu.gd" id="1_nw27i"]
 [ext_resource type="Texture2D" uid="uid://rwtq0qgxe3e7" path="res://materials/dot (1) (1).png" id="2_waps8"]
 
-[node name="player_ui" type="Control"]
+[node name="Menu" type="Control"]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15

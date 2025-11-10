@@ -298,3 +298,10 @@ func _disable_all_remaining_shadows() -> void:
 # --- (No changes, just added for completeness) ---
 func get_bottle_number() -> int:
 	return chosen_bottle
+	# ADD THIS ENTIRE FUNCTION
+func get_progress_string() -> String:
+	# If task is done, return an empty string to hide it
+	if drops_deployed_count >= 2:
+		return ""
+		
+	return "%d/2 Lana bottles deployed" % drops_deployed_count

@@ -171,6 +171,7 @@
 [ext_resource type="PackedScene" uid="uid://dcrr2bsxdk5on" path="res://assets/glb_models/statues/statue_robe_figure.tscn" id="127_xxycr"]
 [ext_resource type="PackedScene" uid="uid://daxaild37icn7" path="res://game/uncleaned_statue_ni_ante.tscn" id="128_dyeyr"]
 [ext_resource type="PackedScene" uid="uid://bpbwf4afn53xl" path="res://game/uncleaned_mary_statue.tscn" id="129_s8tip"]
+[ext_resource type="Script" uid="uid://rn4ndis8ai1v" path="res://game/task_close_windows.gd" id="129_ww5kt"]
 [ext_resource type="PackedScene" uid="uid://cl2dmyvev1rhn" path="res://game/uncleaned_statue_figure.tscn" id="130_klyxg"]
 [ext_resource type="AudioStream" uid="uid://bdu2g3rov5k8u" path="res://soundfx/window_double_close.mp3" id="131_m1vgo"]
 [ext_resource type="AudioStream" uid="uid://twfn3hu6qwiy" path="res://soundfx/cleaning_statue.mp3" id="131_u8565"]
@@ -582,7 +583,7 @@ size = Vector3(1.935791, 0.79211426, 5.280243)
 size = Vector3(3.6227875, 6.2575684, 3.3591385)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2hkfm"]
-size = Vector3(0.6954195, 1.4609356, 1.0134723)
+size = Vector3(0.6954195, 1.4609356, 1.0806556)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pybr7"]
 size = Vector3(45.953857, 135.48059, 32.736824)
@@ -593,82 +594,6 @@ height = 36.949024
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h0fog"]
 size = Vector3(0.3519287, 0.5566406, 1)
-
-[sub_resource type="GDScript" id="GDScript_m1vgo"]
-script/source = "extends Node3D
-signal task_completed
-
-var all_windows: Array = []
-var chosen_windows_to_close: Array = [] 
-@onready var windows_Scattered = $windowsAroundTheHouse
-@onready var window_double_close: AudioStreamPlayer3D = $Window_Double_Close
-@onready var window_single_close: AudioStreamPlayer3D = $Window_Single_Close
-
-func _ready():
-	all_windows = windows_Scattered.get_children()
-	deactivate_all()
-
-func initialize_task():
-	randomize()
-	all_windows.shuffle()
-	chosen_windows_to_close = all_windows.slice(0, 10)
-	update_window_tasking()
-
-func deactivate_all():
-	for window_node in all_windows:
-		var anim_player: AnimationPlayer = window_node.get_node_or_null(\"WindowAnimation\")
-		var collision_shape: CollisionShape3D = window_node.get_node_or_null(\"StaticBody3D/CollisionShape3D\")
-
-		if not anim_player or not collision_shape:
-			# Only warn if the node is missing on initial load
-			# push_warning(\"Window %s is missing key components\" % window_node.name)
-			continue
-		
-		# This is the \"else\" block from your original function:
-		# Play the \"close\" animation to ensure it's shut
-		anim_player.play(\"close\")
-		# Disable collision
-		collision_shape.set_deferred(\"disabled\", true)
-		
-func update_window_tasking():
-	for window_node in all_windows:
-		var is_a_chosen_window = (window_node in chosen_windows_to_close)
-		
-		var anim_player: AnimationPlayer = window_node.get_node_or_null(\"WindowAnimation\")
-		var collision_shape: CollisionShape3D = window_node.get_node_or_null(\"StaticBody3D/CollisionShape3D\")
-
-		if not anim_player or not collision_shape:
-			push_warning(\"Window %s is missing AnimationPlayer or StaticBody3D/CollisionShape3D\" % window_node.name)
-			continue
-
-		if is_a_chosen_window:
-			anim_player.play_backwards(\"close\")
-			collision_shape.set_deferred(\"disabled\", false)
-		else:
-			anim_player.play(\"close\")
-			collision_shape.set_deferred(\"disabled\", true)
-
-func use(collider_body: PhysicsBody3D):
-	var window_node = collider_body.get_parent()
-	if window_node in chosen_windows_to_close:
-		var anim_player: AnimationPlayer = window_node.get_node_or_null(\"WindowAnimation\")
-		var collision_shape: CollisionShape3D = window_node.get_node_or_null(\"StaticBody3D/CollisionShape3D\")
-		if anim_player:
-			anim_player.play(\"close\")
-			var node_name: String = window_node.name
-			if node_name.begins_with(\"single\"):
-				window_single_close.play()
-			elif node_name.begins_with(\"double\"):
-				window_double_close.play()
-			elif node_name.begins_with(\"quadruple\"):
-				window_double_close.play()
-		if collision_shape:
-			collision_shape.set_deferred(\"disabled\", true)
-		chosen_windows_to_close.erase(window_node)
-		if chosen_windows_to_close.is_empty():
-			print(\"TASK_WINDOWS: All windows closed. Task complete.\")
-			task_completed.emit()
-"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kirwq"]
 size = Vector3(2.9556324, 3.0496216, 0.761101)
@@ -2726,7 +2651,7 @@ shape = SubResource("BoxShape3D_h0fog")
 stream = ExtResource("131_u8565")
 
 [node name="Task_Close_Windows" type="Node3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS"]
-script = SubResource("GDScript_m1vgo")
+script = ExtResource("129_ww5kt")
 
 [node name="windowsAroundTheHouse" type="Node3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Close_Windows"]
 
@@ -3618,6 +3543,15 @@ transform = Transform3D(1.6158767, 0, 1.178534, 0, 2, 0, -1.178534, 0, 1.6158767
 
 [node name="broken mirror" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS" instance=ExtResource("94_6u8h5")]
 transform = Transform3D(-4.371139e-08, 0, -1.38, 0, 1, 0, 1, 0, -6.032172e-08, -26.107483, -2.375066, -21.67367)
+
+[node name="si ante" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS" instance=ExtResource("139_uwpgj")]
+transform = Transform3D(5.467866e-07, 0, -2.80825, 0, 2.80825, 0, 2.80825, 0, 5.467866e-07, -14.901456, -4.119707, 14.8287735)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/si ante"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS/si ante/StaticBody3D"]
+transform = Transform3D(0.9999997, 0, 1.1175857e-08, 0, 1, 0, -1.1175857e-08, 0, 0.9999997, 0.06208372, -0.021709561, -0.56807184)
+shape = SubResource("BoxShape3D_2hkfm")
 
 [node name="old cabinet" parent="doors/NavigationRegion3D/ITEMS/BASEMENT ITEMS" instance=ExtResource("95_vcrf0")]
 transform = Transform3D(-2.39, 0, -3.6088e-07, 0, 2.39, 0, 3.6088e-07, 0, -2.39, -9.9534025, -3.5966868, 15.1252575)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://o7gchgjqr1i6"]
+[gd_scene load_steps=41 format=3 uid="uid://o7gchgjqr1i6"]
 
 [ext_resource type="PackedScene" uid="uid://bklxl232veydp" path="res://assets/player/first_person_arm.tscn" id="1_dadds"]
 [ext_resource type="Shader" uid="uid://bt1lbo5yomj25" path="res://game/shaders/retro_camera.gdshader" id="2_w5y0b"]
@@ -20,7 +20,7 @@
 [ext_resource type="FontFile" uid="uid://dd6gyxnwoo3dv" path="res://assets/Fonts/Rawrote Demo.ttf" id="18_a3s55"]
 [ext_resource type="Texture2D" uid="uid://ddgkjxww6k3co" path="res://assets/images/istockphoto-1131985206-612x612-removebg-preview.png" id="19_sghav"]
 [ext_resource type="Texture2D" uid="uid://doceo16aqib2w" path="res://assets/images/istockphoto-1131985206-612x612__1_-removebg-preview.png" id="20_a3s55"]
-[ext_resource type="PackedScene" uid="uid://bq0vcrfbroj3a" path="res://dialogues/intro_dialogue.tscn" id="21_opbur"]
+[ext_resource type="PackedScene" path="res://dialogues/intro_dialogue.tscn" id="21_opbur"]
 
 [sub_resource type="GDScript" id="GDScript_sh265"]
 script/source = "extends CharacterBody3D
@@ -526,6 +526,13 @@ expand_margin_bottom = 3.0
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vc3l"]
 bg_color = Color(0.67659426, 0.60666937, 0, 1)
 
+[sub_resource type="FontVariation" id="FontVariation_fw65x"]
+base_font = ExtResource("16_hobtg")
+
+[sub_resource type="LabelSettings" id="LabelSettings_oxik7"]
+font = SubResource("FontVariation_fw65x")
+font_size = 33
+
 [sub_resource type="FontVariation" id="FontVariation_opbur"]
 base_font = ExtResource("16_hobtg")
 
@@ -538,14 +545,14 @@ base_font = ExtResource("18_a3s55")
 
 [sub_resource type="LabelSettings" id="LabelSettings_h2ex5"]
 font = SubResource("FontVariation_oxik7")
-font_size = 150
+font_size = 100
 
 [sub_resource type="FontVariation" id="FontVariation_cvpk3"]
 base_font = ExtResource("18_a3s55")
 
 [sub_resource type="LabelSettings" id="LabelSettings_8t331"]
 font = SubResource("FontVariation_cvpk3")
-font_size = 150
+font_size = 100
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.625, 0)
@@ -708,23 +715,24 @@ offset_bottom = 731.0
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("15_7vc3l")
 
-[node name="Label" type="Label" parent="PlayerScreenUI"]
-offset_top = 7.0
-offset_right = 485.0
-offset_bottom = 340.0
+[node name="TaskToDo Label" type="Label" parent="PlayerScreenUI"]
+offset_left = 11.0
+offset_top = 214.0
+offset_right = 566.99994
+offset_bottom = 753.6801
 scale = Vector2(1, 0.8375331)
 text = "Todo:
 
 >SAMPLE TASK
 >SAMPLE TASK
 >SAMPLE TASK"
-label_settings = SubResource("LabelSettings_fw65x")
+label_settings = SubResource("LabelSettings_oxik7")
 
-[node name="night" type="Label" parent="PlayerScreenUI"]
-offset_left = 540.0
-offset_top = 1.000061
-offset_right = 1433.0
-offset_bottom = 145.47202
+[node name="Night Counter" type="Label" parent="PlayerScreenUI"]
+offset_left = 544.0
+offset_top = 9.000001
+offset_right = 1437.0
+offset_bottom = 153.47195
 scale = Vector2(1, 0.8375331)
 text = "NIGHT 1"
 label_settings = SubResource("LabelSettings_fw65x")
@@ -733,24 +741,25 @@ horizontal_alignment = 1
 [node name="Panel" type="Panel" parent="PlayerScreenUI"]
 offset_left = 1257.0
 offset_top = 12.0
-offset_right = 1920.0
-offset_bottom = 241.0
+offset_right = 1877.0
+offset_bottom = 12.0
 script = ExtResource("17_sghav")
 
-[node name="Label" type="Label" parent="PlayerScreenUI/Panel"]
+[node name="TimerLabelHour" type="Label" parent="PlayerScreenUI/Panel"]
 layout_mode = 0
-offset_left = -3.0
-offset_right = 208.0
-offset_bottom = 204.0
+offset_left = 231.0
+offset_top = 43.0
+offset_right = 391.0
+offset_bottom = 181.0
 text = "12:"
 label_settings = SubResource("LabelSettings_h2ex5")
 
-[node name="Label2" type="Label" parent="PlayerScreenUI/Panel"]
+[node name="TimerLabelMinutes" type="Label" parent="PlayerScreenUI/Panel"]
 layout_mode = 0
-offset_left = 357.0
-offset_top = 8.0
-offset_right = 802.0
-offset_bottom = 212.0
+offset_left = 435.0
+offset_top = 44.0
+offset_right = 542.0
+offset_bottom = 144.0
 text = "00 "
 label_settings = SubResource("LabelSettings_8t331")
 

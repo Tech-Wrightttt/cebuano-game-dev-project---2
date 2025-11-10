@@ -184,3 +184,18 @@ func use(collider_body: PhysicsBody3D) -> void:
 				# --- RE-ADDED SIGNAL EMIT ---
 				task_completed.emit()
 			return
+
+# ADD THIS ENTIRE FUNCTION
+func get_progress_string() -> String:
+	if chosen_mirror_ids.is_empty():
+		return ""
+		
+	# This assumes you start with 3. Change '3' if it's different.
+	var total_mirrors = 3
+	var covered = total_mirrors - chosen_mirror_ids.size()
+	
+	var mirror_text = "%d/%d mirrors covered" % [covered, total_mirrors]
+	var towel_text = "Towels: %d" % towels_player_is_holding
+	
+	# This will create two lines of text
+	return mirror_text + "\n" + towel_text
