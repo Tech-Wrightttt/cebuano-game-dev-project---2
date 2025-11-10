@@ -887,7 +887,7 @@ transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -33.
 
 [node name="ghost" parent="doors" node_paths=PackedStringArray("patrol_destinations") instance=ExtResource("87_p0swl")]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -0.5895457, 3.2798204, -15.338942)
-patrol_destinations = [NodePath("../destination"), NodePath("../destination1"), NodePath("../destination2"), NodePath("../destination3"), NodePath("../destination4"), NodePath("../destination5"), NodePath("../destination6"), NodePath("../destination7"), NodePath("../destination8"), NodePath("../destination9"), NodePath("../destination12")]
+patrol_destinations = [NodePath("../destination"), NodePath("../destination1"), NodePath("../destination2"), NodePath("../destination3"), NodePath("../destination4"), NodePath("../destination5"), NodePath("../destination6"), NodePath("../destination7"), NodePath("../destination8"), NodePath("../destination9"), NodePath("../destination10"), NodePath("../destination11"), NodePath("../destination12"), NodePath("../destination12"), NodePath("../destination12")]
 
 [node name="destination" parent="doors" instance=ExtResource("86_d2t1g")]
 transform = Transform3D(0.5811646, 0, 0, 0, 0.44509375, 0, 0, 0, 0.68289566, -29.566029, 8.513035, -10.822058)
@@ -918,6 +918,12 @@ transform = Transform3D(0.5811646, 0, 0, 0, 0.44509375, 0, 0, 0, 0.68289566, -11
 
 [node name="destination9" parent="doors" instance=ExtResource("86_d2t1g")]
 transform = Transform3D(0.5811646, 0, 0, 0, 0.44509375, 0, 0, 0, 0.68289566, 0.7394712, 8.513035, -18.124752)
+
+[node name="destination10" parent="doors" instance=ExtResource("86_d2t1g")]
+transform = Transform3D(0.5811646, 0, 0, 0, 0.44509375, 0, 0, 0, 0.68289566, -33.70299, 8.513035, -18.124752)
+
+[node name="destination11" parent="doors" instance=ExtResource("86_d2t1g")]
+transform = Transform3D(0.5811646, 0, 0, 0, 0.44509375, 0, 0, 0, 0.68289566, -27.695404, 2.49, -16.72647)
 
 [node name="destination12" parent="doors" instance=ExtResource("86_d2t1g")]
 transform = Transform3D(0.5811646, 0, 0, 0, 0.44509375, 0, 0, 0, 0.68289566, -25.978, -5.58, -1.482)
@@ -1177,7 +1183,6 @@ shape = SubResource("BoxShape3D_2xh2d")
 visible = false
 
 [node name="1ST FLOOR ITEMS" type="Node3D" parent="doors/NavigationRegion3D/ITEMS"]
-visible = false
 
 [node name="gamit sa balay" type="Node3D" parent="doors/NavigationRegion3D/ITEMS/1ST FLOOR ITEMS"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12.441463)
