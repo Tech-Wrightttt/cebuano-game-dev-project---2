@@ -1,0 +1,89 @@
+[gd_scene load_steps=7 format=3 uid="uid://bq0vcrfbroj3a"]
+
+[ext_resource type="FontFile" path="res://fonts/architect-s-daughter/ArchitectsDaughter32.tres" id="1_cre2u"]
+[ext_resource type="Script" uid="uid://bkj1i5kid4ugo" path="res://intro_dialogue.gd" id="1_gdslq"]
+[ext_resource type="FontFile" uid="uid://c126udgjjdqhf" path="res://fonts/cmu-typewriter/Typewriter/cmunit.ttf" id="2_gdslq"]
+
+[sub_resource type="Animation" id="Animation_xkdfw"]
+resource_name = "typewriter"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("text:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6.05),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_37klx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("text:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_74i25"]
+_data = {
+&"RESET": SubResource("Animation_37klx"),
+&"typewriter": SubResource("Animation_xkdfw")
+}
+
+[node name="intro_dialogue" type="Node3D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("1_gdslq")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.002
+anchor_top = 0.726
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.84000015
+offset_top = -50.080017
+offset_right = 1.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.10980392)
+
+[node name="speaker" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 139.0
+offset_top = 777.0
+offset_right = 557.0
+offset_bottom = 857.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_cre2u")
+theme_override_font_sizes/normal_font_size = 45
+text = "Paulette (You)"
+
+[node name="text" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 132.0
+offset_top = 875.0
+offset_right = 1838.0
+offset_bottom = 1027.0
+theme_override_colors/default_color = Color(1, 1, 0.3882353, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_gdslq")
+theme_override_font_sizes/normal_font_size = 46
+text = "Sa wakas! Nakarating nadin..... Bakit kaya ako pinapunta ni Lola Olet dito? Bago mag All Souls' moon pa sabi niya."
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+libraries = {
+&"": SubResource("AnimationLibrary_74i25")
+}
