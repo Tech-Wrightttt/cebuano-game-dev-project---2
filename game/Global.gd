@@ -42,3 +42,6 @@ func get_game_time() -> Dictionary:
 		"time_left": time_left,
 		"night_over": time_left <= 0
 	}
+	
+func get_night() -> int:
+	return current_night

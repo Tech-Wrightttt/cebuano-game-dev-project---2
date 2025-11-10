@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dl56j35ma0rbg"]
+
+[ext_resource type="PackedScene" uid="uid://c15m3kvlchdsu" path="res://assets/glb_models/chores/lanadrops.glb" id="1_sbrp8"]
+
+[node name="lanadrops" instance=ExtResource("1_sbrp8")]

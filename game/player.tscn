@@ -1,10 +1,9 @@
-[gd_scene load_steps=39 format=3 uid="uid://o7gchgjqr1i6"]
+[gd_scene load_steps=38 format=3 uid="uid://o7gchgjqr1i6"]
 
 [ext_resource type="PackedScene" uid="uid://bklxl232veydp" path="res://assets/player/first_person_arm.tscn" id="1_dadds"]
 [ext_resource type="Shader" uid="uid://bt1lbo5yomj25" path="res://game/shaders/retro_camera.gdshader" id="2_w5y0b"]
 [ext_resource type="Shader" uid="uid://di14027j7obwb" path="res://game/shaders/VHS.gdshader" id="3_du4nq"]
 [ext_resource type="Script" uid="uid://bwvlckt1br7ru" path="res://game/player_interact.gd" id="4_p0vpi"]
-[ext_resource type="Shader" uid="uid://ddx2gqb8873he" path="res://game/playershaders/thirdeyeshader.gdshader" id="5_d631c"]
 [ext_resource type="AudioStream" uid="uid://d8o0j7aod6kg" path="res://soundfx/wood.mp3" id="6_wkljg"]
 [ext_resource type="AudioStream" uid="uid://on07xa2628g8" path="res://soundfx/grass.mp3" id="7_iyaem"]
 [ext_resource type="AudioStream" uid="uid://cj3hykjw12mvo" path="res://soundfx/outside_bg.ogg" id="8_iyaem"]
@@ -55,7 +54,7 @@ const BOB_LERP: float = 2.0
 
 # Stairs
 const MAX_STEP_HEIGHT: float = 0.5
-@onready var overlay = %ThirdEyeShader
+@onready var overlay = get_node(\"../PostProcessEffect2\")
 var overlay_visible := false
 @onready var progress_bar = $CanvasLayer2/SanityBar
 @onready var sprint_bar = $CanvasLayer2/SprintBar
@@ -194,6 +193,7 @@ func _input(event: InputEvent) -> void:
 		_try_punch()
 	
 	if event.is_action_pressed(\"move_third_eye\"):
+		print(\"test!\")
 		overlay_visible = !overlay_visible
 		if overlay: 
 			overlay.visible = overlay_visible
@@ -374,7 +374,14 @@ func _unhandled_input(event: InputEvent) -> void:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 "
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_opbur"]
+albedo_color = Color(0.19607843, 1, 1, 1)
+stencil_mode = 3
+stencil_flags = 2
+stencil_reference = 2
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_sh265"]
+material = SubResource("StandardMaterial3D_opbur")
 radius = 0.3
 height = 3.25
 
@@ -398,14 +405,6 @@ shader_parameter/wiggle = 0.03
 shader_parameter/wiggle_speed = 25.0
 shader_parameter/smear = 0.4610000218975
 shader_parameter/blur_samples = 15
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4fto2"]
-shader = ExtResource("5_d631c")
-shader_parameter/brightness = 1.5
-shader_parameter/contrast = 1.2
-shader_parameter/vignette_strength = 0.8
-shader_parameter/noise_strength = 0.15
-shader_parameter/grain_size = 3.0
 
 [sub_resource type="Animation" id="Animation_4fto2"]
 length = 0.001
@@ -505,7 +504,6 @@ collision_mask = 7
 script = SubResource("GDScript_sh265")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-visible = false
 mesh = SubResource("CapsuleMesh_sh265")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -546,7 +544,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Interaction_Label" type="Label" parent="Head/Camera3D/Filters"]
-visible = false
 anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.817
@@ -558,6 +555,7 @@ offset_right = 103.0
 offset_bottom = 18.159912
 theme_override_font_sizes/font_size = 24
 text = "*"
+horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="BackBufferCopy_VHS" type="BackBufferCopy" parent="Head/Camera3D/Filters"]
@@ -573,16 +571,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ThirdEye" type="CanvasLayer" parent="Head/Camera3D"]
-unique_name_in_owner = true
-
-[node name="ThirdEyeShader" type="ColorRect" parent="Head/Camera3D/ThirdEye"]
-unique_name_in_owner = true
-material = SubResource("ShaderMaterial_4fto2")
-offset_left = 1.0
-offset_right = 3350.0
-offset_bottom = 2134.0
-
 [node name="ObjectInteractor" type="RayCast3D" parent="Head"]
 transform = Transform3D(1.5, 0, 0, 0, -6.556708e-08, -1.5, 0, 1.5, -6.556708e-08, 0, -0.099999905, 0)
 target_position = Vector3(0, -2.5, 0)
@@ -595,16 +583,6 @@ target_position = Vector3(0, -0.55, 0)
 
 [node name="StairsBelowRayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.6, 0)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
-
-[node name="ThirdEyeShader" type="ColorRect" parent="CanvasLayer"]
-visible = false
-material = SubResource("ShaderMaterial_4fto2")
-offset_left = 1.0
-offset_right = 3350.0
-offset_bottom = 2134.0
 
 [node name="HeadBob" type="AnimationPlayer" parent="."]
 libraries = {
