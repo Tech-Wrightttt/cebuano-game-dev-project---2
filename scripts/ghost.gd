@@ -27,7 +27,6 @@ func _ready() -> void:
 	visible = true
 	animation_player.play("ghost_idle")
 	await get_tree().create_timer(2.0).timeout
-	print("👻 Ghost ready!")
 	
 	if lana_task:
 		lana_task.add_to_group("lana_task")
@@ -51,7 +50,6 @@ func _process(delta: float) -> void:
 	if chasing:
 		if speed != 4.0:
 			speed = 4.0
-			print("⚡ Ghost speed increased to 4.0 (chasing)")
 		if chase_timer < 15:
 			chase_timer += 1 * delta
 		else:
@@ -134,7 +132,6 @@ func chase_player(cast: RayCast3D):
 		var hit = cast.get_collider()
 		if hit and hit.is_in_group("player"):
 			if not chasing:
-				print("👁️ Ghost raycast spotted player!")
 				# Save current lure position before chasing
 				if lured:
 					previous_lure_position = lure_target_position
@@ -173,10 +170,8 @@ func start_chasing_player():
 func check_for_new_lure() -> void:
 	var current_pos = lana_task.current_lana_pos
 	if current_pos != Vector3.ZERO and current_pos != last_known_lure_pos:
-		print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
 		print("🔔 Ghost detected NEW lure at: ", current_pos)
 		print("🚫 CANCELING PATROL - Going to lure immediately!")
-		print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
 		last_known_lure_pos = current_pos
 		lured = true
 		lure_target_position = current_pos
@@ -203,7 +198,6 @@ func resume_lure_behavior() -> void:
 	
 	if lana_task.current_lana_pos != Vector3.ZERO:
 		print("🔄 Found another active lure at: ", lana_task.current_lana_pos)
-		print("🏃 Heading there!")
 		lured = true
 		lure_target_position = lana_task.current_lana_pos
 		last_known_lure_pos = lana_task.current_lana_pos
@@ -228,8 +222,6 @@ func is_lure_still_there(pos: Vector3) -> bool:
 # 😋 Consume lure when reached
 func consume_lure() -> void:
 	if lana_task:
-		print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-		print("😋 Ghost reached lure position!")
 		print("🍽️ Consuming lure at: ", lure_target_position)
 		lana_task.consume_lure_at_position(lure_target_position)
 		lured = false
@@ -242,14 +234,12 @@ func consume_lure() -> void:
 		if lana_task.current_lana_pos != Vector3.ZERO:
 			print("🔄 Another lure detected at: ", lana_task.current_lana_pos)
 			print("🏃 Going there next!")
-			print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
 			lured = true
 			lure_target_position = lana_task.current_lana_pos
 			last_known_lure_pos = lana_task.current_lana_pos
 			agent.target_position = lure_target_position
 		else:
 			print("📍 No more lures, resuming patrol")
-			print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
 			pick_destination()
 
 # 🎲 Pick random patrol destination
@@ -263,7 +253,7 @@ func pick_destination(dont_choose = null):
 				destination = patrol_destinations[dont_choose + 1]
 			elif dont_choose > 0 and dont_choose <= patrol_destinations.size() - 1:
 				destination = patrol_destinations[dont_choose - 1]
-		print("🚶 Picked patrol destination: ", destination.name if destination else "null")
+		#print("🚶 Picked patrol destination: ", destination.name if destination else "null")
 
 # 🎯 Update navigation target
 func update_target_location():
@@ -278,7 +268,6 @@ func haunt_player():
 	# Enable chase raycast
 	if !$chasecast/chasecast.enabled:
 		$chasecast/chasecast.enabled = true
-		print("👁️ Chase raycast enabled")
 	
 	# Look at player
 	$chasecast.look_at(player.global_transform.origin)
@@ -296,9 +285,7 @@ func trigger_jumpscare():
 	killed = true
 	performing_jumpscare = true
 	
-	print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
 	print("💀 JUMPSCARE! Player caught!")
-	print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
 	
 	# IMMEDIATELY stop all ghost movement
 	chasing = false
