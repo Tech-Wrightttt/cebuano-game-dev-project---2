@@ -1,0 +1,122 @@
+[gd_scene load_steps=9 format=3 uid="uid://j4ckpg0aygpu"]
+
+[ext_resource type="Script" uid="uid://74tx5x2mc8v7" path="res://game/cutscenes/floor_wake_up.gd" id="1_f2i0e"]
+[ext_resource type="PackedScene" uid="uid://c6nnpmjnwv4g2" path="res://game/house.tscn" id="2_tagwd"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6tc47"]
+sky_top_color = Color(0.12270618, 0.04560589, 0.0034415955, 1)
+sky_horizon_color = Color(0.22708711, 0.10912841, 0.020405067, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Sky" id="Sky_a202f"]
+sky_material = SubResource("ProceduralSkyMaterial_6tc47")
+
+[sub_resource type="Environment" id="Environment_spasx"]
+background_mode = 2
+sky = SubResource("Sky_a202f")
+ambient_light_sky_contribution = 0.0
+ambient_light_energy = 0.1
+tonemap_mode = 3
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.04
+volumetric_fog_albedo = Color(0.6117647, 0.6117647, 0.6117647, 1)
+volumetric_fog_emission = Color(0.23921569, 0.07450981, 0.05882353, 1)
+volumetric_fog_emission_energy = 0.1
+volumetric_fog_length = 128.0
+adjustment_enabled = true
+adjustment_brightness = 1.2
+
+[sub_resource type="Animation" id="Animation_f2i0e"]
+resource_name = "wake"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.36, 4.03, 6.44, 9.766666, 13.31697, 14.93697),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-7.007, 2.522, -11.01), Vector3(-7.007, 2.522, -11.01), Vector3(-7.007, 2.522, -11.01), Vector3(-7.372, 2.907, -11.01), Vector3(-7.357, 4.907, -10.84), Vector3(-7.177, 5.127, -10.86), Vector3(-7.177, 5.237, -10.86)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.37, 4.02, 6.47, 9.633333, 13.31697),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -3.3492868, -1.7069321), Vector3(0, -3.2183871, -1.7069321), Vector3(0, -3.3492868, -1.7069321), Vector3(0.25307274, -3.3492868, -0.45029494), Vector3(0.25307274, -3.3492868, 0.012217305), Vector3(-0.017453292, -4.841543, 0.012217305)]
+}
+
+[sub_resource type="Animation" id="Animation_tagwd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-7.007, 2.522, -11.01)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -3.3492868, -1.7069321)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tagwd"]
+_data = {
+&"RESET": SubResource("Animation_tagwd"),
+&"wake": SubResource("Animation_f2i0e")
+}
+
+[node name="floor wake up" type="Node3D"]
+script = ExtResource("1_f2i0e")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.13279897, -0.96945566, 0.20620415, -0.9907478, -0.13571563, 0, 0.027985126, -0.2042963, -0.978509, -7.007, 2.522, -11.01)
+
+[node name="Spotlight" type="Node3D" parent="Camera3D"]
+transform = Transform3D(0.9999603, 0.008861089, 0.000989683, -0.00886109, 0.9753192, 0.22062168, 0.0009896941, -0.22062166, 0.975359, 0.030244827, 0, 0.1616478)
+
+[node name="Flashlight" type="SpotLight3D" parent="Camera3D/Spotlight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.77986765)
+light_color = Color(0.93, 0.65472, 0.5859, 1)
+light_energy = 16.0
+light_volumetric_fog_energy = 0.0
+spot_range = 9.136
+spot_attenuation = 1.15
+spot_angle_attenuation = 1.1095695
+
+[node name="House" parent="." instance=ExtResource("2_tagwd")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_spasx")
+
+[node name="Sunlight (for testing purposes)" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+visible = false
+shadow_enabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_tagwd")
+}

@@ -1,10 +1,10 @@
 [gd_scene load_steps=15 format=3 uid="uid://12utn35f48i6"]
 
-[ext_resource type="Script" uid="uid://dos0htw2amfyl" path="res://game/cutscenes/ending_dialogue.gd" id="1_crgll"]
-[ext_resource type="Script" uid="uid://m4ttjul5ggyf" path="res://dialogues/telephone_dialogue.gd" id="1_uc6nr"]
-[ext_resource type="FontFile" uid="uid://b02kdb4ogrrq5" path="res://fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="2_uc6nr"]
-[ext_resource type="FontFile" uid="uid://c126udgjjdqhf" path="res://fonts/cmu-typewriter/Typewriter/cmunit.ttf" id="3_43280"]
-[ext_resource type="PackedScene" uid="uid://c6nnpmjnwv4g2" path="res://game/house.tscn" id="4_rsgu8"]
+[ext_resource type="Script" uid="uid://m4ttjul5ggyf" path="res://dialogues/telephone_dialogue.gd" id="1_dspbc"]
+[ext_resource type="Script" uid="uid://dos0htw2amfyl" path="res://game/cutscenes/ending_dialogue.gd" id="2_6ib7w"]
+[ext_resource type="FontFile" uid="uid://b02kdb4ogrrq5" path="res://fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="3_g8rtv"]
+[ext_resource type="FontFile" uid="uid://c126udgjjdqhf" path="res://fonts/cmu-typewriter/Typewriter/cmunit.ttf" id="4_g2edm"]
+[ext_resource type="PackedScene" uid="uid://c6nnpmjnwv4g2" path="res://game/house.tscn" id="5_fb2tr"]
 
 [sub_resource type="Animation" id="Animation_dncil"]
 length = 0.001
@@ -41,6 +41,45 @@ tracks/0/keys = {
 _data = {
 &"RESET": SubResource("Animation_dncil"),
 &"typewriter": SubResource("Animation_e0vmp")
+}
+
+[sub_resource type="Animation" id="Animation_rsgu8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-22.651985, 4.7270927, -12.266112)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.7231462, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_uc6nr"]
@@ -83,45 +122,6 @@ tracks/2/keys = {
 "values": [true, false]
 }
 
-[sub_resource type="Animation" id="Animation_rsgu8"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-22.651985, 4.7270927, -12.266112)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Camera3D:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, -1.7231462, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Camera3D:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_43280"]
 _data = {
 &"RESET": SubResource("Animation_rsgu8"),
@@ -134,12 +134,12 @@ sky_horizon_color = Color(0.22708711, 0.10912841, 0.020405067, 1)
 ground_bottom_color = Color(0, 0, 0, 1)
 ground_horizon_color = Color(0, 0, 0, 1)
 
-[sub_resource type="Sky" id="Sky_a202f"]
+[sub_resource type="Sky" id="Sky_jd5bi"]
 sky_material = SubResource("ProceduralSkyMaterial_ohjih")
 
 [sub_resource type="Environment" id="Environment_dinuv"]
 background_mode = 2
-sky = SubResource("Sky_a202f")
+sky = SubResource("Sky_jd5bi")
 ambient_light_sky_contribution = 0.0
 ambient_light_energy = 0.1
 tonemap_mode = 3
@@ -153,7 +153,7 @@ adjustment_enabled = true
 adjustment_brightness = 1.2
 
 [node name="telephone_scene" type="Node3D"]
-script = ExtResource("1_uc6nr")
+script = ExtResource("1_dspbc")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-0.1517612, 0, -0.9884172, 0, 1, 0, 0.9884172, 0, -0.1517612, -22.651985, 4.7270927, -12.266112)
@@ -171,7 +171,7 @@ spot_attenuation = 1.15
 spot_angle_attenuation = 1.1095695
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-script = ExtResource("1_crgll")
+script = ExtResource("2_6ib7w")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = -1
@@ -194,7 +194,7 @@ offset_top = 787.0
 offset_right = 681.0
 offset_bottom = 884.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("2_uc6nr")
+theme_override_fonts/normal_font = ExtResource("3_g8rtv")
 theme_override_font_sizes/normal_font_size = 41
 
 [node name="text" type="RichTextLabel" parent="CanvasLayer"]
@@ -204,12 +204,12 @@ offset_right = 1797.0
 offset_bottom = 1007.0
 theme_override_colors/default_color = Color(1, 1, 0.3529412, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("3_43280")
+theme_override_fonts/normal_font = ExtResource("4_g2edm")
 theme_override_font_sizes/normal_font_size = 36
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="House" parent="." instance=ExtResource("4_rsgu8")]
+[node name="House" parent="." instance=ExtResource("5_fb2tr")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

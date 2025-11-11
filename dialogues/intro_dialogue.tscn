@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bq0vcrfbroj3a"]
 
 [ext_resource type="FontFile" path="res://fonts/architect-s-daughter/ArchitectsDaughter32.tres" id="1_cre2u"]
-[ext_resource type="Script" uid="uid://bkj1i5kid4ugo" path="res://intro_dialogue.gd" id="1_gdslq"]
+[ext_resource type="Script" uid="uid://bkj1i5kid4ugo" path="res://scripts/intro_dialogue.gd" id="1_gdslq"]
 [ext_resource type="FontFile" uid="uid://c126udgjjdqhf" path="res://fonts/cmu-typewriter/Typewriter/cmunit.ttf" id="2_gdslq"]
 
 [sub_resource type="Animation" id="Animation_xkdfw"]

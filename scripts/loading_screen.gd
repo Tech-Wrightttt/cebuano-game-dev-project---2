@@ -1,8 +1,14 @@
 extends CanvasLayer
 
+<<<<<<< Updated upstream
 @onready var fade_rect: ColorRect = get_node("ColorRect")
 @onready var loading_label: Label = get_node("ColorRect/VBoxContainer/Label")
 @onready var progress_bar: ProgressBar = get_node("ColorRect/VBoxContainer/ProgressBar")
+=======
+@onready var fade_rect: ColorRect = $ColorRect2/ColorRect
+@onready var loading_label: Label = $ColorRect2/ColorRect/VBoxContainer/Label
+@onready var progress_bar: ProgressBar = $ColorRect2/ColorRect/VBoxContainer/ProgressBar
+>>>>>>> Stashed changes
 
 var next_scene_path: String
 var loading: bool = false
@@ -10,6 +16,10 @@ var dot_timer: float = 0.0
 var dot_count: int = 0
 
 func _ready() -> void:
+	# Verify nodes exist before using them
+	if not _validate_nodes():
+		return
+	
 	# Start fully transparent
 	fade_rect.modulate.a = 0.0
 	loading_label.text = "Loading"
@@ -20,7 +30,24 @@ func _ready() -> void:
 	# Make sure this layer is on top
 	layer = 100
 
+func _validate_nodes() -> bool:
+	if not fade_rect:
+		push_error("❌ Fade_rect (ColorRect) node not found!")
+		return false
+	if not loading_label:
+		push_error("❌ Loading_label node not found!")
+		return false
+	if not progress_bar:
+		push_error("❌ Progress_bar node not found!")
+		return false
+	print("✅ All loading screen nodes validated")
+	return true
+
 func start_loading(scene_path: String) -> void:
+	if not fade_rect:
+		push_error("❌ Cannot start loading - fade_rect is null")
+		return
+	
 	print("🔄 Starting loading screen for: ", scene_path)
 	next_scene_path = scene_path
 	visible = true  # Make sure the loading screen is visible

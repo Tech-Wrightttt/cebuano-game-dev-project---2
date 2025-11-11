@@ -1,4 +1,4 @@
-[gd_scene load_steps=402 format=4 uid="uid://c6nnpmjnwv4g2"]
+[gd_scene load_steps=401 format=4 uid="uid://c6nnpmjnwv4g2"]
 
 [ext_resource type="Script" uid="uid://cmcetdgh8ky7t" path="res://scripts/house.gd" id="1_8tqyt"]
 [ext_resource type="Material" uid="uid://31nbyn23hg2q" path="res://materials/house_material.tres" id="1_f6s7v"]
@@ -7,7 +7,7 @@
 [ext_resource type="ArrayMesh" uid="uid://cduhe8fc6hyq8" path="res://assets/house/house_basement_wall.obj" id="2_sgyp1"]
 [ext_resource type="ArrayMesh" uid="uid://dkeuruqi54p6n" path="res://assets/house/house_basement_floor.obj" id="3_djvyg"]
 [ext_resource type="Texture2D" uid="uid://cm6acpp76ieuo" path="res://textures/house/basement floor..jpg" id="3_eeqtj"]
-[ext_resource type="PackedScene" uid="uid://co45n63o5btcn" path="res://assets/glb_models/nature/plantsa/old_iron.glb" id="3_jer8c"]
+[ext_resource type="PackedScene" uid="uid://qxbgqb8okv6m" path="res://assets/glb_models/nature/plantsa/old_iron.glb" id="3_jer8c"]
 [ext_resource type="PackedScene" uid="uid://batubq50dnos0" path="res://game/house_materials/windows_double.tscn" id="3_r85fh"]
 [ext_resource type="PackedScene" uid="uid://b2teowpxr3dyw" path="res://game/house_materials/windows_quad.tscn" id="4_r85fh"]
 [ext_resource type="ArrayMesh" uid="uid://c4hr82a5el8n4" path="res://assets/house/house_basement_ceiling.obj" id="4_v87ac"]
@@ -15,38 +15,38 @@
 [ext_resource type="PackedScene" uid="uid://cm5n27ewcws0o" path="res://game/house_materials/locker.tscn" id="6_3a0ml"]
 [ext_resource type="Texture2D" uid="uid://gkcld4u7jl4t" path="res://textures/house/wall basement.jpg" id="6_78vr8"]
 [ext_resource type="ArrayMesh" uid="uid://blafgyi6jmkkf" path="res://assets/house/house_1stFloor_floor.obj" id="6_h3s8l"]
-[ext_resource type="Texture2D" uid="uid://dn1l7w7r2veuw" path="res://assets/glb_models/decoratives/vase/vase_0.png" id="6_wgg7t"]
-[ext_resource type="Texture2D" uid="uid://dlxamo7llvtwm" path="res://assets/glb_models/decoratives/vase/vase_1.png" id="7_lulxl"]
+[ext_resource type="Texture2D" uid="uid://d4bjnsa83nfv4" path="res://assets/glb_models/decoratives/vase/vase_0.png" id="6_wgg7t"]
+[ext_resource type="Texture2D" uid="uid://bkv2lobewubny" path="res://assets/glb_models/decoratives/vase/vase_1.png" id="7_lulxl"]
 [ext_resource type="ArrayMesh" uid="uid://ddjhe1q3f64cs" path="res://assets/house/house_1stFloor_stairs.obj" id="7_sy0w3"]
-[ext_resource type="PackedScene" uid="uid://dnyd5vt8llw0i" path="res://assets/glb_models/appliance/piano/piano.glb" id="8_8j78o"]
+[ext_resource type="PackedScene" uid="uid://4umv3d3x0sjs" path="res://assets/glb_models/appliance/piano/piano.glb" id="8_8j78o"]
 [ext_resource type="Texture2D" uid="uid://cmuedyjmpqp2r" path="res://textures/house/door_wood.png" id="8_lfduw"]
 [ext_resource type="Texture2D" uid="uid://o7bpavlsry4o" path="res://textures/house/wood.jpg" id="8_lxqrr"]
-[ext_resource type="PackedScene" uid="uid://br2g8x35w3oou" path="res://assets/glb_models/decoratives/radio/old_radio.glb" id="9_0m7rp"]
+[ext_resource type="PackedScene" uid="uid://dy1i4fd2178le" path="res://assets/glb_models/decoratives/radio/old_radio.glb" id="9_0m7rp"]
 [ext_resource type="ArrayMesh" uid="uid://dths5gx7lhgpk" path="res://assets/house/house_1stFloor_railings.obj" id="9_w7ycr"]
-[ext_resource type="PackedScene" uid="uid://b26vxbohi5o6i" path="res://assets/glb_models/appliance/tv/soviet_tv_kvn_49.glb" id="10_cxeem"]
+[ext_resource type="PackedScene" uid="uid://bvkggs5cs1k4" path="res://assets/glb_models/appliance/tv/soviet_tv_kvn_49.glb" id="10_cxeem"]
 [ext_resource type="ArrayMesh" uid="uid://bif478twhqmg8" path="res://assets/house/house_2ndFloor_wall.obj" id="10_grb73"]
 [ext_resource type="Texture2D" uid="uid://cuvnmwed5ihoq" path="res://textures/house/floorwood.jpg" id="10_uwpgj"]
-[ext_resource type="PackedScene" uid="uid://cxt7ow8wabipp" path="res://assets/glb_models/furniture/vintage_sofa_23mb.glb" id="11_aqw7q"]
+[ext_resource type="PackedScene" uid="uid://d1oryaej72ttb" path="res://assets/glb_models/furniture/vintage_sofa_23mb.glb" id="11_aqw7q"]
 [ext_resource type="ArrayMesh" uid="uid://ba6mporhfimix" path="res://assets/house/house_2ndFloor_floor.obj" id="11_d2t1g"]
-[ext_resource type="PackedScene" uid="uid://kbgdlredynwg" path="res://assets/glb_models/appliance/electricfan/old_table_fan.glb" id="12_44fp5"]
+[ext_resource type="PackedScene" uid="uid://byhgr136syke0" path="res://assets/glb_models/appliance/electricfan/old_table_fan.glb" id="12_44fp5"]
 [ext_resource type="ArrayMesh" uid="uid://dg0u63u4cjo8o" path="res://assets/house/house_2ndFloor_railings.obj" id="12_p0swl"]
-[ext_resource type="PackedScene" uid="uid://c7gjl20e132o5" path="res://assets/glb_models/furniture/bookshelf/wooden_bookcases_with_books.glb" id="13_4j85k"]
+[ext_resource type="PackedScene" uid="uid://cedod4lkg87w" path="res://assets/glb_models/furniture/bookshelf/wooden_bookcases_with_books.glb" id="13_4j85k"]
 [ext_resource type="Texture2D" uid="uid://bu4l6x0nw24dp" path="res://textures/Roofs/Roofs_10-256x256.png" id="13_86tvv"]
 [ext_resource type="ArrayMesh" uid="uid://bab7m82mvhw0n" path="res://assets/house/house_1stFloorCR_wall.obj" id="14_3qwsg"]
 [ext_resource type="ArrayMesh" uid="uid://okyrs7cqyw8h" path="res://assets/house/house_roof.obj" id="14_glmle"]
 [ext_resource type="PackedScene" uid="uid://tljk6ijf53rp" path="res://assets/glb_models/dining table/game_ready_rustic_table_with_chairs.glb" id="15_7l508"]
 [ext_resource type="ArrayMesh" uid="uid://c7qn8hxxcsb1j" path="res://assets/house/house_1stFloorCR_floor.obj" id="15_re2uc"]
-[ext_resource type="PackedScene" uid="uid://cbyc4x7rvaq5y" path="res://assets/glb_models/decoratives/wallclock/vintage_wall_clock.glb" id="16_b5cxr"]
-[ext_resource type="PackedScene" uid="uid://cov1tn1i13v63" path="res://assets/glb_models/nature/plant/potted_plant_1.glb" id="17_wgg7t"]
+[ext_resource type="PackedScene" uid="uid://c1uf7a76hm3xd" path="res://assets/glb_models/decoratives/wallclock/vintage_wall_clock.glb" id="16_b5cxr"]
+[ext_resource type="PackedScene" uid="uid://707iy55ib8cp" path="res://assets/glb_models/nature/plant/potted_plant_1.glb" id="17_wgg7t"]
 [ext_resource type="PackedScene" uid="uid://cbalkhtrad1j2" path="res://game/house_materials/rug.tscn" id="18_lulxl"]
 [ext_resource type="PackedScene" uid="uid://br6sb3nrrxmx8" path="res://assets/glb_models/fireplace/fireplace_low_poly.glb" id="19_8j78o"]
-[ext_resource type="PackedScene" uid="uid://cugxbv5l6dwat" path="res://assets/glb_models/decoratives/rug/ancient_bird_carpet.glb" id="20_lulxl"]
-[ext_resource type="PackedScene" uid="uid://cxtxls3yuaq3y" path="res://assets/glb_models/nature/plant/snake_plant_2_low_poly.glb" id="21_nvdi6"]
+[ext_resource type="PackedScene" uid="uid://2pdl235dguyg" path="res://assets/glb_models/decoratives/rug/ancient_bird_carpet.glb" id="20_lulxl"]
+[ext_resource type="PackedScene" uid="uid://cr88koxvlwa1b" path="res://assets/glb_models/nature/plant/snake_plant_2_low_poly.glb" id="21_nvdi6"]
 [ext_resource type="ArrayMesh" uid="uid://5855l05mtqhm" path="res://assets/house/house_staircases_stairs.obj" id="21_yewax"]
 [ext_resource type="ArrayMesh" uid="uid://dbgupvuyr0b7r" path="res://assets/house/house_staircases_railings.obj" id="22_1tgmf"]
-[ext_resource type="PackedScene" uid="uid://cnetfb0lh64wi" path="res://assets/glb_models/decoratives/windowpane/old_wooden_window_from_medieval_ages_mid_poly.glb" id="22_7l508"]
+[ext_resource type="PackedScene" uid="uid://8208t2mwoa42" path="res://assets/glb_models/decoratives/windowpane/old_wooden_window_from_medieval_ages_mid_poly.glb" id="22_7l508"]
 [ext_resource type="Texture2D" uid="uid://b4s4kr1q5t1st" path="res://textures/Tile/Tile_25-256x256.png" id="22_puo31"]
-[ext_resource type="PackedScene" uid="uid://dn0fx1do0kb6g" path="res://assets/glb_models/decoratives/painting/victorian_framed_painting_pbr_game_ready.glb" id="24_1ixvk"]
+[ext_resource type="PackedScene" uid="uid://igw8bwtbb6ra" path="res://assets/glb_models/decoratives/painting/victorian_framed_painting_pbr_game_ready.glb" id="24_1ixvk"]
 [ext_resource type="Texture2D" uid="uid://cpi1hkcgflfls" path="res://textures/house/tiles cr.jpg" id="24_ar67c"]
 [ext_resource type="PackedScene" uid="uid://8xctfhe7hrwy" path="res://assets/glb_models/furniture/fbx.glb" id="25_cuchb"]
 [ext_resource type="PackedScene" uid="uid://cfqqhmbwhwrn1" path="res://assets/glb_models/furniture/wooden_stool_ucspai0fa_mid.glb" id="26_edapr"]
@@ -107,11 +107,11 @@
 [ext_resource type="PackedScene" uid="uid://ckcrkebv8berk" path="res://game/house_materials/fridge.tscn" id="76_eeqtj"]
 [ext_resource type="PackedScene" path="res://game/house_materials/table.tscn" id="78_u8565"]
 [ext_resource type="PackedScene" path="res://game/house_materials/fruits.tscn" id="79_pybr7"]
-[ext_resource type="PackedScene" uid="uid://sprxob0h16l0" path="res://assets/glb_models/appliance/electricfan/old_candle.glb" id="80_e4khn"]
+[ext_resource type="PackedScene" uid="uid://brnieuqyai24p" path="res://assets/glb_models/appliance/electricfan/old_candle.glb" id="80_e4khn"]
 [ext_resource type="PackedScene" uid="uid://y7pspaq0n4jf" path="res://assets/glb_models/furniture/bed_with_a_bed_cover.glb" id="83_w7ycr"]
 [ext_resource type="PackedScene" uid="uid://bxoa1koi7m64f" path="res://assets/glb_models/decoratives/wall_decoration_of_grapes_made_of_cork_stoppers.glb" id="85_0e3s6"]
 [ext_resource type="PackedScene" uid="uid://cdd2cjwl7r3mb" path="res://assets/glb_models/decoratives/radio_retrofuturism_lowpoly.glb" id="85_66ev2"]
-[ext_resource type="PackedScene" uid="uid://ddwamkqkvcmhd" path="res://assets/glb_models/appliance/electricfan/table_fan.glb" id="85_d2t1g"]
+[ext_resource type="PackedScene" uid="uid://c0nmgfbu3rh5g" path="res://assets/glb_models/appliance/electricfan/table_fan.glb" id="85_d2t1g"]
 [ext_resource type="PackedScene" uid="uid://bkrafnx215crh" path="res://game/destination.tscn" id="86_d2t1g"]
 [ext_resource type="PackedScene" uid="uid://dbom0jasgiob6" path="res://game/ghost.tscn" id="87_p0swl"]
 [ext_resource type="PackedScene" uid="uid://rdtges48iqdm" path="res://game/house_materials/set_table.tscn" id="88_e4khn"]
@@ -141,8 +141,8 @@
 [ext_resource type="PackedScene" uid="uid://bvf1mlhvc0mvt" path="res://assets/glb_models/basement/old_wooden_stool_ukopadbaw_low.glb" id="103_fcake"]
 [ext_resource type="PackedScene" uid="uid://dnnu02t7jckmg" path="res://assets/glb_models/decoratives/phone.glb" id="103_glj3f"]
 [ext_resource type="PackedScene" uid="uid://1qrow8q6otnv" path="res://game/house_materials/shelf2.tscn" id="104_4uiwc"]
-[ext_resource type="PackedScene" uid="uid://dowm5wgjfm0pb" path="res://game/lanadropsshadow.tscn" id="104_56x1q"]
-[ext_resource type="PackedScene" uid="uid://b17blnyyxc2xu" path="res://assets/glb_models/lights/kerosene_lamp.glb" id="104_uavia"]
+[ext_resource type="PackedScene" path="res://game/lanadropsshadow.tscn" id="104_56x1q"]
+[ext_resource type="PackedScene" uid="uid://d8xnjliuqhj" path="res://assets/glb_models/lights/kerosene_lamp.glb" id="104_uavia"]
 [ext_resource type="AudioStream" uid="uid://y1xple8gixkr" path="res://soundfx/lana_bubbling.mp3" id="105_4ts8e"]
 [ext_resource type="PackedScene" uid="uid://cehtw2ydchxer" path="res://assets/glb_models/decoratives/random_vase.glb" id="105_ref68"]
 [ext_resource type="PackedScene" uid="uid://cbo4k372s7a4s" path="res://game/house_materials/vintage table.tscn" id="105_rwu8e"]
@@ -151,7 +151,7 @@
 [ext_resource type="PackedScene" uid="uid://dhmaxae3blvh7" path="res://assets/glb_models/furniture/wicker_basket_02.glb" id="110_nafd2"]
 [ext_resource type="PackedScene" uid="uid://brbisn406jwl3" path="res://assets/glb_models/decoratives/wooden_hourglass.glb" id="110_y3wns"]
 [ext_resource type="PackedScene" uid="uid://do0rvl1sxdfrh" path="res://assets/glb_models/basement/book_stand_low_poly.glb" id="111_gvvqw"]
-[ext_resource type="PackedScene" path="res://game/inri.tscn" id="111_puo31"]
+[ext_resource type="PackedScene" uid="uid://dyrhnan3i2i61" path="res://game/inri.tscn" id="111_puo31"]
 [ext_resource type="PackedScene" uid="uid://c5dguj0duawtb" path="res://game/house_materials/locker_wow.tscn" id="112_de7xd"]
 [ext_resource type="PackedScene" uid="uid://vu20j1rcpe78" path="res://assets/glb_models/bathroom/oily_paper_roll_vjxoffps_mid.glb" id="113_gvvqw"]
 [ext_resource type="AudioStream" uid="uid://c7dswpe77u6kr" path="res://soundfx/prayer.mp3" id="114_kirwq"]
@@ -166,23 +166,22 @@
 [ext_resource type="PackedScene" uid="uid://da3v5u6cqyvl8" path="res://assets/glb_models/basement/water_heater_used.glb" id="123_re2uc"]
 [ext_resource type="Script" uid="uid://y52gc1lmr4hp" path="res://game/task_candle.gd" id="123_x62yr"]
 [ext_resource type="PackedScene" uid="uid://doiurcqv5iay1" path="res://assets/glb_models/basement/drinking_water_fountain.glb" id="124_f5qeo"]
-[ext_resource type="PackedScene" uid="uid://da7np75ks3tc4" path="res://assets/glb_models/chores/candle.tscn" id="124_gslyl"]
+[ext_resource type="PackedScene" path="res://assets/glb_models/chores/candle.tscn" id="124_gslyl"]
 [ext_resource type="Script" uid="uid://bpg8fjigy7ibk" path="res://game/task_clean_statues.gd" id="125_m2psj"]
 [ext_resource type="PackedScene" uid="uid://dop0i420a2ypn" path="res://game/uncleaned_creepy_statue.tscn" id="125_sfno0"]
 [ext_resource type="PackedScene" uid="uid://ba1xcjufcwwwr" path="res://assets/glb_models/basement/medieval_torch.glb" id="125_yewax"]
 [ext_resource type="PackedScene" uid="uid://b681o5valg1vs" path="res://assets/glb_models/furniture/wardrobe.tscn" id="127_uwpgj"]
 [ext_resource type="PackedScene" uid="uid://dcrr2bsxdk5on" path="res://assets/glb_models/statues/statue_robe_figure.tscn" id="127_xxycr"]
-[ext_resource type="PackedScene" uid="uid://dftdtexwbe5c7" path="res://game/uncleaned_statue_ni_ante.tscn" id="128_dyeyr"]
-[ext_resource type="PackedScene" uid="uid://cxpp27b0tpejf" path="res://game/uncleaned_mary_statue.tscn" id="129_s8tip"]
-[ext_resource type="Script" uid="uid://rn4ndis8ai1v" path="res://game/task_close_windows.gd" id="129_ww5kt"]
-[ext_resource type="PackedScene" uid="uid://dmlmymtqnjhon" path="res://game/uncleaned_statue_figure.tscn" id="130_klyxg"]
+[ext_resource type="PackedScene" path="res://game/uncleaned_statue_ni_ante.tscn" id="128_dyeyr"]
+[ext_resource type="PackedScene" path="res://game/uncleaned_mary_statue.tscn" id="129_s8tip"]
+[ext_resource type="Script" path="res://game/task_close_windows.gd" id="129_ww5kt"]
+[ext_resource type="PackedScene" path="res://game/uncleaned_statue_figure.tscn" id="130_klyxg"]
 [ext_resource type="AudioStream" uid="uid://bdu2g3rov5k8u" path="res://soundfx/window_double_close.mp3" id="131_m1vgo"]
 [ext_resource type="AudioStream" uid="uid://twfn3hu6qwiy" path="res://soundfx/cleaning_statue.mp3" id="131_u8565"]
 [ext_resource type="Script" uid="uid://ddptgkamtem7g" path="res://game/task_cover_food.gd" id="132_1o4y0"]
 [ext_resource type="Script" uid="uid://c0xt6niuwwpiv" path="res://game/task_cover_mirror.gd" id="132_dyeyr"]
 [ext_resource type="AudioStream" uid="uid://cawls3lbt556x" path="res://soundfx/window_single_close.mp3" id="132_m2psj"]
 [ext_resource type="PackedScene" uid="uid://cw5paga50nyio" path="res://assets/glb_models/chores/towel.glb" id="134_s8tip"]
-[ext_resource type="PackedScene" uid="uid://dyjsy356v4elx" path="res://assets/glb_models/chores/dish_food_cover.glb" id="134_sfno0"]
 [ext_resource type="AudioStream" uid="uid://3i6cdx842td1" path="res://soundfx/towel_placing.mp3" id="135_s8tip"]
 [ext_resource type="AudioStream" uid="uid://d3mp4s4edsost" path="res://soundfx/take_item.mp3" id="138_pybr7"]
 [ext_resource type="PackedScene" uid="uid://df20nbkqt4c7d" path="res://assets/glb_models/basement/worn_bandages.glb" id="138_yewax"]
@@ -197,16 +196,16 @@
 [ext_resource type="PackedScene" uid="uid://ch0het3ov6dbs" path="res://assets/glb_models/basement/rusty_oil_filter_housing_wcljea1_low.glb" id="151_otvc5"]
 [ext_resource type="PackedScene" uid="uid://ctuebrv77d1lo" path="res://assets/glb_models/basement/slot_machine.glb" id="152_fe1vq"]
 [ext_resource type="PackedScene" uid="uid://bp5c5j8xkbwkc" path="res://assets/glb_models/basement/rusty_saw_blade_wcvodba_mid.glb" id="152_uwpgj"]
-[ext_resource type="Script" uid="uid://bm707pwsvpnjp" path="res://assets/glb_models/chores/bottle7.gd" id="154_xfkla"]
+[ext_resource type="Script" uid="uid://bgjgd75revsjv" path="res://assets/glb_models/chores/bottle7.gd" id="154_xfkla"]
 [ext_resource type="PackedScene" uid="uid://p8yn0m61bg7l" path="res://assets/glb_models/basement/engel_statue_scan_retopology.glb" id="155_y0f4w"]
-[ext_resource type="Script" uid="uid://cn8t6vxrxnu0u" path="res://assets/glb_models/chores/bottle6.gd" id="156_2xh2d"]
+[ext_resource type="Script" uid="uid://bacu1dybfuvwu" path="res://assets/glb_models/chores/bottle6.gd" id="156_2xh2d"]
 [ext_resource type="PackedScene" uid="uid://cjbykygq588ib" path="res://assets/glb_models/basement/stone_structure_scnv2_low.glb" id="157_7bjlp"]
-[ext_resource type="Script" uid="uid://dwdo1ut753c65" path="res://assets/glb_models/chores/bottle8.gd" id="157_ww5kt"]
+[ext_resource type="Script" uid="uid://dm8fsi7bgjoau" path="res://assets/glb_models/chores/bottle8.gd" id="157_ww5kt"]
 [ext_resource type="PackedScene" uid="uid://c4v4vcqvox65o" path="res://assets/glb_models/basement/wooden_interior_wall_wbhobeedw_low.glb" id="158_agx8e"]
-[ext_resource type="Script" uid="uid://dm4v3ftt2438v" path="res://assets/glb_models/chores/bottle9.gd" id="158_l7k06"]
+[ext_resource type="Script" uid="uid://diute35fc2eq2" path="res://assets/glb_models/chores/bottle9.gd" id="158_l7k06"]
 [ext_resource type="PackedScene" uid="uid://bbnm1ixycgivj" path="res://assets/glb_models/basement/medieval_gothic_chair.glb" id="159_r85fh"]
 [ext_resource type="PackedScene" uid="uid://b8vyvlmlygg47" path="res://assets/glb_models/basement/book_ouija.glb" id="160_7uwel"]
-[ext_resource type="PackedScene" uid="uid://bbs5qv5rmoo71" path="res://game/creepy statue.tscn" id="160_puo31"]
+[ext_resource type="PackedScene" path="res://game/creepy statue.tscn" id="160_puo31"]
 [ext_resource type="PackedScene" uid="uid://bmsc065woacna" path="res://assets/glb_models/basement/tree_lamp.glb" id="160_qalft"]
 [ext_resource type="PackedScene" uid="uid://c85w4s762poge" path="res://assets/glb_models/basement/cow_head_statue.glb" id="162_puo31"]
 [ext_resource type="PackedScene" uid="uid://csf1p5e7vtr01" path="res://game/house_materials/candel_na_siga.tscn" id="162_y0f4w"]
@@ -3383,8 +3382,18 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013336182, 0.02822864, 0.02050782)
 shape = SubResource("BoxShape3D_ww5kt")
 
-[node name="cover" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food" instance=ExtResource("134_sfno0")]
+[node name="cover" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(0.002, 0, 0, 0, 0.002, 0, 0, 0, 0.002, -0.0048294067, -0.027637482, 0.028274529)
+script = null
 
 [node name="food2" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods" instance=ExtResource("51_m7rpm")]
 transform = Transform3D(0.09, 0, 0, 0, 0.09, 0, 0, 0, 0.09, -27.826057, 3.3327794, 0.3112054)
@@ -3396,8 +3405,18 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6130371, 1.223423, 0.25201964)
 shape = SubResource("BoxShape3D_l7k06")
 
-[node name="cover" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food2" instance=ExtResource("134_sfno0")]
+[node name="cover" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food2"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -0.15551758, 0.19636154, -0.29953504)
+script = null
 
 [node name="food7" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods" instance=ExtResource("51_m7rpm")]
 transform = Transform3D(0.09, 0, 0, 0, 0.09, 0, 0, 0, 0.09, -15.963298, 10.191453, 6.932429)
@@ -3409,8 +3428,18 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6130371, 1.223423, 0.25201964)
 shape = SubResource("BoxShape3D_l7k06")
 
-[node name="cover" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food7" instance=ExtResource("134_sfno0")]
+[node name="cover" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food7"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -0.15551758, 0.19636154, -0.29953504)
+script = null
 
 [node name="food3" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods" instance=ExtResource("52_ie1il")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -26.906006, 3.3514767, -0.46964657)
@@ -3422,8 +3451,18 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12933397, 0)
 shape = SubResource("BoxShape3D_jcqpj")
 
-[node name="cover" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food3" instance=ExtResource("134_sfno0")]
+[node name="cover" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food3"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(0.007, 0, 0, 0, 0.007, 0, 0, 0, 0.007, 0.049503326, -0.04587555, -0.03322178)
+script = null
 
 [node name="food8" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods" instance=ExtResource("52_ie1il")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -13.214618, 10.236273, -14.912043)
@@ -3435,8 +3474,18 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12933397, 0)
 shape = SubResource("BoxShape3D_jcqpj")
 
-[node name="cover" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food8" instance=ExtResource("134_sfno0")]
+[node name="cover" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food8"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(0.007, 0, 0, 0, 0.007, 0, 0, 0, 0.007, 0.049503326, -0.04587555, -0.03322178)
+script = null
 
 [node name="food4" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods" instance=ExtResource("52_ie1il")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -28.973022, 3.3514767, 0.4796692)
@@ -3448,8 +3497,18 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09185791, 0)
 shape = SubResource("BoxShape3D_64wj7")
 
-[node name="cover" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food4" instance=ExtResource("134_sfno0")]
+[node name="cover" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food4"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(0.007, 0, 0, 0, 0.007, 0, 0, 0, 0.007, 0.049503326, -0.04587555, -0.03322178)
+script = null
 
 [node name="food9" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods" instance=ExtResource("52_ie1il")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -30.95605, 3.1988273, -19.18847)
@@ -3461,8 +3520,18 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09185791, 0)
 shape = SubResource("BoxShape3D_64wj7")
 
-[node name="cover" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food9" instance=ExtResource("134_sfno0")]
+[node name="cover" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food9"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(0.007, 0, 0, 0, 0.007, 0, 0, 0, 0.007, 0.049503326, -0.04587555, -0.03322178)
+script = null
 
 [node name="food5" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods" instance=ExtResource("53_0dpsr")]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -28.450733, 3.34066, -0.57681954)
@@ -3474,8 +3543,18 @@ collision_layer = 9
 transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.10510254, 0.1959076, -0.04882908)
 shape = SubResource("BoxShape3D_4dfqh")
 
-[node name="cover" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food5" instance=ExtResource("134_sfno0")]
+[node name="cover" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food5"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, -0.36767578, -0.058815002, 0.094914675)
+script = null
 
 [node name="food10" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods" instance=ExtResource("53_0dpsr")]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -14.472619, 3.5836, -20.257439)
@@ -3487,8 +3566,18 @@ collision_layer = 9
 transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.10510254, 0.1959076, -0.04882908)
 shape = SubResource("BoxShape3D_4dfqh")
 
-[node name="cover" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food10" instance=ExtResource("134_sfno0")]
+[node name="cover" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food10"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, -0.36767578, -0.058815002, 0.094914675)
+script = null
 
 [node name="food6" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods" instance=ExtResource("50_jxex3")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -24.545097, 10.299811, 6.9459724)
@@ -3500,13 +3589,33 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013336182, 0.02822864, 0.02050782)
 shape = SubResource("BoxShape3D_ww5kt")
 
-[node name="cover" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food6" instance=ExtResource("134_sfno0")]
+[node name="cover" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food6"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(0.002, 0, 0, 0, 0.002, 0, 0, 0, 0.002, -0.0048294067, -0.027637482, 0.028274529)
+script = null
 
 [node name="CoversAroundTheHouse" type="Node3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food"]
 
-[node name="cover" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("134_sfno0")]
+[node name="cover" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(-0.00073360925, 0.0049458886, 0, -0.0049458886, -0.00073360925, 0, 0, 0, 0.005, -27.74501, 11.210098, -18.319294)
+script = null
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover" groups=["equipable"]]
 collision_layer = 9
@@ -3515,8 +3624,18 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.081421, 21.57666, 2.177002)
 shape = SubResource("BoxShape3D_7nwo6")
 
-[node name="cover2" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("134_sfno0")]
+[node name="cover2" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(0.005, 0, 0, 0, -0.0010313627, 0.004892473, 0, -0.004892473, -0.0010313627, -20.23288, 11.437181, -8.321011)
+script = null
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover2" groups=["equipable"]]
 collision_layer = 9
@@ -3525,8 +3644,18 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.081421, 21.57666, 2.177002)
 shape = SubResource("BoxShape3D_7nwo6")
 
-[node name="cover3" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("134_sfno0")]
+[node name="cover3" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(-0.0010328996, -0.0048921485, 0, 0.0048921485, -0.0010328996, 0, 0, 0, 0.005, -36.322964, 5.477933, -14.623217)
+script = null
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover3" groups=["equipable"]]
 collision_layer = 9
@@ -3535,8 +3664,18 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.081421, 21.57666, 2.177002)
 shape = SubResource("BoxShape3D_7nwo6")
 
-[node name="cover4" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("134_sfno0")]
+[node name="cover4" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(0.0032587051, 0.0037922077, 0, -0.0037922077, 0.0032587051, 0, 0, 0, 0.005, -15.104687, 2.3708127, 0.3670957)
+script = null
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover4" groups=["equipable"]]
 collision_layer = 9
@@ -3545,8 +3684,18 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.081421, 21.57666, 2.177002)
 shape = SubResource("BoxShape3D_7nwo6")
 
-[node name="cover5" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("134_sfno0")]
+[node name="cover5" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(-0.0006470934, 0.00495795, 0, -0.00495795, -0.0006470934, 0, 0, 0, 0.005, -19.774132, 5.25564, -16.835428)
+script = null
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover5" groups=["equipable"]]
 collision_layer = 9
@@ -3555,8 +3704,18 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.081421, 21.57666, 2.177002)
 shape = SubResource("BoxShape3D_7nwo6")
 
-[node name="cover6" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("134_sfno0")]
+[node name="cover6" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(-9.46782e-05, -0.0049991035, 0, 0.0049991035, -9.46782e-05, 0, 0, 0, 0.005, -20.215836, 5.951082, -15.264299)
+script = null
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover6" groups=["equipable"]]
 collision_layer = 9
@@ -3565,8 +3724,18 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.081421, 21.57666, 2.177002)
 shape = SubResource("BoxShape3D_7nwo6")
 
-[node name="cover7" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("134_sfno0")]
+[node name="cover7" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, -21.01006, 3.974904, -6.2022243)
+script = null
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover7" groups=["equipable"]]
 collision_layer = 9
@@ -3575,8 +3744,18 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.081421, 21.57666, 2.177002)
 shape = SubResource("BoxShape3D_7nwo6")
 
-[node name="cover8" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("134_sfno0")]
+[node name="cover8" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(0.005, 0, 0, 0, 0.0011036575, 0.0048766728, 0, -0.0048766728, 0.0011036575, -24.618816, 4.450981, 7.4571223)
+script = null
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover8" groups=["equipable"]]
 collision_layer = 9
@@ -3585,8 +3764,18 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.081421, 21.57666, 2.177002)
 shape = SubResource("BoxShape3D_7nwo6")
 
-[node name="cover9" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("134_sfno0")]
+[node name="cover9" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, -27.643143, 3.103885, -5.4159994)
+script = null
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover9" groups=["equipable"]]
 collision_layer = 9
@@ -3595,8 +3784,18 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.081421, 21.57666, 2.177002)
 shape = SubResource("BoxShape3D_7nwo6")
 
-[node name="cover10" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("134_sfno0")]
+[node name="cover10" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(-0.0006214713, -0.0049612266, 0, 0.0049612266, -0.0006214713, 0, 0, 0, 0.005, -20.25071, 5.8727508, -0.15658903)
+script = null
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover10" groups=["equipable"]]
 collision_layer = 9
@@ -3605,8 +3804,18 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.081421, 21.57666, 2.177002)
 shape = SubResource("BoxShape3D_7nwo6")
 
-[node name="cover11" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("134_sfno0")]
+[node name="cover11" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(0.0023704406, -0.0044023865, 0, 0.0044023865, 0.0023704406, 0, 0, 0, 0.005, -21.122215, -4.3267136, 0.68778324)
+script = null
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover11" groups=["equipable"]]
 collision_layer = 9
@@ -3615,8 +3824,18 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.081421, 21.57666, 2.177002)
 shape = SubResource("BoxShape3D_7nwo6")
 
-[node name="cover12" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("134_sfno0")]
+[node name="cover12" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(0.0023704406, -0.0044023865, 0, 0.0044023865, 0.0023704406, 0, 0, 0, 0.005, -21.122215, -4.3267136, -1.3135288)
+script = null
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover12" groups=["equipable"]]
 collision_layer = 9
