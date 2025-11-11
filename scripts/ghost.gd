@@ -25,6 +25,7 @@ func _ready() -> void:
 	visible = true
 	animation_player.play("ghost_idle")
 	await get_tree().create_timer(2.0).timeout
+	print("👻 Ghost ready!")
 	
 	if lana_task:
 		lana_task.add_to_group("lana_task")
@@ -45,17 +46,17 @@ func _process(delta: float) -> void:
 	if chasing:
 		if speed != 4.0:
 			speed = 4.0
+			print("⚡ Ghost speed increased to 4.0 (chasing)")
 		if chase_timer < 15:
 			chase_timer += 1 * delta
 		else:
+			print("⏱️ Chase timer expired (15s)")
 			chase_timer = 0.0
 			chasing = false
 			resume_lure_behavior()
 	elif !chasing:
 		if speed != 2.0:
 			speed = 2.0
-		if animation_player.current_animation != "ghost_idle":
-			animation_player.play("ghost_idle")
 	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -72,7 +73,12 @@ func _process(delta: float) -> void:
 		global_rotation_degrees.y = rad_to_deg(look_dir)
 
 func _physics_process(delta: float) -> void:
-	haunt_player()
+	# RAYCAST CHASE - Player detection has TOP priority
+	chase_player($RayCast3D)
+	chase_player($RayCast3D2)
+	chase_player($RayCast3D3)
+	chase_player($RayCast3D4)
+	chase_player($RayCast3D5)
 
 	# Check if reached lure
 	if lured:
@@ -80,12 +86,22 @@ func _physics_process(delta: float) -> void:
 		if dist_to_lure < lure_consumption_distance:
 			consume_lure()
 
-	# Move ghost
-	if destination != null or lured:
+	# Move ghost - needs a valid destination OR lure target
+	if destination != null or lured or chasing:
 		var current_location = global_transform.origin
 		var next_location = agent.get_next_path_position()
 		var new_velocity = (next_location - current_location).normalized() * speed
-		animation_player.play("ghost_walk")
+		
+		# Play appropriate animation based on actual velocity after move_and_slide
+		if velocity.length() > 0.5:  # Ghost is actually moving
+			if animation_player.current_animation != "ghost_walk":
+				animation_player.play("ghost_walk")
+				print("🚶 Playing ghost_walk animation")
+		else:  # Ghost is standing still
+			if animation_player.current_animation != "ghost_idle":
+				animation_player.play("ghost_idle")
+				print("🧍 Playing ghost_idle animation")
+		
 		agent.set_velocity(new_velocity)
 		velocity = velocity.move_toward(new_velocity, speed)
 
@@ -96,8 +112,28 @@ func _physics_process(delta: float) -> void:
 				velocity.y = 1.0
 
 		move_and_slide()
+	
+	# Jumpscare/haunt system - ONLY when chasing
+	if chasing:
+		haunt_player()
 
-# 👁️ NEW: Player proximity detection (1.5m range)
+# 👁️ RAYCAST CHASE - Detects player through raycasts
+func chase_player(cast: RayCast3D):
+	if cast.is_colliding():
+		var hit = cast.get_collider()
+		if hit and hit.is_in_group("player"):
+			if not chasing:
+				print("👁️ Ghost raycast spotted player!")
+				# Save current lure position before chasing
+				if lured:
+					previous_lure_position = lure_target_position
+					has_previous_lure = true
+					print("💾 Saved lure position: ", previous_lure_position)
+			chasing = true
+			lured = false  # Pause lure behavior while chasing
+			destination = player
+
+# 👁️ PROXIMITY DETECTION - 1.5m instant detection
 func check_player_distance():
 	if not player:
 		return
@@ -107,24 +143,29 @@ func check_player_distance():
 	if dist <= 1.5 and not player_in_range:
 		player_in_range = true
 		start_chasing_player()
+		print("🚨 Player within 1.5m! Emergency chase!")
 	elif dist > 1.5 and player_in_range:
-		player_in_range = false  # reset once player leaves range
+		player_in_range = false
 
 func start_chasing_player():
 	if not chasing:
-		print("🎯 Player within 1.5m — starting chase!")
+		print("🎯 Starting proximity-based chase!")
 		chasing = true
 		lured = false
 		destination = player
 		if lured:
 			previous_lure_position = lure_target_position
 			has_previous_lure = true
+			print("💾 Saved lure position: ", previous_lure_position)
 
+# 🍯 Check if a new lure was deployed
 func check_for_new_lure() -> void:
 	var current_pos = lana_task.current_lana_pos
 	if current_pos != Vector3.ZERO and current_pos != last_known_lure_pos:
+		print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
 		print("🔔 Ghost detected NEW lure at: ", current_pos)
 		print("🚫 CANCELING PATROL - Going to lure immediately!")
+		print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
 		last_known_lure_pos = current_pos
 		lured = true
 		lure_target_position = current_pos
@@ -132,7 +173,9 @@ func check_for_new_lure() -> void:
 		agent.target_position = lure_target_position
 		print("🏃 Ghost heading straight to lure!")
 
+# 🔄 Resume lure behavior after player chase ends
 func resume_lure_behavior() -> void:
+	print("🔄 Resume lure behavior called")
 	if has_previous_lure:
 		var lure_still_exists = is_lure_still_there(previous_lure_position)
 		if lure_still_exists:
@@ -148,7 +191,8 @@ func resume_lure_behavior() -> void:
 			has_previous_lure = false
 	
 	if lana_task.current_lana_pos != Vector3.ZERO:
-		print("🔄 Found another active lure, heading there!")
+		print("🔄 Found another active lure at: ", lana_task.current_lana_pos)
+		print("🏃 Heading there!")
 		lured = true
 		lure_target_position = lana_task.current_lana_pos
 		last_known_lure_pos = lana_task.current_lana_pos
@@ -159,6 +203,7 @@ func resume_lure_behavior() -> void:
 	print("📍 No lures available, resuming patrol")
 	pick_destination()
 
+# 🔍 Check if lure still exists
 func is_lure_still_there(pos: Vector3) -> bool:
 	var tolerance = 1.0
 	for id in lana_task.lana_map.keys():
@@ -169,25 +214,34 @@ func is_lure_still_there(pos: Vector3) -> bool:
 				return true
 	return false
 
+# 😋 Consume lure when reached
 func consume_lure() -> void:
 	if lana_task:
-		print("😋 Ghost reached and consumed lure at: ", lure_target_position)
+		print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+		print("😋 Ghost reached lure position!")
+		print("🍽️ Consuming lure at: ", lure_target_position)
 		lana_task.consume_lure_at_position(lure_target_position)
 		lured = false
 		has_previous_lure = false
+		
 		if lana_task.current_lana_pos.distance_to(lure_target_position) < 2.0:
 			lana_task.current_lana_pos = Vector3.ZERO
 			last_known_lure_pos = Vector3.ZERO
+		
 		if lana_task.current_lana_pos != Vector3.ZERO:
-			print("🔄 Another lure detected, going there next!")
+			print("🔄 Another lure detected at: ", lana_task.current_lana_pos)
+			print("🏃 Going there next!")
+			print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
 			lured = true
 			lure_target_position = lana_task.current_lana_pos
 			last_known_lure_pos = lana_task.current_lana_pos
 			agent.target_position = lure_target_position
 		else:
 			print("📍 No more lures, resuming patrol")
+			print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
 			pick_destination()
 
+# 🎲 Pick random patrol destination
 func pick_destination(dont_choose = null):
 	if !chasing and !lured:
 		var num = rng.randi_range(0, patrol_destinations.size() - 1)
@@ -198,31 +252,41 @@ func pick_destination(dont_choose = null):
 				destination = patrol_destinations[dont_choose + 1]
 			elif dont_choose > 0 and dont_choose <= patrol_destinations.size() - 1:
 				destination = patrol_destinations[dont_choose - 1]
-				
+		print("🚶 Picked patrol destination: ", destination.name if destination else "null")
+
+# 🎯 Update navigation target
 func update_target_location():
 	if destination:
 		agent.target_position = destination.global_transform.origin
 
+# 💀 Jumpscare and kill player
 func haunt_player():
 	if chasing:
 		if !$chasecast/chasecast.enabled:
 			$chasecast/chasecast.enabled = true
+			print("👁️ Chase raycast enabled")
 		$chasecast.look_at(player.global_transform.origin)
 		if $chasecast/chasecast.is_colliding():
 			var hit = $chasecast/chasecast.get_collider()
-			print(hit.name)
 			if hit.name == "Player" and !killed:
 				killed = true
-				$jumpscare_cam.current = true
-				$ghost_final_animation/AnimationPlayer.speed_scale = 2
-				$ghost_final_animation/AnimationPlayer.play("jumpscare")
-				print("played")
+				print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+				print("💀 JUMPSCARE! Player killed!")
+				print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+				
+				# STOP GHOST MOVEMENT - Let animation control position
+				chasing = false
+				lured = false
+				destination = null
+				velocity = Vector3.ZERO
+				set_physics_process(false)  # Stop physics entirely
 				player.visible = false
 				player.process_mode = Node.PROCESS_MODE_DISABLED
-				print("💀 JUMPSCARE! Player killed!")
-				await get_tree().create_timer(2.0).timeout
+				$jumpscare_cam.current = true
+				$ghost_final_animation/AnimationPlayer.play("jumpscare")
+				print("🎬 Playing jumpscare animation")
+				await get_tree().create_timer(4.0).timeout
 				get_tree().quit()
-
 	else:
 		if $chasecast/chasecast.enabled:
 			$chasecast/chasecast.enabled = false

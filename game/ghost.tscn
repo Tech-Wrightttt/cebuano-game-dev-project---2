@@ -50,7 +50,7 @@ visible = false
 collision_mask = 131
 
 [node name="jumpscare_cam" type="Camera3D" parent="."]
-transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 1.5874608, -0.8985609)
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0.04277116, 1.5874608, -2.7373383)
 
 [node name="ghost_final_animation" parent="." instance=ExtResource("2_io021")]
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0.026, -0.478, -0.411)
