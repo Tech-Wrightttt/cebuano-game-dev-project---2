@@ -5,4 +5,5 @@ extends Node3D
 func _ready() -> void:
 	$AnimationPlayer.play("cutscene")
 	await get_tree().create_timer(15, false).timeout
+	await $AnimationPlayer.animation_finished 
 	get_tree().change_scene_to_file("res://game/level.tscn")
