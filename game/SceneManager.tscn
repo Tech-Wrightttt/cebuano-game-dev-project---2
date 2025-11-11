@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmf3bfmqao0cr"]
+
+[ext_resource type="PackedScene" uid="uid://cfrgnh5md5thg" path="res://game/cutscenes/game_intro.tscn" id="1_iapxc"]
+[ext_resource type="Script" path="res://game/scene_manager.gd" id="1_vq8mg"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_vq8mg")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+
+[node name="game_intro" parent="SubViewport" instance=ExtResource("1_iapxc")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
