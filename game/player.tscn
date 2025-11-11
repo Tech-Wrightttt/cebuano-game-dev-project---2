@@ -982,17 +982,10 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("15_7vc3l")
 
 [node name="TaskToDoLabel" type="Label" parent="PlayerScreenUI"]
-<<<<<<< HEAD
-offset_left = 24.0
-offset_top = 226.99998
-offset_right = 579.99994
-offset_bottom = 766.6802
-=======
 offset_left = 51.0
 offset_top = 239.0
 offset_right = 606.99994
 offset_bottom = 778.6801
->>>>>>> ae92b91 (ui)
 scale = Vector2(1, 0.8375331)
 text = "Todo:
 
