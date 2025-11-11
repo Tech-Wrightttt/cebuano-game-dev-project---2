@@ -74,6 +74,10 @@ func hide_player_ui():
 		var crosshair = player.get_node("PlayerScreenUI/crosshair")
 		crosshair.visible = false
 	
+	if player.has_node("PlayerScreenUI/TaskToDoLabel"):
+		var TaskToDoLabel = player.get_node("PlayerScreenUI/TaskToDoLabel")
+		TaskToDoLabel.visible = false
+		
 	# Hide other UI elements
 	if player.has_node("CanvasLayer2/SanityBar"):
 		var sanity_bar = player.get_node("CanvasLayer2/SanityBar")
@@ -106,6 +110,10 @@ func show_player_ui():
 	if player.has_node("CanvasLayer2/SprintBar"):
 		var sprint_bar = player.get_node("CanvasLayer2/SprintBar")
 		sprint_bar.visible = true
+		
+	if player.has_node("PlayerScreenUI/TaskToDoLabel"):
+		var TaskToDoLabel = player.get_node("PlayerScreenUI/TaskToDoLabel")
+		TaskToDoLabel.visible = true
 	
 	# Show eye UI elements based on third_eye_active state
 	if player.has_node("PlayerScreenUI/Open eyes"):

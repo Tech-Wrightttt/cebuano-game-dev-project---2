@@ -6,7 +6,7 @@ extends CanvasLayer
 @onready var night_label = $"Night Counter"
 
 # The "SAMPLE TASK" label
-@onready var task_list_label = $"TaskToDo Label"
+@onready var task_list_label = $"TaskToDoLabel"
 
 # The "12:" label
 @onready var time_hour_label = $Panel/TimerLabelHour

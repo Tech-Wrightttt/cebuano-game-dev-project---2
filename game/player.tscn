@@ -761,7 +761,7 @@ offset_bottom = 731.0
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("15_7vc3l")
 
-[node name="TaskToDo Label" type="Label" parent="PlayerScreenUI"]
+[node name="TaskToDoLabel" type="Label" parent="PlayerScreenUI"]
 offset_left = 11.0
 offset_top = 214.0
 offset_right = 566.99994
