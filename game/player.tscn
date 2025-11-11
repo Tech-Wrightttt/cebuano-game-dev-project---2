@@ -744,7 +744,8 @@ font = ExtResource("18_a3s55")
 font_size = 85
 
 [sub_resource type="LabelSettings" id="LabelSettings_opbur"]
-font_size = 60
+font = ExtResource("18_a3s55")
+font_size = 85
 
 [sub_resource type="FontVariation" id="FontVariation_fw65x"]
 base_font = ExtResource("16_hobtg")
