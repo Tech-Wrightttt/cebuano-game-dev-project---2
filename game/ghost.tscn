@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dbom0jasgiob6"]
+[gd_scene load_steps=5 format=3 uid="uid://dbom0jasgiob6"]
 
 [ext_resource type="Script" uid="uid://d1jnkipekfns3" path="res://scripts/ghost.gd" id="1_blxur"]
 [ext_resource type="PackedScene" uid="uid://oysop7pwekld" path="res://game/ghost_model_animation.tscn" id="2_io021"]
+[ext_resource type="AudioStream" uid="uid://nb63j88e2fvc" path="res://soundfx/jumpscare_audio.mp3" id="3_gp3h6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b6vni"]
 radius = 0.3803711
@@ -61,6 +62,9 @@ visible = false
 [node name="chasecast" type="RayCast3D" parent="chasecast"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
 target_position = Vector3(0, -1.5, 0)
+
+[node name="jumpscare_audio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_gp3h6")
 
 [connection signal="velocity_computed" from="NavigationAgent3D" to="." method="compute_velocity"]
 

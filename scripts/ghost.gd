@@ -314,6 +314,7 @@ func trigger_jumpscare():
 	$jumpscare_cam.current = true
 	
 	# Play jumpscare animation
+	$jumpscare_audio.play()
 	$ghost_final_animation/AnimationPlayer.play("jumpscare")
 	
 	# Wait for jumpscare animation
