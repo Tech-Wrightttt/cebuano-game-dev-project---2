@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d1jnkipekfns3" path="res://scripts/ghost.gd" id="1_blxur"]
 [ext_resource type="PackedScene" uid="uid://oysop7pwekld" path="res://game/ghost_model_animation.tscn" id="2_io021"]
-[ext_resource type="AudioStream" uid="uid://nb63j88e2fvc" path="res://soundfx/jumpscare_audio.mp3" id="3_gp3h6"]
+[ext_resource type="AudioStream" uid="uid://bxw4cdjeo10x8" path="res://soundfx/jumpscare_audio.mp3" id="3_gp3h6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b6vni"]
 radius = 0.3803711
