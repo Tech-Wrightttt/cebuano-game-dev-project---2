@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://o7gchgjqr1i6"]
+[gd_scene load_steps=45 format=3 uid="uid://o7gchgjqr1i6"]
 
 [ext_resource type="PackedScene" uid="uid://bklxl232veydp" path="res://assets/player/first_person_arm.tscn" id="1_dadds"]
 [ext_resource type="Shader" uid="uid://bt1lbo5yomj25" path="res://game/shaders/retro_camera.gdshader" id="2_w5y0b"]
@@ -716,7 +716,7 @@ _data = {
 }
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ppdnp"]
-bg_color = Color(0.27058825, 0, 0, 0.5803922)
+bg_color = Color(0.66, 0, 0.010999832, 0.49019608)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
@@ -739,9 +739,37 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fw65x"]
+bg_color = Color(0.22862497, 0.022499979, 0.75, 0.5803922)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oxik7"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [sub_resource type="LabelSettings" id="LabelSettings_cvpk3"]
 font = ExtResource("18_a3s55")
 font_size = 85
+
+[sub_resource type="LabelSettings" id="LabelSettings_d61f6"]
+font = ExtResource("18_a3s55")
+font_size = 230
 
 [sub_resource type="LabelSettings" id="LabelSettings_opbur"]
 font = ExtResource("18_a3s55")
@@ -754,12 +782,9 @@ base_font = ExtResource("16_hobtg")
 font = SubResource("FontVariation_fw65x")
 font_size = 33
 
-[sub_resource type="FontVariation" id="FontVariation_opbur"]
-base_font = ExtResource("16_hobtg")
-
 [sub_resource type="LabelSettings" id="LabelSettings_fw65x"]
-font = SubResource("FontVariation_opbur")
-font_size = 60
+font = ExtResource("18_a3s55")
+font_size = 100
 
 [sub_resource type="FontVariation" id="FontVariation_oxik7"]
 base_font = ExtResource("18_a3s55")
@@ -937,8 +962,8 @@ offset_top = 140.0
 offset_right = 508.0
 offset_bottom = 180.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/background = SubResource("StyleBoxFlat_ppdnp")
-theme_override_styles/fill = SubResource("StyleBoxFlat_7vc3l")
+theme_override_styles/background = SubResource("StyleBoxFlat_fw65x")
+theme_override_styles/fill = SubResource("StyleBoxFlat_oxik7")
 value = 100.0
 
 [node name="SprintBarLabel" type="Label" parent="CanvasLayer2/SprintBar"]
@@ -960,6 +985,17 @@ text = "\"Ayoko na, gusto ko nang uwuwi...\""
 label_settings = SubResource("LabelSettings_cvpk3")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Night Counter" type="Label" parent="CanvasLayer2"]
+visible = false
+offset_left = 554.0
+offset_top = 423.00003
+offset_right = 1447.0
+offset_bottom = 664.1845
+scale = Vector2(1, 0.8375331)
+text = "NIGHT 1"
+label_settings = SubResource("LabelSettings_d61f6")
+horizontal_alignment = 1
 
 [node name="HauntedLabel" type="Label" parent="CanvasLayer2"]
 visible = false
@@ -996,9 +1032,9 @@ text = "Todo:
 label_settings = SubResource("LabelSettings_oxik7")
 
 [node name="Night Counter" type="Label" parent="PlayerScreenUI"]
-offset_left = 544.0
+offset_left = 557.0
 offset_top = 9.000001
-offset_right = 1437.0
+offset_right = 1450.0
 offset_bottom = 153.47195
 scale = Vector2(1, 0.8375331)
 text = "NIGHT 1"
