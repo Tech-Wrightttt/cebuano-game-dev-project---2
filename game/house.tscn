@@ -953,6 +953,9 @@ patrol_destinations = [NodePath("../destination"), NodePath("../destination1"), 
 [node name="destination" parent="doors" instance=ExtResource("86_d2t1g")]
 transform = Transform3D(0.5811646, 0, 0, 0, 0.44509375, 0, 0, 0, 0.68289566, -29.566029, 8.513035, -10.822058)
 
+[node name="respawn_destination" parent="doors" instance=ExtResource("86_d2t1g")]
+transform = Transform3D(0.5811646, 0, 0, 0, 0.44509375, 0, 0, 0, 0.68289566, -29.566029, 8.513035, -2.1545134)
+
 [node name="destination1" parent="doors" instance=ExtResource("86_d2t1g")]
 transform = Transform3D(0.5811646, 0, 0, 0, 0.44509375, 0, 0, 0, 0.68289566, -17.50668, -5.58, 12.017624)
 

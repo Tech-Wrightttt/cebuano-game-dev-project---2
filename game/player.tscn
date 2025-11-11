@@ -109,6 +109,7 @@ const SANITY_DEATH_THRESHOLD: float = 20.0  # If sanity below this, game over
 const SANITY_PENALTY_ON_DEATH: float = 30.0  # How much sanity to lose when caught
 var can_be_killed: bool = true  # Prevent multiple deaths at once
 var respawn_position: Vector3 = Vector3.ZERO  # Where to respawn player
+@onready var respawn_point = $\"../House/doors/respawn_destination\"
 var fade_overlay: ColorRect = null  # Persistent reference to fade overlay
 
 func _ready() -> void:
@@ -146,7 +147,7 @@ func _ready() -> void:
 	_start_intro_dialogue()
 	
 	# Store initial spawn position
-	respawn_position = global_position
+	respawn_position = respawn_point.global_position
 
 func _start_intro_dialogue() -> void:
 	# Get the intro_dialogue child node
