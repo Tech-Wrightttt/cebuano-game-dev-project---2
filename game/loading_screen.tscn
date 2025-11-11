@@ -1,19 +1,43 @@
-[gd_scene load_steps=0 format=3 uid="uid://buixi4eyf243d"]
+[gd_scene load_steps=3 format=3 uid="uid://buixi4eyf243d"]
 
-[node name="LoadingScreen" type="Control"]
-layout_mode = 3
+[ext_resource type="Script" uid="uid://bwdifnxcdej3r" path="res://scripts/loading_screen.gd" id="1_78jp3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6rgyk"]
+font_size = 60
+
+[node name="LoadingScreen" type="CanvasLayer"]
+script = ExtResource("1_78jp3")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 100
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.06469653, 0.06469653, 0.06469653, 1)
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-
-[node name="ProgressBar" type="ProgressBar" parent="Label"]
-layout_mode = 0
-offset_right = 4.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -27.0
+offset_right = 20.0
 offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+z_index = 200
+layout_mode = 2
+text = "Loading"
+label_settings = SubResource("LabelSettings_6rgyk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer"]
+layout_mode = 2

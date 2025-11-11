@@ -117,7 +117,6 @@ var fade_overlay: ColorRect = null  # Persistent reference to fade overlay
 #mini scenes
 @onready var fail_message_label = $CanvasLayer2/FailLabel
 @onready var haunted_message_label = $CanvasLayer2/HauntedLabel
-var ghost = get_tree().get_first_node_in_group(\"ghost\")
 
 func _ready() -> void:
 	if sprint_bar:
@@ -526,7 +525,6 @@ func trigger_game_over() -> void:
 	set_physics_process(false)
 	set_process(false)
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	ghost.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	# Fade to black
 	await fade_screen_to_black(2.0)
