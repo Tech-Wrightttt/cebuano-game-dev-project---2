@@ -58,6 +58,8 @@ const MAX_STEP_HEIGHT: float = 0.5
 var overlay_visible := false
 @onready var progress_bar = $CanvasLayer2/SanityBar
 @onready var sprint_bar = $CanvasLayer2/SprintBar
+@onready var sprint_bar_label = $CanvasLayer2/SprintBar/SprintBarLabel
+@onready var progress_bar_label = $CanvasLayer2/SanityBar/SanityBarLabel
 @onready var open_eyes = $\"PlayerScreenUI/Open eyes\"
 @onready var close_eyes = $\"PlayerScreenUI/Close eyes\"
 
@@ -113,6 +115,12 @@ var respawn_position: Vector3 = Vector3.ZERO  # Where to respawn player
 var fade_overlay: ColorRect = null  # Persistent reference to fade overlay
 
 func _ready() -> void:
+	if sprint_bar:
+		sprint_bar.show_percentage = false
+
+	if progress_bar:
+		progress_bar.show_percentage = false
+
 	crosshair.visible = true
 	crosshair.modulate = Color(1.0, 1.0, 1.0, 1.0)  # full opaque white
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -261,9 +269,12 @@ func _process(delta: float) -> void:
 	elif sprint_stamina < sprint_stamina_max:
 		sprint_stamina = min(sprint_stamina + sprint_recovery_rate * delta, sprint_stamina_max)
 	
-	# Update sprint bar value
-	if sprint_bar:
+	if sprint_bar and sprint_bar_label:
 		sprint_bar.value = sprint_stamina
+		sprint_bar_label.text = str(int(sprint_stamina)) + \" / \" + str(int(sprint_stamina_max))
+
+	if progress_bar and progress_bar_label:
+		progress_bar_label.text = str(int(progress_bar.value)) + \" / \" + str(int(progress_bar.max_value))
 
 func _on_animation_finished(anim_name: String) -> void:
 	if anim_name == \"Combat_idle_start\":
@@ -492,7 +503,7 @@ func take_sanity_damage() -> void:
 	print(\"💭 Current sanity: %.1f\" % current_sanity)
 	
 	# Check if sanity is too low for another death
-	if current_sanity <= SANITY_DEATH_THRESHOLD:
+	if progress_bar.max_value <= SANITY_DEATH_THRESHOLD:
 		print(\"💀 Sanity too low - GAME OVER!\")
 		print(\"━━━━━━━━━━━━━━━━━━━━━━━━━━━━\")
 		trigger_game_over()
@@ -500,6 +511,7 @@ func take_sanity_damage() -> void:
 		# Deduct sanity and respawn
 		var new_sanity = max(current_sanity - SANITY_PENALTY_ON_DEATH, 0)
 		progress_bar.value = new_sanity
+		progress_bar.max_value -= SANITY_PENALTY_ON_DEATH
 		print(\"⚠️ Lost %.1f sanity! New sanity: %.1f\" % [SANITY_PENALTY_ON_DEATH, new_sanity])
 		print(\"━━━━━━━━━━━━━━━━━━━━━━━━━━━━\")
 		respawn_player()
@@ -854,6 +866,16 @@ theme_override_styles/background = SubResource("StyleBoxFlat_ppdnp")
 theme_override_styles/fill = SubResource("StyleBoxFlat_7vc3l")
 value = 100.0
 
+[node name="SanityBarLabel" type="Label" parent="CanvasLayer2/SanityBar"]
+layout_mode = 0
+offset_left = 137.0
+offset_top = 2.0
+offset_right = 237.0
+offset_bottom = 30.0
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="SprintBar" type="ProgressBar" parent="CanvasLayer2"]
 offset_left = 28.0
 offset_top = 949.0
@@ -862,6 +884,16 @@ offset_bottom = 982.0
 theme_override_styles/background = SubResource("StyleBoxFlat_ppdnp")
 theme_override_styles/fill = SubResource("StyleBoxFlat_7vc3l")
 value = 100.0
+
+[node name="SprintBarLabel" type="Label" parent="CanvasLayer2/SprintBar"]
+layout_mode = 0
+offset_left = 137.0
+offset_top = 3.0
+offset_right = 237.0
+offset_bottom = 31.0
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Timer" type="Timer" parent="."]
 
