@@ -1,4 +1,4 @@
-[gd_scene load_steps=383 format=4 uid="uid://c6nnpmjnwv4g2"]
+[gd_scene load_steps=385 format=4 uid="uid://c6nnpmjnwv4g2"]
 
 [ext_resource type="Script" uid="uid://cmcetdgh8ky7t" path="res://scripts/house.gd" id="1_8tqyt"]
 [ext_resource type="Material" uid="uid://31nbyn23hg2q" path="res://materials/house_material.tres" id="1_f6s7v"]
@@ -594,6 +594,13 @@ stencil_flags = 6
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1tgmf"]
 size = Vector3(0.692749, 0.03265381, 0.34710693)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4dfqh"]
+size = Vector2(0.7, 0.4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hmlio"]
+stencil_mode = 3
+stencil_flags = 6
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1numt"]
 size = Vector3(1.935791, 0.79211426, 5.280243)
@@ -2131,6 +2138,11 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005554199, -0.0105896, 0.0016174316)
 shape = SubResource("BoxShape3D_1tgmf")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray/lanadropscontainer1/lanadrops1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0014616251, -0.052829444, 0)
+mesh = SubResource("PlaneMesh_4dfqh")
+surface_material_override/0 = SubResource("StandardMaterial3D_hmlio")
+
 [node name="lanadropscontainer2" type="Node3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.89531, 1.9156141, -1.9930377)
 
@@ -2147,6 +2159,11 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005554199, -0.0105896, 0.0016174316)
 shape = SubResource("BoxShape3D_1tgmf")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray/lanadropscontainer2/lanadrops2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0014616251, -0.052829444, 0)
+mesh = SubResource("PlaneMesh_4dfqh")
+surface_material_override/0 = SubResource("StandardMaterial3D_hmlio")
+
 [node name="lanadropscontainer3" type="Node3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray"]
 
 [node name="lanadropsshadow3" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray/lanadropscontainer3" instance=ExtResource("104_56x1q")]
@@ -2161,6 +2178,11 @@ collision_layer = 9
 [node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray/lanadropscontainer3/lanadrops3/StaticBody3D" groups=["hold_deploy"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005554199, -0.0105896, 0.0016174316)
 shape = SubResource("BoxShape3D_1tgmf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray/lanadropscontainer3/lanadrops3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0014616251, -0.052829444, 0)
+mesh = SubResource("PlaneMesh_4dfqh")
+surface_material_override/0 = SubResource("StandardMaterial3D_hmlio")
 
 [node name="lanadropscontainer4" type="Node3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray"]
 
@@ -2177,6 +2199,11 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005554199, -0.0105896, 0.0016174316)
 shape = SubResource("BoxShape3D_1tgmf")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray/lanadropscontainer4/lanadrops4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0014616251, -0.052829444, 0)
+mesh = SubResource("PlaneMesh_4dfqh")
+surface_material_override/0 = SubResource("StandardMaterial3D_hmlio")
+
 [node name="lanadropscontainer5" type="Node3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray"]
 
 [node name="lanadropsshadow5" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray/lanadropscontainer5" instance=ExtResource("104_56x1q")]
@@ -2191,6 +2218,11 @@ collision_layer = 9
 [node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray/lanadropscontainer5/lanadrops5/StaticBody3D" groups=["hold_deploy"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005554199, -0.0105896, 0.0016174316)
 shape = SubResource("BoxShape3D_1tgmf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray/lanadropscontainer5/lanadrops5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0014616251, -0.052829444, 0)
+mesh = SubResource("PlaneMesh_4dfqh")
+surface_material_override/0 = SubResource("StandardMaterial3D_hmlio")
 
 [node name="lanadropscontainer6" type="Node3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray"]
 
@@ -2207,6 +2239,11 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005554199, -0.0105896, 0.0016174316)
 shape = SubResource("BoxShape3D_1tgmf")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray/lanadropscontainer6/lanadrops6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0014616251, -0.052829444, 0)
+mesh = SubResource("PlaneMesh_4dfqh")
+surface_material_override/0 = SubResource("StandardMaterial3D_hmlio")
+
 [node name="lanadropscontainer7" type="Node3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray"]
 
 [node name="lanadropsshadow7" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray/lanadropscontainer7" instance=ExtResource("104_56x1q")]
@@ -2221,6 +2258,11 @@ collision_layer = 9
 [node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray/lanadropscontainer7/lanadrops7/StaticBody3D" groups=["hold_deploy"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005554199, -0.0105896, 0.0016174316)
 shape = SubResource("BoxShape3D_1tgmf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray/lanadropscontainer7/lanadrops7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0014616251, -0.052829444, 0)
+mesh = SubResource("PlaneMesh_4dfqh")
+surface_material_override/0 = SubResource("StandardMaterial3D_hmlio")
 
 [node name="lanadropscontainer8" type="Node3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray"]
 
@@ -2237,6 +2279,11 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005554199, -0.0105896, 0.0016174316)
 shape = SubResource("BoxShape3D_1tgmf")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray/lanadropscontainer8/lanadrops8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0014616251, -0.052829444, 0)
+mesh = SubResource("PlaneMesh_4dfqh")
+surface_material_override/0 = SubResource("StandardMaterial3D_hmlio")
+
 [node name="lanadropscontainer9" type="Node3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray"]
 
 [node name="lanadropsshadow9" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray/lanadropscontainer9" instance=ExtResource("104_56x1q")]
@@ -2251,6 +2298,11 @@ collision_layer = 9
 [node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray/lanadropscontainer9/lanadrops9/StaticBody3D" groups=["hold_deploy"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005554199, -0.0105896, 0.0016174316)
 shape = SubResource("BoxShape3D_1tgmf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray/lanadropscontainer9/lanadrops9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0014616251, -0.052829444, 0)
+mesh = SubResource("PlaneMesh_4dfqh")
+surface_material_override/0 = SubResource("StandardMaterial3D_hmlio")
 
 [node name="Lana_Bubbling" type="AudioStreamPlayer3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana"]
 stream = ExtResource("105_4ts8e")
