@@ -1,10 +1,10 @@
-[gd_scene load_steps=381 format=4 uid="uid://c6nnpmjnwv4g2"]
+[gd_scene load_steps=383 format=4 uid="uid://c6nnpmjnwv4g2"]
 
 [ext_resource type="Script" uid="uid://cmcetdgh8ky7t" path="res://scripts/house.gd" id="1_8tqyt"]
 [ext_resource type="Material" uid="uid://31nbyn23hg2q" path="res://materials/house_material.tres" id="1_f6s7v"]
-[ext_resource type="Script" uid="uid://c1w58emrwwhgh" path="res://game/house_materials/basementdoor.gd" id="2_2xh2d"]
+[ext_resource type="Script" path="res://game/house_materials/basementdoor.gd" id="2_2xh2d"]
 [ext_resource type="PackedScene" uid="uid://b7iavuxmklmfq" path="res://game/house_materials/windows_single.tscn" id="2_agx8e"]
-[ext_resource type="ArrayMesh" uid="uid://cjhr8ed83eebv" path="res://assets/house/house_basement_wall.obj" id="2_sgyp1"]
+[ext_resource type="ArrayMesh" uid="uid://cduhe8fc6hyq8" path="res://assets/house/house_basement_wall.obj" id="2_sgyp1"]
 [ext_resource type="ArrayMesh" uid="uid://dkeuruqi54p6n" path="res://assets/house/house_basement_floor.obj" id="3_djvyg"]
 [ext_resource type="Texture2D" uid="uid://cm6acpp76ieuo" path="res://textures/house/basement floor..jpg" id="3_eeqtj"]
 [ext_resource type="PackedScene" uid="uid://co45n63o5btcn" path="res://assets/glb_models/nature/plantsa/old_iron.glb" id="3_jer8c"]
@@ -32,7 +32,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dg0u63u4cjo8o" path="res://assets/house/house_2ndFloor_railings.obj" id="12_p0swl"]
 [ext_resource type="PackedScene" uid="uid://c7gjl20e132o5" path="res://assets/glb_models/furniture/bookshelf/wooden_bookcases_with_books.glb" id="13_4j85k"]
 [ext_resource type="Texture2D" uid="uid://bu4l6x0nw24dp" path="res://textures/Roofs/Roofs_10-256x256.png" id="13_86tvv"]
-[ext_resource type="ArrayMesh" uid="uid://bj08v1f3k3b61" path="res://assets/house/house_1stFloorCR_wall.obj" id="14_3qwsg"]
+[ext_resource type="ArrayMesh" uid="uid://bab7m82mvhw0n" path="res://assets/house/house_1stFloorCR_wall.obj" id="14_3qwsg"]
 [ext_resource type="ArrayMesh" uid="uid://okyrs7cqyw8h" path="res://assets/house/house_roof.obj" id="14_glmle"]
 [ext_resource type="PackedScene" uid="uid://tljk6ijf53rp" path="res://assets/glb_models/dining table/game_ready_rustic_table_with_chairs.glb" id="15_7l508"]
 [ext_resource type="ArrayMesh" uid="uid://c7qn8hxxcsb1j" path="res://assets/house/house_1stFloorCR_floor.obj" id="15_re2uc"]
@@ -206,13 +206,13 @@
 [ext_resource type="Script" uid="uid://dm4v3ftt2438v" path="res://assets/glb_models/chores/bottle9.gd" id="158_l7k06"]
 [ext_resource type="PackedScene" uid="uid://bbnm1ixycgivj" path="res://assets/glb_models/basement/medieval_gothic_chair.glb" id="159_r85fh"]
 [ext_resource type="PackedScene" uid="uid://b8vyvlmlygg47" path="res://assets/glb_models/basement/book_ouija.glb" id="160_7uwel"]
-[ext_resource type="PackedScene" uid="uid://bbs5qv5rmoo71" path="res://game/creepy statue.tscn" id="160_puo31"]
+[ext_resource type="PackedScene" path="res://game/creepy statue.tscn" id="160_puo31"]
 [ext_resource type="PackedScene" uid="uid://bmsc065woacna" path="res://assets/glb_models/basement/tree_lamp.glb" id="160_qalft"]
 [ext_resource type="PackedScene" uid="uid://c85w4s762poge" path="res://assets/glb_models/basement/cow_head_statue.glb" id="162_puo31"]
 [ext_resource type="PackedScene" uid="uid://csf1p5e7vtr01" path="res://game/house_materials/candel_na_siga.tscn" id="162_y0f4w"]
 [ext_resource type="PackedScene" uid="uid://bkst2lswsd30s" path="res://assets/glb_models/basement/wall_part_base_20k_orientated.glb" id="163_ar67c"]
 [ext_resource type="PackedScene" uid="uid://blj6l2phlisc2" path="res://assets/glb_models/stone_altar.glb" id="168_ar67c"]
-[ext_resource type="PackedScene" uid="uid://rp23q4ii6l4n" path="res://game/house_materials/ceiling_lights_red.tscn" id="171_p4sj0"]
+[ext_resource type="PackedScene" path="res://game/house_materials/ceiling_lights_red.tscn" id="171_p4sj0"]
 [ext_resource type="PackedScene" uid="uid://bnd4f5cscd18j" path="res://game/house_materials/ceiling_lights.tscn" id="210_ww5kt"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_w7ycr"]
@@ -584,6 +584,13 @@ size = Vector3(1.1434326, 0.91308594, 0.5517578)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0ksgv"]
 size = Vector3(0.15205216, 0.2653656, 0.17308044)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4dfqh"]
+size = Vector3(0.05, 0.05, 0.05)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h0fog"]
+stencil_mode = 3
+stencil_flags = 6
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1tgmf"]
 size = Vector3(0.692749, 0.03265381, 0.34710693)
@@ -1171,7 +1178,6 @@ material_override = SubResource("StandardMaterial3D_7nwo6")
 mesh = ExtResource("34_64wj7")
 
 [node name="ITEMS" type="Node3D" parent="doors/NavigationRegion3D"]
-visible = false
 
 [node name="1ST FLOOR ITEMS" type="Node3D" parent="doors/NavigationRegion3D/ITEMS"]
 
@@ -2028,6 +2034,11 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0004067421, 0.01644075, 0.0012948513)
 shape = SubResource("BoxShape3D_0ksgv")
 
+[node name="lanabottles mesh" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles/lana bottle1"]
+transform = Transform3D(1.0000002, 0, 7.1054274e-15, 0, 2.2000008, 0, -7.1054274e-15, 0, 0.7000004, -0.0043025017, -0.036693573, 0)
+mesh = SubResource("BoxMesh_4dfqh")
+surface_material_override/0 = SubResource("StandardMaterial3D_h0fog")
+
 [node name="lana bottle2" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles" instance=ExtResource("62_jxex3")]
 transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, -20.642971, 3.3566728, -3.147514)
 
@@ -2037,6 +2048,11 @@ collision_layer = 9
 [node name="lanacollision2" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles/lana bottle2/lanastatic2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0004067421, 0.01644075, 0.0012948513)
 shape = SubResource("BoxShape3D_0ksgv")
+
+[node name="lanabottles mesh" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles/lana bottle2"]
+transform = Transform3D(1.0000002, 0, 7.1054274e-15, 0, 2.2000008, 0, -7.1054274e-15, 0, 0.7000004, -0.0043025017, -0.036693573, 0)
+mesh = SubResource("BoxMesh_4dfqh")
+surface_material_override/0 = SubResource("StandardMaterial3D_h0fog")
 
 [node name="lana bottle3" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles" instance=ExtResource("62_jxex3")]
 transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, -4.176879, 3.4742827, -8.548105)
@@ -2048,6 +2064,11 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0004067421, 0.01644075, 0.0012948513)
 shape = SubResource("BoxShape3D_0ksgv")
 
+[node name="lanabottles mesh" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles/lana bottle3"]
+transform = Transform3D(1.0000002, 0, 7.1054274e-15, 0, 2.2000008, 0, -7.1054274e-15, 0, 0.7000004, -0.0043025017, -0.036693573, 0)
+mesh = SubResource("BoxMesh_4dfqh")
+surface_material_override/0 = SubResource("StandardMaterial3D_h0fog")
+
 [node name="lana bottle4" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles" instance=ExtResource("62_jxex3")]
 transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, -20.946362, 2.5725746, -6.0545883)
 
@@ -2057,6 +2078,11 @@ collision_layer = 9
 [node name="lanacollision4" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles/lana bottle4/lanastatic4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0004067421, 0.01644075, 0.0012948513)
 shape = SubResource("BoxShape3D_0ksgv")
+
+[node name="lanabottles mesh" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles/lana bottle4"]
+transform = Transform3D(1.0000002, 0, 7.1054274e-15, 0, 2.2000008, 0, -7.1054274e-15, 0, 0.7000004, -0.0043025017, -0.036693573, 0)
+mesh = SubResource("BoxMesh_4dfqh")
+surface_material_override/0 = SubResource("StandardMaterial3D_h0fog")
 
 [node name="lana bottle5" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles" instance=ExtResource("62_jxex3")]
 transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, -20.806885, 3.3621397, -5.9856286)
@@ -2068,6 +2094,11 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0004067421, 0.01644075, 0.0012948513)
 shape = SubResource("BoxShape3D_0ksgv")
 
+[node name="lanabottles mesh" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles/lana bottle5"]
+transform = Transform3D(1.0000002, 0, 7.1054274e-15, 0, 2.2000008, 0, -7.1054274e-15, 0, 0.7000004, -0.0043025017, -0.036693573, 0)
+mesh = SubResource("BoxMesh_4dfqh")
+surface_material_override/0 = SubResource("StandardMaterial3D_h0fog")
+
 [node name="lana bottle10" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles" instance=ExtResource("62_jxex3")]
 transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, -26.258049, -4.231845, 1.1461685)
 
@@ -2077,6 +2108,11 @@ collision_layer = 9
 [node name="lanacollision10" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles/lana bottle10/lanastatic10"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0004067421, 0.01644075, 0.0012948513)
 shape = SubResource("BoxShape3D_0ksgv")
+
+[node name="lanabottles mesh" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles/lana bottle10"]
+transform = Transform3D(1.0000002, 0, 7.1054274e-15, 0, 2.2000008, 0, -7.1054274e-15, 0, 0.7000004, -0.0043025017, -0.036693573, 0)
+mesh = SubResource("BoxMesh_4dfqh")
+surface_material_override/0 = SubResource("StandardMaterial3D_h0fog")
 
 [node name="lanadropsarray" type="Node3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana"]
 
