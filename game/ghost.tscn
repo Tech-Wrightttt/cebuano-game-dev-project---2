@@ -56,6 +56,7 @@ transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0.04
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0.026, -0.478, -0.411)
 
 [node name="chasecast" type="Node3D" parent="."]
+visible = false
 
 [node name="chasecast" type="RayCast3D" parent="chasecast"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)

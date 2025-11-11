@@ -104,6 +104,13 @@ var dialogue_active: bool = false
 var _snapped_to_stairs_last_frame: bool = false
 var _last_frame_was_on_floor: int = -999999
 
+# for respawn and stuff after jumpscare
+const SANITY_DEATH_THRESHOLD: float = 20.0  # If sanity below this, game over
+const SANITY_PENALTY_ON_DEATH: float = 30.0  # How much sanity to lose when caught
+var can_be_killed: bool = true  # Prevent multiple deaths at once
+var respawn_position: Vector3 = Vector3.ZERO  # Where to respawn player
+var fade_overlay: ColorRect = null  # Persistent reference to fade overlay
+
 func _ready() -> void:
 	crosshair.visible = true
 	crosshair.modulate = Color(1.0, 1.0, 1.0, 1.0)  # full opaque white
@@ -137,6 +144,9 @@ func _ready() -> void:
 	
 	# Start the intro dialogue
 	_start_intro_dialogue()
+	
+	# Store initial spawn position
+	respawn_position = global_position
 
 func _start_intro_dialogue() -> void:
 	# Get the intro_dialogue child node
@@ -468,6 +478,110 @@ func _unhandled_input(event: InputEvent) -> void:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		else:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+			
+func take_sanity_damage() -> void:
+	if not can_be_killed:
+		return
+	
+	can_be_killed = false
+	var current_sanity = progress_bar.value
+	
+	print(\"━━━━━━━━━━━━━━━━━━━━━━━━━━━━\")
+	print(\"👻 Ghost caught player!\")
+	print(\"💭 Current sanity: %.1f\" % current_sanity)
+	
+	# Check if sanity is too low for another death
+	if current_sanity <= SANITY_DEATH_THRESHOLD:
+		print(\"💀 Sanity too low - GAME OVER!\")
+		print(\"━━━━━━━━━━━━━━━━━━━━━━━━━━━━\")
+		trigger_game_over()
+	else:
+		# Deduct sanity and respawn
+		var new_sanity = max(current_sanity - SANITY_PENALTY_ON_DEATH, 0)
+		progress_bar.value = new_sanity
+		print(\"⚠️ Lost %.1f sanity! New sanity: %.1f\" % [SANITY_PENALTY_ON_DEATH, new_sanity])
+		print(\"━━━━━━━━━━━━━━━━━━━━━━━━━━━━\")
+		respawn_player()
+		
+func trigger_game_over() -> void:
+	# Disable player controls
+	set_physics_process(false)
+	set_process(false)
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
+	# Wait a moment then change to game over scene
+	await get_tree().create_timer(2.0).timeout
+	
+	# Use SceneManager if available, otherwise direct change
+	if has_node(\"/root/SceneManager\"):
+		get_node(\"/root/SceneManager\").change_scene_threaded(\"res://scenes/game_over.tscn\")
+	else:
+		get_tree().change_scene_to_file(\"res://scenes/game_over.tscn\")
+
+func respawn_player() -> void:
+	print(\"🔄 Respawning player...\")
+	
+	# Fade to black
+	var fade_duration = 0.5
+	await fade_screen_to_black(fade_duration)
+	
+	# Reset player state
+	global_position = respawn_position
+	velocity = Vector3.ZERO
+	rotation.y = deg_to_rad(90)
+	if head:
+		head.rotation.x = 0
+	
+	# CRITICAL: Make sure player camera is active
+	if camera:
+		camera.current = true
+		print(\"📷 Player camera set to current\")
+	
+	# Wait a moment
+	await get_tree().create_timer(1.0).timeout
+	
+	# Fade back in
+	await fade_screen_from_black(fade_duration)
+	
+	# Re-enable death
+	can_be_killed = true
+	print(\"✅ Player respawned at: \", respawn_position)
+
+func fade_screen_to_black(duration: float) -> void:
+	# Create fade overlay if it doesn't exist
+	if not fade_overlay:
+		fade_overlay = ColorRect.new()
+		fade_overlay.name = \"FadeOverlay\"
+		fade_overlay.color = Color.BLACK
+		fade_overlay.modulate.a = 0.0
+		fade_overlay.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+		fade_overlay.z_index = 100  # Make sure it's on top of everything
+		
+		var canvas_layer = get_node_or_null(\"CanvasLayer2\")
+		if canvas_layer:
+			canvas_layer.add_child(fade_overlay)
+			print(\"✅ Created fade overlay\")
+	
+	if fade_overlay:
+		fade_overlay.visible = true
+		fade_overlay.modulate.a = 0.0
+		var tween = create_tween()
+		tween.tween_property(fade_overlay, \"modulate:a\", 1.0, duration)
+		await tween.finished
+		print(\"⚫ Screen faded to black\")
+
+func fade_screen_from_black(duration: float) -> void:
+	if fade_overlay:
+		var tween = create_tween()
+		tween.tween_property(fade_overlay, \"modulate:a\", 0.0, duration)
+		await tween.finished
+		fade_overlay.visible = false
+		print(\"⚪ Screen faded back in\")
+
+# Optional: Set a new respawn point (e.g., when reaching a checkpoint)
+func set_respawn_point(new_position: Vector3) -> void:
+	respawn_position = new_position
+	print(\"📍 New respawn point set: \", new_position)
 "
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_opbur"]

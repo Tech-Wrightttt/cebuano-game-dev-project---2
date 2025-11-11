@@ -105,8 +105,8 @@
 [ext_resource type="PackedScene" uid="uid://b8l08qx83oehm" path="res://game/house_materials/big_cabinet.tscn" id="67_e4khn"]
 [ext_resource type="PackedScene" uid="uid://c2e70ja2gny6r" path="res://game/house_materials/cabinet.tscn" id="76_1n58x"]
 [ext_resource type="PackedScene" uid="uid://ckcrkebv8berk" path="res://game/house_materials/fridge.tscn" id="76_eeqtj"]
-[ext_resource type="PackedScene" uid="uid://ck704r7wopd7t" path="res://game/house_materials/table.tscn" id="78_u8565"]
-[ext_resource type="PackedScene" uid="uid://cohjq6vayf1dx" path="res://game/house_materials/fruits.tscn" id="79_pybr7"]
+[ext_resource type="PackedScene" path="res://game/house_materials/table.tscn" id="78_u8565"]
+[ext_resource type="PackedScene" path="res://game/house_materials/fruits.tscn" id="79_pybr7"]
 [ext_resource type="PackedScene" uid="uid://sprxob0h16l0" path="res://assets/glb_models/appliance/electricfan/old_candle.glb" id="80_e4khn"]
 [ext_resource type="PackedScene" uid="uid://y7pspaq0n4jf" path="res://assets/glb_models/furniture/bed_with_a_bed_cover.glb" id="83_w7ycr"]
 [ext_resource type="PackedScene" uid="uid://bxoa1koi7m64f" path="res://assets/glb_models/decoratives/wall_decoration_of_grapes_made_of_cork_stoppers.glb" id="85_0e3s6"]
@@ -151,7 +151,7 @@
 [ext_resource type="PackedScene" uid="uid://dhmaxae3blvh7" path="res://assets/glb_models/furniture/wicker_basket_02.glb" id="110_nafd2"]
 [ext_resource type="PackedScene" uid="uid://brbisn406jwl3" path="res://assets/glb_models/decoratives/wooden_hourglass.glb" id="110_y3wns"]
 [ext_resource type="PackedScene" uid="uid://do0rvl1sxdfrh" path="res://assets/glb_models/basement/book_stand_low_poly.glb" id="111_gvvqw"]
-[ext_resource type="PackedScene" uid="uid://dyrhnan3i2i61" path="res://game/inri.tscn" id="111_puo31"]
+[ext_resource type="PackedScene" path="res://game/inri.tscn" id="111_puo31"]
 [ext_resource type="PackedScene" uid="uid://c5dguj0duawtb" path="res://game/house_materials/locker_wow.tscn" id="112_de7xd"]
 [ext_resource type="PackedScene" uid="uid://vu20j1rcpe78" path="res://assets/glb_models/bathroom/oily_paper_roll_vjxoffps_mid.glb" id="113_gvvqw"]
 [ext_resource type="AudioStream" uid="uid://c7dswpe77u6kr" path="res://soundfx/prayer.mp3" id="114_kirwq"]
@@ -182,7 +182,7 @@
 [ext_resource type="Script" uid="uid://c0xt6niuwwpiv" path="res://game/task_cover_mirror.gd" id="132_dyeyr"]
 [ext_resource type="AudioStream" uid="uid://cawls3lbt556x" path="res://soundfx/window_single_close.mp3" id="132_m2psj"]
 [ext_resource type="PackedScene" uid="uid://cw5paga50nyio" path="res://assets/glb_models/chores/towel.glb" id="134_s8tip"]
-[ext_resource type="PackedScene" uid="uid://cbe6q7x01q5x5" path="res://assets/glb_models/chores/dish_food_cover.glb" id="134_sfno0"]
+[ext_resource type="PackedScene" uid="uid://dyjsy356v4elx" path="res://assets/glb_models/chores/dish_food_cover.glb" id="134_sfno0"]
 [ext_resource type="AudioStream" uid="uid://3i6cdx842td1" path="res://soundfx/towel_placing.mp3" id="135_s8tip"]
 [ext_resource type="AudioStream" uid="uid://d3mp4s4edsost" path="res://soundfx/take_item.mp3" id="138_pybr7"]
 [ext_resource type="PackedScene" uid="uid://df20nbkqt4c7d" path="res://assets/glb_models/basement/worn_bandages.glb" id="138_yewax"]
@@ -206,13 +206,13 @@
 [ext_resource type="Script" uid="uid://dm4v3ftt2438v" path="res://assets/glb_models/chores/bottle9.gd" id="158_l7k06"]
 [ext_resource type="PackedScene" uid="uid://bbnm1ixycgivj" path="res://assets/glb_models/basement/medieval_gothic_chair.glb" id="159_r85fh"]
 [ext_resource type="PackedScene" uid="uid://b8vyvlmlygg47" path="res://assets/glb_models/basement/book_ouija.glb" id="160_7uwel"]
-[ext_resource type="PackedScene" path="res://game/creepy statue.tscn" id="160_puo31"]
+[ext_resource type="PackedScene" uid="uid://bbs5qv5rmoo71" path="res://game/creepy statue.tscn" id="160_puo31"]
 [ext_resource type="PackedScene" uid="uid://bmsc065woacna" path="res://assets/glb_models/basement/tree_lamp.glb" id="160_qalft"]
 [ext_resource type="PackedScene" uid="uid://c85w4s762poge" path="res://assets/glb_models/basement/cow_head_statue.glb" id="162_puo31"]
 [ext_resource type="PackedScene" uid="uid://csf1p5e7vtr01" path="res://game/house_materials/candel_na_siga.tscn" id="162_y0f4w"]
 [ext_resource type="PackedScene" uid="uid://bkst2lswsd30s" path="res://assets/glb_models/basement/wall_part_base_20k_orientated.glb" id="163_ar67c"]
 [ext_resource type="PackedScene" uid="uid://blj6l2phlisc2" path="res://assets/glb_models/stone_altar.glb" id="168_ar67c"]
-[ext_resource type="PackedScene" path="res://game/house_materials/ceiling_lights_red.tscn" id="171_p4sj0"]
+[ext_resource type="PackedScene" uid="uid://rp23q4ii6l4n" path="res://game/house_materials/ceiling_lights_red.tscn" id="171_p4sj0"]
 [ext_resource type="PackedScene" uid="uid://bnd4f5cscd18j" path="res://game/house_materials/ceiling_lights.tscn" id="210_ww5kt"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_w7ycr"]
@@ -1247,6 +1247,7 @@ material_override = SubResource("StandardMaterial3D_7nwo6")
 mesh = ExtResource("34_64wj7")
 
 [node name="ITEMS" type="Node3D" parent="doors/NavigationRegion3D"]
+visible = false
 
 [node name="1ST FLOOR ITEMS" type="Node3D" parent="doors/NavigationRegion3D/ITEMS"]
 

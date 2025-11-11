@@ -20,6 +20,7 @@ var lure_consumption_distance = 2.0
 var last_known_lure_pos: Vector3 = Vector3.ZERO
 var killed = false
 var player_in_range = false
+var performing_jumpscare = false  # NEW: Prevent multiple jumpscares
 
 func _ready() -> void:
 	visible = true
@@ -36,6 +37,10 @@ func _ready() -> void:
 	pick_destination()
 
 func _process(delta: float) -> void:
+	# Don't process anything during jumpscare
+	if performing_jumpscare:
+		return
+		
 	# Check for player proximity every frame
 	check_player_distance()
 
@@ -73,6 +78,11 @@ func _process(delta: float) -> void:
 		global_rotation_degrees.y = rad_to_deg(look_dir)
 
 func _physics_process(delta: float) -> void:
+	# Don't process physics during jumpscare
+	if performing_jumpscare:
+		velocity = Vector3.ZERO
+		return
+		
 	# RAYCAST CHASE - Player detection has TOP priority
 	chase_player($RayCast3D)
 	chase_player($RayCast3D2)
@@ -96,11 +106,9 @@ func _physics_process(delta: float) -> void:
 		if velocity.length() > 0.5:  # Ghost is actually moving
 			if animation_player.current_animation != "ghost_walk":
 				animation_player.play("ghost_walk")
-				print("🚶 Playing ghost_walk animation")
 		else:  # Ghost is standing still
 			if animation_player.current_animation != "ghost_idle":
 				animation_player.play("ghost_idle")
-				print("🧍 Playing ghost_idle animation")
 		
 		agent.set_velocity(new_velocity)
 		velocity = velocity.move_toward(new_velocity, speed)
@@ -114,11 +122,14 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 	
 	# Jumpscare/haunt system - ONLY when chasing
-	if chasing:
+	if chasing and not performing_jumpscare:
 		haunt_player()
 
 # 👁️ RAYCAST CHASE - Detects player through raycasts
 func chase_player(cast: RayCast3D):
+	if performing_jumpscare:
+		return
+		
 	if cast.is_colliding():
 		var hit = cast.get_collider()
 		if hit and hit.is_in_group("player"):
@@ -135,7 +146,7 @@ func chase_player(cast: RayCast3D):
 
 # 👁️ PROXIMITY DETECTION - 1.5m instant detection
 func check_player_distance():
-	if not player:
+	if not player or performing_jumpscare:
 		return
 	
 	var dist = global_position.distance_to(player.global_position)
@@ -148,7 +159,7 @@ func check_player_distance():
 		player_in_range = false
 
 func start_chasing_player():
-	if not chasing:
+	if not chasing and not performing_jumpscare:
 		print("🎯 Starting proximity-based chase!")
 		chasing = true
 		lured = false
@@ -261,32 +272,88 @@ func update_target_location():
 
 # 💀 Jumpscare and kill player
 func haunt_player():
-	if chasing:
-		if !$chasecast/chasecast.enabled:
-			$chasecast/chasecast.enabled = true
-			print("👁️ Chase raycast enabled")
-		$chasecast.look_at(player.global_transform.origin)
-		if $chasecast/chasecast.is_colliding():
-			var hit = $chasecast/chasecast.get_collider()
-			if hit.name == "Player" and !killed:
-				killed = true
-				print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-				print("💀 JUMPSCARE! Player killed!")
-				print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-				
-				# STOP GHOST MOVEMENT - Let animation control position
-				chasing = false
-				lured = false
-				destination = null
-				velocity = Vector3.ZERO
-				set_physics_process(false)  # Stop physics entirely
-				player.visible = false
-				player.process_mode = Node.PROCESS_MODE_DISABLED
-				$jumpscare_cam.current = true
-				$ghost_final_animation/AnimationPlayer.play("jumpscare")
-				print("🎬 Playing jumpscare animation")
-				await get_tree().create_timer(4.0).timeout
-				get_tree().quit()
+	if not chasing or performing_jumpscare or killed:
+		return
+		
+	# Enable chase raycast
+	if !$chasecast/chasecast.enabled:
+		$chasecast/chasecast.enabled = true
+		print("👁️ Chase raycast enabled")
+	
+	# Look at player
+	$chasecast.look_at(player.global_transform.origin)
+	
+	if $chasecast/chasecast.is_colliding():
+		var hit = $chasecast/chasecast.get_collider()
+		if hit.name == "Player":
+			# Trigger jumpscare immediately
+			trigger_jumpscare()
+
+func trigger_jumpscare():
+	if performing_jumpscare or killed:
+		return
+		
+	killed = true
+	performing_jumpscare = true
+	
+	print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+	print("💀 JUMPSCARE! Player caught!")
+	print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+	
+	# IMMEDIATELY stop all ghost movement
+	chasing = false
+	lured = false
+	destination = null
+	velocity = Vector3.ZERO
+	
+	# Disable ghost raycasts
+	$chasecast/chasecast.enabled = false
+	
+	# Switch to jumpscare camera immediately
+	player.visible = false
+	$jumpscare_cam.current = true
+	
+	# Play jumpscare animation
+	$ghost_final_animation/AnimationPlayer.play("jumpscare")
+	
+	# Wait for jumpscare animation
+	await get_tree().create_timer(4.0).timeout
+	
+	# Handle player death
+	if player.has_method("take_sanity_damage"):
+		player.take_sanity_damage()
+		
+		# Wait for respawn fade
+		await get_tree().create_timer(2.5).timeout
+		
+		# Reset ghost after player respawns
+		reset_ghost_after_catch()
 	else:
-		if $chasecast/chasecast.enabled:
-			$chasecast/chasecast.enabled = false
+		print("⚠️ Player doesn't have take_sanity_damage method!")
+		player.process_mode = Node.PROCESS_MODE_DISABLED
+		await get_tree().create_timer(2.0).timeout
+		get_tree().quit()
+
+# NEW: Reset ghost after catching player
+func reset_ghost_after_catch():
+	print("🔄 Resetting ghost...")
+	
+	# Reset all ghost state
+	performing_jumpscare = false
+	killed = false
+	chasing = false
+	lured = false
+	has_previous_lure = false
+	last_known_lure_pos = Vector3.ZERO
+	velocity = Vector3.ZERO
+	
+	# Switch camera back to player BEFORE respawn
+	$jumpscare_cam.current = false
+	if player and player.has_node("Head/Camera3D"):
+		var player_cam = player.get_node("Head/Camera3D")
+		player_cam.current = true
+		print("📷 Camera switched back to player")
+	
+	# Resume patrol
+	pick_destination()
+	print("✅ Ghost reset complete")
