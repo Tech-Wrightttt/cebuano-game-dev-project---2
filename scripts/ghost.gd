@@ -33,7 +33,6 @@ func _ready() -> void:
 		print("✅ Ghost found lana_task")
 	else:
 		print("❌ lana_task not found!")
-	
 	pick_destination()
 
 func _process(delta: float) -> void:
