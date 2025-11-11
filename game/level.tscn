@@ -10,11 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://c6nnpmjnwv4g2" path="res://game/house.tscn" id="2_xssv6"]
 [ext_resource type="PackedScene" uid="uid://cdluy2xnot0vs" path="res://assets/glb_models/fence/dirty_leaking_concrete_wall.glb" id="3_0w1ik"]
 [ext_resource type="PackedScene" uid="uid://cgi16aybh2b24" path="res://dialogues/second_dialogue.tscn" id="6_a2xg8"]
-[ext_resource type="PackedScene" path="res://game/lola_sit.tscn" id="6_mgnlv"]
+[ext_resource type="PackedScene" uid="uid://dm1427jn7b51r" path="res://game/lola_sit.tscn" id="6_mgnlv"]
 [ext_resource type="PackedScene" uid="uid://b8bckhbbwohyn" path="res://dialogues/dialogue_trigger_2.tscn" id="7_a4abk"]
-[ext_resource type="PackedScene" path="res://game/lola_idle.tscn" id="14_mgnlv"]
-[ext_resource type="Shader" path="res://game/post_effect_shader2.gdshader" id="17_50vgw"]
-[ext_resource type="Shader" path="res://game/post_effect_shader.gdshader" id="18_0w1ik"]
+[ext_resource type="PackedScene" uid="uid://b22u3s0h205xm" path="res://game/lola_idle.tscn" id="14_mgnlv"]
+[ext_resource type="Shader" uid="uid://cj03b73hkru46" path="res://game/post_effect_shader2.gdshader" id="17_50vgw"]
+[ext_resource type="Shader" uid="uid://b3hfpkmnguk3q" path="res://game/post_effect_shader.gdshader" id="18_0w1ik"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4xowi"]
 sky_top_color = Color(0.12270618, 0.04560589, 0.0034415955, 1)

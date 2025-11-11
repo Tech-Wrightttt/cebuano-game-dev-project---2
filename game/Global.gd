@@ -6,7 +6,9 @@ extends Node
 @onready var task_close_windows: Node3D = $"/root/level/House/doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Close_Windows"
 @onready var task_cover_mirror: Node3D = $"/root/level/House/doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror"
 @onready var task_cover_food: Node3D = $"/root/level/House/doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food"
+@onready var dialogue_trigger1 = get_node_or_null("grandma 1/dialogue_trigger1")
 
+var completed_dialogues := {}
 var available_task_pool: Array = []
 var currently_active_tasks: Array = []
 var active_task_count: int = 0
@@ -15,11 +17,15 @@ var completed_task_count: int = 0
 var current_night: int = 1
 const NIGHT_DURATION_REAL := 9 * 60.0 # 9 minutes in seconds
 var time_left: float = NIGHT_DURATION_REAL
+#var dialogue_triggers = get_tree().get_nodes_in_group("dialogue_triggers")
 
 const NIGHT_START_HOUR := 18 # 6 pm
 const NIGHT_END_HOUR := 24 # 12 am
 
 func _ready() -> void:
+	get_tree().connect("tree_changed", Callable(self, "_on_tree_changed"))
+	call_deferred("connect_dialogue_triggers")
+	var dialogue_triggers = get_tree().get_nodes_in_group("dialogue_triggers")
 	time_left = NIGHT_DURATION_REAL
 	available_task_pool = [
 		task_candle,
@@ -29,8 +35,34 @@ func _ready() -> void:
 		task_clean_statue
 	]
 	available_task_pool.shuffle()
-	call_deferred("ready_task")
 	
+	if current_night == 1:
+		for trigger in dialogue_triggers:
+			if trigger.name == "DialogueTrigger1":
+				trigger.queue_free()
+	# Similar connections for other triggers if needed
+	else:
+		call_deferred("ready_task")
+	
+	
+func _on_tree_changed():
+	if get_tree().current_scene:
+		connect_dialogue_triggers()
+		
+func connect_dialogue_triggers() -> void:
+	var dialogue_triggers = get_tree().get_nodes_in_group("dialogue_triggers")
+	for trigger in dialogue_triggers:
+		var call = Callable(self, "_on_dialogue_finished")
+		if not trigger.is_connected("dialogue_finished", call):
+			trigger.connect("dialogue_finished", call)
+
+
+func _on_dialogue_finished(dialogue_name: String) -> void:
+	completed_dialogues[dialogue_name] = true
+	print("GLOBAL: Dialogue finished -> ", dialogue_name)
+
+
+
 func progress_to_next_night():
 	# Stop at Night 5
 	if current_night >= 5:

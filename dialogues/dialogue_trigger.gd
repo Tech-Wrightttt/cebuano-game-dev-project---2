@@ -1,5 +1,6 @@
 extends Node3D
 
+
 @onready var first_dialogue = get_tree().current_scene.get_node("first_dialogue/canvas")
 @onready var speaker_name: RichTextLabel = get_tree().current_scene.get_node("first_dialogue/canvas/speaker_name")
 @onready var dialogue: RichTextLabel = get_tree().current_scene.get_node("first_dialogue/canvas/dialogue")
@@ -9,6 +10,8 @@ extends Node3D
 @export var dialogues: Array[String]
 @export var speaker_names: Array[String]
 @export var speaker: Node3D
+
+signal dialogue_finished(dialogue_name)
 
 var current_dialogue = -1
 var started = false
@@ -53,7 +56,10 @@ func end_dialogue():
 	# Stop any ongoing animation
 	if text_animation.is_playing():
 		text_animation.stop()
-
+		
+	print("FIRST GRANDMA CONVO ENDED!")	
+	emit_signal("dialogue_finished", "dialogue_trigger1")
+	
 func continue_dialogue():
 	current_dialogue += 1
 	if current_dialogue < dialogues.size():

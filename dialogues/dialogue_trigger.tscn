@@ -4,10 +4,10 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sse1x"]
 
-[node name="dialogue_trigger1" type="Node3D"]
+[node name="dialogue_trigger1" type="Node3D" groups=["dialogue_triggers"]]
 script = ExtResource("1_im5lx")
 
-[node name="InteractionArea" type="Area3D" parent="."]
+[node name="InteractionArea" type="Area3D" parent="." groups=["dialogue_triggers"]]
 transform = Transform3D(3.31, 0, 0, 0, 3.31, 0, 0, 0, 3.31, 0, 0, 0)
 collision_layer = 7
 collision_mask = 3

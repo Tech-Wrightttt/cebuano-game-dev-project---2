@@ -57,6 +57,7 @@ hold_deploy=""
 player=""
 window=""
 ghost=""
+dialogue_triggers=""
 
 [input]
 
