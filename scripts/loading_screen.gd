@@ -1,14 +1,8 @@
 extends CanvasLayer
 
-<<<<<<< Updated upstream
-@onready var fade_rect: ColorRect = get_node("ColorRect")
-@onready var loading_label: Label = get_node("ColorRect/VBoxContainer/Label")
-@onready var progress_bar: ProgressBar = get_node("ColorRect/VBoxContainer/ProgressBar")
-=======
 @onready var fade_rect: ColorRect = $ColorRect2/ColorRect
 @onready var loading_label: Label = $ColorRect2/ColorRect/VBoxContainer/Label
 @onready var progress_bar: ProgressBar = $ColorRect2/ColorRect/VBoxContainer/ProgressBar
->>>>>>> Stashed changes
 
 var next_scene_path: String
 var loading: bool = false
