@@ -3079,6 +3079,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14105606, -0.005493164, 0.
 shape = SubResource("BoxShape3D_mtuen")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors/broken mirror"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14907646, -0.038534164, 0)
 mesh = SubResource("PlaneMesh_7nwo6")
 surface_material_override/0 = SubResource("StandardMaterial3D_xgxom")
 
@@ -3096,6 +3097,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14105606, -0.005493164, 0.
 shape = SubResource("BoxShape3D_mtuen")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors/broken mirror2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14387321, 3.862381e-05, 0)
 mesh = SubResource("PlaneMesh_7nwo6")
 surface_material_override/0 = SubResource("StandardMaterial3D_xgxom")
 
@@ -3117,6 +3119,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14105606, -0.005493164, 0.
 shape = SubResource("BoxShape3D_mtuen")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors/broken mirror3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.08701897, -0.011730194)
 mesh = SubResource("PlaneMesh_7nwo6")
 surface_material_override/0 = SubResource("StandardMaterial3D_xgxom")
 
