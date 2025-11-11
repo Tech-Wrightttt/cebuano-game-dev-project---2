@@ -316,7 +316,7 @@ func trigger_jumpscare():
 		player.take_sanity_damage()
 		
 		# Wait for respawn fade + message (0.5s fade + 3s message + 0.5s fade = 4s total)
-		await get_tree().create_timer(4.5).timeout
+		await get_tree().create_timer(5.5).timeout
 		
 		# Check if player still exists (they might have game over'd)
 		if is_instance_valid(player) and player.can_be_killed:
