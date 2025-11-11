@@ -14,9 +14,8 @@ offset_right = 1925.0
 offset_bottom = 1079.0
 color = Color(0.48009014, 0.040878147, 0, 0.99607843)
 
-[node name="ColorRect" type="ColorRect" parent="ColorRect2"]
+[node name="ColorRect" type="ColorRect" parent="."]
 z_index = 100
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -28,7 +27,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.06469653, 0.06469653, 0.06469653, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect2/ColorRect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -43,7 +42,7 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="ColorRect2/ColorRect/VBoxContainer"]
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer"]
 z_index = 200
 layout_mode = 2
 text = "Loading"
@@ -51,5 +50,5 @@ label_settings = SubResource("LabelSettings_6rgyk")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ProgressBar" type="ProgressBar" parent="ColorRect2/ColorRect/VBoxContainer"]
+[node name="ProgressBar" type="ProgressBar" parent="ColorRect/VBoxContainer"]
 layout_mode = 2

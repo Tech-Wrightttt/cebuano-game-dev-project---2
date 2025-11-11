@@ -117,6 +117,7 @@ var fade_overlay: ColorRect = null  # Persistent reference to fade overlay
 #mini scenes
 @onready var fail_message_label = $CanvasLayer2/FailLabel
 @onready var haunted_message_label = $CanvasLayer2/HauntedLabel
+@onready var ghost = get_node(\"../House/doors/ghost\")
 
 func _ready() -> void:
 	if sprint_bar:
@@ -528,6 +529,8 @@ func trigger_game_over() -> void:
 	
 	# Fade to black
 	await fade_screen_to_black(2.0)
+	
+	ghost.disable_permanently()
 	
 	# Show the death message
 	if fail_message_label:
