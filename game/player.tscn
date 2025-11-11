@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://o7gchgjqr1i6"]
+[gd_scene load_steps=44 format=3 uid="uid://o7gchgjqr1i6"]
 
 [ext_resource type="PackedScene" uid="uid://bklxl232veydp" path="res://assets/player/first_person_arm.tscn" id="1_dadds"]
 [ext_resource type="Shader" uid="uid://bt1lbo5yomj25" path="res://game/shaders/retro_camera.gdshader" id="2_w5y0b"]
@@ -113,6 +113,10 @@ var can_be_killed: bool = true  # Prevent multiple deaths at once
 var respawn_position: Vector3 = Vector3.ZERO  # Where to respawn player
 @onready var respawn_point = $\"../House/doors/respawn_destination\"
 var fade_overlay: ColorRect = null  # Persistent reference to fade overlay
+
+#mini scenes
+@onready var fail_message_label = $CanvasLayer2/FailLabel
+@onready var haunted_message_label = $CanvasLayer2/HauntedLabel
 
 func _ready() -> void:
 	if sprint_bar:
@@ -522,10 +526,24 @@ func trigger_game_over() -> void:
 	set_process(false)
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
-	# Wait a moment then change to game over scene
-	await get_tree().create_timer(2.0).timeout
+	# Fade to black
+	await fade_screen_to_black(2.0)
 	
-	# Use SceneManager if available, otherwise direct change
+	# Show the death message
+	if fail_message_label:
+		fail_message_label.text = \"Ayoko na dito, kailangan ko nang umuwi\"
+		fail_message_label.visible = true
+		fail_message_label.modulate.a = 0.0
+		fail_message_label.z_index = 200
+		# Fade the text in smoothly
+		var tween = create_tween()
+		tween.tween_property(fail_message_label, \"modulate:a\", 1.0, 2.0)
+		await tween.finished
+	
+	# Wait before changing the scene
+	await get_tree().create_timer(3.0).timeout
+	
+	# Change to game over scene
 	if has_node(\"/root/SceneManager\"):
 		get_node(\"/root/SceneManager\").change_scene_threaded(\"res://scenes/game_over.tscn\")
 	else:
@@ -537,6 +555,15 @@ func respawn_player() -> void:
 	# Fade to black
 	var fade_duration = 0.5
 	await fade_screen_to_black(fade_duration)
+	if haunted_message_label:
+		haunted_message_label.text = \"Guniguni ko lang yata yun\"
+		haunted_message_label.visible = true
+		haunted_message_label.modulate.a = 0.0
+		haunted_message_label.z_index = 200
+		# Fade the text in smoothly
+		var tween = create_tween()
+		tween.tween_property(haunted_message_label, \"modulate:a\", 1.0, 2.0)
+		await tween.finished
 	
 	# Reset player state
 	global_position = respawn_position
@@ -549,15 +576,16 @@ func respawn_player() -> void:
 	if camera:
 		camera.current = true
 		print(\"📷 Player camera set to current\")
-	
+		
 	# Wait a moment
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(3.0).timeout
 	
 	# Fade back in
 	await fade_screen_from_black(fade_duration)
 	
 	# Re-enable death
 	can_be_killed = true
+	haunted_message_label.visible = false
 	print(\"✅ Player respawned at: \", respawn_position)
 
 func fade_screen_to_black(duration: float) -> void:
@@ -698,6 +726,15 @@ expand_margin_bottom = 3.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vc3l"]
 bg_color = Color(0.67659426, 0.60666937, 0, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_h2ex5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cvpk3"]
+font = SubResource("FontVariation_h2ex5")
+font_size = 60
+
+[sub_resource type="LabelSettings" id="LabelSettings_opbur"]
+font_size = 60
 
 [sub_resource type="FontVariation" id="FontVariation_fw65x"]
 base_font = ExtResource("16_hobtg")
@@ -892,6 +929,23 @@ offset_top = 3.0
 offset_right = 237.0
 offset_bottom = 31.0
 theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FailLabel" type="Label" parent="CanvasLayer2"]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1081.0
+text = "\"Ayoko na, gusto ko nang uwuwi...\""
+label_settings = SubResource("LabelSettings_cvpk3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HauntedLabel" type="Label" parent="CanvasLayer2"]
+visible = false
+offset_right = 1925.0
+offset_bottom = 1110.0
+label_settings = SubResource("LabelSettings_opbur")
 horizontal_alignment = 1
 vertical_alignment = 1
 

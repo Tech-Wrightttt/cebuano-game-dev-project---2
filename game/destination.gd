@@ -20,7 +20,7 @@ func enter_trigger(body):
 			return
 		
 		# CHECK: Is this trigger the current destination?
-		if body.destination != self:
+		if body.destination != self && body.destination != null:
 			print("  ⚠️ Ghost's destination is ", body.destination.name, " not ", self.name, " - ignoring")
 			print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
 			return

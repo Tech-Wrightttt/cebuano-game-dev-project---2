@@ -347,6 +347,8 @@ func reset_ghost_after_catch():
 	has_previous_lure = false
 	last_known_lure_pos = Vector3.ZERO
 	velocity = Vector3.ZERO
+	player_in_range = false  # 👈 IMPORTANT
+	chase_timer = 0.0
 	
 	# Switch camera back to player BEFORE respawn
 	$jumpscare_cam.current = false
