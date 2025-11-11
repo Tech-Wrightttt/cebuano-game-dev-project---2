@@ -1,4 +1,4 @@
-[gd_scene load_steps=391 format=4 uid="uid://c6nnpmjnwv4g2"]
+[gd_scene load_steps=393 format=4 uid="uid://c6nnpmjnwv4g2"]
 
 [ext_resource type="Script" uid="uid://cmcetdgh8ky7t" path="res://scripts/house.gd" id="1_8tqyt"]
 [ext_resource type="Material" uid="uid://31nbyn23hg2q" path="res://materials/house_material.tres" id="1_f6s7v"]
@@ -640,6 +640,14 @@ stencil_flags = 6
 
 [sub_resource type="BoxMesh" id="BoxMesh_uu133"]
 size = Vector3(0.5, 0.8, 0.24)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uu133"]
+stencil_mode = 3
+stencil_flags = 6
+
+[sub_resource type="BoxMesh" id="BoxMesh_ij55h"]
+material = SubResource("StandardMaterial3D_uu133")
+size = Vector3(15, 80, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kirwq"]
 size = Vector3(2.9556324, 3.0496216, 0.761101)
@@ -2707,6 +2715,10 @@ mesh = SubResource("BoxMesh_uu133")
 
 [node name="UncleanedStatueMary" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue" instance=ExtResource("129_s8tip")]
 transform = Transform3D(0.035, 0, 0, 0, 0.035, 0, 0, 0, 0.035, -37.52713, 1.970324, -18.67936)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueMary"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2209473, 71.14453, -5.267761)
+mesh = SubResource("BoxMesh_ij55h")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueMary" groups=["hold_deploy"]]
 
