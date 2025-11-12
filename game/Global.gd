@@ -111,44 +111,43 @@ func ready_task()-> void:
 	# --- 1. RESET COUNTERS ---
 	active_task_count = 0
 	completed_task_count = 0
-
+	# FIX: Initialize the active tasks array here, and start it with Lana
+	currently_active_tasks = [] 
 	# --- 2. DEACTIVATE AND DISCONNECT ALL TASKS ---
 	var all_tasks = [
 		task_lana, task_candle, task_clean_statue, 
 		task_close_windows, task_cover_mirror, task_cover_food
 	]
-	
 	for task in all_tasks:
 		if is_instance_valid(task):
 			task.deactivate_all()
 			# Disconnect the signal if it was connected from a previous night
 			if task.task_completed.is_connected(_on_task_completed):
 				task.task_completed.disconnect(_on_task_completed)
-
 	# --- 3. ACTIVATE AND CONNECT LANA (ALWAYS) ---
 	if is_instance_valid(task_lana):
 		task_lana.initialize_task()
 		task_lana.task_completed.connect(_on_task_completed)
 		active_task_count += 1
-	
+		# FIX: ADD TASK_LANA TO THE ACTIVE ARRAY
+		currently_active_tasks.append(task_lana)
 	# --- 4. ACTIVATE AND CONNECT RANDOM TASKS ---
 	var tasks_needed = min(2 + (current_night - 1), available_task_pool.size())
-	currently_active_tasks = available_task_pool.slice(0, tasks_needed)
-	
+	# Select the random tasks (excluding Lana)
+	var random_tasks_to_add = available_task_pool.slice(0, tasks_needed)
 	print("--- Night %s ---" % current_night)
 	print("Activating tasks: [Lana] (Always)")
-	
-	for task_node in currently_active_tasks:
+	for task_node in random_tasks_to_add:
 		if is_instance_valid(task_node):
 			print(" - %s" % task_node.name)
 			task_node.initialize_task()
-			
 			# --- CONNECT THE SIGNAL ---
 			task_node.task_completed.connect(_on_task_completed)
 			active_task_count += 1
+			# FIX: ADD RANDOM TASK TO THE ACTIVE ARRAY
+			currently_active_tasks.append(task_node)
 		else:
 			push_warning("Tried to activate an invalid task instance.")
-			
 	# --- 5. (FOR DEBUGGING) CHECK IF NIGHT SHOULD END ---
 	if active_task_count == 0:
 		print("GLOBAL: No tasks active. Progressing to next night.")

@@ -208,15 +208,24 @@ func use(collider_body: PhysicsBody3D) -> void:
 
 # ADD THIS ENTIRE FUNCTION
 func get_progress_string() -> String:
-	if chosen_food_ids.is_empty():
-		return ""
-		
-	# This assumes you start with 4. Change '4' if it's different.
 	var total_food = 4
 	var covered = total_food - chosen_food_ids.size()
 	
-	var food_text = "%d/%d food covered" % [covered, total_food]
-	var cover_text = "Covers: %d" % covers_player_is_holding
-	
-	# This will create two lines of text
-	return food_text + "\n" + cover_text
+	# --- State 1: Collecting Covers (Covers are still scattered) ---
+	# Show this text if the 'chosen_cover_ids' list is NOT empty.
+	if not chosen_cover_ids.is_empty():
+		var total_covers_to_collect = 4
+		var collected = total_covers_to_collect - chosen_cover_ids.size()
+		
+		# Display the progress for collecting covers
+		return "%d/%d food covers collected" % [collected, total_covers_to_collect]
+
+	# --- State 2: Covering Food (Collection is complete, covers are in inventory) ---
+	# Show this text if the 'chosen_cover_ids' list IS empty AND food is NOT fully covered.
+	if not chosen_food_ids.is_empty():
+		# This text now indicates the main goal (covering the food)
+		return "%d/%d food covered" % [covered, total_food]
+
+	# --- State 3: Task Complete ---
+	# If chosen_food_ids is also empty, the task is done.
+	return ""

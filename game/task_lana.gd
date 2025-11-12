@@ -83,6 +83,7 @@ var drops_deployed_count: int = 0
 # NEW VARIABLES (from baa2... branch)
 var current_lana_pos: Vector3 = Vector3.ZERO  # Ghost reads this to find lures
 var deployed_lures: Array[Vector3] = []  # Track all active lure positions
+var is_bottle_collected: bool = false
 
 # --- MERGED _ready() ---
 func _ready() -> void:
@@ -98,7 +99,7 @@ func initialize_task() -> void:
 	# From HEAD
 	randomize()
 	current_night = Global.get_night() 
-	
+	is_bottle_collected = false
 	if current_night == 5:
 		chosen_bottle = 10
 		# From baa2...
@@ -154,7 +155,7 @@ func update_lana_tasking() -> void:
 func take(_collider_body: PhysicsBody3D) -> void:
 	# From baa2...
 	print("👜 Player took lana bottle #%d" % chosen_bottle)
-	
+	is_bottle_collected = true
 	# From HEAD
 	var bottle_data = lana_map[chosen_bottle]
 	bottle_data["bottle"].visible = false
@@ -299,9 +300,18 @@ func _disable_all_remaining_shadows() -> void:
 func get_bottle_number() -> int:
 	return chosen_bottle
 	# ADD THIS ENTIRE FUNCTION
+
 func get_progress_string() -> String:
-	# If task is done, return an empty string to hide it
-	if drops_deployed_count >= 2:
-		return ""
+	
+	# --- State 1: Find the Bottle ---
+	# Show this if the dedicated flag is false.
+	if is_bottle_collected == false:
+		return "Find the Lana bottle"
 		
-	return "%d/2 Lana bottles deployed" % drops_deployed_count
+	# --- State 2: Deploy Drops ---
+	# Show this if the flag is true AND the task is not yet complete.
+	if drops_deployed_count < 2:
+		return "%d/2 Lana drops deployed" % drops_deployed_count
+
+	# --- State 3: Task Complete (drops_deployed_count >= 2) ---
+	return ""

@@ -191,17 +191,24 @@ func use(collider_body: PhysicsBody3D) -> void:
 				task_completed.emit()
 			return
 
-# ADD THIS ENTIRE FUNCTION
 func get_progress_string() -> String:
-	if chosen_mirror_ids.is_empty():
-		return ""
-		
-	# This assumes you start with 3. Change '3' if it's different.
-	var total_mirrors = 3
-	var covered = total_mirrors - chosen_mirror_ids.size()
 	
-	var mirror_text = "%d/%d mirrors covered" % [covered, total_mirrors]
-	var towel_text = "Towels: %d" % towels_player_is_holding
+	var total_items = 3
+	var covered_mirrors = total_items - chosen_mirror_ids.size()
+	var collected_towels = total_items - chosen_towel_ids.size()
 	
-	# This will create two lines of text
-	return mirror_text + "\n" + towel_text
+	# --- State 1: Collecting Towels ---
+	# Show this text if the chosen_towel_ids list is NOT empty.
+	# (i.e., the towels are still scattered around the house)
+	if not chosen_towel_ids.is_empty():
+		return "%d/%d towels collected" % [collected_towels, total_items]
+
+	# --- State 2: Covering Mirrors ---
+	# Show this text if the chosen_towel_ids list IS empty 
+	# (all towels are collected/in inventory) AND mirrors are NOT fully covered.
+	if not chosen_mirror_ids.is_empty():
+		return "%d/%d mirrors covered" % [covered_mirrors, total_items]
+
+	# --- State 3: Task Complete ---
+	# If chosen_mirror_ids is also empty, the task is done.
+	return ""

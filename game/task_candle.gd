@@ -102,13 +102,14 @@ func take(collider_body: PhysicsBody3D):
 			
 func interact():
 	var altar_candle_nodes = altar_Candles.get_children()
-	altar_candles_to_light = altar_candle_nodes.size()
+	altar_candles_to_light = 8 
+	
 	for candle in altar_candle_nodes:
 		candle.visible = true
 		var collision_shape: CollisionShape3D = candle.get_node_or_null("StaticBody3D/CollisionShape3D")
 		if collision_shape:
 			# Set 'disabled' to 'false' to ENABLE collision
-			collision_shape.set_deferred("disabled", false) 
+			collision_shape.set_deferred("disabled", false)
 			
 	altar_Table_Interaction.set_deferred("disabled", true)
 	
@@ -124,20 +125,22 @@ func use(collider_body: PhysicsBody3D):
 			print("TASK_CANDLE: All altar candles lit. Task complete.")
 			task_completed.emit()
 
-# ADD THIS ENTIRE FUNCTION
 func get_progress_string() -> String:
-	# Check if we're lighting candles on the altar
+	# Check 1: Lighting is active (interact() has run, and count > 0)
 	if altar_candles_to_light > 0:
-		var total = altar_Candles.get_children().size()
+		var total = 8 # Hardcoded total for lighting phase
 		var lit = total - altar_candles_to_light
 		return "%d/%d candles lighted" % [lit, total]
 	
-	# Check if we're still collecting candles
+	# Check 2: Collection is complete AND Lighting has NOT started (altar_candles_to_light == 0)
+	if chosen_candles.is_empty():
+		# This is the state where the player is prompted to click the altar trigger
+		return "Place the candles on the altar"
+	
+	# Check 3: Collection is still active
 	if not chosen_candles.is_empty():
-		# This assumes you start with 8. Change '8' if it's different.
-		var total_to_collect = 8 
+		var total_to_collect = 8
 		var collected = total_to_collect - chosen_candles.size()
 		return "%d/%d candles collected" % [collected, total_to_collect]
-		
-	# If task is done, hide it
+	# If task is completely done (and collection was complete), hide it
 	return ""
