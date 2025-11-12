@@ -15,5 +15,6 @@ func _process(_delta: float) -> void:
 		print("HEY NI TRIGGER NI!")
 		removed = true
 		queue_free()  # Remove grandma1 from scene
+		print("DIALOGUE ONE IS FREED!")
 		
 		
