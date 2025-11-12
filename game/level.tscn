@@ -1567,10 +1567,10 @@ skeleton = NodePath("")
 [node name="snakeplant" type="Node3D" parent="."]
 
 [node name="FAB converted" parent="snakeplant" instance=ExtResource("20_vuud0")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 4.867073, 0, -3.3912044)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -4.810251, 0, -3.3912044)
 
 [node name="FAB converted2" parent="snakeplant" instance=ExtResource("20_vuud0")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 4.867073, 0, 3.5055184)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -5.083432, 0, 3.5055184)
 
 [editable path="House"]
 [editable path="House/doors/NavigationRegion3D/ITEMS/2ND FLOOR ITEMS/shelf2(maopen)"]
