@@ -1,6 +1,6 @@
-[gd_scene load_steps=52 format=4 uid="uid://cfrgnh5md5thg"]
+[gd_scene load_steps=54 format=4 uid="uid://cfrgnh5md5thg"]
 
-[ext_resource type="Texture2D" uid="uid://gxvgc216jror" path="res://textures/environment/grass.jpg" id="1_4x1ur"]
+[ext_resource type="Texture2D" uid="uid://bvdwayp7w2erl" path="res://textures/environment/grass.jpg" id="1_4x1ur"]
 [ext_resource type="Script" uid="uid://rgenenduhbex" path="res://game/external/game_intro.gd" id="1_rggk2"]
 [ext_resource type="PackedScene" uid="uid://b88w1e8im7dsg" path="res://game/external/bus.tscn" id="2_f4til"]
 [ext_resource type="Texture2D" uid="uid://rk3k6k0v6q7e" path="res://assets/glb_models/nature/low_poly_trees_flowers_and_grass_24.png" id="3_dc75h"]
@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://cwfjlt5p7tkyw" path="res://assets/glb_models/nature/low_poly_trees_flowers_and_grass_1.png" id="13_j1dvo"]
 [ext_resource type="PackedScene" uid="uid://drrfdygath4dv" path="res://game/external/streetlight.tscn" id="14_j1dvo"]
 [ext_resource type="Shader" uid="uid://bt1lbo5yomj25" path="res://game/shaders/retro_camera.gdshader" id="16_e12b6"]
+[ext_resource type="AudioStream" uid="uid://b8s8d3q52ppa3" path="res://soundfx/outside_bg.mp3" id="17_kx8nd"]
+[ext_resource type="AudioStream" uid="uid://c76jfhj4fx0f3" path="res://soundfx/bus-going-down-street-86981.mp3" id="18_hnkel"]
 
 [sub_resource type="Gradient" id="Gradient_3svcq"]
 colors = PackedColorArray(0.24115604, 0.24115607, 0.24115595, 1, 0.4159802, 0.41598058, 0.41598022, 1)
@@ -379,6 +381,30 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector3(11.284, 2.616, 23.892)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("crickets:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("buss:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_j1dvo"]
 resource_name = "cutscene"
@@ -418,6 +444,30 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(11.284, 2.616, 23.892), Vector3(9.659, 2.616, 23.892)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("crickets:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("buss:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xbmmw"]
@@ -2513,3 +2563,11 @@ environment = SubResource("Environment_j1dvo")
 libraries = {
 &"": SubResource("AnimationLibrary_xbmmw")
 }
+
+[node name="crickets" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("17_kx8nd")
+max_db = -9.354
+
+[node name="buss" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("18_hnkel")
+unit_size = 18.39
