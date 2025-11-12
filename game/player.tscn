@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://o7gchgjqr1i6"]
+[gd_scene load_steps=48 format=3 uid="uid://o7gchgjqr1i6"]
 
 [ext_resource type="PackedScene" uid="uid://bklxl232veydp" path="res://assets/player/first_person_arm.tscn" id="1_dadds"]
 [ext_resource type="Shader" uid="uid://bt1lbo5yomj25" path="res://game/shaders/retro_camera.gdshader" id="2_w5y0b"]
@@ -12,8 +12,11 @@
 [ext_resource type="AudioStream" uid="uid://vwjiofxfws3q" path="res://soundfx/rock.mp3" id="10_7fxs2"]
 [ext_resource type="AudioStream" uid="uid://d3mp4s4edsost" path="res://soundfx/take_item.mp3" id="11_xkjxy"]
 [ext_resource type="AudioStream" uid="uid://dywgkgdh44a6k" path="res://soundfx/use_item.mp3" id="12_2k1gg"]
+[ext_resource type="AudioStream" uid="uid://cpw5rrnhomg5t" path="res://soundfx/walking.mp3" id="13_fw65x"]
+[ext_resource type="AudioStream" uid="uid://disp65vfwnsfs" path="res://soundfx/panting.mp3" id="14_h2ex5"]
 [ext_resource type="PackedScene" uid="uid://b4vqsmmw8umat" path="res://game/player_ui.tscn" id="14_ppdnp"]
 [ext_resource type="Texture2D" uid="uid://rwtq0qgxe3e7" path="res://materials/dot (1) (1).png" id="15_7vc3l"]
+[ext_resource type="AudioStream" uid="uid://dctsoqptcexoj" path="res://soundfx/clothes.mp3" id="15_cvpk3"]
 [ext_resource type="Script" uid="uid://oxllhacwq12h" path="res://game/player_screen_ui.gd" id="15_opbur"]
 [ext_resource type="FontFile" uid="uid://puuimmfp3vdq" path="res://assets/Fonts/CRAZK___.TTF" id="16_hobtg"]
 [ext_resource type="Script" uid="uid://dlsu1wvnsb5cu" path="res://game/panel.gd" id="17_sghav"]
@@ -118,6 +121,9 @@ var fade_overlay: ColorRect = null  # Persistent reference to fade overlay
 @onready var fail_message_label = $CanvasLayer2/FailLabel
 @onready var haunted_message_label = $CanvasLayer2/HauntedLabel
 @onready var ghost = get_node(\"../House/doors/ghost\")
+
+@onready var wood_walk: AudioStreamPlayer3D = $Sounds/Wood_Walk
+var can_play_footstep = true
 
 func _ready() -> void:
 	if sprint_bar:
@@ -476,6 +482,8 @@ func _apply_head_bob(delta: float, dir: Vector3) -> void:
 			is_walking = true
 			head_bob.stop()
 			head_bob.play(\"headbob\")
+			
+		play_footstep()
 	else:
 		bob_time = 0.0
 		camera.position.y = lerp(camera.position.y, cam_rest_y, BOB_LERP * delta)
@@ -531,6 +539,7 @@ func trigger_game_over() -> void:
 	await fade_screen_to_black(2.0)
 	
 	ghost.disable_permanently()
+	$Sounds/Packing.play()
 	
 	# Show the death message
 	if fail_message_label:
@@ -558,6 +567,7 @@ func respawn_player() -> void:
 	# Fade to black
 	var fade_duration = 0.5
 	await fade_screen_to_black(fade_duration)
+	$Sounds/Panting.play()
 	if haunted_message_label:
 		haunted_message_label.text = \"Guniguni ko lang yata yun\"
 		haunted_message_label.visible = true
@@ -626,6 +636,16 @@ func fade_screen_from_black(duration: float) -> void:
 func set_respawn_point(new_position: Vector3) -> void:
 	respawn_position = new_position
 	print(\"📍 New respawn point set: \", new_position)
+	
+func play_footstep():
+	if can_play_footstep and wood_walk and not dialogue_active:
+		wood_walk.play()
+		can_play_footstep = false
+		
+		# Wait for audio to finish + small gap before next footstep
+		var wait_time = wood_walk.stream.get_length() + 0.2  # 0.2s gap between steps
+		await get_tree().create_timer(wait_time).timeout
+		can_play_footstep = true
 "
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_opbur"]
@@ -918,6 +938,17 @@ stream = ExtResource("11_xkjxy")
 
 [node name="Use_Item" type="AudioStreamPlayer3D" parent="Sounds"]
 stream = ExtResource("12_2k1gg")
+
+[node name="Wood_Walk" type="AudioStreamPlayer3D" parent="Sounds"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.4765797, 0)
+stream = ExtResource("13_fw65x")
+
+[node name="Panting" type="AudioStreamPlayer3D" parent="Sounds"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9054587, 0)
+stream = ExtResource("14_h2ex5")
+
+[node name="Packing" type="AudioStreamPlayer3D" parent="Sounds"]
+stream = ExtResource("15_cvpk3")
 
 [node name="FootStepAudio" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0608809, 0)
