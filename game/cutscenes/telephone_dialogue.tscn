@@ -1,7 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://12utn35f48i6"]
+[gd_scene load_steps=21 format=3 uid="uid://12utn35f48i6"]
 
 [ext_resource type="Script" uid="uid://m4ttjul5ggyf" path="res://dialogues/telephone_dialogue.gd" id="1_dspbc"]
-[ext_resource type="Script" uid="uid://dos0htw2amfyl" path="res://game/cutscenes/ending_dialogue.gd" id="2_6ib7w"]
+[ext_resource type="Script" uid="uid://ch1vivyd8b7fy" path="res://game/cutscenes/telephone.gd" id="2_jd5bi"]
 [ext_resource type="FontFile" uid="uid://b02kdb4ogrrq5" path="res://fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="3_g8rtv"]
 [ext_resource type="FontFile" uid="uid://c126udgjjdqhf" path="res://fonts/cmu-typewriter/Typewriter/cmunit.ttf" id="4_g2edm"]
 [ext_resource type="PackedScene" uid="uid://c6nnpmjnwv4g2" path="res://game/house.tscn" id="5_fb2tr"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://lu3l0fmc17tv" path="res://assets/player/wood.mp3" id="8_1iisw"]
 [ext_resource type="AudioStream" uid="uid://dpankafou213g" path="res://soundfx/telephone.mp3" id="9_hgng3"]
 [ext_resource type="AudioStream" uid="uid://rfvbap0euiis" path="res://soundfx/phone-pick-up-46796.mp3" id="10_jd5bi"]
+[ext_resource type="AudioStream" uid="uid://b86q6i0y46m2k" path="res://soundfx/eerie-atmosphere-ambience-372558.mp3" id="11_1iisw"]
 
 [sub_resource type="Animation" id="Animation_dncil"]
 length = 0.001
@@ -146,6 +147,18 @@ tracks/7/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("bg:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_uc6nr"]
 resource_name = "telephone"
@@ -246,6 +259,18 @@ tracks/7/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("bg:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_43280"]
 _data = {
@@ -296,7 +321,7 @@ spot_attenuation = 1.15
 spot_angle_attenuation = 1.1095695
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-script = ExtResource("2_6ib7w")
+script = ExtResource("2_jd5bi")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = -1
@@ -363,3 +388,6 @@ stream = ExtResource("9_hgng3")
 
 [node name="pickup" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("10_jd5bi")
+
+[node name="bg" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("11_1iisw")
