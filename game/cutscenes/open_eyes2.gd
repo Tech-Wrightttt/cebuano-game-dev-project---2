@@ -2,16 +2,37 @@ extends Node3D
 
 func _ready() -> void:
 	# Start the animation
+	$AnimationPlayer.animation_finished.connect(_on_animation_finished)
+	
 	$AnimationPlayer.play("open eyes")
 	
 	# Add the quick wake-up effect (fade in and out in 2 seconds)
 	await quick_wake_up_effect()
 	
-	# Wait for the remaining animation time
-	await get_tree().create_timer(13.0).timeout
+
+func _on_animation_finished(anim_name: String):
+	if anim_name == "open eyes":
+		create_blackout()
+
+func create_blackout():
+	var blackout_layer = CanvasLayer.new()
+	blackout_layer.layer = 100
 	
-	# Change scene (commented out as in your original)
-	#get_tree().change_scene_to_file("res://game/level.tscn")
+	var black_screen = ColorRect.new()
+	black_screen.color = Color.TRANSPARENT
+	black_screen.size = get_viewport().size  # Use viewport size
+	black_screen.anchor_left = 0
+	black_screen.anchor_top = 0
+	black_screen.anchor_right = 1
+	black_screen.anchor_bottom = 1
+	
+	blackout_layer.add_child(black_screen)
+	add_child(blackout_layer)
+	
+	# Fade to black over 3 seconds
+	var tween = create_tween()
+	tween.tween_property(black_screen, "color", Color.BLACK, 3.0)
+	
 
 func quick_wake_up_effect() -> void:
 	# This creates CanvasLayer automatically in code
@@ -38,7 +59,7 @@ func quick_wake_up_effect() -> void:
 	
 	# Quick fade out over 2 seconds (simulating opening eyes)
 	var tween = create_tween()
-	tween.tween_property(overlay, "color", Color(0, 0, 0, 0), 2.0)
+	tween.tween_property(overlay, "color", Color(0, 0, 0, 0), 4.0)
 	await tween.finished
 	
 	# Remove the overlay

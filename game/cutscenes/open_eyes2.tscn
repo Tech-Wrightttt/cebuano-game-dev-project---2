@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://jwbt5ntefi5w"]
+[gd_scene load_steps=18 format=3 uid="uid://jwbt5ntefi5w"]
 
 [ext_resource type="Script" uid="uid://br52px242iwje" path="res://game/cutscenes/open_eyes2.gd" id="1_lnv6w"]
 [ext_resource type="Shader" uid="uid://bt1lbo5yomj25" path="res://game/shaders/retro_camera.gdshader" id="2_vne8n"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://c126udgjjdqhf" path="res://fonts/cmu-typewriter/Typewriter/cmunit.ttf" id="4_jmjr0"]
 [ext_resource type="PackedScene" uid="uid://c6nnpmjnwv4g2" path="res://game/house.tscn" id="5_hqcdg"]
 [ext_resource type="PackedScene" uid="uid://bnd4f5cscd18j" path="res://game/house_materials/ceiling_lights.tscn" id="6_wh7yo"]
+[ext_resource type="AudioStream" uid="uid://cysg1bpolixhv" path="res://soundfx/shufflinginbed-38285.mp3" id="7_vne8n"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8w61q"]
 shader = ExtResource("2_vne8n")
@@ -81,6 +82,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(-26.595726, 9.772967, -23.375956)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer3D:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_lqnbj"]
 resource_name = "open eyes"
@@ -108,6 +121,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(-26.595726, 9.772967, -23.375956), Vector3(-26.017, 9.804, -23.354), Vector3(-25.806, 9.843, -23.346), Vector3(-26.596, 9.843, -23.346), Vector3(-24.701, 11.293, -21.036), Vector3(-24.206, 11.548, -20.381)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer3D:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_05dia"]
@@ -209,3 +234,8 @@ environment = SubResource("Environment_bn1ud")
 [node name="Sunlight (for testing purposes)" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, -26.595726, 9.772967, -23.375956)
+stream = ExtResource("7_vne8n")
+volume_db = 80.0
