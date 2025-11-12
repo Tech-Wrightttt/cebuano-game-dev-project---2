@@ -40,6 +40,7 @@ func _ready() -> void:
 		for trigger in dialogue_triggers:
 			if trigger.name == "DialogueTrigger1":
 				trigger.queue_free()
+		call_deferred("ready_task")
 	# Similar connections for other triggers if needed
 	else:
 		call_deferred("ready_task")
