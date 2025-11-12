@@ -233,6 +233,7 @@ speaker_names = Array[String](["Lola Olet", "Paulette (You)", "Lola Olet", "Paul
 speaker = NodePath("..")
 
 [node name="fences" type="Node3D" parent="."]
+visible = false
 
 [node name="fence" type="Node3D" parent="fences"]
 
@@ -542,6 +543,7 @@ mesh = SubResource("PlaneMesh_s5juq")
 skeleton = NodePath("../..")
 
 [node name="trees right side" type="Node3D" parent="."]
+visible = false
 
 [node name="green tree" type="Node3D" parent="trees right side"]
 transform = Transform3D(2.2140298, 0, 0, 0, -2.6811313e-07, 1.3255277, 0, -1.6456668, -2.1595582e-07, 11.013647, 0.6549511, -11.295686)
@@ -1044,6 +1046,7 @@ skeleton = NodePath("")
 
 [node name="trees left side" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -57.229244, -1.3737454, -26.63839)
+visible = false
 
 [node name="green tree" type="Node3D" parent="trees left side"]
 transform = Transform3D(2.2140298, 0, 0, 0, -2.6811313e-07, 1.3255277, 0, -1.6456668, -2.1595582e-07, 11.013647, 0.6549511, -11.295686)

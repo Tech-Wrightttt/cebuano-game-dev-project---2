@@ -28,19 +28,36 @@ var player_in_range = false
 var performing_jumpscare = false  # Prevent multiple jumpscares
 var ghost_disabled = false  # NEW: Completely disable ghost during respawn/game over
 
+# Ghost activation with setter
+var is_ghost_started: bool = false:
+	set(value):
+		if value and not is_ghost_started:
+			is_ghost_started = value
+			_activate_ghost()
+
 func _ready() -> void:
-	visible = true
-	animation_player.play("ghost_idle")
-	await get_tree().create_timer(2.0).timeout
+	visible = false  # Start invisible
 	
 	if lana_task:
 		lana_task.add_to_group("lana_task")
 		print("✅ Ghost found lana_task")
 	else:
 		print("❌ lana_task not found!")
+	
+	print("👻 Ghost ready but NOT active (waiting for activation)")
+
+func _activate_ghost() -> void:
+	print("👻 GHOST ACTIVATED!")
+	visible = true
+	animation_player.play("ghost_idle")
+	await get_tree().create_timer(2.0).timeout
 	pick_destination()
+	print("👻 Ghost now active and patrolling!")
 
 func _process(delta: float) -> void:
+	if not is_ghost_started:
+		return
+	
 	# CRITICAL: Don't process ANYTHING if ghost is disabled
 	if ghost_disabled or performing_jumpscare:
 		return

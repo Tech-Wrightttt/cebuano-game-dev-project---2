@@ -356,6 +356,9 @@ func each_night_respawn() -> void:
 	
 	if Global.current_night == 1:
 		await play_open_eyes_cutscene()
+		
+		await get_tree().create_timer(30.0).timeout
+		ghost.is_ghost_started = true
 		#i want it so that it plays a scene or calls scene that plays its cutscene
 		#but i do not want this affecting the game it has to be separate 
 		#it then plays goes away and then the game continues
