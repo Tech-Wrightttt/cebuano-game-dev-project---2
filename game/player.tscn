@@ -747,24 +747,6 @@ height = 3.25
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_iyaem"]
 points = PackedVector3Array(0.34477568, 1.3923018, 0.08683916, -0.325728, -1.4440001, -0.11937879, -0.325728, -1.4440001, 0.13842647, -0.325728, 1.4440001, 0.13842647, -0.11937879, 1.4440001, -0.325728, 0.2931884, -1.3923018, -0.2225534, 0.08683916, -1.3923018, 0.34477568, -0.067791484, 1.3923018, 0.34477568, 0.24160108, 1.3923018, -0.27414072, -0.11937879, -1.4440001, -0.325728, 0.2931884, -1.4440001, 0.19001377, 0.24160108, 1.4956986, 0.24160108, -0.325728, 1.3409265, -0.17096609, -0.2225534, -1.3923018, 0.2931884, 0.13842647, -1.4440001, -0.325728, 0.08352814, -1.5797893, 0.13290623, 0.34477568, -1.3923018, -0.067791484, 0.34477568, 1.3923018, -0.067791484, -0.11366492, 1.57731, -0.11366492, -0.2225534, 1.3923018, 0.2931884, -0.17096609, -1.3409265, -0.325728, 0.13842647, 1.4440001, -0.325728, 0.08683916, 1.3923018, 0.34477568, -0.11366492, -1.57731, -0.11366492, 0.083528265, 1.5797919, 0.13290644, 0.19001377, -1.4440001, 0.2931884, 0.2931884, 1.4956986, -0.17096609, -0.067791484, -1.3923018, 0.34477568, 0.2931884, -1.4956986, -0.17096609, 0.34477568, -1.3923018, 0.08683916, -0.17096609, 1.3409265, -0.325728, -0.325728, -1.3409265, -0.17096609)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_du4nq"]
-shader = ExtResource("2_w5y0b")
-shader_parameter/aberration_strength = 3.0
-shader_parameter/blur_strength = 2.0
-shader_parameter/noise_strength = 0.048
-shader_parameter/vignette_strength = 0.78
-shader_parameter/scanline_strength = 0.016
-shader_parameter/distortion_strength = 0.1
-shader_parameter/ghost_strength = 0.12
-shader_parameter/flicker_strength = 0.005
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_p0vpi"]
-shader = ExtResource("3_du4nq")
-shader_parameter/wiggle = 0.03
-shader_parameter/wiggle_speed = 25.0
-shader_parameter/smear = 0.4610000218975
-shader_parameter/blur_samples = 15
-
 [sub_resource type="Animation" id="Animation_4fto2"]
 length = 0.001
 tracks/0/type = "value"
@@ -905,6 +887,24 @@ base_font = ExtResource("18_a3s55")
 font = SubResource("FontVariation_cvpk3")
 font_size = 100
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_du4nq"]
+shader = ExtResource("2_w5y0b")
+shader_parameter/aberration_strength = 3.0
+shader_parameter/blur_strength = 2.0
+shader_parameter/noise_strength = 0.048
+shader_parameter/vignette_strength = 0.78
+shader_parameter/scanline_strength = 0.016
+shader_parameter/distortion_strength = 0.1
+shader_parameter/ghost_strength = 0.12
+shader_parameter/flicker_strength = 0.005
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p0vpi"]
+shader = ExtResource("3_du4nq")
+shader_parameter/wiggle = 0.03
+shader_parameter/wiggle_speed = 25.0
+shader_parameter/smear = 0.4610000218975
+shader_parameter/blur_samples = 15
+
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.625, 0)
 collision_layer = 3
@@ -940,19 +940,6 @@ spot_angle_attenuation = 1.1095695
 
 [node name="Filters" type="CanvasLayer" parent="Head/Camera3D"]
 
-[node name="BackBufferCopy" type="BackBufferCopy" parent="Head/Camera3D/Filters"]
-visible = false
-copy_mode = 2
-
-[node name="Post_Processing" type="ColorRect" parent="Head/Camera3D/Filters"]
-visible = false
-material = SubResource("ShaderMaterial_du4nq")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
 [node name="Interaction_Label" type="Label" parent="Head/Camera3D/Filters"]
 anchors_preset = -1
 anchor_left = 0.5
@@ -967,19 +954,6 @@ theme_override_font_sizes/font_size = 24
 text = "*"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
-
-[node name="BackBufferCopy_VHS" type="BackBufferCopy" parent="Head/Camera3D/Filters"]
-visible = false
-copy_mode = 2
-
-[node name="VHS" type="ColorRect" parent="Head/Camera3D/Filters"]
-visible = false
-material = SubResource("ShaderMaterial_p0vpi")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="ObjectInteractor" type="RayCast3D" parent="Head"]
 transform = Transform3D(1.5, 0, 0, 0, -6.556708e-08, -1.5, 0, 1.5, -6.556708e-08, 0, -0.099999905, 0)
@@ -1196,3 +1170,27 @@ offset_top = 145.0
 offset_right = 1851.0
 offset_bottom = 254.0
 texture = ExtResource("21_fw65x")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="CanvasLayer"]
+copy_mode = 2
+
+[node name="Post_Processing" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_du4nq")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackBufferCopy_VHS" type="BackBufferCopy" parent="CanvasLayer"]
+copy_mode = 2
+
+[node name="VHS" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_p0vpi")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
