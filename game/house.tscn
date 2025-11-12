@@ -1,4 +1,4 @@
-[gd_scene load_steps=403 format=4 uid="uid://c6nnpmjnwv4g2"]
+[gd_scene load_steps=406 format=4 uid="uid://c6nnpmjnwv4g2"]
 
 [ext_resource type="Script" uid="uid://cmcetdgh8ky7t" path="res://scripts/house.gd" id="1_8tqyt"]
 [ext_resource type="Material" uid="uid://31nbyn23hg2q" path="res://materials/house_material.tres" id="1_f6s7v"]
@@ -190,6 +190,7 @@
 [ext_resource type="PackedScene" uid="uid://dnd0sn2ioqiu4" path="res://assets/glb_models/basement/freerawscanthe_statue_of_peace.glb" id="139_uwpgj"]
 [ext_resource type="PackedScene" uid="uid://3w3gl5t3ekbj" path="res://assets/glb_models/basement/leather_water_pot_wgxobbm_mid.glb" id="140_56x1q"]
 [ext_resource type="PackedScene" uid="uid://b324pcdn7n8lg" path="res://assets/glb_models/basement/chair_version_03.glb" id="145_b1itb"]
+[ext_resource type="PackedScene" uid="uid://cbe6q7x01q5x5" path="res://assets/glb_models/chores/dish_food_cover.glb" id="145_h0fog"]
 [ext_resource type="PackedScene" uid="uid://c86baff0ssgt2" path="res://assets/glb_models/basement/steering_wheel_wcvodee_low.glb" id="146_q6frv"]
 [ext_resource type="PackedScene" uid="uid://cnkdyfvksrh4v" path="res://assets/glb_models/basement/rusty_car_exhaust_wcvoca1_low.glb" id="148_8tqyt"]
 [ext_resource type="PackedScene" uid="uid://dfgce8vf6l1y1" path="res://assets/glb_models/basement/rusty_radiator_fan_wcljdev_low.glb" id="149_kx6i0"]
@@ -710,6 +711,11 @@ size = Vector3(1, 0.8162842, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4dfqh"]
 size = Vector3(4.3395996, 1.3918152, 4.0722656)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uu133"]
+size = Vector3(179.67938, 62.361706, 181.51294)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6xd5g"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w7ycr"]
 size = Vector3(210.35085, 31.299255, 121.98889)
@@ -2090,10 +2096,10 @@ shape = SubResource("BoxShape3D_y3wns")
 [node name="skeleton" parent="doors/NavigationRegion3D/ITEMS/1ST FLOOR ITEMS/altar/cabinet2" instance=ExtResource("106_gu04c")]
 transform = Transform3D(-0.013641747, 0.014614698, 0.00055965944, 8.4543067e-10, -0.0007653242, 0.01998535, 0.01462541, 0.013631756, 0.0005220175, -0.19367015, 0.87323016, 0.100334525)
 
-[node name="CHORES ITEMS" type="Node3D" parent="doors/NavigationRegion3D/ITEMS"]
+[node name="mama mary" parent="doors/NavigationRegion3D/ITEMS/1ST FLOOR ITEMS/altar" instance=ExtResource("63_m7rpm")]
+transform = Transform3D(0.00574288, 0, 0.004002415, 0, 0.0069999998, 0, -0.004002415, 0, 0.00574288, -15.4845085, -1.1721509, -18.640963)
 
-[node name="mama mary" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS" instance=ExtResource("63_m7rpm")]
-transform = Transform3D(0.00574288, 0, 0.004002415, 0, 0.0069999998, 0, -0.004002415, 0, 0.00574288, -14.907305, 3.5502794, -21.072386)
+[node name="CHORES ITEMS" type="Node3D" parent="doors/NavigationRegion3D/ITEMS"]
 
 [node name="Task_Lana" type="Node3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS" groups=["lana_task"]]
 script = ExtResource("98_aayyx")
@@ -3448,7 +3454,7 @@ script = ExtResource("132_1o4y0")
 [node name="Foods" type="Node3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food"]
 
 [node name="food" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods" instance=ExtResource("50_jxex3")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -26.548489, 3.3426888, 0.35125613)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -26.548489, 3.3426888, 0.5046967)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food" groups=["deployable"]]
 collision_layer = 9
@@ -3456,6 +3462,9 @@ collision_layer = 9
 [node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013336182, 0.02822864, 0.02050782)
 shape = SubResource("BoxShape3D_ww5kt")
+
+[node name="cover" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food" instance=ExtResource("145_h0fog")]
+transform = Transform3D(0.0016666667, 0, 0, 0, 0.0016666667, 0, 0, 0, 0.0016666667, 0.01037693, 0.0106060505, 0.0036333501)
 
 [node name="food2" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods" instance=ExtResource("51_m7rpm")]
 transform = Transform3D(0.09, 0, 0, 0, 0.09, 0, 0, 0, 0.09, -27.826057, 3.3327794, 0.3112054)
@@ -3467,15 +3476,8 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6130371, 1.223423, 0.25201964)
 shape = SubResource("BoxShape3D_l7k06")
 
-[node name="food7" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods" instance=ExtResource("51_m7rpm")]
-transform = Transform3D(0.09, 0, 0, 0, 0.09, 0, 0, 0, 0.09, -15.963298, 10.191453, 6.932429)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food7" groups=["deployable"]]
-collision_layer = 9
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food7/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6130371, 1.223423, 0.25201964)
-shape = SubResource("BoxShape3D_l7k06")
+[node name="cover" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food2" instance=ExtResource("145_h0fog")]
+transform = Transform3D(0.055555552, 0, 0, 0, 0.055555552, 0, 0, 0, 0.055555552, 0.05001831, 0.7748833, -0.104686975)
 
 [node name="food3" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods" instance=ExtResource("52_ie1il")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -26.906006, 3.3514767, -0.46964657)
@@ -3487,15 +3489,8 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12933397, 0)
 shape = SubResource("BoxShape3D_jcqpj")
 
-[node name="food8" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods" instance=ExtResource("52_ie1il")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -13.214618, 10.236273, -14.912043)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food8" groups=["deployable"]]
-collision_layer = 9
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food8/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12933397, 0)
-shape = SubResource("BoxShape3D_jcqpj")
+[node name="cover" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food3" instance=ExtResource("145_h0fog")]
+transform = Transform3D(0.007142857, 0, 0, 0, 0.007142857, 0, 0, 0, 0.007142857, -0.034706116, 0.072916985, -0.058318794)
 
 [node name="food4" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods" instance=ExtResource("52_ie1il")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -28.973022, 3.3514767, 0.4796692)
@@ -3507,15 +3502,8 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09185791, 0)
 shape = SubResource("BoxShape3D_64wj7")
 
-[node name="food9" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods" instance=ExtResource("52_ie1il")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -30.95605, 3.1988273, -19.18847)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food9" groups=["deployable"]]
-collision_layer = 9
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food9/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09185791, 0)
-shape = SubResource("BoxShape3D_64wj7")
+[node name="cover" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food4" instance=ExtResource("145_h0fog")]
+transform = Transform3D(0.007142857, 0, 0, 0, 0.007142857, 0, 0, 0, 0.007142857, -0.0073890686, -0.03098917, -0.03998202)
 
 [node name="food5" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods" instance=ExtResource("53_0dpsr")]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -28.450733, 3.34066, -0.57681954)
@@ -3527,15 +3515,8 @@ collision_layer = 9
 transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.10510254, 0.1959076, -0.04882908)
 shape = SubResource("BoxShape3D_4dfqh")
 
-[node name="food10" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods" instance=ExtResource("53_0dpsr")]
-transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -14.472619, 3.5836, -20.257439)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food10" groups=["deployable"]]
-collision_layer = 9
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food10/StaticBody3D"]
-transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.10510254, 0.1959076, -0.04882908)
-shape = SubResource("BoxShape3D_4dfqh")
+[node name="cover" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food5" instance=ExtResource("145_h0fog")]
+transform = Transform3D(0.033333328, 0, 0, 0, 0.033333328, 0, 0, 0, 0.033333328, 0.27668762, 0.035150528, -0.3933835)
 
 [node name="food6" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods" instance=ExtResource("50_jxex3")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -24.545097, 10.299811, 6.9459724)
@@ -3547,7 +3528,230 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013336182, 0.02822864, 0.02050782)
 shape = SubResource("BoxShape3D_ww5kt")
 
+[node name="cover" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food6" instance=ExtResource("145_h0fog")]
+transform = Transform3D(0.0016666667, 0, 0, 0, 0.0016666667, 0, 0, 0, 0.0016666667, 0.006155014, 0.011163473, 0.015374422)
+
+[node name="food7" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods" instance=ExtResource("51_m7rpm")]
+transform = Transform3D(0.09, 0, 0, 0, 0.09, 0, 0, 0, 0.09, -15.963298, 10.191453, 6.932429)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food7" groups=["deployable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food7/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6130371, 1.223423, 0.25201964)
+shape = SubResource("BoxShape3D_l7k06")
+
+[node name="cover" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food7" instance=ExtResource("145_h0fog")]
+transform = Transform3D(0.055555552, 0, 0, 0, 0.055555552, 0, 0, 0, 0.055555552, -0.22221375, 0.47447968, -0.11542511)
+
+[node name="food8" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods" instance=ExtResource("52_ie1il")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -13.214618, 10.236273, -14.912043)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food8" groups=["deployable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food8/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12933397, 0)
+shape = SubResource("BoxShape3D_jcqpj")
+
+[node name="cover" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food8" instance=ExtResource("145_h0fog")]
+transform = Transform3D(0.007142857, 0, 0, 0, 0.007142857, 0, 0, 0, 0.007142857, 0.018743515, -0.030056, -0.060203552)
+
+[node name="food9" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods" instance=ExtResource("52_ie1il")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -30.95605, 3.1988273, -19.18847)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food9" groups=["deployable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food9/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09185791, 0)
+shape = SubResource("BoxShape3D_64wj7")
+
+[node name="cover" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food9" instance=ExtResource("145_h0fog")]
+transform = Transform3D(0.007142857, 0, 0, 0, 0.007142857, 0, 0, 0, 0.007142857, -0.03227234, -0.02867794, 0.053409576)
+
+[node name="food10" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods" instance=ExtResource("53_0dpsr")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -14.472619, 3.5836, -20.257439)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food10" groups=["deployable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food10/StaticBody3D"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.10510254, 0.1959076, -0.04882908)
+shape = SubResource("BoxShape3D_4dfqh")
+
+[node name="cover" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/Foods/food10" instance=ExtResource("145_h0fog")]
+transform = Transform3D(0.033333328, 0, 0, 0, 0.033333328, 0, 0, 0, 0.033333328, 0.40629578, -0.21226883, -0.15867615)
+
 [node name="CoversAroundTheHouse" type="Node3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food"]
+
+[node name="cover" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("145_h0fog")]
+transform = Transform3D(0.0001700137, 0.0049960613, 0.00010235622, 0.004997108, -0.00017004929, -4.0045376e-12, 3.48114e-06, 0.00010229743, -0.004998953, -15.76123, -3.0412216, 1.3052402)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0166016, 30.680725, -10.331421)
+shape = SubResource("BoxShape3D_uu133")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover"]
+transform = Transform3D(100.82461, 0, 0, 0, 43.5002, 0, 0, 0, 97.08822, 0, 26.662537, 9.306896)
+mesh = SubResource("BoxMesh_6xd5g")
+
+[node name="cover2" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("145_h0fog")]
+transform = Transform3D(0.00010270576, 0.0049989447, 0, -0.0049989447, 0.00010270576, 0, 0, 0, 0.005, -19.750835, 5.217382, -16.626682)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover2" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0166016, 30.680725, -10.331421)
+shape = SubResource("BoxShape3D_uu133")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover2"]
+transform = Transform3D(100.82461, 0, 0, 0, 43.5002, 0, 0, 0, 97.08822, 0, 26.662537, 9.306896)
+mesh = SubResource("BoxMesh_6xd5g")
+
+[node name="cover3" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("145_h0fog")]
+transform = Transform3D(0.005, 0, 0, 0, -5.698396e-05, 0.0049996753, 0, -0.0049996753, -5.698396e-05, -8.431914, 11.438469, -14.221518)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover3" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0166016, 30.680725, -10.331421)
+shape = SubResource("BoxShape3D_uu133")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover3"]
+transform = Transform3D(100.82461, 0, 0, 0, 43.5002, 0, 0, 0, 97.08822, 0, 26.662537, 9.306896)
+mesh = SubResource("BoxMesh_6xd5g")
+
+[node name="cover4" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("145_h0fog")]
+transform = Transform3D(0.005, 0, 0, 0, -0.00017257892, -0.0049970206, 0, 0.0049970206, -0.00017257892, -14.851921, 11.145999, -7.799858)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover4" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover4/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0166016, 30.680725, -10.331421)
+shape = SubResource("BoxShape3D_uu133")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover4"]
+transform = Transform3D(100.82461, 0, 0, 0, 43.5002, 0, 0, 0, 97.08822, 0, 26.662537, 9.306896)
+mesh = SubResource("BoxMesh_6xd5g")
+
+[node name="cover5" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("145_h0fog")]
+transform = Transform3D(0.005, 0, 0, 0, -0.00012486552, -0.004998441, 0, 0.004998441, -0.00012486552, -25.488457, 11.19158, -7.78918)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover5" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover5/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0166016, 30.680725, -10.331421)
+shape = SubResource("BoxShape3D_uu133")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover5"]
+transform = Transform3D(100.82461, 0, 0, 0, 43.5002, 0, 0, 0, 97.08822, 0, 26.662537, 9.306896)
+mesh = SubResource("BoxMesh_6xd5g")
+
+[node name="cover6" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("145_h0fog")]
+transform = Transform3D(0.005, 0, 0, 0, -2.3910892e-05, -0.004999942, 0, 0.004999942, -2.3910892e-05, -27.854706, 4.5054255, -25.758167)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover6" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover6/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0166016, 30.680725, -10.331421)
+shape = SubResource("BoxShape3D_uu133")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover6"]
+transform = Transform3D(100.82461, 0, 0, 0, 43.5002, 0, 0, 0, 97.08822, 0, 26.662537, 9.306896)
+mesh = SubResource("BoxMesh_6xd5g")
+
+[node name="cover7" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("145_h0fog")]
+transform = Transform3D(0.00037054226, -0.0049862512, 0, 0.0049862512, 0.00037054226, 0, 0, 0, 0.005, -20.33603, 5.545107, -14.777769)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover7" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover7/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0166016, 30.680725, -10.331421)
+shape = SubResource("BoxShape3D_uu133")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover7"]
+transform = Transform3D(100.82461, 0, 0, 0, 43.5002, 0, 0, 0, 97.08822, 0, 26.662537, 9.306896)
+mesh = SubResource("BoxMesh_6xd5g")
+
+[node name="cover8" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("145_h0fog")]
+transform = Transform3D(6.0997612e-05, 0.0049996283, 0, -0.0049996283, 6.0997612e-05, 0, 0, 0, 0.005, -15.452019, 5.136324, 0.628927)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover8" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover8/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0166016, 30.680725, -10.331421)
+shape = SubResource("BoxShape3D_uu133")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover8"]
+transform = Transform3D(100.82461, 0, 0, 0, 43.5002, 0, 0, 0, 97.08822, 0, 26.662537, 9.306896)
+mesh = SubResource("BoxMesh_6xd5g")
+
+[node name="cover9" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("145_h0fog")]
+transform = Transform3D(0.005, 0, 0, 0, -0.00021748652, 0.004995268, 0, -0.004995268, -0.00021748652, -24.508595, 4.848598, 7.793041)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover9" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover9/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0166016, 30.680725, -10.331421)
+shape = SubResource("BoxShape3D_uu133")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover9"]
+transform = Transform3D(100.82461, 0, 0, 0, 43.5002, 0, 0, 0, 97.08822, 0, 26.662537, 9.306896)
+mesh = SubResource("BoxMesh_6xd5g")
+
+[node name="cover10" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("145_h0fog")]
+transform = Transform3D(-0.00014388264, -0.004997929, 0, 0.004997929, -0.00014388264, 0, 0, 0, 0.005, -20.221443, 5.324679, -1.4880843)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover10" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover10/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0166016, 30.680725, -10.331421)
+shape = SubResource("BoxShape3D_uu133")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover10"]
+transform = Transform3D(100.82461, 0, 0, 0, 43.5002, 0, 0, 0, 97.08822, 0, 26.662537, 9.306896)
+mesh = SubResource("BoxMesh_6xd5g")
+
+[node name="cover11" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("145_h0fog")]
+transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, -21.538906, -4.7228584, -1.3660642)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover11" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover11/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0166016, 30.680725, -10.331421)
+shape = SubResource("BoxShape3D_uu133")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover11"]
+transform = Transform3D(100.82461, 0, 0, 0, 43.5002, 0, 0, 0, 97.08822, 0, 26.662537, 9.306896)
+mesh = SubResource("BoxMesh_6xd5g")
+
+[node name="cover12" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("145_h0fog")]
+transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, -21.47229, -4.7151265, 0.6774807)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover12" groups=["equipable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover12/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0166016, 30.680725, -10.331421)
+shape = SubResource("BoxShape3D_uu133")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover12"]
+transform = Transform3D(100.82461, 0, 0, 0, 43.5002, 0, 0, 0, 97.08822, 0, 26.662537, 9.306896)
+mesh = SubResource("BoxMesh_6xd5g")
 
 [node name="Put_Cover" type="AudioStreamPlayer3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food"]
 stream = ExtResource("138_pybr7")
@@ -3658,6 +3862,11 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0004067421, 0.01644075, 0.0012948513)
 shape = SubResource("BoxShape3D_0ksgv")
 
+[node name="lanabottles mesh" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/2ND FLOOR ITEMS/shelf2(maopen)/RootNode/DRAWER1/Door/lana bottle7"]
+transform = Transform3D(1.0000002, 0, 7.1054274e-15, 0, 2.2000008, 0, -7.1054274e-15, 0, 0.7000004, -0.0043025017, -0.036693573, 0)
+mesh = SubResource("BoxMesh_4dfqh")
+surface_material_override/0 = SubResource("StandardMaterial3D_h0fog")
+
 [node name="hourglass" parent="doors/NavigationRegion3D/ITEMS/2ND FLOOR ITEMS/shelf2(maopen)" instance=ExtResource("110_y3wns")]
 transform = Transform3D(0.097018585, 0, 0.051840097, 0, 0.10999999, 0, -0.051840097, 0, 0.097018585, -0.6146965, 0.813009, 0)
 
@@ -3675,6 +3884,11 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0004067421, 0.01644075, 0.0012948513)
 shape = SubResource("BoxShape3D_0ksgv")
 
+[node name="lanabottles mesh" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/2ND FLOOR ITEMS/shelf3(maopen)/RootNode/DRAWER3/Door/lana bottle6"]
+transform = Transform3D(1.0000002, 0, 7.1054274e-15, 0, 2.2000008, 0, -7.1054274e-15, 0, 0.7000004, -0.0043025017, -0.036693573, 0)
+mesh = SubResource("BoxMesh_4dfqh")
+surface_material_override/0 = SubResource("StandardMaterial3D_h0fog")
+
 [node name="shelf4(maopen)" parent="doors/NavigationRegion3D/ITEMS/2ND FLOOR ITEMS" instance=ExtResource("100_aayyx")]
 transform = Transform3D(2.475, 0, 0, 0, 2.475, 0, 0, 0, 2.475, -23.163445, 8.190056, 7.0593643)
 
@@ -3689,6 +3903,11 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0004067421, 0.01644075, 0.0012948513)
 shape = SubResource("BoxShape3D_0ksgv")
 
+[node name="lanabottles mesh" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/2ND FLOOR ITEMS/shelf4(maopen)/RootNode/DRAWER1/Door/lana bottle8"]
+transform = Transform3D(1.0000002, 0, 7.1054274e-15, 0, 2.2000008, 0, -7.1054274e-15, 0, 0.7000004, -0.0043025017, -0.036693573, 0)
+mesh = SubResource("BoxMesh_4dfqh")
+surface_material_override/0 = SubResource("StandardMaterial3D_h0fog")
+
 [node name="lana bottle9" parent="doors/NavigationRegion3D/ITEMS/2ND FLOOR ITEMS/shelf4(maopen)/RootNode/DRAWER6/Door" index="0" instance=ExtResource("62_jxex3")]
 transform = Transform3D(-4.062067e-06, 0, 92.929276, 0, 92.929276, 0, -92.929276, 0, -4.062067e-06, 24.244202, -20.809174, -4.541748)
 script = ExtResource("158_l7k06")
@@ -3699,6 +3918,11 @@ collision_layer = 9
 [node name="lanacollision9" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/2ND FLOOR ITEMS/shelf4(maopen)/RootNode/DRAWER6/Door/lana bottle9/lanastatic9" groups=["equipable", "lana"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0004067421, 0.01644075, 0.0012948513)
 shape = SubResource("BoxShape3D_0ksgv")
+
+[node name="lanabottles mesh" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/2ND FLOOR ITEMS/shelf4(maopen)/RootNode/DRAWER6/Door/lana bottle9"]
+transform = Transform3D(1.0000002, 0, 7.1054274e-15, 0, 2.2000008, 0, -7.1054274e-15, 0, 0.7000004, -0.0043025017, -0.036693573, 0)
+mesh = SubResource("BoxMesh_4dfqh")
+surface_material_override/0 = SubResource("StandardMaterial3D_h0fog")
 
 [node name="file cabinet(maopen)" parent="doors/NavigationRegion3D/ITEMS/2ND FLOOR ITEMS" instance=ExtResource("102_6dyww")]
 transform = Transform3D(-0.0765748, 0, 0.876662, 0, 0.88, 0, -0.876662, 0, -0.0765748, -43.077343, 6.1777496, -3.8341188)

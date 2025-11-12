@@ -19,7 +19,7 @@ var covers_player_is_holding := 0 # We just need a count
 func _ready() -> void:
 	populate_maps()
 	deactivate_all()
-
+	
 func initialize_task() -> void:
 	# 1. Check if we have enough items to start the task
 	if food_map.size() < 4 or cover_map.size() < 4:
@@ -29,29 +29,52 @@ func initialize_task() -> void:
 	# 2. Randomize and pick the items for this task
 	randomize()
 	
-	# --- Setup Food ---
+	# --- Setup Food (No change needed here) ---
 	var all_food_ids = food_map.keys()
 	all_food_ids.shuffle()
 	chosen_food_ids = all_food_ids.slice(0, 4)
 	
-	# --- Setup Covers ---
+	# --- Setup Covers (Modified Logic) ---
 	var all_cover_ids = cover_map.keys()
-	all_cover_ids.shuffle()
-	chosen_cover_ids = all_cover_ids.slice(0, 4)
-	
-	# --- NIGHT 5 LOGIC (FOR COVERS) ---
+	var mandatory_cover1 = "cover11"
+	var mandatory_cover2 = "cover12"
+
 	if Global.get_night() == 5:
-		if "cover11" in cover_map and "cover12" in cover_map:
-			all_cover_ids.erase("cover11")
-			all_cover_ids.erase("cover12")
-			chosen_cover_ids = all_cover_ids.slice(0, 4 - 2)
-			chosen_cover_ids.push_back("cover11")
-			chosen_cover_ids.push_back("cover12")
-			print("Night 5: Mandatory covers 'cover11' and 'cover12' added to task.")
+		# NIGHT 5: Force the mandatory covers (and two random)
+		
+		# Remove the mandatory ones from the general pool
+		if mandatory_cover1 in all_cover_ids:
+			all_cover_ids.erase(mandatory_cover1)
+		if mandatory_cover2 in all_cover_ids:
+			all_cover_ids.erase(mandatory_cover2)
+
+		all_cover_ids.shuffle()
+		
+		# Slice to get the remaining random covers needed (4 total - 2 mandatory = 2 random)
+		chosen_cover_ids = all_cover_ids.slice(0, 4 - 2)
+		
+		# Forcefully add the mandatory covers
+		if mandatory_cover1 in cover_map:
+			chosen_cover_ids.push_back(mandatory_cover1)
+		if mandatory_cover2 in cover_map:
+			chosen_cover_ids.push_back(mandatory_cover2)
+			
+		print("Night 5: Mandatory covers '%s' and '%s' added to task." % [mandatory_cover1, mandatory_cover2])
+	
+	else:
+		# NIGHTS 1-4: Exclude the mandatory covers
+		if mandatory_cover1 in all_cover_ids:
+			all_cover_ids.erase(mandatory_cover1)
+		if mandatory_cover2 in all_cover_ids:
+			all_cover_ids.erase(mandatory_cover2)
+			
+		all_cover_ids.shuffle()
+		chosen_cover_ids = all_cover_ids.slice(0, 4)
+		print("Night %s: Randomly chose 4 safe covers." % Global.get_night())
 
 	# 3. Set the initial visibility and collisions for everything
 	update_all_item_states()
-
+	
 func deactivate_all() -> void:
 	# Set up covers (all hidden)
 	for id in cover_map.keys():

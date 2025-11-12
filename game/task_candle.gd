@@ -14,24 +14,39 @@ func _ready():
 
 func initialize_task():
 	randomize()
+	
+	# Create a list of all *non-mandatory* candles for general use.
+	var mandatory_names = ["Candle13", "Candle14", "Candle15", "Candle16"]
+	var mandatory_candles = []
+	var other_candles = []
+	
+	# Split all candles into mandatory and non-mandatory groups
+	for candle in collect_Candles:
+		if candle.name in mandatory_names:
+			mandatory_candles.push_back(candle)
+		else:
+			other_candles.push_back(candle)
+			
+	# --- GENERAL LOGIC (Nights 2, 3, 4) ---
+	if Global.get_night() != 5:
+		other_candles.shuffle() # Only shuffle the non-mandatory ones
+		# Select 8 candles from the non-mandatory pool
+		chosen_candles = other_candles.slice(0, 8) 
+		print("Night %d: Chosen %d random candles." % [Global.get_night(), chosen_candles.size()])
+
 	# --- NIGHT 5 LOGIC ---
-	if Global.get_night() == 5:
-		print("Night 5: Forcing mandatory candles (13, 14, 15, 16).")
-		var mandatory_names = ["Candle13", "Candle14", "Candle15", "Candle16"]
-		var mandatory_candles = []
-		var other_candles = []
-		for candle in collect_Candles:
-			if candle.name in mandatory_names:
-				mandatory_candles.push_back(candle)
-			else:
-				other_candles.push_back(candle)
-		other_candles.shuffle()
-		var random_candles_to_get = 8 - mandatory_candles.size()
-		chosen_candles = mandatory_candles + other_candles.slice(0, random_candles_to_get)
 	else:
-		# --- Original Logic (for other nights) ---
-		collect_Candles.shuffle()
-		chosen_candles = collect_Candles.slice(0, 8)
+		print("Night 5: Forcing mandatory candles (%s)." % mandatory_names.join(", "))
+		other_candles.shuffle()
+		
+		# Calculate how many additional random candles are needed to reach 8 total.
+		# (e.g., 8 total - 4 mandatory = 4 random needed)
+		var random_candles_to_get = 8 - mandatory_candles.size()
+		
+		# Combine the mandatory candles with the required number of random candles
+		chosen_candles = mandatory_candles + other_candles.slice(0, random_candles_to_get)
+		print("Night 5: Chosen %d total candles (%d mandatory + %d random)." % [chosen_candles.size(), mandatory_candles.size(), random_candles_to_get])
+		
 	# 5. Activate the chosen candles
 	update_candle_tasking()
 
