@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b8o35t5xvoo2u"]
+[gd_scene load_steps=25 format=3 uid="uid://b8o35t5xvoo2u"]
 
 [ext_resource type="PackedScene" uid="uid://c6nnpmjnwv4g2" path="res://game/house.tscn" id="1_27guy"]
 [ext_resource type="Script" uid="uid://dsfmg4ycubfhh" path="res://game/cutscenes/ending.gd" id="1_s8sf5"]
@@ -8,6 +8,28 @@
 [ext_resource type="PackedScene" uid="uid://dq7xguhru4a4w" path="res://game/lola_talking.tscn" id="5_sbrio"]
 [ext_resource type="FontFile" uid="uid://b02kdb4ogrrq5" path="res://fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="6_aavvw"]
 [ext_resource type="FontFile" uid="uid://c126udgjjdqhf" path="res://fonts/cmu-typewriter/Typewriter/cmunit.ttf" id="7_xlwov"]
+[ext_resource type="AudioStream" uid="uid://g676thg8l6xe" path="res://soundfx/demon-horror-ambience-sound-9-vol-001-140417.mp3" id="9_to8t7"]
+[ext_resource type="AudioStream" uid="uid://31gxc3iy8tpi" path="res://soundfx/horror-orchestra-warning-338415.mp3" id="10_w25f6"]
+[ext_resource type="AudioStream" uid="uid://dtxj1h02v3dej" path="res://soundfx/horror-scream-105029.mp3" id="11_vdjth"]
+[ext_resource type="AudioStream" uid="uid://c0d2gndh8xm4r" path="res://soundfx/044538_female-heavy-breathing-62329.mp3" id="12_xthi2"]
+[ext_resource type="AudioStream" uid="uid://ctiupm6f44icp" path="res://soundfx/possessed-laugh-94851.mp3" id="13_k1uy4"]
+[ext_resource type="AudioStream" uid="uid://bq4m8o3mmlh82" path="res://soundfx/horror-sfx-3-103708.mp3" id="14_bbgs2"]
+[ext_resource type="AudioStream" uid="uid://bl0yt5ehn5rn3" path="res://soundfx/doomed-effect-37231.mp3" id="15_kqm60"]
+
+[sub_resource type="Animation" id="Animation_dncil"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("text:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_e0vmp"]
 resource_name = "typewriter"
@@ -23,21 +45,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
-}
-
-[sub_resource type="Animation" id="Animation_dncil"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("text:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_alocr"]
@@ -70,40 +77,12 @@ volumetric_fog_length = 128.0
 adjustment_enabled = true
 adjustment_brightness = 1.2
 
-[sub_resource type="Animation" id="Animation_s8sf5"]
-resource_name = "ending"
-length = 60.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("House/Camera3D:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.0333333, 5.266667, 6.266667, 8.4, 9.166667, 10.033334, 11.366667, 14, 21.633333, 28.4, 32.742065, 38.63333, 43.833332, 45.166668, 47.666668, 50.077976, 54.3, 57.266666, 57.766666),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(-25.444, -2.548, -0.007), Vector3(-25.44439, -2.5478897, 0.41788864), Vector3(-26.297, -3.021, 5.784), Vector3(-26.297, -2.951, 5.784), Vector3(-25.072, -2.006, 3.578), Vector3(-25.844, -2.033, 5.588), Vector3(-28.239, -2.448, 0.828), Vector3(-28.884, -2.699, -0.564), Vector3(-28.674, -2.61, -0.424), Vector3(-28.103, -2.51, -0.083), Vector3(-27.594, -3.148, 1.053), Vector3(-26.349, -3.633, 0.238), Vector3(-26.349, -3.528, 0.238), Vector3(-26.039, -3.528, 0.238), Vector3(-26.039, -3.438, 0.238), Vector3(-26.039, -3.338, 0.238), Vector3(-26.039, -3.433, 0.238), Vector3(-26.039, -3.338, 0.238), Vector3(-25.899, -2.818, 3.713), Vector3(-26.144, -1.898, 7.388)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("House/Camera3D:rotation")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 6.9889145, 8.4, 9.233334, 11.4, 12.7, 21.6, 28.4, 32.742065, 40.23333, 43.864178, 45.234177, 45.433334, 45.566666, 57.3, 57.766666),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.9231138, 3.0579584, 0.0667536), Vector3(0.2565634, 3.1712632, 0.0052359877), Vector3(-0.3351032, 3.1712632, 0.0052359877), Vector3(-0.23387411, 3.0578167, 0.24085544), Vector3(-0.07679449, 0.70162237, 6.4280477), Vector3(-0.12042772, 0.8063421, 6.349508), Vector3(-0.3211406, 0.74351025, 6.253515), Vector3(-0.23387411, 0.116937056, 6.288421), Vector3(-0.43633232, -2.4748769, 6.288421), Vector3(-0.43633232, -2.7104964, 6.288421), Vector3(-0.43633232, -2.7715828, 6.288421), Vector3(-0.43633232, -2.2654374, 6.288421), Vector3(-0.034906585, -1.288053, 6.288421), Vector3(-0.034906566, -1.2880528, 6.288421), Vector3(0.04363323, -2.8588493, 6.288421), Vector3(0.07853982, -3.111922, 6.288421)]
-}
-
 [sub_resource type="Animation" id="Animation_jpsdd"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("House/Camera3D:position")
+tracks/0/path = NodePath("Camera3D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -115,7 +94,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("House/Camera3D:rotation")
+tracks/1/path = NodePath("Camera3D:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -123,6 +102,178 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(-0.9231138, 3.0579584, 0.0667536)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("bg:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("paulette breathing:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("suspense:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("lola laugh2:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("demon laugh:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("paulette scream:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_s8sf5"]
+resource_name = "ending"
+length = 60.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.0333333, 5.266667, 6.266667, 8.4, 9.166667, 10.033334, 11.366667, 14, 21.633333, 28.4, 32.742065, 38.63333, 43.833332, 45.166668, 47.666668, 50.077976, 54.3, 57.266666, 57.766666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-25.444, -2.548, -0.007), Vector3(-25.44439, -2.5478897, 0.41788864), Vector3(-26.297, -3.021, 5.784), Vector3(-26.297, -2.951, 5.784), Vector3(-25.072, -2.006, 3.578), Vector3(-25.844, -2.033, 5.588), Vector3(-28.239, -2.448, 0.828), Vector3(-28.884, -2.699, -0.564), Vector3(-28.674, -2.61, -0.424), Vector3(-28.103, -2.51, -0.083), Vector3(-27.594, -3.148, 1.053), Vector3(-26.349, -3.633, 0.238), Vector3(-26.349, -3.528, 0.238), Vector3(-26.039, -3.528, 0.238), Vector3(-26.039, -3.438, 0.238), Vector3(-26.039, -3.338, 0.238), Vector3(-26.039, -3.433, 0.238), Vector3(-26.039, -3.338, 0.238), Vector3(-25.899, -2.818, 3.713), Vector3(-26.144, -1.898, 7.388)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 6.9889145, 8.4, 9.233334, 11.4, 12.7, 21.6, 28.4, 32.742065, 40.23333, 43.864178, 45.234177, 45.433334, 45.566666, 57.3, 57.766666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.9231138, 3.0579584, 0.0667536), Vector3(0.2565634, 3.1712632, 0.0052359877), Vector3(-0.3351032, 3.1712632, 0.0052359877), Vector3(-0.23387411, 3.0578167, 0.24085544), Vector3(-0.07679449, 0.70162237, 6.4280477), Vector3(-0.12042772, 0.8063421, 6.349508), Vector3(-0.3211406, 0.74351025, 6.253515), Vector3(-0.23387411, 0.116937056, 6.288421), Vector3(-0.43633232, -2.4748769, 6.288421), Vector3(-0.43633232, -2.7104964, 6.288421), Vector3(-0.43633232, -2.7715828, 6.288421), Vector3(-0.43633232, -2.2654374, 6.288421), Vector3(-0.034906585, -1.288053, 6.288421), Vector3(-0.034906566, -1.2880528, 6.288421), Vector3(0.04363323, -2.8588493, 6.288421), Vector3(0.07853982, -3.111922, 6.288421)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("bg:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("paulette breathing:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 15.633333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("suspense:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(10.414294, 45.02327),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("lola laugh2:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(46.870777),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("demon laugh:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(54.666668),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("paulette scream:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(55.360176),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lsu4d"]
@@ -134,15 +285,13 @@ _data = {
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_s8sf5")
 
-[node name="House" parent="." instance=ExtResource("1_27guy")]
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.99872905, -3.7252903e-08, 0.050401095, 0.0402452, 0.6019961, 0.79748416, -0.030341301, 0.798499, -0.601231, -25.44439, -2.5478897, 0.41788864)
 
-[node name="Camera3D" type="Camera3D" parent="House"]
-transform = Transform3D(-0.998729, -3.7252903e-08, 0.050401088, 0.040245198, 0.6019961, 0.79748404, -0.0303413, 0.798499, -0.60123086, -25.44439, -2.5478897, 0.41788864)
-
-[node name="Spotlight" type="Node3D" parent="House/Camera3D"]
+[node name="Spotlight" type="Node3D" parent="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.9146447)
 
-[node name="Flashlight" type="SpotLight3D" parent="House/Camera3D/Spotlight"]
+[node name="Flashlight" type="SpotLight3D" parent="Camera3D/Spotlight"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.77986765)
 light_color = Color(0.93, 0.65472, 0.5859, 1)
 light_energy = 8.0
@@ -151,10 +300,10 @@ spot_range = 6.631
 spot_attenuation = 1.15
 spot_angle_attenuation = 1.1095695
 
-[node name="CanvasLayer" type="CanvasLayer" parent="House/Camera3D"]
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera3D"]
 script = ExtResource("3_xlwov")
 
-[node name="ColorRect" type="ColorRect" parent="House/Camera3D/CanvasLayer"]
+[node name="ColorRect" type="ColorRect" parent="Camera3D/CanvasLayer"]
 anchors_preset = -1
 anchor_top = 0.683
 anchor_right = 1.0
@@ -164,12 +313,12 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.12156863)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="House/Camera3D/CanvasLayer"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D/CanvasLayer"]
 libraries = {
 &"": SubResource("AnimationLibrary_alocr")
 }
 
-[node name="speaker" type="RichTextLabel" parent="House/Camera3D/CanvasLayer"]
+[node name="speaker" type="RichTextLabel" parent="Camera3D/CanvasLayer"]
 offset_left = 137.0
 offset_top = 787.0
 offset_right = 681.0
@@ -178,7 +327,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("6_aavvw")
 theme_override_font_sizes/normal_font_size = 41
 
-[node name="text" type="RichTextLabel" parent="House/Camera3D/CanvasLayer"]
+[node name="text" type="RichTextLabel" parent="Camera3D/CanvasLayer"]
 offset_left = 129.0
 offset_top = 880.0
 offset_right = 1797.0
@@ -189,6 +338,8 @@ theme_override_fonts/normal_font = ExtResource("7_xlwov")
 theme_override_font_sizes/normal_font_size = 36
 visible_characters = 0
 visible_ratio = 0.0
+
+[node name="House" parent="." instance=ExtResource("1_27guy")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_s8sf5")
@@ -212,3 +363,29 @@ visible = false
 
 [node name="lola talking" parent="." instance=ExtResource("5_sbrio")]
 transform = Transform3D(0.011838512, 0, 0.009211386, 0, 0.014999999, 0, -0.009211386, 0, 0.011838512, -29.187296, -6.026725, -1.242376)
+
+[node name="bg" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("9_to8t7")
+volume_db = 2.162
+
+[node name="suspense" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("10_w25f6")
+
+[node name="paulette scream" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("11_vdjth")
+volume_db = 2.162
+
+[node name="paulette breathing" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("12_xthi2")
+volume_db = 6.486
+
+[node name="lola laugh2" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("13_k1uy4")
+volume_db = 4.324
+
+[node name="doom" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("14_bbgs2")
+
+[node name="demon laugh" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("15_kqm60")
+volume_db = 4.325

@@ -203,11 +203,11 @@ offset_left = 146.0
 offset_top = 59.0
 offset_right = 1835.0
 offset_bottom = 207.0
-theme_override_colors/default_color = Color(1, 1, 0.4862745, 1)
+theme_override_colors/default_color = Color(1, 0.8745098, 0.06666667, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("4_jmjr0")
 theme_override_font_sizes/normal_font_size = 43
-text = "Anong nangyayari, what happened last night and why’d lola just gave me chores and leave today too??"
+text = "\"Anong nangyayari, what happened last night and why’d lola just gave me chores and leave today too??\""
 visible_characters = 0
 visible_ratio = 0.0
 
