@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://o7gchgjqr1i6"]
+[gd_scene load_steps=47 format=3 uid="uid://o7gchgjqr1i6"]
 
 [ext_resource type="PackedScene" uid="uid://bklxl232veydp" path="res://assets/player/first_person_arm.tscn" id="1_dadds"]
 [ext_resource type="Shader" uid="uid://bt1lbo5yomj25" path="res://game/shaders/retro_camera.gdshader" id="2_w5y0b"]
@@ -12,7 +12,6 @@
 [ext_resource type="AudioStream" uid="uid://vwjiofxfws3q" path="res://soundfx/rock.mp3" id="10_7fxs2"]
 [ext_resource type="AudioStream" uid="uid://d3mp4s4edsost" path="res://soundfx/take_item.mp3" id="11_xkjxy"]
 [ext_resource type="AudioStream" uid="uid://dywgkgdh44a6k" path="res://soundfx/use_item.mp3" id="12_2k1gg"]
-[ext_resource type="AudioStream" uid="uid://cpw5rrnhomg5t" path="res://soundfx/walking.mp3" id="13_fw65x"]
 [ext_resource type="AudioStream" uid="uid://disp65vfwnsfs" path="res://soundfx/panting.mp3" id="14_h2ex5"]
 [ext_resource type="PackedScene" uid="uid://b4vqsmmw8umat" path="res://game/player_ui.tscn" id="14_ppdnp"]
 [ext_resource type="Texture2D" uid="uid://rwtq0qgxe3e7" path="res://materials/dot (1) (1).png" id="15_7vc3l"]
@@ -110,14 +109,14 @@ var _snapped_to_stairs_last_frame: bool = false
 var _last_frame_was_on_floor: int = -999999
 
 # for respawn and stuff after jumpscare
-const SANITY_DEATH_THRESHOLD: float = 20.0  # If sanity below this, game over
+const SANITY_DEATH_THRESHOLD: float = 40.0  # If sanity below this, game over
 const SANITY_PENALTY_ON_DEATH: float = 30.0  # How much sanity to lose when caught
 var can_be_killed: bool = true  # Prevent multiple deaths at once
 var respawn_position: Vector3 = Vector3.ZERO  # Where to respawn player
 @onready var respawn_point = $\"../House/doors/respawn_destination\"
 var fade_overlay: ColorRect = null  # Persistent reference to fade overlay
 
-#mini scenes
+# mini scenes
 @onready var fail_message_label = $CanvasLayer2/FailLabel
 @onready var haunted_message_label = $CanvasLayer2/HauntedLabel
 @onready var ghost = get_node(\"../House/doors/ghost\")
@@ -483,7 +482,6 @@ func _apply_head_bob(delta: float, dir: Vector3) -> void:
 			head_bob.stop()
 			head_bob.play(\"headbob\")
 			
-		play_footstep()
 	else:
 		bob_time = 0.0
 		camera.position.y = lerp(camera.position.y, cam_rest_y, BOB_LERP * delta)
@@ -636,16 +634,6 @@ func fade_screen_from_black(duration: float) -> void:
 func set_respawn_point(new_position: Vector3) -> void:
 	respawn_position = new_position
 	print(\"📍 New respawn point set: \", new_position)
-	
-func play_footstep():
-	if can_play_footstep and wood_walk and not dialogue_active:
-		wood_walk.play()
-		can_play_footstep = false
-		
-		# Wait for audio to finish + small gap before next footstep
-		var wait_time = wood_walk.stream.get_length() + 0.2  # 0.2s gap between steps
-		await get_tree().create_timer(wait_time).timeout
-		can_play_footstep = true
 "
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_opbur"]
@@ -938,10 +926,6 @@ stream = ExtResource("11_xkjxy")
 
 [node name="Use_Item" type="AudioStreamPlayer3D" parent="Sounds"]
 stream = ExtResource("12_2k1gg")
-
-[node name="Wood_Walk" type="AudioStreamPlayer3D" parent="Sounds"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.4765797, 0)
-stream = ExtResource("13_fw65x")
 
 [node name="Panting" type="AudioStreamPlayer3D" parent="Sounds"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9054587, 0)
