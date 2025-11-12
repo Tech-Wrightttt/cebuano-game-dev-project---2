@@ -347,13 +347,35 @@ func each_night_respawn() -> void:
 		night_counter_gameplay.visible = false
 
 	# Fade screen back from black
-	await fade_screen_from_black(0.5)
+	fade_screen_from_black(0.5)
 	
 	set_physics_process(true)
 	set_process(true)
 	dialogue_active = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
+	if Global.current_night == 1:
+		await play_open_eyes_cutscene()
+		#i want it so that it plays a scene or calls scene that plays its cutscene
+		#but i do not want this affecting the game it has to be separate 
+		#it then plays goes away and then the game continues
+		
+	
+func play_open_eyes_cutscene() -> void:
+	var cutscene = preload(\"res://game/cutscenes/open_eyes.tscn\").instantiate()
+	get_tree().root.add_child(cutscene)
+
+	# Optionally: disable controls during cutscene
+	set_process(false)
+	set_physics_process(false)
+
+	# Wait for the cutscene to finish (use a signal if needed)
+	await get_tree().create_timer(5.5).timeout  # Adjust time to match animation/cutscene duration
+
+	# Remove cutscene and restore controls
+	cutscene.queue_free()
+	set_process(true)
+	set_physics_process(true)
 
 	
 
