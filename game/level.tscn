@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bob5k3jp6dsgc"]
+[gd_scene load_steps=32 format=3 uid="uid://bob5k3jp6dsgc"]
 
 [ext_resource type="Texture2D" uid="uid://bvdwayp7w2erl" path="res://textures/environment/grass.jpg" id="1_8bv7i"]
 [ext_resource type="PackedScene" uid="uid://bd8sk3hxv1lu0" path="res://assets/glb_models/fence/japanese_park_stone_floor_uljcfd0_mid.glb" id="1_50vgw"]
@@ -39,13 +39,6 @@ volumetric_fog_emission_energy = 0.1
 volumetric_fog_length = 128.0
 adjustment_enabled = true
 adjustment_brightness = 1.2
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_lqnbj"]
-viewport_path = NodePath("Mirror/SubViewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p05yo"]
-resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_lqnbj")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lqnbj"]
 size = Vector3(2.6206055, 0.62545776, 13.898895)
@@ -148,17 +141,6 @@ transform = Transform3D(-3.4100332, 0, -149.17526, 0, 129.33333, 0, 97.40698, 0,
 dialogues = Array[String](["Apo, ito na ulit. Gabi na naman—’wag mong kalimutang tapusin ’yan.", "Lola… tuwing gabi na lang po ba ’to? Parang dumadami ang ginagawa.", "Basta sundin mo lang ang nakasulat, ha? Huwag kang matakot kung may maramdaman ka.", "Lola may mga ….."])
 speaker_names = Array[String](["Lola Olet", "Paulette (You)", "Lola Olet", "Paulette (You)"])
 speaker = NodePath("..")
-
-[node name="Mirror" type="CSGBox3D" parent="."]
-transform = Transform3D(-0.15646364, -5.1214147, -0.029621154, -1.9687864, 0.40739352, -2.7663039e-10, 0.0048050024, 0.15727872, -0.9645451, -28.387808, 3.9978812, -15.844056)
-size = Vector3(1.6543198, 0.021484375, 2.1997604)
-material = SubResource("StandardMaterial3D_p05yo")
-
-[node name="SubViewport" type="SubViewport" parent="Mirror"]
-size = Vector2i(1920, 1080)
-
-[node name="Camera3D" type="Camera3D" parent="Mirror/SubViewport"]
-transform = Transform3D(0.03069551, 0.07922222, -0.9963843, 8.940474e-08, 0.996854, 0.079259574, 0.99952877, -0.002433002, 0.030598935, -28.387806, 4.293085, -15.844056)
 
 [node name="fences" type="Node3D" parent="."]
 visible = false

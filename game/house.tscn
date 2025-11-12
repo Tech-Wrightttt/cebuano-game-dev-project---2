@@ -1,4 +1,4 @@
-[gd_scene load_steps=409 format=4 uid="uid://c6nnpmjnwv4g2"]
+[gd_scene load_steps=421 format=4 uid="uid://c6nnpmjnwv4g2"]
 
 [ext_resource type="Script" uid="uid://cmcetdgh8ky7t" path="res://scripts/house.gd" id="1_8tqyt"]
 [ext_resource type="Material" uid="uid://31nbyn23hg2q" path="res://materials/house_material.tres" id="1_f6s7v"]
@@ -728,6 +728,54 @@ size = Vector3(4.3395996, 1.3918152, 4.0722656)
 size = Vector3(179.67938, 62.361706, 181.51294)
 
 [sub_resource type="BoxMesh" id="BoxMesh_6xd5g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1tsj4"]
+stencil_mode = 3
+stencil_flags = 6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nlrbk"]
+stencil_mode = 3
+stencil_flags = 6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5mxqm"]
+stencil_mode = 3
+stencil_flags = 6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_57t34"]
+stencil_mode = 3
+stencil_flags = 6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dbr3w"]
+stencil_mode = 3
+stencil_flags = 6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bf8bv"]
+stencil_mode = 3
+stencil_flags = 6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7exhx"]
+stencil_mode = 3
+stencil_flags = 6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rgbwa"]
+stencil_mode = 3
+stencil_flags = 6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_erdih"]
+stencil_mode = 3
+stencil_flags = 6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_syll6"]
+stencil_mode = 3
+stencil_flags = 6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8emae"]
+stencil_mode = 3
+stencil_flags = 6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mrl6m"]
+stencil_mode = 3
+stencil_flags = 6
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w7ycr"]
 size = Vector3(210.35085, 31.299255, 121.98889)
@@ -3613,6 +3661,7 @@ shape = SubResource("BoxShape3D_uu133")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover"]
 transform = Transform3D(100.82461, 0, 0, 0, 43.5002, 0, 0, 0, 97.08822, 0, 26.662537, 9.306896)
 mesh = SubResource("BoxMesh_6xd5g")
+surface_material_override/0 = SubResource("StandardMaterial3D_1tsj4")
 
 [node name="cover2" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("145_h0fog")]
 transform = Transform3D(0.00010270576, 0.0049989447, 0, -0.0049989447, 0.00010270576, 0, 0, 0, 0.005, -19.750835, 5.217382, -16.626682)
@@ -3627,6 +3676,7 @@ shape = SubResource("BoxShape3D_uu133")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover2"]
 transform = Transform3D(100.82461, 0, 0, 0, 43.5002, 0, 0, 0, 97.08822, 0, 26.662537, 9.306896)
 mesh = SubResource("BoxMesh_6xd5g")
+surface_material_override/0 = SubResource("StandardMaterial3D_nlrbk")
 
 [node name="cover3" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("145_h0fog")]
 transform = Transform3D(0.005, 0, 0, 0, -5.698396e-05, 0.0049996753, 0, -0.0049996753, -5.698396e-05, -8.431914, 11.438469, -14.221518)
@@ -3641,6 +3691,7 @@ shape = SubResource("BoxShape3D_uu133")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover3"]
 transform = Transform3D(100.82461, 0, 0, 0, 43.5002, 0, 0, 0, 97.08822, 0, 26.662537, 9.306896)
 mesh = SubResource("BoxMesh_6xd5g")
+surface_material_override/0 = SubResource("StandardMaterial3D_5mxqm")
 
 [node name="cover4" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("145_h0fog")]
 transform = Transform3D(0.005, 0, 0, 0, -0.00017257892, -0.0049970206, 0, 0.0049970206, -0.00017257892, -14.851921, 11.145999, -7.799858)
@@ -3655,6 +3706,7 @@ shape = SubResource("BoxShape3D_uu133")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover4"]
 transform = Transform3D(100.82461, 0, 0, 0, 43.5002, 0, 0, 0, 97.08822, 0, 26.662537, 9.306896)
 mesh = SubResource("BoxMesh_6xd5g")
+surface_material_override/0 = SubResource("StandardMaterial3D_57t34")
 
 [node name="cover5" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("145_h0fog")]
 transform = Transform3D(0.005, 0, 0, 0, -0.00012486552, -0.004998441, 0, 0.004998441, -0.00012486552, -25.488457, 11.19158, -7.78918)
@@ -3669,6 +3721,7 @@ shape = SubResource("BoxShape3D_uu133")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover5"]
 transform = Transform3D(100.82461, 0, 0, 0, 43.5002, 0, 0, 0, 97.08822, 0, 26.662537, 9.306896)
 mesh = SubResource("BoxMesh_6xd5g")
+surface_material_override/0 = SubResource("StandardMaterial3D_dbr3w")
 
 [node name="cover6" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("145_h0fog")]
 transform = Transform3D(0.005, 0, 0, 0, -2.3910892e-05, -0.004999942, 0, 0.004999942, -2.3910892e-05, -27.854706, 4.5054255, -25.758167)
@@ -3683,6 +3736,7 @@ shape = SubResource("BoxShape3D_uu133")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover6"]
 transform = Transform3D(100.82461, 0, 0, 0, 43.5002, 0, 0, 0, 97.08822, 0, 26.662537, 9.306896)
 mesh = SubResource("BoxMesh_6xd5g")
+surface_material_override/0 = SubResource("StandardMaterial3D_bf8bv")
 
 [node name="cover7" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("145_h0fog")]
 transform = Transform3D(0.00037054226, -0.0049862512, 0, 0.0049862512, 0.00037054226, 0, 0, 0, 0.005, -20.33603, 5.545107, -14.777769)
@@ -3697,6 +3751,7 @@ shape = SubResource("BoxShape3D_uu133")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover7"]
 transform = Transform3D(100.82461, 0, 0, 0, 43.5002, 0, 0, 0, 97.08822, 0, 26.662537, 9.306896)
 mesh = SubResource("BoxMesh_6xd5g")
+surface_material_override/0 = SubResource("StandardMaterial3D_7exhx")
 
 [node name="cover8" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("145_h0fog")]
 transform = Transform3D(6.0997612e-05, 0.0049996283, 0, -0.0049996283, 6.0997612e-05, 0, 0, 0, 0.005, -15.452019, 5.136324, 0.628927)
@@ -3711,6 +3766,7 @@ shape = SubResource("BoxShape3D_uu133")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover8"]
 transform = Transform3D(100.82461, 0, 0, 0, 43.5002, 0, 0, 0, 97.08822, 0, 26.662537, 9.306896)
 mesh = SubResource("BoxMesh_6xd5g")
+surface_material_override/0 = SubResource("StandardMaterial3D_rgbwa")
 
 [node name="cover9" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("145_h0fog")]
 transform = Transform3D(0.005, 0, 0, 0, -0.00021748652, 0.004995268, 0, -0.004995268, -0.00021748652, -24.508595, 4.848598, 7.793041)
@@ -3725,6 +3781,7 @@ shape = SubResource("BoxShape3D_uu133")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover9"]
 transform = Transform3D(100.82461, 0, 0, 0, 43.5002, 0, 0, 0, 97.08822, 0, 26.662537, 9.306896)
 mesh = SubResource("BoxMesh_6xd5g")
+surface_material_override/0 = SubResource("StandardMaterial3D_erdih")
 
 [node name="cover10" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("145_h0fog")]
 transform = Transform3D(-0.00014388264, -0.004997929, 0, 0.004997929, -0.00014388264, 0, 0, 0, 0.005, -20.221443, 5.324679, -1.4880843)
@@ -3739,6 +3796,7 @@ shape = SubResource("BoxShape3D_uu133")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover10"]
 transform = Transform3D(100.82461, 0, 0, 0, 43.5002, 0, 0, 0, 97.08822, 0, 26.662537, 9.306896)
 mesh = SubResource("BoxMesh_6xd5g")
+surface_material_override/0 = SubResource("StandardMaterial3D_syll6")
 
 [node name="cover11" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("145_h0fog")]
 transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, -21.538906, -4.7228584, -1.3660642)
@@ -3753,6 +3811,7 @@ shape = SubResource("BoxShape3D_uu133")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover11"]
 transform = Transform3D(100.82461, 0, 0, 0, 43.5002, 0, 0, 0, 97.08822, 0, 26.662537, 9.306896)
 mesh = SubResource("BoxMesh_6xd5g")
+surface_material_override/0 = SubResource("StandardMaterial3D_8emae")
 
 [node name="cover12" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("145_h0fog")]
 transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, -21.47229, -4.7151265, 0.6774807)
@@ -3767,6 +3826,7 @@ shape = SubResource("BoxShape3D_uu133")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover12"]
 transform = Transform3D(100.82461, 0, 0, 0, 43.5002, 0, 0, 0, 97.08822, 0, 26.662537, 9.306896)
 mesh = SubResource("BoxMesh_6xd5g")
+surface_material_override/0 = SubResource("StandardMaterial3D_mrl6m")
 
 [node name="Put_Cover" type="AudioStreamPlayer3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food"]
 stream = ExtResource("138_pybr7")
