@@ -9,6 +9,8 @@ extends Node
 @onready var dialogue_trigger1 = get_node_or_null("grandma 1/dialogue_trigger1")
 @onready var dialogue_trigger2 = get_node_or_null("grandma 2/dialogue_trigger2")
 
+var grandma2_scene := preload("res://game/lola_idle.tscn")
+var grandma2_instance : Node3D = null
 var completed_dialogues := {}
 var available_task_pool: Array = []
 var currently_active_tasks: Array = []
@@ -45,6 +47,8 @@ func _ready() -> void:
 	# Similar connections for other triggers if needed
 	else:
 		call_deferred("ready_task")
+		
+	call_deferred("disable_grandma2_and_children")
 	
 	
 func _on_tree_changed():
@@ -74,9 +78,83 @@ func progress_to_next_night():
 	current_night += 1
 	time_left = NIGHT_DURATION_REAL
 	
+	if current_night == 3:
+		call_deferred("enable_grandma2_and_children")
+
+	
 	# Re-ready the tasks for the new night
 	# This will call our new logic
 	ready_task()
+	
+	
+func disable_grandma2_and_children():
+	var grandma2 = get_tree().current_scene.get_node_or_null("grandma 2")
+	if grandma2:
+		grandma2.visible = false
+		grandma2.set_physics_process(false)
+		grandma2.set_process(false)
+
+		for child in grandma2.get_children():
+			_disable_node_and_children(child)
+
+
+func _disable_node_and_children(node):
+	node.set_physics_process(false)
+	node.set_process(false)
+
+	# Disable areas (collision triggers)
+	if node is Area3D or node.is_class("Area3D"):
+		node.monitoring = false
+		node.set_deferred("monitorable", false)
+		# Optionally, also disable collision masks/layers
+		node.collision_layer = 0
+		node.collision_mask = 0
+
+	# Disable collision shapes
+	if node is CollisionShape3D or node.is_class("CollisionShape3D"):
+		node.disabled = true
+
+	# For any signals connected, optionally disconnect (if needed)
+
+	# Recursively disable children
+	for c in node.get_children():
+		_disable_node_and_children(c)
+
+
+
+func enable_grandma2_and_children():
+	var grandma2 = get_tree().current_scene.get_node_or_null("grandma 2")
+	if grandma2:
+		grandma2.visible = true
+		grandma2.set_physics_process(true)
+		grandma2.set_process(true)
+
+		for child in grandma2.get_children():
+			_enable_node_and_children(child)
+
+
+func _enable_node_and_children(node):
+	node.set_physics_process(true)
+	node.set_process(true)
+
+	# Enable areas (collision triggers)
+	if node is Area3D or node.is_class("Area3D"):
+		node.monitoring = true
+		node.set_deferred("monitorable", true)
+		# Restore collision layers/masks if needed
+		node.collision_layer = 1  # Adjust as needed
+		node.collision_mask = 1   # Adjust as needed
+
+	# Enable collision shapes
+	if node is CollisionShape3D or node.is_class("CollisionShape3D"):
+		node.disabled = false
+
+	# Recursively enable children
+	for c in node.get_children():
+		_enable_node_and_children(c)
+
+
+	
 	
 func update_time(delta: float) -> void:
 	time_left = max(time_left - delta, 0.0)
