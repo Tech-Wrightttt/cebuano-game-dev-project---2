@@ -12,6 +12,7 @@ extends Node3D
 
 var current_dialogue = -1
 var started = false
+signal dialogue_finished(dialogue_name)
 
 func _ready() -> void:
 	# Make sure dialogue is hidden at start
@@ -53,6 +54,9 @@ func end_dialogue():
 	# Stop any ongoing animation
 	if text_animation.is_playing():
 		text_animation.stop()
+		
+	print("SECOND GRANDMA CONVO ENDED!")		
+	emit_signal("dialogue_finished", "dialogue_trigger2")
 
 func continue_dialogue():
 	current_dialogue += 1
