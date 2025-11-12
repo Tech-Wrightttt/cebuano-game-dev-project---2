@@ -305,14 +305,15 @@ func _process(delta: float) -> void:
 func each_night_respawn() -> void:
 	# Show the night counter and tasks UI (night_counter_gameplay)
 	if night_counter_gameplay:
+		print(\"Current night is: \", Global.current_night)
 		night_counter_gameplay.visible = true
 		night_counter_gameplay.modulate.a = 0.0  # Start transparent
 		night_counter_gameplay.z_index = 100  # Make sure it's above other UI
 
 		# Display current night from global singleton
-		var night_label = night_counter_gameplay.get_node_or_null(\"NightLabel\")
-		if night_label:
-			night_label.text = \"Night %d\" % Global.current_night
+
+		if night_counter_gameplay:
+			night_counter_gameplay.text = \"Night %d\" % Global.current_night
 
 		# Fade UI in quickly
 		var tween = create_tween()
@@ -377,7 +378,7 @@ func _input(event: InputEvent) -> void:
 		if head:
 			var new_pitch: float = head.rotation.x - event.relative.y * MOUSE_SENS
 			head.rotation.x = clamp(new_pitch, -MAX_PITCH, MAX_PITCH)
-	if event.is_action(\"proceed_to_next_night\"):
+	if Input.is_action_just_pressed(\"proceed_to_next_night\"):
 		Global.progress_to_next_night()
 		print(\"Advanced to night: \", Global.current_night)
 		
@@ -1122,7 +1123,7 @@ offset_top = 9.000001
 offset_right = 1450.0
 offset_bottom = 153.47195
 scale = Vector2(1, 0.8375331)
-text = "NIGHT 1"
+text = "NIGHT "
 label_settings = SubResource("LabelSettings_fw65x")
 horizontal_alignment = 1
 
