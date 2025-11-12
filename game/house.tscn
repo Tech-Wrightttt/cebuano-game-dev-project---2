@@ -620,7 +620,7 @@ size = Vector3(3.6227875, 6.2575684, 3.3591385)
 stencil_mode = 3
 stencil_flags = 6
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_4eble"]
+[sub_resource type="BoxMesh" id="BoxMesh_hmlio"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2hkfm"]
 size = Vector3(0.6954195, 1.4609356, 1.0806556)
@@ -2490,8 +2490,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 2.437008, -0.037
 shape = SubResource("BoxShape3D_m1vgo")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle"]
+transform = Transform3D(1, 0, 0, 0, 4.417503, 0, 0, 0, 1.6364836, 0, 2.626686, 0)
 material_override = SubResource("StandardMaterial3D_153lg")
-mesh = SubResource("CapsuleMesh_4eble")
+mesh = SubResource("BoxMesh_hmlio")
 
 [node name="Candle2" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -26.705013, 3.131509, -6.007533)
@@ -2503,6 +2504,11 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12542725, 2.6070557, 0.029441833)
 shape = SubResource("BoxShape3D_m1vgo")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle2"]
+transform = Transform3D(1, 0, 0, 0, 4.417503, 0, 0, 0, 1.6364836, 0, 2.626686, 0)
+material_override = SubResource("StandardMaterial3D_153lg")
+mesh = SubResource("BoxMesh_hmlio")
+
 [node name="Candle3" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -30.696388, 3.17609, -18.43706)
 
@@ -2513,6 +2519,11 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 2.437008, -0.03759764)
 shape = SubResource("BoxShape3D_m1vgo")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle3"]
+transform = Transform3D(1, 0, 0, 0, 4.417503, 0, 0, 0, 1.6364836, 0, 2.626686, 0)
+material_override = SubResource("StandardMaterial3D_153lg")
+mesh = SubResource("BoxMesh_hmlio")
+
 [node name="Candle4" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -29.79184, 10.443393, -18.833187)
 
@@ -2522,6 +2533,11 @@ collision_layer = 9
 [node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle4/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 2.437008, -0.03759764)
 shape = SubResource("BoxShape3D_m1vgo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle4"]
+transform = Transform3D(1, 0, 0, 0, 4.417503, 0, 0, 0, 1.6364836, 0, 2.626686, 0)
+material_override = SubResource("StandardMaterial3D_153lg")
+mesh = SubResource("BoxMesh_hmlio")
 
 [node name="Candle5" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -28.743671, 11.369901, -6.5035143)
@@ -2543,6 +2559,11 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 2.437008, -0.03759764)
 shape = SubResource("BoxShape3D_m1vgo")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle6"]
+transform = Transform3D(1, 0, 0, 0, 4.417503, 0, 0, 0, 1.6364836, 0, 2.626686, 0)
+material_override = SubResource("StandardMaterial3D_153lg")
+mesh = SubResource("BoxMesh_hmlio")
+
 [node name="Candle7" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -2.6479123, 10.549771, -8.098337)
 
@@ -2552,6 +2573,11 @@ collision_layer = 9
 [node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle7/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 2.437008, -0.03759764)
 shape = SubResource("BoxShape3D_m1vgo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle7"]
+transform = Transform3D(1, 0, 0, 0, 4.417503, 0, 0, 0, 1.6364836, 0, 2.626686, 0)
+material_override = SubResource("StandardMaterial3D_153lg")
+mesh = SubResource("BoxMesh_hmlio")
 
 [node name="Candle8" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -17.102203, 10.225568, 6.5437107)
@@ -2563,6 +2589,11 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 2.437008, -0.03759764)
 shape = SubResource("BoxShape3D_m1vgo")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle8"]
+transform = Transform3D(1, 0, 0, 0, 4.417503, 0, 0, 0, 1.6364836, 0, 2.626686, 0)
+material_override = SubResource("StandardMaterial3D_153lg")
+mesh = SubResource("BoxMesh_hmlio")
+
 [node name="Candle9" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -21.393135, 4.1103196, -31.254509)
 
@@ -2572,6 +2603,11 @@ collision_layer = 9
 [node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle9/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 2.437008, -0.03759764)
 shape = SubResource("BoxShape3D_m1vgo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle9"]
+transform = Transform3D(1, 0, 0, 0, 4.417503, 0, 0, 0, 1.6364836, 0, 2.626686, 0)
+material_override = SubResource("StandardMaterial3D_153lg")
+mesh = SubResource("BoxMesh_hmlio")
 
 [node name="Candle10" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -25.056812, -4.2180595, -18.812319)
@@ -2583,6 +2619,11 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 2.437008, -0.03759764)
 shape = SubResource("BoxShape3D_m1vgo")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle10"]
+transform = Transform3D(1, 0, 0, 0, 4.417503, 0, 0, 0, 1.6364836, 0, 2.626686, 0)
+material_override = SubResource("StandardMaterial3D_153lg")
+mesh = SubResource("BoxMesh_hmlio")
+
 [node name="Candle11" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -8.518473, -5.9481525, -8.709)
 
@@ -2592,6 +2633,11 @@ collision_layer = 9
 [node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle11/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37435913, 9.175537, 3.6492004)
 shape = SubResource("BoxShape3D_m1vgo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle11"]
+transform = Transform3D(1, 0, 0, 0, 4.417503, 0, 0, 0, 1.6364836, 0, 2.626686, 0)
+material_override = SubResource("StandardMaterial3D_153lg")
+mesh = SubResource("BoxMesh_hmlio")
 
 [node name="Candle12" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -6.775465, -5.03978, 13.573015)
@@ -2603,6 +2649,11 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 2.437008, -0.03759764)
 shape = SubResource("BoxShape3D_m1vgo")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle12"]
+transform = Transform3D(1, 0, 0, 0, 4.417503, 0, 0, 0, 1.6364836, 0, 2.626686, 0)
+material_override = SubResource("StandardMaterial3D_153lg")
+mesh = SubResource("BoxMesh_hmlio")
+
 [node name="Candle13" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -26.691807, -4.510936, 1.9279594)
 
@@ -2612,6 +2663,11 @@ collision_layer = 9
 [node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle13/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 2.437008, -0.03759764)
 shape = SubResource("BoxShape3D_m1vgo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle13"]
+transform = Transform3D(1, 0, 0, 0, 4.417503, 0, 0, 0, 1.6364836, 0, 2.626686, 0)
+material_override = SubResource("StandardMaterial3D_153lg")
+mesh = SubResource("BoxMesh_hmlio")
 
 [node name="Candle14" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -25.760693, -4.510936, 2.162539)
@@ -2623,6 +2679,11 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 2.437008, -0.03759764)
 shape = SubResource("BoxShape3D_m1vgo")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle14"]
+transform = Transform3D(1, 0, 0, 0, 4.417503, 0, 0, 0, 1.6364836, 0, 2.626686, 0)
+material_override = SubResource("StandardMaterial3D_153lg")
+mesh = SubResource("BoxMesh_hmlio")
+
 [node name="Candle15" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -26.3801, -4.510936, 2.3392649)
 
@@ -2633,6 +2694,11 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 2.437008, -0.03759764)
 shape = SubResource("BoxShape3D_m1vgo")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle15"]
+transform = Transform3D(1, 0, 0, 0, 4.417503, 0, 0, 0, 1.6364836, 0, 2.626686, 0)
+material_override = SubResource("StandardMaterial3D_153lg")
+mesh = SubResource("BoxMesh_hmlio")
+
 [node name="Candle16" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -25.251167, -4.510936, 1.9279594)
 
@@ -2642,6 +2708,11 @@ collision_layer = 9
 [node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle16/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 2.437008, -0.03759764)
 shape = SubResource("BoxShape3D_m1vgo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle16"]
+transform = Transform3D(1, 0, 0, 0, 4.417503, 0, 0, 0, 1.6364836, 0, 2.626686, 0)
+material_override = SubResource("StandardMaterial3D_153lg")
+mesh = SubResource("BoxMesh_hmlio")
 
 [node name="Task_Clean_Statue" type="Node3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS"]
 script = ExtResource("125_m2psj")
@@ -3560,9 +3631,6 @@ transform = Transform3D(0.14004725, 0, -3.9825382, 0, 3.985, 0, 3.9825382, 0, 0.
 
 [node name="wardrobe" parent="doors/NavigationRegion3D/ITEMS/2ND FLOOR ITEMS" instance=ExtResource("127_uwpgj")]
 transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.1855694e-08, -19.151932, 7.3683195, 1.0538652)
-
-[node name="wardrobe6" parent="doors/NavigationRegion3D/ITEMS/2ND FLOOR ITEMS" instance=ExtResource("127_uwpgj")]
-transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.1855694e-08, 15.90956, -0.61054325, 12.98694)
 
 [node name="wardrobe3" parent="doors/NavigationRegion3D/ITEMS/2ND FLOOR ITEMS" instance=ExtResource("127_uwpgj")]
 transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, -20.769665, 7.3683195, 1.9906898)

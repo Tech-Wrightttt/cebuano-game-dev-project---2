@@ -34,19 +34,25 @@ func initialize_task() -> void:
 	chosen_mirror_ids = all_mirror_ids.slice(0, 3)
 	
 	var all_towel_ids = towel_map.keys()
+	if "towel11" in all_towel_ids:
+		all_towel_ids.erase("towel11")
+	if "towel12" in all_towel_ids:
+		all_towel_ids.erase("towel12")
 	all_towel_ids.shuffle()
 	chosen_towel_ids = all_towel_ids.slice(0, 3)
 	
 	# --- NIGHT 5 LOGIC (FOR TOWELS) ---
 	if Global.get_night() == 5:
-		if "towel11" in towel_map and "towel12" in towel_map:
-			all_towel_ids.erase("towel11")
-			all_towel_ids.erase("towel12")
-			chosen_towel_ids = all_towel_ids.slice(0, 3 - 2)
+		var mandatory_towels_added = 0
+		if chosen_towel_ids.size() > 0:
+			chosen_towel_ids.resize(3 - 2) # If 3-2 = 1, we resize the array to 1 item
+		if "towel11" in towel_map:
 			chosen_towel_ids.push_back("towel11")
+			mandatory_towels_added += 1
+		if "towel12" in towel_map:
 			chosen_towel_ids.push_back("towel12")
-			print("Night 5: Mandatory towels 'towel11' and 'towel12' added to task.")
-	
+			mandatory_towels_added += 1
+		print("Night 5: Mandatory towels 'towel11' and 'towel12' added to task (Total added: %d)." % mandatory_towels_added)
 	# 3. Activate the chosen items
 	update_all_item_states()
 
