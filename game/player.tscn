@@ -119,7 +119,9 @@ var fade_overlay: ColorRect = null  # Persistent reference to fade overlay
 # mini scenes
 @onready var fail_message_label = $CanvasLayer2/FailLabel
 @onready var haunted_message_label = $CanvasLayer2/HauntedLabel
+@onready var night_counter_gameplay =$CanvasLayer2/Night_Counter_GamePlay
 @onready var ghost = get_node(\"../House/doors/ghost\")
+var firstdialoguescene: bool = true
 
 @onready var wood_walk: AudioStreamPlayer3D = $Sounds/Wood_Walk
 var can_play_footstep = true
@@ -285,6 +287,67 @@ func _process(delta: float) -> void:
 
 	if progress_bar and progress_bar_label:
 		progress_bar_label.text = str(int(progress_bar.value)) + \" / \" + str(int(progress_bar.max_value))
+		
+	if Global.completed_dialogues.has(\"dialogue_trigger1\") and Global.completed_dialogues[\"dialogue_trigger1\"]:
+		if firstdialoguescene:
+			firstdialoguescene = false
+			each_night_respawn()
+
+
+		
+func each_night_respawn() -> void:
+	# Show the night counter and tasks UI (night_counter_gameplay)
+	if night_counter_gameplay:
+		night_counter_gameplay.visible = true
+		night_counter_gameplay.modulate.a = 0.0  # Start transparent
+		night_counter_gameplay.z_index = 100  # Make sure it's above other UI
+
+		# Display current night from global singleton
+		var night_label = night_counter_gameplay.get_node_or_null(\"NightLabel\")
+		if night_label:
+			night_label.text = \"Night %d\" % Global.current_night
+
+		# Fade UI in quickly
+		var tween = create_tween()
+		tween.tween_property(night_counter_gameplay, \"modulate:a\", 1.0, 1.25)
+		await tween.finished
+
+	# Fade out the screen, like in respawn_player()
+	await fade_screen_to_black(0.5)
+
+	# Reset player position and state as in respawn_player
+	# Reset player state
+	global_position = respawn_position
+	velocity = Vector3.ZERO
+	rotation.y = deg_to_rad(90)
+	if head:
+		head.rotation.x = 0
+	
+	# CRITICAL: Make sure player camera is active
+	if camera:
+		camera.current = true
+		print(\"📷 Player camera set to current\")
+
+	# Wait before fading back in
+	await get_tree().create_timer(3.0).timeout
+
+	# Fade UI out
+	if night_counter_gameplay:
+		var tween = create_tween()
+		tween.tween_property(night_counter_gameplay, \"modulate:a\", 0.0, 1.25)
+		await tween.finished
+		night_counter_gameplay.visible = false
+
+	# Fade screen back from black
+	await fade_screen_from_black(0.5)
+	
+	set_physics_process(true)
+	set_process(true)
+	dialogue_active = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
+
+	
 
 func _on_animation_finished(anim_name: String) -> void:
 	if anim_name == \"Combat_idle_start\":
@@ -1001,7 +1064,7 @@ label_settings = SubResource("LabelSettings_cvpk3")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Night Counter" type="Label" parent="CanvasLayer2"]
+[node name="Night_Counter_GamePlay" type="Label" parent="CanvasLayer2"]
 visible = false
 offset_left = 554.0
 offset_top = 423.00003
