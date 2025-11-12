@@ -311,7 +311,7 @@ func get_progress_string() -> String:
 	# --- State 2: Deploy Drops ---
 	# Show this if the flag is true AND the task is not yet complete.
 	if drops_deployed_count < 2:
-		return "%d/2 Lana drops deployed" % drops_deployed_count
+		return "%d/2 Lana lure drops deployed" % drops_deployed_count
 
 	# --- State 3: Task Complete (drops_deployed_count >= 2) ---
 	return ""
