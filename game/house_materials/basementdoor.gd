@@ -46,10 +46,10 @@ func ai_close_door(body):
 
 func interact():
 	# Prevent interaction while animation is playing
-	if current_night < 3:
-		locked = true
-		lockedsfx.play()
-		return
+	#if current_night < 3:
+		#locked = true
+		#lockedsfx.play()
+		#return
 		
 	if door_animation.is_playing():
 		return
