@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c6y0fvju3dbqx"]
+[gd_scene load_steps=18 format=3 uid="uid://c6y0fvju3dbqx"]
 
 [ext_resource type="Shader" uid="uid://bt1lbo5yomj25" path="res://game/shaders/retro_camera.gdshader" id="1_fi7oc"]
 [ext_resource type="Script" uid="uid://b2ub3m0tg3hsg" path="res://game/cutscenes/open_eyes.gd" id="1_p6q1s"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://c126udgjjdqhf" path="res://fonts/cmu-typewriter/Typewriter/cmunit.ttf" id="2_8w61q"]
 [ext_resource type="Script" uid="uid://bluvc5ewweubr" path="res://game/cutscenes/canvas_layer.gd" id="2_p6q1s"]
 [ext_resource type="PackedScene" uid="uid://bnd4f5cscd18j" path="res://game/house_materials/ceiling_lights.tscn" id="3_mr1j4"]
+[ext_resource type="AudioStream" uid="uid://cysg1bpolixhv" path="res://soundfx/shufflinginbed-38285.mp3" id="7_bn1ud"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8w61q"]
 shader = ExtResource("1_fi7oc")
@@ -17,6 +18,21 @@ shader_parameter/scanline_strength = 0.016
 shader_parameter/distortion_strength = 0.1
 shader_parameter/ghost_strength = 0.12
 shader_parameter/flicker_strength = 0.005
+
+[sub_resource type="Animation" id="Animation_bn1ud"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/RichTextLabel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_p6q1s"]
 resource_name = "text"
@@ -32,21 +48,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
-}
-
-[sub_resource type="Animation" id="Animation_bn1ud"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect/RichTextLabel:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qjrdi"]
@@ -81,6 +82,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(-26.595726, 9.772967, -23.375956)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer3D:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_lqnbj"]
 resource_name = "open eyes"
@@ -108,6 +121,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(-26.595726, 9.772967, -23.375956), Vector3(-26.017, 9.804, -23.354), Vector3(-25.806, 9.843, -23.346), Vector3(-26.596, 9.843, -23.346), Vector3(-24.701, 11.293, -21.036), Vector3(-24.206, 11.548, -20.381)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer3D:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_05dia"]
@@ -178,11 +203,11 @@ offset_left = 415.0
 offset_top = 44.0
 offset_right = 1645.0
 offset_bottom = 148.0
-theme_override_colors/default_color = Color(1, 1, 0.4862745, 1)
+theme_override_colors/default_color = Color(1, 0.9383333, 0.26, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("2_8w61q")
 theme_override_font_sizes/normal_font_size = 43
-text = "hmmm old superstitions...typical probinsya stuff."
+text = "\"hmmm old superstitions...typical probinsya stuff.\""
 visible_characters = 0
 visible_ratio = 0.0
 
@@ -209,3 +234,8 @@ environment = SubResource("Environment_bn1ud")
 [node name="Sunlight (for testing purposes)" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("7_bn1ud")
+volume_db = 80.0
+unit_size = 100.0
