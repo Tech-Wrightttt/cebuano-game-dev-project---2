@@ -122,6 +122,7 @@ var fade_overlay: ColorRect = null  # Persistent reference to fade overlay
 @onready var night_counter_gameplay =$CanvasLayer2/Night_Counter_GamePlay
 @onready var ghost = get_node(\"../House/doors/ghost\")
 var firstdialoguescene: bool = true
+var seconddialoguescene: bool = true
 
 @onready var wood_walk: AudioStreamPlayer3D = $Sounds/Wood_Walk
 var can_play_footstep = true
@@ -292,6 +293,12 @@ func _process(delta: float) -> void:
 		if firstdialoguescene:
 			firstdialoguescene = false
 			each_night_respawn()
+			
+	if Global.completed_dialogues.has(\"dialogue_trigger2\") and Global.completed_dialogues[\"dialogue_trigger2\"]:
+		if seconddialoguescene:
+			seconddialoguescene = false
+			each_night_respawn()
+	
 
 
 		

@@ -7,6 +7,7 @@ extends Node
 @onready var task_cover_mirror: Node3D = $"/root/level/House/doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror"
 @onready var task_cover_food: Node3D = $"/root/level/House/doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food"
 @onready var dialogue_trigger1 = get_node_or_null("grandma 1/dialogue_trigger1")
+@onready var dialogue_trigger2 = get_node_or_null("grandma 2/dialogue_trigger2")
 
 var completed_dialogues := {}
 var available_task_pool: Array = []
