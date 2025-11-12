@@ -1037,9 +1037,9 @@ texture = ExtResource("15_7vc3l")
 offset_left = 51.0
 offset_top = 239.0
 offset_right = 606.99994
-offset_bottom = 778.6801
+offset_bottom = 494.5123
 scale = Vector2(1, 0.8375331)
-text = "Todo:
+text = "
 
 >SAMPLE TASK
 >SAMPLE TASK

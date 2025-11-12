@@ -7,6 +7,7 @@ extends CanvasLayer
 
 # The "SAMPLE TASK" label
 @onready var task_list_label = $"TaskToDoLabel"
+@onready var tasklabel: Label = $Task
 
 # The "12:" label
 @onready var time_hour_label = $Panel/TimerLabelHour
@@ -30,7 +31,7 @@ func _process(_delta):
 	time_minute_label.text = "%02d" % time_dict["minute"]
 
 	# --- 3. Build and Update the Task List ---
-	var task_text = ""
+	var task_text = "TASKS: \n\n"
 	
 	# Loop through the active tasks given to us by Global.gd
 	for task in Global.currently_active_tasks:

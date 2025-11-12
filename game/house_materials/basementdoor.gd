@@ -8,6 +8,7 @@ var current_night = Global.get_night()
 @onready var door_close: AudioStreamPlayer3D = $Door_Close
 @onready var door_animation: AnimationPlayer = $Door_Animation
 @onready var interaction_label: Label = $Head/Camera3D/Filters/Interaction_Label
+@onready var lockedsfx: AudioStreamPlayer3D = $Locked
 
 # Function to determine which animation to use based on player position
 func get_animation_name() -> String:
@@ -47,6 +48,7 @@ func interact():
 	# Prevent interaction while animation is playing
 	if current_night < 3:
 		locked = true
+		lockedsfx.play()
 		return
 		
 	if door_animation.is_playing():
