@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbom0jasgiob6"]
+[gd_scene load_steps=8 format=3 uid="uid://dbom0jasgiob6"]
 
 [ext_resource type="Script" uid="uid://d1jnkipekfns3" path="res://scripts/ghost.gd" id="1_blxur"]
 [ext_resource type="PackedScene" uid="uid://oysop7pwekld" path="res://game/ghost_model_animation.tscn" id="2_io021"]
-[ext_resource type="AudioStream" uid="uid://bxw4cdjeo10x8" path="res://soundfx/jumpscare_audio.mp3" id="3_gp3h6"]
+[ext_resource type="AudioStream" uid="uid://nb63j88e2fvc" path="res://soundfx/jumpscare_audio.mp3" id="3_gp3h6"]
+[ext_resource type="AudioStream" uid="uid://d1barlwun783u" path="res://soundfx/hello.mp3" id="3_lg8de"]
+[ext_resource type="AudioStream" uid="uid://8x1lyamgl4we" path="res://soundfx/hi.mp3" id="4_1u12a"]
+[ext_resource type="AudioStream" uid="uid://b6ltpshx0nurw" path="res://soundfx/horror_audio.mp3" id="4_7af0h"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b6vni"]
 radius = 0.3803711
@@ -13,6 +16,7 @@ collision_layer = 17
 collision_mask = 17
 motion_mode = 1
 script = ExtResource("1_blxur")
+walking_audio = Array[AudioStream]([ExtResource("4_1u12a"), ExtResource("3_lg8de"), ExtResource("4_7af0h")])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44936407, -0.08005732)
@@ -65,6 +69,14 @@ target_position = Vector3(0, -1.5, 0)
 
 [node name="jumpscare_audio" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_gp3h6")
+
+[node name="walking_audio" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1.4872453, -0.1524365)
+stream = ExtResource("4_1u12a")
+max_distance = 10.0
+
+[node name="near_audio" type="AudioStreamPlayer3D" parent="."]
+max_distance = 8.0
 
 [connection signal="velocity_computed" from="NavigationAgent3D" to="." method="compute_velocity"]
 

@@ -7,6 +7,11 @@ extends CharacterBody3D
 @onready var animation_player = $ghost_final_animation/AnimationPlayer
 @onready var rng = RandomNumberGenerator.new()
 
+# for audio
+@export var walking_audio : Array[AudioStream]
+var can_play_ambient = true
+var has_spotted_player = false 
+
 var speed = 2.0
 var destination
 var destination_value
@@ -117,6 +122,7 @@ func _physics_process(delta: float) -> void:
 			if y_diff > 0.1 and y_diff < 1.5:
 				velocity.y = 1.0
 
+		footsteps()
 		move_and_slide()
 	
 	# Jumpscare/haunt system - ONLY when chasing
@@ -131,6 +137,10 @@ func chase_player(cast: RayCast3D):
 	if cast.is_colliding():
 		var hit = cast.get_collider()
 		if hit and hit.is_in_group("player"):
+			if not has_spotted_player:
+				$near_audio.play()
+				has_spotted_player = true
+			
 			if not chasing:
 				# Save current lure position before chasing
 				if lured:
@@ -150,6 +160,7 @@ func check_player_distance():
 	
 	if dist <= 1.5 and not player_in_range:
 		player_in_range = true
+		$near_audio.play()
 		start_chasing_player()
 		print("🚨 Player within 1.5m! Emergency chase!")
 	elif dist > 1.5 and player_in_range:
@@ -182,6 +193,7 @@ func check_for_new_lure() -> void:
 # 🔄 Resume lure behavior after player chase ends
 func resume_lure_behavior() -> void:
 	print("🔄 Resume lure behavior called")
+	has_spotted_player = false 
 	if has_previous_lure:
 		var lure_still_exists = is_lure_still_there(previous_lure_position)
 		if lure_still_exists:
@@ -345,6 +357,7 @@ func reset_ghost_after_catch():
 	velocity = Vector3.ZERO
 	player_in_range = false
 	chase_timer = 0.0
+	has_spotted_player = false 
 	
 	# Switch camera back to player
 	$jumpscare_cam.current = false
@@ -372,3 +385,13 @@ func disable_permanently():
 	velocity = Vector3.ZERO
 	set_physics_process(false)
 	set_process(false)
+	
+func footsteps():
+	if can_play_ambient and !$jumpscare_audio.playing:
+		$walking_audio.stream = walking_audio[rng.randi_range(0, walking_audio.size() - 1)]
+		$walking_audio.play()
+		can_play_ambient = false
+
+		var wait_time = randf_range(2.0, 5.0)
+		await get_tree().create_timer(wait_time).timeout
+		can_play_ambient = true

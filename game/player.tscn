@@ -534,7 +534,7 @@ func trigger_game_over() -> void:
 	
 	# Show the death message
 	if fail_message_label:
-		fail_message_label.text = \"Ayoko na dito, kailangan ko nang umuwi\"
+		fail_message_label.text = \"Ayoko na dito, kailangan ko nang umalis\"
 		fail_message_label.visible = true
 		fail_message_label.modulate.a = 0.0
 		fail_message_label.z_index = 200
