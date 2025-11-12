@@ -348,6 +348,7 @@ func each_night_respawn() -> void:
 
 	# Fade screen back from black
 	fade_screen_from_black(0.5)
+	#gitang tang nko kadali ang aawait
 	
 	set_physics_process(true)
 	set_process(true)
