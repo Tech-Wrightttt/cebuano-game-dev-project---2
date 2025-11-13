@@ -4,7 +4,7 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sse1x"]
 
-[node name="dialogue_trigger2" type="Node3D"]
+[node name="dialogue_trigger2" type="Node3D" groups=["dialogue_triggers"]]
 script = ExtResource("1_xo3tx")
 
 [node name="InteractionArea2" type="Area3D" parent="."]
