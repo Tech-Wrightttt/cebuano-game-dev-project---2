@@ -746,10 +746,14 @@ func play_cutscene(cutscene_path: String, duration: float = 5.5) -> void:
 	set_physics_process(false)
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
+	
+	
 	# CRITICAL: Make the cutscene camera active
 	var cutscene_camera = cutscene.get_node_or_null(\"Camera3D\")
 	if cutscene_camera and cutscene_camera is Camera3D:
 		cutscene_camera.current = true
+		if camera:
+			camera.current = false
 		print(\"📷 Cutscene camera activated\")
 	else:
 		push_warning(\"No Camera3D found in cutscene!\")
