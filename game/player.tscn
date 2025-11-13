@@ -297,7 +297,7 @@ func _process(delta: float) -> void:
 	if Global.completed_dialogues.has(\"dialogue_trigger2\") and Global.completed_dialogues[\"dialogue_trigger2\"]:
 		if seconddialoguescene:
 			seconddialoguescene = false
-			each_night_respawn()
+			#each_night_respawn()
 	
 
 
