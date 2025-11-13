@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c0bd0cp5x50et" path="res://game/level.gd" id="1_ay3dt"]
 [ext_resource type="Material" uid="uid://31nbyn23hg2q" path="res://materials/house_material.tres" id="2_6gydb"]
-[ext_resource type="ArrayMesh" uid="uid://b208lenoni6xf" path="res://assets/house/house_1stFloor_wall.obj" id="3_juqnu"]
+[ext_resource type="ArrayMesh" uid="uid://boxw7he1kxpyb" path="res://assets/house/house_1stFloor_wall.obj" id="3_juqnu"]
 [ext_resource type="Texture2D" uid="uid://cuvnmwed5ihoq" path="res://textures/house/floorwood.jpg" id="4_gp2yx"]
 [ext_resource type="ArrayMesh" uid="uid://blafgyi6jmkkf" path="res://assets/house/house_1stFloor_floor.obj" id="5_qlotc"]
 [ext_resource type="Texture2D" uid="uid://cmuedyjmpqp2r" path="res://textures/house/door_wood.png" id="6_ppoxe"]
@@ -16,7 +16,7 @@
 [ext_resource type="Shader" uid="uid://c3u4tbyhiecqr" path="res://scripts/blur_menu.gdshader" id="10_6vmua"]
 [ext_resource type="PackedScene" uid="uid://bhdnah86wfvhg" path="res://assets/glb_models/fence/fence_and_column.glb" id="10_nowvf"]
 [ext_resource type="Texture2D" uid="uid://b4s4kr1q5t1st" path="res://textures/Tile/Tile_25-256x256.png" id="10_t50jj"]
-[ext_resource type="ArrayMesh" uid="uid://pwhxh673n8g7" path="res://assets/house/house_1stFloorCR_wall.obj" id="11_3plp2"]
+[ext_resource type="ArrayMesh" uid="uid://bab7m82mvhw0n" path="res://assets/house/house_1stFloorCR_wall.obj" id="11_3plp2"]
 [ext_resource type="Script" uid="uid://c1b6a3pq28fgw" path="res://scripts/settings_panel.gd" id="11_5i8qu"]
 [ext_resource type="PackedScene" uid="uid://cdluy2xnot0vs" path="res://assets/glb_models/fence/dirty_leaking_concrete_wall.glb" id="11_g7oie"]
 [ext_resource type="Texture2D" uid="uid://drbqxo1kuq0ml" path="res://assets/images/Flare_small.PNG" id="11_rv8kf"]

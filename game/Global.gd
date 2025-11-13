@@ -8,6 +8,8 @@ extends Node
 @onready var task_cover_food: Node3D = $"/root/level/House/doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food"
 @onready var dialogue_trigger1 = get_node_or_null("grandma 1/dialogue_trigger1")
 @onready var dialogue_trigger2 = get_node_or_null("grandma 2/dialogue_trigger2")
+@onready var player = get_node_or_null("res://game/player.tscn")
+
 
 var grandma2_scene := preload("res://game/lola_idle.tscn")
 var grandma2_instance : Node3D = null
@@ -75,13 +77,12 @@ func _on_dialogue_finished(dialogue_name: String) -> void:
 
 
 func progress_to_next_night():
-	# Stop at Night 5
-	if current_night >= 5:
-		# Add logic here for what happens after the final night
-		return
 
 	current_night += 1
 	time_left = NIGHT_DURATION_REAL
+	
+	
+	Global.player.each_night_respawn()
 	
 	if current_night == 3:
 		call_deferred("enable_grandma2_and_children")
@@ -250,3 +251,4 @@ func _on_task_completed():
 		# We use call_deferred to prevent bugs from changing night
 		# in the middle of a physics frame
 		call_deferred("progress_to_next_night")
+		

@@ -1,6 +1,6 @@
 extends VBoxContainer
 
-const LEVEL = preload("uid://bob5k3jp6dsgc")
+const BUSSCENE = preload("res://game/cutscenes/game_intro.tscn")
 
 # Get a reference to the other panel using a relative path
 @onready var settings_panel = $"../SettingsPanel"
@@ -61,7 +61,7 @@ func _on_button_mouse_exited(button: Button):
 
 # --- Your original functions ---
 func _on_start_game_pressed() -> void:
-	get_tree().change_scene_to_packed(LEVEL)
+	get_tree().change_scene_to_packed(BUSSCENE)
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()

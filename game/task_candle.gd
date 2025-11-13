@@ -36,7 +36,7 @@ func initialize_task():
 
 	# --- NIGHT 5 LOGIC ---
 	else:
-		print("Night 5: Forcing mandatory candles (%s)." % mandatory_names.join(", "))
+		print("Night 5: Forcing mandatory candles (%s)." % ", ".join(mandatory_names))
 		other_candles.shuffle()
 		
 		# Calculate how many additional random candles are needed to reach 8 total.
