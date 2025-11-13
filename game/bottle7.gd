@@ -1,6 +1,5 @@
 extends Node3D
 
-@onready var object_interactor: RayCast3D = $Head/Camera3D/ObjectInteractor
 @onready var lana_bottle: Node3D = $"."
 @onready var lana_bottle_collision: CollisionShape3D = $lanastatic7/lanacollision7
 @onready var lana_script: Node3D = $"../../../../../../CHORES ITEMS/Task_Lana"

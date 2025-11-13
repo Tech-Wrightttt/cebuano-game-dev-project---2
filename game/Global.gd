@@ -62,8 +62,9 @@ func connect_dialogue_triggers() -> void:
 		if trigger.has_signal("dialogue_finished"):
 			if not trigger.is_connected("dialogue_finished", call):
 				trigger.connect("dialogue_finished", call)
-			else:
-				print("Warning: Node", trigger, "does not have a 'dialogue_finished' signal.")
+		else:
+			print("Warning: Node", trigger, "does not have a 'dialogue_finished' signal.")
+
 
 
 
