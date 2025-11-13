@@ -14,10 +14,12 @@ extends CanvasLayer
 
 # The ":00" label
 @onready var time_minute_label = $Panel/TimerLabelMinutes
+@onready var canvas_layer_2: CanvasLayer = $"../CanvasLayer2"
 
 
 func _process(_delta):
-	
+	if Global.completed_dialogues.is_empty():
+		return
 	# --- 1. Update Night Label ---
 	# Uses the variable from Global.gd
 	night_label.text = "Night: %d" % Global.current_night

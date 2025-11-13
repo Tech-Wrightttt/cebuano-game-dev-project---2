@@ -1110,11 +1110,6 @@ offset_top = 239.0
 offset_right = 606.99994
 offset_bottom = 494.5123
 scale = Vector2(1, 0.8375331)
-text = "
-
->SAMPLE TASK
->SAMPLE TASK
->SAMPLE TASK"
 label_settings = SubResource("LabelSettings_oxik7")
 
 [node name="Night Counter" type="Label" parent="PlayerScreenUI"]
@@ -1123,7 +1118,6 @@ offset_top = 9.000001
 offset_right = 1450.0
 offset_bottom = 153.47195
 scale = Vector2(1, 0.8375331)
-text = "NIGHT "
 label_settings = SubResource("LabelSettings_fw65x")
 horizontal_alignment = 1
 

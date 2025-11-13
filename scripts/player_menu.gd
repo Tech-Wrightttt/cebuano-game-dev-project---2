@@ -42,3 +42,7 @@ func _process(_delta: float) -> void:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		if !get_tree().paused:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+
+func _on_main_menu_pressed() -> void:
+	pass # Replace with function body.

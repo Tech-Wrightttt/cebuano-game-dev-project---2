@@ -6,6 +6,7 @@ extends CharacterBody3D
 @onready var lana_task = get_tree().get_first_node_in_group("lana_task")
 @onready var animation_player = $ghost_final_animation/AnimationPlayer
 @onready var rng = RandomNumberGenerator.new()
+@onready var Global = get_node("/root/Global")
 
 # for audio
 @export var walking_audio : Array[AudioStream]
@@ -412,3 +413,44 @@ func footsteps():
 		var wait_time = randf_range(2.0, 5.0)
 		await get_tree().create_timer(wait_time).timeout
 		can_play_ambient = true
+
+func _on_night_time_up() -> void:
+	# 1. Check conditions (ensure no double-trigger)
+	if not ghost_disabled and not killed and not performing_jumpscare:
+		print("💀 NIGHT TIME UP! Global signal received. Triggering final jumpscare!")
+		
+		# Immediately set state to prevent interference
+		killed = true
+		performing_jumpscare = true
+		
+		# Stop all movement
+		chasing = false
+		lured = false
+		velocity = Vector3.ZERO
+		
+		# 2. Start Jumpscare Sequence (using the existing function's core logic)
+		# NOTE: We can't call trigger_jumpscare() because it has its own blocking logic.
+		
+		# Disable ghost raycasts
+		$chasecast/chasecast.enabled = false
+		
+		# Switch to jumpscare camera immediately
+		player.visible = false
+		$jumpscare_cam.current = true
+		
+		# Play jumpscare animation and audio
+		$jumpscare_audio.play()
+		$ghost_final_animation/AnimationPlayer.play("jumpscare")
+		
+		# 3. Handle Permanent Game Over After Jumpscare Animation
+		await get_tree().create_timer(4.0).timeout
+		
+		print("💀 TIME OUT: Finalizing Game Over.")
+		
+		# OPTION A: Change Scene to Game Over Screen (Recommended)
+		# You will need to define a Game Over scene and preload it.
+		# const GAME_OVER_SCENE = preload("res://ui/game_over_screen.tscn")
+		# get_tree().change_scene_to_packed(GAME_OVER_SCENE) 
+		
+		# OPTION B: Quit Application (Simple Game Over)
+		get_tree().quit()

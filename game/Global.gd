@@ -8,6 +8,7 @@ extends Node
 @onready var task_cover_food: Node3D = $"/root/level/House/doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food"
 @onready var dialogue_trigger1 = get_node_or_null("grandma 1/dialogue_trigger1")
 @onready var dialogue_trigger2 = get_node_or_null("grandma 2/dialogue_trigger2")
+@onready var ghost: CharacterBody3D = $"/root/level/House/doors/ghost"
 
 var grandma2_scene := preload("res://game/lola_idle.tscn")
 var grandma2_instance : Node3D = null
@@ -16,6 +17,7 @@ var available_task_pool: Array = []
 var currently_active_tasks: Array = []
 var active_task_count: int = 0
 var completed_task_count: int = 0
+signal night_time_up
 
 var current_night: int = 1
 const NIGHT_DURATION_REAL := 9 * 60.0 # 9 minutes in seconds
@@ -28,6 +30,14 @@ const NIGHT_END_HOUR := 24 # 12 am
 func _ready() -> void:
 	get_tree().connect("tree_changed", Callable(self, "_on_tree_changed"))
 	call_deferred("connect_dialogue_triggers")
+	
+	if is_instance_valid(ghost):
+		if not night_time_up.is_connected(ghost._on_night_time_up):
+			night_time_up.connect(ghost._on_night_time_up)
+			print("✅ Global connected to Ghost's time-out handler.") # <- CHECK THIS PRINT
+	else:
+		push_warning("Ghost node not found at: /root/level/House/doors/ghost")
+		
 	var dialogue_triggers = get_tree().get_nodes_in_group("dialogue_triggers")
 	time_left = NIGHT_DURATION_REAL
 	available_task_pool = [
@@ -50,7 +60,21 @@ func _ready() -> void:
 		
 	call_deferred("disable_grandma2_and_children")
 	
+func _process(delta: float) -> void:
+	# 1. Update the countdown timer
+	update_time(delta) 
 	
+	# 2. Check for Night End (Time Ran Out)
+	# The active_task_count check stops this from running repeatedly after the night ends
+	if time_left <= 0.0 and active_task_count > 0:
+		print("GLOBAL: TIME RAN OUT! Triggering JUMPSCARE.")
+		# Stop further tasks/progression and prevent repeated checks
+		active_task_count = 0 
+		# 🔔 Emit the signal! This calls the ghost's _on_night_time_up function
+		emit_signal("night_time_up")
+		# Prevent further updates/checks in this script
+		set_process(false)
+		set_physics_process(false)
 func _on_tree_changed():
 	if get_tree().current_scene:
 		connect_dialogue_triggers()
@@ -65,32 +89,18 @@ func connect_dialogue_triggers() -> void:
 		else:
 			print("Warning: Node", trigger, "does not have a 'dialogue_finished' signal.")
 
-
-
-
 func _on_dialogue_finished(dialogue_name: String) -> void:
 	completed_dialogues[dialogue_name] = true
 	print("GLOBAL: Dialogue finished -> ", dialogue_name)
 
-
-
 func progress_to_next_night():
-	# Stop at Night 5
 	if current_night >= 5:
-		# Add logic here for what happens after the final night
 		return
-
 	current_night += 1
 	time_left = NIGHT_DURATION_REAL
-	
 	if current_night == 3:
 		call_deferred("enable_grandma2_and_children")
-
-	
-	# Re-ready the tasks for the new night
-	# This will call our new logic
 	ready_task()
-	
 	
 func disable_grandma2_and_children():
 	var grandma2 = get_tree().current_scene.get_node_or_null("grandma 2")
@@ -125,8 +135,6 @@ func _disable_node_and_children(node):
 	for c in node.get_children():
 		_disable_node_and_children(c)
 
-
-
 func enable_grandma2_and_children():
 	var grandma2 = get_tree().current_scene.get_node_or_null("grandma 2")
 	if grandma2:
@@ -157,8 +165,6 @@ func _enable_node_and_children(node):
 	# Recursively enable children
 	for c in node.get_children():
 		_enable_node_and_children(c)
-
-
 	
 	
 func update_time(delta: float) -> void:

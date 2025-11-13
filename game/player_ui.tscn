@@ -28,6 +28,7 @@ texture = ExtResource("2_waps8")
 visible = false
 
 [connection signal="pressed" from="pause_menu/resume" to="." method="resume_game"]
+[connection signal="pressed" from="pause_menu/main_menu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="pause_menu/quit_game" to="." method="quit_game"]
 
 [editable path="pause_menu"]
