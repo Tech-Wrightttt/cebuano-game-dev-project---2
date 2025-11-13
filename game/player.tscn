@@ -124,7 +124,7 @@ var fade_overlay: ColorRect = null  # Persistent reference to fade overlay
 var firstdialoguescene: bool = true
 var seconddialoguescene: bool = true
 
-@onready var wood_walk: AudioStreamPlayer3D = $Sounds/Wood_Walk
+@onready var wood_walk: AudioStreamPlayer3D = $Sounds/Wood_Step
 var can_play_footstep = true
 
 func _ready() -> void:
@@ -356,9 +356,9 @@ func each_night_respawn() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	if Global.current_night == 1:
-		await play_open_eyes_cutscene()
+		#await play_open_eyes_cutscene()
 		
-		await get_tree().create_timer(30.0).timeout
+		#await get_tree().create_timer(30.0).timeout
 		ghost.is_ghost_started = true
 		#i want it so that it plays a scene or calls scene that plays its cutscene
 		#but i do not want this affecting the game it has to be separate 
@@ -1170,6 +1170,14 @@ offset_top = 145.0
 offset_right = 1851.0
 offset_bottom = 254.0
 texture = ExtResource("21_fw65x")
+
+[node name="Task" type="Label" parent="PlayerScreenUI"]
+offset_left = 51.0
+offset_top = 239.0
+offset_right = 606.99994
+offset_bottom = 494.5123
+scale = Vector2(1, 0.8375331)
+label_settings = SubResource("LabelSettings_oxik7")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
