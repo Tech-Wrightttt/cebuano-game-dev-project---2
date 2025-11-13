@@ -357,7 +357,8 @@ func each_night_respawn() -> void:
 	
 	if Global.current_night == 1:
 		#await play_open_eyes_cutscene()
-		
+		await play_cutscene(\"res://game/cutscenes/telephone_dialogue.tscn\", 30.5)
+		print(\"played open eyes cut\")
 		#await get_tree().create_timer(30.0).timeout
 		ghost.is_ghost_started = true
 		#i want it so that it plays a scene or calls scene that plays its cutscene
@@ -366,7 +367,7 @@ func each_night_respawn() -> void:
 		
 	
 func play_open_eyes_cutscene() -> void:
-	var cutscene = preload(\"res://game/cutscenes/open_eyes.tscn\").instantiate()
+	var cutscene = preload(\"res://game/cutscenes/game_intro.tscn\").instantiate()
 	get_tree().root.add_child(cutscene)
 
 	# Optionally: disable controls during cutscene
@@ -731,6 +732,51 @@ func fade_screen_from_black(duration: float) -> void:
 func set_respawn_point(new_position: Vector3) -> void:
 	respawn_position = new_position
 	print(\"📍 New respawn point set: \", new_position)
+	
+func play_cutscene(cutscene_path: String, duration: float = 5.5) -> void:
+	if not ResourceLoader.exists(cutscene_path):
+		push_error(\"Cutscene not found at: \" + cutscene_path)
+		return
+	
+	var cutscene = load(cutscene_path).instantiate()
+	get_tree().root.add_child(cutscene)
+	
+	# Disable player controls
+	set_process(false)
+	set_physics_process(false)
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
+	# CRITICAL: Make the cutscene camera active
+	var cutscene_camera = cutscene.get_node_or_null(\"Camera3D\")
+	if cutscene_camera and cutscene_camera is Camera3D:
+		cutscene_camera.current = true
+		print(\"📷 Cutscene camera activated\")
+	else:
+		push_warning(\"No Camera3D found in cutscene!\")
+	
+	# Hide player UI during cutscene
+	_hide_all_ui()
+	
+	# Wait for cutscene duration or signal
+	if cutscene.has_signal(\"cutscene_finished\"):
+		await cutscene.cutscene_finished
+	else:
+		await get_tree().create_timer(duration).timeout
+	
+	# CRITICAL: Restore player camera
+	if camera:
+		camera.current = true
+		print(\"📷 Player camera restored\")
+	
+	# Cleanup
+	cutscene.queue_free()
+	
+	# Show player UI again
+	_show_all_ui()
+	
+	set_process(true)
+	set_physics_process(true)
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 "
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_opbur"]
