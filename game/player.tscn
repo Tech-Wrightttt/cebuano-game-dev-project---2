@@ -128,6 +128,7 @@ var seconddialoguescene: bool = true
 var can_play_footstep = true
 
 func _ready() -> void:
+	Global.player = self
 	if sprint_bar:
 		sprint_bar.show_percentage = false
 
@@ -357,31 +358,30 @@ func each_night_respawn() -> void:
 	
 	if Global.current_night == 1:
 		#await play_open_eyes_cutscene()
-		
+		await play_cutscene(\"res://game/cutscenes/open_eyes.tscn\", 30.5)
+		print(\"played open eyes cut\")
 		#await get_tree().create_timer(30.0).timeout
 		ghost.is_ghost_started = true
 		#i want it so that it plays a scene or calls scene that plays its cutscene
 		#but i do not want this affecting the game it has to be separate 
 		#it then plays goes away and then the game continues
 		
-	
-func play_open_eyes_cutscene() -> void:
-	var cutscene = preload(\"res://game/cutscenes/open_eyes.tscn\").instantiate()
-	get_tree().root.add_child(cutscene)
+	if Global.current_night == 2:
+		await play_cutscene(\"res://game/cutscenes/open_eyes2.tscn\", 30.5)
+		print(\"played open eyes2 cut\")
+		
+		
+	if Global.current_night == 5:
+		await play_cutscene(\"res://game/cutscenes/telephone_dialogue.tscn\", 30.5)
+		print(\"telephone scene\")	
+		await play_cutscene(\"res://game/cutscenes/floor_wake_up.tscn\", 30.5)
+		print(\"floor wake up open cut\")
 
-	# Optionally: disable controls during cutscene
-	set_process(false)
-	set_physics_process(false)
+	if Global.current_night == 6:
+		await play_cutscene(\"res://game/cutscenes/ending.tscn\", 30.5)
+		print(\"emding cut\")
+		get_tree().quit()
 
-	# Wait for the cutscene to finish (use a signal if needed)
-	await get_tree().create_timer(5.5).timeout  # Adjust time to match animation/cutscene duration
-
-	# Remove cutscene and restore controls
-	cutscene.queue_free()
-	set_process(true)
-	set_physics_process(true)
-
-	
 
 func _on_animation_finished(anim_name: String) -> void:
 	if anim_name == \"Combat_idle_start\":
@@ -731,6 +731,55 @@ func fade_screen_from_black(duration: float) -> void:
 func set_respawn_point(new_position: Vector3) -> void:
 	respawn_position = new_position
 	print(\"📍 New respawn point set: \", new_position)
+	
+func play_cutscene(cutscene_path: String, duration: float = 5.5) -> void:
+	if not ResourceLoader.exists(cutscene_path):
+		push_error(\"Cutscene not found at: \" + cutscene_path)
+		return
+	
+	var cutscene = load(cutscene_path).instantiate()
+	get_tree().root.add_child(cutscene)
+	
+	# Disable player controls
+	set_process(false)
+	set_physics_process(false)
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
+	
+	
+	# CRITICAL: Make the cutscene camera active
+	var cutscene_camera = cutscene.get_node_or_null(\"Camera3D\")
+	if cutscene_camera and cutscene_camera is Camera3D:
+		cutscene_camera.current = true
+		if camera:
+			camera.current = false
+		print(\"📷 Cutscene camera activated\")
+	else:
+		push_warning(\"No Camera3D found in cutscene!\")
+	
+	# Hide player UI during cutscene
+	_hide_all_ui()
+	
+	# Wait for cutscene duration or signal
+	if cutscene.has_signal(\"cutscene_finished\"):
+		await cutscene.cutscene_finished
+	else:
+		await get_tree().create_timer(duration).timeout
+	
+	# CRITICAL: Restore player camera
+	if camera:
+		camera.current = true
+		print(\"📷 Player camera restored\")
+	
+	# Cleanup
+	cutscene.queue_free()
+	
+	# Show player UI again
+	_show_all_ui()
+	
+	set_process(true)
+	set_physics_process(true)
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 "
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_opbur"]

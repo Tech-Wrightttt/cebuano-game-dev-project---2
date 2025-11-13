@@ -1021,7 +1021,7 @@ transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -26.277527,
 patrol_destinations = [NodePath("../destination"), NodePath("../destination1"), NodePath("../destination2"), NodePath("../destination3"), NodePath("../destination4"), NodePath("../destination5"), NodePath("../destination6"), NodePath("../destination7"), NodePath("../destination8"), NodePath("../destination9"), NodePath("../destination11"), NodePath("../destination12"), NodePath("../destination12"), NodePath("../destination12")]
 
 [node name="respawn_destination" parent="doors" instance=ExtResource("86_d2t1g")]
-transform = Transform3D(-0.2840715, 0, 0, 0, 0.20743556, 0, 0, 0, 0.28774792, -29.93401, 9.55137, 0)
+transform = Transform3D(-0.2840715, 0, 0, 0, 0.20743556, 0, 0, 0, 0.28774792, -11.032704, 9.55137, -20.887928)
 
 [node name="destination" parent="doors" instance=ExtResource("86_d2t1g")]
 transform = Transform3D(0.5811646, 0, 0, 0, 0.44509375, 0, 0, 0, 0.68289566, -29.566029, 8.513035, -10.822058)
@@ -1048,7 +1048,7 @@ transform = Transform3D(0.5811646, 0, 0, 0, 0.44509375, 0, 0, 0, 0.68289566, -9.
 transform = Transform3D(0.5811646, 0, 0, 0, 0.44509375, 0, 0, 0, 0.68289566, -13.914835, 8.513035, -1.3774986)
 
 [node name="destination8" parent="doors" instance=ExtResource("86_d2t1g")]
-transform = Transform3D(0.5811646, 0, 0, 0, 0.44509375, 0, 0, 0, 0.68289566, -11.098, 8.75, -19.349)
+transform = Transform3D(0.5811646, 0, 0, 0, 0.44509375, 0, 0, 0, 0.68289566, -23.918243, 8.75, -0.39144897)
 
 [node name="destination9" parent="doors" instance=ExtResource("86_d2t1g")]
 transform = Transform3D(0.5811646, 0, 0, 0, 0.44509375, 0, 0, 0, 0.68289566, 0.7394712, 8.513035, -18.124752)

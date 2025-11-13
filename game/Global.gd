@@ -9,6 +9,8 @@ extends Node
 @onready var dialogue_trigger1 = get_node_or_null("grandma 1/dialogue_trigger1")
 @onready var dialogue_trigger2 = get_node_or_null("grandma 2/dialogue_trigger2")
 @onready var ghost: CharacterBody3D = $"/root/level/House/doors/ghost"
+@onready var player = get_node_or_null("res://game/player.tscn")
+
 
 var grandma2_scene := preload("res://game/lola_idle.tscn")
 var grandma2_instance : Node3D = null
@@ -98,6 +100,9 @@ func progress_to_next_night():
 		return
 	current_night += 1
 	time_left = NIGHT_DURATION_REAL
+
+	Global.player.each_night_respawn()
+	
 	if current_night == 3:
 		call_deferred("enable_grandma2_and_children")
 	ready_task()
@@ -256,3 +261,4 @@ func _on_task_completed():
 		# We use call_deferred to prevent bugs from changing night
 		# in the middle of a physics frame
 		call_deferred("progress_to_next_night")
+		
