@@ -8,7 +8,7 @@ var group_interactions := {
 	"interactable": {"method": "interact", "key": "E", "type": "press"},
 	"equipable": {"method": "take", "key": "F", "type": "press"},
 	"deployable": {"method": "use", "key": "F", "type": "press"}, 
-	"hold_deploy": {"method": "deploy", "key": "F", "type": "hold"},
+	"hold_deploy": {"method": "use", "key": "F", "type": "hold"},
 }
 
 var hold_time: float = 0.0
