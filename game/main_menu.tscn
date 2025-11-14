@@ -12,11 +12,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dths5gx7lhgpk" path="res://assets/house/house_1stFloor_railings.obj" id="9_0wgv0"]
 [ext_resource type="PackedScene" uid="uid://bd8sk3hxv1lu0" path="res://assets/glb_models/fence/japanese_park_stone_floor_uljcfd0_mid.glb" id="9_k2o5e"]
 [ext_resource type="Script" uid="uid://cbep2kr7a0bxs" path="res://scripts/main_menu.gd" id="10_5i8qu"]
-<<<<<<< Updated upstream
-[ext_resource type="Shader" uid="uid://c3u4tbyhiecqr" path="res://scripts/blur_menu.gdshader" id="10_6vmua"]
-=======
 [ext_resource type="Shader" path="res://scripts/blur_menu.gdshader" id="10_6vmua"]
->>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://bhdnah86wfvhg" path="res://assets/glb_models/fence/fence_and_column.glb" id="10_nowvf"]
 [ext_resource type="Texture2D" uid="uid://b4s4kr1q5t1st" path="res://textures/Tile/Tile_25-256x256.png" id="10_t50jj"]
 [ext_resource type="ArrayMesh" uid="uid://bab7m82mvhw0n" path="res://assets/house/house_1stFloorCR_wall.obj" id="11_3plp2"]
@@ -40,15 +36,8 @@
 [ext_resource type="PackedScene" uid="uid://cov1tn1i13v63" path="res://assets/glb_models/nature/plant/potted_plant_1.glb" id="23_p6lyb"]
 [ext_resource type="PackedScene" uid="uid://cr00y4qgw3h1s" path="res://assets/glb_models/furniture/monstera_2_low_poly.glb" id="24_yfe2u"]
 [ext_resource type="PackedScene" uid="uid://c1rv2is3joy2l" path="res://assets/glb_models/furniture/street_wooden_bench.glb" id="25_3hv4j"]
-<<<<<<< Updated upstream
-[ext_resource type="Script" uid="uid://rn4ndis8ai1v" path="res://game/task_close_windows.gd" id="26_wjv5o"]
-[ext_resource type="PackedScene" uid="uid://b7iavuxmklmfq" path="res://game/house_materials/windows_single.tscn" id="27_lsf6n"]
-[ext_resource type="PackedScene" uid="uid://batubq50dnos0" path="res://game/house_materials/windows_double.tscn" id="28_4mvyj"]
-[ext_resource type="PackedScene" uid="uid://b2teowpxr3dyw" path="res://game/house_materials/windows_quad.tscn" id="29_nl1nx"]
-=======
 [ext_resource type="Script" path="res://game/task_close_windows.gd" id="26_wjv5o"]
 [ext_resource type="Script" uid="uid://csubet1x1j7vl" path="res://game/quadruple_window.gd" id="29_wjv5o"]
->>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://bnd4f5cscd18j" path="res://game/house_materials/ceiling_lights.tscn" id="30_48cll"]
 [ext_resource type="Texture2D" uid="uid://bc4yir6bxjaaj" path="res://textures/Wood/Wood_02-256x256.png" id="30_lsf6n"]
 [ext_resource type="ArrayMesh" uid="uid://chq88gub11n6x" path="res://assets/house/house_windows_wood.obj" id="31_4mvyj"]
