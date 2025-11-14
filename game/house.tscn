@@ -171,7 +171,7 @@
 [ext_resource type="Script" uid="uid://bpg8fjigy7ibk" path="res://game/task_clean_statues.gd" id="125_m2psj"]
 [ext_resource type="PackedScene" uid="uid://dop0i420a2ypn" path="res://game/uncleaned_creepy_statue.tscn" id="125_sfno0"]
 [ext_resource type="PackedScene" uid="uid://ba1xcjufcwwwr" path="res://assets/glb_models/basement/medieval_torch.glb" id="125_yewax"]
-[ext_resource type="PackedScene" uid="uid://b681o5valg1vs" path="res://assets/glb_models/furniture/wardrobe.tscn" id="127_uwpgj"]
+[ext_resource type="PackedScene" uid="uid://b681o5valg1vs" path="res://game/house_materials/wardrobe.tscn" id="127_uwpgj"]
 [ext_resource type="PackedScene" uid="uid://dcrr2bsxdk5on" path="res://assets/glb_models/statues/statue_robe_figure.tscn" id="127_xxycr"]
 [ext_resource type="PackedScene" uid="uid://daxaild37icn7" path="res://game/uncleaned_statue_ni_ante.tscn" id="128_dyeyr"]
 [ext_resource type="PackedScene" uid="uid://bpbwf4afn53xl" path="res://game/uncleaned_mary_statue.tscn" id="129_s8tip"]
