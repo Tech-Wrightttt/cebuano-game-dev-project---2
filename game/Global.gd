@@ -157,7 +157,11 @@ func progress_to_next_night():
 	
 	if current_night == 3:
 		call_deferred("enable_grandma2_and_children")
-	ready_task()
+		
+	if current_night >=6:
+		return
+	else:
+		ready_task()
 	
 func disable_grandma2_and_children():
 	var grandma2 = get_tree().current_scene.get_node_or_null("grandma 2")
