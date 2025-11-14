@@ -1,4 +1,4 @@
-[gd_scene load_steps=423 format=4 uid="uid://c6nnpmjnwv4g2"]
+[gd_scene load_steps=425 format=4 uid="uid://c6nnpmjnwv4g2"]
 
 [ext_resource type="Script" uid="uid://cmcetdgh8ky7t" path="res://scripts/house.gd" id="1_8tqyt"]
 [ext_resource type="Material" uid="uid://31nbyn23hg2q" path="res://materials/house_material.tres" id="1_f6s7v"]
@@ -8,10 +8,12 @@
 [ext_resource type="AudioStream" uid="uid://dyrpm5eajw1gq" path="res://soundfx/door_locked.mp3" id="3_7nwo6"]
 [ext_resource type="ArrayMesh" uid="uid://dkeuruqi54p6n" path="res://assets/house/house_basement_floor.obj" id="3_djvyg"]
 [ext_resource type="Texture2D" uid="uid://cm6acpp76ieuo" path="res://textures/house/basement floor..jpg" id="3_eeqtj"]
+[ext_resource type="Script" uid="uid://du16lxallybeo" path="res://game/house_materials/frontdoor.gd" id="3_ix1fy"]
 [ext_resource type="PackedScene" uid="uid://co45n63o5btcn" path="res://assets/glb_models/nature/plantsa/old_iron.glb" id="3_jer8c"]
 [ext_resource type="PackedScene" uid="uid://batubq50dnos0" path="res://game/house_materials/windows_double.tscn" id="3_r85fh"]
 [ext_resource type="PackedScene" uid="uid://b2teowpxr3dyw" path="res://game/house_materials/windows_quad.tscn" id="4_r85fh"]
 [ext_resource type="ArrayMesh" uid="uid://c4hr82a5el8n4" path="res://assets/house/house_basement_ceiling.obj" id="4_v87ac"]
+[ext_resource type="Script" uid="uid://d3h0hxxohqcm1" path="res://game/house_materials/backdoor.gd" id="5_153lg"]
 [ext_resource type="ArrayMesh" uid="uid://boxw7he1kxpyb" path="res://assets/house/house_1stFloor_wall.obj" id="5_f1bo4"]
 [ext_resource type="PackedScene" uid="uid://cm5n27ewcws0o" path="res://game/house_materials/locker.tscn" id="6_3a0ml"]
 [ext_resource type="Texture2D" uid="uid://gkcld4u7jl4t" path="res://textures/house/wall basement.jpg" id="6_78vr8"]
@@ -171,7 +173,7 @@
 [ext_resource type="Script" uid="uid://bpg8fjigy7ibk" path="res://game/task_clean_statues.gd" id="125_m2psj"]
 [ext_resource type="PackedScene" uid="uid://dop0i420a2ypn" path="res://game/uncleaned_creepy_statue.tscn" id="125_sfno0"]
 [ext_resource type="PackedScene" uid="uid://ba1xcjufcwwwr" path="res://assets/glb_models/basement/medieval_torch.glb" id="125_yewax"]
-[ext_resource type="PackedScene" uid="uid://b681o5valg1vs" path="res://game/house_materials/wardrobe.tscn" id="127_uwpgj"]
+[ext_resource type="PackedScene" uid="uid://dra3uktb1hvu7" path="res://game/house_materials/wardrobe.tscn" id="127_uwpgj"]
 [ext_resource type="PackedScene" uid="uid://dcrr2bsxdk5on" path="res://assets/glb_models/statues/statue_robe_figure.tscn" id="127_xxycr"]
 [ext_resource type="PackedScene" uid="uid://daxaild37icn7" path="res://game/uncleaned_statue_ni_ante.tscn" id="128_dyeyr"]
 [ext_resource type="PackedScene" uid="uid://bpbwf4afn53xl" path="res://game/uncleaned_mary_statue.tscn" id="129_s8tip"]
@@ -992,14 +994,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9, -3.6, -8)
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -24.999878, -3.6, -8)
 script = ExtResource("2_2xh2d")
 
-[node name="Locked" type="AudioStreamPlayer3D" parent="doors/Basement_Door4"]
-stream = ExtResource("3_7nwo6")
-
 [node name="Basement_Entrance" parent="doors" instance=ExtResource("41_ja541")]
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -18, 4.4, -0.4)
 
 [node name="1st_FrontDoor2" parent="doors" instance=ExtResource("41_ja541")]
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -0.508, 4.423004, -8)
+script = ExtResource("3_ix1fy")
+
+[node name="Locked" type="AudioStreamPlayer3D" parent="doors/1st_FrontDoor2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11806491, -1.8793507, 0.62430525)
+stream = ExtResource("3_7nwo6")
 
 [node name="1st_LivingRoomDoor2" parent="doors" instance=ExtResource("41_ja541")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.989, 4.35, -8)
@@ -1012,6 +1016,11 @@ transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -23,
 
 [node name="1st_BackDoor" parent="doors" instance=ExtResource("41_ja541")]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -43.015, 4.35, -10)
+script = ExtResource("5_153lg")
+
+[node name="Locked" type="AudioStreamPlayer3D" parent="doors/1st_BackDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11806491, -1.8793507, 0.62430525)
+stream = ExtResource("3_7nwo6")
 
 [node name="2nd_Room1Door" parent="doors" instance=ExtResource("41_ja541")]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -23, 10.55, -8)

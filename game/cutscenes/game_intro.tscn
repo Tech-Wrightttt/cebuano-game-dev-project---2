@@ -1,21 +1,22 @@
-[gd_scene load_steps=54 format=4 uid="uid://cfrgnh5md5thg"]
+[gd_scene load_steps=55 format=4 uid="uid://cfrgnh5md5thg"]
 
 [ext_resource type="Texture2D" uid="uid://bvdwayp7w2erl" path="res://textures/environment/grass.jpg" id="1_4x1ur"]
 [ext_resource type="Script" uid="uid://rgenenduhbex" path="res://game/external/game_intro.gd" id="1_rggk2"]
 [ext_resource type="PackedScene" uid="uid://b88w1e8im7dsg" path="res://game/external/bus.tscn" id="2_f4til"]
-[ext_resource type="Texture2D" uid="uid://rk3k6k0v6q7e" path="res://assets/glb_models/nature/low_poly_trees_flowers_and_grass_24.png" id="3_dc75h"]
-[ext_resource type="Texture2D" uid="uid://c1lh6nr1p1slo" path="res://assets/glb_models/nature/low_poly_trees_flowers_and_grass_25.png" id="4_j1dvo"]
-[ext_resource type="Texture2D" uid="uid://dar552q7h0vvy" path="res://assets/glb_models/nature/low_poly_trees_flowers_and_grass_26.png" id="5_rggk2"]
-[ext_resource type="Texture2D" uid="uid://c02brbicn03vm" path="res://assets/glb_models/nature/low_poly_trees_flowers_and_grass_27.png" id="6_xbmmw"]
-[ext_resource type="Texture2D" uid="uid://c6aa6ssfanwkq" path="res://assets/glb_models/nature/low_poly_trees_flowers_and_grass_21.png" id="7_cemld"]
-[ext_resource type="Texture2D" uid="uid://3qgi6kvgfvgc" path="res://assets/glb_models/nature/low_poly_trees_flowers_and_grass_22.png" id="8_p0yy8"]
-[ext_resource type="Texture2D" uid="uid://b16g32py46w8y" path="res://assets/glb_models/nature/low_poly_trees_flowers_and_grass_23.png" id="9_o3fry"]
-[ext_resource type="Texture2D" uid="uid://bpevitrkpdlgf" path="res://assets/glb_models/nature/low_poly_trees_flowers_and_grass_6.png" id="10_olh6p"]
-[ext_resource type="Texture2D" uid="uid://bd43aq2t4qcpj" path="res://assets/glb_models/nature/low_poly_trees_flowers_and_grass_7.png" id="11_r7avt"]
-[ext_resource type="Texture2D" uid="uid://bh2jph44cwtgt" path="res://assets/glb_models/nature/low_poly_trees_flowers_and_grass_2.png" id="12_dc75h"]
-[ext_resource type="Texture2D" uid="uid://cwfjlt5p7tkyw" path="res://assets/glb_models/nature/low_poly_trees_flowers_and_grass_1.png" id="13_j1dvo"]
+[ext_resource type="Texture2D" uid="uid://b78wf12fcm5pf" path="res://assets/glb_models/nature/low_poly_trees_flowers_and_grass_24.png" id="3_dc75h"]
+[ext_resource type="Texture2D" uid="uid://bpxwnrih2h8b6" path="res://assets/glb_models/nature/low_poly_trees_flowers_and_grass_25.png" id="4_j1dvo"]
+[ext_resource type="Texture2D" uid="uid://ddta0uenv404a" path="res://assets/glb_models/nature/low_poly_trees_flowers_and_grass_26.png" id="5_rggk2"]
+[ext_resource type="Texture2D" uid="uid://52ognyy27bk1" path="res://assets/glb_models/nature/low_poly_trees_flowers_and_grass_27.png" id="6_xbmmw"]
+[ext_resource type="Texture2D" uid="uid://dhqieyaaegoxu" path="res://assets/glb_models/nature/low_poly_trees_flowers_and_grass_21.png" id="7_cemld"]
+[ext_resource type="Texture2D" uid="uid://c2pmiiwkuaa73" path="res://assets/glb_models/nature/low_poly_trees_flowers_and_grass_22.png" id="8_p0yy8"]
+[ext_resource type="Texture2D" uid="uid://bt7e3os1u2x63" path="res://assets/glb_models/nature/low_poly_trees_flowers_and_grass_23.png" id="9_o3fry"]
+[ext_resource type="Texture2D" uid="uid://oely7pg3kqf5" path="res://assets/glb_models/nature/low_poly_trees_flowers_and_grass_6.png" id="10_olh6p"]
+[ext_resource type="Texture2D" uid="uid://du37dni35cumf" path="res://assets/glb_models/nature/low_poly_trees_flowers_and_grass_7.png" id="11_r7avt"]
+[ext_resource type="Texture2D" uid="uid://dheitduh5b0u0" path="res://assets/glb_models/nature/low_poly_trees_flowers_and_grass_2.png" id="12_dc75h"]
+[ext_resource type="Texture2D" uid="uid://duijtnwkh1nuu" path="res://assets/glb_models/nature/low_poly_trees_flowers_and_grass_1.png" id="13_j1dvo"]
 [ext_resource type="PackedScene" uid="uid://drrfdygath4dv" path="res://game/external/streetlight.tscn" id="14_j1dvo"]
 [ext_resource type="Shader" uid="uid://bt1lbo5yomj25" path="res://game/shaders/retro_camera.gdshader" id="16_e12b6"]
+[ext_resource type="FontFile" path="res://fonts/cmu-typewriter/Typewriter.tres" id="17_hnkel"]
 [ext_resource type="AudioStream" uid="uid://b8s8d3q52ppa3" path="res://soundfx/outside_bg.mp3" id="17_kx8nd"]
 [ext_resource type="AudioStream" uid="uid://c76jfhj4fx0f3" path="res://soundfx/bus-going-down-street-86981.mp3" id="18_hnkel"]
 
@@ -2555,6 +2556,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Label" type="Label" parent="cutscene/Filters"]
+offset_left = 170.0
+offset_top = 755.0
+offset_right = 1062.0
+offset_bottom = 970.0
+theme_override_colors/font_color = Color(0.8047423, 0.8047427, 0.8047426, 1)
+theme_override_constants/line_spacing = 15
+theme_override_constants/paragraph_spacing = 0
+theme_override_fonts/font = ExtResource("17_hnkel")
+theme_override_font_sizes/font_size = 170
+text = "Loading..."
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_j1dvo")
