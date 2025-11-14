@@ -7,6 +7,7 @@ var chosen_candles: Array = []
 @onready var candle_Scattered = $candleAroundTheHouse
 @onready var altar_Candles = $altarTable
 @onready var altar_Table_Interaction: CollisionShape3D = $altarTable/StaticBody3D/CollisionShape3D
+var is_lighting_phase_active: bool
 
 func _ready():
 	collect_Candles = candle_Scattered.get_children()
@@ -103,6 +104,7 @@ func take(collider_body: PhysicsBody3D):
 func interact():
 	var altar_candle_nodes = altar_Candles.get_children()
 	altar_candles_to_light = 8 
+	is_lighting_phase_active = true
 	
 	for candle in altar_candle_nodes:
 		candle.visible = true
@@ -126,21 +128,26 @@ func use(collider_body: PhysicsBody3D):
 			task_completed.emit()
 
 func get_progress_string() -> String:
-	# Check 1: Lighting is active (interact() has run, and count > 0)
-	if altar_candles_to_light > 0:
-		var total = 8 # Hardcoded total for lighting phase
-		var lit = total - altar_candles_to_light
-		return "%d/%d candles lighted" % [lit, total]
+	var total_candles = 8
 	
-	# Check 2: Collection is complete AND Lighting has NOT started (altar_candles_to_light == 0)
+	# 1. Check for Task COMPLETELY DONE
+	# The task is done ONLY if the lighting phase was started AND finished.
+	if is_lighting_phase_active and altar_candles_to_light == 0:
+		return "" # Hide the progress string
+
+	# 2. Check for Lighting ACTIVE/IN PROGRESS
+	# If the lighting phase has started AND not finished.
+	if is_lighting_phase_active and altar_candles_to_light > 0:
+		var lit = total_candles - altar_candles_to_light
+		return "%d/%d candles lighted" % [lit, total_candles]
+	
+	# 3. Check for Collection COMPLETE, Awaiting Placement
+	# This state is reached when lighting hasn't started (is_lighting_phase_active == false)
+	# AND collection is finished (chosen_candles.is_empty()).
 	if chosen_candles.is_empty():
-		# This is the state where the player is prompted to click the altar trigger
 		return "Place the candles on the altar"
 	
-	# Check 3: Collection is still active
-	if not chosen_candles.is_empty():
-		var total_to_collect = 8
-		var collected = total_to_collect - chosen_candles.size()
-		return "%d/%d candles collected" % [collected, total_to_collect]
-	# If task is completely done (and collection was complete), hide it
-	return ""
+	# 4. Collection ACTIVE/IN PROGRESS (Fallback state)
+	# If we reached here, lighting hasn't started and collection is NOT empty.
+	var collected = total_candles - chosen_candles.size()
+	return "%d/%d candles collected" % [collected, total_candles]

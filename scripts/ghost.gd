@@ -449,8 +449,6 @@ func _on_night_time_up() -> void:
 		
 		# OPTION A: Change Scene to Game Over Screen (Recommended)
 		# You will need to define a Game Over scene and preload it.
-		# const GAME_OVER_SCENE = preload("res://ui/game_over_screen.tscn")
-		# get_tree().change_scene_to_packed(GAME_OVER_SCENE) 
-		
-		# OPTION B: Quit Application (Simple Game Over)
-		get_tree().quit()
+		const MAIN_MENU_SCENE = preload("res://game/main_menu.tscn")
+		get_tree().change_scene_to_packed(MAIN_MENU_SCENE)
+	

@@ -18,8 +18,17 @@ extends CanvasLayer
 
 
 func _process(_delta):
-	if Global.completed_dialogues.is_empty():
+	# NEW: Only update and show the UI when the timer is active
+	if not Global.timeshow:
+		# Hide the clock elements when the timer isn't running
+		time_hour_label.visible = false
+		time_minute_label.visible = false
 		return
+		
+	# Ensure clock elements are visible once timer starts
+	time_hour_label.visible = true
+	time_minute_label.visible = true
+	
 	# --- 1. Update Night Label ---
 	# Uses the variable from Global.gd
 	night_label.text = "Night: %d" % Global.current_night

@@ -10,7 +10,7 @@ extends Node
 @onready var dialogue_trigger2 = get_node_or_null("grandma 2/dialogue_trigger2")
 @onready var ghost: CharacterBody3D = $"/root/level/House/doors/ghost"
 @onready var player = get_node_or_null("res://game/player.tscn")
-
+var timeshow: bool = false
 
 var grandma2_scene := preload("res://game/lola_idle.tscn")
 var grandma2_instance : Node3D = null
@@ -22,7 +22,7 @@ var completed_task_count: int = 0
 signal night_time_up
 
 var current_night: int = 1
-const NIGHT_DURATION_REAL := 9 * 60.0 # 9 minutes in seconds
+const NIGHT_DURATION_REAL := 30 * 60.0# 9 minutes in seconds
 var time_left: float = NIGHT_DURATION_REAL
 #var dialogue_triggers = get_tree().get_nodes_in_group("dialogue_triggers")
 
@@ -65,7 +65,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	# 1. Update the countdown timer
 	update_time(delta) 
-	
 	# 2. Check for Night End (Time Ran Out)
 	# The active_task_count check stops this from running repeatedly after the night ends
 	if time_left <= 0.0 and active_task_count > 0:
@@ -77,6 +76,11 @@ func _process(delta: float) -> void:
 		# Prevent further updates/checks in this script
 		set_process(false)
 		set_physics_process(false)
+
+func start_night_timer() -> void:
+	timeshow = true
+	print("⏱️ Night timer STARTED.")
+
 func _on_tree_changed():
 	if get_tree().current_scene:
 		connect_dialogue_triggers()
@@ -94,6 +98,9 @@ func connect_dialogue_triggers() -> void:
 func _on_dialogue_finished(dialogue_name: String) -> void:
 	completed_dialogues[dialogue_name] = true
 	print("GLOBAL: Dialogue finished -> ", dialogue_name)
+	if !completed_dialogues.is_empty(): # Replace with your actual intro dialogue name(s)
+		if not timeshow:
+			start_night_timer()
 
 func progress_to_next_night():
 	if not is_instance_valid(player):
