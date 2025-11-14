@@ -70,6 +70,13 @@ func deactivate_all():
 	# Deactivate altar table interaction
 	altar_Table_Interaction.set_deferred("disabled", true)
 	
+	# --- THIS IS THE FIX ---
+	# Reset all the internal state variables for the next night.
+	altar_candles_to_light = 0
+	is_lighting_phase_active = false
+	chosen_candles.clear()
+	# --- END FIX ---
+	
 func update_candle_tasking():
 	# Activate only the chosen scattered candles
 	for candle in collect_Candles:

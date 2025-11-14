@@ -151,7 +151,6 @@ func progress_to_next_night():
 		return
 	current_night += 1
 	time_left = NIGHT_DURATION_REAL
-	timeshow = false # Stop timer until next dialogue finishes
 
 	if player.has_method("each_night_respawn"):
 		player.each_night_respawn()
@@ -253,7 +252,7 @@ func ready_task()-> void:
 			# This will help debug if a task is still null
 			print("Warning: A task in all_tasks is not valid during ready_task()")
 
-	# Activate Lana
+	# --- 1. Activate Lana (Always) ---
 	if is_instance_valid(task_lana):
 		task_lana.initialize_task()
 		task_lana.task_completed.connect(_on_task_completed)
@@ -264,7 +263,8 @@ func ready_task()-> void:
 		push_error("Task Lana is NULL. Cannot start night.")
 		return # Stop here to prevent errors
 		
-	# Activate Random Tasks
+	# --- 2. Activate Random Tasks (Re-enabled) ---
+	# We slice from the *available_task_pool*, which doesn't include Lana
 	var tasks_needed = min(2 + (current_night - 1), available_task_pool.size())
 	var random_tasks_to_add = available_task_pool.slice(0, tasks_needed)
 	
@@ -275,15 +275,22 @@ func ready_task()-> void:
 		if is_instance_valid(task_node):
 			print(" - %s" % task_node.name)
 			task_node.initialize_task()
+			# --- CONNECT THE SIGNAL ---
 			task_node.task_completed.connect(_on_task_completed)
 			active_task_count += 1
+			# --- ADD RANDOM TASK TO THE ACTIVE ARRAY ---
 			currently_active_tasks.append(task_node)
 		else:
 			push_warning("Tried to activate an invalid task instance from the pool.")
 			
 	if active_task_count == 1: # Only Lana is active
-		print("Warning: No random tasks were activated.")
-
+		print("Warning: No random tasks were activated (this is normal for Night 1).")
+	
+	# Check if no tasks were activated at all (in case Lana was also null)
+	if active_task_count == 0:
+		print("GLOBAL: No tasks active. Progressing.")
+		progress_to_next_night()
+		
 func _on_task_completed():
 	completed_task_count += 1
 	print("GLOBAL: Task completed! Progress: %d / %d" % [completed_task_count, active_task_count])

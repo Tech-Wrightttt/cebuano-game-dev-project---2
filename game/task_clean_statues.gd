@@ -141,6 +141,14 @@ func deactivate_all():
 		data["cleaned_collision"].set_deferred("disabled", true)
 		data["uncleaned_collision"].set_deferred("disabled", true)
 
+	# --- THIS IS THE FIX ---
+	# Reset the list of active tasks for the next night.
+	chosen_statue_keys.clear()
+	
+	# Stop the sound just in case it's stuck on
+	if cleaning.is_playing():
+		cleaning.stop()
+
 func update_statue_tasking():
 	# Debug: Print which keys were randomly chosen
 	print("Chosen statue keys: ", chosen_statue_keys)

@@ -1,5 +1,66 @@
-[gd_scene load_steps=2 format=3 uid="uid://dowm5wgjfm0pb"]
+[gd_scene load_steps=14 format=3 uid="uid://dowm5wgjfm0pb"]
 
 [ext_resource type="PackedScene" uid="uid://dwh022ks3kihu" path="res://assets/glb_models/chores/lanadropsshadow.glb" id="1_8dear"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o7in3"]
+albedo_color = Color(0.59717613, 0.59717613, 0.5971761, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_btgcg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vr72e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_heqe1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_favhu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a7uj1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m53wf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q8b4l"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cqm1e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mhd7i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k4vcq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_atck4"]
+
 [node name="lanadropsshadow" instance=ExtResource("1_8dear")]
+
+[node name="Sphere" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_o7in3")
+
+[node name="Sphere_001" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_btgcg")
+
+[node name="Sphere_002" parent="." index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_vr72e")
+
+[node name="Sphere_003" parent="." index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_heqe1")
+
+[node name="Sphere_004" parent="." index="4"]
+surface_material_override/0 = SubResource("StandardMaterial3D_favhu")
+
+[node name="Sphere_005" parent="." index="5"]
+surface_material_override/0 = SubResource("StandardMaterial3D_a7uj1")
+
+[node name="Sphere_006" parent="." index="6"]
+surface_material_override/0 = SubResource("StandardMaterial3D_m53wf")
+
+[node name="Sphere_007" parent="." index="7"]
+surface_material_override/0 = SubResource("StandardMaterial3D_q8b4l")
+
+[node name="Sphere_008" parent="." index="8"]
+surface_material_override/0 = SubResource("StandardMaterial3D_cqm1e")
+
+[node name="Sphere_009" parent="." index="9"]
+surface_material_override/0 = SubResource("StandardMaterial3D_mhd7i")
+
+[node name="Sphere_010" parent="." index="10"]
+surface_material_override/0 = SubResource("StandardMaterial3D_k4vcq")
+
+[node name="Sphere_011" parent="." index="11"]
+surface_material_override/0 = SubResource("StandardMaterial3D_atck4")

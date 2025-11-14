@@ -117,6 +117,7 @@ func initialize_task() -> void:
 
 # --- NEW FUNCTION (from HEAD) ---
 func deactivate_all() -> void:
+	# --- 1. Your existing visual/collision reset ---
 	for id in lana_map.keys():
 		var data = lana_map[id]
 		data["bottle"].visible = false
@@ -128,6 +129,20 @@ func deactivate_all() -> void:
 			data["drop_collision"].set_deferred("disabled", true)
 		if data["shadow"]:
 			data["shadow"].visible = false
+			
+	# --- 2. THE FIX: Reset all logical state variables ---
+	print("🧹 Task_Lana: Resetting all state for next night.")
+	is_bottle_collected = false
+	drops_deployed_count = 0
+	chosen_bottle = -1
+	
+	# Clear all lure tracking for the ghost
+	deployed_lures.clear()
+	current_lana_pos = Vector3.ZERO
+	
+	# Stop the prayer sound just in case it's stuck on
+	if lana_prayer.is_playing():
+		lana_prayer.stop()
 
 # --- MERGED update_lana_tasking() ---
 func update_lana_tasking() -> void:
