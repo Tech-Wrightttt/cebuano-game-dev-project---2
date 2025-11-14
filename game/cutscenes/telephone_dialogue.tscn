@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
-[gd_scene load_steps=187 format=4 uid="uid://12utn35f48i6"]
-=======
 [gd_scene load_steps=197 format=4 uid="uid://12utn35f48i6"]
->>>>>>> Stashed changes
 
 [ext_resource type="Script" uid="uid://m4ttjul5ggyf" path="res://dialogues/telephone_dialogue.gd" id="1_dspbc"]
 [ext_resource type="Script" uid="uid://ch1vivyd8b7fy" path="res://game/cutscenes/telephone.gd" id="2_jd5bi"]
@@ -109,13 +105,10 @@
 [ext_resource type="PackedScene" uid="uid://cddt0m7lgb0xy" path="res://game/house_materials/cabinet sa altar.tscn" id="97_4hc8q"]
 [ext_resource type="PackedScene" uid="uid://bctfdnra4pfq5" path="res://assets/glb_models/decoratives/laocoon_and_his_sons_skeleton.glb" id="98_h5lxj"]
 [ext_resource type="PackedScene" uid="uid://boj3xpbhvu8a6" path="res://assets/glb_models/chores/st_mary_statue_raw_scan.glb" id="99_3ytq8"]
-<<<<<<< Updated upstream
-=======
 [ext_resource type="Script" uid="uid://74tx5x2mc8v7" path="res://game/cutscenes/floor_wake_up.gd" id="107_osyli"]
 [ext_resource type="PackedScene" uid="uid://b7iavuxmklmfq" path="res://game/house_materials/windows_single.tscn" id="120_fsfkm"]
 [ext_resource type="PackedScene" uid="uid://batubq50dnos0" path="res://game/house_materials/windows_double.tscn" id="121_pj51h"]
 [ext_resource type="PackedScene" uid="uid://b2teowpxr3dyw" path="res://game/house_materials/windows_quad.tscn" id="122_a1lst"]
->>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://bnd4f5cscd18j" path="res://game/house_materials/ceiling_lights.tscn" id="136_lim2o"]
 
 [sub_resource type="Animation" id="Animation_dncil"]
@@ -428,8 +421,6 @@ size = Vector3(1.8035889, 0.5472412, 0.79034805)
 [sub_resource type="BoxShape3D" id="BoxShape3D_y3wns"]
 size = Vector3(1.1434326, 0.91308594, 0.5517578)
 
-<<<<<<< Updated upstream
-=======
 [sub_resource type="BoxShape3D" id="BoxShape3D_ckukj"]
 size = Vector3(2.9556324, 3.0496216, 0.761101)
 
@@ -439,7 +430,6 @@ size = Vector3(0.6091156, 2.8979492, 2.7394104)
 [sub_resource type="BoxShape3D" id="BoxShape3D_1egkq"]
 size = Vector3(0.6325073, 2.8969116, 7.4634857)
 
->>>>>>> Stashed changes
 [sub_resource type="Animation" id="Animation_rsgu8"]
 length = 0.001
 tracks/0/type = "value"
