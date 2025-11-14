@@ -129,6 +129,11 @@ var can_play_footstep = true
 
 func _ready() -> void:
 	Global.player = self
+	
+	if Global.current_night == 0:
+		Global.current_night = 1
+		print(\"🌙 Starting at Night 1\")
+	
 	if sprint_bar:
 		sprint_bar.show_percentage = false
 
@@ -754,6 +759,8 @@ func play_cutscene(cutscene_path: String, duration: float = 5.5) -> void:
 	if house:
 		house.visible = false
 		
+	$\".\".visible = false
+		
 	# CRITICAL: Make the cutscene camera active
 	var cutscene_camera = cutscene.get_node_or_null(\"Camera3D\")
 	if cutscene_camera and cutscene_camera is Camera3D:
@@ -772,6 +779,8 @@ func play_cutscene(cutscene_path: String, duration: float = 5.5) -> void:
 	
 	if house:
 		house.visible = house_visible
+		
+	$\".\".visible = true
 	
 	# CRITICAL: Restore player camera
 	if camera:

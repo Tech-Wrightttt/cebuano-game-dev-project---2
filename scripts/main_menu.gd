@@ -24,6 +24,7 @@ var hovered_button: Button = null
 func _ready():
 	# --- JITTER CODE START ---
 	# Group all our buttons into an array to set them up easily
+	Global.reset_game_state()
 	var buttons = [start_game_button, settings_button, controls_button, quit_button]
 	
 	for button in buttons:

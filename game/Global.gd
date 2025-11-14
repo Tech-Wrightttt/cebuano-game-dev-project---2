@@ -96,6 +96,10 @@ func _on_dialogue_finished(dialogue_name: String) -> void:
 	print("GLOBAL: Dialogue finished -> ", dialogue_name)
 
 func progress_to_next_night():
+	if not is_instance_valid(player):
+		push_warning("Cannot progress night - no player")
+		return
+	
 	if current_night >= 5:
 		return
 	current_night += 1
@@ -261,4 +265,11 @@ func _on_task_completed():
 		# We use call_deferred to prevent bugs from changing night
 		# in the middle of a physics frame
 		call_deferred("progress_to_next_night")
+		
+func reset_game_state():
+	"""Call this when returning to main menu or starting a new game"""
+	current_night = 0
+	completed_dialogues.clear()
+	player = null
+	print("🔄 Game state reset")
 		
