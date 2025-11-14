@@ -8,6 +8,7 @@ var player_is_locked_out = false # CHANGED: Renamed this variable for clarity
 @onready var door_open: AudioStreamPlayer3D = $Door_Open
 @onready var door_close: AudioStreamPlayer3D = $Door_Close
 @onready var door_animation: AnimationPlayer = $Door_Animation
+@onready var lockedsfx: AudioStreamPlayer3D = $"../1st_BackDoor/Locked"
 
 # Function to determine which animation to use based on player position
 func get_animation_name() -> String:
@@ -52,6 +53,7 @@ func interact():
 	# If player is locked out, they can never interact again.
 	if player_is_locked_out:
 		print("Door is permanently locked.") # Optional: for debugging
+		lockedsfx.play()
 		return
 	# --- END NEW CHECK ---
 	
@@ -76,6 +78,7 @@ func interact():
 			# This locks them out permanently.
 			player_is_locked_out = true
 			print("Cannot open from the outside. Door is now locked.")
+			lockedsfx.play()
 			return
 		else:
 			# Player is "inside", open normally.
