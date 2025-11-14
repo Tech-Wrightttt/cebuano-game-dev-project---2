@@ -25,7 +25,7 @@ var completed_task_count: int = 0
 signal night_time_up
 
 var current_night: int = 1
-const NIGHT_DURATION_REAL := 30 * 60.0 # 9 minutes in seconds
+const NIGHT_DURATION_REAL := 17 * 60.0 # 9 minutes in seconds
 var time_left: float = NIGHT_DURATION_REAL
 
 const NIGHT_START_HOUR := 18 # 6 pm

@@ -10,9 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://c6nnpmjnwv4g2" path="res://game/house.tscn" id="2_xssv6"]
 [ext_resource type="PackedScene" uid="uid://cdluy2xnot0vs" path="res://assets/glb_models/fence/dirty_leaking_concrete_wall.glb" id="3_0w1ik"]
 [ext_resource type="PackedScene" uid="uid://cgi16aybh2b24" path="res://dialogues/second_dialogue.tscn" id="6_a2xg8"]
-[ext_resource type="PackedScene" path="res://game/lola_sit.tscn" id="6_mgnlv"]
+[ext_resource type="PackedScene" uid="uid://dm1427jn7b51r" path="res://game/lola_sit.tscn" id="6_mgnlv"]
 [ext_resource type="PackedScene" uid="uid://b8bckhbbwohyn" path="res://dialogues/dialogue_trigger_2.tscn" id="7_a4abk"]
-[ext_resource type="PackedScene" path="res://game/lola_idle.tscn" id="14_mgnlv"]
+[ext_resource type="PackedScene" uid="uid://b22u3s0h205xm" path="res://game/lola_idle.tscn" id="14_mgnlv"]
 [ext_resource type="Texture2D" uid="uid://b78wf12fcm5pf" path="res://assets/glb_models/nature/low_poly_trees_flowers_and_grass_24.png" id="16_s5juq"]
 [ext_resource type="Shader" path="res://game/post_effect_shader2.gdshader" id="17_50vgw"]
 [ext_resource type="Texture2D" uid="uid://bpxwnrih2h8b6" path="res://assets/glb_models/nature/low_poly_trees_flowers_and_grass_25.png" id="17_vuud0"]
@@ -222,7 +222,7 @@ speaker_names = Array[String](["Paulette (You)", "Lola Olet", "Paulette (You)", 
 speaker = NodePath("..")
 
 [node name="grandma 2" parent="." instance=ExtResource("14_mgnlv")]
-transform = Transform3D(-0.00052480004, 0, 0.014990817, 0, 0.015, 0, -0.014990817, 0, -0.00052480004, -40.4017, 8.274374, -10.4224825)
+transform = Transform3D(-0.01499884, 0, 0.00018639665, 0, 0.014999999, 0, -0.00018639665, 0, -0.01499884, -27.103634, 8.274374, -14.830254)
 
 [node name="dialogue_trigger2" parent="grandma 2" node_paths=PackedStringArray("speaker") instance=ExtResource("7_a4abk")]
 transform = Transform3D(-3.4100332, 0, -149.17526, 0, 129.33333, 0, 97.40698, 0, -5.2223425, 52.649414, 113.77362, 79.37402)
