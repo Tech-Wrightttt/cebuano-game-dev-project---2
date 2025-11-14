@@ -38,7 +38,7 @@ func create_blackout():
 	add_child(blackout_layer)
 	
 	var tween = create_tween()
-	tween.tween_property(black_screen, "color", Color.BLACK, 3.0)
+	tween.tween_property(black_screen, "color", Color.BLACK, 5.0)
 	await tween.finished
 	transition_to_wake_up()
 

@@ -27,20 +27,20 @@
 [ext_resource type="ArrayMesh" uid="uid://ba6mporhfimix" path="res://assets/house/house_2ndFloor_floor.obj" id="19_ppgyc"]
 [ext_resource type="ArrayMesh" uid="uid://dg0u63u4cjo8o" path="res://assets/house/house_2ndFloor_railings.obj" id="20_lskrp"]
 [ext_resource type="ArrayMesh" uid="uid://cp5jvp0nkqq1k" path="res://assets/house/house_2ndFloorCR_floor.obj" id="21_qvjqw"]
-[ext_resource type="Texture2D" uid="uid://dn1l7w7r2veuw" path="res://assets/glb_models/decoratives/vase/vase_0.png" id="22_xfavg"]
-[ext_resource type="Texture2D" uid="uid://dlxamo7llvtwm" path="res://assets/glb_models/decoratives/vase/vase_1.png" id="23_drhgu"]
-[ext_resource type="PackedScene" uid="uid://dnyd5vt8llw0i" path="res://assets/glb_models/appliance/piano/piano.glb" id="24_mq15c"]
-[ext_resource type="PackedScene" uid="uid://br2g8x35w3oou" path="res://assets/glb_models/decoratives/radio/old_radio.glb" id="25_54ef5"]
+[ext_resource type="Texture2D" uid="uid://d4bjnsa83nfv4" path="res://assets/glb_models/decoratives/vase/vase_0.png" id="22_xfavg"]
+[ext_resource type="Texture2D" uid="uid://bkv2lobewubny" path="res://assets/glb_models/decoratives/vase/vase_1.png" id="23_drhgu"]
+[ext_resource type="PackedScene" uid="uid://4umv3d3x0sjs" path="res://assets/glb_models/appliance/piano/piano.glb" id="24_mq15c"]
+[ext_resource type="PackedScene" uid="uid://dy1i4fd2178le" path="res://assets/glb_models/decoratives/radio/old_radio.glb" id="25_54ef5"]
 [ext_resource type="PackedScene" uid="uid://c1dbua8aqgyk4" path="res://assets/glb_models/basement/old_phone.glb" id="26_dpskn"]
-[ext_resource type="PackedScene" uid="uid://cxt7ow8wabipp" path="res://assets/glb_models/furniture/vintage_sofa_23mb.glb" id="27_ynw4f"]
-[ext_resource type="PackedScene" uid="uid://cov1tn1i13v63" path="res://assets/glb_models/nature/plant/potted_plant_1.glb" id="28_st0eb"]
+[ext_resource type="PackedScene" uid="uid://d1oryaej72ttb" path="res://assets/glb_models/furniture/vintage_sofa_23mb.glb" id="27_ynw4f"]
+[ext_resource type="PackedScene" uid="uid://707iy55ib8cp" path="res://assets/glb_models/nature/plant/potted_plant_1.glb" id="28_st0eb"]
 [ext_resource type="PackedScene" uid="uid://cbalkhtrad1j2" path="res://game/house_materials/rug.tscn" id="29_yo6eg"]
 [ext_resource type="PackedScene" uid="uid://br6sb3nrrxmx8" path="res://assets/glb_models/fireplace/fireplace_low_poly.glb" id="30_2xvh5"]
-[ext_resource type="PackedScene" uid="uid://cugxbv5l6dwat" path="res://assets/glb_models/decoratives/rug/ancient_bird_carpet.glb" id="31_ghkok"]
-[ext_resource type="PackedScene" uid="uid://cxtxls3yuaq3y" path="res://assets/glb_models/nature/plant/snake_plant_2_low_poly.glb" id="32_hcs3w"]
+[ext_resource type="PackedScene" uid="uid://2pdl235dguyg" path="res://assets/glb_models/decoratives/rug/ancient_bird_carpet.glb" id="31_ghkok"]
+[ext_resource type="PackedScene" uid="uid://cr88koxvlwa1b" path="res://assets/glb_models/nature/plant/snake_plant_2_low_poly.glb" id="32_hcs3w"]
 [ext_resource type="PackedScene" uid="uid://dbmp5ccq4138x" path="res://assets/glb_models/decoratives/interior_wooden_pillar_vl3ubjqdw_low.glb" id="33_roike"]
 [ext_resource type="PackedScene" uid="uid://bbnooi1a0en0h" path="res://game/house_materials/pillar.tscn" id="34_hapwk"]
-[ext_resource type="PackedScene" uid="uid://dn0fx1do0kb6g" path="res://assets/glb_models/decoratives/painting/victorian_framed_painting_pbr_game_ready.glb" id="35_phpj2"]
+[ext_resource type="PackedScene" uid="uid://igw8bwtbb6ra" path="res://assets/glb_models/decoratives/painting/victorian_framed_painting_pbr_game_ready.glb" id="35_phpj2"]
 [ext_resource type="PackedScene" uid="uid://8xctfhe7hrwy" path="res://assets/glb_models/furniture/fbx.glb" id="36_1nc1p"]
 [ext_resource type="PackedScene" uid="uid://tbv4ll142k0f" path="res://assets/glb_models/basement/writers_feather_in_the_inkwell.glb" id="37_rbxi1"]
 [ext_resource type="PackedScene" uid="uid://cfqqhmbwhwrn1" path="res://assets/glb_models/furniture/wooden_stool_ucspai0fa_mid.glb" id="38_v04q3"]
@@ -74,8 +74,8 @@
 [ext_resource type="PackedScene" uid="uid://juy2qna4fg77" path="res://assets/glb_models/kitchen/water_dispenser.glb" id="66_v0x7v"]
 [ext_resource type="PackedScene" uid="uid://tljk6ijf53rp" path="res://assets/glb_models/dining table/game_ready_rustic_table_with_chairs.glb" id="67_qvjbb"]
 [ext_resource type="PackedScene" uid="uid://gdjdjhsmij5r" path="res://assets/glb_models/kitchen/modern_table.glb" id="68_lqlyq"]
-[ext_resource type="PackedScene" uid="uid://ck704r7wopd7t" path="res://game/house_materials/table.tscn" id="69_4w7iu"]
-[ext_resource type="PackedScene" uid="uid://cohjq6vayf1dx" path="res://game/house_materials/fruits.tscn" id="70_twwsc"]
+[ext_resource type="PackedScene" path="res://game/house_materials/table.tscn" id="69_4w7iu"]
+[ext_resource type="PackedScene" path="res://game/house_materials/fruits.tscn" id="70_twwsc"]
 [ext_resource type="PackedScene" uid="uid://b8l08qx83oehm" path="res://game/house_materials/big_cabinet.tscn" id="71_putlk"]
 [ext_resource type="PackedScene" uid="uid://buxv56k4c36kw" path="res://assets/glb_models/kitchen/kitchen_dustbin.glb" id="72_7dc3m"]
 [ext_resource type="PackedScene" uid="uid://c667nd6o2b0nf" path="res://assets/glb_models/kitchen/blender.glb" id="73_37gwb"]
@@ -92,9 +92,9 @@
 [ext_resource type="PackedScene" uid="uid://dg2611khxkejs" path="res://assets/glb_models/decoratives/hand_soap_bottle.glb" id="84_28hml"]
 [ext_resource type="PackedScene" uid="uid://b8n6j0p2htieu" path="res://assets/glb_models/decoratives/traditional_bamboo_basket.glb" id="85_utph2"]
 [ext_resource type="PackedScene" uid="uid://bxoa1koi7m64f" path="res://assets/glb_models/decoratives/wall_decoration_of_grapes_made_of_cork_stoppers.glb" id="86_eo6mu"]
-[ext_resource type="PackedScene" uid="uid://b26vxbohi5o6i" path="res://assets/glb_models/appliance/tv/soviet_tv_kvn_49.glb" id="87_su7ks"]
-[ext_resource type="PackedScene" uid="uid://c7gjl20e132o5" path="res://assets/glb_models/furniture/bookshelf/wooden_bookcases_with_books.glb" id="88_1o0sn"]
-[ext_resource type="PackedScene" uid="uid://cbyc4x7rvaq5y" path="res://assets/glb_models/decoratives/wallclock/vintage_wall_clock.glb" id="89_dh06e"]
+[ext_resource type="PackedScene" uid="uid://bvkggs5cs1k4" path="res://assets/glb_models/appliance/tv/soviet_tv_kvn_49.glb" id="87_su7ks"]
+[ext_resource type="PackedScene" uid="uid://cedod4lkg87w" path="res://assets/glb_models/furniture/bookshelf/wooden_bookcases_with_books.glb" id="88_1o0sn"]
+[ext_resource type="PackedScene" uid="uid://c1uf7a76hm3xd" path="res://assets/glb_models/decoratives/wallclock/vintage_wall_clock.glb" id="89_dh06e"]
 [ext_resource type="PackedScene" uid="uid://bjj83pwo8p76n" path="res://game/house_materials/carpet.tscn" id="90_ljw0l"]
 [ext_resource type="PackedScene" uid="uid://bhvhhgsnwox80" path="res://assets/glb_models/furniture/old_furniture.glb" id="91_vitaf"]
 [ext_resource type="PackedScene" uid="uid://1qrow8q6otnv" path="res://game/house_materials/shelf2.tscn" id="92_ewh3k"]
@@ -2055,25 +2055,29 @@ stream = ExtResource("6_fb2tr")
 
 [node name="whispers" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("7_jd5bi")
+volume_db = 45.405
 
 [node name="walk" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("8_1iisw")
+volume_db = 23.784
 
 [node name="telephone" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("9_hgng3")
 
 [node name="pickup" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("10_jd5bi")
+volume_db = 47.568
 
 [node name="bg" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("11_1iisw")
+volume_db = 30.27
 
 [node name="floor_wake_up" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.025465965, 0, 0.0026812553)
 script = ExtResource("107_osyli")
 
 [node name="Camera3D" type="Camera3D" parent="floor_wake_up"]
-transform = Transform3D(0.13279895, -0.9694556, 0.20620415, -0.99074775, -0.13571562, 0, 0.027985124, -0.20429629, -0.978509, -7.007, 2.522, -11.01)
+transform = Transform3D(0.13279895, -0.96945554, 0.20620415, -0.9907477, -0.13571562, 0, 0.027985122, -0.20429628, -0.978509, -7.007, 2.522, -11.01)
 
 [node name="Spotlight" type="Node3D" parent="floor_wake_up/Camera3D"]
 transform = Transform3D(0.9999603, 0.008861089, 0.000989683, -0.00886109, 0.9753192, 0.22062168, 0.0009896941, -0.22062166, 0.975359, 0.030244827, 0, 0.1616478)
