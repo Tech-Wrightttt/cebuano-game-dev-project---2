@@ -66,6 +66,13 @@ func deactivate_all():
 		var collision_shape: CollisionShape3D = candle.get_node_or_null("StaticBody3D/CollisionShape3D")
 		if collision_shape:
 			collision_shape.set_deferred("disabled", true)
+		
+		# --- NEW: Play extinguish animation ---
+		var anim_player: AnimationPlayer = candle.get_node_or_null("AnimationPlayer")
+		if anim_player and anim_player.has_animation("burnwick"):
+			# Play backwards to extinguish the flame
+			anim_player.play_backwards("burnwick")
+		# --- END NEW ---
 			
 	# Deactivate altar table interaction
 	altar_Table_Interaction.set_deferred("disabled", true)
