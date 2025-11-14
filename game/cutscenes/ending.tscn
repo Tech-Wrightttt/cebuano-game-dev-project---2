@@ -1,11 +1,11 @@
 [gd_scene load_steps=25 format=3 uid="uid://b8o35t5xvoo2u"]
 
 [ext_resource type="PackedScene" uid="uid://c6nnpmjnwv4g2" path="res://game/house.tscn" id="1_27guy"]
-[ext_resource type="Script" uid="uid://dsfmg4ycubfhh" path="res://game/cutscenes/ending.gd" id="1_s8sf5"]
-[ext_resource type="PackedScene" uid="uid://bnpa11r1wotgm" path="res://game/paulette_offered.tscn" id="2_owgvd"]
+[ext_resource type="Script" path="res://game/cutscenes/ending.gd" id="1_s8sf5"]
+[ext_resource type="PackedScene" path="res://game/paulette_offered.tscn" id="2_owgvd"]
 [ext_resource type="Script" uid="uid://dos0htw2amfyl" path="res://game/cutscenes/ending_dialogue.gd" id="3_xlwov"]
-[ext_resource type="PackedScene" uid="uid://dh8ny6q1lwwf3" path="res://game/lola_laugh.tscn" id="4_jpsdd"]
-[ext_resource type="PackedScene" uid="uid://dq7xguhru4a4w" path="res://game/lola_talking.tscn" id="5_sbrio"]
+[ext_resource type="PackedScene" path="res://game/lola_laugh.tscn" id="4_jpsdd"]
+[ext_resource type="PackedScene" path="res://game/lola_talking.tscn" id="5_sbrio"]
 [ext_resource type="FontFile" uid="uid://b02kdb4ogrrq5" path="res://fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="6_aavvw"]
 [ext_resource type="FontFile" uid="uid://c126udgjjdqhf" path="res://fonts/cmu-typewriter/Typewriter/cmunit.ttf" id="7_xlwov"]
 [ext_resource type="AudioStream" uid="uid://g676thg8l6xe" path="res://soundfx/demon-horror-ambience-sound-9-vol-001-140417.mp3" id="9_to8t7"]
@@ -286,7 +286,7 @@ _data = {
 script = ExtResource("1_s8sf5")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.99872905, -3.7252903e-08, 0.05040109, 0.0402452, 0.6019961, 0.7974841, -0.030341301, 0.798499, -0.6012309, -25.44439, -2.5478897, 0.41788864)
+transform = Transform3D(-0.99872905, -3.7252903e-08, 0.050401088, 0.0402452, 0.6019961, 0.79748404, -0.030341301, 0.798499, -0.6012309, -25.44439, -2.5478897, 0.41788864)
 
 [node name="Spotlight" type="Node3D" parent="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.9146447)
