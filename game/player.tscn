@@ -382,8 +382,6 @@ func each_night_respawn() -> void:
 	if Global.current_night == 5:
 		await play_cutscene(\"res://game/cutscenes/telephone_dialogue.tscn\", 57.5)
 		print(\"telephone scene\")	
-		await play_cutscene(\"res://game/cutscenes/floor_wake_up.tscn\", 15.5)
-		print(\"floor wake up open cut\")
 
 	if Global.current_night == 6:
 		await play_cutscene(\"res://game/cutscenes/ending.tscn\", 60.5)
