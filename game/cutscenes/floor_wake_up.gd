@@ -1,48 +1,37 @@
+# floor_wake_up.gd
 extends Node3D
 
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
+@onready var my_camera: Camera3D = $Camera3D  # Adjust path to your camera
 
 func _ready() -> void:
-	# Wait for the scene to be fully ready
+	# Don't auto-start anything, just get references
+	print("floor_wake_up ready - AnimationPlayer: ", anim_player != null)
+	print("floor_wake_up ready - Camera3D: ", my_camera != null)
+
+func start_wake_sequence() -> void:
+	print("Starting wake sequence in floor_wake_up...")
+	
+	# Make sure we're visible and ready
+	show()
+	
+	# SWITCH TO OUR CAMERA
+	if my_camera:
+		my_camera.current = true
+		print("Switched to floor_wake_up camera")
+	else:
+		print("WARNING: No camera found in floor_wake_up")
+	
+	# Wait one frame to ensure everything is initialized
 	await get_tree().process_frame
 	
-	# Start your animation
-	anim_player.play("wake")
-	
-	# Add the quick wake-up effect (fade in and out in 2 seconds)
-	await quick_wake_up_effect()
-	
-	# Wait for the remaining animation time
-	await get_tree().create_timer(13.0).timeout
-
-func quick_wake_up_effect() -> void:
-	# This creates CanvasLayer automatically in code
-	var canvas_layer = CanvasLayer.new()
-	canvas_layer.name = "SleepOverlayLayer"
-	canvas_layer.layer = 100  # Very high layer
-	
-	var overlay = ColorRect.new()
-	overlay.name = "SleepOverlay"
-	overlay.color = Color(0, 0, 0, 1.0)  # Start with full black (eyes closed)
-	overlay.size = get_viewport().size
-	overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	
-	# Center it
-	overlay.anchor_left = 0
-	overlay.anchor_top = 0
-	overlay.anchor_right = 1
-	overlay.anchor_bottom = 1
-	
-	canvas_layer.add_child(overlay)
-	get_tree().root.add_child(canvas_layer)
-	
-	print("✅ Wake-up effect started")
-	
-	# Quick fade out over 2 seconds (simulating opening eyes)
-	var tween = create_tween()
-	tween.tween_property(overlay, "color", Color(0, 0, 0, 0), 2.0)
-	await tween.finished
-	
-	# Remove the overlay
-	canvas_layer.queue_free()
-	print("✅ Wake-up effect completed")
+	if anim_player and anim_player.has_animation("wake"):
+		print("Playing wake animation...")
+		anim_player.play("wake")
+		print("Wake animation started successfully")
+		
+		# Wait for animation to finish
+		await anim_player.animation_finished
+		print("Wake animation completed")
+	else:
+		print("ERROR: Cannot play wake animation")
