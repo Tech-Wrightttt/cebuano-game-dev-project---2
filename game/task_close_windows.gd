@@ -23,15 +23,16 @@ func deactivate_all():
 		var collision_shape: CollisionShape3D = window_node.get_node_or_null("StaticBody3D/CollisionShape3D")
 
 		if not anim_player or not collision_shape:
-			# Only warn if the node is missing on initial load
-			# push_warning("Window %s is missing key components" % window_node.name)
 			continue
 		
-		# This is the "else" block from your original function:
 		# Play the "close" animation to ensure it's shut
 		anim_player.play("close")
 		# Disable collision
 		collision_shape.set_deferred("disabled", true)
+		
+	# --- THIS IS THE FIX ---
+	# Reset the list of active tasks for the next night
+	chosen_windows_to_close.clear()
 		
 func update_window_tasking():
 	for window_node in all_windows:
