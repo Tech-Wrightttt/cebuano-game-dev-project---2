@@ -1,6 +1,5 @@
-[gd_scene load_steps=107 format=3 uid="uid://cd4o1mbqy8tg4"]
+[gd_scene load_steps=106 format=3 uid="uid://cd4o1mbqy8tg4"]
 
-[ext_resource type="Script" uid="uid://c0bd0cp5x50et" path="res://game/level.gd" id="1_ay3dt"]
 [ext_resource type="Material" uid="uid://31nbyn23hg2q" path="res://materials/house_material.tres" id="2_6gydb"]
 [ext_resource type="ArrayMesh" uid="uid://boxw7he1kxpyb" path="res://assets/house/house_1stFloor_wall.obj" id="3_juqnu"]
 [ext_resource type="Texture2D" uid="uid://cuvnmwed5ihoq" path="res://textures/house/floorwood.jpg" id="4_gp2yx"]
@@ -277,7 +276,6 @@ shader_parameter/smear = 0.4610000218975
 shader_parameter/blur_samples = 15
 
 [node name="main_menu" type="Node3D"]
-script = ExtResource("1_ay3dt")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_noarx")

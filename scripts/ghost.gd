@@ -356,6 +356,7 @@ func trigger_jumpscare():
 		else:
 			# Player died permanently (game over)
 			print("💀 Player game over - ghost staying disabled")
+			get_tree().change_scene_to_packed(MAIN_MENU_SCENE)
 	else:
 		print("⚠️ Player doesn't have take_sanity_damage method!")
 		player.process_mode = Node.PROCESS_MODE_DISABLED
