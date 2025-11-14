@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://bob5k3jp6dsgc"]
+[gd_scene load_steps=40 format=4 uid="uid://bob5k3jp6dsgc"]
 
 [ext_resource type="Texture2D" uid="uid://bvdwayp7w2erl" path="res://textures/environment/grass.jpg" id="1_8bv7i"]
 [ext_resource type="PackedScene" uid="uid://bd8sk3hxv1lu0" path="res://assets/glb_models/fence/japanese_park_stone_floor_uljcfd0_mid.glb" id="1_50vgw"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://cmgn2dijv665c" path="res://dialogues/first_dialogue.tscn" id="2_1565f"]
 [ext_resource type="PackedScene" uid="uid://cqfnc4pttj25v" path="res://dialogues/dialogue_trigger.tscn" id="2_hjv22"]
 [ext_resource type="PackedScene" uid="uid://c6nnpmjnwv4g2" path="res://game/house.tscn" id="2_xssv6"]
-[ext_resource type="PackedScene" uid="uid://cdluy2xnot0vs" path="res://assets/glb_models/fence/dirty_leaking_concrete_wall.glb" id="3_0w1ik"]
 [ext_resource type="PackedScene" uid="uid://cgi16aybh2b24" path="res://dialogues/second_dialogue.tscn" id="6_a2xg8"]
 [ext_resource type="PackedScene" uid="uid://dm1427jn7b51r" path="res://game/lola_sit.tscn" id="6_mgnlv"]
 [ext_resource type="PackedScene" uid="uid://b8bckhbbwohyn" path="res://dialogues/dialogue_trigger_2.tscn" id="7_a4abk"]
@@ -50,9 +49,6 @@ size = Vector3(2.6206055, 0.62545776, 13.898895)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s5juq"]
 size = Vector3(9.272949, 3.7183838, 0.8779297)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_vuud0"]
-size = Vector3(42.092346, 5.179199, 0.38916016)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uk5k8"]
 albedo_texture = ExtResource("1_8bv7i")
@@ -185,6 +181,7 @@ environment = SubResource("Environment_noarx")
 
 [node name="Sunlight (for testing purposes)" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+visible = false
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_u52ul")]
@@ -231,7 +228,6 @@ speaker_names = Array[String](["Lola Olet", "Paulette (You)", "Lola Olet", "Paul
 speaker = NodePath("..")
 
 [node name="fences" type="Node3D" parent="."]
-visible = false
 
 [node name="fence" type="Node3D" parent="fences"]
 
@@ -366,6 +362,78 @@ transform = Transform3D(-5.813615e-08, 0, 1.33, 0, 1.33, 0, -1.33, 0, -5.813615e
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08747256, 1.9381715, -0.061035156)
 shape = SubResource("BoxShape3D_s5juq")
 
+[node name="fence19" parent="fences/fence" instance=ExtResource("2_0w1ik")]
+transform = Transform3D(1.3286883, 0, 0.05905744, 0, 1.33, 0, -0.05905744, 0, 1.3286883, 1.0992248, 0, -43.25589)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="fences/fence/fence19"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fences/fence/fence19/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08747256, 1.9381715, -0.061035156)
+shape = SubResource("BoxShape3D_s5juq")
+
+[node name="fence20" parent="fences/fence" instance=ExtResource("2_0w1ik")]
+transform = Transform3D(1.3300003, 0, 0, 0, 1.3300002, 0, 0, 0, 1.3300003, -7.935842, 0, -43.097927)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="fences/fence/fence20"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fences/fence/fence20/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08747256, 1.9381715, -0.061035156)
+shape = SubResource("BoxShape3D_s5juq")
+
+[node name="fence21" parent="fences/fence" instance=ExtResource("2_0w1ik")]
+transform = Transform3D(1.3300003, 0, 0, 0, 1.3300002, 0, 0, 0, 1.3300003, -16.857538, 0, -43.097927)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="fences/fence/fence21"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fences/fence/fence21/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08747256, 1.9381715, -0.061035156)
+shape = SubResource("BoxShape3D_s5juq")
+
+[node name="fence22" parent="fences/fence" instance=ExtResource("2_0w1ik")]
+transform = Transform3D(1.3300003, 0, 0, 0, 1.3300002, 0, 0, 0, 1.3300003, -25.848194, 0, -43.097927)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="fences/fence/fence22"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fences/fence/fence22/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08747256, 1.9381715, -0.061035156)
+shape = SubResource("BoxShape3D_s5juq")
+
+[node name="fence23" parent="fences/fence" instance=ExtResource("2_0w1ik")]
+transform = Transform3D(1.3300003, 0, 0, 0, 1.3300002, 0, 0, 0, 1.3300003, -34.854828, 0, -43.097927)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="fences/fence/fence23"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fences/fence/fence23/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08747256, 1.9381715, -0.061035156)
+shape = SubResource("BoxShape3D_s5juq")
+
+[node name="fence24" parent="fences/fence" instance=ExtResource("2_0w1ik")]
+transform = Transform3D(1.3300003, 0, 0, 0, 1.3300002, 0, 0, 0, 1.3300003, -43.813286, 0, -43.097927)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="fences/fence/fence24"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fences/fence/fence24/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08747256, 1.9381715, -0.061035156)
+shape = SubResource("BoxShape3D_s5juq")
+
+[node name="fence25" parent="fences/fence" instance=ExtResource("2_0w1ik")]
+transform = Transform3D(1.3300003, 0, 0, 0, 1.3300002, 0, 0, 0, 1.3300003, -52.781204, 0, -43.097927)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="fences/fence/fence25"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fences/fence/fence25/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08747256, 1.9381715, -0.061035156)
+shape = SubResource("BoxShape3D_s5juq")
+
+[node name="fence26" parent="fences/fence" instance=ExtResource("2_0w1ik")]
+transform = Transform3D(1.2422851, 0, 0.4750037, 0, 1.33, 0, -0.4750037, 0, 1.2422851, -61.12961, 0, -41.797916)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="fences/fence/fence26"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fences/fence/fence26/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08747256, 1.9381715, -0.061035156)
+shape = SubResource("BoxShape3D_s5juq")
+
 [node name="fence2" parent="fences/fence" instance=ExtResource("2_0w1ik")]
 transform = Transform3D(1.33, 0, 0, 0, 1.33, 0, 0, 0, 1.33, -8.981953, 0, 13.941501)
 
@@ -381,6 +449,51 @@ transform = Transform3D(1.33, 0, 0, 0, 1.33, 0, 0, 0, 1.33, -18.085274, 0, 13.94
 [node name="StaticBody3D" type="StaticBody3D" parent="fences/fence/fence3"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="fences/fence/fence3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08747256, 1.9381715, -0.061035156)
+shape = SubResource("BoxShape3D_s5juq")
+
+[node name="fence27" parent="fences/fence" instance=ExtResource("2_0w1ik")]
+transform = Transform3D(1.33, 0, 0, 0, 1.33, 0, 0, 0, 1.33, -27.039614, 0, 13.941501)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="fences/fence/fence27"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fences/fence/fence27/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08747256, 1.9381715, -0.061035156)
+shape = SubResource("BoxShape3D_s5juq")
+
+[node name="fence28" parent="fences/fence" instance=ExtResource("2_0w1ik")]
+transform = Transform3D(1.33, 0, 0, 0, 1.33, 0, 0, 0, 1.33, -36.01406, 0, 13.941501)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="fences/fence/fence28"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fences/fence/fence28/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08747256, 1.9381715, -0.061035156)
+shape = SubResource("BoxShape3D_s5juq")
+
+[node name="fence29" parent="fences/fence" instance=ExtResource("2_0w1ik")]
+transform = Transform3D(1.33, 0, 0, 0, 1.33, 0, 0, 0, 1.33, -44.99548, 0, 13.941501)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="fences/fence/fence29"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fences/fence/fence29/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08747256, 1.9381715, -0.061035156)
+shape = SubResource("BoxShape3D_s5juq")
+
+[node name="fence30" parent="fences/fence" instance=ExtResource("2_0w1ik")]
+transform = Transform3D(1.33, 0, 0, 0, 1.33, 0, 0, 0, 1.33, -53.91389, 0, 13.941501)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="fences/fence/fence30"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fences/fence/fence30/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08747256, 1.9381715, -0.061035156)
+shape = SubResource("BoxShape3D_s5juq")
+
+[node name="fence31" parent="fences/fence" instance=ExtResource("2_0w1ik")]
+transform = Transform3D(1.33, 0, 0, 0, 1.33, 0, 0, 0, 1.33, -62.887035, 0, 13.941501)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="fences/fence/fence31"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fences/fence/fence31/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08747256, 1.9381715, -0.061035156)
 shape = SubResource("BoxShape3D_s5juq")
 
@@ -437,33 +550,6 @@ transform = Transform3D(-5.813615e-08, 0, 1.33, 0, 1.33, 0, -1.33, 0, -5.813615e
 [node name="CollisionShape3D" type="CollisionShape3D" parent="fences/fence/fence9/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08747256, 1.9381715, -0.061035156)
 shape = SubResource("BoxShape3D_s5juq")
-
-[node name="stone" parent="fences/fence" instance=ExtResource("3_0w1ik")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.860806, 0, 15.3314295)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="fences/fence/stone"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="fences/fence/stone/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.73831177, 2.6835938, -1.0622559)
-shape = SubResource("BoxShape3D_vuud0")
-
-[node name="stone2" parent="fences/fence" instance=ExtResource("3_0w1ik")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.825836, 0, -39.622585)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="fences/fence/stone2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="fences/fence/stone2/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.73831177, 2.6835938, -1.0622559)
-shape = SubResource("BoxShape3D_vuud0")
-
-[node name="stone3" parent="fences/fence" instance=ExtResource("3_0w1ik")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.277287, 0, -39.622585)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="fences/fence/stone3"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="fences/fence/stone3/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.73831177, 2.6835938, -1.0622559)
-shape = SubResource("BoxShape3D_vuud0")
 
 [node name="Grounds" type="Node3D" parent="." groups=["grass"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
@@ -529,7 +615,6 @@ mesh = SubResource("PlaneMesh_s5juq")
 skeleton = NodePath("../..")
 
 [node name="trees right side" type="Node3D" parent="."]
-visible = false
 
 [node name="green tree" type="Node3D" parent="trees right side"]
 transform = Transform3D(2.2140298, 0, 0, 0, -2.6811313e-07, 1.3255277, 0, -1.6456668, -2.1595582e-07, 11.013647, 0.6549511, -11.295686)
@@ -1032,7 +1117,6 @@ skeleton = NodePath("")
 
 [node name="trees left side" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -57.229244, -1.3737454, -26.63839)
-visible = false
 
 [node name="green tree" type="Node3D" parent="trees left side"]
 transform = Transform3D(2.2140298, 0, 0, 0, -2.6811313e-07, 1.3255277, 0, -1.6456668, -2.1595582e-07, 11.013647, 0.6549511, -11.295686)

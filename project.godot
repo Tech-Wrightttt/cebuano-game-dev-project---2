@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="CebuanoGameJamProject"
-run/main_scene="uid://bob5k3jp6dsgc"
+run/main_scene="uid://cd4o1mbqy8tg4"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="uid://1tr0ou8a081f"
 

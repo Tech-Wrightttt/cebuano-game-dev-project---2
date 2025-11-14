@@ -37,7 +37,6 @@ func _ready() -> void:
 	# We just reset the state when Global first loads.
 	reset_game_state()
 
-
 # --- 3. THE NEW "IGNITION" FUNCTION ---
 # This function is called by level.gd *after* the level scene has loaded.
 func start_night_logic(level_root: Node3D):
