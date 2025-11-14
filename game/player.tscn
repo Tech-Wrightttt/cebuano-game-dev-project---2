@@ -34,7 +34,7 @@ script/source = "extends CharacterBody3D
 # - smooth stair traversal (up and down)
 
 # Movement
-var SPEED: float = 4.5
+var SPEED: float = 3.5
 const SPRINT_SPEED: float = 8.0
 var sprint_stamina_max: float = 100.0
 var sprint_stamina: float = sprint_stamina_max
@@ -70,7 +70,7 @@ var overlay_visible := false
 @onready var canvas_layer_2 = $CanvasLayer2
 
 var third_eye_active := false
-var third_eye_depletion_rate := 10.0  # How much per second to drain
+var third_eye_depletion_rate := 15.0  # How much per second to drain
 var third_eye_refill_rate := 10.0     # How much per second to refill
 
 @onready var crosshair = $PlayerScreenUI/crosshair
@@ -329,12 +329,21 @@ func _process(delta: float) -> void:
 
 		
 func each_night_respawn() -> void:
+	if Global.current_night == 6:
+		await fade_screen_to_black(0.5)
+		await play_cutscene(\"res://game/cutscenes/ending.tscn\", 60.5)
+		print(\"ending cut\")
+		get_tree().quit()	
+		return
 	# Fade out the screen, like in respawn_player()
 	await fade_screen_to_black(0.5)
 	
 	# Show the night counter and tasks UI (night_counter_gameplay)
 	if night_counter_gameplay:
-		print(\"Current night is: \", Global.current_night)
+		if(Global.current_night <6):
+			print(\"Current night is: \", Global.current_night)
+		else:
+			print(\"THIS IS YOUR LAST NIGHT\")
 		night_counter_gameplay.visible = true
 		night_counter_gameplay.modulate.a = 0.0  # Start transparent
 		night_counter_gameplay.z_index = 210  # Make sure it's above other UI
@@ -397,13 +406,10 @@ func each_night_respawn() -> void:
 		
 		
 	if Global.current_night == 5:
-		await play_cutscene(\"res://game/cutscenes/telephone_dialogue.tscn\", 74.5)
+		await play_cutscene(\"res://game/cutscenes/telephone_dialogue.tscn\", 77.5)
 		print(\"telephone scene\")	
 
-	if Global.current_night == 6:
-		await play_cutscene(\"res://game/cutscenes/ending.tscn\", 60.5)
-		print(\"ending cut\")
-		get_tree().quit()
+
 
 
 func _on_animation_finished(anim_name: String) -> void:
