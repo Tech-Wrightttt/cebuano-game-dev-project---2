@@ -1,4 +1,4 @@
-[gd_scene load_steps=197 format=4 uid="uid://12utn35f48i6"]
+[gd_scene load_steps=198 format=4 uid="uid://12utn35f48i6"]
 
 [ext_resource type="Script" uid="uid://m4ttjul5ggyf" path="res://dialogues/telephone_dialogue.gd" id="1_dspbc"]
 [ext_resource type="Script" uid="uid://ch1vivyd8b7fy" path="res://game/cutscenes/telephone.gd" id="2_jd5bi"]
@@ -32,6 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://4umv3d3x0sjs" path="res://assets/glb_models/appliance/piano/piano.glb" id="24_mq15c"]
 [ext_resource type="PackedScene" uid="uid://dy1i4fd2178le" path="res://assets/glb_models/decoratives/radio/old_radio.glb" id="25_54ef5"]
 [ext_resource type="PackedScene" uid="uid://c1dbua8aqgyk4" path="res://assets/glb_models/basement/old_phone.glb" id="26_dpskn"]
+[ext_resource type="PackedScene" uid="uid://b8mthtunq3p4w" path="res://assets/glb_models/decoratives/frame.tscn" id="27_y7xvp"]
 [ext_resource type="PackedScene" uid="uid://d1oryaej72ttb" path="res://assets/glb_models/furniture/vintage_sofa_23mb.glb" id="27_ynw4f"]
 [ext_resource type="PackedScene" uid="uid://707iy55ib8cp" path="res://assets/glb_models/nature/plant/potted_plant_1.glb" id="28_st0eb"]
 [ext_resource type="PackedScene" uid="uid://cbalkhtrad1j2" path="res://game/house_materials/rug.tscn" id="29_yo6eg"]
@@ -971,11 +972,14 @@ transform = Transform3D(-7.86805e-08, 0, -1.8, 0, 1.8, 0, 1.8, 0, -7.86805e-08, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.029637337, 0.81776905, -2.6233823)
 shape = SubResource("BoxShape3D_7l508")
 
-[node name="radio" parent="House/doors/ITEMS/1ST FLOOR ITEMS/gamit sa balay" instance=ExtResource("25_54ef5")]
-transform = Transform3D(-0.025643434, -0.00021841569, 0.015568122, -0.00025551306, 0.02999891, 1.0125298e-13, -0.015567559, -0.00013259526, -0.02564437, -6.061246, 4.4525266, -21.668901)
+[node name="tele" parent="House/doors/ITEMS/1ST FLOOR ITEMS/gamit sa balay" instance=ExtResource("26_dpskn")]
+transform = Transform3D(-2.972598, -0.025318835, -0.81876326, -0.02626163, 3.0832875, -1.8555028e-09, 0.8187332, 0.0069734994, -2.9727063, -4.6119237, 4.120171, -21.713425)
 
-[node name="tele" parent="House/doors/ITEMS/1ST FLOOR ITEMS/gamit sa balay/radio" instance=ExtResource("26_dpskn")]
-transform = Transform3D(70.54297, -0.27457625, 74.748535, -0.27457598, 102.77765, 0.63666403, -74.74852, -0.636664, 70.54062, -40.430634, -11.423279, 26.338867)
+[node name="radio" parent="House/doors/ITEMS/1ST FLOOR ITEMS/gamit sa balay" instance=ExtResource("25_54ef5")]
+transform = Transform3D(-0.029426565, -0.00025063814, 0.0058321683, -0.00025551306, 0.029998913, 1.4710445e-11, -0.0058319597, -4.9673145e-05, -0.029427642, -6.5774136, 4.4525266, -21.46479)
+
+[node name="frame3" parent="House/doors/ITEMS/1ST FLOOR ITEMS/gamit sa balay" instance=ExtResource("27_y7xvp")]
+transform = Transform3D(-0.14576633, -0.001241552, -0.008162676, -0.0028324544, 0.14310013, 0.028815325, 0.0077555096, 0.028927568, -0.14289522, -5.841131, 4.752267, -21.772524)
 
 [node name="sofa" parent="House/doors/ITEMS/1ST FLOOR ITEMS/gamit sa balay" instance=ExtResource("27_ynw4f")]
 transform = Transform3D(0.012432375, 0, 0.20963167, 0, 0.20999998, 0, -0.20963167, 0, 0.012432375, -17.529327, 1.9897702, -32.37644)
@@ -1600,9 +1604,6 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="House/doors/ITEMS/1ST FLOOR ITEMS/livingroom/vase/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.019378662, 0, 0.9729004)
 shape = SubResource("BoxShape3D_nvdi6")
-
-[node name="radio" parent="House/doors/ITEMS/1ST FLOOR ITEMS/livingroom" instance=ExtResource("25_54ef5")]
-transform = Transform3D(-0.025643434, -0.00021841569, 0.015568122, -0.00025551306, 0.02999891, 1.0125298e-13, -0.015567559, -0.00013259526, -0.02564437, -6.061246, 4.4525266, -21.668901)
 
 [node name="tv" parent="House/doors/ITEMS/1ST FLOOR ITEMS/livingroom" instance=ExtResource("87_su7ks")]
 transform = Transform3D(-0.02, 0, -3.0199159e-09, 0, 0.02, 0, 3.0199159e-09, 0, -0.02, -8.827821, 4.389765, -21.693035)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://b681o5valg1vs"]
+[gd_scene load_steps=26 format=4 uid="uid://dra3uktb1hvu7"]
 
 [ext_resource type="Script" uid="uid://dttcbjp3nvrgn" path="res://assets/glb_models/furniture/wardrobe.gd" id="1_81f4o"]
 [ext_resource type="Texture2D" uid="uid://bl57kit7dihai" path="res://assets/glb_models/furniture/wardrobe_Image_0.jpg" id="1_mvobb"]
