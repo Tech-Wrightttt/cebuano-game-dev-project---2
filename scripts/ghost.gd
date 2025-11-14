@@ -30,6 +30,9 @@ var player_in_range = false
 var performing_jumpscare = false  # Prevent multiple jumpscares
 var ghost_disabled = false  # NEW: Completely disable ghost during respawn/game over
 
+var reset_position: Vector3 = Vector3.ZERO  # Where to respawn player
+@onready var reset_point = $"../destination1"
+
 # Ghost activation with setter
 var is_ghost_started: bool = false:
 	set(value):
@@ -47,6 +50,8 @@ func _ready() -> void:
 		print("❌ lana_task not found!")
 	
 	print("👻 Ghost ready but NOT active (waiting for activation)")
+	
+	reset_position = reset_point.global_position
 
 func _activate_ghost() -> void:
 	print("👻 GHOST ACTIVATED!")
@@ -386,6 +391,7 @@ func reset_ghost_after_catch():
 		player_cam.current = true
 		print("📷 Camera switched back to player")
 	
+	global_position = reset_position
 	# Re-enable ghost
 	ghost_disabled = false
 	print("✅ Ghost re-enabled")

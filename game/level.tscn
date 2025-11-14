@@ -10,9 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://c6nnpmjnwv4g2" path="res://game/house.tscn" id="2_xssv6"]
 [ext_resource type="PackedScene" uid="uid://cdluy2xnot0vs" path="res://assets/glb_models/fence/dirty_leaking_concrete_wall.glb" id="3_0w1ik"]
 [ext_resource type="PackedScene" uid="uid://cgi16aybh2b24" path="res://dialogues/second_dialogue.tscn" id="6_a2xg8"]
-[ext_resource type="PackedScene" uid="uid://dm1427jn7b51r" path="res://game/lola_sit.tscn" id="6_mgnlv"]
+[ext_resource type="PackedScene" path="res://game/lola_sit.tscn" id="6_mgnlv"]
 [ext_resource type="PackedScene" uid="uid://b8bckhbbwohyn" path="res://dialogues/dialogue_trigger_2.tscn" id="7_a4abk"]
-[ext_resource type="PackedScene" uid="uid://b22u3s0h205xm" path="res://game/lola_idle.tscn" id="14_mgnlv"]
+[ext_resource type="PackedScene" path="res://game/lola_idle.tscn" id="14_mgnlv"]
 [ext_resource type="Texture2D" uid="uid://b78wf12fcm5pf" path="res://assets/glb_models/nature/low_poly_trees_flowers_and_grass_24.png" id="16_s5juq"]
 [ext_resource type="Shader" path="res://game/post_effect_shader2.gdshader" id="17_50vgw"]
 [ext_resource type="Texture2D" uid="uid://bpxwnrih2h8b6" path="res://assets/glb_models/nature/low_poly_trees_flowers_and_grass_25.png" id="17_vuud0"]
@@ -217,7 +217,7 @@ transform = Transform3D(0.013, 0, 0, 0, 0.013, 0, 0, 0, 0.013, -10.07173, 2.6070
 
 [node name="dialogue_trigger1" parent="grandma 1" node_paths=PackedStringArray("speaker") instance=ExtResource("2_hjv22")]
 transform = Transform3D(-124.30769, 0, 0, 0, -124.30769, 0, 0, 0, -124.30769, -8.153076, 87.603806, 145.54248)
-dialogues = Array[String](["Wow, ang laki pala ng bahay mo, Lola. Para siyang… buhay", "Haha, ganyan talaga ’yan, apo. Matanda na kasi ang bahay. Kumain ka muna dito — nakahain na ang hapunan diyan sa mesa.", "Salamat po, Lola.", "Apo, dito ka muna ha? May pupuntahan lang ako sandali.", "Pupunta ka saan, Lola? Ang gabi na po.", "May aayusin lang ako sa sementeryo—mga kandila at bulaklak lang. Alam mo naman, malapit na ang Undas.", "Apo, ito ang listahan ng mga gawaing bahay ko ngayong gabi. Pwede bang ikaw muna ang gumawa? Medyo mahina na rin kasi ako. Pakialagaan muna ang bahay, ha? At pag alas-diyes na, huwag ka nang lalabas—masyado nang madilim sa labas.", "Opo, Lola. Pero bakit pa po kailangan takpan ’yung salamin? Itong nakalagay sa listahan…", "Lumang kaugalian lang, apo. Sabi ng matatanda, para hindi pumasok ang lamig sa bahay.", "Pagkatapos mo sa gawaing-bahay way kang magpuyat at matulog ka kaagad kung ayaw mong makasalubong sila.", "....S-Sila?"])
+dialogues = Array[String](["Wow kadako diay sa imong balay la. Mura man siyag mo ginhawa.", "Haha, ana jud na apo. Dugay naman gud ni na balay. Panihapon sa diha— naa nay pagkaon sa lamesa.", "Salamat Lola", "Ari sa ka apo ha? Naa ra koy adtuon kadali lang", "Gabii naman la. Aha man ka punta?", "Magbutang ra gud kog kandila ug buwak sa minteryo. Kabalo na ka, hapit na baya kalagkalag.", "Naa koy listahan sa mga bulahaton sa balay karong gabii. Pwede ikaw sa maglihok ani apo? Medyo kapoy napud ko ig abot nako. Ampingi usa ang balay ha? Kung mo alas-dose na, ayaw na ug gawas— ngitngit na kaayo na.", "Sige lola. Pero nganong kailangan ni takoban ang samin? Nakabutang diri sa listahan…", "Kasultihan ra na sa mga tiguwang apo. Para dili daw mo sulod sa balay ang bugnaw.", "Pagkahuman nimo sa mga bulahaton, katug na dayon ha? Ayaw pagdugay ug tulog kung di ka ganahan maka-abot nila.", "N-nila?"])
 speaker_names = Array[String](["Paulette (You)", "Lola Olet", "Paulette (You)", "Lola Olet", "Paulette (You)", "Lola Olet", "Lola Olet", "Paulette (You)", "Lola Olet", "Lola Olet", "Paulette (You)"])
 speaker = NodePath("..")
 
@@ -226,7 +226,7 @@ transform = Transform3D(-0.00052480004, 0, 0.014990817, 0, 0.015, 0, -0.01499081
 
 [node name="dialogue_trigger2" parent="grandma 2" node_paths=PackedStringArray("speaker") instance=ExtResource("7_a4abk")]
 transform = Transform3D(-3.4100332, 0, -149.17526, 0, 129.33333, 0, 97.40698, 0, -5.2223425, 52.649414, 113.77362, 79.37402)
-dialogues = Array[String](["Apo, ito na ulit. Gabi na naman—’wag mong kalimutang tapusin ’yan.", "Lola… tuwing gabi na lang po ba ’to? Parang dumadami ang ginagawa.", "Basta sundin mo lang ang nakasulat, ha? Huwag kang matakot kung may maramdaman ka.", "Lola may mga ….."])
+dialogues = Array[String](["Apo, gabii nasad— Ayaw kalimti ug tiwas ang mga buhatonon ha?", "Lola, kada gabii ra gyud ni siya? Murag nagkadaghan naman ni.", "Basta sunda lang ang nakasulat diha apo. Ayaw kahadlok kung naa kay mabantayan.", "Lola naay..."])
 speaker_names = Array[String](["Lola Olet", "Paulette (You)", "Lola Olet", "Paulette (You)"])
 speaker = NodePath("..")
 
