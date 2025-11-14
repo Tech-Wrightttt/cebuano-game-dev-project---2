@@ -101,6 +101,7 @@ func _on_dialogue_finished(dialogue_name: String) -> void:
 	if !completed_dialogues.is_empty(): # Replace with your actual intro dialogue name(s)
 		if not timeshow:
 			start_night_timer()
+		completed_dialogues.clear()
 
 func progress_to_next_night():
 	if not is_instance_valid(player):

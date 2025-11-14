@@ -7,6 +7,7 @@ extends CharacterBody3D
 @onready var animation_player = $ghost_final_animation/AnimationPlayer
 @onready var rng = RandomNumberGenerator.new()
 @onready var Global = get_node("/root/Global")
+const MAIN_MENU_SCENE = preload("res://game/main_menu.tscn")
 
 # for audio
 @export var walking_audio : Array[AudioStream]
@@ -359,7 +360,7 @@ func trigger_jumpscare():
 		print("⚠️ Player doesn't have take_sanity_damage method!")
 		player.process_mode = Node.PROCESS_MODE_DISABLED
 		await get_tree().create_timer(2.0).timeout
-		get_tree().quit()
+		get_tree().change_scene_to_packed(MAIN_MENU_SCENE)
 
 # Reset ghost after catching player
 func reset_ghost_after_catch():
@@ -449,6 +450,6 @@ func _on_night_time_up() -> void:
 		
 		# OPTION A: Change Scene to Game Over Screen (Recommended)
 		# You will need to define a Game Over scene and preload it.
-		const MAIN_MENU_SCENE = preload("res://game/main_menu.tscn")
+		
 		get_tree().change_scene_to_packed(MAIN_MENU_SCENE)
 	
