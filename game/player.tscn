@@ -70,7 +70,7 @@ var overlay_visible := false
 @onready var canvas_layer_2 = $CanvasLayer2
 
 var third_eye_active := false
-var third_eye_depletion_rate := 20.0  # How much per second to drain
+var third_eye_depletion_rate := 10.0  # How much per second to drain
 var third_eye_refill_rate := 10.0     # How much per second to refill
 
 @onready var crosshair = $PlayerScreenUI/crosshair
@@ -279,6 +279,23 @@ func _process(delta: float) -> void:
 	if third_eye_active:
 		if progress_bar.value > progress_bar.min_value:
 			progress_bar.value = max(progress_bar.value - third_eye_depletion_rate * delta, progress_bar.min_value)
+			# Turn off third eye if it hits zero
+			if progress_bar.value <= progress_bar.min_value:
+				third_eye_active = false
+				overlay_visible = false
+				if overlay:
+					overlay.visible = false
+				open_eyes.visible = false
+				close_eyes.visible = true
+				print(\"Third eye depleted - overlay disabled\")
+		else:
+			progress_bar.value = progress_bar.min_value
+			third_eye_active = false
+			overlay_visible = false
+			if overlay:
+				overlay.visible = false
+			open_eyes.visible = false
+			close_eyes.visible = true
 	else:
 		if progress_bar.value < progress_bar.max_value:
 			progress_bar.value = min(progress_bar.value + third_eye_refill_rate * delta, progress_bar.max_value)
@@ -380,7 +397,7 @@ func each_night_respawn() -> void:
 		
 		
 	if Global.current_night == 5:
-		await play_cutscene(\"res://game/cutscenes/telephone_dialogue.tscn\", 57.5)
+		await play_cutscene(\"res://game/cutscenes/telephone_dialogue.tscn\", 74.5)
 		print(\"telephone scene\")	
 
 	if Global.current_night == 6:
