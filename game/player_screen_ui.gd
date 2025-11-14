@@ -22,7 +22,10 @@ extends CanvasLayer
 func _process(_delta):
 	# --- 1. Update Night Label (Always) ---
 	# This is correct. We always want to see the current night.
-	night_label.text = "Night: %d" % Global.current_night
+	if Global.current_night >=6:
+		return
+	else:
+		night_label.text = "Night: %d" % Global.current_night
 	# --- 2. Check if the game is "active" (timer running) ---
 	if not Global.timeshow:
 		# Game is paused or in dialogue. Hide tasks AND clock.
