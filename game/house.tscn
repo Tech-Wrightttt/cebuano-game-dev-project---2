@@ -1,4 +1,4 @@
-[gd_scene load_steps=421 format=4 uid="uid://c6nnpmjnwv4g2"]
+[gd_scene load_steps=423 format=4 uid="uid://c6nnpmjnwv4g2"]
 
 [ext_resource type="Script" uid="uid://cmcetdgh8ky7t" path="res://scripts/house.gd" id="1_8tqyt"]
 [ext_resource type="Material" uid="uid://31nbyn23hg2q" path="res://materials/house_material.tres" id="1_f6s7v"]
@@ -106,8 +106,8 @@
 [ext_resource type="PackedScene" uid="uid://b8l08qx83oehm" path="res://game/house_materials/big_cabinet.tscn" id="67_e4khn"]
 [ext_resource type="PackedScene" uid="uid://c2e70ja2gny6r" path="res://game/house_materials/cabinet.tscn" id="76_1n58x"]
 [ext_resource type="PackedScene" uid="uid://ckcrkebv8berk" path="res://game/house_materials/fridge.tscn" id="76_eeqtj"]
-[ext_resource type="PackedScene" path="res://game/house_materials/table.tscn" id="78_u8565"]
-[ext_resource type="PackedScene" path="res://game/house_materials/fruits.tscn" id="79_pybr7"]
+[ext_resource type="PackedScene" uid="uid://ck704r7wopd7t" path="res://game/house_materials/table.tscn" id="78_u8565"]
+[ext_resource type="PackedScene" uid="uid://cohjq6vayf1dx" path="res://game/house_materials/fruits.tscn" id="79_pybr7"]
 [ext_resource type="PackedScene" uid="uid://sprxob0h16l0" path="res://assets/glb_models/appliance/electricfan/old_candle.glb" id="80_e4khn"]
 [ext_resource type="PackedScene" uid="uid://y7pspaq0n4jf" path="res://assets/glb_models/furniture/bed_with_a_bed_cover.glb" id="83_w7ycr"]
 [ext_resource type="PackedScene" uid="uid://bxoa1koi7m64f" path="res://assets/glb_models/decoratives/wall_decoration_of_grapes_made_of_cork_stoppers.glb" id="85_0e3s6"]
@@ -152,7 +152,7 @@
 [ext_resource type="PackedScene" uid="uid://dhmaxae3blvh7" path="res://assets/glb_models/furniture/wicker_basket_02.glb" id="110_nafd2"]
 [ext_resource type="PackedScene" uid="uid://brbisn406jwl3" path="res://assets/glb_models/decoratives/wooden_hourglass.glb" id="110_y3wns"]
 [ext_resource type="PackedScene" uid="uid://do0rvl1sxdfrh" path="res://assets/glb_models/basement/book_stand_low_poly.glb" id="111_gvvqw"]
-[ext_resource type="PackedScene" path="res://game/inri.tscn" id="111_puo31"]
+[ext_resource type="PackedScene" uid="uid://dyrhnan3i2i61" path="res://game/inri.tscn" id="111_puo31"]
 [ext_resource type="PackedScene" uid="uid://c5dguj0duawtb" path="res://game/house_materials/locker_wow.tscn" id="112_de7xd"]
 [ext_resource type="PackedScene" uid="uid://vu20j1rcpe78" path="res://assets/glb_models/bathroom/oily_paper_roll_vjxoffps_mid.glb" id="113_gvvqw"]
 [ext_resource type="AudioStream" uid="uid://c7dswpe77u6kr" path="res://soundfx/prayer.mp3" id="114_kirwq"]
@@ -190,7 +190,7 @@
 [ext_resource type="PackedScene" uid="uid://dnd0sn2ioqiu4" path="res://assets/glb_models/basement/freerawscanthe_statue_of_peace.glb" id="139_uwpgj"]
 [ext_resource type="PackedScene" uid="uid://3w3gl5t3ekbj" path="res://assets/glb_models/basement/leather_water_pot_wgxobbm_mid.glb" id="140_56x1q"]
 [ext_resource type="PackedScene" uid="uid://b324pcdn7n8lg" path="res://assets/glb_models/basement/chair_version_03.glb" id="145_b1itb"]
-[ext_resource type="PackedScene" uid="uid://dyjsy356v4elx" path="res://assets/glb_models/chores/dish_food_cover.glb" id="145_h0fog"]
+[ext_resource type="PackedScene" uid="uid://cbe6q7x01q5x5" path="res://assets/glb_models/chores/dish_food_cover.glb" id="145_h0fog"]
 [ext_resource type="PackedScene" uid="uid://c86baff0ssgt2" path="res://assets/glb_models/basement/steering_wheel_wcvodee_low.glb" id="146_q6frv"]
 [ext_resource type="PackedScene" uid="uid://cnkdyfvksrh4v" path="res://assets/glb_models/basement/rusty_car_exhaust_wcvoca1_low.glb" id="148_8tqyt"]
 [ext_resource type="PackedScene" uid="uid://dfgce8vf6l1y1" path="res://assets/glb_models/basement/rusty_radiator_fan_wcljdev_low.glb" id="149_kx6i0"]
@@ -207,13 +207,13 @@
 [ext_resource type="Script" uid="uid://dm4v3ftt2438v" path="res://assets/glb_models/chores/bottle9.gd" id="158_l7k06"]
 [ext_resource type="PackedScene" uid="uid://bbnm1ixycgivj" path="res://assets/glb_models/basement/medieval_gothic_chair.glb" id="159_r85fh"]
 [ext_resource type="PackedScene" uid="uid://b8vyvlmlygg47" path="res://assets/glb_models/basement/book_ouija.glb" id="160_7uwel"]
-[ext_resource type="PackedScene" uid="uid://bbs5qv5rmoo71" path="res://game/creepy statue.tscn" id="160_puo31"]
+[ext_resource type="PackedScene" path="res://game/creepy statue.tscn" id="160_puo31"]
 [ext_resource type="PackedScene" uid="uid://bmsc065woacna" path="res://assets/glb_models/basement/tree_lamp.glb" id="160_qalft"]
 [ext_resource type="PackedScene" uid="uid://c85w4s762poge" path="res://assets/glb_models/basement/cow_head_statue.glb" id="162_puo31"]
 [ext_resource type="PackedScene" uid="uid://csf1p5e7vtr01" path="res://game/house_materials/candel_na_siga.tscn" id="162_y0f4w"]
 [ext_resource type="PackedScene" uid="uid://bkst2lswsd30s" path="res://assets/glb_models/basement/wall_part_base_20k_orientated.glb" id="163_ar67c"]
 [ext_resource type="PackedScene" uid="uid://blj6l2phlisc2" path="res://assets/glb_models/stone_altar.glb" id="168_ar67c"]
-[ext_resource type="PackedScene" uid="uid://rp23q4ii6l4n" path="res://game/house_materials/ceiling_lights_red.tscn" id="171_p4sj0"]
+[ext_resource type="PackedScene" path="res://game/house_materials/ceiling_lights_red.tscn" id="171_p4sj0"]
 [ext_resource type="PackedScene" uid="uid://bnd4f5cscd18j" path="res://game/house_materials/ceiling_lights.tscn" id="210_ww5kt"]
 [ext_resource type="AudioStream" uid="uid://del6s7nu87n2h" path="res://soundfx/horror_ambience.mp3" id="214_4dfqh"]
 
@@ -587,12 +587,12 @@ size = Vector3(1.1434326, 0.91308594, 0.5517578)
 [sub_resource type="BoxShape3D" id="BoxShape3D_0ksgv"]
 size = Vector3(0.15205216, 0.2653656, 0.17308044)
 
-[sub_resource type="BoxMesh" id="BoxMesh_4dfqh"]
-size = Vector3(0.05, 0.05, 0.05)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h0fog"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xgxom"]
 stencil_mode = 3
 stencil_flags = 6
+
+[sub_resource type="BoxMesh" id="BoxMesh_4dfqh"]
+size = Vector3(0.05, 0.05, 0.05)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1tgmf"]
 size = Vector3(0.692749, 0.03265381, 0.34710693)
@@ -648,17 +648,13 @@ stencil_mode = 3
 stencil_flags = 6
 
 [sub_resource type="BoxMesh" id="BoxMesh_ij55h"]
-material = SubResource("StandardMaterial3D_uu133")
 size = Vector3(15, 80, 6)
 
-[sub_resource type="BoxMesh" id="BoxMesh_7nwo6"]
-size = Vector3(0.3, 1.3, 0.14)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q2wsq"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ij55h"]
 stencil_mode = 3
 stencil_flags = 6
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nurw8"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q2wsq"]
 stencil_mode = 3
 stencil_flags = 6
 
@@ -666,11 +662,27 @@ stencil_flags = 6
 stencil_mode = 3
 stencil_flags = 6
 
+[sub_resource type="BoxMesh" id="BoxMesh_7nwo6"]
+size = Vector3(0.3, 1.3, 0.14)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nurw8"]
+stencil_mode = 3
+stencil_flags = 6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tedhw"]
+stencil_mode = 3
+stencil_flags = 6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qkptp"]
+albedo_color = Color(0.14901961, 0.16470589, 0.12941177, 1)
+stencil_mode = 3
+stencil_flags = 6
+
 [sub_resource type="BoxMesh" id="BoxMesh_h0fog"]
 size = Vector3(30, 30, 8)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ij55h"]
-albedo_color = Color(0.16862746, 0.14901961, 0.10980392, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vjh8n"]
+albedo_color = Color(0.14509805, 0.16078432, 0.1254902, 1)
 stencil_mode = 3
 stencil_flags = 6
 
@@ -690,13 +702,6 @@ size = Vector3(0.6091156, 2.8979492, 2.7394104)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mtuen"]
 size = Vector3(0.7178955, 1.6135254, 2.5847778)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_7nwo6"]
-orientation = 0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xgxom"]
-stencil_mode = 3
-stencil_flags = 6
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xfkla"]
 size = Vector3(48.602722, 35.40222, 17.499023)
@@ -796,6 +801,10 @@ size = Vector3(33.654045, 31.008053, 34.33811)
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_66ev2"]
 height = 18.821533
 radius = 6.923828
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h0fog"]
+stencil_mode = 3
+stencil_flags = 6
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6dyww"]
 size = Vector3(1.7612305, 3.1517334, 1.7244873)
@@ -2178,8 +2187,9 @@ shape = SubResource("BoxShape3D_0ksgv")
 
 [node name="lanabottles mesh" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles/lana bottle1"]
 transform = Transform3D(1.0000002, 0, 7.1054274e-15, 0, 2.2000008, 0, -7.1054274e-15, 0, 0.7000004, -0.0043025017, -0.036693573, 0)
+material_override = SubResource("StandardMaterial3D_xgxom")
+extra_cull_margin = 16384.0
 mesh = SubResource("BoxMesh_4dfqh")
-surface_material_override/0 = SubResource("StandardMaterial3D_h0fog")
 
 [node name="lana bottle2" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles" instance=ExtResource("62_jxex3")]
 transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, -20.642971, 3.3566728, -3.147514)
@@ -2193,8 +2203,9 @@ shape = SubResource("BoxShape3D_0ksgv")
 
 [node name="lanabottles mesh" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles/lana bottle2"]
 transform = Transform3D(1.0000002, 0, 7.1054274e-15, 0, 2.2000008, 0, -7.1054274e-15, 0, 0.7000004, -0.0043025017, -0.036693573, 0)
+material_override = SubResource("StandardMaterial3D_xgxom")
+extra_cull_margin = 16384.0
 mesh = SubResource("BoxMesh_4dfqh")
-surface_material_override/0 = SubResource("StandardMaterial3D_h0fog")
 
 [node name="lana bottle3" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles" instance=ExtResource("62_jxex3")]
 transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, -4.176879, 3.4742827, -8.548105)
@@ -2208,8 +2219,9 @@ shape = SubResource("BoxShape3D_0ksgv")
 
 [node name="lanabottles mesh" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles/lana bottle3"]
 transform = Transform3D(1.0000002, 0, 7.1054274e-15, 0, 2.2000008, 0, -7.1054274e-15, 0, 0.7000004, -0.0043025017, -0.036693573, 0)
+material_override = SubResource("StandardMaterial3D_xgxom")
+extra_cull_margin = 16384.0
 mesh = SubResource("BoxMesh_4dfqh")
-surface_material_override/0 = SubResource("StandardMaterial3D_h0fog")
 
 [node name="lana bottle4" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles" instance=ExtResource("62_jxex3")]
 transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, -20.946362, 2.5725746, -6.0545883)
@@ -2223,8 +2235,9 @@ shape = SubResource("BoxShape3D_0ksgv")
 
 [node name="lanabottles mesh" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles/lana bottle4"]
 transform = Transform3D(1.0000002, 0, 7.1054274e-15, 0, 2.2000008, 0, -7.1054274e-15, 0, 0.7000004, -0.0043025017, -0.036693573, 0)
+material_override = SubResource("StandardMaterial3D_xgxom")
+extra_cull_margin = 16384.0
 mesh = SubResource("BoxMesh_4dfqh")
-surface_material_override/0 = SubResource("StandardMaterial3D_h0fog")
 
 [node name="lana bottle5" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles" instance=ExtResource("62_jxex3")]
 transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, -20.806885, 3.3621397, -5.9856286)
@@ -2238,8 +2251,9 @@ shape = SubResource("BoxShape3D_0ksgv")
 
 [node name="lanabottles mesh" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles/lana bottle5"]
 transform = Transform3D(1.0000002, 0, 7.1054274e-15, 0, 2.2000008, 0, -7.1054274e-15, 0, 0.7000004, -0.0043025017, -0.036693573, 0)
+material_override = SubResource("StandardMaterial3D_xgxom")
+extra_cull_margin = 16384.0
 mesh = SubResource("BoxMesh_4dfqh")
-surface_material_override/0 = SubResource("StandardMaterial3D_h0fog")
 
 [node name="lana bottle10" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles" instance=ExtResource("62_jxex3")]
 transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, -26.258049, -4.231845, 1.1461685)
@@ -2253,8 +2267,9 @@ shape = SubResource("BoxShape3D_0ksgv")
 
 [node name="lanabottles mesh" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles/lana bottle10"]
 transform = Transform3D(1.0000002, 0, 7.1054274e-15, 0, 2.2000008, 0, -7.1054274e-15, 0, 0.7000004, -0.0043025017, -0.036693573, 0)
+material_override = SubResource("StandardMaterial3D_xgxom")
+extra_cull_margin = 16384.0
 mesh = SubResource("BoxMesh_4dfqh")
-surface_material_override/0 = SubResource("StandardMaterial3D_h0fog")
 
 [node name="lanadropsarray" type="Node3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana"]
 
@@ -2558,6 +2573,7 @@ shape = SubResource("BoxShape3D_m1vgo")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle"]
 transform = Transform3D(1, 0, 0, 0, 4.417503, 0, 0, 0, 1.6364836, 0, 2.626686, 0)
 material_override = SubResource("StandardMaterial3D_153lg")
+extra_cull_margin = 16384.0
 mesh = SubResource("BoxMesh_hmlio")
 
 [node name="Candle2" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
@@ -2573,6 +2589,7 @@ shape = SubResource("BoxShape3D_m1vgo")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle2"]
 transform = Transform3D(1, 0, 0, 0, 4.417503, 0, 0, 0, 1.6364836, 0, 2.626686, 0)
 material_override = SubResource("StandardMaterial3D_153lg")
+extra_cull_margin = 16384.0
 mesh = SubResource("BoxMesh_hmlio")
 
 [node name="Candle3" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
@@ -2588,6 +2605,7 @@ shape = SubResource("BoxShape3D_m1vgo")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle3"]
 transform = Transform3D(1, 0, 0, 0, 4.417503, 0, 0, 0, 1.6364836, 0, 2.626686, 0)
 material_override = SubResource("StandardMaterial3D_153lg")
+extra_cull_margin = 16384.0
 mesh = SubResource("BoxMesh_hmlio")
 
 [node name="Candle4" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
@@ -2603,6 +2621,7 @@ shape = SubResource("BoxShape3D_m1vgo")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle4"]
 transform = Transform3D(1, 0, 0, 0, 4.417503, 0, 0, 0, 1.6364836, 0, 2.626686, 0)
 material_override = SubResource("StandardMaterial3D_153lg")
+extra_cull_margin = 16384.0
 mesh = SubResource("BoxMesh_hmlio")
 
 [node name="Candle5" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
@@ -2614,6 +2633,12 @@ collision_layer = 9
 [node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle5/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011474609, 2.437008, -0.03759764)
 shape = SubResource("BoxShape3D_m1vgo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle5"]
+transform = Transform3D(1, 0, 0, 0, 4.417503, 0, 0, 0, 1.6364836, 0, 2.626686, 0)
+material_override = SubResource("StandardMaterial3D_153lg")
+extra_cull_margin = 16384.0
+mesh = SubResource("BoxMesh_hmlio")
 
 [node name="Candle6" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -4.7716618, 8.195918, -24.549925)
@@ -2628,6 +2653,7 @@ shape = SubResource("BoxShape3D_m1vgo")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle6"]
 transform = Transform3D(1, 0, 0, 0, 4.417503, 0, 0, 0, 1.6364836, 0, 2.626686, 0)
 material_override = SubResource("StandardMaterial3D_153lg")
+extra_cull_margin = 16384.0
 mesh = SubResource("BoxMesh_hmlio")
 
 [node name="Candle7" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
@@ -2643,6 +2669,7 @@ shape = SubResource("BoxShape3D_m1vgo")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle7"]
 transform = Transform3D(1, 0, 0, 0, 4.417503, 0, 0, 0, 1.6364836, 0, 2.626686, 0)
 material_override = SubResource("StandardMaterial3D_153lg")
+extra_cull_margin = 16384.0
 mesh = SubResource("BoxMesh_hmlio")
 
 [node name="Candle8" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
@@ -2658,6 +2685,7 @@ shape = SubResource("BoxShape3D_m1vgo")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle8"]
 transform = Transform3D(1, 0, 0, 0, 4.417503, 0, 0, 0, 1.6364836, 0, 2.626686, 0)
 material_override = SubResource("StandardMaterial3D_153lg")
+extra_cull_margin = 16384.0
 mesh = SubResource("BoxMesh_hmlio")
 
 [node name="Candle9" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
@@ -2673,6 +2701,7 @@ shape = SubResource("BoxShape3D_m1vgo")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle9"]
 transform = Transform3D(1, 0, 0, 0, 4.417503, 0, 0, 0, 1.6364836, 0, 2.626686, 0)
 material_override = SubResource("StandardMaterial3D_153lg")
+extra_cull_margin = 16384.0
 mesh = SubResource("BoxMesh_hmlio")
 
 [node name="Candle10" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
@@ -2688,6 +2717,7 @@ shape = SubResource("BoxShape3D_m1vgo")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle10"]
 transform = Transform3D(1, 0, 0, 0, 4.417503, 0, 0, 0, 1.6364836, 0, 2.626686, 0)
 material_override = SubResource("StandardMaterial3D_153lg")
+extra_cull_margin = 16384.0
 mesh = SubResource("BoxMesh_hmlio")
 
 [node name="Candle11" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
@@ -2703,6 +2733,7 @@ shape = SubResource("BoxShape3D_m1vgo")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle11"]
 transform = Transform3D(1, 0, 0, 0, 4.417503, 0, 0, 0, 1.6364836, 0, 2.626686, 0)
 material_override = SubResource("StandardMaterial3D_153lg")
+extra_cull_margin = 16384.0
 mesh = SubResource("BoxMesh_hmlio")
 
 [node name="Candle12" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
@@ -2718,6 +2749,7 @@ shape = SubResource("BoxShape3D_m1vgo")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle12"]
 transform = Transform3D(1, 0, 0, 0, 4.417503, 0, 0, 0, 1.6364836, 0, 2.626686, 0)
 material_override = SubResource("StandardMaterial3D_153lg")
+extra_cull_margin = 16384.0
 mesh = SubResource("BoxMesh_hmlio")
 
 [node name="Candle13" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
@@ -2733,6 +2765,7 @@ shape = SubResource("BoxShape3D_m1vgo")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle13"]
 transform = Transform3D(1, 0, 0, 0, 4.417503, 0, 0, 0, 1.6364836, 0, 2.626686, 0)
 material_override = SubResource("StandardMaterial3D_153lg")
+extra_cull_margin = 16384.0
 mesh = SubResource("BoxMesh_hmlio")
 
 [node name="Candle14" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
@@ -2748,6 +2781,7 @@ shape = SubResource("BoxShape3D_m1vgo")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle14"]
 transform = Transform3D(1, 0, 0, 0, 4.417503, 0, 0, 0, 1.6364836, 0, 2.626686, 0)
 material_override = SubResource("StandardMaterial3D_153lg")
+extra_cull_margin = 16384.0
 mesh = SubResource("BoxMesh_hmlio")
 
 [node name="Candle15" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
@@ -2763,6 +2797,7 @@ shape = SubResource("BoxShape3D_m1vgo")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle15"]
 transform = Transform3D(1, 0, 0, 0, 4.417503, 0, 0, 0, 1.6364836, 0, 2.626686, 0)
 material_override = SubResource("StandardMaterial3D_153lg")
+extra_cull_margin = 16384.0
 mesh = SubResource("BoxMesh_hmlio")
 
 [node name="Candle16" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
@@ -2778,6 +2813,7 @@ shape = SubResource("BoxShape3D_m1vgo")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle16"]
 transform = Transform3D(1, 0, 0, 0, 4.417503, 0, 0, 0, 1.6364836, 0, 2.626686, 0)
 material_override = SubResource("StandardMaterial3D_153lg")
+extra_cull_margin = 16384.0
 mesh = SubResource("BoxMesh_hmlio")
 
 [node name="Task_Clean_Statue" type="Node3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS"]
@@ -2889,6 +2925,7 @@ shape = SubResource("BoxShape3D_2hkfm")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueAnte"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.57555294, -0.04567635, 0.2836628)
 material_override = SubResource("StandardMaterial3D_4eble")
+extra_cull_margin = 16384.0
 mesh = SubResource("BoxMesh_uu133")
 
 [node name="UncleanedStatueMary" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue" instance=ExtResource("129_s8tip")]
@@ -2896,6 +2933,8 @@ transform = Transform3D(0.035, 0, 0, 0, 0.035, 0, 0, 0, 0.035, -37.52713, 1.9703
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueMary"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2209473, 71.14453, -5.267761)
+material_override = SubResource("StandardMaterial3D_uu133")
+extra_cull_margin = 16384.0
 mesh = SubResource("BoxMesh_ij55h")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueMary" groups=["hold_deploy"]]
@@ -2915,6 +2954,8 @@ shape = SubResource("BoxShape3D_pybr7")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueMary2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2209625, 72.05246, -6.7089233)
+material_override = SubResource("StandardMaterial3D_ij55h")
+extra_cull_margin = 16384.0
 mesh = SubResource("BoxMesh_ij55h")
 
 [node name="UncleanedStatueMary3" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue" instance=ExtResource("129_s8tip")]
@@ -2928,6 +2969,8 @@ shape = SubResource("BoxShape3D_pybr7")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueMary3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2209625, 72.05246, -6.7089233)
+material_override = SubResource("StandardMaterial3D_q2wsq")
+extra_cull_margin = 16384.0
 mesh = SubResource("BoxMesh_ij55h")
 
 [node name="UncleanedStatueSaint" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue" instance=ExtResource("130_klyxg")]
@@ -2941,8 +2984,9 @@ shape = SubResource("BoxShape3D_1o4y0")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueSaint"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.054302692, -0.07104421)
+material_override = SubResource("StandardMaterial3D_xjyat")
+extra_cull_margin = 16384.0
 mesh = SubResource("BoxMesh_7nwo6")
-surface_material_override/0 = SubResource("StandardMaterial3D_q2wsq")
 
 [node name="UncleanedStatueSaint2" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue" instance=ExtResource("130_klyxg")]
 transform = Transform3D(-2, 0, -1.7484555e-07, 0, 2, 0, 1.7484555e-07, 0, -2, -10.604294, 3.8849463, 7.2073092)
@@ -2956,6 +3000,7 @@ shape = SubResource("BoxShape3D_1o4y0")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueSaint2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.054302692, -0.07104421)
 material_override = SubResource("StandardMaterial3D_nurw8")
+extra_cull_margin = 16384.0
 mesh = SubResource("BoxMesh_7nwo6")
 
 [node name="UncleanedStatueSaint3" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue" instance=ExtResource("130_klyxg")]
@@ -2969,8 +3014,9 @@ shape = SubResource("BoxShape3D_1o4y0")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueSaint3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.054302692, -0.07104421)
+material_override = SubResource("StandardMaterial3D_tedhw")
+extra_cull_margin = 16384.0
 mesh = SubResource("BoxMesh_7nwo6")
-surface_material_override/0 = SubResource("StandardMaterial3D_xjyat")
 
 [node name="UncleanedStatueAngel" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue" instance=ExtResource("123_1o4y0")]
 transform = Transform3D(-0.11483141, 0, -0.05692539, 0, 0.12816685, 0, 0.05692539, 0, -0.11483141, -29.882324, -5.952967, -3.5928283)
@@ -2984,8 +3030,9 @@ shape = SubResource("CapsuleShape3D_ar67c")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueAngel"]
 transform = Transform3D(0.13246709, 0, 0, 0, 0.73707277, 0, -4.0978193e-08, 0, 0.32653823, 1.3235779, 14.769896, 0.3019867)
+material_override = SubResource("StandardMaterial3D_qkptp")
+extra_cull_margin = 16384.0
 mesh = SubResource("BoxMesh_h0fog")
-surface_material_override/0 = SubResource("StandardMaterial3D_ij55h")
 
 [node name="UncleanedStatueAngel2" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue" instance=ExtResource("123_1o4y0")]
 transform = Transform3D(0.10732746, 0, -0.07005403, 0, 0.12816682, 0, 0.07005403, 0, 0.10732746, -22.301529, -5.952967, -3.5928283)
@@ -2999,8 +3046,9 @@ shape = SubResource("CapsuleShape3D_ar67c")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueAngel2"]
 transform = Transform3D(0.13246709, 0, 0, 0, 0.73707277, 0, -4.0978193e-08, 0, 0.32653823, 1.3235779, 14.769896, 0.3019867)
+material_override = SubResource("StandardMaterial3D_vjh8n")
+extra_cull_margin = 16384.0
 mesh = SubResource("BoxMesh_h0fog")
-surface_material_override/0 = SubResource("StandardMaterial3D_ij55h")
 
 [node name="UncleanedStatueCreepy" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue" instance=ExtResource("125_sfno0")]
 transform = Transform3D(0.4635255, 0, -1.426585, 0, 1.5, 0, 1.426585, 0, 0.4635255, -27.236916, -5.9628787, 5.209491)
@@ -3015,6 +3063,7 @@ shape = SubResource("BoxShape3D_h0fog")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueCreepy"]
 transform = Transform3D(1.000001, 0, -2.9802322e-08, 0, 1.0000014, 0, 2.9802322e-08, 0, 1.000001, 2.0476363, 0.9153061, -0.17376137)
 material_override = SubResource("StandardMaterial3D_6xd5g")
+extra_cull_margin = 16384.0
 mesh = SubResource("BoxMesh_xgxom")
 
 [node name="Cleaning_Statue" type="AudioStreamPlayer3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue"]
@@ -3225,11 +3274,6 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14105606, -0.005493164, 0.00771904)
 shape = SubResource("BoxShape3D_mtuen")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors/broken mirror"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14907646, -0.038534164, 0)
-mesh = SubResource("PlaneMesh_7nwo6")
-surface_material_override/0 = SubResource("StandardMaterial3D_xgxom")
-
 [node name="broken mirror2" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors" instance=ExtResource("94_6u8h5")]
 transform = Transform3D(-0.9728003, 0, 1.5675792e-07, 0, 1.3908005, 0, -1.4688885e-07, 0, -1.0381601, -20.270042, 6.0775046, -30.188168)
 
@@ -3242,15 +3286,6 @@ collision_layer = 9
 [node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors/broken mirror2/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14105606, -0.005493164, 0.00771904)
 shape = SubResource("BoxShape3D_mtuen")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors/broken mirror2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14387321, 3.862381e-05, 0)
-mesh = SubResource("PlaneMesh_7nwo6")
-surface_material_override/0 = SubResource("StandardMaterial3D_xgxom")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors/broken mirror2"]
-mesh = SubResource("PlaneMesh_7nwo6")
-surface_material_override/0 = SubResource("StandardMaterial3D_xgxom")
 
 [node name="broken mirror3" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors" instance=ExtResource("94_6u8h5")]
 transform = Transform3D(0.9728003, 0, 0, 0, 1.3908005, 0, 0, 0, 1.0381601, -19.77874, 11.47752, -16.70442)
@@ -3265,11 +3300,6 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14105606, -0.005493164, 0.00771904)
 shape = SubResource("BoxShape3D_mtuen")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors/broken mirror3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.08701897, -0.011730194)
-mesh = SubResource("PlaneMesh_7nwo6")
-surface_material_override/0 = SubResource("StandardMaterial3D_xgxom")
-
 [node name="broken mirror4" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors" instance=ExtResource("94_6u8h5")]
 transform = Transform3D(0.9728003, 0, 0, 0, 1.3908005, 0, 0, 0, 1.0381601, -19.737255, 11.47752, 4.393944)
 
@@ -3282,10 +3312,6 @@ collision_layer = 9
 [node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors/broken mirror4/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14105606, -0.005493164, 0.00771904)
 shape = SubResource("BoxShape3D_mtuen")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors/broken mirror4"]
-mesh = SubResource("PlaneMesh_7nwo6")
-surface_material_override/0 = SubResource("StandardMaterial3D_xgxom")
 
 [node name="broken mirror5" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors" instance=ExtResource("94_6u8h5")]
 transform = Transform3D(-0.9728003, 0, -9.075884e-08, 0, 1.3908005, 0, 8.50449e-08, 0, -1.0381601, -20.297695, 11.47752, 5.1763544)
@@ -3300,10 +3326,6 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14105606, -0.005493164, 0.00771904)
 shape = SubResource("BoxShape3D_mtuen")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors/broken mirror5"]
-mesh = SubResource("PlaneMesh_7nwo6")
-surface_material_override/0 = SubResource("StandardMaterial3D_xgxom")
-
 [node name="broken mirror6" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors" instance=ExtResource("94_6u8h5")]
 transform = Transform3D(-0.9728003, 0, -9.075884e-08, 0, 1.3908005, 0, 8.50449e-08, 0, -1.0381601, -20.297695, 5.721937, -4.904005)
 
@@ -3317,10 +3339,6 @@ collision_layer = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14105606, -0.005493164, 0.00771904)
 shape = SubResource("BoxShape3D_mtuen")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors/broken mirror6"]
-mesh = SubResource("PlaneMesh_7nwo6")
-surface_material_override/0 = SubResource("StandardMaterial3D_xgxom")
-
 [node name="broken mirror7" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors" instance=ExtResource("94_6u8h5")]
 transform = Transform3D(0.9728003, 0, 0, 0, 1.3908005, 0, 0, 0, 1.0381601, -19.7487, 5.0617776, -4.369649)
 
@@ -3333,10 +3351,6 @@ collision_layer = 9
 [node name="CollisionShape3D" type="CollisionShape3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors/broken mirror7/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14105606, -0.005493164, 0.00771904)
 shape = SubResource("BoxShape3D_mtuen")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/Mirrors/broken mirror7"]
-mesh = SubResource("PlaneMesh_7nwo6")
-surface_material_override/0 = SubResource("StandardMaterial3D_xgxom")
 
 [node name="TowelsAroundTheHouse" type="Node3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror"]
 
