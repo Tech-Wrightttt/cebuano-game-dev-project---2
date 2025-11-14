@@ -358,7 +358,7 @@ func each_night_respawn() -> void:
 	
 	if Global.current_night == 1:
 		#await play_open_eyes_cutscene()
-		await play_cutscene(\"res://game/cutscenes/open_eyes.tscn\", 30.5)
+		await play_cutscene(\"res://game/cutscenes/open_eyes.tscn\", 15.5)
 		print(\"played open eyes cut\")
 		#await get_tree().create_timer(30.0).timeout
 		ghost.is_ghost_started = true
@@ -367,19 +367,19 @@ func each_night_respawn() -> void:
 		#it then plays goes away and then the game continues
 		
 	if Global.current_night == 2:
-		await play_cutscene(\"res://game/cutscenes/open_eyes2.tscn\", 30.5)
+		await play_cutscene(\"res://game/cutscenes/open_eyes2.tscn\", 15.5)
 		print(\"played open eyes2 cut\")
 		
 		
 	if Global.current_night == 5:
-		await play_cutscene(\"res://game/cutscenes/telephone_dialogue.tscn\", 30.5)
+		await play_cutscene(\"res://game/cutscenes/telephone_dialogue.tscn\", 57.5)
 		print(\"telephone scene\")	
-		await play_cutscene(\"res://game/cutscenes/floor_wake_up.tscn\", 30.5)
+		await play_cutscene(\"res://game/cutscenes/floor_wake_up.tscn\", 15.5)
 		print(\"floor wake up open cut\")
 
 	if Global.current_night == 6:
-		await play_cutscene(\"res://game/cutscenes/ending.tscn\", 30.5)
-		print(\"emding cut\")
+		await play_cutscene(\"res://game/cutscenes/ending.tscn\", 60.5)
+		print(\"ending cut\")
 		get_tree().quit()
 
 
@@ -606,10 +606,6 @@ func take_sanity_damage() -> void:
 	can_be_killed = false
 	var current_sanity = progress_bar.value
 	
-	print(\"━━━━━━━━━━━━━━━━━━━━━━━━━━━━\")
-	print(\"👻 Ghost caught player!\")
-	print(\"💭 Current sanity: %.1f\" % current_sanity)
-	
 	# Check if sanity is too low for another death
 	if progress_bar.max_value <= SANITY_DEATH_THRESHOLD:
 		print(\"💀 Sanity too low - GAME OVER!\")
@@ -745,15 +741,16 @@ func play_cutscene(cutscene_path: String, duration: float = 5.5) -> void:
 	set_physics_process(false)
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
+	var house = get_node_or_null(\"../House\")
+	var house_visible = house.visible if house else false
 	
-	
+	if house:
+		house.visible = false
+		
 	# CRITICAL: Make the cutscene camera active
 	var cutscene_camera = cutscene.get_node_or_null(\"Camera3D\")
 	if cutscene_camera and cutscene_camera is Camera3D:
 		cutscene_camera.current = true
-		if camera:
-			camera.current = false
-		print(\"📷 Cutscene camera activated\")
 	else:
 		push_warning(\"No Camera3D found in cutscene!\")
 	
@@ -765,6 +762,9 @@ func play_cutscene(cutscene_path: String, duration: float = 5.5) -> void:
 		await cutscene.cutscene_finished
 	else:
 		await get_tree().create_timer(duration).timeout
+	
+	if house:
+		house.visible = house_visible
 	
 	# CRITICAL: Restore player camera
 	if camera:
