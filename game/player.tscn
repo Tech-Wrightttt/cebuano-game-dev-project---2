@@ -280,6 +280,9 @@ func _process(delta: float) -> void:
 	# Sprint stamina update
 	if is_sprinting and sprint_stamina > 0:
 		sprint_stamina = max(sprint_stamina - sprint_depletion_rate * delta, 0)
+		# Stop sprinting if stamina runs out
+		if sprint_stamina <= 0:
+			is_sprinting = false
 	elif sprint_stamina < sprint_stamina_max:
 		sprint_stamina = min(sprint_stamina + sprint_recovery_rate * delta, sprint_stamina_max)
 	
@@ -436,14 +439,18 @@ func _physics_process(delta: float) -> void:
 	
 	if is_on_floor():
 		_last_frame_was_on_floor = Engine.get_physics_frames()
-		if Input.is_action_pressed(\"sprint\") and sprint_stamina > 0:
+		
+		# Check sprint conditions
+		if Input.is_action_pressed(\"sprint\") and sprint_stamina > 1:
 			is_sprinting = true
 		else:
 			is_sprinting = false
-	
-	if not is_on_floor():
+	else:
+		# Can't sprint in the air
+		is_sprinting = false
 		velocity += get_gravity() * delta
-		
+	
+	# Use current speed based on sprint state
 	var current_speed = SPRINT_SPEED if is_sprinting else SPEED
 	
 	var input_dir: Vector2 = Input.get_vector(\"move_left\", \"move_right\", \"move_forward\", \"move_backward\")
