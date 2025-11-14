@@ -11,16 +11,16 @@
 [ext_resource type="FontFile" uid="uid://d10bqkxscm252" path="res://fonts/another_danger/Another Danger - Demo.otf" id="8_7mn57"]
 [ext_resource type="ArrayMesh" uid="uid://dths5gx7lhgpk" path="res://assets/house/house_1stFloor_railings.obj" id="9_0wgv0"]
 [ext_resource type="PackedScene" uid="uid://bd8sk3hxv1lu0" path="res://assets/glb_models/fence/japanese_park_stone_floor_uljcfd0_mid.glb" id="9_k2o5e"]
-[ext_resource type="Script" uid="uid://cbep2kr7a0bxs" path="res://scripts/main_menu.gd" id="10_5i8qu"]
-[ext_resource type="Shader" uid="uid://c3u4tbyhiecqr" path="res://scripts/blur_menu.gdshader" id="10_6vmua"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="10_5i8qu"]
+[ext_resource type="Shader" path="res://scripts/blur_menu.gdshader" id="10_6vmua"]
 [ext_resource type="PackedScene" uid="uid://bhdnah86wfvhg" path="res://assets/glb_models/fence/fence_and_column.glb" id="10_nowvf"]
 [ext_resource type="Texture2D" uid="uid://b4s4kr1q5t1st" path="res://textures/Tile/Tile_25-256x256.png" id="10_t50jj"]
 [ext_resource type="ArrayMesh" uid="uid://bab7m82mvhw0n" path="res://assets/house/house_1stFloorCR_wall.obj" id="11_3plp2"]
-[ext_resource type="Script" uid="uid://c1b6a3pq28fgw" path="res://scripts/settings_panel.gd" id="11_5i8qu"]
+[ext_resource type="Script" path="res://scripts/settings_panel.gd" id="11_5i8qu"]
 [ext_resource type="PackedScene" uid="uid://cdluy2xnot0vs" path="res://assets/glb_models/fence/dirty_leaking_concrete_wall.glb" id="11_g7oie"]
 [ext_resource type="Texture2D" uid="uid://drbqxo1kuq0ml" path="res://assets/images/Flare_small.PNG" id="11_rv8kf"]
 [ext_resource type="Texture2D" uid="uid://cpi1hkcgflfls" path="res://textures/house/tiles cr.jpg" id="12_8trt6"]
-[ext_resource type="Script" uid="uid://ch0l5ushlasf3" path="res://scripts/controls_panel.gd" id="12_i6au4"]
+[ext_resource type="Script" path="res://scripts/controls_panel.gd" id="12_i6au4"]
 [ext_resource type="Texture2D" uid="uid://bvdwayp7w2erl" path="res://textures/environment/grass.jpg" id="12_qkuur"]
 [ext_resource type="FontFile" uid="uid://dd6gyxnwoo3dv" path="res://assets/Fonts/Rawrote Demo.ttf" id="13_ay3dt"]
 [ext_resource type="ArrayMesh" uid="uid://c7qn8hxxcsb1j" path="res://assets/house/house_1stFloorCR_floor.obj" id="13_x3mek"]
@@ -33,10 +33,10 @@
 [ext_resource type="Texture2D" uid="uid://cut50gjhriefa" path="res://textures/house/wood3.jpg" id="20_owwdt"]
 [ext_resource type="ArrayMesh" uid="uid://d23yc2pj7rqt5" path="res://assets/house/house_CRWindows_supports.obj" id="21_phrwp"]
 [ext_resource type="ArrayMesh" uid="uid://cytl6irj7h4so" path="res://assets/house/house_CRWindows_windows.obj" id="22_6gsts"]
-[ext_resource type="PackedScene" uid="uid://cov1tn1i13v63" path="res://assets/glb_models/nature/plant/potted_plant_1.glb" id="23_p6lyb"]
+[ext_resource type="PackedScene" uid="uid://707iy55ib8cp" path="res://assets/glb_models/nature/plant/potted_plant_1.glb" id="23_p6lyb"]
 [ext_resource type="PackedScene" uid="uid://cr00y4qgw3h1s" path="res://assets/glb_models/furniture/monstera_2_low_poly.glb" id="24_yfe2u"]
 [ext_resource type="PackedScene" uid="uid://c1rv2is3joy2l" path="res://assets/glb_models/furniture/street_wooden_bench.glb" id="25_3hv4j"]
-[ext_resource type="Script" uid="uid://rn4ndis8ai1v" path="res://game/task_close_windows.gd" id="26_wjv5o"]
+[ext_resource type="Script" path="res://game/task_close_windows.gd" id="26_wjv5o"]
 [ext_resource type="PackedScene" uid="uid://b7iavuxmklmfq" path="res://game/house_materials/windows_single.tscn" id="27_lsf6n"]
 [ext_resource type="PackedScene" uid="uid://batubq50dnos0" path="res://game/house_materials/windows_double.tscn" id="28_4mvyj"]
 [ext_resource type="PackedScene" uid="uid://b2teowpxr3dyw" path="res://game/house_materials/windows_quad.tscn" id="29_nl1nx"]
@@ -1566,6 +1566,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_g7oie")
 text = "BACK"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="BackBufferCopy" type="BackBufferCopy" parent="CanvasLayer"]
 copy_mode = 2
