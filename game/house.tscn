@@ -1,25 +1,25 @@
-[gd_scene load_steps=425 format=4 uid="uid://c6nnpmjnwv4g2"]
+[gd_scene load_steps=436 format=4 uid="uid://c6nnpmjnwv4g2"]
 
 [ext_resource type="Script" uid="uid://cmcetdgh8ky7t" path="res://scripts/house.gd" id="1_8tqyt"]
 [ext_resource type="Material" uid="uid://31nbyn23hg2q" path="res://materials/house_material.tres" id="1_f6s7v"]
 [ext_resource type="Script" uid="uid://c1w58emrwwhgh" path="res://game/house_materials/basementdoor.gd" id="2_2xh2d"]
 [ext_resource type="PackedScene" uid="uid://b7iavuxmklmfq" path="res://game/house_materials/windows_single.tscn" id="2_agx8e"]
 [ext_resource type="ArrayMesh" uid="uid://cjhr8ed83eebv" path="res://assets/house/house_basement_wall.obj" id="2_sgyp1"]
-[ext_resource type="AudioStream" uid="uid://dyrpm5eajw1gq" path="res://soundfx/door_locked.mp3" id="3_7nwo6"]
+[ext_resource type="AudioStream" uid="uid://d0aro8tffus1l" path="res://soundfx/door_locked.mp3" id="3_7nwo6"]
 [ext_resource type="ArrayMesh" uid="uid://dkeuruqi54p6n" path="res://assets/house/house_basement_floor.obj" id="3_djvyg"]
 [ext_resource type="Texture2D" uid="uid://cm6acpp76ieuo" path="res://textures/house/basement floor..jpg" id="3_eeqtj"]
-[ext_resource type="Script" uid="uid://du16lxallybeo" path="res://game/house_materials/frontdoor.gd" id="3_ix1fy"]
+[ext_resource type="Script" path="res://game/house_materials/frontdoor.gd" id="3_ix1fy"]
 [ext_resource type="PackedScene" uid="uid://co45n63o5btcn" path="res://assets/glb_models/nature/plantsa/old_iron.glb" id="3_jer8c"]
 [ext_resource type="PackedScene" uid="uid://batubq50dnos0" path="res://game/house_materials/windows_double.tscn" id="3_r85fh"]
 [ext_resource type="PackedScene" uid="uid://b2teowpxr3dyw" path="res://game/house_materials/windows_quad.tscn" id="4_r85fh"]
 [ext_resource type="ArrayMesh" uid="uid://c4hr82a5el8n4" path="res://assets/house/house_basement_ceiling.obj" id="4_v87ac"]
-[ext_resource type="Script" uid="uid://d3h0hxxohqcm1" path="res://game/house_materials/backdoor.gd" id="5_153lg"]
-[ext_resource type="ArrayMesh" uid="uid://boxw7he1kxpyb" path="res://assets/house/house_1stFloor_wall.obj" id="5_f1bo4"]
+[ext_resource type="Script" path="res://game/house_materials/backdoor.gd" id="5_153lg"]
+[ext_resource type="ArrayMesh" uid="uid://b208lenoni6xf" path="res://assets/house/house_1stFloor_wall.obj" id="5_f1bo4"]
 [ext_resource type="PackedScene" uid="uid://cm5n27ewcws0o" path="res://game/house_materials/locker.tscn" id="6_3a0ml"]
 [ext_resource type="Texture2D" uid="uid://gkcld4u7jl4t" path="res://textures/house/wall basement.jpg" id="6_78vr8"]
 [ext_resource type="ArrayMesh" uid="uid://blafgyi6jmkkf" path="res://assets/house/house_1stFloor_floor.obj" id="6_h3s8l"]
 [ext_resource type="Texture2D" uid="uid://dn1l7w7r2veuw" path="res://assets/glb_models/decoratives/vase/vase_0.png" id="6_wgg7t"]
-[ext_resource type="Texture2D" uid="uid://s0ecbrt2ver0" path="res://assets/glb_models/decoratives/vase/vase_1.png" id="7_lulxl"]
+[ext_resource type="Texture2D" uid="uid://dlxamo7llvtwm" path="res://assets/glb_models/decoratives/vase/vase_1.png" id="7_lulxl"]
 [ext_resource type="ArrayMesh" uid="uid://ddjhe1q3f64cs" path="res://assets/house/house_1stFloor_stairs.obj" id="7_sy0w3"]
 [ext_resource type="PackedScene" uid="uid://dnyd5vt8llw0i" path="res://assets/glb_models/appliance/piano/piano.glb" id="8_8j78o"]
 [ext_resource type="Texture2D" uid="uid://cmuedyjmpqp2r" path="res://textures/house/door_wood.png" id="8_lfduw"]
@@ -35,7 +35,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dg0u63u4cjo8o" path="res://assets/house/house_2ndFloor_railings.obj" id="12_p0swl"]
 [ext_resource type="PackedScene" uid="uid://c7gjl20e132o5" path="res://assets/glb_models/furniture/bookshelf/wooden_bookcases_with_books.glb" id="13_4j85k"]
 [ext_resource type="Texture2D" uid="uid://bu4l6x0nw24dp" path="res://textures/Roofs/Roofs_10-256x256.png" id="13_86tvv"]
-[ext_resource type="ArrayMesh" uid="uid://bab7m82mvhw0n" path="res://assets/house/house_1stFloorCR_wall.obj" id="14_3qwsg"]
+[ext_resource type="ArrayMesh" uid="uid://pwhxh673n8g7" path="res://assets/house/house_1stFloorCR_wall.obj" id="14_3qwsg"]
 [ext_resource type="ArrayMesh" uid="uid://okyrs7cqyw8h" path="res://assets/house/house_roof.obj" id="14_glmle"]
 [ext_resource type="PackedScene" uid="uid://tljk6ijf53rp" path="res://assets/glb_models/dining table/game_ready_rustic_table_with_chairs.glb" id="15_7l508"]
 [ext_resource type="ArrayMesh" uid="uid://c7qn8hxxcsb1j" path="res://assets/house/house_1stFloorCR_floor.obj" id="15_re2uc"]
@@ -91,8 +91,8 @@
 [ext_resource type="PackedScene" uid="uid://csm48uofiavgt" path="res://assets/glb_models/furniture/wooden_recliner_chair.glb" id="48_r2ti1"]
 [ext_resource type="PackedScene" uid="uid://gdjdjhsmij5r" path="res://assets/glb_models/kitchen/modern_table.glb" id="49_514u5"]
 [ext_resource type="PackedScene" uid="uid://dn5dpttuukdxw" path="res://assets/glb_models/basement/old_ceiling_fan.glb" id="49_agx8e"]
-[ext_resource type="PackedScene" uid="uid://clhk1h45t3yuo" path="res://assets/glb_models/kitchen/breakfast_food_dish.glb" id="50_jxex3"]
-[ext_resource type="PackedScene" uid="uid://bohfmf5fo585" path="res://assets/glb_models/basement/fluorescent_ceiling_lamp_vidrear_low.glb" id="50_r85fh"]
+[ext_resource type="PackedScene" uid="uid://cyynvml86dq5v" path="res://assets/glb_models/kitchen/breakfast_food_dish.glb" id="50_jxex3"]
+[ext_resource type="PackedScene" uid="uid://baew8nvy1eo1d" path="res://assets/glb_models/basement/fluorescent_ceiling_lamp_vidrear_low.glb" id="50_r85fh"]
 [ext_resource type="PackedScene" uid="uid://bqgek7ryw0jg8" path="res://assets/glb_models/decoratives/kimono_stand.glb" id="51_epdl8"]
 [ext_resource type="PackedScene" uid="uid://ordm22u1fku0" path="res://assets/glb_models/kitchen/spanish_omelette.glb" id="51_m7rpm"]
 [ext_resource type="PackedScene" uid="uid://8cbpbv583ts7" path="res://game/house_materials/sink.tscn" id="52_eeqtj"]
@@ -108,8 +108,8 @@
 [ext_resource type="PackedScene" uid="uid://b8l08qx83oehm" path="res://game/house_materials/big_cabinet.tscn" id="67_e4khn"]
 [ext_resource type="PackedScene" uid="uid://c2e70ja2gny6r" path="res://game/house_materials/cabinet.tscn" id="76_1n58x"]
 [ext_resource type="PackedScene" uid="uid://ckcrkebv8berk" path="res://game/house_materials/fridge.tscn" id="76_eeqtj"]
-[ext_resource type="PackedScene" path="res://game/house_materials/table.tscn" id="78_u8565"]
-[ext_resource type="PackedScene" path="res://game/house_materials/fruits.tscn" id="79_pybr7"]
+[ext_resource type="PackedScene" uid="uid://ck704r7wopd7t" path="res://game/house_materials/table.tscn" id="78_u8565"]
+[ext_resource type="PackedScene" uid="uid://cohjq6vayf1dx" path="res://game/house_materials/fruits.tscn" id="79_pybr7"]
 [ext_resource type="PackedScene" uid="uid://sprxob0h16l0" path="res://assets/glb_models/appliance/electricfan/old_candle.glb" id="80_e4khn"]
 [ext_resource type="PackedScene" uid="uid://y7pspaq0n4jf" path="res://assets/glb_models/furniture/bed_with_a_bed_cover.glb" id="83_w7ycr"]
 [ext_resource type="PackedScene" uid="uid://bxoa1koi7m64f" path="res://assets/glb_models/decoratives/wall_decoration_of_grapes_made_of_cork_stoppers.glb" id="85_0e3s6"]
@@ -149,48 +149,57 @@
 [ext_resource type="AudioStream" uid="uid://y1xple8gixkr" path="res://soundfx/lana_bubbling.mp3" id="105_4ts8e"]
 [ext_resource type="PackedScene" uid="uid://cehtw2ydchxer" path="res://assets/glb_models/decoratives/random_vase.glb" id="105_ref68"]
 [ext_resource type="PackedScene" uid="uid://cbo4k372s7a4s" path="res://game/house_materials/vintage table.tscn" id="105_rwu8e"]
-[ext_resource type="PackedScene" uid="uid://dyv57b056q6ys" path="res://assets/glb_models/decoratives/laocoon_and_his_sons_skeleton.glb" id="106_gu04c"]
-[ext_resource type="PackedScene" uid="uid://c55g865b4tx1t" path="res://assets/glb_models/furniture/swing.glb" id="109_dwt10"]
-[ext_resource type="PackedScene" uid="uid://cw4d5hfhsafrr" path="res://assets/glb_models/furniture/wicker_basket_02.glb" id="110_nafd2"]
-[ext_resource type="PackedScene" uid="uid://xwdobpsx0whk" path="res://assets/glb_models/decoratives/wooden_hourglass.glb" id="110_y3wns"]
-[ext_resource type="PackedScene" uid="uid://g7lvjw1muv3t" path="res://assets/glb_models/basement/book_stand_low_poly.glb" id="111_gvvqw"]
+[ext_resource type="PackedScene" uid="uid://bctfdnra4pfq5" path="res://assets/glb_models/decoratives/laocoon_and_his_sons_skeleton.glb" id="106_gu04c"]
+[ext_resource type="PackedScene" uid="uid://cabsogcfgo804" path="res://assets/glb_models/furniture/swing.glb" id="109_dwt10"]
+[ext_resource type="PackedScene" uid="uid://dhmaxae3blvh7" path="res://assets/glb_models/furniture/wicker_basket_02.glb" id="110_nafd2"]
+[ext_resource type="PackedScene" uid="uid://brbisn406jwl3" path="res://assets/glb_models/decoratives/wooden_hourglass.glb" id="110_y3wns"]
+[ext_resource type="PackedScene" uid="uid://do0rvl1sxdfrh" path="res://assets/glb_models/basement/book_stand_low_poly.glb" id="111_gvvqw"]
 [ext_resource type="PackedScene" uid="uid://dyrhnan3i2i61" path="res://game/inri.tscn" id="111_puo31"]
 [ext_resource type="PackedScene" uid="uid://c5dguj0duawtb" path="res://game/house_materials/locker_wow.tscn" id="112_de7xd"]
-[ext_resource type="PackedScene" uid="uid://doyi4gvwcma11" path="res://assets/glb_models/bathroom/oily_paper_roll_vjxoffps_mid.glb" id="113_gvvqw"]
+[ext_resource type="PackedScene" uid="uid://vu20j1rcpe78" path="res://assets/glb_models/bathroom/oily_paper_roll_vjxoffps_mid.glb" id="113_gvvqw"]
 [ext_resource type="AudioStream" uid="uid://c7dswpe77u6kr" path="res://soundfx/prayer.mp3" id="114_kirwq"]
 [ext_resource type="PackedScene" uid="uid://cddt0m7lgb0xy" path="res://game/house_materials/cabinet sa altar.tscn" id="114_puo31"]
+[ext_resource type="Script" uid="uid://d1ymfvymiu86v" path="res://assets/glb_models/chores/old_ceramic_bottle_tjuhabova_mid.gd" id="118_4eble"]
+[ext_resource type="Script" uid="uid://dar1e6kgje6yt" path="res://game/lanadropscontainer_1.gd" id="119_uu133"]
 [ext_resource type="PackedScene" uid="uid://bney01lwo04eo" path="res://game/house_materials/bed.tscn" id="121_4uiwc"]
-[ext_resource type="PackedScene" uid="uid://bqqljlixaaykq" path="res://assets/glb_models/basement/rusty_metal_barrel_vijnbjz_mid.glb" id="121_dwt10"]
+[ext_resource type="PackedScene" uid="uid://dtyh8u3jf1pui" path="res://assets/glb_models/basement/rusty_metal_barrel_vijnbjz_mid.glb" id="121_dwt10"]
 [ext_resource type="PackedScene" uid="uid://cl2a0kyom3haw" path="res://assets/glb_models/basement/metal_donkey_statue_photoscan.glb" id="122_3qwsg"]
-[ext_resource type="PackedScene" uid="uid://dijwp5y5wpnxy" path="res://assets/glb_models/basement/rusty_jerrycan_vktifj1ga_low.glb" id="122_nafd2"]
+[ext_resource type="PackedScene" uid="uid://dc7rbykfmig2g" path="res://assets/glb_models/basement/rusty_jerrycan_vktifj1ga_low.glb" id="122_nafd2"]
 [ext_resource type="PackedScene" uid="uid://b5qtqnm07u7an" path="res://game/uncleaned_angel.tscn" id="123_1o4y0"]
-[ext_resource type="PackedScene" uid="uid://cm6iqoner7ul8" path="res://assets/glb_models/basement/simple_shield.glb" id="123_f5qeo"]
+[ext_resource type="PackedScene" uid="uid://b5madj0d0u0kn" path="res://assets/glb_models/basement/simple_shield.glb" id="123_f5qeo"]
 [ext_resource type="PackedScene" uid="uid://b2yx3uf3pxlaq" path="res://game/house_materials/workbench_(maopen).tscn" id="123_f48tp"]
-[ext_resource type="PackedScene" uid="uid://clr4iw1mblm7a" path="res://assets/glb_models/basement/water_heater_used.glb" id="123_re2uc"]
+[ext_resource type="PackedScene" uid="uid://da3v5u6cqyvl8" path="res://assets/glb_models/basement/water_heater_used.glb" id="123_re2uc"]
 [ext_resource type="Script" uid="uid://y52gc1lmr4hp" path="res://game/task_candle.gd" id="123_x62yr"]
 [ext_resource type="PackedScene" uid="uid://doiurcqv5iay1" path="res://assets/glb_models/basement/drinking_water_fountain.glb" id="124_f5qeo"]
 [ext_resource type="PackedScene" uid="uid://da7np75ks3tc4" path="res://assets/glb_models/chores/candle.tscn" id="124_gslyl"]
+[ext_resource type="Script" uid="uid://droqne3fnch3n" path="res://game/altar_table.gd" id="125_ij55h"]
 [ext_resource type="Script" uid="uid://bpg8fjigy7ibk" path="res://game/task_clean_statues.gd" id="125_m2psj"]
 [ext_resource type="PackedScene" uid="uid://dop0i420a2ypn" path="res://game/uncleaned_creepy_statue.tscn" id="125_sfno0"]
 [ext_resource type="PackedScene" uid="uid://ba1xcjufcwwwr" path="res://assets/glb_models/basement/medieval_torch.glb" id="125_yewax"]
-[ext_resource type="PackedScene" uid="uid://dra3uktb1hvu7" path="res://game/house_materials/wardrobe.tscn" id="127_uwpgj"]
+[ext_resource type="Script" uid="uid://buhit3bmow3bo" path="res://assets/glb_models/chores/candle.gd" id="127_6xd5g"]
+[ext_resource type="PackedScene" uid="uid://c16yv3lpb0fe4" path="res://game/house_materials/wardrobe.tscn" id="127_uwpgj"]
 [ext_resource type="PackedScene" uid="uid://dcrr2bsxdk5on" path="res://assets/glb_models/statues/statue_robe_figure.tscn" id="127_xxycr"]
-[ext_resource type="PackedScene" uid="uid://daxaild37icn7" path="res://game/uncleaned_statue_ni_ante.tscn" id="128_dyeyr"]
-[ext_resource type="PackedScene" uid="uid://bpbwf4afn53xl" path="res://game/uncleaned_mary_statue.tscn" id="129_s8tip"]
+[ext_resource type="PackedScene" uid="uid://dftdtexwbe5c7" path="res://game/uncleaned_statue_ni_ante.tscn" id="128_dyeyr"]
+[ext_resource type="PackedScene" uid="uid://cxpp27b0tpejf" path="res://game/uncleaned_mary_statue.tscn" id="129_s8tip"]
 [ext_resource type="Script" uid="uid://rn4ndis8ai1v" path="res://game/task_close_windows.gd" id="129_ww5kt"]
-[ext_resource type="PackedScene" uid="uid://cl2dmyvev1rhn" path="res://game/uncleaned_statue_figure.tscn" id="130_klyxg"]
+[ext_resource type="PackedScene" uid="uid://dmlmymtqnjhon" path="res://game/uncleaned_statue_figure.tscn" id="130_klyxg"]
 [ext_resource type="AudioStream" uid="uid://bdu2g3rov5k8u" path="res://soundfx/window_double_close.mp3" id="131_m1vgo"]
 [ext_resource type="AudioStream" uid="uid://twfn3hu6qwiy" path="res://soundfx/cleaning_statue.mp3" id="131_u8565"]
 [ext_resource type="Script" uid="uid://ddptgkamtem7g" path="res://game/task_cover_food.gd" id="132_1o4y0"]
 [ext_resource type="Script" uid="uid://c0xt6niuwwpiv" path="res://game/task_cover_mirror.gd" id="132_dyeyr"]
 [ext_resource type="AudioStream" uid="uid://cawls3lbt556x" path="res://soundfx/window_single_close.mp3" id="132_m2psj"]
+[ext_resource type="Script" uid="uid://dc3orfm1dp1om" path="res://game/uncleaned_statue_ni_ante.gd" id="134_6xd5g"]
 [ext_resource type="PackedScene" uid="uid://cw5paga50nyio" path="res://assets/glb_models/chores/towel.glb" id="134_s8tip"]
 [ext_resource type="AudioStream" uid="uid://3i6cdx842td1" path="res://soundfx/towel_placing.mp3" id="135_s8tip"]
+[ext_resource type="Script" uid="uid://bb2xoh4al2jq4" path="res://game/uncleaned_mary_statue.gd" id="136_xgxom"]
+[ext_resource type="Script" uid="uid://cxkcelbgyfdbf" path="res://game/uncleaned_statue_figure.gd" id="138_85y2c"]
 [ext_resource type="AudioStream" uid="uid://d3mp4s4edsost" path="res://soundfx/take_item.mp3" id="138_pybr7"]
 [ext_resource type="PackedScene" uid="uid://df20nbkqt4c7d" path="res://assets/glb_models/basement/worn_bandages.glb" id="138_yewax"]
 [ext_resource type="PackedScene" uid="uid://isdmfbvdrku7" path="res://assets/glb_models/basement/blood_bag_v2.glb" id="139_1tgmf"]
 [ext_resource type="PackedScene" uid="uid://dnd0sn2ioqiu4" path="res://assets/glb_models/basement/freerawscanthe_statue_of_peace.glb" id="139_uwpgj"]
 [ext_resource type="PackedScene" uid="uid://3w3gl5t3ekbj" path="res://assets/glb_models/basement/leather_water_pot_wgxobbm_mid.glb" id="140_56x1q"]
+[ext_resource type="Script" uid="uid://hecr114jfxhf" path="res://game/uncleaned_angel.gd" id="140_q2wsq"]
+[ext_resource type="Script" uid="uid://7gb3011xod1c" path="res://game/uncleaned_creepy_statue.gd" id="142_nurw8"]
 [ext_resource type="PackedScene" uid="uid://b324pcdn7n8lg" path="res://assets/glb_models/basement/chair_version_03.glb" id="145_b1itb"]
 [ext_resource type="PackedScene" uid="uid://cbe6q7x01q5x5" path="res://assets/glb_models/chores/dish_food_cover.glb" id="145_h0fog"]
 [ext_resource type="PackedScene" uid="uid://c86baff0ssgt2" path="res://assets/glb_models/basement/steering_wheel_wcvodee_low.glb" id="146_q6frv"]
@@ -200,6 +209,7 @@
 [ext_resource type="PackedScene" uid="uid://ch0het3ov6dbs" path="res://assets/glb_models/basement/rusty_oil_filter_housing_wcljea1_low.glb" id="151_otvc5"]
 [ext_resource type="PackedScene" uid="uid://ctuebrv77d1lo" path="res://assets/glb_models/basement/slot_machine.glb" id="152_fe1vq"]
 [ext_resource type="PackedScene" uid="uid://bp5c5j8xkbwkc" path="res://assets/glb_models/basement/rusty_saw_blade_wcvodba_mid.glb" id="152_uwpgj"]
+[ext_resource type="Script" uid="uid://c8f1gd1g54r82" path="res://assets/glb_models/chores/towel.gd" id="153_1tsj4"]
 [ext_resource type="Script" uid="uid://bm707pwsvpnjp" path="res://assets/glb_models/chores/bottle7.gd" id="154_xfkla"]
 [ext_resource type="PackedScene" uid="uid://p8yn0m61bg7l" path="res://assets/glb_models/basement/engel_statue_scan_retopology.glb" id="155_y0f4w"]
 [ext_resource type="Script" uid="uid://cn8t6vxrxnu0u" path="res://assets/glb_models/chores/bottle6.gd" id="156_2xh2d"]
@@ -211,6 +221,7 @@
 [ext_resource type="PackedScene" uid="uid://b8vyvlmlygg47" path="res://assets/glb_models/basement/book_ouija.glb" id="160_7uwel"]
 [ext_resource type="PackedScene" uid="uid://bbs5qv5rmoo71" path="res://game/creepy statue.tscn" id="160_puo31"]
 [ext_resource type="PackedScene" uid="uid://bmsc065woacna" path="res://assets/glb_models/basement/tree_lamp.glb" id="160_qalft"]
+[ext_resource type="Script" uid="uid://lxeki48u83bj" path="res://assets/glb_models/chores/dish_food_cover.gd" id="160_xjyat"]
 [ext_resource type="PackedScene" uid="uid://c85w4s762poge" path="res://assets/glb_models/basement/cow_head_statue.glb" id="162_puo31"]
 [ext_resource type="PackedScene" uid="uid://csf1p5e7vtr01" path="res://game/house_materials/candel_na_siga.tscn" id="162_y0f4w"]
 [ext_resource type="PackedScene" uid="uid://bkst2lswsd30s" path="res://assets/glb_models/basement/wall_part_base_20k_orientated.glb" id="163_ar67c"]
@@ -2202,6 +2213,7 @@ script = ExtResource("98_aayyx")
 
 [node name="lana bottle1" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles" instance=ExtResource("62_jxex3")]
 transform = Transform3D(2.2999995, 0, 1.0053618e-07, -1.0053618e-07, 5.107025e-16, 2.2999995, -2.2323516e-23, -2.2999995, 5.107025e-16, -6.2996025, 2.441627, -8.963608)
+script = ExtResource("118_4eble")
 
 [node name="lanastatic1" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles/lana bottle1" groups=["equipable", "lana"]]
 collision_layer = 9
@@ -2218,6 +2230,7 @@ mesh = SubResource("BoxMesh_4dfqh")
 
 [node name="lana bottle2" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles" instance=ExtResource("62_jxex3")]
 transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, -20.642971, 3.3566728, -3.147514)
+script = ExtResource("118_4eble")
 
 [node name="lanastatic2" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles/lana bottle2" groups=["equipable", "lana"]]
 collision_layer = 9
@@ -2234,6 +2247,7 @@ mesh = SubResource("BoxMesh_4dfqh")
 
 [node name="lana bottle3" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles" instance=ExtResource("62_jxex3")]
 transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, -4.176879, 3.4742827, -8.548105)
+script = ExtResource("118_4eble")
 
 [node name="lanastatic3" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles/lana bottle3" groups=["equipable", "lana"]]
 collision_layer = 9
@@ -2250,6 +2264,7 @@ mesh = SubResource("BoxMesh_4dfqh")
 
 [node name="lana bottle4" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles" instance=ExtResource("62_jxex3")]
 transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, -20.946362, 2.5725746, -6.0545883)
+script = ExtResource("118_4eble")
 
 [node name="lanastatic4" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles/lana bottle4" groups=["equipable", "lana"]]
 collision_layer = 9
@@ -2266,6 +2281,7 @@ mesh = SubResource("BoxMesh_4dfqh")
 
 [node name="lana bottle5" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles" instance=ExtResource("62_jxex3")]
 transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, -20.806885, 3.3621397, -5.9856286)
+script = ExtResource("118_4eble")
 
 [node name="lanastatic5" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles/lana bottle5" groups=["equipable", "lana"]]
 collision_layer = 9
@@ -2282,6 +2298,7 @@ mesh = SubResource("BoxMesh_4dfqh")
 
 [node name="lana bottle10" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles" instance=ExtResource("62_jxex3")]
 transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, -26.258049, -4.231845, 1.1461685)
+script = ExtResource("118_4eble")
 
 [node name="lanastatic10" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanabottles/lana bottle10" groups=["equipable", "lana"]]
 collision_layer = 9
@@ -2299,6 +2316,7 @@ mesh = SubResource("BoxMesh_4dfqh")
 [node name="lanadropsarray" type="Node3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana"]
 
 [node name="lanadropscontainer1" type="Node3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray"]
+script = ExtResource("119_uu133")
 
 [node name="lanadropsshadow1" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray/lanadropscontainer1" instance=ExtResource("104_56x1q")]
 transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -0.5714898, 2.0962873, -8.690952)
@@ -2320,6 +2338,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_hmlio")
 
 [node name="lanadropscontainer2" type="Node3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.89531, 1.9156141, -1.9930377)
+script = ExtResource("119_uu133")
 
 [node name="lanadropsshadow2" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray/lanadropscontainer2" instance=ExtResource("104_56x1q")]
 transform = Transform3D(-2.4999025, 0, -0.022078387, 0, 2.5, 0, 0.022078387, 0, -2.4999025, -13.200951, 0.12459469, -8.798511)
@@ -2340,6 +2359,7 @@ mesh = SubResource("PlaneMesh_4dfqh")
 surface_material_override/0 = SubResource("StandardMaterial3D_hmlio")
 
 [node name="lanadropscontainer3" type="Node3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray"]
+script = ExtResource("119_uu133")
 
 [node name="lanadropsshadow3" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray/lanadropscontainer3" instance=ExtResource("104_56x1q")]
 transform = Transform3D(-2.4993575, 0, -0.05667491, 0, 2.5, 0, 0.05667491, 0, -2.4993575, -17.959408, 2.0376787, -1.212647)
@@ -2360,6 +2380,7 @@ mesh = SubResource("PlaneMesh_4dfqh")
 surface_material_override/0 = SubResource("StandardMaterial3D_hmlio")
 
 [node name="lanadropscontainer4" type="Node3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray"]
+script = ExtResource("119_uu133")
 
 [node name="lanadropsshadow4" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray/lanadropscontainer4" instance=ExtResource("104_56x1q")]
 transform = Transform3D(2.4999247, 0, -0.019416614, 0, 2.5, 0, 0.019416614, 0, 2.4999247, -23.036198, 2.0065594, -25.30446)
@@ -2380,6 +2401,7 @@ mesh = SubResource("PlaneMesh_4dfqh")
 surface_material_override/0 = SubResource("StandardMaterial3D_hmlio")
 
 [node name="lanadropscontainer5" type="Node3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray"]
+script = ExtResource("119_uu133")
 
 [node name="lanadropsshadow5" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray/lanadropscontainer5" instance=ExtResource("104_56x1q")]
 transform = Transform3D(2.4986546, 0, 0.082015574, 0, 2.5, 0, -0.082015574, 0, 2.4986546, -5.800375, -5.973153, -6.5600786)
@@ -2400,6 +2422,7 @@ mesh = SubResource("PlaneMesh_4dfqh")
 surface_material_override/0 = SubResource("StandardMaterial3D_hmlio")
 
 [node name="lanadropscontainer6" type="Node3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray"]
+script = ExtResource("119_uu133")
 
 [node name="lanadropsshadow6" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray/lanadropscontainer6" instance=ExtResource("104_56x1q")]
 transform = Transform3D(-1.0927848e-07, 0, 2.5, 0, 2.5, 0, -2.5, 0, -1.0927848e-07, -34.956886, 8.234196, 0.027849466)
@@ -2420,6 +2443,7 @@ mesh = SubResource("PlaneMesh_4dfqh")
 surface_material_override/0 = SubResource("StandardMaterial3D_hmlio")
 
 [node name="lanadropscontainer7" type="Node3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray"]
+script = ExtResource("119_uu133")
 
 [node name="lanadropsshadow7" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray/lanadropscontainer7" instance=ExtResource("104_56x1q")]
 transform = Transform3D(-1.0927848e-07, 0, 2.5, 0, 2.5, 0, -2.5, 0, -1.0927848e-07, -34.897606, 8.2680855, -10.990795)
@@ -2440,6 +2464,7 @@ mesh = SubResource("PlaneMesh_4dfqh")
 surface_material_override/0 = SubResource("StandardMaterial3D_hmlio")
 
 [node name="lanadropscontainer8" type="Node3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray"]
+script = ExtResource("119_uu133")
 
 [node name="lanadropsshadow8" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray/lanadropscontainer8" instance=ExtResource("104_56x1q")]
 transform = Transform3D(-1.0927848e-07, 0, 2.5, 0, 2.5, 0, -2.5, 0, -1.0927848e-07, -5.178763, 8.217325, -0.00043821335)
@@ -2460,6 +2485,7 @@ mesh = SubResource("PlaneMesh_4dfqh")
 surface_material_override/0 = SubResource("StandardMaterial3D_hmlio")
 
 [node name="lanadropscontainer9" type="Node3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray"]
+script = ExtResource("119_uu133")
 
 [node name="lanadropsshadow9" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Lana/lanadropsarray/lanadropscontainer9" instance=ExtResource("104_56x1q")]
 transform = Transform3D(-1.0927848e-07, 0, 2.5, 0, 2.5, 0, -2.5, 0, -1.0927848e-07, -34.96029, 2.044469, 3.0893056)
@@ -2490,6 +2516,7 @@ stream = ExtResource("114_kirwq")
 script = ExtResource("123_x62yr")
 
 [node name="altarTable" type="Node3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle"]
+script = ExtResource("125_ij55h")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/altarTable" groups=["interactable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4235272, 3.582731, 0)
@@ -2587,6 +2614,7 @@ shape = SubResource("BoxShape3D_m1vgo")
 
 [node name="Candle" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -3.501958, 4.170301, -9.179966)
+script = ExtResource("127_6xd5g")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle" groups=["equipable"]]
 collision_layer = 9
@@ -2603,6 +2631,7 @@ mesh = SubResource("BoxMesh_hmlio")
 
 [node name="Candle2" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -26.705013, 3.131509, -6.007533)
+script = ExtResource("127_6xd5g")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle2" groups=["equipable"]]
 collision_layer = 9
@@ -2619,6 +2648,7 @@ mesh = SubResource("BoxMesh_hmlio")
 
 [node name="Candle3" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -30.696388, 3.17609, -18.43706)
+script = ExtResource("127_6xd5g")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle3" groups=["equipable"]]
 collision_layer = 9
@@ -2635,6 +2665,7 @@ mesh = SubResource("BoxMesh_hmlio")
 
 [node name="Candle4" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -29.79184, 10.443393, -18.833187)
+script = ExtResource("127_6xd5g")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle4" groups=["equipable"]]
 collision_layer = 9
@@ -2651,6 +2682,7 @@ mesh = SubResource("BoxMesh_hmlio")
 
 [node name="Candle5" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -28.743671, 11.369901, -6.5035143)
+script = ExtResource("127_6xd5g")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle5" groups=["equipable"]]
 collision_layer = 9
@@ -2667,6 +2699,7 @@ mesh = SubResource("BoxMesh_hmlio")
 
 [node name="Candle6" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -4.7716618, 8.195918, -24.549925)
+script = ExtResource("127_6xd5g")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle6" groups=["equipable"]]
 collision_layer = 9
@@ -2683,6 +2716,7 @@ mesh = SubResource("BoxMesh_hmlio")
 
 [node name="Candle7" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -2.6479123, 10.549771, -8.098337)
+script = ExtResource("127_6xd5g")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle7" groups=["equipable"]]
 collision_layer = 9
@@ -2699,6 +2733,7 @@ mesh = SubResource("BoxMesh_hmlio")
 
 [node name="Candle8" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -17.102203, 10.225568, 6.5437107)
+script = ExtResource("127_6xd5g")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle8" groups=["equipable"]]
 collision_layer = 9
@@ -2715,6 +2750,7 @@ mesh = SubResource("BoxMesh_hmlio")
 
 [node name="Candle9" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -21.393135, 4.1103196, -31.254509)
+script = ExtResource("127_6xd5g")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle9" groups=["equipable"]]
 collision_layer = 9
@@ -2731,6 +2767,7 @@ mesh = SubResource("BoxMesh_hmlio")
 
 [node name="Candle10" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -25.056812, -4.2180595, -18.812319)
+script = ExtResource("127_6xd5g")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle10" groups=["equipable"]]
 collision_layer = 9
@@ -2747,6 +2784,7 @@ mesh = SubResource("BoxMesh_hmlio")
 
 [node name="Candle11" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -8.518473, -5.9481525, -8.709)
+script = ExtResource("127_6xd5g")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle11" groups=["equipable"]]
 collision_layer = 9
@@ -2763,6 +2801,7 @@ mesh = SubResource("BoxMesh_hmlio")
 
 [node name="Candle12" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -6.775465, -5.03978, 13.573015)
+script = ExtResource("127_6xd5g")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle12" groups=["equipable"]]
 collision_layer = 9
@@ -2779,6 +2818,7 @@ mesh = SubResource("BoxMesh_hmlio")
 
 [node name="Candle13" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -26.691807, -4.510936, 1.9279594)
+script = ExtResource("127_6xd5g")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle13" groups=["equipable"]]
 collision_layer = 9
@@ -2795,6 +2835,7 @@ mesh = SubResource("BoxMesh_hmlio")
 
 [node name="Candle14" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -25.760693, -4.510936, 2.162539)
+script = ExtResource("127_6xd5g")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle14" groups=["equipable"]]
 collision_layer = 9
@@ -2811,6 +2852,7 @@ mesh = SubResource("BoxMesh_hmlio")
 
 [node name="Candle15" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -26.3801, -4.510936, 2.3392649)
+script = ExtResource("127_6xd5g")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle15" groups=["equipable"]]
 collision_layer = 9
@@ -2827,6 +2869,7 @@ mesh = SubResource("BoxMesh_hmlio")
 
 [node name="Candle16" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse" instance=ExtResource("124_gslyl")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -25.251167, -4.510936, 1.9279594)
+script = ExtResource("127_6xd5g")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Candle/candleAroundTheHouse/Candle16" groups=["equipable"]]
 collision_layer = 9
@@ -2940,6 +2983,7 @@ shape = SubResource("BoxShape3D_h0fog")
 
 [node name="UncleanedStatueAnte" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue" instance=ExtResource("128_dyeyr")]
 transform = Transform3D(5.467866e-07, 0, -2.80825, 0, 2.80825, 0, 2.80825, 0, 5.467866e-07, -14.901456, -4.119707, 14.8287735)
+script = ExtResource("134_6xd5g")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueAnte" groups=["hold_deploy"]]
 
@@ -2955,6 +2999,7 @@ mesh = SubResource("BoxMesh_uu133")
 
 [node name="UncleanedStatueMary" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue" instance=ExtResource("129_s8tip")]
 transform = Transform3D(0.035, 0, 0, 0, 0.035, 0, 0, 0, 0.035, -37.52713, 1.970324, -18.67936)
+script = ExtResource("136_xgxom")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueMary"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2209473, 71.14453, -5.267761)
@@ -2970,6 +3015,7 @@ shape = SubResource("BoxShape3D_pybr7")
 
 [node name="UncleanedStatueMary2" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue" instance=ExtResource("129_s8tip")]
 transform = Transform3D(-1.5298985e-09, 0, 0.035, 0, 0.035, 0, -0.035, 0, -1.5298985e-09, -35.1206, 1.8661737, -7.606971)
+script = ExtResource("136_xgxom")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueMary2" groups=["hold_deploy"]]
 
@@ -2985,6 +3031,7 @@ mesh = SubResource("BoxMesh_ij55h")
 
 [node name="UncleanedStatueMary3" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue" instance=ExtResource("129_s8tip")]
 transform = Transform3D(-1.5298985e-09, 0, -0.035, 0, 0.035, 0, 0.035, 0, -1.5298985e-09, -20.926857, 8.097737, -4.4547772)
+script = ExtResource("136_xgxom")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueMary3" groups=["hold_deploy"]]
 
@@ -3000,6 +3047,7 @@ mesh = SubResource("BoxMesh_ij55h")
 
 [node name="UncleanedStatueSaint" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue" instance=ExtResource("130_klyxg")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -10.604294, 3.8849463, -6.940434)
+script = ExtResource("138_85y2c")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueSaint" groups=["hold_deploy"]]
 
@@ -3015,6 +3063,7 @@ mesh = SubResource("BoxMesh_7nwo6")
 
 [node name="UncleanedStatueSaint2" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue" instance=ExtResource("130_klyxg")]
 transform = Transform3D(-2, 0, -1.7484555e-07, 0, 2, 0, 1.7484555e-07, 0, -2, -10.604294, 3.8849463, 7.2073092)
+script = ExtResource("138_85y2c")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueSaint2" groups=["hold_deploy"]]
 
@@ -3030,6 +3079,7 @@ mesh = SubResource("BoxMesh_7nwo6")
 
 [node name="UncleanedStatueSaint3" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue" instance=ExtResource("130_klyxg")]
 transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, -13.582731, 10.093519, -6.656365)
+script = ExtResource("138_85y2c")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueSaint3" groups=["hold_deploy"]]
 
@@ -3045,6 +3095,7 @@ mesh = SubResource("BoxMesh_7nwo6")
 
 [node name="UncleanedStatueAngel" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue" instance=ExtResource("123_1o4y0")]
 transform = Transform3D(-0.11483141, 0, -0.05692539, 0, 0.12816685, 0, 0.05692539, 0, -0.11483141, -29.882324, -5.952967, -3.5928283)
+script = ExtResource("140_q2wsq")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueAngel" groups=["hold_deploy"]]
 collision_layer = 9
@@ -3061,6 +3112,7 @@ mesh = SubResource("BoxMesh_h0fog")
 
 [node name="UncleanedStatueAngel2" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue" instance=ExtResource("123_1o4y0")]
 transform = Transform3D(0.10732746, 0, -0.07005403, 0, 0.12816682, 0, 0.07005403, 0, 0.10732746, -22.301529, -5.952967, -3.5928283)
+script = ExtResource("140_q2wsq")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueAngel2" groups=["hold_deploy"]]
 collision_layer = 9
@@ -3077,6 +3129,7 @@ mesh = SubResource("BoxMesh_h0fog")
 
 [node name="UncleanedStatueCreepy" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue" instance=ExtResource("125_sfno0")]
 transform = Transform3D(0.4635255, 0, -1.426585, 0, 1.5, 0, 1.426585, 0, 0.4635255, -27.236916, -5.9628787, 5.209491)
+script = ExtResource("142_nurw8")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Clean_Statue/uncleanedStatue/UncleanedStatueCreepy" groups=["hold_deploy"]]
 collision_layer = 9
@@ -3382,6 +3435,7 @@ shape = SubResource("BoxShape3D_mtuen")
 
 [node name="towel" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse" instance=ExtResource("134_s8tip")]
 transform = Transform3D(-8.7422775e-10, -0.02, -8.7422775e-10, 0, -8.7422775e-10, 0.02, -0.02, 8.7422775e-10, 3.821371e-17, -11.619416, 9.592898, 4.0964046)
+script = ExtResource("153_1tsj4")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse/towel" groups=["equipable"]]
 collision_layer = 9
@@ -3396,6 +3450,7 @@ mesh = SubResource("BoxMesh_q2wsq")
 
 [node name="towel2" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse" instance=ExtResource("134_s8tip")]
 transform = Transform3D(-8.7422775e-10, -0.02, -8.7422775e-10, 0, -8.7422775e-10, 0.02, -0.02, 8.7422775e-10, 3.821371e-17, -20.75499, 8.169197, 2.5215714)
+script = ExtResource("153_1tsj4")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse/towel2" groups=["equipable"]]
 collision_layer = 9
@@ -3410,6 +3465,7 @@ mesh = SubResource("BoxMesh_q2wsq")
 
 [node name="towel3" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse" instance=ExtResource("134_s8tip")]
 transform = Transform3D(-0.02, 1.7484555e-09, 7.642742e-17, 0, -8.7422775e-10, 0.02, 1.7484555e-09, 0.02, 8.7422775e-10, -5.3259916, 2.8953996, -8.846685)
+script = ExtResource("153_1tsj4")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse/towel3" groups=["equipable"]]
 collision_layer = 9
@@ -3424,6 +3480,7 @@ mesh = SubResource("BoxMesh_q2wsq")
 
 [node name="towel4" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse" instance=ExtResource("134_s8tip")]
 transform = Transform3D(-8.7422775e-10, -0.02, -8.7422775e-10, 0, -8.7422775e-10, 0.02, -0.02, 8.7422775e-10, 3.821371e-17, -27.415634, 9.600822, 5.7061367)
+script = ExtResource("153_1tsj4")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse/towel4" groups=["equipable"]]
 collision_layer = 9
@@ -3438,6 +3495,7 @@ mesh = SubResource("BoxMesh_q2wsq")
 
 [node name="towel5" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse" instance=ExtResource("134_s8tip")]
 transform = Transform3D(-8.7422775e-10, -0.02, -8.7422775e-10, 0, -8.7422775e-10, 0.02, -0.02, 8.7422775e-10, 3.821371e-17, -19.160118, 8.158751, 1.5854897)
+script = ExtResource("153_1tsj4")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse/towel5" groups=["equipable"]]
 collision_layer = 9
@@ -3452,6 +3510,7 @@ mesh = SubResource("BoxMesh_q2wsq")
 
 [node name="towel6" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse" instance=ExtResource("134_s8tip")]
 transform = Transform3D(-8.7422775e-10, -0.02, -8.7422775e-10, 0, -8.7422775e-10, 0.02, -0.02, 8.7422775e-10, 3.821371e-17, -21.047821, 3.29947, -4.882683)
+script = ExtResource("153_1tsj4")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse/towel6" groups=["equipable"]]
 collision_layer = 9
@@ -3466,6 +3525,7 @@ mesh = SubResource("BoxMesh_q2wsq")
 
 [node name="towel7" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse" instance=ExtResource("134_s8tip")]
 transform = Transform3D(-8.7422775e-10, -0.02, -8.7422775e-10, 0, -8.7422775e-10, 0.02, -0.02, 8.7422775e-10, 3.821371e-17, -6.7426224, 3.146715, -8.939409)
+script = ExtResource("153_1tsj4")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse/towel7" groups=["equipable"]]
 collision_layer = 9
@@ -3480,6 +3540,7 @@ mesh = SubResource("BoxMesh_q2wsq")
 
 [node name="towel8" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse" instance=ExtResource("134_s8tip")]
 transform = Transform3D(-8.7422775e-10, -0.02, -8.7422775e-10, 0, -8.7422775e-10, 0.02, -0.02, 8.7422775e-10, 3.821371e-17, -19.160118, 8.158751, -2.456314)
+script = ExtResource("153_1tsj4")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse/towel8" groups=["equipable"]]
 collision_layer = 9
@@ -3494,6 +3555,7 @@ mesh = SubResource("BoxMesh_q2wsq")
 
 [node name="towel9" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse" instance=ExtResource("134_s8tip")]
 transform = Transform3D(0.02, 0, 0, 0, -8.7422775e-10, 0.02, 0, -0.02, -8.7422775e-10, -7.1533127, 8.158751, -25.138567)
+script = ExtResource("153_1tsj4")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse/towel9" groups=["equipable"]]
 collision_layer = 9
@@ -3508,6 +3570,7 @@ mesh = SubResource("BoxMesh_q2wsq")
 
 [node name="towel10" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse" instance=ExtResource("134_s8tip")]
 transform = Transform3D(0.02, 0, 0, 0, -8.7422775e-10, 0.02, 0, -0.02, -8.7422775e-10, -6.02287, 8.158751, -25.138567)
+script = ExtResource("153_1tsj4")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse/towel10" groups=["equipable"]]
 collision_layer = 9
@@ -3522,6 +3585,7 @@ mesh = SubResource("BoxMesh_q2wsq")
 
 [node name="towel11" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse" instance=ExtResource("134_s8tip")]
 transform = Transform3D(-8.7422775e-10, -0.02, -8.7422775e-10, 0, -8.7422775e-10, 0.02, -0.02, 8.7422775e-10, 3.821371e-17, -27.499863, -4.57415, 2.030478)
+script = ExtResource("153_1tsj4")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse/towel11" groups=["equipable"]]
 collision_layer = 9
@@ -3536,6 +3600,7 @@ mesh = SubResource("BoxMesh_q2wsq")
 
 [node name="towel12" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse" instance=ExtResource("134_s8tip")]
 transform = Transform3D(-8.7422775e-10, -0.02, -8.7422775e-10, 0, -8.7422775e-10, 0.02, -0.02, 8.7422775e-10, 3.821371e-17, -24.42443, -4.57415, 2.030478)
+script = ExtResource("153_1tsj4")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Mirror/TowelsAroundTheHouse/towel12" groups=["equipable"]]
 collision_layer = 9
@@ -3690,6 +3755,7 @@ transform = Transform3D(0.033333328, 0, 0, 0, 0.033333328, 0, 0, 0, 0.033333328,
 
 [node name="cover" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("145_h0fog")]
 transform = Transform3D(0.0001700137, 0.0049960613, 0.00010235622, 0.004997108, -0.00017004929, -4.0045376e-12, 3.48114e-06, 0.00010229743, -0.004998953, -15.76123, -3.0412216, 1.3052402)
+script = ExtResource("160_xjyat")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover" groups=["equipable"]]
 collision_layer = 9
@@ -3705,6 +3771,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_1tsj4")
 
 [node name="cover2" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("145_h0fog")]
 transform = Transform3D(0.00010270576, 0.0049989447, 0, -0.0049989447, 0.00010270576, 0, 0, 0, 0.005, -19.750835, 5.217382, -16.626682)
+script = ExtResource("160_xjyat")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover2" groups=["equipable"]]
 collision_layer = 9
@@ -3720,6 +3787,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_nlrbk")
 
 [node name="cover3" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("145_h0fog")]
 transform = Transform3D(0.005, 0, 0, 0, -5.698396e-05, 0.0049996753, 0, -0.0049996753, -5.698396e-05, -8.431914, 11.438469, -14.221518)
+script = ExtResource("160_xjyat")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover3" groups=["equipable"]]
 collision_layer = 9
@@ -3735,6 +3803,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_5mxqm")
 
 [node name="cover4" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("145_h0fog")]
 transform = Transform3D(0.005, 0, 0, 0, -0.00017257892, -0.0049970206, 0, 0.0049970206, -0.00017257892, -14.851921, 11.145999, -7.799858)
+script = ExtResource("160_xjyat")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover4" groups=["equipable"]]
 collision_layer = 9
@@ -3750,6 +3819,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_57t34")
 
 [node name="cover5" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("145_h0fog")]
 transform = Transform3D(0.005, 0, 0, 0, -0.00012486552, -0.004998441, 0, 0.004998441, -0.00012486552, -25.488457, 11.19158, -7.78918)
+script = ExtResource("160_xjyat")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover5" groups=["equipable"]]
 collision_layer = 9
@@ -3765,6 +3835,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_dbr3w")
 
 [node name="cover6" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("145_h0fog")]
 transform = Transform3D(0.005, 0, 0, 0, -2.3910892e-05, -0.004999942, 0, 0.004999942, -2.3910892e-05, -27.854706, 4.5054255, -25.758167)
+script = ExtResource("160_xjyat")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover6" groups=["equipable"]]
 collision_layer = 9
@@ -3780,6 +3851,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_bf8bv")
 
 [node name="cover7" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("145_h0fog")]
 transform = Transform3D(0.00037054226, -0.0049862512, 0, 0.0049862512, 0.00037054226, 0, 0, 0, 0.005, -20.33603, 5.545107, -14.777769)
+script = ExtResource("160_xjyat")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover7" groups=["equipable"]]
 collision_layer = 9
@@ -3795,6 +3867,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_7exhx")
 
 [node name="cover8" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("145_h0fog")]
 transform = Transform3D(6.0997612e-05, 0.0049996283, 0, -0.0049996283, 6.0997612e-05, 0, 0, 0, 0.005, -15.452019, 5.136324, 0.628927)
+script = ExtResource("160_xjyat")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover8" groups=["equipable"]]
 collision_layer = 9
@@ -3810,6 +3883,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_rgbwa")
 
 [node name="cover9" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("145_h0fog")]
 transform = Transform3D(0.005, 0, 0, 0, -0.00021748652, 0.004995268, 0, -0.004995268, -0.00021748652, -24.508595, 4.848598, 7.793041)
+script = ExtResource("160_xjyat")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover9" groups=["equipable"]]
 collision_layer = 9
@@ -3825,6 +3899,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_erdih")
 
 [node name="cover10" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("145_h0fog")]
 transform = Transform3D(-0.00014388264, -0.004997929, 0, 0.004997929, -0.00014388264, 0, 0, 0, 0.005, -20.221443, 5.324679, -1.4880843)
+script = ExtResource("160_xjyat")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover10" groups=["equipable"]]
 collision_layer = 9
@@ -3840,6 +3915,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_syll6")
 
 [node name="cover11" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("145_h0fog")]
 transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, -21.538906, -4.7228584, -1.3660642)
+script = ExtResource("160_xjyat")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover11" groups=["equipable"]]
 collision_layer = 9
@@ -3855,6 +3931,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_8emae")
 
 [node name="cover12" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse" instance=ExtResource("145_h0fog")]
 transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, -21.47229, -4.7151265, 0.6774807)
+script = ExtResource("160_xjyat")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doors/NavigationRegion3D/ITEMS/CHORES ITEMS/Task_Cover_Food/CoversAroundTheHouse/cover12" groups=["equipable"]]
 collision_layer = 9

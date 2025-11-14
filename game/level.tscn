@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://bob5k3jp6dsgc"]
+[gd_scene load_steps=41 format=4 uid="uid://bob5k3jp6dsgc"]
 
 [ext_resource type="Texture2D" uid="uid://bvdwayp7w2erl" path="res://textures/environment/grass.jpg" id="1_8bv7i"]
 [ext_resource type="PackedScene" uid="uid://bd8sk3hxv1lu0" path="res://assets/glb_models/fence/japanese_park_stone_floor_uljcfd0_mid.glb" id="1_50vgw"]
@@ -12,10 +12,11 @@
 [ext_resource type="PackedScene" uid="uid://dm1427jn7b51r" path="res://game/lola_sit.tscn" id="6_mgnlv"]
 [ext_resource type="PackedScene" uid="uid://b8bckhbbwohyn" path="res://dialogues/dialogue_trigger_2.tscn" id="7_a4abk"]
 [ext_resource type="PackedScene" uid="uid://b22u3s0h205xm" path="res://game/lola_idle.tscn" id="14_mgnlv"]
+[ext_resource type="Script" uid="uid://dbs53joluigse" path="res://game/post_effect_follow_camera.gd" id="14_vuud0"]
 [ext_resource type="Texture2D" uid="uid://b78wf12fcm5pf" path="res://assets/glb_models/nature/low_poly_trees_flowers_and_grass_24.png" id="16_s5juq"]
-[ext_resource type="Shader" path="res://game/post_effect_shader2.gdshader" id="17_50vgw"]
+[ext_resource type="Shader" uid="uid://cj03b73hkru46" path="res://game/post_effect_shader2.gdshader" id="17_50vgw"]
 [ext_resource type="Texture2D" uid="uid://bpxwnrih2h8b6" path="res://assets/glb_models/nature/low_poly_trees_flowers_and_grass_25.png" id="17_vuud0"]
-[ext_resource type="Shader" path="res://game/post_effect_shader.gdshader" id="18_0w1ik"]
+[ext_resource type="Shader" uid="uid://b3hfpkmnguk3q" path="res://game/post_effect_shader.gdshader" id="18_0w1ik"]
 [ext_resource type="Texture2D" uid="uid://ddta0uenv404a" path="res://assets/glb_models/nature/low_poly_trees_flowers_and_grass_26.png" id="18_vjwl2"]
 [ext_resource type="Texture2D" uid="uid://52ognyy27bk1" path="res://assets/glb_models/nature/low_poly_trees_flowers_and_grass_27.png" id="19_x5me8"]
 [ext_resource type="PackedScene" uid="uid://cxtxls3yuaq3y" path="res://assets/glb_models/nature/plant/snake_plant_2_low_poly.glb" id="20_vuud0"]
@@ -607,6 +608,7 @@ visible = false
 material_override = SubResource("ShaderMaterial_s5juq")
 extra_cull_margin = 16384.0
 mesh = SubResource("PlaneMesh_s5juq")
+script = ExtResource("14_vuud0")
 
 [node name="PostProcessEffect" type="MeshInstance3D" parent="PostProcessEffect2"]
 material_override = SubResource("ShaderMaterial_0w1ik")
