@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=187 format=4 uid="uid://12utn35f48i6"]
+=======
+[gd_scene load_steps=197 format=4 uid="uid://12utn35f48i6"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" uid="uid://m4ttjul5ggyf" path="res://dialogues/telephone_dialogue.gd" id="1_dspbc"]
 [ext_resource type="Script" uid="uid://ch1vivyd8b7fy" path="res://game/cutscenes/telephone.gd" id="2_jd5bi"]
@@ -105,6 +109,13 @@
 [ext_resource type="PackedScene" uid="uid://cddt0m7lgb0xy" path="res://game/house_materials/cabinet sa altar.tscn" id="97_4hc8q"]
 [ext_resource type="PackedScene" uid="uid://bctfdnra4pfq5" path="res://assets/glb_models/decoratives/laocoon_and_his_sons_skeleton.glb" id="98_h5lxj"]
 [ext_resource type="PackedScene" uid="uid://boj3xpbhvu8a6" path="res://assets/glb_models/chores/st_mary_statue_raw_scan.glb" id="99_3ytq8"]
+<<<<<<< Updated upstream
+=======
+[ext_resource type="Script" uid="uid://74tx5x2mc8v7" path="res://game/cutscenes/floor_wake_up.gd" id="107_osyli"]
+[ext_resource type="PackedScene" uid="uid://b7iavuxmklmfq" path="res://game/house_materials/windows_single.tscn" id="120_fsfkm"]
+[ext_resource type="PackedScene" uid="uid://batubq50dnos0" path="res://game/house_materials/windows_double.tscn" id="121_pj51h"]
+[ext_resource type="PackedScene" uid="uid://b2teowpxr3dyw" path="res://game/house_materials/windows_quad.tscn" id="122_a1lst"]
+>>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://bnd4f5cscd18j" path="res://game/house_materials/ceiling_lights.tscn" id="136_lim2o"]
 
 [sub_resource type="Animation" id="Animation_dncil"]
@@ -417,6 +428,18 @@ size = Vector3(1.8035889, 0.5472412, 0.79034805)
 [sub_resource type="BoxShape3D" id="BoxShape3D_y3wns"]
 size = Vector3(1.1434326, 0.91308594, 0.5517578)
 
+<<<<<<< Updated upstream
+=======
+[sub_resource type="BoxShape3D" id="BoxShape3D_ckukj"]
+size = Vector3(2.9556324, 3.0496216, 0.761101)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y7xvp"]
+size = Vector3(0.6091156, 2.8979492, 2.7394104)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1egkq"]
+size = Vector3(0.6325073, 2.8969116, 7.4634857)
+
+>>>>>>> Stashed changes
 [sub_resource type="Animation" id="Animation_rsgu8"]
 length = 0.001
 tracks/0/type = "value"
@@ -530,7 +553,7 @@ tracks/8/keys = {
 
 [sub_resource type="Animation" id="Animation_uc6nr"]
 resource_name = "telephone"
-length = 57.0
+length = 55.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -562,7 +585,7 @@ tracks/2/path = NodePath("Camera3D:visible")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(53.6, 55.166668),
+"times": PackedFloat32Array(53.6, 54.833332),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -669,6 +692,67 @@ volumetric_fog_emission_energy = 0.1
 volumetric_fog_length = 128.0
 adjustment_enabled = true
 adjustment_brightness = 1.2
+
+[sub_resource type="Animation" id="Animation_tagwd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-7.007, 2.522, -11.01)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -3.3492868, -1.7069321)]
+}
+
+[sub_resource type="Animation" id="Animation_f2i0e"]
+resource_name = "wake"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.36, 4.03, 6.44, 9.766666, 13.31697, 14.93697),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-7.007, 2.522, -11.01), Vector3(-7.007, 2.522, -11.01), Vector3(-7.007, 2.522, -11.01), Vector3(-7.372, 2.907, -11.01), Vector3(-7.357, 4.907, -10.84), Vector3(-7.177, 5.127, -10.86), Vector3(-7.177, 5.237, -10.86)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.37, 4.02, 6.47, 9.633333, 13.31697),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -3.3492868, -1.7069321), Vector3(0, -3.2183871, -1.7069321), Vector3(0, -3.3492868, -1.7069321), Vector3(0.25307274, -3.3492868, -0.45029494), Vector3(0.25307274, -3.3492868, 0.012217305), Vector3(-0.017453292, -4.841543, 0.012217305)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tagwd"]
+_data = {
+&"RESET": SubResource("Animation_tagwd"),
+&"wake": SubResource("Animation_f2i0e")
+}
 
 [node name="telephone_scene" type="Node3D"]
 script = ExtResource("1_dspbc")
@@ -869,8 +953,6 @@ mesh = ExtResource("21_qvjqw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="House/doors/Model/2nd Floor/2ndFloorCR_Floor/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_qalft")
-
-[node name="Staircases" type="Node3D" parent="House/doors/Model"]
 
 [node name="ITEMS" type="Node3D" parent="House/doors"]
 
@@ -1787,6 +1869,184 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.883882, -0.8691683, -14.8
 light_energy = 0.9
 omni_range = 20.0
 
+[node name="windowsAroundTheHouse" type="Node3D" parent="House"]
+
+[node name="singleWindow" parent="House/windowsAroundTheHouse" instance=ExtResource("120_fsfkm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.92547, 9.6, -11.002682)
+script = null
+
+[node name="StaticBody3D" type="StaticBody3D" parent="House/windowsAroundTheHouse/singleWindow" groups=["deployable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="House/windowsAroundTheHouse/singleWindow/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.049167633, 1.5019226, 0.019515991)
+shape = SubResource("BoxShape3D_ckukj")
+
+[node name="doubleWindow" parent="House/windowsAroundTheHouse" instance=ExtResource("121_pj51h")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.025465965, 3.5, -25.902681)
+script = null
+
+[node name="StaticBody3D" type="StaticBody3D" parent="House/windowsAroundTheHouse/doubleWindow" groups=["deployable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="House/windowsAroundTheHouse/doubleWindow/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.038146973, 1.5027065, 0.12573242)
+shape = SubResource("BoxShape3D_y7xvp")
+
+[node name="doubleWindow2" parent="House/windowsAroundTheHouse" instance=ExtResource("121_pj51h")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -14.9, 3.5, -25.9)
+script = null
+
+[node name="StaticBody3D" type="StaticBody3D" parent="House/windowsAroundTheHouse/doubleWindow2" groups=["deployable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="House/windowsAroundTheHouse/doubleWindow2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11410904, 1.6138296, 0.1227169)
+shape = SubResource("BoxShape3D_y7xvp")
+
+[node name="doubleWindow3" parent="House/windowsAroundTheHouse" instance=ExtResource("121_pj51h")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -24.025467, 9.6, -25.902681)
+script = null
+
+[node name="StaticBody3D" type="StaticBody3D" parent="House/windowsAroundTheHouse/doubleWindow3" groups=["deployable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="House/windowsAroundTheHouse/doubleWindow3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.038146973, 1.5027065, 0.12573242)
+shape = SubResource("BoxShape3D_y7xvp")
+
+[node name="doubleWindow4" parent="House/windowsAroundTheHouse" instance=ExtResource("121_pj51h")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -41.025467, 3.5, -19.902681)
+script = null
+
+[node name="StaticBody3D" type="StaticBody3D" parent="House/windowsAroundTheHouse/doubleWindow4" groups=["deployable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="House/windowsAroundTheHouse/doubleWindow4/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.038146973, 1.5027065, 0.12573242)
+shape = SubResource("BoxShape3D_y7xvp")
+
+[node name="doubleWindow5" parent="House/windowsAroundTheHouse" instance=ExtResource("121_pj51h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.92547, 3.5, -15.002682)
+script = null
+
+[node name="StaticBody3D" type="StaticBody3D" parent="House/windowsAroundTheHouse/doubleWindow5" groups=["deployable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="House/windowsAroundTheHouse/doubleWindow5/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.038146973, 1.5027065, 0.12573242)
+shape = SubResource("BoxShape3D_y7xvp")
+
+[node name="doubleWindow6" parent="House/windowsAroundTheHouse" instance=ExtResource("121_pj51h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.92547, 3.5, -5.0026813)
+script = null
+
+[node name="StaticBody3D" type="StaticBody3D" parent="House/windowsAroundTheHouse/doubleWindow6" groups=["deployable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="House/windowsAroundTheHouse/doubleWindow6/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.038146973, 1.5027065, 0.12573242)
+shape = SubResource("BoxShape3D_y7xvp")
+
+[node name="doubleWindow7" parent="House/windowsAroundTheHouse" instance=ExtResource("121_pj51h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.92547, 3.5, 2.9973187)
+script = null
+
+[node name="StaticBody3D" type="StaticBody3D" parent="House/windowsAroundTheHouse/doubleWindow7" groups=["deployable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="House/windowsAroundTheHouse/doubleWindow7/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.038146973, 1.5027065, 0.12573242)
+shape = SubResource("BoxShape3D_y7xvp")
+
+[node name="quadrupleWindow" parent="House/windowsAroundTheHouse" instance=ExtResource("122_a1lst")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.724534, 3.5, -21.502682)
+script = null
+
+[node name="StaticBody3D" type="StaticBody3D" parent="House/windowsAroundTheHouse/quadrupleWindow" groups=["deployable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="House/windowsAroundTheHouse/quadrupleWindow/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.068306446, 1.5475159, 0.067344666)
+shape = SubResource("BoxShape3D_1egkq")
+
+[node name="quadrupleWindow2" parent="House/windowsAroundTheHouse" instance=ExtResource("122_a1lst")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.125466, 3.5, 2.9973187)
+script = null
+
+[node name="StaticBody3D" type="StaticBody3D" parent="House/windowsAroundTheHouse/quadrupleWindow2" groups=["deployable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="House/windowsAroundTheHouse/quadrupleWindow2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18320513, 1.5475159, 0.049468994)
+shape = SubResource("BoxShape3D_1egkq")
+
+[node name="quadrupleWindow3" parent="House/windowsAroundTheHouse" instance=ExtResource("122_a1lst")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.125466, 9.6, -0.0026812553)
+script = null
+
+[node name="StaticBody3D" type="StaticBody3D" parent="House/windowsAroundTheHouse/quadrupleWindow3" groups=["deployable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="House/windowsAroundTheHouse/quadrupleWindow3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18320513, 1.5475159, 0.049468994)
+shape = SubResource("BoxShape3D_1egkq")
+
+[node name="quadrupleWindow4" parent="House/windowsAroundTheHouse" instance=ExtResource("122_a1lst")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.125466, 9.6, -20.002682)
+script = null
+
+[node name="StaticBody3D" type="StaticBody3D" parent="House/windowsAroundTheHouse/quadrupleWindow4" groups=["deployable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="House/windowsAroundTheHouse/quadrupleWindow4/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18320513, 1.5475159, 0.049468994)
+shape = SubResource("BoxShape3D_1egkq")
+
+[node name="quadrupleWindow5" parent="House/windowsAroundTheHouse" instance=ExtResource("122_a1lst")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -28.025467, 9.6, 7.7473187)
+script = null
+
+[node name="StaticBody3D" type="StaticBody3D" parent="House/windowsAroundTheHouse/quadrupleWindow5" groups=["deployable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="House/windowsAroundTheHouse/quadrupleWindow5/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18320513, 1.5475159, 0.049468994)
+shape = SubResource("BoxShape3D_1egkq")
+
+[node name="quadrupleWindow8" parent="House/windowsAroundTheHouse" instance=ExtResource("122_a1lst")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.025467, 9.6, -0.0026812553)
+script = null
+
+[node name="StaticBody3D" type="StaticBody3D" parent="House/windowsAroundTheHouse/quadrupleWindow8" groups=["deployable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="House/windowsAroundTheHouse/quadrupleWindow8/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18320513, 1.5475159, 0.049468994)
+shape = SubResource("BoxShape3D_1egkq")
+
+[node name="quadrupleWindow6" parent="House/windowsAroundTheHouse" instance=ExtResource("122_a1lst")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -12.025466, 9.6, 7.7473187)
+script = null
+
+[node name="StaticBody3D" type="StaticBody3D" parent="House/windowsAroundTheHouse/quadrupleWindow6" groups=["deployable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="House/windowsAroundTheHouse/quadrupleWindow6/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18320513, 1.5475159, 0.049468994)
+shape = SubResource("BoxShape3D_1egkq")
+
+[node name="quadrupleWindow7" parent="House/windowsAroundTheHouse" instance=ExtResource("122_a1lst")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12.025466, 9.6, -25.902681)
+script = null
+
+[node name="StaticBody3D" type="StaticBody3D" parent="House/windowsAroundTheHouse/quadrupleWindow7" groups=["deployable"]]
+collision_layer = 9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="House/windowsAroundTheHouse/quadrupleWindow7/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18320513, 1.5475159, 0.049468994)
+shape = SubResource("BoxShape3D_1egkq")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_43280")
@@ -1817,3 +2077,27 @@ stream = ExtResource("10_jd5bi")
 
 [node name="bg" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("11_1iisw")
+
+[node name="floor_wake_up" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.025465965, 0, 0.0026812553)
+script = ExtResource("107_osyli")
+
+[node name="Camera3D" type="Camera3D" parent="floor_wake_up"]
+transform = Transform3D(0.13279895, -0.9694556, 0.20620415, -0.99074775, -0.13571562, 0, 0.027985124, -0.20429629, -0.978509, -7.007, 2.522, -11.01)
+
+[node name="Spotlight" type="Node3D" parent="floor_wake_up/Camera3D"]
+transform = Transform3D(0.9999603, 0.008861089, 0.000989683, -0.00886109, 0.9753192, 0.22062168, 0.0009896941, -0.22062166, 0.975359, 0.030244827, 0, 0.1616478)
+
+[node name="Flashlight" type="SpotLight3D" parent="floor_wake_up/Camera3D/Spotlight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.77986765)
+light_color = Color(0.93, 0.65472, 0.5859, 1)
+light_energy = 16.0
+light_volumetric_fog_energy = 0.0
+spot_range = 9.136
+spot_attenuation = 1.15
+spot_angle_attenuation = 1.1095695
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="floor_wake_up"]
+libraries = {
+&"": SubResource("AnimationLibrary_tagwd")
+}
