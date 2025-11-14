@@ -312,12 +312,15 @@ func _process(delta: float) -> void:
 
 		
 func each_night_respawn() -> void:
+	# Fade out the screen, like in respawn_player()
+	await fade_screen_to_black(0.5)
+	
 	# Show the night counter and tasks UI (night_counter_gameplay)
 	if night_counter_gameplay:
 		print(\"Current night is: \", Global.current_night)
 		night_counter_gameplay.visible = true
 		night_counter_gameplay.modulate.a = 0.0  # Start transparent
-		night_counter_gameplay.z_index = 100  # Make sure it's above other UI
+		night_counter_gameplay.z_index = 210  # Make sure it's above other UI
 
 		# Display current night from global singleton
 
@@ -328,9 +331,6 @@ func each_night_respawn() -> void:
 		var tween = create_tween()
 		tween.tween_property(night_counter_gameplay, \"modulate:a\", 1.0, 1.25)
 		await tween.finished
-
-	# Fade out the screen, like in respawn_player()
-	await fade_screen_to_black(0.5)
 
 	# Reset player position and state as in respawn_player
 	# Reset player state
@@ -1139,6 +1139,7 @@ vertical_alignment = 1
 
 [node name="Night_Counter_GamePlay" type="Label" parent="CanvasLayer2"]
 visible = false
+z_index = 300
 offset_left = 554.0
 offset_top = 423.00003
 offset_right = 1447.0
