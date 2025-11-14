@@ -32,7 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://4umv3d3x0sjs" path="res://assets/glb_models/appliance/piano/piano.glb" id="24_mq15c"]
 [ext_resource type="PackedScene" uid="uid://dy1i4fd2178le" path="res://assets/glb_models/decoratives/radio/old_radio.glb" id="25_54ef5"]
 [ext_resource type="PackedScene" uid="uid://c1dbua8aqgyk4" path="res://assets/glb_models/basement/old_phone.glb" id="26_dpskn"]
-[ext_resource type="PackedScene" uid="uid://b8mthtunq3p4w" path="res://assets/glb_models/decoratives/frame.tscn" id="27_y7xvp"]
+[ext_resource type="PackedScene" uid="uid://b8mthtunq3p4w" path="res://game/house_materials/frame.tscn" id="27_y7xvp"]
 [ext_resource type="PackedScene" uid="uid://d1oryaej72ttb" path="res://assets/glb_models/furniture/vintage_sofa_23mb.glb" id="27_ynw4f"]
 [ext_resource type="PackedScene" uid="uid://707iy55ib8cp" path="res://assets/glb_models/nature/plant/potted_plant_1.glb" id="28_st0eb"]
 [ext_resource type="PackedScene" uid="uid://cbalkhtrad1j2" path="res://game/house_materials/rug.tscn" id="29_yo6eg"]
@@ -2078,7 +2078,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.025465965, 0, 0.0026812553)
 script = ExtResource("107_osyli")
 
 [node name="Camera3D" type="Camera3D" parent="floor_wake_up"]
-transform = Transform3D(0.13279895, -0.96945554, 0.20620415, -0.9907477, -0.13571562, 0, 0.027985122, -0.20429628, -0.978509, -7.007, 2.522, -11.01)
+transform = Transform3D(0.13279894, -0.96945554, 0.20620415, -0.99074763, -0.13571562, 0, 0.02798512, -0.20429628, -0.978509, -7.007, 2.522, -11.01)
 
 [node name="Spotlight" type="Node3D" parent="floor_wake_up/Camera3D"]
 transform = Transform3D(0.9999603, 0.008861089, 0.000989683, -0.00886109, 0.9753192, 0.22062168, 0.0009896941, -0.22062166, 0.975359, 0.030244827, 0, 0.1616478)
