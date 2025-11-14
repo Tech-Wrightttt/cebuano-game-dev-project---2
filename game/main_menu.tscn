@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=3 uid="uid://cd4o1mbqy8tg4"]
+[gd_scene load_steps=107 format=3 uid="uid://cd4o1mbqy8tg4"]
 
 [ext_resource type="Script" uid="uid://c0bd0cp5x50et" path="res://game/level.gd" id="1_ay3dt"]
 [ext_resource type="Material" uid="uid://31nbyn23hg2q" path="res://materials/house_material.tres" id="2_6gydb"]
@@ -44,6 +44,8 @@
 [ext_resource type="PackedScene" uid="uid://bnd4f5cscd18j" path="res://game/house_materials/ceiling_lights.tscn" id="30_48cll"]
 [ext_resource type="PackedScene" uid="uid://bslbw4xpcdhu2" path="res://game/house_materials/door.tscn" id="31_wn2hk"]
 [ext_resource type="AudioStream" uid="uid://del6s7nu87n2h" path="res://soundfx/horror_ambience.mp3" id="32_wy0ts"]
+[ext_resource type="Shader" uid="uid://bt1lbo5yomj25" path="res://game/shaders/retro_camera.gdshader" id="45_gp2yx"]
+[ext_resource type="Shader" uid="uid://di14027j7obwb" path="res://game/shaders/VHS.gdshader" id="46_qlotc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4xowi"]
 sky_top_color = Color(0.12270618, 0.04560589, 0.0034415955, 1)
@@ -255,6 +257,24 @@ shader_parameter/blur_amount = 10.0
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nowvf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g7oie"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ppoxe"]
+shader = ExtResource("45_gp2yx")
+shader_parameter/aberration_strength = 3.0
+shader_parameter/blur_strength = 2.0
+shader_parameter/noise_strength = 0.048
+shader_parameter/vignette_strength = 0.78
+shader_parameter/scanline_strength = 0.016
+shader_parameter/distortion_strength = 0.1
+shader_parameter/ghost_strength = 0.12
+shader_parameter/flicker_strength = 0.005
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kl4ka"]
+shader = ExtResource("46_qlotc")
+shader_parameter/wiggle = 0.03
+shader_parameter/wiggle_speed = 25.0
+shader_parameter/smear = 0.4610000218975
+shader_parameter/blur_samples = 15
 
 [node name="main_menu" type="Node3D"]
 script = ExtResource("1_ay3dt")
@@ -1546,6 +1566,32 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_k2o5e")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_nowvf")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_g7oie")
 text = "BACK"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="CanvasLayer"]
+copy_mode = 2
+
+[node name="Post_Processing" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_ppoxe")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BackBufferCopy_VHS" type="BackBufferCopy" parent="CanvasLayer"]
+copy_mode = 2
+
+[node name="VHS" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_kl4ka")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [connection signal="pressed" from="VBoxContainer/Start Game" to="VBoxContainer" method="_on_start_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="VBoxContainer" method="_on_settings_pressed"]
