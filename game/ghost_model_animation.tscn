@@ -119,7 +119,7 @@ tracks/2/path = NodePath("Node3D:rotation")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 3, 3.04, 3.2333333, 3.5333333, 3.75),
+"times": PackedFloat32Array(0, 3, 3.04, 3.2333333, 3.4, 3.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0.5235988, 0), Vector3(0, -0.5235988, 0), Vector3(0, 0, 0)]
@@ -131,10 +131,10 @@ tracks/3/path = NodePath("Node3D:position")
 tracks/3/interp = 2
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 1, 2.6666667, 3.25, 3.5, 3.75, 3.8, 3.9, 4),
+"times": PackedFloat32Array(0, 1, 2.6666667, 3.25, 3.4, 3.6, 3.7, 3.9, 4),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 1), Vector3(0, 0, 2), Vector3(-0.15, 0, 2), Vector3(0.55, 0, 2), Vector3(0, 0, 2), Vector3(-0.05, 0, 2.1), Vector3(0.05, 0, 2.2), Vector3(0, 0, 2.3)]
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 1), Vector3(0, 0, 2), Vector3(-0.1, 0, 2), Vector3(0.45, 0, 2), Vector3(0, 0, 2), Vector3(-0.1, 0, 2.1), Vector3(0.1, 0, 2.2), Vector3(0, 0, 2.3)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hmyfq"]

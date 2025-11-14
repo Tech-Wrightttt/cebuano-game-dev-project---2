@@ -6,7 +6,7 @@ func _ready():
 	
 	# Show subtitle after 10.5 seconds
 	await get_tree().create_timer(10.5).timeout
-	show_subtitle("Anong nangyayari, what happened last night and why’d lola just gave me chores and leave today too??", 5.0)
+	show_subtitle("What? what happened last night and why’d lola just gave me chores and leave today too??", 5.0)
 
 func show_subtitle(text: String, duration: float = 3.0):
 	$ColorRect/RichTextLabel.text = text
