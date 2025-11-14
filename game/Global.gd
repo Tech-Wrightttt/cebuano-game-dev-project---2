@@ -147,8 +147,9 @@ func progress_to_next_night():
 		push_warning("Cannot progress night - no player")
 		return
 	
-	if current_night >= 5:
+	if current_night > 6:
 		return
+		
 	current_night += 1
 	time_left = NIGHT_DURATION_REAL
 
