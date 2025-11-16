@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://bob5k3jp6dsgc"]
+[gd_scene load_steps=43 format=4 uid="uid://bob5k3jp6dsgc"]
 
 [ext_resource type="Texture2D" uid="uid://bvdwayp7w2erl" path="res://textures/environment/grass.jpg" id="1_8bv7i"]
 [ext_resource type="PackedScene" uid="uid://bd8sk3hxv1lu0" path="res://assets/glb_models/fence/japanese_park_stone_floor_uljcfd0_mid.glb" id="1_50vgw"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://dar552q7h0vvy" path="res://assets/glb_models/nature/low_poly_trees_flowers_and_grass_26.png" id="18_vjwl2"]
 [ext_resource type="Texture2D" uid="uid://c02brbicn03vm" path="res://assets/glb_models/nature/low_poly_trees_flowers_and_grass_27.png" id="19_x5me8"]
 [ext_resource type="PackedScene" uid="uid://cr88koxvlwa1b" path="res://assets/glb_models/nature/plant/snake_plant_2_low_poly.glb" id="20_vuud0"]
+[ext_resource type="PackedScene" uid="uid://b50i1xtfjqw62" path="res://assets/glb_models/lights/stylized_street_light.glb" id="22_x5me8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4xowi"]
 sky_top_color = Color(0.12270618, 0.04560589, 0.0034415955, 1)
@@ -192,11 +193,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.28475, 2.1155224, -2.64598
 [node name="House" parent="." instance=ExtResource("2_xssv6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9987135, 0.028873205, -0.026374817)
 
-[node name="ghost" parent="House/doors" index="14"]
-visible = false
-
 [node name="Basement_Walls" parent="House/doors/NavigationRegion3D/Model/Basement" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00036621094, 0.00036752224, 2.8550625e-05)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00018882751, 0.0094976425, -0.0016396642)
 
 [node name="ceiling lights10" parent="House/doors/NavigationRegion3D/Lights/2nd Floor" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.433849, 13.769778, -3.7694468)
@@ -207,16 +205,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.272419, 13.769778, 1.3544
 [node name="ceiling lights11" parent="House/doors/NavigationRegion3D/Lights/2nd Floor" index="2" instance=ExtResource("4_vjwl2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5997543, 13.769778, 1.6636233)
 
-[node name="ceiling lights13" parent="House/doors/NavigationRegion3D/Lights/2nd Floor" index="3"]
+[node name="ceiling lights20" parent="House/doors/NavigationRegion3D/Lights/2nd Floor" index="3" instance=ExtResource("4_vjwl2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.947124, 14.112371, 5.4845257)
+
+[node name="ceiling lights21" parent="House/doors/NavigationRegion3D/Lights/2nd Floor" index="4" instance=ExtResource("4_vjwl2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.947124, 14.112371, -6.605056)
+
+[node name="ceiling lights22" parent="House/doors/NavigationRegion3D/Lights/2nd Floor" index="5" instance=ExtResource("4_vjwl2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.45813, 14.112371, 4.7619243)
+
+[node name="ceiling lights23" parent="House/doors/NavigationRegion3D/Lights/2nd Floor" index="6" instance=ExtResource("4_vjwl2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.45813, 14.112371, -5.9874425)
+
+[node name="ceiling lights13" parent="House/doors/NavigationRegion3D/Lights/2nd Floor" index="7"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.226349, 13.769778, 2.5913043)
 
-[node name="ceiling lights16" parent="House/doors/NavigationRegion3D/Lights/2nd Floor" index="4" instance=ExtResource("4_vjwl2")]
+[node name="ceiling lights16" parent="House/doors/NavigationRegion3D/Lights/2nd Floor" index="8" instance=ExtResource("4_vjwl2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.950161, 13.769778, -5.6126437)
 
-[node name="ceiling lights19" parent="House/doors/NavigationRegion3D/Lights/2nd Floor" index="5" instance=ExtResource("4_vjwl2")]
+[node name="ceiling lights19" parent="House/doors/NavigationRegion3D/Lights/2nd Floor" index="9" instance=ExtResource("4_vjwl2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.488865, 13.769778, 0.3580628)
 
-[node name="ceiling lights15" parent="House/doors/NavigationRegion3D/Lights/2nd Floor" index="7"]
+[node name="ceiling lights15" parent="House/doors/NavigationRegion3D/Lights/2nd Floor" index="11"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.575855, 13.769778, -17.904713)
 
 [node name="ceiling lights8" parent="House/doors/NavigationRegion3D/Lights/1st Floor" index="1"]
@@ -256,21 +266,51 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.213356, -0.25, 6.668874)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.149033, -0.8691683, 10.350515)
 
 [node name="OmniLight3D5" type="OmniLight3D" parent="House/doors/NavigationRegion3D/Lights/Basement" index="6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.445265, -0.8691683, -4.685262)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.437336, -0.8691683, -4.685262)
 light_energy = 0.9
 omni_range = 20.0
 
-[node name="OmniLight3D6" type="OmniLight3D" parent="House/doors/NavigationRegion3D/Lights/Basement" index="7"]
+[node name="OmniLight3D9" type="OmniLight3D" parent="House/doors/NavigationRegion3D/Lights/Basement" index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2806034, -0.8691683, 1.2365913)
+light_energy = 0.9
+omni_range = 20.0
+
+[node name="OmniLight3D10" type="OmniLight3D" parent="House/doors/NavigationRegion3D/Lights/Basement" index="8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.720259, 7.5466375, 4.958521)
+light_energy = 0.9
+omni_range = 20.0
+
+[node name="OmniLight3D11" type="OmniLight3D" parent="House/doors/NavigationRegion3D/Lights/Basement" index="9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.88868475, 7.5466375, -11.71879)
+light_energy = 0.9
+omni_range = 20.0
+
+[node name="OmniLight3D14" type="OmniLight3D" parent="House/doors/NavigationRegion3D/Lights/Basement" index="10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9180155, 7.1937275, -23.32782)
+light_energy = 0.9
+omni_range = 20.0
+
+[node name="OmniLight3D12" type="OmniLight3D" parent="House/doors/NavigationRegion3D/Lights/Basement" index="11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.801832, 13.431935, -16.05643)
+light_energy = 0.9
+omni_range = 20.0
+
+[node name="OmniLight3D13" type="OmniLight3D" parent="House/doors/NavigationRegion3D/Lights/Basement" index="12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.014942, 13.431935, -15.233578)
+light_energy = 0.9
+omni_range = 20.0
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="House/doors/NavigationRegion3D/Lights/Basement" index="13"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.29454, -0.5719776, -14.93889)
 light_energy = 0.9
 omni_range = 20.0
 
-[node name="OmniLight3D7" type="OmniLight3D" parent="House/doors/NavigationRegion3D/Lights/Basement" index="8"]
+[node name="OmniLight3D7" type="OmniLight3D" parent="House/doors/NavigationRegion3D/Lights/Basement" index="14"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.971401, -0.5209348, 7.0549603)
 light_energy = 0.9
 omni_range = 20.0
 
-[node name="OmniLight3D8" type="OmniLight3D" parent="House/doors/NavigationRegion3D/Lights/Basement" index="9"]
+[node name="OmniLight3D8" type="OmniLight3D" parent="House/doors/NavigationRegion3D/Lights/Basement" index="15"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.971401, -0.5209348, -4.868755)
 light_energy = 0.9
 omni_range = 20.0
@@ -300,6 +340,7 @@ speaker = NodePath("..")
 [node name="fences" type="Node3D" parent="."]
 
 [node name="fence" type="Node3D" parent="fences"]
+visible = false
 
 [node name="pavement" parent="fences/fence" groups=["pavement"] instance=ExtResource("1_50vgw")]
 transform = Transform3D(-0.040726833, 0, -1.6394942, 0, 1.64, 0, 1.6394942, 0, -0.040726833, 0, -0.02369392, 0)
@@ -686,6 +727,7 @@ mesh = SubResource("PlaneMesh_s5juq")
 skeleton = NodePath("../..")
 
 [node name="trees right side" type="Node3D" parent="."]
+visible = false
 
 [node name="green tree" type="Node3D" parent="trees right side"]
 transform = Transform3D(2.2140298, 0, 0, 0, -2.6811313e-07, 1.3255277, 0, -1.6456668, -2.1595582e-07, 11.013647, 0.6549511, -11.295686)
@@ -1188,6 +1230,7 @@ skeleton = NodePath("")
 
 [node name="trees left side" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -57.229244, -1.3737454, -26.63839)
+visible = false
 
 [node name="green tree" type="Node3D" parent="trees left side"]
 transform = Transform3D(2.2140298, 0, 0, 0, -2.6811313e-07, 1.3255277, 0, -1.6456668, -2.1595582e-07, 11.013647, 0.6549511, -11.295686)
@@ -1713,11 +1756,30 @@ transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -4.810251, 0, -3.3912044)
 [node name="FAB converted2" parent="snakeplant" instance=ExtResource("20_vuud0")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -5.083432, 0, 3.5055184)
 
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("22_x5me8")]
+transform = Transform3D(-1.9773716, 7.769116e-08, -0.92963773, 0.0042672437, 2.184977, -0.009076393, 0.92962795, -0.010029471, -1.9773508, 4.4888706, 0.10773701, 7.6216383)
+
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.0045901816, 0.9999895, 0, -0.9999895, -0.0045901816, -20.144415, 0.1855135, 12.207153)
 light_energy = 6.18
 spot_range = 16.818
 spot_angle = 54.38
+
+[node name="Sketchfab_Scene2" parent="." instance=ExtResource("22_x5me8")]
+transform = Transform3D(1.0162203, 7.869676e-08, -1.9343014, 0.008878689, 2.1849775, 0.004664669, 1.9342811, -0.0100294715, 1.0162096, 3.2873402, -0.0077499463, -17.537855)
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.0045901816, 0.9999895, 0, -0.9999895, -0.0045901816, 3.7511911, 18.372152, 4.9635305)
+light_color = Color(1, 1, 0.6039216, 1)
+light_energy = 6.18
+spot_range = 29.763
+spot_angle = 42.26
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.0045901816, 0.9999895, 0, -0.9999895, -0.0045901816, -0.33616638, 21.766306, -15.568124)
+light_energy = 6.18
+spot_range = 29.763
+spot_angle = 42.02
 
 [editable path="House"]
 [editable path="House/doors/NavigationRegion3D/ITEMS/2ND FLOOR ITEMS/shelf2(maopen)"]
