@@ -126,6 +126,7 @@ var seconddialoguescene: bool = true
 
 @onready var wood_walk: AudioStreamPlayer3D = $Sounds/Wood_Step
 var can_play_footstep = true
+const MAIN_MENU_SCENE = preload(\"res://game/main_menu.tscn\")
 
 func _ready() -> void:
 	Global.player = self
@@ -333,8 +334,9 @@ func each_night_respawn() -> void:
 		await fade_screen_to_black(0.5)
 		await play_cutscene(\"res://game/cutscenes/ending.tscn\", 60.5)
 		print(\"ending cut\")
-		get_tree().quit()	
-		return
+		if is_instance_valid(Global):
+			Global.reset_game_state()
+			var error = get_tree().change_scene_to_packed(MAIN_MENU_SCENE)
 	# Fade out the screen, like in respawn_player()
 	await fade_screen_to_black(0.5)
 	

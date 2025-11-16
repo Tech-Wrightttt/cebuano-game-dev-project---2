@@ -51,8 +51,8 @@ func _ready() -> void:
 	
 	print("👻 Ghost ready but NOT active (waiting for activation)")
 	
-	reset_position = reset_point.global_position
-
+	#eset_position = reset_point.global_position
+#r
 func _activate_ghost() -> void:
 	print("👻 GHOST ACTIVATED!")
 	visible = true
@@ -391,7 +391,7 @@ func reset_ghost_after_catch():
 		player_cam.current = true
 		print("📷 Camera switched back to player")
 	
-	global_position = reset_position
+	#global_position = reset_position
 	# Re-enable ghost
 	ghost_disabled = false
 	print("✅ Ghost re-enabled")

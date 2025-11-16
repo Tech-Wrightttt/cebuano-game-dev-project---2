@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d1jnkipekfns3" path="res://scripts/ghost.gd" id="1_blxur"]
 [ext_resource type="PackedScene" uid="uid://oysop7pwekld" path="res://game/ghost_model_animation.tscn" id="2_io021"]
-[ext_resource type="AudioStream" uid="uid://bxw4cdjeo10x8" path="res://soundfx/jumpscare_audio.mp3" id="3_gp3h6"]
+[ext_resource type="AudioStream" uid="uid://qe7k5lov5k5r" path="res://soundfx/jumpscare_audio.mp3" id="3_gp3h6"]
 [ext_resource type="AudioStream" uid="uid://d1barlwun783u" path="res://soundfx/hello.mp3" id="3_lg8de"]
 [ext_resource type="AudioStream" uid="uid://8x1lyamgl4we" path="res://soundfx/hi.mp3" id="4_1u12a"]
 [ext_resource type="AudioStream" uid="uid://b6ltpshx0nurw" path="res://soundfx/horror_audio.mp3" id="4_7af0h"]
