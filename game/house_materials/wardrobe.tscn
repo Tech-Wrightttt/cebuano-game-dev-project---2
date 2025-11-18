@@ -102,8 +102,8 @@ top_radius = 0.75
 bottom_radius = 0.75
 height = 0.75
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_3cif4"]
-data = PackedVector3Array(-0.8269, -24.4284, -1.5231, -2.3715, 11.799399, -0.00029999999, -0.8269, 9.4102, -1.5234, -0.8269, -24.4284, -1.5231, -2.3715, -24.4284, -0.00029999999, -2.3715, 11.799399, -0.00029999999, -0.8269, -58.2669, -1.5231, -2.3715, -24.4284, -0.00029999999, -0.8269, -24.4284, -1.5231, -0.8269, -58.2669, -1.5231, -2.3715, -60.655, 0, -2.3715, -24.4284, -0.00029999999, -0.8269, 9.4102, -21.5721, -2.3715, -24.4284, -23.094799, -0.8269, -24.4284, -21.5721, -0.8269, 9.4102, -21.5721, -2.3715, 11.799399, -23.094799, -2.3715, -24.4284, -23.094799, -0.8269, -58.2669, -21.5721, -2.3715, -60.655, 0, -0.8269, -58.2669, -1.5231, -0.8269, -58.2669, -21.5721, -2.3715, -60.655, -23.094799, -2.3715, -60.655, 0, -0.8269, -24.4284, -21.5721, -2.3715, -60.655, -23.094799, -0.8269, -58.2669, -21.5721, -0.8269, -24.4284, -21.5721, -2.3715, -24.4284, -23.094799, -2.3715, -60.655, -23.094799, -0.8269, 9.4102, -1.5234, -2.3715, 11.799399, -23.094799, -0.8269, 9.4102, -21.5721, -0.8269, 9.4102, -1.5234, -2.3715, 11.799399, -0.00029999999, -2.3715, 11.799399, -23.094799, -0.8269, -24.4284, -21.5721, -0.8269, -58.2669, -21.5721, -0.8269, -58.2669, -1.5231, -0.8269, -58.2669, -1.5231, -0.8269, -24.4284, -1.5231, -0.8269, -24.4284, -21.5721, -0.8269, -24.4284, -1.5231, -0.8269, 9.4102, -21.5721, -0.8269, -24.4284, -21.5721, -0.8269, -24.4284, -1.5231, -0.8269, 9.4102, -1.5234, -0.8269, 9.4102, -21.5721)
+[sub_resource type="BoxShape3D" id="BoxShape3D_1kpvn"]
+size = Vector3(2.7993164, 72.00844, 23.536926)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_wfy40"]
 _surfaces = [{
@@ -136,9 +136,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_wfy40")
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_prn3d"]
-data = PackedVector3Array(-0.8269, 9.4102, 1.5228, -2.3715, -24.4284, 0, -0.8269, -24.4284, 1.5228, -0.8269, 9.4102, 1.5228, -2.3715, 11.799399, 0, -2.3715, -24.4284, 0, -0.8269, -24.4284, 1.5228, -2.3715, -60.655, 0, -0.8269, -58.2669, 1.5231, -0.8269, -24.4284, 1.5228, -2.3715, -24.4284, 0, -2.3715, -60.655, 0, -0.8269, -24.4284, 21.5718, -2.3715, 11.799399, 23.0945, -0.8269, 9.4102, 21.5718, -0.8269, -24.4284, 21.5718, -2.3715, -24.4284, 23.0949, -2.3715, 11.799399, 23.0945, -0.8269, 9.4102, 21.5718, -2.3715, 11.799399, 0, -0.8269, 9.4102, 1.5228, -0.8269, 9.4102, 21.5718, -2.3715, 11.799399, 23.0945, -2.3715, 11.799399, 0, -0.8269, -58.2669, 21.5718, -2.3715, -24.4284, 23.0949, -0.8269, -24.4284, 21.5718, -0.8269, -58.2669, 21.5718, -2.3715, -60.655, 23.0949, -2.3715, -24.4284, 23.0949, -0.8269, -58.2669, 1.5231, -2.3715, -60.655, 23.0949, -0.8269, -58.2669, 21.5718, -0.8269, -58.2669, 1.5231, -2.3715, -60.655, 0, -2.3715, -60.655, 23.0949, -0.8269, -24.4284, 1.5228, -0.8269, -58.2669, 1.5231, -0.8269, -58.2669, 21.5718, -0.8269, -58.2669, 21.5718, -0.8269, -24.4284, 21.5718, -0.8269, -24.4284, 1.5228, -0.8269, -24.4284, 21.5718, -0.8269, 9.4102, 1.5228, -0.8269, -24.4284, 1.5228, -0.8269, -24.4284, 21.5718, -0.8269, 9.4102, 21.5718, -0.8269, 9.4102, 1.5228)
 
 [sub_resource type="Animation" id="Animation_r2qul"]
 length = 0.001
@@ -302,7 +299,11 @@ _data = {
 &"open_wardrobe": SubResource("Animation_86adj")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ryni2"]
+size = Vector3(5.0548706, 0.05278778, 2.6545467)
+
 [node name="Wardrobe" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.20945787, 0)
 
 [node name="wardrobe" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.668729, 0)
@@ -357,9 +358,9 @@ skeleton = NodePath("../../../..")
 [node name="StaticBody3D" type="StaticBody3D" parent="wardrobe/Sketchfab_model/Drobe1_fbx/RootNode/Wardrobe/Door1" groups=["interactable"]]
 collision_layer = 5
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="wardrobe/Sketchfab_model/Drobe1_fbx/RootNode/Wardrobe/Door1/StaticBody3D" groups=["interactable"]]
-transform = Transform3D(1, 0, 1.4210855e-14, 0, 1, -1.4210838e-14, 1.4210855e-14, -7.1054104e-15, 1.0000001, 0, 0, 0)
-shape = SubResource("ConcavePolygonShape3D_3cif4")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wardrobe/Sketchfab_model/Drobe1_fbx/RootNode/Wardrobe/Door1/StaticBody3D"]
+transform = Transform3D(1, -4.112621e-12, -9.947598e-14, 1.0800299e-13, 1, -9.663381e-13, 0, 0, 0.9999971, -0.8996544, -24.68172, -11.348607)
+shape = SubResource("BoxShape3D_1kpvn")
 
 [node name="Door2" type="MeshInstance3D" parent="wardrobe/Sketchfab_model/Drobe1_fbx/RootNode/Wardrobe"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000002, -0.138, 0, -23)
@@ -370,9 +371,9 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 1.4210855e-14, 0, 1, -1.4210838e-14, 1.4210855e-14, -7.1054104e-15, 1.0000001, 0, 0, 0)
 collision_layer = 5
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="wardrobe/Sketchfab_model/Drobe1_fbx/RootNode/Wardrobe/Door2/StaticBody3D" groups=["interactable"]]
-transform = Transform3D(1.0000001, 0, -2.842171e-14, 5.684342e-14, 1.0000001, 2.1316299e-14, -1.4210855e-14, 7.105444e-15, 0.9999999, 0, 0, 0)
-shape = SubResource("ConcavePolygonShape3D_prn3d")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wardrobe/Sketchfab_model/Drobe1_fbx/RootNode/Wardrobe/Door2/StaticBody3D"]
+transform = Transform3D(1, -4.1055154e-12, 0, 1.4215347e-15, 1, 0, 0, 0, 1, -0.8996544, -24.681694, 11.268462)
+shape = SubResource("BoxShape3D_1kpvn")
 
 [node name="knob arm" type="MeshInstance3D" parent="wardrobe/Sketchfab_model/Drobe1_fbx/RootNode/Wardrobe/Door2"]
 transform = Transform3D(-8.742285e-08, 2.0000007, -8.7423075e-08, 5.968648e-14, -8.7422734e-08, -2.0000007, -2.000001, -8.742272e-08, -3.2210982e-14, -0.6, -20, 19)
@@ -414,3 +415,9 @@ stream = ExtResource("7_0c7ww")
 libraries = {
 &"": SubResource("AnimationLibrary_bqnk6")
 }
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010883689, 1.8546445, 0.31773442)
+shape = SubResource("BoxShape3D_ryni2")
