@@ -669,7 +669,7 @@ func trigger_game_over() -> void:
 	
 	# Show the death message
 	if fail_message_label:
-		fail_message_label.text = \"Ayoko na dito, kailangan ko nang umalis\"
+		fail_message_label.text = \"I don’t want to stay here anymore, I need to leave\"
 		fail_message_label.visible = true
 		fail_message_label.modulate.a = 0.0
 		fail_message_label.z_index = 200
@@ -695,7 +695,7 @@ func respawn_player() -> void:
 	await fade_screen_to_black(fade_duration)
 	$Sounds/Panting.play()
 	if haunted_message_label:
-		haunted_message_label.text = \"Guniguni ko lang yata yun\"
+		haunted_message_label.text = \"I might have just imagined it\"
 		haunted_message_label.visible = true
 		haunted_message_label.modulate.a = 0.0
 		haunted_message_label.z_index = 200

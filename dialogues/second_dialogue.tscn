@@ -87,7 +87,7 @@ theme_override_colors/default_color = Color(1, 1, 0.45490196, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("2_knsne")
 theme_override_font_sizes/normal_font_size = 43
-text = "Apo, ito na ulit. Gabi na naman—’wag mong kalimutang tapusin ’yan."
+text = "Paulette, here’s another list for tonight. Don’t forget to finish it, alright?"
 visible_characters = 0
 visible_ratio = 0.0
 

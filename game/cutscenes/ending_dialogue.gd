@@ -28,7 +28,7 @@ func _ready() -> void:
 
 func start_dialogue_sequence() -> void:
 	# First dialogue starts immediately (at 0 seconds)
-	show_dialogue("Demon", "Adlaw na sa mga patay. Unsa ang imong ihalad?﻿")
+	show_dialogue("Demon", "It’s All Souls’ Day. What will you offer?")
 	
 	# Wait 10 seconds total from start
 	await get_tree().create_timer(10.0).timeout
@@ -38,11 +38,11 @@ func start_dialogue_sequence() -> void:
 		await get_tree().create_timer(8.0).timeout
 		lola_talking.show()
 	
-	show_dialogue("Lola Olet", "Ang akong kaugalingon— ang akong lawas. Ang akong apo.")
+	show_dialogue("Lola Olet", "Myself. My body. To be clearer, my granddaughter.")
 	
 	# Wait 18 seconds total from start (8 more seconds)
 	await get_tree().create_timer(8.0).timeout
-	show_dialogue("Lola Olet", "Gusto na nako mahimong batan-on balik. Mana akong oras— karon, siya napud.")
+	show_dialogue("Lola Olet", "I want to be young again. My time has ended— now, it’s her turn.")
 	
 	# Wait 27 seconds total from start (9 more seconds)
 	await get_tree().create_timer(9.0).timeout
@@ -52,7 +52,7 @@ func start_dialogue_sequence() -> void:
 		await get_tree().create_timer(1.0).timeout
 		paulette_offered.show()
 	
-	show_dialogue("Paulette", "So this is why I feel like I'm living two lives... Nahitabo na ni sauna, ug mahitabo pani usab.")
+	show_dialogue("Paulette", "So this is why my mind feels like it’s breaking lately. As if I’m living another life. This has happened before, and it will happen again.")
 	
 	# Wait 36 seconds total from start (9 more seconds)
 	await get_tree().create_timer(9.0).timeout
@@ -61,7 +61,7 @@ func start_dialogue_sequence() -> void:
 	if lola_talking:
 		lola_talking.hide()
 	
-	show_dialogue("Paulette", "Tanang gabii nga ni gawas ka, para diay to maka andam ani— para maka makig ilis kag kinabuhi nako lola?")
+	show_dialogue("Paulette", "Tanang gabii nga ni gawas ka, para diay to maka andam ani— para maka makig ilis kag kinabuhi nako lola?All those nights you went out, it was all to prepare for this— to swap lives with me.")
 	
 	# Wait 44 seconds total from start (8 more seconds)
 	await get_tree().create_timer(8.0).timeout
@@ -72,7 +72,7 @@ func start_dialogue_sequence() -> void:
 	
 	# Wait 45 seconds total from start (1 more second)
 	await get_tree().create_timer(1.0).timeout
-	show_dialogue("Lola Olet", "Sakto ka apo......... Ikaw og ako, usa ra ta ka tawo. Magbalik balik ra ni na siklo hantod sa hantod...")
+	show_dialogue("Lola Olet", "That’s right......... You and me, Paulette, are the same. This cycle will continue forever and ever.")
 	
 	# Wait 52 seconds total from start (7 more seconds)
 	await get_tree().create_timer(1.0).timeout

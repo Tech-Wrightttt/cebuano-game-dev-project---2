@@ -15,7 +15,7 @@ func _ready() -> void:
 
 func start_dialogue_sequence() -> void:
 	# First dialogue immediately
-	show_dialogue("", "I can hear voices, but I don't understand.")
+	show_dialogue("", "I can hear voices, somebody is talking, but I can’t understand.")
 	await get_tree().create_timer(7.0).timeout
 	
 	# Phone ring flashes briefly
@@ -24,19 +24,19 @@ func start_dialogue_sequence() -> void:
 	hide_all()
 	await get_tree().create_timer(1.0).timeout
 	
-	show_dialogue("Paulette (You)", "*picks up* Lola? Asa ka la? Nganong murag duha kabuok gatabi sa telepono?")
+	show_dialogue("Paulette (You)", "*picks up* Grandma! Where are you and why does it sound like there are two voices when you speak on the phone?")
 	await get_tree().create_timer(7.0).timeout
 	
-	show_dialogue("Lola Olet", "Dugay na na sila naminaw. Di na sila mo usab, pero basin kaya nimo sila hatagan ug kalinaw.")
+	show_dialogue("Lola Olet", "They have been listening for so long. That won’t ever change. But maybe you can give them peace.")
 	await get_tree().create_timer(7.0).timeout
 	
-	show_dialogue("Lola Olet", "Paulette, kahibalo ba ka kung ngano naa ka diri?")
+	show_dialogue("Lola Olet", "Paulette, do you remember why you’re here?")
 	await get_tree().create_timer(7.0).timeout
 	
-	show_dialogue("Paulette (You)", "Para bantayan ang balay mintras wala ka.")
+	show_dialogue("Paulette (You)", "To guard the house while you’re away...")
 	await get_tree().create_timer(8.0).timeout
 	
-	show_dialogue("Lola Olet", "…O basin para pulihan ko...")
+	show_dialogue("Lola Olet", "...Or to replace me.")
 	await get_tree().create_timer(8.0).timeout
 	
 	# Final pause before hiding everything

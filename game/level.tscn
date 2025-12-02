@@ -10,14 +10,14 @@
 [ext_resource type="PackedScene" uid="uid://c6nnpmjnwv4g2" path="res://game/house.tscn" id="2_xssv6"]
 [ext_resource type="PackedScene" uid="uid://bnd4f5cscd18j" path="res://game/house_materials/ceiling_lights.tscn" id="4_vjwl2"]
 [ext_resource type="PackedScene" uid="uid://cgi16aybh2b24" path="res://dialogues/second_dialogue.tscn" id="6_a2xg8"]
-[ext_resource type="PackedScene" uid="uid://dm1427jn7b51r" path="res://game/lola_sit.tscn" id="6_mgnlv"]
+[ext_resource type="PackedScene" path="res://game/lola_sit.tscn" id="6_mgnlv"]
 [ext_resource type="PackedScene" uid="uid://b8bckhbbwohyn" path="res://dialogues/dialogue_trigger_2.tscn" id="7_a4abk"]
-[ext_resource type="PackedScene" uid="uid://b22u3s0h205xm" path="res://game/lola_idle.tscn" id="14_mgnlv"]
+[ext_resource type="PackedScene" path="res://game/lola_idle.tscn" id="14_mgnlv"]
 [ext_resource type="Script" uid="uid://dbs53joluigse" path="res://game/post_effect_follow_camera.gd" id="14_vuud0"]
 [ext_resource type="Texture2D" uid="uid://b78wf12fcm5pf" path="res://assets/glb_models/nature/low_poly_trees_flowers_and_grass_24.png" id="16_s5juq"]
-[ext_resource type="Shader" uid="uid://cj03b73hkru46" path="res://game/post_effect_shader2.gdshader" id="17_50vgw"]
+[ext_resource type="Shader" path="res://game/post_effect_shader2.gdshader" id="17_50vgw"]
 [ext_resource type="Texture2D" uid="uid://bpxwnrih2h8b6" path="res://assets/glb_models/nature/low_poly_trees_flowers_and_grass_25.png" id="17_vuud0"]
-[ext_resource type="Shader" uid="uid://b3hfpkmnguk3q" path="res://game/post_effect_shader.gdshader" id="18_0w1ik"]
+[ext_resource type="Shader" path="res://game/post_effect_shader.gdshader" id="18_0w1ik"]
 [ext_resource type="Texture2D" uid="uid://ddta0uenv404a" path="res://assets/glb_models/nature/low_poly_trees_flowers_and_grass_26.png" id="18_vjwl2"]
 [ext_resource type="Texture2D" uid="uid://52ognyy27bk1" path="res://assets/glb_models/nature/low_poly_trees_flowers_and_grass_27.png" id="19_x5me8"]
 [ext_resource type="PackedScene" uid="uid://cxtxls3yuaq3y" path="res://assets/glb_models/nature/plant/snake_plant_2_low_poly.glb" id="20_vuud0"]
@@ -184,7 +184,6 @@ environment = SubResource("Environment_noarx")
 
 [node name="Sunlight (for testing purposes)" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
-visible = false
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_u52ul")]
@@ -297,7 +296,7 @@ transform = Transform3D(0.013, 0, 0, 0, 0.013, 0, 0, 0, 0.013, -10.07173, 2.6070
 
 [node name="dialogue_trigger1" parent="grandma 1" node_paths=PackedStringArray("speaker") instance=ExtResource("2_hjv22")]
 transform = Transform3D(-124.30769, 0, 0, 0, -124.30769, 0, 0, 0, -124.30769, -8.153076, 87.603806, 145.54248)
-dialogues = Array[String](["Wow kadako diay sa imong balay la. Mura man siyag mo ginhawa.", "Haha, ana jud na apo. Dugay naman gud ni na balay. Panihapon sa diha— naa nay pagkaon sa lamesa.", "Salamat Lola", "Ari sa ka apo ha? Naa ra koy adtuon kadali lang", "Gabii naman la. Aha man ka punta?", "Magbutang ra gud kog kandila ug buwak sa minteryo. Kabalo na ka, hapit na baya kalagkalag.", "Naa koy listahan sa mga bulahaton sa balay karong gabii. Pwede ikaw sa maglihok ani apo? Medyo kapoy napud ko ig abot nako. Ampingi usa ang balay ha? Kung mo alas-dose na, ayaw na ug gawas— ngitngit na kaayo na.", "Sige lola. Pero nganong kailangan ni takoban ang samin? Nakabutang diri sa listahan…", "Kasultihan ra na sa mga tiguwang apo. Para dili daw mo sulod sa balay ang bugnaw.", "Pagkahuman nimo sa mga bulahaton, katug na dayon ha? Ayaw pagdugay ug tulog kung di ka ganahan maka-abot nila.", "N-nila?"])
+dialogues = Array[String](["Wow, Grandma! Your house is huge! Kinda feels like it’s alive.", "Haha, the house is already old, so that’s to be expected. There’s dinner on the table. Go ahead and eat.", "Thank you, grandma.", "“Paulette, can you stay here while I go somewhere? I just have a quick errand to run.", "It’s already late, Grandma. Where are you going?", "It’s almost All Souls’ Day. I just need to place flowers and light candles at the cemetery.", "Here’s a list of the chores for tonight. Can you take over this for now? I’m quite old and tired already. Take care of the house while I’m out, alright? When it hits twelve midnight, don’t go out. It’s dark.", "Sure, Grandma. But why do I have to cover the mirrors? It’s written here…", "Just old superstitions. You know us oldies. It’s to prevent the cold from entering.", "After you finish the chores, don’t stay up late. Go to bed right away unless you want to meet them.", "Them?"])
 speaker_names = Array[String](["Paulette (You)", "Lola Olet", "Paulette (You)", "Lola Olet", "Paulette (You)", "Lola Olet", "Lola Olet", "Paulette (You)", "Lola Olet", "Lola Olet", "Paulette (You)"])
 speaker = NodePath("..")
 
@@ -306,7 +305,7 @@ transform = Transform3D(-0.01499884, 0, 0.00018639665, 0, 0.014999999, 0, -0.000
 
 [node name="dialogue_trigger2" parent="grandma 2" node_paths=PackedStringArray("speaker") instance=ExtResource("7_a4abk")]
 transform = Transform3D(-3.4100332, 0, -149.17526, 0, 129.33333, 0, 97.40698, 0, -5.2223425, 52.649414, 113.77362, 79.37402)
-dialogues = Array[String](["Apo, gabii nasad— Ayaw kalimti ug tiwas ang mga buhatonon ha?", "Lola, kada gabii ra gyud ni siya? Murag nagkadaghan naman ni.", "Basta sunda lang ang nakasulat diha apo. Ayaw kahadlok kung naa kay mabantayan.", "Lola naay..."])
+dialogues = Array[String](["Paulette, here’s another list for tonight. Don’t forget to finish it, alright?", "Grandma… Do I have to do this every night? It seems like the list is getting longer and longer.", "Just… follow what is written, Paulette. Don’t be scared if you feel something.", "Grandma, there’s…"])
 speaker_names = Array[String](["Lola Olet", "Paulette (You)", "Lola Olet", "Paulette (You)"])
 speaker = NodePath("..")
 
