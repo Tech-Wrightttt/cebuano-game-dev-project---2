@@ -58,6 +58,8 @@ func enter_trigger(body):
 						print("  → Target location updated")
 						found = true
 						break
+					else:
+						continue
 				
 				if not found:
 					print("  ⚠️ WARNING: Destination1 NOT found in patrol_destinations!")

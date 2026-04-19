@@ -1287,7 +1287,7 @@ transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -23,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1, 10.55, -8)
 
 [node name="2nd_Room3Door" parent="House/doors" unique_id=1700086266 instance=ExtResource("5_gpe7v")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -18.249058, 10.55, -14.997328)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -18.249058, 10.55, -13.019131)
 
 [node name="2nd_BalconyDoor" parent="House/doors" unique_id=1121480291 instance=ExtResource("5_gpe7v")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4, 10.55, -11)
