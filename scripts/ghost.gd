@@ -460,3 +460,6 @@ func _on_night_time_up() -> void:
 		
 		get_tree().change_scene_to_packed(MAIN_MENU_SCENE)
 	
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ghost_anim"):
+		$AnimationPlayer.play("ghost_turn")

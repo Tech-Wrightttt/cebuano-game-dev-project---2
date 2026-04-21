@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dbom0jasgiob6"]
+[gd_scene format=3 uid="uid://dbom0jasgiob6"]
 
 [ext_resource type="Script" uid="uid://d1jnkipekfns3" path="res://scripts/ghost.gd" id="1_blxur"]
 [ext_resource type="PackedScene" uid="uid://oysop7pwekld" path="res://game/ghost_model_animation.tscn" id="2_io021"]
-[ext_resource type="AudioStream" uid="uid://qe7k5lov5k5r" path="res://soundfx/jumpscare_audio.mp3" id="3_gp3h6"]
+[ext_resource type="AudioStream" uid="uid://nb63j88e2fvc" path="res://soundfx/jumpscare_audio.mp3" id="3_gp3h6"]
 [ext_resource type="AudioStream" uid="uid://d1barlwun783u" path="res://soundfx/hello.mp3" id="3_lg8de"]
 [ext_resource type="AudioStream" uid="uid://8x1lyamgl4we" path="res://soundfx/hi.mp3" id="4_1u12a"]
 [ext_resource type="AudioStream" uid="uid://b6ltpshx0nurw" path="res://soundfx/horror_audio.mp3" id="4_7af0h"]
@@ -12,72 +12,112 @@
 radius = 0.3803711
 height = 3.0
 
-[node name="ghost" type="CharacterBody3D" groups=["ghost"]]
+[sub_resource type="Animation" id="Animation_7af0h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ghost_final_animation:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -3.1415925, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ah05t"]
+resource_name = "ghost_turn"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ghost_final_animation:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 3.1415927, 0), Vector3(0, 2.9670596, 0), Vector3(0, 2.8448868, 0), Vector3(0, 2.443461, 0), Vector3(0, 2.1816616, 0), Vector3(0, 0.5235988, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8t34f"]
+_data = {
+&"RESET": SubResource("Animation_7af0h"),
+&"ghost_turn": SubResource("Animation_ah05t")
+}
+
+[node name="ghost" type="CharacterBody3D" unique_id=22261643 groups=["ghost"]]
 collision_layer = 17
 collision_mask = 17
 motion_mode = 1
 script = ExtResource("1_blxur")
 walking_audio = Array[AudioStream]([ExtResource("4_1u12a"), ExtResource("3_lg8de"), ExtResource("4_7af0h")])
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=165088188]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44936407, -0.08005732)
 shape = SubResource("CapsuleShape3D_b6vni")
 
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1494094022]
 path_desired_distance = 1.5
 path_max_distance = 3.01
 avoidance_enabled = true
 radius = 0.4
 
-[node name="RayCast3D" type="RayCast3D" parent="."]
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=790341381]
 transform = Transform3D(18.803, 0, 0, 0, -6.556708e-07, -24.273, 0, 15, -1.0610065e-06, 0, 0.9082812, 0)
 visible = false
 collision_mask = 131
 
-[node name="RayCast3D2" type="RayCast3D" parent="."]
+[node name="RayCast3D2" type="RayCast3D" parent="." unique_id=655141542]
 transform = Transform3D(14.095388, -5.1303015, 2.2425262e-07, 0, -6.5567076e-07, -15, 5.1303015, 14.095388, -6.16129e-07, 0, 1.0190101, 0)
 visible = false
 collision_mask = 131
 
-[node name="RayCast3D3" type="RayCast3D" parent="."]
+[node name="RayCast3D3" type="RayCast3D" parent="." unique_id=1040049981]
 transform = Transform3D(11.490665, -9.641813, 4.2145706e-07, 0, -6.5567076e-07, -15, 9.641813, 11.490665, -5.02273e-07, 0, 1.0190101, 0)
 visible = false
 collision_mask = 131
 
-[node name="RayCast3D4" type="RayCast3D" parent="."]
+[node name="RayCast3D4" type="RayCast3D" parent="." unique_id=1977129452]
 transform = Transform3D(14.095388, 5.1303015, -2.2425262e-07, 0, -6.5567076e-07, -15, -5.1303015, 14.095388, -6.16129e-07, 0, 1.0190101, 0)
 visible = false
 collision_mask = 131
 
-[node name="RayCast3D5" type="RayCast3D" parent="."]
+[node name="RayCast3D5" type="RayCast3D" parent="." unique_id=1962209050]
 transform = Transform3D(11.490665, 9.641813, -4.2145706e-07, 0, -6.5567076e-07, -15, -9.641813, 11.490665, -5.02273e-07, 0, 1.0190101, 0)
 visible = false
 collision_mask = 131
 
-[node name="jumpscare_cam" type="Camera3D" parent="."]
+[node name="jumpscare_cam" type="Camera3D" parent="." unique_id=1300542885]
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0.04277116, 1.5874608, -2.7373383)
 
-[node name="ghost_final_animation" parent="." instance=ExtResource("2_io021")]
-transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0.026, -0.478, -0.411)
+[node name="ghost_final_animation" parent="." unique_id=33955003 instance=ExtResource("2_io021")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0.026, -0.478, 0.2)
 
-[node name="chasecast" type="Node3D" parent="."]
+[node name="chasecast" type="Node3D" parent="." unique_id=398196613]
 visible = false
 
-[node name="chasecast" type="RayCast3D" parent="chasecast"]
+[node name="chasecast" type="RayCast3D" parent="chasecast" unique_id=632196357]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
 target_position = Vector3(0, -1.5, 0)
 
-[node name="jumpscare_audio" type="AudioStreamPlayer3D" parent="."]
+[node name="jumpscare_audio" type="AudioStreamPlayer3D" parent="." unique_id=18234074]
 stream = ExtResource("3_gp3h6")
 
-[node name="walking_audio" type="AudioStreamPlayer3D" parent="."]
+[node name="walking_audio" type="AudioStreamPlayer3D" parent="." unique_id=770629704]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1.4872453, -0.1524365)
 stream = ExtResource("4_1u12a")
 max_distance = 10.0
 
-[node name="near_audio" type="AudioStreamPlayer3D" parent="."]
+[node name="near_audio" type="AudioStreamPlayer3D" parent="." unique_id=43044762]
 stream = ExtResource("7_7af0h")
 max_distance = 8.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=223112407]
+libraries/ = SubResource("AnimationLibrary_8t34f")
 
 [connection signal="velocity_computed" from="NavigationAgent3D" to="." method="compute_velocity"]
 
